@@ -14,7 +14,7 @@ function createTab(id) {
 
   var tabLink = document.createElement("a");
   tabLink.href = "#" + tabId;
-  tabLink.textContent = "Pestaña-" + id;
+  tabLink.textContent = id;
 
   var tabContent = document.createElement("div");
   tabContent.classList.add("tab-content");

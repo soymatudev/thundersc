@@ -15,37 +15,34 @@ class Querys extends Statement
 
   public static function setAddRecord($data)
   {
-    $queryIdBrigada = "SELECT id FROM de_mp_brigada WHERE cve = ?";
+    $queryIdBrigada = "SELECT id FROM de_mp_brigada WHERE cve = :brigada";
     $stmtIdBrigada = self::prepareStatement($queryIdBrigada);
-    $stmtIdBrigada->bind_param('s', $data['brigada']);
+    $stmtIdBrigada->bindParam(':brigada', $data['brigada']);
     $resultIdBrigada = self::executePreparedQuery($stmtIdBrigada);
 
     $column = "id_brigada, area, id_equipo, id_subequipo, frecuencia, desde, actividad";
 
     $values = "
-      ?, 
-      ?, 
-      (SELECT id FROM de_mp_equipo WHERE nombre = ?), 
-      (SELECT id FROM de_mp_subequipo WHERE nombre = ?), 
-      ?, 
-      ?,
-      ?";
+      :id_brigada, 
+      :area, 
+      (SELECT id FROM de_mp_equipo WHERE nombre = :equipo), 
+      (SELECT id FROM de_mp_subequipo WHERE nombre = :subEquipo), 
+      :frecuencia, 
+      :fDesde,
+      :actividad";
 
     $query = "INSERT INTO de_mp_ot($column) VALUES($values)";
 
     $stmt = self::prepareStatement($query);
 
     if ($stmt) {
-      $stmt->bind_param(
-        'sssssss',
-        $resultIdBrigada[0]['id'],
-        $data['area'],
-        $data['equipo'],
-        $data['subEquipo'],
-        $data['frecuencia'],
-        $data['fDesde'],
-        $data['actividad']
-      );
+      $stmt->bindParam(':id_brigada', $resultIdBrigada[0]['id']);
+      $stmt->bindParam(':area', $data['area']);
+      $stmt->bindParam(':equipo', $data['equipo']);
+      $stmt->bindParam(':subEquipo', $data['subEquipo']);
+      $stmt->bindParam(':frecuencia', $data['frecuencia']);
+      $stmt->bindParam(':fDesde', $data['fDesde']);
+      $stmt->bindParam(':actividad', $data['actividad']);
 
       $result = self::executePreparedQuery($stmt);
 
@@ -79,10 +76,14 @@ class Querys extends Statement
     file_put_contents(self::LOG_FILE, "\nExecute Frecuencia => " . $frecuencia[0] . "\n", FILE_APPEND);
 
     $query = "INSERT INTO de_mp_calendar_ot(fecha, momento, id_ot, estatus, descripcion) 
-    VALUES(DATE_ADD('$desde', INTERVAL $dayFrecuencia MONTH), 'A Tiempo', $id, 'Sin Asignar', 'Inicio de la OT')";
+    VALUES(DATE_ADD(:desde, INTERVAL :dayFrecuencia MONTH), 'A Tiempo', :id, 'Sin Asignar', 'Inicio de la OT')";
     $stmt = self::prepareStatement($query);
 
     if ($stmt) {
+      $stmt->bindParam(':desde', $desde);
+      $stmt->bindParam(':dayFrecuencia', $dayFrecuencia);
+      $stmt->bindParam(':id', $id);
+
       $result = self::executePreparedQuery($stmt);
 
       if ($result !== false) {
@@ -95,135 +96,6 @@ class Querys extends Statement
     } else {
       file_put_contents(self::LOG_FILE, "\nExecute Incorrect sin stmt\n", FILE_APPEND);
       return array("Execute" => "Incorrect");
-    }
-  }
-
-  public static function setCalendar()
-  {
-    $queryIdOT = "SELECT id, desde, frecuencia FROM de_mp_ot ORDER BY id DES";
-    $stmtIdOT = self::prepareStatement($queryIdOT);
-    $resultIdOT = self::executePreparedQuery($stmtIdOT);
-
-    $frecuencia = explode(" ", $resultIdOT[0]['frecuencia']);
-
-    $interval = $frecuencia[1] == 'meses' || $frecuencia[1] == 'mes' ? 'MONTH' : 'MONTH';
-
-    $query = "INSERT INTO de_mp_calendar_ot(fecha, momento, id_ot, estatus, descripcion) 
-    VALUES(DATE_ADD(? , INTERVAL ? ?), ?, ?, ?, ?)";
-
-    $stmt = self::prepareStatement($query);
-    file_put_contents(self::LOG_FILE, "\n Preparamos el insert => \n", FILE_APPEND);
-    if ($stmt) {
-      $stmt->bind_param(
-        'ssssss',
-        $resultIdOT[0]['desde'],
-        $frecuencia[0],
-        $interval,
-        'A Tiempo',
-        $resultIdOT[0]['id'],
-        'Sin Asignar',
-        'Inicio de la OT',
-      );
-      file_put_contents(self::LOG_FILE, "\n" . print_r($stmt, true) . "\n", FILE_APPEND);
-      $result = self::executePreparedQuery($stmt);
-
-      if ($result !== false) {
-        file_put_contents(self::LOG_FILE, "\nExecute Correct\n", FILE_APPEND);
-        return array("Execute" => "Correct");
-      } else {
-        file_put_contents(self::LOG_FILE, "\nExecute Incorrect\n", FILE_APPEND);
-        return array("Execute" => "Incorrect");
-      }
-    } else {
-      file_put_contents(self::LOG_FILE, "\nExecute Incorrect sin stmt\n", FILE_APPEND);
-      return array("Execute" => "Incorrect");
-    }
-  }
-
-  public static function setAddRecordCalendar()
-  {
-
-    $queryIdOT = "SELECT id FROM de_mp_ot ORDER BY id ASC";
-    $stmtIdOT = self::prepareStatement($queryIdOT);
-    $resultIdOT = self::executePreparedQuery($stmtIdOT);
-
-    file_put_contents(self::LOG_FILE, "\n Consiguimos los IDs => \n", FILE_APPEND);
-    file_put_contents(self::LOG_FILE, "\n" . print_r($resultIdOT, true) . "\n", FILE_APPEND);
-
-    foreach ($resultIdOT as $OT) {
-      $id = $OT['id'];
-      $queryVerify = "SELECT COUNT(*) FROM de_mp_calendar_ot WHERE id_ot = ? AND estatus != 'Cerrada'";
-      $stmtVerify = self::prepareStatement($queryVerify);
-      $stmtVerify->bind_param('s', $id);
-      $resultVerify = self::executePreparedQuery($stmtVerify);
-
-      $numRegistros = $resultVerify[0]['COUNT(*)'];
-
-      file_put_contents(self::LOG_FILE, "\n Obtenemos el numero de registros abiertos de esa OT => \n", FILE_APPEND);
-      file_put_contents(self::LOG_FILE, "\n" . print_r($resultVerify, true) . "\n", FILE_APPEND);
-
-      if ($numRegistros == 0) {
-        $queryUF = "SELECT fecha, COUNT(*) AS numOT FROM de_mp_calendar_ot WHERE id_ot = ? ORDER BY fecha DESC LIMIT 1";
-        $stmtUF = self::prepareStatement($queryUF);
-        $stmtUF->bind_param('s', $id);
-        $resultUF = self::executePreparedQuery($stmtUF);
-
-        $resultUFF = $resultUF[0]['numOT'];
-
-        file_put_contents(self::LOG_FILE, "\n Obtenemos la fecha de la ultima OT => \n", FILE_APPEND);
-        file_put_contents(self::LOG_FILE, "\n" . print_r($resultUF, true) . "\n", FILE_APPEND);
-
-        $resultFDesde = '';
-        if ($resultUFF == 0) {
-          $queryFDesde = "SELECT desde FROM de_mp_ot WHERE id = ?";
-          $stmtFDesde = self::prepareStatement($queryFDesde);
-          $stmtFDesde->bind_param('s', $id);
-          $resultFDesde = self::executePreparedQuery($stmtFDesde);
-          file_put_contents(self::LOG_FILE, "\n Obtenemos la fecha de inicio de la OT => \n", FILE_APPEND);
-          file_put_contents(self::LOG_FILE, "\n" . print_r($resultFDesde, true) . "\n", FILE_APPEND);
-        }
-        //$fechaCalendar = $resultFDesde !== '' ? $resultFDesde[0]['desde'] : $resultUF[0]['fecha'];
-        $fechaCalendar = $resultFDesde[0]['desde'];
-        file_put_contents(self::LOG_FILE, "\n Preparamos el insert  con Id de OT => " . $id . " y fecha " . $fechaCalendar . "\n", FILE_APPEND);
-
-        $queryIn = "INSERT INTO 
-        de_mp_calendar_ot(fecha, momento, id_ot, estatus, descripcion) 
-        VALUES(DATE_ADD(?, INTERVAL 1 MONTH), ?, ?, ?, ?)";
-        $stmtIn = self::prepareStatement($queryIn);
-
-
-
-        file_put_contents(self::LOG_FILE, "\nAntes\n", FILE_APPEND);
-
-        //if ($stmtIn) {
-        $stmtIn->bind_param(
-          'ssiss',
-          $fechaCalendar,
-          'A Tiempo',
-          $id,
-          'Sin Asignar',
-          'Inicio de la OT',
-        );
-        file_put_contents(self::LOG_FILE, "\Despues\n", FILE_APPEND);
-
-        file_put_contents(self::LOG_FILE, "\n" . print_r($stmtIn, true) . "\n", FILE_APPEND);
-
-        $result = self::executePreparedQuery($stmtIn);
-        file_put_contents(self::LOG_FILE, "\n Ejecutamos el insert => \n", FILE_APPEND);
-
-        if ($result !== false) {
-          file_put_contents(self::LOG_FILE, "\nExecute Correct\n", FILE_APPEND);
-          //return array("Execute" => "Correct");
-        } else {
-          file_put_contents(self::LOG_FILE, "\nExecute Incorrect\n", FILE_APPEND);
-          //return array("Execute" => "Incorrect");
-        }
-        /* } else {
-          file_put_contents(self::LOG_FILE, "\nExecute Incorrect sin stmt\n", FILE_APPEND);
-          file_put_contents(self::LOG_FILE, "\nError al preparar la declaración para insertar en la base de datos.\n", FILE_APPEND);
-          //return array("Execute" => "Incorrect");
-        } */
-      }
     }
   }
 
@@ -284,10 +156,9 @@ class Querys extends Statement
     }
   }
 
-
   public function closeConnection()
   {
-    $this->conexion->close();
+    $this->conexion = null;
   }
 }
 

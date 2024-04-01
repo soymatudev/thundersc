@@ -1,6 +1,12 @@
 <?php
+/*
+===============================================================================
+Autor: Juan Maturana
+Fecha de Creación: 2024
+===============================================================================
+*/
 
-require_once('../Connection/Connection.php');
+require_once('../../Connection/Connection.php');
 
 class Statement
 {
@@ -16,8 +22,8 @@ class Statement
   {
     $conexion = Connection::connect();
 
-    if ($conexion->connect_error) {
-      echo 'Error de conexion: ' . $conexion->connect_error;
+    if (!$conexion) {
+      echo "Error de conexión";
       return null;
     }
 
@@ -28,38 +34,34 @@ class Statement
 
   public static function executePreparedQuery($stmt)
   {
-    $result = $stmt->execute();
-    if ($result) {
-      if ($stmt->field_count > 0) {
-        file_put_contents(self::LOG_FILE, "\nConsulta Select\n", FILE_APPEND);
+    try {
+      $result = $stmt->execute();
 
-        $resultSet = $stmt->get_result();
-        $data = array();
-
-        while ($row = $resultSet->fetch_assoc()) {
-          $data[] = $row;
-        }
-
-        $stmt->close();
-        return $data;
-      } else {
-        file_put_contents(self::LOG_FILE, "\n===================================\n", FILE_APPEND);
-        file_put_contents(self::LOG_FILE, "\nConsulta INSERT/UPDATE/DELETE\n", FILE_APPEND);
-
-        // Consulta INSERT/UPDATE/DELETE
-        $affectedRows = $stmt->affected_rows;
-        $stmt->close();
-
-        if ($affectedRows > 0) {
-          return true; // Éxito
+      if ($result) {
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        
+        if ($stmt->columnCount() > 0) {
+          file_put_contents(self::LOG_FILE, "\nConsulta Select\n", FILE_APPEND);
+          $data = $stmt->fetchAll();
+          $stmt->closeCursor();
+          return $data;
         } else {
-          return false; // No se insertaron/actualizaron filas
+          file_put_contents(self::LOG_FILE, "\n===================================\n", FILE_APPEND);
+          file_put_contents(self::LOG_FILE, "\nConsulta INSERT/UPDATE/DELETE\n", FILE_APPEND);
+
+          // Consulta INSERT/UPDATE/DELETE
+          $affectedRows = $stmt->rowCount();
+          $stmt->closeCursor();
+
+          return $affectedRows > 0 ? true : false;
         }
+      } else {
+        echo "Mal ejecutado";
+        $stmt->closeCursor();
+        return false;
       }
-    } else {
-      //echo 'Error en la consulta: ' . $stmt->error;
-      echo "Mal ejecutado";
-      $stmt->close();
+    } catch (PDOException $e) {
+      echo "Error en la consulta: " . $e->getMessage();
       return false;
     }
   }

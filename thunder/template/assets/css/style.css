@@ -21199,3 +21199,18 @@ div.tagsinput {
   background: #191c24 !important;
   color: #ffffff !important;
 }
+
+.silo{
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+
+}
+
+.siloImg{
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%);
+  height: 400px;
+}

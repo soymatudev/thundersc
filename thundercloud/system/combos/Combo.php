@@ -10,78 +10,69 @@ require_once('../Connection/Connection.php');
 
 class Combo
 {
-  private $conexion;
+  private const LOG_FILE = 'process.log';
 
-  public function __construct()
+  public static function getEquipo()
   {
-    $this->conexion = Connection::connect();
-  }
+    $conn = Connection::connect();
 
-  public function executeQuery($query, $column)
-  {
-    try {
-      $result = $this->conexion->query($query);
+    if (!$conn) {
+      file_put_contents(self::LOG_FILE, "\nError de conexión\n", FILE_APPEND);
+      return null;
+    }
 
-      if ($result) {
-        $data = array();
-        if ($column) {
-          while ($row = $result->fetch_assoc()) {
-            $data[] = $row[$column];
-          }
-        } else {
-          while ($row = $result->fetch_assoc()) {
-            $data[] = $row;
-          }
-        }
-        return $data;
-      } else {
-        throw new Exception("Error en la consulta: " . $this->conexion->error);
-      }
-    } catch (Exception $e) {
-      echo "Error: " . $e->getMessage();
+    try{
+      $query = "SELECT nombre FROM de_mp_equipo";
+      $stmt = $conn->prepare($query);
+      $stmt->execute();
+
+      file_put_contents(self::LOG_FILE, "\nConsulta Select\n", FILE_APPEND);
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+      file_put_contents(self::LOG_FILE, "\nError en la consulta\n", FILE_APPEND);
       return null;
     }
   }
 
-
-  public function getEquipo()
+  public static function getSubEquipo()
   {
-    $querySelect = "SELECT nombre FROM de_mp_equipo";
-    $result = $this->executeQuery($querySelect, "nombre");
-    return $result !== null ? $result : array("Execute" => "Incorrect");
-  }
+    $conn = Connection::connect();
 
-  public function getSubEquipo()
-  {
-    $querySelect = "SELECT nombre FROM de_mp_subequipo";
-    $result = $this->executeQuery($querySelect, "nombre");
-    return $result !== null ? $result : array("Execute" => "Incorrect");
-  }
+    if (!$conn) {
+      file_put_contents(self::LOG_FILE, "\nError de conexión\n", FILE_APPEND);
+      return null;
+    }
 
+    try{
+      $query = "SELECT nombre FROM de_mp_subequipo";
+      $stmt = $conn->prepare($query);
+      $stmt->execute();
+
+      file_put_contents(self::LOG_FILE, "\nConsulta Select\n", FILE_APPEND);
+      return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+      file_put_contents(self::LOG_FILE, "\nError en la consulta\n", FILE_APPEND);
+      return null;
+    }
+  }
 
   public function cerrarConexion()
   {
     // Cierra la conexión cuando ya no sea necesaria
-    $this->conexion->close();
+    Connection::closeConnection();
   }
 }
 
 function equipo()
 {
-  $setCombo = new Combo();
   header('Content-Type: application/json');
-  $Data = $setCombo->getEquipo();
-  $setCombo->cerrarConexion();
-  // file_put_contents(self::LOG_FILE, "\nProducto Data: ".$Data."\n", FILE_APPEND);
-  return json_encode($Data);
+  $Data = Combo::getEquipo();
+  return json_encode($Data); // Convertir a JSON antes de devolver
 }
 
 function subEquipo()
 {
-  $setCombo = new Combo();
   header('Content-Type: application/json');
-  $Data = $setCombo->getSubEquipo();
-  $setCombo->cerrarConexion();
-  // file_put_contents(self::LOG_FILE, "\nProducto Data: ".$Data."\n", FILE_APPEND);
-  return json_encode($Data);
+  $Data = Combo::getSubEquipo();
+  return json_encode($Data); // Convertir a JSON antes de devolver
 }

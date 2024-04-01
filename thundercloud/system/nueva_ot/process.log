@@ -31190,3 +31190,5375 @@ Array
 
 )
 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Statement
+\ExecutePrepared
+\ExecutePrepared
+
+Consulta Select
+
+Execute Correct => 
+
+Array
+(
+    [0] => Array
+        (
+            [title] => Molino
+            [0] => Molino
+            [start] => 2024-03-20
+            [1] => 2024-03-20
+            [end] => 2024-03-20
+            [2] => 2024-03-20
+        )
+
+    [1] => Array
+        (
+            [title] => Molino
+            [0] => Molino
+            [start] => 2024-03-19
+            [1] => 2024-03-19
+            [end] => 2024-03-19
+            [2] => 2024-03-19
+        )
+
+    [2] => Array
+        (
+            [title] => Silo
+            [0] => Silo
+            [start] => 2024-03-19
+            [1] => 2024-03-19
+            [end] => 2024-03-19
+            [2] => 2024-03-19
+        )
+
+    [3] => Array
+        (
+            [title] => Silo
+            [0] => Silo
+            [start] => 2024-03-01
+            [1] => 2024-03-01
+            [end] => 2024-03-01
+            [2] => 2024-03-01
+        )
+
+    [4] => Array
+        (
+            [title] => Silo
+            [0] => Silo
+            [start] => 2024-03-02
+            [1] => 2024-03-02
+            [end] => 2024-03-02
+            [2] => 2024-03-02
+        )
+
+    [5] => Array
+        (
+            [title] => Silo
+            [0] => Silo
+            [start] => 2024-03-03
+            [1] => 2024-03-03
+            [end] => 2024-03-03
+            [2] => 2024-03-03
+        )
+
+    [6] => Array
+        (
+            [title] => Silo
+            [0] => Silo
+            [start] => 
+            [1] => 
+            [end] => 
+            [2] => 
+        )
+
+    [7] => Array
+        (
+            [title] => Silo
+            [0] => Silo
+            [start] => 
+            [1] => 
+            [end] => 
+            [2] => 
+        )
+
+    [8] => Array
+        (
+            [title] => Silo
+            [0] => Silo
+            [start] => 
+            [1] => 
+            [end] => 
+            [2] => 
+        )
+
+    [9] => Array
+        (
+            [title] => Silo
+            [0] => Silo
+            [start] => 
+            [1] => 
+            [end] => 
+            [2] => 
+        )
+
+    [10] => Array
+        (
+            [title] => Silo
+            [0] => Silo
+            [start] => 2024-04-18
+            [1] => 2024-04-18
+            [end] => 2024-04-18
+            [2] => 2024-04-18
+        )
+
+    [11] => Array
+        (
+            [title] => Silo
+            [0] => Silo
+            [start] => 2024-03-05
+            [1] => 2024-03-05
+            [end] => 2024-03-05
+            [2] => 2024-03-05
+        )
+
+    [12] => Array
+        (
+            [title] => Silo
+            [0] => Silo
+            [start] => 2024-03-13
+            [1] => 2024-03-13
+            [end] => 2024-03-13
+            [2] => 2024-03-13
+        )
+
+    [13] => Array
+        (
+            [title] => Silo
+            [0] => Silo
+            [start] => 2024-07-01
+            [1] => 2024-07-01
+            [end] => 2024-07-01
+            [2] => 2024-07-01
+        )
+
+    [14] => Array
+        (
+            [title] => Equipo 2
+            [0] => Equipo 2
+            [start] => 2024-04-14
+            [1] => 2024-04-14
+            [end] => 2024-04-14
+            [2] => 2024-04-14
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Statement
+\ExecutePrepared
+\ExecutePrepared
+
+Consulta Select
+
+Execute Correct => 
+
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [0] => 1
+            [equipo] => Molino
+            [1] => Molino
+            [subEquipo] => Molino
+            [2] => Molino
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-19
+            [4] => 2024-03-19
+            [actividad] => 
+            [5] => 
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [0] => 2
+            [equipo] => Molino
+            [1] => Molino
+            [subEquipo] => Molino
+            [2] => Molino
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-19
+            [4] => 2024-03-19
+            [actividad] => 
+            [5] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [0] => 3
+            [equipo] => Molino
+            [1] => Molino
+            [subEquipo] => Molino
+            [2] => Molino
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-19
+            [4] => 2024-03-19
+            [actividad] => 
+            [5] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [0] => 4
+            [equipo] => Molino
+            [1] => Molino
+            [subEquipo] => Molino
+            [2] => Molino
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-19
+            [4] => 2024-03-19
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [4] => Array
+        (
+            [id] => 5
+            [0] => 5
+            [equipo] => Molino
+            [1] => Molino
+            [subEquipo] => Molino
+            [2] => Molino
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-19
+            [4] => 2024-03-19
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [5] => Array
+        (
+            [id] => 6
+            [0] => 6
+            [equipo] => Molino
+            [1] => Molino
+            [subEquipo] => Molino
+            [2] => Molino
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-20
+            [4] => 2024-03-20
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [6] => Array
+        (
+            [id] => 7
+            [0] => 7
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-19
+            [4] => 2024-03-19
+            [actividad] => Correctiva
+            [5] => Correctiva
+        )
+
+    [7] => Array
+        (
+            [id] => 8
+            [0] => 8
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Correctiva
+            [5] => Correctiva
+        )
+
+    [8] => Array
+        (
+            [id] => 9
+            [0] => 9
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Correctiva
+            [5] => Correctiva
+        )
+
+    [9] => Array
+        (
+            [id] => 10
+            [0] => 10
+            [equipo] => Molino
+            [1] => Molino
+            [subEquipo] => Molino
+            [2] => Molino
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-20
+            [4] => 2024-03-20
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [10] => Array
+        (
+            [id] => 11
+            [0] => 11
+            [equipo] => Molino
+            [1] => Molino
+            [subEquipo] => Molino
+            [2] => Molino
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-20
+            [4] => 2024-03-20
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [11] => Array
+        (
+            [id] => 12
+            [0] => 12
+            [equipo] => Molino
+            [1] => Molino
+            [subEquipo] => Molino
+            [2] => Molino
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-20
+            [4] => 2024-03-20
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [12] => Array
+        (
+            [id] => 13
+            [0] => 13
+            [equipo] => Molino
+            [1] => Molino
+            [subEquipo] => Molino
+            [2] => Molino
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-20
+            [4] => 2024-03-20
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [13] => Array
+        (
+            [id] => 14
+            [0] => 14
+            [equipo] => Molino
+            [1] => Molino
+            [subEquipo] => Molino
+            [2] => Molino
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-20
+            [4] => 2024-03-20
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [14] => Array
+        (
+            [id] => 15
+            [0] => 15
+            [equipo] => Molino
+            [1] => Molino
+            [subEquipo] => Molino
+            [2] => Molino
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-20
+            [4] => 2024-03-20
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [15] => Array
+        (
+            [id] => 16
+            [0] => 16
+            [equipo] => Molino
+            [1] => Molino
+            [subEquipo] => Molino
+            [2] => Molino
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-02-27
+            [4] => 2024-02-27
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [16] => Array
+        (
+            [id] => 17
+            [0] => 17
+            [equipo] => Molino
+            [1] => Molino
+            [subEquipo] => Molino
+            [2] => Molino
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-02-27
+            [4] => 2024-02-27
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [17] => Array
+        (
+            [id] => 18
+            [0] => 18
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [18] => Array
+        (
+            [id] => 19
+            [0] => 19
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [19] => Array
+        (
+            [id] => 20
+            [0] => 20
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [20] => Array
+        (
+            [id] => 21
+            [0] => 21
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [21] => Array
+        (
+            [id] => 22
+            [0] => 22
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [22] => Array
+        (
+            [id] => 23
+            [0] => 23
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [23] => Array
+        (
+            [id] => 24
+            [0] => 24
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [24] => Array
+        (
+            [id] => 25
+            [0] => 25
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [25] => Array
+        (
+            [id] => 26
+            [0] => 26
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [26] => Array
+        (
+            [id] => 27
+            [0] => 27
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [27] => Array
+        (
+            [id] => 28
+            [0] => 28
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [28] => Array
+        (
+            [id] => 29
+            [0] => 29
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [29] => Array
+        (
+            [id] => 30
+            [0] => 30
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [30] => Array
+        (
+            [id] => 31
+            [0] => 31
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [31] => Array
+        (
+            [id] => 32
+            [0] => 32
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [32] => Array
+        (
+            [id] => 33
+            [0] => 33
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [33] => Array
+        (
+            [id] => 34
+            [0] => 34
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [34] => Array
+        (
+            [id] => 35
+            [0] => 35
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [35] => Array
+        (
+            [id] => 36
+            [0] => 36
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [36] => Array
+        (
+            [id] => 37
+            [0] => 37
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [37] => Array
+        (
+            [id] => 38
+            [0] => 38
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-18
+            [4] => 2024-03-18
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [38] => Array
+        (
+            [id] => 39
+            [0] => 39
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Silo
+            [2] => Silo
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-02-05
+            [4] => 2024-02-05
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [39] => Array
+        (
+            [id] => 40
+            [0] => 40
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Molino
+            [2] => Molino
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-02-13
+            [4] => 2024-02-13
+            [actividad] => Correctiva
+            [5] => Correctiva
+        )
+
+    [40] => Array
+        (
+            [id] => 41
+            [0] => 41
+            [equipo] => Silo
+            [1] => Silo
+            [subEquipo] => Molino
+            [2] => Molino
+            [frecuencia] => 6 meses
+            [3] => 6 meses
+            [desde] => 2024-01-01
+            [4] => 2024-01-01
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+    [41] => Array
+        (
+            [id] => 42
+            [0] => 42
+            [equipo] => Equipo 2
+            [1] => Equipo 2
+            [subEquipo] => SubEquipo 1
+            [2] => SubEquipo 1
+            [frecuencia] => 1 mes
+            [3] => 1 mes
+            [desde] => 2024-03-14
+            [4] => 2024-03-14
+            [actividad] => Preventiva
+            [5] => Preventiva
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute Correct => 
+
+Array
+(
+    [0] => Array
+        (
+            [title] => Molino
+            [start] => 2024-03-20
+            [end] => 2024-03-20
+        )
+
+    [1] => Array
+        (
+            [title] => Molino
+            [start] => 2024-03-19
+            [end] => 2024-03-19
+        )
+
+    [2] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-19
+            [end] => 2024-03-19
+        )
+
+    [3] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-01
+            [end] => 2024-03-01
+        )
+
+    [4] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-02
+            [end] => 2024-03-02
+        )
+
+    [5] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-03
+            [end] => 2024-03-03
+        )
+
+    [6] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [7] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [8] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [9] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [10] => Array
+        (
+            [title] => Silo
+            [start] => 2024-04-18
+            [end] => 2024-04-18
+        )
+
+    [11] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-05
+            [end] => 2024-03-05
+        )
+
+    [12] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-13
+            [end] => 2024-03-13
+        )
+
+    [13] => Array
+        (
+            [title] => Silo
+            [start] => 2024-07-01
+            [end] => 2024-07-01
+        )
+
+    [14] => Array
+        (
+            [title] => Equipo 2
+            [start] => 2024-04-14
+            [end] => 2024-04-14
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute Correct => 
+
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Preventiva
+        )
+
+    [4] => Array
+        (
+            [id] => 5
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Preventiva
+        )
+
+    [5] => Array
+        (
+            [id] => 6
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [6] => Array
+        (
+            [id] => 7
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Correctiva
+        )
+
+    [7] => Array
+        (
+            [id] => 8
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Correctiva
+        )
+
+    [8] => Array
+        (
+            [id] => 9
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Correctiva
+        )
+
+    [9] => Array
+        (
+            [id] => 10
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [10] => Array
+        (
+            [id] => 11
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [11] => Array
+        (
+            [id] => 12
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [12] => Array
+        (
+            [id] => 13
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [13] => Array
+        (
+            [id] => 14
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [14] => Array
+        (
+            [id] => 15
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [15] => Array
+        (
+            [id] => 16
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-27
+            [actividad] => Preventiva
+        )
+
+    [16] => Array
+        (
+            [id] => 17
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-27
+            [actividad] => Preventiva
+        )
+
+    [17] => Array
+        (
+            [id] => 18
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [18] => Array
+        (
+            [id] => 19
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [19] => Array
+        (
+            [id] => 20
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [20] => Array
+        (
+            [id] => 21
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [21] => Array
+        (
+            [id] => 22
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [22] => Array
+        (
+            [id] => 23
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [23] => Array
+        (
+            [id] => 24
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [24] => Array
+        (
+            [id] => 25
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [25] => Array
+        (
+            [id] => 26
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [26] => Array
+        (
+            [id] => 27
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [27] => Array
+        (
+            [id] => 28
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [28] => Array
+        (
+            [id] => 29
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [29] => Array
+        (
+            [id] => 30
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [30] => Array
+        (
+            [id] => 31
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [31] => Array
+        (
+            [id] => 32
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [32] => Array
+        (
+            [id] => 33
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [33] => Array
+        (
+            [id] => 34
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [34] => Array
+        (
+            [id] => 35
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [35] => Array
+        (
+            [id] => 36
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [36] => Array
+        (
+            [id] => 37
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [37] => Array
+        (
+            [id] => 38
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [38] => Array
+        (
+            [id] => 39
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-05
+            [actividad] => Preventiva
+        )
+
+    [39] => Array
+        (
+            [id] => 40
+            [equipo] => Silo
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-13
+            [actividad] => Correctiva
+        )
+
+    [40] => Array
+        (
+            [id] => 41
+            [equipo] => Silo
+            [subEquipo] => Molino
+            [frecuencia] => 6 meses
+            [desde] => 2024-01-01
+            [actividad] => Preventiva
+        )
+
+    [41] => Array
+        (
+            [id] => 42
+            [equipo] => Equipo 2
+            [subEquipo] => SubEquipo 1
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-14
+            [actividad] => Preventiva
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute Correct => 
+
+Array
+(
+    [0] => Array
+        (
+            [title] => Molino
+            [start] => 2024-03-20
+            [end] => 2024-03-20
+        )
+
+    [1] => Array
+        (
+            [title] => Molino
+            [start] => 2024-03-19
+            [end] => 2024-03-19
+        )
+
+    [2] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-19
+            [end] => 2024-03-19
+        )
+
+    [3] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-01
+            [end] => 2024-03-01
+        )
+
+    [4] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-02
+            [end] => 2024-03-02
+        )
+
+    [5] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-03
+            [end] => 2024-03-03
+        )
+
+    [6] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [7] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [8] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [9] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [10] => Array
+        (
+            [title] => Silo
+            [start] => 2024-04-18
+            [end] => 2024-04-18
+        )
+
+    [11] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-05
+            [end] => 2024-03-05
+        )
+
+    [12] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-13
+            [end] => 2024-03-13
+        )
+
+    [13] => Array
+        (
+            [title] => Silo
+            [start] => 2024-07-01
+            [end] => 2024-07-01
+        )
+
+    [14] => Array
+        (
+            [title] => Equipo 2
+            [start] => 2024-04-14
+            [end] => 2024-04-14
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute Correct => 
+
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Preventiva
+        )
+
+    [4] => Array
+        (
+            [id] => 5
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Preventiva
+        )
+
+    [5] => Array
+        (
+            [id] => 6
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [6] => Array
+        (
+            [id] => 7
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Correctiva
+        )
+
+    [7] => Array
+        (
+            [id] => 8
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Correctiva
+        )
+
+    [8] => Array
+        (
+            [id] => 9
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Correctiva
+        )
+
+    [9] => Array
+        (
+            [id] => 10
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [10] => Array
+        (
+            [id] => 11
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [11] => Array
+        (
+            [id] => 12
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [12] => Array
+        (
+            [id] => 13
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [13] => Array
+        (
+            [id] => 14
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [14] => Array
+        (
+            [id] => 15
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [15] => Array
+        (
+            [id] => 16
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-27
+            [actividad] => Preventiva
+        )
+
+    [16] => Array
+        (
+            [id] => 17
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-27
+            [actividad] => Preventiva
+        )
+
+    [17] => Array
+        (
+            [id] => 18
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [18] => Array
+        (
+            [id] => 19
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [19] => Array
+        (
+            [id] => 20
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [20] => Array
+        (
+            [id] => 21
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [21] => Array
+        (
+            [id] => 22
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [22] => Array
+        (
+            [id] => 23
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [23] => Array
+        (
+            [id] => 24
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [24] => Array
+        (
+            [id] => 25
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [25] => Array
+        (
+            [id] => 26
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [26] => Array
+        (
+            [id] => 27
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [27] => Array
+        (
+            [id] => 28
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [28] => Array
+        (
+            [id] => 29
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [29] => Array
+        (
+            [id] => 30
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [30] => Array
+        (
+            [id] => 31
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [31] => Array
+        (
+            [id] => 32
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [32] => Array
+        (
+            [id] => 33
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [33] => Array
+        (
+            [id] => 34
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [34] => Array
+        (
+            [id] => 35
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [35] => Array
+        (
+            [id] => 36
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [36] => Array
+        (
+            [id] => 37
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [37] => Array
+        (
+            [id] => 38
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [38] => Array
+        (
+            [id] => 39
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-05
+            [actividad] => Preventiva
+        )
+
+    [39] => Array
+        (
+            [id] => 40
+            [equipo] => Silo
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-13
+            [actividad] => Correctiva
+        )
+
+    [40] => Array
+        (
+            [id] => 41
+            [equipo] => Silo
+            [subEquipo] => Molino
+            [frecuencia] => 6 meses
+            [desde] => 2024-01-01
+            [actividad] => Preventiva
+        )
+
+    [41] => Array
+        (
+            [id] => 42
+            [equipo] => Equipo 2
+            [subEquipo] => SubEquipo 1
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-14
+            [actividad] => Preventiva
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute Correct => 
+
+Array
+(
+    [0] => Array
+        (
+            [title] => Molino
+            [start] => 2024-03-20
+            [end] => 2024-03-20
+        )
+
+    [1] => Array
+        (
+            [title] => Molino
+            [start] => 2024-03-19
+            [end] => 2024-03-19
+        )
+
+    [2] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-19
+            [end] => 2024-03-19
+        )
+
+    [3] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-01
+            [end] => 2024-03-01
+        )
+
+    [4] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-02
+            [end] => 2024-03-02
+        )
+
+    [5] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-03
+            [end] => 2024-03-03
+        )
+
+    [6] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [7] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [8] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [9] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [10] => Array
+        (
+            [title] => Silo
+            [start] => 2024-04-18
+            [end] => 2024-04-18
+        )
+
+    [11] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-05
+            [end] => 2024-03-05
+        )
+
+    [12] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-13
+            [end] => 2024-03-13
+        )
+
+    [13] => Array
+        (
+            [title] => Silo
+            [start] => 2024-07-01
+            [end] => 2024-07-01
+        )
+
+    [14] => Array
+        (
+            [title] => Equipo 2
+            [start] => 2024-04-14
+            [end] => 2024-04-14
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute Correct => 
+
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Preventiva
+        )
+
+    [4] => Array
+        (
+            [id] => 5
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Preventiva
+        )
+
+    [5] => Array
+        (
+            [id] => 6
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [6] => Array
+        (
+            [id] => 7
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Correctiva
+        )
+
+    [7] => Array
+        (
+            [id] => 8
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Correctiva
+        )
+
+    [8] => Array
+        (
+            [id] => 9
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Correctiva
+        )
+
+    [9] => Array
+        (
+            [id] => 10
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [10] => Array
+        (
+            [id] => 11
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [11] => Array
+        (
+            [id] => 12
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [12] => Array
+        (
+            [id] => 13
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [13] => Array
+        (
+            [id] => 14
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [14] => Array
+        (
+            [id] => 15
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [15] => Array
+        (
+            [id] => 16
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-27
+            [actividad] => Preventiva
+        )
+
+    [16] => Array
+        (
+            [id] => 17
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-27
+            [actividad] => Preventiva
+        )
+
+    [17] => Array
+        (
+            [id] => 18
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [18] => Array
+        (
+            [id] => 19
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [19] => Array
+        (
+            [id] => 20
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [20] => Array
+        (
+            [id] => 21
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [21] => Array
+        (
+            [id] => 22
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [22] => Array
+        (
+            [id] => 23
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [23] => Array
+        (
+            [id] => 24
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [24] => Array
+        (
+            [id] => 25
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [25] => Array
+        (
+            [id] => 26
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [26] => Array
+        (
+            [id] => 27
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [27] => Array
+        (
+            [id] => 28
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [28] => Array
+        (
+            [id] => 29
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [29] => Array
+        (
+            [id] => 30
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [30] => Array
+        (
+            [id] => 31
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [31] => Array
+        (
+            [id] => 32
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [32] => Array
+        (
+            [id] => 33
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [33] => Array
+        (
+            [id] => 34
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [34] => Array
+        (
+            [id] => 35
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [35] => Array
+        (
+            [id] => 36
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [36] => Array
+        (
+            [id] => 37
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [37] => Array
+        (
+            [id] => 38
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [38] => Array
+        (
+            [id] => 39
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-05
+            [actividad] => Preventiva
+        )
+
+    [39] => Array
+        (
+            [id] => 40
+            [equipo] => Silo
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-13
+            [actividad] => Correctiva
+        )
+
+    [40] => Array
+        (
+            [id] => 41
+            [equipo] => Silo
+            [subEquipo] => Molino
+            [frecuencia] => 6 meses
+            [desde] => 2024-01-01
+            [actividad] => Preventiva
+        )
+
+    [41] => Array
+        (
+            [id] => 42
+            [equipo] => Equipo 2
+            [subEquipo] => SubEquipo 1
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-14
+            [actividad] => Preventiva
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute Correct => 
+
+Array
+(
+    [0] => Array
+        (
+            [title] => Molino
+            [start] => 2024-03-20
+            [end] => 2024-03-20
+        )
+
+    [1] => Array
+        (
+            [title] => Molino
+            [start] => 2024-03-19
+            [end] => 2024-03-19
+        )
+
+    [2] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-19
+            [end] => 2024-03-19
+        )
+
+    [3] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-01
+            [end] => 2024-03-01
+        )
+
+    [4] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-02
+            [end] => 2024-03-02
+        )
+
+    [5] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-03
+            [end] => 2024-03-03
+        )
+
+    [6] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [7] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [8] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [9] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [10] => Array
+        (
+            [title] => Silo
+            [start] => 2024-04-18
+            [end] => 2024-04-18
+        )
+
+    [11] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-05
+            [end] => 2024-03-05
+        )
+
+    [12] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-13
+            [end] => 2024-03-13
+        )
+
+    [13] => Array
+        (
+            [title] => Silo
+            [start] => 2024-07-01
+            [end] => 2024-07-01
+        )
+
+    [14] => Array
+        (
+            [title] => Equipo 2
+            [start] => 2024-04-14
+            [end] => 2024-04-14
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute Correct => 
+
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Preventiva
+        )
+
+    [4] => Array
+        (
+            [id] => 5
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Preventiva
+        )
+
+    [5] => Array
+        (
+            [id] => 6
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [6] => Array
+        (
+            [id] => 7
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Correctiva
+        )
+
+    [7] => Array
+        (
+            [id] => 8
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Correctiva
+        )
+
+    [8] => Array
+        (
+            [id] => 9
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Correctiva
+        )
+
+    [9] => Array
+        (
+            [id] => 10
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [10] => Array
+        (
+            [id] => 11
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [11] => Array
+        (
+            [id] => 12
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [12] => Array
+        (
+            [id] => 13
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [13] => Array
+        (
+            [id] => 14
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [14] => Array
+        (
+            [id] => 15
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [15] => Array
+        (
+            [id] => 16
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-27
+            [actividad] => Preventiva
+        )
+
+    [16] => Array
+        (
+            [id] => 17
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-27
+            [actividad] => Preventiva
+        )
+
+    [17] => Array
+        (
+            [id] => 18
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [18] => Array
+        (
+            [id] => 19
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [19] => Array
+        (
+            [id] => 20
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [20] => Array
+        (
+            [id] => 21
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [21] => Array
+        (
+            [id] => 22
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [22] => Array
+        (
+            [id] => 23
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [23] => Array
+        (
+            [id] => 24
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [24] => Array
+        (
+            [id] => 25
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [25] => Array
+        (
+            [id] => 26
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [26] => Array
+        (
+            [id] => 27
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [27] => Array
+        (
+            [id] => 28
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [28] => Array
+        (
+            [id] => 29
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [29] => Array
+        (
+            [id] => 30
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [30] => Array
+        (
+            [id] => 31
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [31] => Array
+        (
+            [id] => 32
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [32] => Array
+        (
+            [id] => 33
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [33] => Array
+        (
+            [id] => 34
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [34] => Array
+        (
+            [id] => 35
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [35] => Array
+        (
+            [id] => 36
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [36] => Array
+        (
+            [id] => 37
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [37] => Array
+        (
+            [id] => 38
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [38] => Array
+        (
+            [id] => 39
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-05
+            [actividad] => Preventiva
+        )
+
+    [39] => Array
+        (
+            [id] => 40
+            [equipo] => Silo
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-13
+            [actividad] => Correctiva
+        )
+
+    [40] => Array
+        (
+            [id] => 41
+            [equipo] => Silo
+            [subEquipo] => Molino
+            [frecuencia] => 6 meses
+            [desde] => 2024-01-01
+            [actividad] => Preventiva
+        )
+
+    [41] => Array
+        (
+            [id] => 42
+            [equipo] => Equipo 2
+            [subEquipo] => SubEquipo 1
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-14
+            [actividad] => Preventiva
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute Correct => 
+
+Array
+(
+    [0] => Array
+        (
+            [title] => Molino
+            [start] => 2024-03-20
+            [end] => 2024-03-20
+        )
+
+    [1] => Array
+        (
+            [title] => Molino
+            [start] => 2024-03-19
+            [end] => 2024-03-19
+        )
+
+    [2] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-19
+            [end] => 2024-03-19
+        )
+
+    [3] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-01
+            [end] => 2024-03-01
+        )
+
+    [4] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-02
+            [end] => 2024-03-02
+        )
+
+    [5] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-03
+            [end] => 2024-03-03
+        )
+
+    [6] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [7] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [8] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [9] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [10] => Array
+        (
+            [title] => Silo
+            [start] => 2024-04-18
+            [end] => 2024-04-18
+        )
+
+    [11] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-05
+            [end] => 2024-03-05
+        )
+
+    [12] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-13
+            [end] => 2024-03-13
+        )
+
+    [13] => Array
+        (
+            [title] => Silo
+            [start] => 2024-07-01
+            [end] => 2024-07-01
+        )
+
+    [14] => Array
+        (
+            [title] => Equipo 2
+            [start] => 2024-04-14
+            [end] => 2024-04-14
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute Correct => 
+
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Preventiva
+        )
+
+    [4] => Array
+        (
+            [id] => 5
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Preventiva
+        )
+
+    [5] => Array
+        (
+            [id] => 6
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [6] => Array
+        (
+            [id] => 7
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Correctiva
+        )
+
+    [7] => Array
+        (
+            [id] => 8
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Correctiva
+        )
+
+    [8] => Array
+        (
+            [id] => 9
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Correctiva
+        )
+
+    [9] => Array
+        (
+            [id] => 10
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [10] => Array
+        (
+            [id] => 11
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [11] => Array
+        (
+            [id] => 12
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [12] => Array
+        (
+            [id] => 13
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [13] => Array
+        (
+            [id] => 14
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [14] => Array
+        (
+            [id] => 15
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [15] => Array
+        (
+            [id] => 16
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-27
+            [actividad] => Preventiva
+        )
+
+    [16] => Array
+        (
+            [id] => 17
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-27
+            [actividad] => Preventiva
+        )
+
+    [17] => Array
+        (
+            [id] => 18
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [18] => Array
+        (
+            [id] => 19
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [19] => Array
+        (
+            [id] => 20
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [20] => Array
+        (
+            [id] => 21
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [21] => Array
+        (
+            [id] => 22
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [22] => Array
+        (
+            [id] => 23
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [23] => Array
+        (
+            [id] => 24
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [24] => Array
+        (
+            [id] => 25
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [25] => Array
+        (
+            [id] => 26
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [26] => Array
+        (
+            [id] => 27
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [27] => Array
+        (
+            [id] => 28
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [28] => Array
+        (
+            [id] => 29
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [29] => Array
+        (
+            [id] => 30
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [30] => Array
+        (
+            [id] => 31
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [31] => Array
+        (
+            [id] => 32
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [32] => Array
+        (
+            [id] => 33
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [33] => Array
+        (
+            [id] => 34
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [34] => Array
+        (
+            [id] => 35
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [35] => Array
+        (
+            [id] => 36
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [36] => Array
+        (
+            [id] => 37
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [37] => Array
+        (
+            [id] => 38
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [38] => Array
+        (
+            [id] => 39
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-05
+            [actividad] => Preventiva
+        )
+
+    [39] => Array
+        (
+            [id] => 40
+            [equipo] => Silo
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-13
+            [actividad] => Correctiva
+        )
+
+    [40] => Array
+        (
+            [id] => 41
+            [equipo] => Silo
+            [subEquipo] => Molino
+            [frecuencia] => 6 meses
+            [desde] => 2024-01-01
+            [actividad] => Preventiva
+        )
+
+    [41] => Array
+        (
+            [id] => 42
+            [equipo] => Equipo 2
+            [subEquipo] => SubEquipo 1
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-14
+            [actividad] => Preventiva
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute Correct => 
+
+Array
+(
+    [0] => Array
+        (
+            [title] => Molino
+            [start] => 2024-03-20
+            [end] => 2024-03-20
+        )
+
+    [1] => Array
+        (
+            [title] => Molino
+            [start] => 2024-03-19
+            [end] => 2024-03-19
+        )
+
+    [2] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-19
+            [end] => 2024-03-19
+        )
+
+    [3] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-01
+            [end] => 2024-03-01
+        )
+
+    [4] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-02
+            [end] => 2024-03-02
+        )
+
+    [5] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-03
+            [end] => 2024-03-03
+        )
+
+    [6] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [7] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [8] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [9] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [10] => Array
+        (
+            [title] => Silo
+            [start] => 2024-04-18
+            [end] => 2024-04-18
+        )
+
+    [11] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-05
+            [end] => 2024-03-05
+        )
+
+    [12] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-13
+            [end] => 2024-03-13
+        )
+
+    [13] => Array
+        (
+            [title] => Silo
+            [start] => 2024-07-01
+            [end] => 2024-07-01
+        )
+
+    [14] => Array
+        (
+            [title] => Equipo 2
+            [start] => 2024-04-14
+            [end] => 2024-04-14
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute Correct => 
+
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Preventiva
+        )
+
+    [4] => Array
+        (
+            [id] => 5
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Preventiva
+        )
+
+    [5] => Array
+        (
+            [id] => 6
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [6] => Array
+        (
+            [id] => 7
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Correctiva
+        )
+
+    [7] => Array
+        (
+            [id] => 8
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Correctiva
+        )
+
+    [8] => Array
+        (
+            [id] => 9
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Correctiva
+        )
+
+    [9] => Array
+        (
+            [id] => 10
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [10] => Array
+        (
+            [id] => 11
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [11] => Array
+        (
+            [id] => 12
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [12] => Array
+        (
+            [id] => 13
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [13] => Array
+        (
+            [id] => 14
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [14] => Array
+        (
+            [id] => 15
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [15] => Array
+        (
+            [id] => 16
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-27
+            [actividad] => Preventiva
+        )
+
+    [16] => Array
+        (
+            [id] => 17
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-27
+            [actividad] => Preventiva
+        )
+
+    [17] => Array
+        (
+            [id] => 18
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [18] => Array
+        (
+            [id] => 19
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [19] => Array
+        (
+            [id] => 20
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [20] => Array
+        (
+            [id] => 21
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [21] => Array
+        (
+            [id] => 22
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [22] => Array
+        (
+            [id] => 23
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [23] => Array
+        (
+            [id] => 24
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [24] => Array
+        (
+            [id] => 25
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [25] => Array
+        (
+            [id] => 26
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [26] => Array
+        (
+            [id] => 27
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [27] => Array
+        (
+            [id] => 28
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [28] => Array
+        (
+            [id] => 29
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [29] => Array
+        (
+            [id] => 30
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [30] => Array
+        (
+            [id] => 31
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [31] => Array
+        (
+            [id] => 32
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [32] => Array
+        (
+            [id] => 33
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [33] => Array
+        (
+            [id] => 34
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [34] => Array
+        (
+            [id] => 35
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [35] => Array
+        (
+            [id] => 36
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [36] => Array
+        (
+            [id] => 37
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [37] => Array
+        (
+            [id] => 38
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [38] => Array
+        (
+            [id] => 39
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-05
+            [actividad] => Preventiva
+        )
+
+    [39] => Array
+        (
+            [id] => 40
+            [equipo] => Silo
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-13
+            [actividad] => Correctiva
+        )
+
+    [40] => Array
+        (
+            [id] => 41
+            [equipo] => Silo
+            [subEquipo] => Molino
+            [frecuencia] => 6 meses
+            [desde] => 2024-01-01
+            [actividad] => Preventiva
+        )
+
+    [41] => Array
+        (
+            [id] => 42
+            [equipo] => Equipo 2
+            [subEquipo] => SubEquipo 1
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-14
+            [actividad] => Preventiva
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute Correct => 
+
+Array
+(
+    [0] => Array
+        (
+            [title] => Molino
+            [start] => 2024-03-20
+            [end] => 2024-03-20
+        )
+
+    [1] => Array
+        (
+            [title] => Molino
+            [start] => 2024-03-19
+            [end] => 2024-03-19
+        )
+
+    [2] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-19
+            [end] => 2024-03-19
+        )
+
+    [3] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-01
+            [end] => 2024-03-01
+        )
+
+    [4] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-02
+            [end] => 2024-03-02
+        )
+
+    [5] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-03
+            [end] => 2024-03-03
+        )
+
+    [6] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [7] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [8] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [9] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [10] => Array
+        (
+            [title] => Silo
+            [start] => 2024-04-18
+            [end] => 2024-04-18
+        )
+
+    [11] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-05
+            [end] => 2024-03-05
+        )
+
+    [12] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-13
+            [end] => 2024-03-13
+        )
+
+    [13] => Array
+        (
+            [title] => Silo
+            [start] => 2024-07-01
+            [end] => 2024-07-01
+        )
+
+    [14] => Array
+        (
+            [title] => Equipo 2
+            [start] => 2024-04-14
+            [end] => 2024-04-14
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute Correct => 
+
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Preventiva
+        )
+
+    [4] => Array
+        (
+            [id] => 5
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Preventiva
+        )
+
+    [5] => Array
+        (
+            [id] => 6
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [6] => Array
+        (
+            [id] => 7
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Correctiva
+        )
+
+    [7] => Array
+        (
+            [id] => 8
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Correctiva
+        )
+
+    [8] => Array
+        (
+            [id] => 9
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Correctiva
+        )
+
+    [9] => Array
+        (
+            [id] => 10
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [10] => Array
+        (
+            [id] => 11
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [11] => Array
+        (
+            [id] => 12
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [12] => Array
+        (
+            [id] => 13
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [13] => Array
+        (
+            [id] => 14
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [14] => Array
+        (
+            [id] => 15
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [15] => Array
+        (
+            [id] => 16
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-27
+            [actividad] => Preventiva
+        )
+
+    [16] => Array
+        (
+            [id] => 17
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-27
+            [actividad] => Preventiva
+        )
+
+    [17] => Array
+        (
+            [id] => 18
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [18] => Array
+        (
+            [id] => 19
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [19] => Array
+        (
+            [id] => 20
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [20] => Array
+        (
+            [id] => 21
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [21] => Array
+        (
+            [id] => 22
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [22] => Array
+        (
+            [id] => 23
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [23] => Array
+        (
+            [id] => 24
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [24] => Array
+        (
+            [id] => 25
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [25] => Array
+        (
+            [id] => 26
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [26] => Array
+        (
+            [id] => 27
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [27] => Array
+        (
+            [id] => 28
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [28] => Array
+        (
+            [id] => 29
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [29] => Array
+        (
+            [id] => 30
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [30] => Array
+        (
+            [id] => 31
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [31] => Array
+        (
+            [id] => 32
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [32] => Array
+        (
+            [id] => 33
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [33] => Array
+        (
+            [id] => 34
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [34] => Array
+        (
+            [id] => 35
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [35] => Array
+        (
+            [id] => 36
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [36] => Array
+        (
+            [id] => 37
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [37] => Array
+        (
+            [id] => 38
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [38] => Array
+        (
+            [id] => 39
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-05
+            [actividad] => Preventiva
+        )
+
+    [39] => Array
+        (
+            [id] => 40
+            [equipo] => Silo
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-13
+            [actividad] => Correctiva
+        )
+
+    [40] => Array
+        (
+            [id] => 41
+            [equipo] => Silo
+            [subEquipo] => Molino
+            [frecuencia] => 6 meses
+            [desde] => 2024-01-01
+            [actividad] => Preventiva
+        )
+
+    [41] => Array
+        (
+            [id] => 42
+            [equipo] => Equipo 2
+            [subEquipo] => SubEquipo 1
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-14
+            [actividad] => Preventiva
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute Correct => 
+
+Array
+(
+    [0] => Array
+        (
+            [title] => Molino
+            [start] => 2024-03-20
+            [end] => 2024-03-20
+        )
+
+    [1] => Array
+        (
+            [title] => Molino
+            [start] => 2024-03-19
+            [end] => 2024-03-19
+        )
+
+    [2] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-19
+            [end] => 2024-03-19
+        )
+
+    [3] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-01
+            [end] => 2024-03-01
+        )
+
+    [4] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-02
+            [end] => 2024-03-02
+        )
+
+    [5] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-03
+            [end] => 2024-03-03
+        )
+
+    [6] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [7] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [8] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [9] => Array
+        (
+            [title] => Silo
+            [start] => 
+            [end] => 
+        )
+
+    [10] => Array
+        (
+            [title] => Silo
+            [start] => 2024-04-18
+            [end] => 2024-04-18
+        )
+
+    [11] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-05
+            [end] => 2024-03-05
+        )
+
+    [12] => Array
+        (
+            [title] => Silo
+            [start] => 2024-03-13
+            [end] => 2024-03-13
+        )
+
+    [13] => Array
+        (
+            [title] => Silo
+            [start] => 2024-07-01
+            [end] => 2024-07-01
+        )
+
+    [14] => Array
+        (
+            [title] => Equipo 2
+            [start] => 2024-04-14
+            [end] => 2024-04-14
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute Correct => 
+
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Preventiva
+        )
+
+    [4] => Array
+        (
+            [id] => 5
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Preventiva
+        )
+
+    [5] => Array
+        (
+            [id] => 6
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [6] => Array
+        (
+            [id] => 7
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-19
+            [actividad] => Correctiva
+        )
+
+    [7] => Array
+        (
+            [id] => 8
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Correctiva
+        )
+
+    [8] => Array
+        (
+            [id] => 9
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Correctiva
+        )
+
+    [9] => Array
+        (
+            [id] => 10
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [10] => Array
+        (
+            [id] => 11
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [11] => Array
+        (
+            [id] => 12
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [12] => Array
+        (
+            [id] => 13
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [13] => Array
+        (
+            [id] => 14
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [14] => Array
+        (
+            [id] => 15
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-20
+            [actividad] => Preventiva
+        )
+
+    [15] => Array
+        (
+            [id] => 16
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-27
+            [actividad] => Preventiva
+        )
+
+    [16] => Array
+        (
+            [id] => 17
+            [equipo] => Molino
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-27
+            [actividad] => Preventiva
+        )
+
+    [17] => Array
+        (
+            [id] => 18
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [18] => Array
+        (
+            [id] => 19
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [19] => Array
+        (
+            [id] => 20
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [20] => Array
+        (
+            [id] => 21
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [21] => Array
+        (
+            [id] => 22
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [22] => Array
+        (
+            [id] => 23
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [23] => Array
+        (
+            [id] => 24
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [24] => Array
+        (
+            [id] => 25
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [25] => Array
+        (
+            [id] => 26
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [26] => Array
+        (
+            [id] => 27
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [27] => Array
+        (
+            [id] => 28
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [28] => Array
+        (
+            [id] => 29
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [29] => Array
+        (
+            [id] => 30
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [30] => Array
+        (
+            [id] => 31
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [31] => Array
+        (
+            [id] => 32
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [32] => Array
+        (
+            [id] => 33
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [33] => Array
+        (
+            [id] => 34
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [34] => Array
+        (
+            [id] => 35
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [35] => Array
+        (
+            [id] => 36
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [36] => Array
+        (
+            [id] => 37
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [37] => Array
+        (
+            [id] => 38
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-18
+            [actividad] => Preventiva
+        )
+
+    [38] => Array
+        (
+            [id] => 39
+            [equipo] => Silo
+            [subEquipo] => Silo
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-05
+            [actividad] => Preventiva
+        )
+
+    [39] => Array
+        (
+            [id] => 40
+            [equipo] => Silo
+            [subEquipo] => Molino
+            [frecuencia] => 1 mes
+            [desde] => 2024-02-13
+            [actividad] => Correctiva
+        )
+
+    [40] => Array
+        (
+            [id] => 41
+            [equipo] => Silo
+            [subEquipo] => Molino
+            [frecuencia] => 6 meses
+            [desde] => 2024-01-01
+            [actividad] => Preventiva
+        )
+
+    [41] => Array
+        (
+            [id] => 42
+            [equipo] => Equipo 2
+            [subEquipo] => SubEquipo 1
+            [frecuencia] => 1 mes
+            [desde] => 2024-03-14
+            [actividad] => Preventiva
+        )
+
+)
+
