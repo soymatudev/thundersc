@@ -12,7 +12,7 @@ services:
       - ./thunder/template:/thundersc/thunder/template
       - ./thundercloud:/thundersc/thundercloud
     environment:
-      - HOST_URL=192.168.1.67
+      - HOST_URL=192.168.1.109
       - USER_DB=root
       - PASSWORD_DB=
       - PORT_DB=''

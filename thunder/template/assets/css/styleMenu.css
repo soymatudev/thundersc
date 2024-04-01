@@ -21183,7 +21183,7 @@ div.tagsinput {
 
 /* parámetros para configurar las pestañas */
 :root {
-  --tabs-border-color: #ABCDEF;
+  --tabs-border-color: #fff;
   --tabs-border-size: 3px;
   --tabs-text-color: white;
   --tabs-dark-color: #012345;
@@ -21301,21 +21301,21 @@ a {
   padding: 10px;
   border: var(--tabs-border-size) solid var(--tabs-border-color);
   border-radius: 10px 10px 0 0;
-  background-color:#fff;
-  color: #000;
+  color: #fff;
+  background-color: #505050;
     border-bottom: 0;
 }
 
 .tab:target>a,
 .tab:last-of-type>a {
-  color: #000;
-  background-color: #aaa;
-  z-index: 200;
+  color: #fff;
+  background-color: #191c24;
+  z-index: 00;
 }
 
 .tab:target~.tab:last-of-type>a {
-  color: #000;
-  background-color: #fff;
+  color: #fff;
+  background-color: #505050;
   z-index: 0;
 }
 
@@ -21325,7 +21325,6 @@ a {
 
 .navbar-menu-wrapper {
   height: 30px !important;
-  background: #070040;
 }
 
 .iframe {

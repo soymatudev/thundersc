@@ -21115,7 +21115,7 @@ div.tagsinput {
   transition: width 0.25s ease, margin 0.25s ease;
   width: 100%;
   min-height: calc(100vh - 70px);
-  padding-top: 70px;
+  padding-top: 10px;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
@@ -21127,7 +21127,7 @@ div.tagsinput {
 
 .content-wrapper {
   background: #000000;
-  padding: 1.875rem 1.75rem;
+  padding: .5rem .5rem;
   width: 100%;
   -webkit-flex-grow: 1;
   flex-grow: 1; }
