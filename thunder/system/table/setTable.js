@@ -73,15 +73,18 @@ class CustomDataTable {
       },
     };
 
+    
     if (this.dataTableIsInitialized) {
       this.dataTable.destroy();
     }
+    
 
     //var gridDiv = document.querySelector("#myGrid");
     var gridDiv = document.querySelector("#" + this.idTable);
     this.dataTable = new agGrid.createGrid(gridDiv, gridOptions);
     this.dataTableIsInitialized = true;
   }
+
 }
 
 /* 

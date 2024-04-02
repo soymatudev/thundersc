@@ -37,6 +37,7 @@
   <!-- Layout styles -->
   <link rel="stylesheet" href="/thunder/template/assets/css/style.css" />
   <link rel="stylesheet" href="/thunder/template/assets/css/styleArea.css" />
+  <link rel="stylesheet" href="/thunder/template/assets/css/styleProgressBar.css" />
   <!-- End layout styles -->
   <link rel="shortcut icon" href="/thunder/template/assets/images/favicon.png" />
 </head>

@@ -11184,7 +11184,7 @@ input[type="button"].btn-block {
   align-items: center; }
 
 .navbar-toggler {
-  padding: 0.25rem 0.75rem;
+  padding: 0.0rem 0.75rem;
   font-size: 1.25rem;
   line-height: 1;
   background-color: transparent;
@@ -21173,7 +21173,7 @@ div.tagsinput {
   position: absolute;
   
   height: 30px !important;
-  top: 6vh;
+  top: 8vh;
   left: -50px !important;
   max-width: 40px;
   padding: 0 !important;
@@ -21210,11 +21210,11 @@ div.tagsinput {
 .siloImg{
   position: absolute;
   left: 50%;
-  top: 60%;
+  top: 100%;
   transform: translate(-50%);
   height: 400px;
 }
 
 .gif-aviso{
-  height: 250px;
+  height: 150px;
 }

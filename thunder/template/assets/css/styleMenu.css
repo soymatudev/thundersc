@@ -21219,55 +21219,55 @@ a {
   /* en esta zona colocaremos las pestañas */
 }
 
-#tab1>a {
+#tab1>a, #tab1>.brn-tab-delete {
   --tabs-position: 0;
 }
 
-#tab2>a {
+#tab2>a, #tab2>.brn-tab-delete {
   --tabs-position: 1;
 }
 
-#tab3>a {
+#tab3>a, #tab3>.brn-tab-delete {
   --tabs-position: 2;
 }
 
-#tab4>a {
+#tab4>a, #tab4>.brn-tab-delete {
   --tabs-position: 3;
 }
 
-#tab5>a {
+#tab5>a, #tab5>.brn-tab-delete {
   --tabs-position: 4;
 }
 
-#tab6>a {
+#tab6>a, #tab6>.brn-tab-delete {
   --tabs-position: 5;
 }
 
-#tab7>a {
+#tab7>a, #tab7>.brn-tab-delete {
   --tabs-position: 6;
 }
 
-#tab8>a {
+#tab8>a, #tab8>.brn-tab-delete {
   --tabs-position: 7;
 }
 
-#tab9>a {
+#tab9>a, #tab9>.brn-tab-delete {
   --tabs-position: 8;
 }
-#tab10>a {
+#tab10>a, #tab10>.brn-tab-delete {
   --tabs-position: 9;
 }
-#tab11>a {
+#tab11>a, #tab11>.brn-tab-delete {
   --tabs-position: 10;
 }
-#tab12>a {
+#tab12>a, #tab12>.brn-tab-delete {
   --tabs-position: 11;
 }
-#tab13>a {
+#tab13>a, #tab13>.brn-tab-delete {
   --tabs-position: 12;
 }
 
-.tab>a {
+.tab>a{
   text-align: center;
   position: absolute;
   width: calc(var(--tabs-width));
@@ -21277,7 +21277,7 @@ a {
   /* posición de cada pestaña */
 }
 
-.sidebar-icon-only .tab>a {
+.sidebar-icon-only .tab>a{
   left: calc(var(--tabs-width) * var(--tabs-position) + 1%);
 }
 
@@ -21334,7 +21334,7 @@ height: 100vh;
 
 .tab-container,
 .iframe {
-  height: 860px !important;
+  height: 86vh !important;
   border: 0px;
   border-radius: 0px;
 }
@@ -21352,3 +21352,75 @@ height: 100vh;
 .sidebar-icon-only .navbar-w {
   left: 0px;
 }
+
+
+.tab>.brn-tab-delete{
+  position: absolute;
+  background: none;
+  border: none;
+  z-index: 999;
+  top: 0%;
+}
+
+.tab-delete{
+  color: #fff;
+}
+
+.tab>.brn-tab-delete {
+  left: calc(var(--tabs-width) * var(--tabs-position) + 16%);
+  /* posición de cada pestaña */
+}
+
+.sidebar-icon-only .tab>.brn-tab-delete {
+  left: calc(var(--tabs-width) * var(--tabs-position) + var(--tabs-width) - 10px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================================= */
+
+.nav-tabs-add li{
+  position: relative;
+  margin-right: 2px;
+}
+.nav-tabs-add>li>a{
+  text-decoration: none;
+  background-color: #eee;
+}
+.nav-tabs-add li span.glyphicon-remove{
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #999;
+  text-align: center;
+  line-height: 18px;
+  top: 50%;
+  margin-top: -10px;
+  right: 9px;
+  border-radius: 50%;
+  opacity: 0.6;
+  cursor: pointer;
+}
+.nav-tabs-add li span.glyphicon-remove:hover{
+  color: red;
+}
+.more-tab{
+  padding-right: 35px!important;
+}
+.tab-content{
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-top: 1px solid transparent;
+}
+.tooltip-inner{white-space: nowrap;}

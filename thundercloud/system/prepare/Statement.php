@@ -6,7 +6,7 @@ Fecha de Creación: 2024
 ===============================================================================
 */
 
-require_once('../../Connection/Connection.php');
+require_once('/thundersc/thundercloud/system/Connection/Connection.php');
 
 class Statement
 {
