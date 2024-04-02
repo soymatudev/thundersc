@@ -18,7 +18,7 @@ class Connection {
     $USER = getenv('USER_DB') ?: "root";
     $PASSWORD = getenv('PASSWORD_DB') ?: "";
 
-    $dsn = "mysql:host=$HOST;dbname=$DBNAME;charset=utf8";
+    $dsn = "mysql:host=$HOST;port=$PORT;dbname=$DBNAME;charset=utf8";
 
     file_put_contents(self::LOG_FILE, "\n=====================================================\n", FILE_APPEND);
     file_put_contents(self::LOG_FILE, "\nConnecting...\n", FILE_APPEND);

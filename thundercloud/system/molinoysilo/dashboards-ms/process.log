@@ -6773,3 +6773,2161 @@ Execute => Array
 
 )
 
+
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: could not find driver
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: could not find driver
+Error de conexión
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: could not find driver
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: could not find driver
+Error de conexión
+
+Execute => Correct
+
+Execute Activos => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: could not find driver
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: could not find driver
+Error de conexión
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: could not find driver
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: could not find driver
+Error de conexión
+
+Execute => Correct
+
+Execute Activos => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [tiempo_trabajado_en_horas] => 16.6414
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [dato_1] => 40.0
+                )
+
+            [1] => Array
+                (
+                    [dato_1] => 40.0
+                )
+
+            [2] => Array
+                (
+                    [dato_1] => 40.0
+                )
+
+        )
+
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 1
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [tiempo_trabajado_en_horas] => 16.6414
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [dato_1] => 40.0
+                )
+
+            [1] => Array
+                (
+                    [dato_1] => 40.0
+                )
+
+            [2] => Array
+                (
+                    [dato_1] => 40.0
+                )
+
+        )
+
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 1
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [tiempo_trabajado_en_horas] => 16.6414
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [dato_1] => 40.0
+                )
+
+            [1] => Array
+                (
+                    [dato_1] => 40.0
+                )
+
+            [2] => Array
+                (
+                    [dato_1] => 40.0
+                )
+
+        )
+
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 1
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [tiempo_trabajado_en_horas] => 16.6414
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [dato_1] => 40.0
+                )
+
+            [1] => Array
+                (
+                    [dato_1] => 40.0
+                )
+
+            [2] => Array
+                (
+                    [dato_1] => 40.0
+                )
+
+        )
+
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 1
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [tiempo_trabajado_en_horas] => 16.6414
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [dato_1] => 40.0
+                )
+
+            [1] => Array
+                (
+                    [dato_1] => 40.0
+                )
+
+            [2] => Array
+                (
+                    [dato_1] => 40.0
+                )
+
+        )
+
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 1
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [tiempo_trabajado_en_horas] => 16.6414
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [dato_1] => 40.0
+                )
+
+            [1] => Array
+                (
+                    [dato_1] => 40.0
+                )
+
+            [2] => Array
+                (
+                    [dato_1] => 40.0
+                )
+
+        )
+
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 1
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [tiempo_trabajado_en_horas] => 16.6414
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [dato_1] => 40.0
+                )
+
+            [1] => Array
+                (
+                    [dato_1] => 40.0
+                )
+
+            [2] => Array
+                (
+                    [dato_1] => 40.0
+                )
+
+        )
+
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 1
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.41
+                    [dato_1] => 138.53 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
