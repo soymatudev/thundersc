@@ -9,100 +9,110 @@ Descripción: Fichero para la pagina principal donde se obtienen los datos de
 let idSilo = 0;
 document.addEventListener("DOMContentLoaded", async function () {
   $("#menuIN").hide();
-  await getTiempoTS();
-  await getActivos();
-  await getVolumen();
-  await getSiloAlert();
+  await getNameMol();
+  await count();
+  await getDataHistorial();
+  await getTiempoT();
 
+  // Obtenemos los Charts Creados para utilizarlos
+/*   const char1 = document.getElementById("Char1");
+  const char2 = document.getElementById("Char2");
+  const char3 = document.getElementById("Char3");
+
+  fullSChar(char1, "divHistorialA");
+  fullSChar(char2, "divDonutActive");
+  fullSChar(char3, "divTiempoT"); */
 });
-
-// Creamos el Chart Tiempo Total por Semana para la pagina principal
-async function getTiempoTS() {
-  tiempoData = await getData("/thundercloud/system/dashboards-ms/call.php", "getTiempoTS");
-  const nombres = Object.keys(tiempoData);
-  console.log(tiempoData);
-  processTiempoTS(nombres, tiempoData);
+// Obtenemos el nombre de los elementos
+async function getNameMol() {
+  const tbody = document.getElementById("container-tablaOne");
+  tbody.innerHTML = "";
+  let keyData = "getMol";
+  let body = `variableKey=${keyData}`;
+  let nombres = await getDataFetch("/thundercloud/system/molinoysilo/molino/call.php", body);
+  setNameMol(nombres);
+  await Promise.all(
+    nombres.map((name, index) => dataMol(index, name).then(() => {}))
+  );
 }
-// Creamos el Chart Donut Activos para la pagina principal
-async function getActivos() {
-  activos = await getData("/thundercloud/system/dashboards-ms/call.php", "getActivos");
-  unable = 0;
-  disable = 0;
+// Generamos las celdas y filas de la tabla
+function setNameMol(data) {
+  let p = -1;
+  let numRow = Math.ceil(data.length / 2);
+  for (let j = 0; j < numRow; j++) {
+    let idRow = "FilaCell-" + j;
+    createFila(idRow);
 
-  activos.forEach((element) => {
-    element == true ? unable++ : disable++;
-  });
-
-  donutActive(unable, disable);
-}
-// Creamos el Chart Volumen por Silos
-async function getVolumen() {
-  volumen = await getData("/thundercloud/system/dashboards-ms/call.php", "getVolumen");
-  nombres = Object.keys(volumen);
-  console.log(volumen);
-  console.log(volumen["SILO-A"]);
-  console.log(volumen["SILO-A"][0]);
-  console.log(volumen["SILO-A"][0].porcentaje);
-  console.log(volumen["SILO-A"][0].dato_1);
-  createSilos(nombres, volumen);
-}
-
-function createSilos(nombres, volumen) {
-  const divSilos = document.getElementById("container-tablaOne");
-  nombres.forEach((nombre) => {
-    const silo = document.createElement("div");
-    silo.className = "silo col-12";
-    silo.id = nombre;
-    silo.innerHTML = `
-    <h6>${nombre}</h6>
-    <p>${volumen["SILO-A"][0].porcentaje}%</p>
-    <p>${volumen["SILO-A"][0].dato_1} de ${volumen["SILO-A"][0].materia_prima}</p>
-    <img src="/thunder/template/assets/images/silo1.png" alt="Silo" class="siloImg">
-    <div class="container-progressbar">
-            <input type="checkbox" id="water"/>
-            <label for="water" class="label-progress">
-              <div id="fill"></div>
-            </label>
-          </div>
-        </div>
-  `;
-    divSilos.appendChild(silo);
-  });
-
-  changeWidthAnimation(volumen["SILO-A"][0].porcentaje);
-}
-
-function changeWidthAnimation(volumen) {
-  const progressBar = document.querySelector('label div');
-  const desiredWidth = volumen;
-
-  if (desiredWidth) {
-    progressBar.style.setProperty('--progress-width', desiredWidth + '%'); // Establece el ancho usando una variable CSS
+    for (let i = 0; i < 2 && i < data.length ; i++) {
+      p++;
+      let element = data[p].alias;
+      createData(p, idRow, element);
+    }
   }
 }
-
-// Creamos el Chart Volumen por Silos debajo de X porcentaje
-async function getSiloAlert() {
-  volumen = await getData("/thundercloud/system/dashboards-ms/call.php", "getVolumen");
-  nombres = Object.keys(volumen);
-
-  unable = 0;
-  disable = 0;
-  nombres.forEach((nombre) => {
-    volumen[nombre] >= 30 ? unable++ : disable++;
-  });
-
-  donutSilo(unable, disable);
+// Creamos las filas de la tabla
+function createFila(idRow) {
+  const tbody = document.getElementById("container-tablaOne");
+  const newRowCell = document.createElement("tr");
+  newRowCell.classList.add("row-data");
+  newRowCell.id = idRow;
+  tbody.appendChild(newRowCell);
 }
-// Obtenemos los datos con una Solicitud Fetch
-async function getData(url, keyData) {
+// Creamos las celdas de la tabla
+function createData(index, idRow, element) {
+  const newDataCell = document.createElement("td");
+  const e = element;
+  console.log(e);
+  newDataCell.classList.add("col-data");
+  newDataCell.id = "Cell-" + index;
+  newDataCell.textContent = element;
+  const row = document.getElementById(idRow);
+  row.appendChild(newDataCell);
+}
+// Obtenemos los datos para la tabla
+async function dataMol(idContainer, nameMol) {
+  let keyData = "getAmpere";
+  let body = `variableKey=${keyData}&variablePHP=${nameMol}`;
+  let data = await getDataFetch("/thundercloud/system/molinoysilo/molino/call.php", body);
+  createImg(idContainer, data);
+}
+
+let unable = 0;
+let disable = 0;
+// Generamos las imagenes de los molinos
+function createImg(idContainer, element) {
+  const img = document.createElement("img");
+  img.classList = element ? "Activo" : "Inactivo";
+  img.classList.add("gif-aviso");
+  img.src = element ? "/thunder/template/assets/images/propellerGif.gif" : "/thunder/template/assets/images/alertR.gif";
+
+  const div = document.getElementById("Cell-" + idContainer);
+  div.appendChild(img);
+
+  element ? unable++ : disable++;
+}
+// Obtenemos el numero de Molinos Activos e Inactivos
+function count() {
+  let molinosActivos = 0;
+  let molinosInactivos = 0;
+  molinosActivos = document.getElementsByClassName("Activo");
+  molinosInactivos = document.getElementsByClassName("Inactivo");
+
+  const cantidadActiva = molinosActivos.length;
+  const cantidadInactiva = molinosInactivos.length;
+
+  donutActive(cantidadActiva, cantidadInactiva);
+}
+
+// Realizamos la solicitud Fetch para traer los datos necesarios en cada caso, por ello el cuerpo de la solicitud es un parametro
+async function getDataFetch(url, body) {
   try {
     const response = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
       },
-      body: `variablePHP=${keyData}`,
+      body: body,
     });
 
     if (!response.ok) {
@@ -110,6 +120,7 @@ async function getData(url, keyData) {
     }
 
     const data = await response.json();
+    console.log(data);
     return data;
   } catch (error) {
     console.error("Error:", error);

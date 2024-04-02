@@ -70,13 +70,13 @@
 
           <div class="row">
 
-          <div class="col-md-2 grid-margin stretch-card">
+          <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <div class="container-zone">
                     <div class="work-zone d-flex">
                       <div class="container-grid">
-                        <div class="grid ag-theme-quartz-dark" id="container-tablaOne" style="height: 450px">
+                        <div class="grid ag-theme-quartz-dark" id="container-tablaOne" style="height: 500px">
                           <!-- Aqui se genera un grid -->
                         </div>
                       </div>
@@ -85,13 +85,13 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-10 grid-margin stretch-card">
+            <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <div class="container-zone">
                     <div class="work-zone d-flex">
                       <div class="container-grid">
-                        <div class="grid ag-theme-quartz-dark" id="container-tablaTwo" style="height: 450px">
+                        <div class="grid ag-theme-quartz-dark" id="container-tablaFour" style="height: 500px">
                           <!-- Aqui se genera un grid -->
                         </div>
                       </div>
@@ -111,7 +111,7 @@
                   <div class="container-zone">
                     <div class="work-zone d-flex">
                       <div class="container-grid">
-                        <div class="grid ag-theme-quartz-dark" id="container-tablaThree" style="height: 450px">
+                        <div class="grid ag-theme-quartz-dark" id="container-tablaTwo" style="height: 500px">
                           <!-- Aqui se genera un grid -->
                         </div>
                       </div>
@@ -126,7 +126,7 @@
                   <div class="container-zone">
                     <div class="work-zone d-flex">
                       <div class="container-grid">
-                        <div class="grid ag-theme-quartz-dark" id="container-tablaFour" style="height: 450px">
+                        <div class="grid ag-theme-quartz-dark" id="container-tablaThree" style="height: 500px">
                           <!-- Aqui se genera un grid -->
                         </div>
                       </div>
@@ -177,7 +177,7 @@
   <script src="/thunder/template/assets/js/setTable.js"></script>
   <script src="../../sweetAlert2/sweetAlert.js"></script>
   <script src="./createChart.js"></script>
-  <script src="./molino.js"></script>
+  <script src="./silo.js"></script>
   <script src="/thunder/template/assets/js/menuIN-OUT.js"></script>
   <script src="../../dataFetch/dataFetch.js"></script>
   <script src="../../combos/setCombos.js"></script>
