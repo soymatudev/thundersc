@@ -8,4 +8,8 @@ if ($key == "setComboCedis") {
     echo equipo();
 } else if ($key == "setComboGrupo") {
     echo grupo();
+} else if ($key == "setComboZona") {
+    echo zona();
+} else if ($key == "setComboArea") {
+    echo area();
 }

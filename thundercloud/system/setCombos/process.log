@@ -38283,3 +38283,483 @@ Execute => Array
 
 )
 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [cedis] => Maizoro
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [cedis] => Maizoro
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [zona] => M01
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+    [1] => Array
+        (
+            [alias] => SiloP
+        )
+
+    [2] => Array
+        (
+            [alias] => SILO-A
+        )
+
+    [3] => Array
+        (
+            [alias] => SILO-C
+        )
+
+    [4] => Array
+        (
+            [alias] => Silo4B
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [cedis] => Maizoro
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [cedis] => Maizoro
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [cedis] => Maizoro
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [cedis] => Maizoro
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [cedis] => Maizoro
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [cedis] => Maizoro
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [zona] => M01
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+    [1] => Array
+        (
+            [alias] => SiloP
+        )
+
+    [2] => Array
+        (
+            [alias] => SILO-A
+        )
+
+    [3] => Array
+        (
+            [alias] => SILO-C
+        )
+
+    [4] => Array
+        (
+            [alias] => Silo4B
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [cedis] => Maizoro
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [zona] => M01
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+    [1] => Array
+        (
+            [alias] => SiloP
+        )
+
+    [2] => Array
+        (
+            [alias] => SILO-A
+        )
+
+    [3] => Array
+        (
+            [alias] => SILO-C
+        )
+
+    [4] => Array
+        (
+            [alias] => Silo4B
+        )
+
+)
+

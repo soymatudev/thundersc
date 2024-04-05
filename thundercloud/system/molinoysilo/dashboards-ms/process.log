@@ -14517,3 +14517,997 @@ Execute => Array
 
 )
 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+    [1] => Array
+        (
+            [alias] => Silo4B
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+        )
+
+    [Silo4B] => Array
+        (
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [tiempo_trabajado_en_horas] => 87.8578
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [dato_1] => 1000.0
+                )
+
+            [1] => Array
+                (
+                    [dato_1] => 50
+                )
+
+            [2] => Array
+                (
+                    [dato_1] => 50
+                )
+
+        )
+
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 1
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+    [1] => Array
+        (
+            [alias] => Silo4B
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+        )
+
+    [Silo4B] => Array
+        (
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+    [1] => Array
+        (
+            [alias] => Silo4B
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+        )
+
+    [Silo4B] => Array
+        (
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [tiempo_trabajado_en_horas] => 87.8578
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [dato_1] => 1000.0
+                )
+
+            [1] => Array
+                (
+                    [dato_1] => 50
+                )
+
+            [2] => Array
+                (
+                    [dato_1] => 50
+                )
+
+        )
+
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 1
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+    [1] => Array
+        (
+            [alias] => Silo4B
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+        )
+
+    [Silo4B] => Array
+        (
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [tiempo_trabajado_en_horas] => 87.8578
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [dato_1] => 1000.0
+                )
+
+            [1] => Array
+                (
+                    [dato_1] => 50
+                )
+
+            [2] => Array
+                (
+                    [dato_1] => 50
+                )
+
+        )
+
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 1
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+    [1] => Array
+        (
+            [alias] => Silo4B
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+        )
+
+    [Silo4B] => Array
+        (
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [tiempo_trabajado_en_horas] => 87.8578
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [dato_1] => 1000.0
+                )
+
+            [1] => Array
+                (
+                    [dato_1] => 50
+                )
+
+            [2] => Array
+                (
+                    [dato_1] => 50
+                )
+
+        )
+
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 1
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => SILO-A
+        )
+
+    [1] => Array
+        (
+            [alias] => Silo4B
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+        )
+
+    [Silo4B] => Array
+        (
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [2002] Operation timed out
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [2002] Operation timed out
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [2002] Operation timed out
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [2002] Operation timed out
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [2002] Operation timed out
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [2002] Operation timed out
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [tiempo_trabajado_en_horas] => 87.8578
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [tiempo_trabajado_en_horas] => 87.8578
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [tiempo_trabajado_en_horas] => 87.8578
+                )
+
+        )
+
+)
+

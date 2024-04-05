@@ -21084,7 +21084,7 @@ div.tagsinput {
   .sidebar-icon-only.rtl .sidebar .nav .nav-item.profile {
     padding-right: 0; }
   .sidebar-icon-only .page-body-wrapper {
-    width: calc(100% - 70px);
+    width: calc(100% - 0px);
     transition: all 0.25s ease;
     -webkit-transition: all 0.25s ease;
     -moz-transition: all 0.25s ease;
@@ -21173,7 +21173,7 @@ div.tagsinput {
   position: absolute;
   
   height: 30px !important;
-  top: 8vh;
+  top: 2vh;
   left: -50px !important;
   max-width: 40px;
   padding: 0 !important;
@@ -21192,11 +21192,10 @@ div.tagsinput {
   width: 30px;
   height: 30px;
   background: #191c2400 !important;
-  color: #191c24 !important;
+  color: #ffffff !important;
 }
 
 .sidebar-icon-only .arrow-icon {
-  background: #191c24 !important;
   color: #ffffff !important;
 }
 

@@ -57,3 +57,59 @@ async function setComboEquipoMS() {
     );
   });
 }
+
+async function setComboEquipoMS() {
+  const comboEquipo = $("#comboEquipo");
+  const cedis = $("#comboCedis option:selected").text();
+  const grupo = $("#comboGrupo option:selected").text();
+
+  const dataF = new FormData();
+  dataF.append("variablekey", "setComboEquipo");
+  dataF.append("cedis", cedis);
+  dataF.append("grupo", grupo);
+
+  const url = "/thundercloud/system/setCombos/call.php";
+  const header = { "Content-Type": "multipart/form-data" };
+  const data = await dataFetch(url, dataF);
+  console.log(data);
+
+  data.forEach((option, index) => {
+    comboEquipo.append(
+      `<option value="${index}">${option.alias}</option>`
+    );
+  });
+}
+
+async function setComboZona() {
+  const dataF = new FormData();
+  dataF.append("variablekey", "setComboZona");
+
+  const url = "/thundercloud/system/setCombos/call.php";
+  const header = { "Content-Type": "multipart/form-data" };
+  const data = await dataFetch(url, dataF);
+
+  $("#comboZona").innerHTML = "";
+
+  data.forEach((option, index) => {
+    $("#comboZona").append(
+      `<option value="${index}">${option.nombre}</option>`
+    );
+  });
+}
+
+async function setComboArea() {
+  const dataF = new FormData();
+  dataF.append("variablekey", "setComboArea");
+
+  const url = "/thundercloud/system/setCombos/call.php";
+  const header = { "Content-Type": "multipart/form-data" };
+  const data = await dataFetch(url, dataF);
+
+  $("#comboArea").innerHTML = "";
+
+  data.forEach((option, index) => {
+    $("#comboArea").append(
+      `<option value="${index}">${option.nombre}</option>`
+    );
+  });
+}

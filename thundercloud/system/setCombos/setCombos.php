@@ -114,6 +114,62 @@ class Querys extends Statement
     }
   }
 
+  public static function getZona()
+  {
+    $con = Connection::connect();
+
+    if (!$con) {
+      file_put_contents(self::LOG_FILE, "\nError de conexión\n", FILE_APPEND);
+      return null;
+    }
+
+    $query = "SELECT DISTINCT nombre FROM de_zona";
+    $stmt = self::prepareStatement($query);
+    if ($stmt) {
+      $result = self::executePreparedQuery($stmt);
+
+      if ($result !== false) {
+        file_put_contents(self::LOG_FILE, "\nExecute => Correct => Obentenemos los nombres\n", FILE_APPEND);
+        file_put_contents(self::LOG_FILE, "\nExecute => " . print_r($result, true) . "\n", FILE_APPEND);
+        return $result;
+      } else {
+        file_put_contents(self::LOG_FILE, "\nExecute => Incorrect\n", FILE_APPEND);
+        return ["Execute" => "Incorrect"];
+      }
+    } else {
+      file_put_contents(self::LOG_FILE, "\nExecute => Incorrect sin stmt\n", FILE_APPEND);
+      return ["Execute" => "Incorrect"];
+    }
+  }
+
+  public static function getArea()
+  {
+    $con = Connection::connect();
+
+    if (!$con) {
+      file_put_contents(self::LOG_FILE, "\nError de conexión\n", FILE_APPEND);
+      return null;
+    }
+
+    $query = "SELECT DISTINCT nombre FROM de_area";
+    $stmt = self::prepareStatement($query);
+    if ($stmt) {
+      $result = self::executePreparedQuery($stmt);
+
+      if ($result !== false) {
+        file_put_contents(self::LOG_FILE, "\nExecute => Correct => Obentenemos los nombres\n", FILE_APPEND);
+        file_put_contents(self::LOG_FILE, "\nExecute => " . print_r($result, true) . "\n", FILE_APPEND);
+        return $result;
+      } else {
+        file_put_contents(self::LOG_FILE, "\nExecute => Incorrect\n", FILE_APPEND);
+        return ["Execute" => "Incorrect"];
+      }
+    } else {
+      file_put_contents(self::LOG_FILE, "\nExecute => Incorrect sin stmt\n", FILE_APPEND);
+      return ["Execute" => "Incorrect"];
+    }
+  }
+
   public function cerrarConexion()
   {
     // Cierra la conexion cuando ya no sea necesaria
@@ -151,4 +207,22 @@ function equipo()
   $Querys->cerrarConexion(); // Cierra la conexión después de obtener los datos
   header('Content-Type: application/json');
   return json_encode($equipoData);
+}
+
+function zona()
+{
+  $Querys = new Querys();
+  $cedisData = $Querys->getZona();
+  $Querys->cerrarConexion(); // Cierra la conexión después de obtener los datos
+  header('Content-Type: application/json');
+  return json_encode($cedisData);
+}
+
+function area()
+{
+  $Querys = new Querys();
+  $cedisData = $Querys->getArea();
+  $Querys->cerrarConexion(); // Cierra la conexión después de obtener los datos
+  header('Content-Type: application/json');
+  return json_encode($cedisData);
 }
