@@ -30,6 +30,7 @@ async function getNameMol() {
   let keyData = "getMol";
   let body = `variableKey=${keyData}`;
   let nombres = await getDataFetch("/thundercloud/system/molinoysilo/molino/call.php", body);
+  console.log(nombres);
   setNameMol(nombres);
   await Promise.all(
     nombres.map((name, index) => dataMol(index, name).then(() => {}))

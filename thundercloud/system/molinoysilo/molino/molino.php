@@ -37,8 +37,13 @@ class Querys extends Statement
     WHERE ma.id_equipo = eq.id 
     AND eq.id_agrupacion = ag.id 
     AND ag.id_grupo = 1";
+
     $stmt = self::prepareStatement($query);
+
+    //echo "aaaaaaaaaaaaaaaa";
+    
     if ($stmt) {
+      
       $result = self::executePreparedQuery($stmt);
 
       if ($result !== false) {
@@ -49,6 +54,9 @@ class Querys extends Statement
         file_put_contents(self::LOG_FILE, "\nExecute => Incorrect\n", FILE_APPEND);
         return ["Execute" => "Incorrect"];
       }
+    } else {
+      file_put_contents(self::LOG_FILE, "\nExecute => Incorrect sin stmt\n", FILE_APPEND);
+      return ["Execute" => "Incorrect"];
     }
   }
 
@@ -76,7 +84,10 @@ class Querys extends Statement
         file_put_contents(self::LOG_FILE, "\nExecute => Correct\n", FILE_APPEND);
         file_put_contents(self::LOG_FILE, "\nExecute AmpereMol => ".print_r($resultados, true)."\n", FILE_APPEND);
        
-      } 
+      } else {
+        file_put_contents(self::LOG_FILE, "\nExecute => Incorrect sin stmt\n", FILE_APPEND);
+        return ["Execute" => "Incorrect"];
+      }
     }
 
     $contA = 0;
@@ -125,11 +136,16 @@ class Querys extends Statement
         if ($stmt) {
           $stmt->bindParam(':value', $value['alias']);
           $resultados[$value['alias']] = self::executePreparedQuery($stmt);
-          file_put_contents(self::LOG_FILE, "\nExecute => Correct\n", FILE_APPEND);
-          file_put_contents(self::LOG_FILE, "\nExecute HistorialA => ".print_r($resultados, true)."\n", FILE_APPEND);
-          return $resultados;
+          if ($resultados !== false) {
+            file_put_contents(self::LOG_FILE, "\nExecute => Correct\n", FILE_APPEND);
+            file_put_contents(self::LOG_FILE, "\nExecute HistorialA => ".print_r($resultados, true)."\n", FILE_APPEND);
+            return $resultados;
+          } else {
+            file_put_contents(self::LOG_FILE, "\nExecute => Incorrect\n", FILE_APPEND);
+            return ["Execute" => "Incorrect"];
+          }
         } else {
-          file_put_contents(self::LOG_FILE, "\nExecute => Incorrect\n", FILE_APPEND);
+          file_put_contents(self::LOG_FILE, "\nExecute => Incorrect sin stmt\n", FILE_APPEND);
           return ["Execute" => "Incorrect"];
         }
       }
@@ -163,9 +179,17 @@ class Querys extends Statement
         if ($stmt) {
           $stmt->bindParam(':value', $value['alias']);
           $resultados[$value['alias']] = self::executePreparedQuery($stmt);
-          file_put_contents(self::LOG_FILE, "\nExecute => Correct\n", FILE_APPEND);
-          file_put_contents(self::LOG_FILE, "\nExecute HistorialTiempo => ".print_r($resultados, true)."\n", FILE_APPEND);
-          return $resultados;
+          if ($resultados !== false) {
+            file_put_contents(self::LOG_FILE, "\nExecute => Correct\n", FILE_APPEND);
+            file_put_contents(self::LOG_FILE, "\nExecute HistorialTiempo => ".print_r($resultados, true)."\n", FILE_APPEND);
+            return $resultados;
+          } else {
+            file_put_contents(self::LOG_FILE, "\nExecute => Incorrect\n", FILE_APPEND);
+            return ["Execute" => "Incorrect"];
+          }
+        } else {
+          file_put_contents(self::LOG_FILE, "\nExecute => Incorrect sin stmt\n", FILE_APPEND);
+          return ["Execute" => "Incorrect"];
         }
       }
     }
@@ -194,9 +218,17 @@ class Querys extends Statement
         if ($stmt) {
           $stmt->bindParam(':value', $value['alias']);
           $resultados[$value['alias']] = self::executePreparedQuery($stmt);
-          file_put_contents(self::LOG_FILE, "\nExecute => Correct\n", FILE_APPEND);
-          file_put_contents(self::LOG_FILE, "\nExecute TiempoT => ".print_r($resultados, true)."\n", FILE_APPEND);
-          return $resultados;
+          if ($resultados !== false) {
+            file_put_contents(self::LOG_FILE, "\nExecute => Correct\n", FILE_APPEND);
+            file_put_contents(self::LOG_FILE, "\nExecute TiempoT => ".print_r($resultados, true)."\n", FILE_APPEND);
+            return $resultados;
+          } else {
+            file_put_contents(self::LOG_FILE, "\nExecute => Incorrect\n", FILE_APPEND);
+            return ["Execute" => "Incorrect"];
+          }
+        } else {
+          file_put_contents(self::LOG_FILE, "\nExecute => Incorrect sin stmt\n", FILE_APPEND);
+          return ["Execute" => "Incorrect"];
         }
       }
     }
@@ -213,7 +245,9 @@ function mol()
 {
   $setMol = new Querys();
   $molData = $setMol->getMol();
-  $setMol->cerrarConexion();
+  
+  //$setMol->cerrarConexion();
+  //return "aaaaaaaaaaaaaaaa";
   header('Content-Type: application/json');
   return json_encode($molData);
 }
@@ -222,7 +256,7 @@ function ampere()
 {
   $setMol = new Querys();
   $molData = $setMol->AmpereMol();
-  $setMol->cerrarConexion();
+  //$setMol->cerrarConexion();
   header('Content-Type: application/json');
   return json_encode($molData);
 }
@@ -231,7 +265,7 @@ function historial()
 {
   $setHistorial = new Querys();
   $historialData = $setHistorial->getHistorialA();
-  $setHistorial->cerrarConexion();
+  //$setHistorial->cerrarConexion();
   header('Content-Type: application/json');
   return json_encode($historialData);
 }
@@ -240,7 +274,7 @@ function historialTiempo()
 {
   $setHistorial = new Querys();
   $historialData = $setHistorial->getHistorialTiempo();
-  $setHistorial->cerrarConexion();
+  //$setHistorial->cerrarConexion();
   header('Content-Type: application/json');
   return json_encode($historialData);
 }
@@ -249,7 +283,7 @@ function tiempoT()
 {
   $setTiempo = new Querys();
   $tiempoT = $setTiempo->getTiempoT();
-  $setTiempo->cerrarConexion();
+  //$setTiempo->cerrarConexion();
   header('Content-Type: application/json');
   return json_encode($tiempoT);
 }

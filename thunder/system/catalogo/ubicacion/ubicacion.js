@@ -2,10 +2,12 @@ let tableOne = '';
 let tableTwo = '';
 let tableThree = '';
 document.addEventListener("DOMContentLoaded" , async function () {
-  tableOne = new CustomDataTable("container-tableOne");
-  tableTwo = new CustomDataTable("container-tableTwo");
-  tableThree = new CustomDataTable("container-tableThree");
+  tableOne = new CustomDataTable("container-tablaOne");
+  tableTwo = new CustomDataTable("container-tablaTwo");
+  tableThree = new CustomDataTable("container-tablaThree");
 
+  await setComboZona();
+  await setComboArea();
   await init();
   
   $("#btn_ZA").on("click", async function () {
@@ -47,12 +49,14 @@ async function init() {
       $("#divTipo").show();
       $("#divZona").hide();
       $("#divArea").hide();
+      $("#divNombre").show();
     } else if ($("#comboOperacion").val() === "1") {
       $("#btn_ZA").hide();
       $("#btn_Relacion").show();
       $("#divTipo").hide();
       $("#divZona").show();
       $("#divArea").show();
+      $("#divNombre").hide(); 
     }
   });
 
@@ -89,11 +93,17 @@ async function setArea () {
 }
 
 async function addRelacion() {
+  const zona = $("#comboZona").select2('data')[0].text;
+  const area = $("#comboArea").select2('data')[0].text;
+
   const dataF = new FormData();
 
   dataF.append("variablekey", "addRelacion");
-  dataF.append("zona", $("#comboZona").value().trim());
-  dataF.append("area", $("#comboArea").value().trim());
+  dataF.append("zona", zona);
+  dataF.append("area", area);
+
+  console.log(zona);
+  console.log(area);
 
   const url = "/thundercloud/system/catalogo/ubicacion/call.php";
   const header = { "Content-Type": "multipart/form-data" };
@@ -107,10 +117,10 @@ async function showTable (catalogo) {
 
   dataF.append("variablekey", "showTable");
   dataF.append("catalogo", catalogo);
-console.log(catalogo);
+
   const url = "/thundercloud/system/catalogo/ubicacion/call.php";
   const header = { "Content-Type": "multipart/form-data" };
-  const data = await dataFetch(url, dataF, header);
+  const data = await dataFetch(url, dataF);
 
   console.log(data);
 

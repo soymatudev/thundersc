@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="/thunder/template/assets/vendors/flag-icon-css/css/flag-icon.min.css" />
   <link rel="stylesheet" href="/thunder/template/assets/vendors/owl-carousel-2/owl.carousel.min.css" />
   <link rel="stylesheet" href="/thunder/template/assets/vendors/owl-carousel-2/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="/thunder/template/assets//vendors/select2/select2.min.css">
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <!-- endinject -->
@@ -47,43 +48,86 @@
       <div class="box-form bordes_redondeados shadow select-area" id="select-area">
 
         <div class="container-c-g">
-          <p class="label-c-g">cedis:</p>
-          <select class="select col-md-2" name="materia" tabindex="-1" aria-hidden="true" id="comboCedis">
-            <option data-select2-id="1"></option>
-          </select>
 
-          <p class="label-c-g">Grupo:</p>
-          <select class="select col-md-2" name="materia" tabindex="-1" aria-hidden="true" id="comboGrupo">
-            <option data-select2-id="1"></option>
-          </select>
+          <div id="divOperacion">
+            <p class="label-c-g">Operación:</p>
+            <select class="select " name="materia" tabindex="-1" aria-hidden="true" id="comboOperacion">
+              <option value="0" >Crear</option>
+              <option value="1">Relacionar</option>
+              <!-- <option data-select2-id="4">Pepe</option>
+              <option data-select2-id="5">Roberr</option> -->
+            </select>
+          </div>  
 
-          <p class="label-c-g">Equipo:</p>
-          <select class="select col-md-2" name="materia" tabindex="-1" aria-hidden="true" id="comboEquipo">
-            <option data-select2-id="1"></option>
-          </select>
+          <div id="divTipo">
+            <p class="label-c-g">Tipo:</p>
+            <select class="select col-md-2" name="materia" tabindex="-1" aria-hidden="true" id="comboFormato">
+              <option value="0">Equipo</option>
+              <option value="1">SubEquipo</option>
+              <option value="2">Componentes</option>
+              <option value="3">Clasificación</option>
+            </select>
+          </div>
 
-          <p class="label-c-g">F.Inicial:</p>
-          <input type="date" class="form_input bordes_redondeados input-area" name="f_inicial" id="f_inicial" />
+          <div id="divNombre">
+            <p class="label-c-g">Nombre:</p>
+            <input type="text" class="form_input bordes_redondeados input-area" name="nombre" id="nombre" />
+          </div>
 
-          <p class="label-c-g">F.Final:</p>
-          <input type="date" class="form_input bordes_redondeados input-area" name="f_final" id="f_final" />
+          <div id="divNumSerie">
+            <p class="label-c-g">Num. Serie:</p>
+            <input type="text" class="form_input bordes_redondeados input-area" name="nombre" id="nombre" />
+          </div>
 
+          <div id="divClasif">
+            <p class="label-c-g">Clasificación:</p>
+            <select class="select col-md-2" name="materia" tabindex="-1" aria-hidden="true" id="comboClasif">
+              <option value="0"></option>
+            </select>
+          </div>
+
+          <div id="divUbicacion">
+            <p class="label-c-g">Ubicacion:</p>
+            <select class="select col-md-2" name="materia" tabindex="-1" aria-hidden="true" id="comboUbicacion">
+              <option value="0"></option>
+            </select>
+          </div>
+
+          <div id="divZona">
+            <p class="label-c-g">Zona:</p>
+            <select class="select col-md-2" name="materia" tabindex="-1" aria-hidden="true" id="comboZona">
+              <option value="0">Zona</option>
+              <option value="1">Area</option>
+            </select>
+          </div>
+
+          <div id="divArea">
+            <p class="label-c-g">Area:</p>
+            <select class="select col-md-2" name="materia" tabindex="-1" aria-hidden="true" id="comboArea">
+              <option value="0">Zona</option>
+              <option value="1">Area</option>
+            </select>
+          </div>
+
+          <div id="divComponentes">
+            <p class="label-c-g">Componentes:</p>
+            <select class="select col-md-2" name="materia" tabindex="-1" aria-hidden="true" id="comboComponentes">
+              <option value="0"></option>
+            </select>
+          </div>
+
+          
         </div>
-
-        <!--  <div class="container-c-g">
-          <p class="label-c-g">Lote:</p>
-          <input type="text" class="form_input bordes_redondeados input-area" name="lote" id="inputLote" />
-        </div>
-        <div class="container-c-g">
-          <p class="label-c-g">Archivo:</p>
-          <input type="file" class="btn-file" id="file" name="file" />
-        </div> -->
 
         <div class="container-c-g container-button">
-          <button class="bordes_redondeados shadow btn_consult btn" id="btn_consult">
+          <button class="bordes_redondeados shadow btn_consult btn" id="btn_ZA">
             Agregar
           </button>
+          <button class="bordes_redondeados shadow btn_consult btn" id="btn_Relacion">
+            Relacionar
+          </button>
         </div>
+
       </div>
     </nav>
     <!-- partial -->
@@ -108,7 +152,59 @@
       <div class="main-panel">
         <div class="content-wrapper">
 
-          <div class="row">
+        <div class="row">
+
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="container-zone">
+                    <div class="work-zone d-flex">
+                      <div class="container-grid">
+                        <div class="grid ag-theme-quartz-dark" id="container-tablaOne" style="height: 650px">
+                          <!-- Aqui se genera un grid -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="container-zone">
+                    <div class="work-zone d-flex">
+                      <div class="container-grid">
+                        <div class="grid ag-theme-quartz-dark" id="container-tablaTwo" style="height: 650px">
+                          <!-- Aqui se genera un grid -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <div class="container-zone">
+                    <div class="work-zone d-flex">
+                      <div class="container-grid">
+                        <div class="grid ag-theme-quartz-dark" id="container-tablaThree" style="height: 650px">
+                          <!-- Aqui se genera un grid -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- <div class="row">
 
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
@@ -117,7 +213,7 @@
                     <div class="work-zone d-flex">
                       <div class="container-grid">
                         <div class="grid ag-theme-quartz-dark" id="container-tablaOne" style="height: 400px">
-                          <!-- Aqui se genera un grid -->
+                          
                         </div>
                       </div>
                     </div>
@@ -126,53 +222,11 @@
               </div>
             </div>
 
-          </div>
-
-          <div class="row">
-
-            <div class="col-md-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div class="container-zone">
-                    <div class="work-zone d-flex">
-                      <div class="container-grid">
-                        <div class="grid ag-theme-quartz-dark" id="container-tablaTwo" style="height: 430px">
-                          <!-- Aqui se genera un grid -->
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-md-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div class="container-zone">
-                    <div class="work-zone d-flex">
-                      <div class="container-grid">
-                        <div class="grid ag-theme-quartz-dark" id="container-tablaThree" style="height: 430px">
-                          <!-- Aqui se genera un grid -->
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
+          </div> -->
 
         </div>
         <!-- content-wrapper ends -->
-        <!-- partial:partials/_footer.html -->
-        <!-- <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Derechos reservador - PCZ 2024</span>
-            </div>
-          </footer> -->
-        <!-- partial -->
+
       </div>
       <!-- main-panel ends -->
     </div>
@@ -184,10 +238,10 @@
   <!-- endinject -->
   <!-- Plugin js for this page -->
   <script src="/thunder/template/assets/vendors/chart.js/Chart.min.js"></script>
-  <script src="/thunder/template/assets/vendors/progressbar.js/progressbar.min.js"></script>
   <script src="/thunder/template/assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
   <script src="/thunder/template/assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
   <script src="/thunder/template/assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
+  <script src="/thunder/template/assets/vendors/select2/select2.min.js"></script>
   <!-- End plugin js for this page -->
   <!-- inject:js -->
   <script src="/thunder/template/assets/js/off-canvas.js"></script>
@@ -198,17 +252,15 @@
   <!-- endinject -->
   <!-- Custom js for this page -->
 
-  <script defer src="../../dataFetch/dataFetch.js"></script>
+  <script defer src="/thunder/system/dataFetch/dataFetch.js"></script>
   <script defer src="/thunder/template/assets/js/dashboard.js"></script>
   <script defer src="/thunder/template/node_modules/ag-grid-community/dist/ag-grid-community.min.js"></script>
   <script defer src="/thunder/template/assets/js/setTable.js"></script>
-  <script defer src="../sweetAlert2/sweetAlert.js"></script>
-  <script defer src="./datatable.js"></script>
-  <script defer src="./createChart.js" ></script>
-  <Script defer src="../dashboards-ms/createChart.js"></Script>
-  <script defer src="../../setCombos/setCombos.js"></script>
   <script defer src="/thunder/template/assets/js/menuIN-OUT.js"></script>
-
+  <script defer src="/thunder/system/sweetAlert2/sweetAlert.js"></script>
+  <script defer src="./maquina.js"></script>
+  <script defer src="../../setCombos/setCombos.js"></script>
+  
   <!-- End custom js for this page -->
 </body>
 

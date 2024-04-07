@@ -1,52 +1,138 @@
-let init = 0;
+let tableOne = '';
+let tableTwo = '';
+let tableThree = '';
 document.addEventListener("DOMContentLoaded" , async function () {
-  const tableOne = new CustomDataTable("container-tablaOne");
+  tableOne = new CustomDataTable("container-tablaOne");
+  tableTwo = new CustomDataTable("container-tablaTwo");
+  tableThree = new CustomDataTable("container-tablaThree");
+
+  await setComboZona();
+  await setComboArea();
+  await init();
   
-  await setComboCedis();
-  $("#comboCedis").on("change", async function () {
-    await setComboGrupoMS();
-  });
-  $("#comboGrupo").on("change", async function () {
-    await setComboEquipoMS();
+  $("#btn_ZA").on("click", async function () {
+    if ($("#comboFormato").val() === "0") {
+      await setZona();
+      await showTable("zona");
+    } else if ($("#comboFormato").val() === "1") {
+      await setArea();
+      await showTable("area");
+    }
   });
 
-  $("#btn_consult").on("click", async function () {
-    const data = await setDataTable();
-      
-    if (data == undefined || data == null) {
-      tableOne.initDataTable(data);
-      await getHistorialTable();
-    } else {
-      tableOne.initDataTable(data);
-      await getHistorialTable();
-    }
+  $("#btn_Relacion").on("click", async function () {
+    await addRelacion();
+    await showTable("ubicacion");
   });
 
 });
 
-async function setDataTable() {
-  const cedis = $("#comboCedis option:selected").text();
-  const grupo = $("#comboGrupo option:selected").text();
-  const equipo = $("#comboEquipo option:selected").text();
-  const f_ini = $("#f_inicial").val()+" 00:00:00";
-  const f_fin = $("#f_final").val()+" 23:59:59";
+async function init() {
+  $("#comboOperacion").select2({
+    minimumResultsForSearch: Infinity
+  });
 
-  console.log(cedis, grupo, equipo, f_ini, f_fin);
+  $("#comboFormato").select2({
+    minimumResultsForSearch: Infinity
+  });
 
-  const table = $("#tableData");
+  $("#comboZona").select2();
+  $("#comboArea").select2();
+  
+  $("#divZona").hide();
+  $("#divArea").hide();
+  $("#btn_Relacion").hide();
+  $("#comboOperacion").on("change", function () {
+    if ($("#comboOperacion").val() === "0") {
+      $("#btn_ZA").show();
+      $("#btn_Relacion").hide();
+      $("#divTipo").show();
+      $("#divZona").hide();
+      $("#divArea").hide();
+      $("#divNombre").show();
+    } else if ($("#comboOperacion").val() === "1") {
+      $("#btn_ZA").hide();
+      $("#btn_Relacion").show();
+      $("#divTipo").hide();
+      $("#divZona").show();
+      $("#divArea").show();
+      $("#divNombre").hide(); 
+    }
+  });
+
+  await showTable("zona");
+  await showTable("area");
+  await showTable("ubicacion");
+
+}
+
+async function setZona() {
+  const dataF = new FormData();
+
+  dataF.append("variablekey", "addZona");
+  dataF.append("nombre", $("#nombre").val().trim());
+
+  const url = "/thundercloud/system/catalogo/ubicacion/call.php";
+  const header = { "Content-Type": "multipart/form-data" };
+  const data = await dataFetch(url, dataF);
+  
+  tableThree.initDataTable(data);
+}
+
+async function setArea () {
+  const dataF = new FormData();
+
+  dataF.append("variablekey", "addArea");
+  dataF.append("nombre", $("#nombre").val().trim());
+
+  const url = "/thundercloud/system/catalogo/ubicacion/call.php";
+  const header = { "Content-Type": "multipart/form-data" };
+  const data = await dataFetch(url, dataF);
+  
+  tableTwo.initDataTable(data);
+}
+
+async function addRelacion() {
+  const zona = $("#comboZona").select2('data')[0].text;
+  const area = $("#comboArea").select2('data')[0].text;
 
   const dataF = new FormData();
 
-  dataF.append("variablekey", "setDataTable");
-  dataF.append("cedis", cedis);
-  dataF.append("grupo", grupo);
-  dataF.append("equipo", equipo);
-  dataF.append("f_ini", f_ini);
-  dataF.append("f_fin", f_fin);
+  dataF.append("variablekey", "addRelacion");
+  dataF.append("zona", zona);
+  dataF.append("area", area);
 
-  const url = "/thundercloud/system/molinoysilo/datatable/call.php";
+  console.log(zona);
+  console.log(area);
+
+  const url = "/thundercloud/system/catalogo/ubicacion/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
-  return data;
+  
+  tableOne.initDataTable(data);
 }
 
+async function showTable (catalogo) {
+  const dataF = new FormData();
+
+  dataF.append("variablekey", "showTable");
+  dataF.append("catalogo", catalogo);
+
+  const url = "/thundercloud/system/catalogo/ubicacion/call.php";
+  const header = { "Content-Type": "multipart/form-data" };
+  const data = await dataFetch(url, dataF);
+
+  console.log(data);
+
+  switch (catalogo) {
+    case "zona":
+      tableThree.initDataTable(data);
+      break;
+    case "area":
+      tableTwo.initDataTable(data);
+      break;
+    case "ubicacion":
+      tableOne.initDataTable(data);
+      break;
+  }
+}

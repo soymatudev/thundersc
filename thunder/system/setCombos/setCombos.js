@@ -88,7 +88,7 @@ async function setComboZona() {
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
 
-  $("#comboZona").innerHTML = "";
+  $("#comboZona").empty();
 
   data.forEach((option, index) => {
     $("#comboZona").append(
@@ -105,7 +105,7 @@ async function setComboArea() {
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
 
-  $("#comboArea").innerHTML = "";
+  $("#comboArea").empty();
 
   data.forEach((option, index) => {
     $("#comboArea").append(

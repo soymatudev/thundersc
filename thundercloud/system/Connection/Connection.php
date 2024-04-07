@@ -12,9 +12,10 @@ class Connection {
 
   public static function connect(){
 
-    $HOST = getenv('HOST_URL') ?: "127.0.0.1";
+    //$HOST = getenv('HOST_URL') ?: "127.0.0.1";
+    $HOST = "192.168.61.157";
     $PORT = getenv('PORT_DB') ?: '';
-    $DBNAME = "nexthw5" ?: "nexthw5";
+    $DBNAME = "nexthw6" ?: "nexthw6";
     $USER = getenv('USER_DB') ?: "root";
     $PASSWORD = getenv('PASSWORD_DB') ?: "";
 
