@@ -18,7 +18,49 @@ class Querys extends Statement
     $this->conexion = Connection::connect();
   }
 
-  public static function setZona($nombre)
+  public static function setEquipo()
+  {
+    $conn = Connection::connect();
+
+    $query = '';
+    if (!$conn) {
+      file_put_contents(self::LOG_FILE, "\nError de conexión\n", FILE_APPEND);
+      return null;
+    }
+    $nombre = $_POST['nombre'];
+    $numSerie = $_POST['numSerie'];
+    $clasif = $_POST['clasif'];
+    $ubicacion = $_POST['ubicacion'];
+    $componentes = $_POST['componentes'];
+    $formato = $_POST['formato'];
+    $tabla = $formato == "Equipo" ? "de_equi_maq" : "de_subequi_maq";
+
+    $query = "INSERT INTO $tabla (id_ubicacion, nombre, num_serie, clasif, componentes) VALUES 
+    ((SELECT id FROM ma_ubicacion WHERE nombre = :ubicacion),
+    :nombre, :numSerie, :clasif, :componentes)";
+    $stmt = self::prepareStatement($query);
+
+    if ($stmt) {
+      $stmt->bindParam(':ubicacion', $ubicacion, PDO::PARAM_STR);
+      $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
+      $stmt->bindParam(':numSerie', $numSerie, PDO::PARAM_STR);
+      $stmt->bindParam(':clasif', $clasif, PDO::PARAM_STR);
+      $stmt->bindParam(':componentes', $componentes, PDO::PARAM_STR);
+      $result = self::executePreparedQuery($stmt);
+      if ($result !== false) {
+        file_put_contents(self::LOG_FILE, "\nExecute => Correct\n", FILE_APPEND);
+        return ["Execute" => "Correct"];;
+      } else {
+        file_put_contents(self::LOG_FILE, "\nExecute => Incorrect\n", FILE_APPEND);
+        return ["Execute" => "Incorrect"];
+      }
+    } else {
+      file_put_contents(self::LOG_FILE, "\nExecute => Incorrect sin stmt\n", FILE_APPEND);
+      return ["Execute" => "Incorrect"];
+    }
+  }
+
+  public static function setComponente($nombre)
   {
     $conn = Connection::connect();
 
@@ -28,7 +70,7 @@ class Querys extends Statement
       return null;
     }
 
-    $query = "INSERT INTO de_zona (nombre) VALUES (:nombre)";
+    $query = "INSERT INTO de_componente (nombre) VALUES (:nombre)";
     $stmt = self::prepareStatement($query);
 
     if ($stmt) {
@@ -47,8 +89,7 @@ class Querys extends Statement
     }
   }
 
-  public static function setArea($nombre)
-  {
+  public static function setClasificacion($nombre) {
     $conn = Connection::connect();
 
     $query = '';
@@ -57,7 +98,7 @@ class Querys extends Statement
       return null;
     }
 
-    $query = "INSERT INTO de_area (nombre) VALUES (:nombre)";
+    $query = "INSERT INTO de_clasif_equi (nombre) VALUES (:nombre)";
     $stmt = self::prepareStatement($query);
 
     if ($stmt) {
@@ -76,30 +117,25 @@ class Querys extends Statement
     }
   }
 
-  public static function setRelacion($zona, $area)
+  public static function setRelacion($equipo, $subequipo)
   {
     $conn = Connection::connect();
-    $nombre = $zona . "-" . $area;
     $query = '';
     if (!$conn) {
       file_put_contents(self::LOG_FILE, "\nError de conexión\n", FILE_APPEND);
       return null;
     }
-file_put_contents(self::LOG_FILE, "\nZona => " . $zona . "\n", FILE_APPEND);
-file_put_contents(self::LOG_FILE, "\nArea => " . $area . "\n", FILE_APPEND);
+    file_put_contents(self::LOG_FILE, "\nequipo => " . $equipo . "\n", FILE_APPEND);
+    file_put_contents(self::LOG_FILE, "\nsubequipo => " . $subequipo . "\n", FILE_APPEND);
 
-    $query = "INSERT INTO ma_ubicacion (id_zona, id_area, nombre) 
-    VALUES (
-    (SELECT id FROM de_zona WHERE nombre = :zona),
-    (SELECT id FROM de_area WHERE nombre = :area), 
-    :nombre
-    )";
+    $query = "INSERT INTO ma_equi_maq (id_equi_maq, id_subequi_maq) VALUES 
+    ((SELECT id FROM de_equi_maq WHERE nombre = :equipo),
+    (SELECT id FROM de_subequi_maq WHERE nombre = :subequipo))";
     $stmt = self::prepareStatement($query);
 
     if ($stmt) {
-      $stmt->bindParam(':zona', $zona, PDO::PARAM_STR);
-      $stmt->bindParam(':area', $area, PDO::PARAM_STR);
-      $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
+      $stmt->bindParam(':equipo', $equipo, PDO::PARAM_STR);
+      $stmt->bindParam(':subequipo', $subequipo, PDO::PARAM_STR);
       $result = self::executePreparedQuery($stmt);
       if ($result !== false) {
         file_put_contents(self::LOG_FILE, "\nExecute => Correct\n", FILE_APPEND);
@@ -124,12 +160,16 @@ file_put_contents(self::LOG_FILE, "\nArea => " . $area . "\n", FILE_APPEND);
       return null;
     }
     file_put_contents(self::LOG_FILE, "\nCatalogo => " . $catalogo . "\n", FILE_APPEND);
-    if ($catalogo == "zona") {
-      $query = "SELECT nombre FROM de_$catalogo";
-    } else if ($catalogo == "area") {
-      $query = "SELECT nombre FROM de_$catalogo";
-    } else if ($catalogo == "ubicacion") {
-      $query = "SELECT mu.nombre AS nombre, z.nombre as 'Zona', a.nombre as 'Area' FROM de_zona z JOIN ma_ubicacion mu ON z.id = mu.id_zona JOIN de_area a ON mu.id_area = a.id";
+    if ($catalogo == "equipo") {
+      $query = "SELECT eq.nombre AS 'Nombre', eq.num_serie AS 'Num_Serie', eq.clasif AS 'Clasificacion', eq.componentes AS 'Componentes', ub.nombre 'Ubicacion' FROM de_equi_maq eq INNER JOIN ma_ubicacion ub ON eq.id_ubicacion = ub.id";
+    } else if ($catalogo == "subequipo") {
+      $query = "SELECT seq.nombre AS 'Nombre', seq.num_serie AS 'Num_Serie', seq.clasif AS 'Clasificacion', seq.componentes AS 'Componentes', ub.nombre 'Ubicacion' FROM de_subequi_maq seq INNER JOIN ma_ubicacion ub ON seq.id_ubicacion = ub.id";
+    } else if ($catalogo == "componente") {
+      $query = "SELECT nombre FROM de_componente";
+    } else if ($catalogo == "clasificacion") {
+      $query = "SELECT nombre FROM de_clasif_equi";
+    } else if ($catalogo == "relacion") {
+      $query = "SELECT dee.nombre, GROUP_CONCAT(dse.nombre) AS 'Sub Equipos', dee.componentes FROM ma_equi_maq mae JOIN de_equi_maq dee ON mae.id_equi_maq = dee.id JOIN de_subequi_maq dse ON mae.id_subequi_maq = dse.id";
     }
     //$query = "SELECT nombre FROM de_$catalogo";
     $stmt = self::prepareStatement($query);
@@ -158,27 +198,34 @@ file_put_contents(self::LOG_FILE, "\nArea => " . $area . "\n", FILE_APPEND);
 }
 
 
-function addZona()
+function addEquipo()
 {
-  $nombre = $_POST['nombre'];
-  $data = Querys::setZona($nombre);
+  $data = Querys::setEquipo();
   header('Content-Type: application/json');
   return json_encode($data);
 }
 
-function addArea()
+function addComponente()
 {
   $nombre = $_POST['nombre'];
-  $data = Querys::setArea($nombre);
+  $data = Querys::setComponente($nombre);
+  header('Content-Type: application/json');
+  return json_encode($data);
+}
+
+function addClasificacion()
+{
+  $nombre = $_POST['nombre'];
+  $data = Querys::setClasificacion($nombre);
   header('Content-Type: application/json');
   return json_encode($data);
 }
 
 function addRelacion()
 {
-  $zona = $_POST['zona'];
-  $area = $_POST['area'];
-  $data = Querys::setRelacion($zona, $area);
+  $equipo = $_POST['equipo'];
+  $subequipo = $_POST['subequipo'];
+  $data = Querys::setRelacion($equipo, $subequipo);
   header('Content-Type: application/json');
   return json_encode($data);
 }

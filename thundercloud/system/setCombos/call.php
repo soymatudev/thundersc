@@ -12,4 +12,14 @@ if ($key == "setComboCedis") {
     echo zona();
 } else if ($key == "setComboArea") {
     echo area();
+} else if ($key == "setComboUbicacion") {
+    echo ubicacion();
+} else if ($key == "setComboClasif") {
+    echo clasif();
+} else if ($key == "setComboComponente") {
+    echo componente();
+} else if ($key == "setComboEquipoMaq") {
+    echo equipomaq();
+} else if ($key == "setComboSubEquipoMaq") {
+    echo subequipomaq();
 }

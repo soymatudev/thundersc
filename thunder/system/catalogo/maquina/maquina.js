@@ -1,22 +1,35 @@
 let tableOne = '';
 let tableTwo = '';
 let tableThree = '';
+let tableFour = '';
+let tableFive = '';
 document.addEventListener("DOMContentLoaded" , async function () {
   tableOne = new CustomDataTable("container-tablaOne");
   tableTwo = new CustomDataTable("container-tablaTwo");
   tableThree = new CustomDataTable("container-tablaThree");
+  tableFour = new CustomDataTable("container-tablaFour");
+  tableFive = new CustomDataTable("container-tablaFive");
 
-  await setComboZona();
-  await setComboArea();
+  await setComboUbicacion();
+  await setComboComponente();
+  await setComboClasif();
+  await setComboEquipoMaq();
+  await setComboSubEquipoMaq();
   await init();
   
-  $("#btn_ZA").on("click", async function () {
+  $("#btn_Add").on("click", async function () {
     if ($("#comboFormato").val() === "0") {
-      await setZona();
-      await showTable("zona");
+      await setEquipo("0");
+      await showTable("equipo");
     } else if ($("#comboFormato").val() === "1") {
-      await setArea();
-      await showTable("area");
+      await setEquipo("1");
+      await showTable("subequipo");
+    } else if ($("#comboFormato").val() === "2") {
+      await setComponente();
+      await showTable("componente");
+    } else if ($("#comboFormato").val() === "3") {
+      await setClasif();
+      await showTable("clasificacion");
     }
   });
 
@@ -36,76 +49,141 @@ async function init() {
     minimumResultsForSearch: Infinity
   });
 
-  $("#comboZona").select2();
-  $("#comboArea").select2();
+  $("#comboComponentes").select2({
+    minimumResultsForSearch: Infinity,
+    multiple: "multiple"
+  });
+
+  $("#comboUbicacion").select2();
+  $("#comboEquipo").select2();
+  $("#comboSubEquipo").select2();
+  $("#comboClasif").select2();
+  $("#comboComponentes").select2();
+
   
-  $("#divZona").hide();
-  $("#divArea").hide();
+  $("#divEquipo").hide();
+  $("#divSubEquipo").hide();
   $("#btn_Relacion").hide();
-  $("#comboOperacion").on("change", function () {
-    if ($("#comboOperacion").val() === "0") {
-      $("#btn_ZA").show();
+  $("#comboFormato").on("change", function () {
+    if ($("#comboFormato").val() === "2" || $("#comboFormato").val() === "3") {
+/*       $("#btn_Add").show();
       $("#btn_Relacion").hide();
       $("#divTipo").show();
       $("#divZona").hide();
       $("#divArea").hide();
       $("#divNombre").show();
-    } else if ($("#comboOperacion").val() === "1") {
-      $("#btn_ZA").hide();
-      $("#btn_Relacion").show();
-      $("#divTipo").hide();
-      $("#divZona").show();
-      $("#divArea").show();
-      $("#divNombre").hide(); 
+ */
+      $("#divNumSerie").hide();
+      $("#divClasif").hide();
+      $("#divUbicacion").hide();
+      $("#divComponentes").hide();
+    } else {
+      $("#divNumSerie").show();
+      $("#divClasif").show();
+      $("#divUbicacion").show();
+      $("#divComponentes").show();
     }
   });
 
-  await showTable("zona");
-  await showTable("area");
-  await showTable("ubicacion");
+  $("#comboOperacion").on("change", function () {
+    if ($("#comboOperacion").val() === "0") {
+      $("#divNumSerie").show();
+      $("#divClasif").show();
+      $("#divUbicacion").show();
+      $("#divComponentes").show();
+      $("#divFormato").show();
+      $("#btn_Add").show();
+      $("#divNombre").show();
+      $("#container-componente").show();
+      $("#container-clasif").show();
+      $("#container-relacion").hide();
+      $("#divEquipo").hide();
+      $("#divSubEquipo").hide();
+      $("#btn_Relacion").hide();
+    } else if ($("#comboOperacion").val() === "1") {
+      $("#divNumSerie").hide();
+      $("#divClasif").hide();
+      $("#divUbicacion").hide();
+      $("#divComponentes").hide();
+      $("#divFormato").hide();
+      $("#btn_Add").hide();
+      $("#divNombre").hide();
+      $("#container-componente").hide();
+      $("#container-clasif").hide();
+      $("#container-relacion").show();
+      $("#divEquipo").show();
+      $("#divSubEquipo").show();
+      $("#btn_Relacion").show();
+    }
+  });
+
+  await showTable("equipo");
+  await showTable("subequipo");
+  await showTable("componente");
+  await showTable("clasificacion");
+  await showTable("relacion");
 
 }
 
-async function setZona() {
+async function setEquipo(formato) {
+  let componentes = [];
+  $("#comboComponentes").select2('data').forEach(element => {
+    componentes.push(element.text);
+  });
+
+  const stringComponentes = componentes.join(',');
+
   const dataF = new FormData();
 
-  dataF.append("variablekey", "addZona");
+  dataF.append("variablekey", "setEquipo");
   dataF.append("nombre", $("#nombre").val().trim());
+  dataF.append("numSerie", $("#numSerie").val().trim());
+  dataF.append("clasif", $("#comboClasif").select2('data')[0].text);
+  dataF.append("ubicacion", $("#comboUbicacion").select2('data')[0].text);
+  dataF.append("componentes", stringComponentes);
+  formato === "0" ? dataF.append("formato", "Equipo") : dataF.append("formato", "SubEquipo");
 
-  const url = "/thundercloud/system/catalogo/ubicacion/call.php";
+  const url = "/thundercloud/system/catalogo/maquina/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
-  
-  tableThree.initDataTable(data);
 }
 
-async function setArea () {
+async function setComponente() {
   const dataF = new FormData();
 
-  dataF.append("variablekey", "addArea");
+  dataF.append("variablekey", "setComponente");
   dataF.append("nombre", $("#nombre").val().trim());
 
-  const url = "/thundercloud/system/catalogo/ubicacion/call.php";
+  const url = "/thundercloud/system/catalogo/maquina/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
-  
-  tableTwo.initDataTable(data);
+}
+
+async function setClasif() {
+  const dataF = new FormData();
+
+  dataF.append("variablekey", "setClasif");
+  dataF.append("nombre", $("#nombre").val().trim());
+
+  const url = "/thundercloud/system/catalogo/maquina/call.php";
+  const header = { "Content-Type": "multipart/form-data" };
+  const data = await dataFetch(url, dataF);
 }
 
 async function addRelacion() {
-  const zona = $("#comboZona").select2('data')[0].text;
-  const area = $("#comboArea").select2('data')[0].text;
+  const equipo = $("#comboEquipo").select2('data')[0].text;
+  const subequipo = $("#comboSubEquipo").select2('data')[0].text;
 
   const dataF = new FormData();
 
   dataF.append("variablekey", "addRelacion");
-  dataF.append("zona", zona);
-  dataF.append("area", area);
+  dataF.append("equipo", equipo);
+  dataF.append("subequipo", subequipo);
 
-  console.log(zona);
-  console.log(area);
+  console.log(equipo);
+  console.log(subequipo);
 
-  const url = "/thundercloud/system/catalogo/ubicacion/call.php";
+  const url = "/thundercloud/system/catalogo/maquina/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
   
@@ -118,21 +196,29 @@ async function showTable (catalogo) {
   dataF.append("variablekey", "showTable");
   dataF.append("catalogo", catalogo);
 
-  const url = "/thundercloud/system/catalogo/ubicacion/call.php";
+  const url = "/thundercloud/system/catalogo/maquina/call.php";
   const header = { "Content-Type": "multipart/form-data" };
-  const data = await dataFetch(url, dataF);
+  let data = await dataFetch(url, dataF);
 
   console.log(data);
 
+  if (data === null || data === undefined) {data = [{"Datos": "Sin datos"}]}
+
   switch (catalogo) {
-    case "zona":
-      tableThree.initDataTable(data);
+    case "equipo":
+      tableOne.initDataTable(data);
       break;
-    case "area":
+    case "subequipo":
       tableTwo.initDataTable(data);
       break;
-    case "ubicacion":
-      tableOne.initDataTable(data);
+    case "componente":
+      tableThree.initDataTable(data);
+      break;
+    case "clasificacion":
+      tableFour.initDataTable(data);
+      break;
+    case "relacion":
+      tableFive.initDataTable(data);
       break;
   }
 }

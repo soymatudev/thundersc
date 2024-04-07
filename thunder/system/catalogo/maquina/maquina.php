@@ -59,7 +59,7 @@
             </select>
           </div>  
 
-          <div id="divTipo">
+          <div id="divFormato">
             <p class="label-c-g">Tipo:</p>
             <select class="select col-md-2" name="materia" tabindex="-1" aria-hidden="true" id="comboFormato">
               <option value="0">Equipo</option>
@@ -76,7 +76,7 @@
 
           <div id="divNumSerie">
             <p class="label-c-g">Num. Serie:</p>
-            <input type="text" class="form_input bordes_redondeados input-area" name="nombre" id="nombre" />
+            <input type="text" class="form_input bordes_redondeados input-area" name="nombre" id="numSerie" />
           </div>
 
           <div id="divClasif">
@@ -93,26 +93,23 @@
             </select>
           </div>
 
-          <div id="divZona">
-            <p class="label-c-g">Zona:</p>
-            <select class="select col-md-2" name="materia" tabindex="-1" aria-hidden="true" id="comboZona">
-              <option value="0">Zona</option>
-              <option value="1">Area</option>
+          <div id="divEquipo">
+            <p class="label-c-g">Equipo:</p>
+            <select class="select col-md-2" name="materia" tabindex="-1" aria-hidden="true" id="comboEquipo">
+              <option value="0"></option>
             </select>
           </div>
 
-          <div id="divArea">
-            <p class="label-c-g">Area:</p>
-            <select class="select col-md-2" name="materia" tabindex="-1" aria-hidden="true" id="comboArea">
-              <option value="0">Zona</option>
-              <option value="1">Area</option>
+          <div id="divSubEquipo">
+            <p class="label-c-g">Sub. Equipo:</p>
+            <select class="select col-md-2" name="materia" tabindex="-1" aria-hidden="true" id="comboSubEquipo">
+              <option value="0"></option>
             </select>
           </div>
 
           <div id="divComponentes">
             <p class="label-c-g">Componentes:</p>
-            <select class="select col-md-2" name="materia" tabindex="-1" aria-hidden="true" id="comboComponentes">
-              <option value="0"></option>
+            <select class="select col-md-2" name="states[]" tabindex="-1" aria-hidden="true" id="comboComponentes">
             </select>
           </div>
 
@@ -120,7 +117,7 @@
         </div>
 
         <div class="container-c-g container-button">
-          <button class="bordes_redondeados shadow btn_consult btn" id="btn_ZA">
+          <button class="bordes_redondeados shadow btn_consult btn" id="btn_Add">
             Agregar
           </button>
           <button class="bordes_redondeados shadow btn_consult btn" id="btn_Relacion">
@@ -154,13 +151,13 @@
 
         <div class="row">
 
-            <div class="col-md-4 grid-margin stretch-card">
+            <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <div class="container-zone">
                     <div class="work-zone d-flex">
                       <div class="container-grid">
-                        <div class="grid ag-theme-quartz-dark" id="container-tablaOne" style="height: 650px">
+                        <div class="grid ag-theme-quartz-dark" id="container-tablaOne" style="height: 450px">
                           <!-- Aqui se genera un grid -->
                         </div>
                       </div>
@@ -170,13 +167,13 @@
               </div>
             </div>
 
-            <div class="col-md-4 grid-margin stretch-card">
+            <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <div class="container-zone">
                     <div class="work-zone d-flex">
                       <div class="container-grid">
-                        <div class="grid ag-theme-quartz-dark" id="container-tablaTwo" style="height: 650px">
+                        <div class="grid ag-theme-quartz-dark" id="container-tablaTwo" style="height: 450px">
                           <!-- Aqui se genera un grid -->
                         </div>
                       </div>
@@ -186,13 +183,45 @@
               </div>
             </div>
 
-            <div class="col-md-4 grid-margin stretch-card">
+            <div class="col-md-6 grid-margin stretch-card" id="container-componente" >
               <div class="card">
                 <div class="card-body">
                   <div class="container-zone">
                     <div class="work-zone d-flex">
                       <div class="container-grid">
-                        <div class="grid ag-theme-quartz-dark" id="container-tablaThree" style="height: 650px">
+                        <div class="grid ag-theme-quartz-dark" id="container-tablaThree" style="height: 450px">
+                          <!-- Aqui se genera un grid -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 grid-margin stretch-card" id="container-clasif">
+              <div class="card">
+                <div class="card-body">
+                  <div class="container-zone">
+                    <div class="work-zone d-flex">
+                      <div class="container-grid">
+                        <div class="grid ag-theme-quartz-dark" id="container-tablaFour" style="height: 450px">
+                          <!-- Aqui se genera un grid -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-12 grid-margin stretch-card" id="container-relacion">
+              <div class="card">
+                <div class="card-body">
+                  <div class="container-zone">
+                    <div class="work-zone d-flex">
+                      <div class="container-grid">
+                        <div class="grid ag-theme-quartz-dark" id="container-tablaFive" style="height: 450px">
                           <!-- Aqui se genera un grid -->
                         </div>
                       </div>

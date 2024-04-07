@@ -71,8 +71,8 @@ async function dataFetch(url, body, header) {
       //const data = await response.json();
       //console.log("Data esta vacia: " + data);
       //alertSucces();
-      alert("ssssssssssss");
-      return; // Otra opción podría ser lanzar un error
+      let data= null;
+      return data; // Otra opción podría ser lanzar un error
     }
   } catch (error) {
     //alert("Acción Realizada");

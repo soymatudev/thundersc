@@ -170,6 +170,144 @@ class Querys extends Statement
     }
   }
 
+  public static function getUbicacion()
+  {
+    $con = Connection::connect();
+
+    if (!$con) {
+      file_put_contents(self::LOG_FILE, "\nError de conexión\n", FILE_APPEND);
+      return null;
+    }
+
+    $query = "SELECT DISTINCT nombre FROM ma_ubicacion";
+    $stmt = self::prepareStatement($query);
+    if ($stmt) {
+      $result = self::executePreparedQuery($stmt);
+
+      if ($result !== false) {
+        file_put_contents(self::LOG_FILE, "\nExecute => Correct => Obentenemos los nombres\n", FILE_APPEND);
+        file_put_contents(self::LOG_FILE, "\nExecute => " . print_r($result, true) . "\n", FILE_APPEND);
+        return $result;
+      } else {
+        file_put_contents(self::LOG_FILE, "\nExecute => Incorrect\n", FILE_APPEND);
+        return ["Execute" => "Incorrect"];
+      }
+    } else {
+      file_put_contents(self::LOG_FILE, "\nExecute => Incorrect sin stmt\n", FILE_APPEND);
+      return ["Execute" => "Incorrect"];
+    }
+  }
+
+  public static function getClasif()
+  {
+    $con = Connection::connect();
+
+    if (!$con) {
+      file_put_contents(self::LOG_FILE, "\nError de conexión\n", FILE_APPEND);
+      return null;
+    }
+
+    $query = "SELECT DISTINCT nombre FROM de_clasif_equi";
+    $stmt = self::prepareStatement($query);
+    if ($stmt) {
+      $result = self::executePreparedQuery($stmt);
+
+      if ($result !== false) {
+        file_put_contents(self::LOG_FILE, "\nExecute => Correct => Obentenemos los nombres\n", FILE_APPEND);
+        file_put_contents(self::LOG_FILE, "\nExecute => " . print_r($result, true) . "\n", FILE_APPEND);
+        return $result;
+      } else {
+        file_put_contents(self::LOG_FILE, "\nExecute => Incorrect\n", FILE_APPEND);
+        return ["Execute" => "Incorrect"];
+      }
+    } else {
+      file_put_contents(self::LOG_FILE, "\nExecute => Incorrect sin stmt\n", FILE_APPEND);
+      return ["Execute" => "Incorrect"];
+    }
+  }
+
+  public static function getComponente()
+  {
+    $con = Connection::connect();
+
+    if (!$con) {
+      file_put_contents(self::LOG_FILE, "\nError de conexión\n", FILE_APPEND);
+      return null;
+    }
+
+    $query = "SELECT DISTINCT nombre FROM de_componente";
+    $stmt = self::prepareStatement($query);
+    if ($stmt) {
+      $result = self::executePreparedQuery($stmt);
+
+      if ($result !== false) {
+        file_put_contents(self::LOG_FILE, "\nExecute => Correct => Obentenemos los nombres\n", FILE_APPEND);
+        file_put_contents(self::LOG_FILE, "\nExecute => " . print_r($result, true) . "\n", FILE_APPEND);
+        return $result;
+      } else {
+        file_put_contents(self::LOG_FILE, "\nExecute => Incorrect\n", FILE_APPEND);
+        return ["Execute" => "Incorrect"];
+      }
+    } else {
+      file_put_contents(self::LOG_FILE, "\nExecute => Incorrect sin stmt\n", FILE_APPEND);
+      return ["Execute" => "Incorrect"];
+    }
+  }
+
+  public static function getEquipoMaq() {
+    $con = Connection::connect();
+
+    if (!$con) {
+      file_put_contents(self::LOG_FILE, "\nError de conexión\n", FILE_APPEND);
+      return null;
+    }
+
+    $query = "SELECT DISTINCT nombre FROM de_equi_maq";
+    $stmt = self::prepareStatement($query);
+    if ($stmt) {
+      $result = self::executePreparedQuery($stmt);
+
+      if ($result !== false) {
+        file_put_contents(self::LOG_FILE, "\nExecute => Correct => Obentenemos los nombres\n", FILE_APPEND);
+        file_put_contents(self::LOG_FILE, "\nExecute => " . print_r($result, true) . "\n", FILE_APPEND);
+        return $result;
+      } else {
+        file_put_contents(self::LOG_FILE, "\nExecute => Incorrect\n", FILE_APPEND);
+        return ["Execute" => "Incorrect"];
+      }
+    } else {
+      file_put_contents(self::LOG_FILE, "\nExecute => Incorrect sin stmt\n", FILE_APPEND);
+      return ["Execute" => "Incorrect"];
+    }
+  }
+
+  function getSubEquipoMaq() {
+    $con = Connection::connect();
+
+    if (!$con) {
+      file_put_contents(self::LOG_FILE, "\nError de conexión\n", FILE_APPEND);
+      return null;
+    }
+
+    $query = "SELECT DISTINCT nombre FROM de_subequi_maq";
+    $stmt = self::prepareStatement($query);
+    if ($stmt) {
+      $result = self::executePreparedQuery($stmt);
+
+      if ($result !== false) {
+        file_put_contents(self::LOG_FILE, "\nExecute => Correct => Obentenemos los nombres\n", FILE_APPEND);
+        file_put_contents(self::LOG_FILE, "\nExecute => " . print_r($result, true) . "\n", FILE_APPEND);
+        return $result;
+      } else {
+        file_put_contents(self::LOG_FILE, "\nExecute => Incorrect\n", FILE_APPEND);
+        return ["Execute" => "Incorrect"];
+      }
+    } else {
+      file_put_contents(self::LOG_FILE, "\nExecute => Incorrect sin stmt\n", FILE_APPEND);
+      return ["Execute" => "Incorrect"];
+    }
+  }
+
   public function cerrarConexion()
   {
     // Cierra la conexion cuando ya no sea necesaria
@@ -222,6 +360,46 @@ function area()
 {
   $Querys = new Querys();
   $cedisData = $Querys->getArea();
+  $Querys->cerrarConexion(); // Cierra la conexión después de obtener los datos
+  header('Content-Type: application/json');
+  return json_encode($cedisData);
+}
+
+function ubicacion () {
+  $Querys = new Querys();
+  $cedisData = $Querys->getUbicacion();
+  $Querys->cerrarConexion(); // Cierra la conexión después de obtener los datos
+  header('Content-Type: application/json');
+  return json_encode($cedisData);
+}
+
+function clasif () {
+  $Querys = new Querys();
+  $cedisData = $Querys->getClasif();
+  $Querys->cerrarConexion(); // Cierra la conexión después de obtener los datos
+  header('Content-Type: application/json');
+  return json_encode($cedisData);
+}
+
+function componente () {
+  $Querys = new Querys();
+  $cedisData = $Querys->getComponente();
+  $Querys->cerrarConexion(); // Cierra la conexión después de obtener los datos
+  header('Content-Type: application/json');
+  return json_encode($cedisData);
+}
+
+function equipomaq (){
+  $Querys = new Querys();
+  $cedisData = $Querys->getEquipoMaq();
+  $Querys->cerrarConexion(); // Cierra la conexión después de obtener los datos
+  header('Content-Type: application/json');
+  return json_encode($cedisData);
+}
+
+function subequipomaq() {
+  $Querys = new Querys();
+  $cedisData = $Querys->getSubEquipoMaq();
   $Querys->cerrarConexion(); // Cierra la conexión después de obtener los datos
   header('Content-Type: application/json');
   return json_encode($cedisData);
