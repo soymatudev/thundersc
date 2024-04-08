@@ -14,9 +14,11 @@ document.addEventListener("DOMContentLoaded" , async function () {
     if ($("#comboFormato").val() === "0") {
       await setZona();
       await showTable("zona");
+      await setComboZona();
     } else if ($("#comboFormato").val() === "1") {
       await setArea();
       await showTable("area");
+      await setComboArea();
     }
   });
 
@@ -121,6 +123,8 @@ async function showTable (catalogo) {
   const url = "/thundercloud/system/catalogo/ubicacion/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
+
+  if (data === null || data === undefined) {data = [{"Datos": "Sin datos"}]}
 
   console.log(data);
 

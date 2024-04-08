@@ -21,15 +21,23 @@ document.addEventListener("DOMContentLoaded" , async function () {
     if ($("#comboFormato").val() === "0") {
       await setEquipo("0");
       await showTable("equipo");
+      await setComboEquipoMaq();
+      $("#nombre").val("");
     } else if ($("#comboFormato").val() === "1") {
       await setEquipo("1");
       await showTable("subequipo");
+      await setComboSubEquipoMaq();
+      $("#nombre").val("");
     } else if ($("#comboFormato").val() === "2") {
       await setComponente();
       await showTable("componente");
+      await setComboComponente();
+      $("#nombre").val("");
     } else if ($("#comboFormato").val() === "3") {
       await setClasif();
       await showTable("clasificacion");
+      await setComboClasif();
+      $("#nombre").val("");
     }
   });
 
@@ -64,15 +72,9 @@ async function init() {
   $("#divEquipo").hide();
   $("#divSubEquipo").hide();
   $("#btn_Relacion").hide();
+  $("#container-relacion").hide();
   $("#comboFormato").on("change", function () {
     if ($("#comboFormato").val() === "2" || $("#comboFormato").val() === "3") {
-/*       $("#btn_Add").show();
-      $("#btn_Relacion").hide();
-      $("#divTipo").show();
-      $("#divZona").hide();
-      $("#divArea").hide();
-      $("#divNombre").show();
- */
       $("#divNumSerie").hide();
       $("#divClasif").hide();
       $("#divUbicacion").hide();
@@ -143,7 +145,7 @@ async function setEquipo(formato) {
   dataF.append("componentes", stringComponentes);
   formato === "0" ? dataF.append("formato", "Equipo") : dataF.append("formato", "SubEquipo");
 
-  const url = "/thundercloud/system/catalogo/maquina/call.php";
+  const url = "../../../../thundercloud/system/catalogo/maquina/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
 }
@@ -154,7 +156,7 @@ async function setComponente() {
   dataF.append("variablekey", "setComponente");
   dataF.append("nombre", $("#nombre").val().trim());
 
-  const url = "/thundercloud/system/catalogo/maquina/call.php";
+  const url = "../../../../thundercloud/system/catalogo/maquina/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
 }
@@ -165,7 +167,7 @@ async function setClasif() {
   dataF.append("variablekey", "setClasif");
   dataF.append("nombre", $("#nombre").val().trim());
 
-  const url = "/thundercloud/system/catalogo/maquina/call.php";
+  const url = "../../../../thundercloud/system/catalogo/maquina/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
 }
@@ -183,7 +185,7 @@ async function addRelacion() {
   console.log(equipo);
   console.log(subequipo);
 
-  const url = "/thundercloud/system/catalogo/maquina/call.php";
+  const url = "../../../../thundercloud/system/catalogo/maquina/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
   
@@ -196,7 +198,7 @@ async function showTable (catalogo) {
   dataF.append("variablekey", "showTable");
   dataF.append("catalogo", catalogo);
 
-  const url = "/thundercloud/system/catalogo/maquina/call.php";
+  const url = "../../../../thundercloud/system/catalogo/maquina/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   let data = await dataFetch(url, dataF);
 

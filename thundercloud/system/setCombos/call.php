@@ -22,4 +22,6 @@ if ($key == "setComboCedis") {
     echo equipomaq();
 } else if ($key == "setComboSubEquipoMaq") {
     echo subequipomaq();
+} else if ($key == "setComboEquiposTrabajo") {
+    echo equipostrabajo();
 }

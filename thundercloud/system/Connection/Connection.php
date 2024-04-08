@@ -5,19 +5,19 @@ Autor: Juan Maturana
 Fecha de Creación: 2024
 ===============================================================================
 */
-
+date_default_timezone_set('America/Mexico_City');
 class Connection {
   private const LOG_FILE = 'process.log';
   private static $conn = null;
 
   public static function connect(){
 
-    //$HOST = getenv('HOST_URL') ?: "127.0.0.1";
-    $HOST = "192.168.1.67";
-    $PORT = getenv('PORT_DB') ?: '';
+    $HOST = "127.0.0.1" ?: "127.0.0.1";
+    //$HOST = "192.168.1.67";
+    $PORT = "3306" ?: '';
     $DBNAME = "nexthw6" ?: "nexthw6";
-    $USER = getenv('USER_DB') ?: "root";
-    $PASSWORD = getenv('PASSWORD_DB') ?: "";
+    $USER = "root" ?: "root";
+    $PASSWORD = "" ?: "";
 
     $dsn = "mysql:host=$HOST;port=$PORT;dbname=$DBNAME;charset=utf8";
 

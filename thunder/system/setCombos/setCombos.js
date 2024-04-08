@@ -4,7 +4,7 @@ async function setComboCedis() {
   const dataF = new FormData();
   dataF.append("variablekey", "setComboCedis");
 
-  const url = "/thundercloud/system/setCombos/call.php";
+  const url = "../../../../thundercloud/system/setCombos/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
   console.log(data);
@@ -24,7 +24,7 @@ console.log(cedis);
   dataF.append("variablekey", "setComboGrupo");
   dataF.append("cedis", cedis);
 
-  const url = "/thundercloud/system/setCombos/call.php";
+  const url = "../../../../thundercloud/system/setCombos/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
   console.log(data);
@@ -46,7 +46,7 @@ async function setComboEquipoMS() {
   dataF.append("cedis", cedis);
   dataF.append("grupo", grupo);
 
-  const url = "/thundercloud/system/setCombos/call.php";
+  const url = "../../../../thundercloud/system/setCombos/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
   console.log(data);
@@ -68,7 +68,7 @@ async function setComboEquipoMS() {
   dataF.append("cedis", cedis);
   dataF.append("grupo", grupo);
 
-  const url = "/thundercloud/system/setCombos/call.php";
+  const url = "../../../../thundercloud/system/setCombos/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
   console.log(data);
@@ -84,9 +84,11 @@ async function setComboZona() {
   const dataF = new FormData();
   dataF.append("variablekey", "setComboZona");
 
-  const url = "/thundercloud/system/setCombos/call.php";
+  const url = "../../../../thundercloud/system/setCombos/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
+
+  if (data === null || data === undefined) {data = [{"nombre": "Sin Datos"}]}; 
 
   $("#comboZona").empty();
 
@@ -101,7 +103,7 @@ async function setComboArea() {
   const dataF = new FormData();
   dataF.append("variablekey", "setComboArea");
 
-  const url = "/thundercloud/system/setCombos/call.php";
+  const url = "../../../../thundercloud/system/setCombos/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
 
@@ -118,9 +120,12 @@ async function setComboUbicacion () {
   const dataF = new FormData();
   dataF.append("variablekey", "setComboUbicacion");
 
-  const url = "/thundercloud/system/setCombos/call.php";
+  const url = "../../../../thundercloud/system/setCombos/call.php";
   const header = { "Content-Type": "multipart/form-data" };
-  const data = await dataFetch(url, dataF);
+  let data = await dataFetch(url, dataF);
+
+  if (data === null || data === undefined) {data = [{"nombre": "Sin Datos"}]}; 
+
 
   $("#comboUbicacion").empty();
 
@@ -139,9 +144,12 @@ async function setComboClasif() {
   const dataF = new FormData();
   dataF.append("variablekey", "setComboClasif");
 
-  const url = "/thundercloud/system/setCombos/call.php";
+  const url = "../../../../thundercloud/system/setCombos/call.php";
   const header = { "Content-Type": "multipart/form-data" };
-  const data = await dataFetch(url, dataF);
+  let data = await dataFetch(url, dataF);
+
+  if (data === null || data === undefined) {data = [{"nombre": "Sin Datos"}]}; 
+
 
   $("#comboClasif").empty();
 
@@ -160,9 +168,11 @@ async function setComboComponente() {
   const dataF = new FormData();
   dataF.append("variablekey", "setComboComponente");
 
-  const url = "/thundercloud/system/setCombos/call.php";
+  const url = "../../../../thundercloud/system/setCombos/call.php";
   const header = { "Content-Type": "multipart/form-data" };
-  const data = await dataFetch(url, dataF);
+  let data = await dataFetch(url, dataF);
+
+  if (data === null || data === undefined) {data = [{"nombre": "Sin Datos"}]}; 
 
   $("#comboComponentes").empty();
 
@@ -181,7 +191,7 @@ async function setComboEquipoMaq() {
   const dataF = new FormData();
   dataF.append("variablekey", "setComboEquipoMaq");
 
-  const url = "/thundercloud/system/setCombos/call.php";
+  const url = "../../../../thundercloud/system/setCombos/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
 
@@ -202,7 +212,7 @@ async function setComboSubEquipoMaq() {
   const dataF = new FormData();
   dataF.append("variablekey", "setComboSubEquipoMaq");
 
-  const url = "/thundercloud/system/setCombos/call.php";
+  const url = "../../../../thundercloud/system/setCombos/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
 
@@ -215,6 +225,23 @@ async function setComboSubEquipoMaq() {
   data.forEach((option, index) => {
     $("#comboSubEquipo").append(
       `<option value="${index+1}">${option.nombre}</option>`
+    );
+  });
+}
+
+async function setComboEquiposTrabajo() {
+  const dataF = new FormData();
+  dataF.append("variablekey", "setComboEquiposTrabajo");
+
+  const url = "../../../../thundercloud/system/setCombos/call.php";
+  const header = { "Content-Type": "multipart/form-data" };
+  const data = await dataFetch(url, dataF);
+
+  $("#comboEquipo").empty();
+
+  data.forEach((option, index) => {
+    $("#comboEquiposT").append(
+      `<option value="${index+1}">${option.cve}</option>`
     );
   });
 }

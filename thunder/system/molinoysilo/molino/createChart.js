@@ -183,12 +183,12 @@ function optionsChart() {
 
 async function getDataHistorial() {
   historialData = await getData(
-    "/thundercloud/system/molinoysilo/molino/call.php",
+    "../../../../thundercloud/system/molinoysilo/molino/call.php",
     "getDataHistorial"
   );
 
   historialTiempo = await getData(
-    "/thundercloud/system/molinoysilo/molino/call.php",
+    "../../../../thundercloud/system/molinoysilo/molino/call.php",
     "getHistorialTiempo"
   );
 
@@ -199,7 +199,7 @@ async function getDataHistorial() {
 }
 
 async function getTiempoT() {
-  tiempoData = await getData("/thundercloud/system/molinoysilo/molino/call.php", "getTiempoT");
+  tiempoData = await getData("../../../../thundercloud/system/molinoysilo/molino/call.php", "getTiempoT");
   const nombres = Object.keys(tiempoData);
   processTiempoT(nombres, tiempoData);
 }

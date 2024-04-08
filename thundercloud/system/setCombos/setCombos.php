@@ -1,6 +1,6 @@
 <?php
 require_once('../Connection/Connection.php');
-require_once('../prepare/Statement.php');
+require_once('../Connection/Statement.php');
 /*
 ===============================================================================
 Autor: Juan Maturana
@@ -308,6 +308,33 @@ class Querys extends Statement
     }
   }
 
+  public function getEquipoTrabajo () {
+    $con = Connection::connect();
+
+    if (!$con) {
+      file_put_contents(self::LOG_FILE, "\nError de conexión\n", FILE_APPEND);
+      return null;
+    }
+
+    $query = "SELECT DISTINCT cve FROM de_equi_trabajo";
+    $stmt = self::prepareStatement($query);
+    if ($stmt) {
+      $result = self::executePreparedQuery($stmt);
+
+      if ($result !== false) {
+        file_put_contents(self::LOG_FILE, "\nExecute => Correct => Obentenemos los nombres\n", FILE_APPEND);
+        file_put_contents(self::LOG_FILE, "\nExecute => " . print_r($result, true) . "\n", FILE_APPEND);
+        return $result;
+      } else {
+        file_put_contents(self::LOG_FILE, "\nExecute => Incorrect\n", FILE_APPEND);
+        return ["Execute" => "Incorrect"];
+      }
+    } else {
+      file_put_contents(self::LOG_FILE, "\nExecute => Incorrect sin stmt\n", FILE_APPEND);
+      return ["Execute" => "Incorrect"];
+    }
+  }
+
   public function cerrarConexion()
   {
     // Cierra la conexion cuando ya no sea necesaria
@@ -400,6 +427,14 @@ function equipomaq (){
 function subequipomaq() {
   $Querys = new Querys();
   $cedisData = $Querys->getSubEquipoMaq();
+  $Querys->cerrarConexion(); // Cierra la conexión después de obtener los datos
+  header('Content-Type: application/json');
+  return json_encode($cedisData);
+}
+
+function equipostrabajo() {
+  $Querys = new Querys();
+  $cedisData = $Querys->getEquipoTrabajo();
   $Querys->cerrarConexion(); // Cierra la conexión después de obtener los datos
   header('Content-Type: application/json');
   return json_encode($cedisData);

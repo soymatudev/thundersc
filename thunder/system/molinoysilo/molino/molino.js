@@ -29,7 +29,7 @@ async function getNameMol() {
   tbody.innerHTML = "";
   let keyData = "getMol";
   let body = `variableKey=${keyData}`;
-  let nombres = await getDataFetch("/thundercloud/system/molinoysilo/molino/call.php", body);
+  let nombres = await getDataFetch("../../../../thundercloud/system/molinoysilo/molino/call.php", body);
   console.log(nombres);
   setNameMol(nombres);
   await Promise.all(
@@ -74,7 +74,7 @@ function createData(index, idRow, element) {
 async function dataMol(idContainer, nameMol) {
   let keyData = "getAmpere";
   let body = `variableKey=${keyData}&variablePHP=${nameMol}`;
-  let data = await getDataFetch("/thundercloud/system/molinoysilo/molino/call.php", body);
+  let data = await getDataFetch("../../../../thundercloud/system/molinoysilo/molino/call.php", body);
   createImg(idContainer, data);
 }
 
@@ -85,7 +85,7 @@ function createImg(idContainer, element) {
   const img = document.createElement("img");
   img.classList = element ? "Activo" : "Inactivo";
   img.classList.add("gif-aviso");
-  img.src = element ? "/thunder/template/assets/images/propellerGif.gif" : "/thunder/template/assets/images/alertR.gif";
+  img.src = element ? "../../../template/assets/images/propellerGif.gif" : "/thunder/template/assets/images/alertR.gif";
 
   const div = document.getElementById("Cell-" + idContainer);
   div.appendChild(img);

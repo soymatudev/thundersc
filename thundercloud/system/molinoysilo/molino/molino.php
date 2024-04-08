@@ -1,6 +1,6 @@
 <?php
 require_once('../../Connection/Connection.php');
-require_once('../../prepare/Statement.php');
+require_once('../../Connection/Statement.php');
 /*
 ===============================================================================
 Autor: Juan Maturana
