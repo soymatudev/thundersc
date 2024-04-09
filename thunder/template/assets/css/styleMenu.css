@@ -21117,8 +21117,7 @@ div.tagsinput {
 .main-panel {
   transition: width 0.25s ease, margin 0.25s ease;
   width: 100%;
-  min-height: calc(100% - 40px);
-  max-height: calc(100% - 40px);
+  min-height: calc(100vh - 70px);
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
@@ -21209,18 +21208,18 @@ div.tagsinput {
 
 .iframe {
 width: 100%;
-height: 100%;
+height: 100vh;
 }
 
 .tab-container,
 .iframe {
- /*  height: 86vh !important; */
+  height: 86vh !important;
   border: 0px;
   border-radius: 0px;
 }
 
 .main-panel{
-  padding-top: 40px;
+  margin-top: 45px;
 }
 
 .tab-content {
@@ -21305,7 +21304,6 @@ a{
   text-decoration: none;
 }
 
-
 /* ========================================================= */
 
 .nav-tabs-add li{
@@ -21342,15 +21340,3 @@ a{
   border-top: 1px solid transparent;
 }
 .tooltip-inner{white-space: nowrap;}
-
-html, body, .container-scroller{
-  height: 100%;
-}
-
- .tab-container, .tab  {
-  height: 100% !important;
-}
-
-.tabs {
-  height: calc(100% - 0px) !important;
-}
