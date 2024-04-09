@@ -11,11 +11,11 @@ document.addEventListener("DOMContentLoaded" , async function () {
     if ($("#comboFormato").val() === "0") {
       await setUsuario();
       await showTable("usuarios");
-      /* $("#nombre").val("");
+      $("#nombre").val("");
       $("#cve").val("");
       $("#area").val("");
       $("#password").val("");
-      $("#telefono").val(""); */
+      $("#telefono").val("");
     } else if ($("#comboFormato").val() === "1") {
       await setEquipoTrabajo();
       await showTable("equipos");
@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded" , async function () {
       $("#area").val("");
       $("#password").val("");
       $("#telefono").val("");
+      await setComboEquiposTrabajo();
     }
   });
 

@@ -2000,3 +2000,2223 @@ Execute => Array
 (
 )
 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipos
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => NombreEquipo
+            [cve] => CVE123
+            [area] => AreaEjemplo
+        )
+
+    [1] => Array
+        (
+            [nombre] => NombreEquipo 2
+            [cve] => CVE456
+            [area] => AreaEjemplo 2
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipos
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => NombreEquipo
+            [cve] => CVE123
+            [area] => AreaEjemplo
+        )
+
+    [1] => Array
+        (
+            [nombre] => NombreEquipo 2
+            [cve] => CVE456
+            [area] => AreaEjemplo 2
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+Error al convertir imagen
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+Imagen convertidaError al convertir imagen
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+Imagen convertida  
+Error al convertir imagen
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+Imagen convertida  
+Error al convertir imagen
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+Imagen convertida 1 
+Error al convertir imagen
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+Imagen convertida  
+Error al convertir imagen
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+Imagen convertida 1 
+Error al convertir imagen
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+Imagen convertida  
+Error al convertir imagen
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+Imagen convertida  
+Error al convertir imagen
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipos
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => NombreEquipo
+            [cve] => CVE123
+            [area] => AreaEjemplo
+        )
+
+    [1] => Array
+        (
+            [nombre] => NombreEquipo 2
+            [cve] => CVE456
+            [area] => AreaEjemplo 2
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+Imagen convertida y guardada en: /opt/lampp/htdocs/thundersc/thundercloud/system/matenimiento/usuarioyequipo../../../src/user_images/661562502e199.png 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+Imagen convertida y guardada en: /opt/lampp/htdocs/thundersc/thundercloud/system/matenimiento/usuarioyequipo../../../src/user_images/66156276c22de.png 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+Imagen convertida y guardada en: /opt/lampp/htdocs/thundersc/thundercloud/system/matenimiento/usuarioyequipo../../../src/user_images/661565eb7b112.png 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+Imagen convertida y guardada en: /opt/lampp/htdocs/thundersc/thundercloud/system/matenimiento/usuarioyequipo../../../src/user_images/6615661baf88f.png 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+Imagen convertida y guardada en: /opt/lampp/htdocs/thundersc/thundercloud/system/matenimiento/usuarioyequipo../../../src/user_images/6615664526e9d.png 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+Imagen convertida y guardada en: /opt/lampp/htdocs/thundersc/thundercloud/system/matenimiento/usuarioyequipo../../../src/user_images/6615668d69a2e.png 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+Imagen convertida y guardada en: ../../../src/user_images/661566e864bd4.png 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+Error en la consulta: SQLSTATE[HY000]: General error: 1364 Field 'username' doesn't have a default value
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+)
+
+Imagen convertida y guardada en: ../../../src/user_images/661567320d868.png 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+===================================
+
+Consulta INSERT/UPDATE/DELETE
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Torti
+            [telefono] => 234432
+            [cve_equi_trabajo] => CVE123
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Torti
+            [telefono] => 234432
+            [cve_equi_trabajo] => CVE123
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipos
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => NombreEquipo
+            [cve] => CVE123
+            [area] => AreaEjemplo
+        )
+
+    [1] => Array
+        (
+            [nombre] => NombreEquipo 2
+            [cve] => CVE456
+            [area] => AreaEjemplo 2
+        )
+
+)
+
+Imagen convertida y guardada en: ../../../src/user_images/661567f68e0c2.png 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+Error en la consulta: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'user-test' for key 'username'
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Torti
+            [telefono] => 234432
+            [cve_equi_trabajo] => CVE123
+        )
+
+)
+
+Imagen convertida y guardada en: ../../../src/user_images/6615682988cd3.png 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+Error en la consulta: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Torti
+            [telefono] => 234432
+            [cve_equi_trabajo] => CVE123
+        )
+
+)
+
+Imagen convertida y guardada en: ../../../src/user_images/6615685a27429.png 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+===================================
+
+Consulta INSERT/UPDATE/DELETE
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Torti
+            [telefono] => 234432
+            [cve_equi_trabajo] => CVE123
+        )
+
+    [1] => Array
+        (
+            [nombre] => Tortas
+            [telefono] => 123321
+            [cve_equi_trabajo] => CVE123,CVE456
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+===================================
+
+Consulta INSERT/UPDATE/DELETE
+
+Execute => Correct
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipos
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => NombreEquipo
+            [cve] => CVE123
+            [area] => AreaEjemplo
+        )
+
+    [1] => Array
+        (
+            [nombre] => NombreEquipo 2
+            [cve] => CVE456
+            [area] => AreaEjemplo 2
+        )
+
+    [2] => Array
+        (
+            [nombre] => NombreEquipo 3
+            [cve] => CVE789
+            [area] => AreaEjemplo 3
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Torti
+            [telefono] => 234432
+            [cve_equi_trabajo] => CVE123
+        )
+
+    [1] => Array
+        (
+            [nombre] => Tortas
+            [telefono] => 123321
+            [cve_equi_trabajo] => CVE123,CVE456
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipos
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => NombreEquipo
+            [cve] => CVE123
+            [area] => AreaEjemplo
+        )
+
+    [1] => Array
+        (
+            [nombre] => NombreEquipo 2
+            [cve] => CVE456
+            [area] => AreaEjemplo 2
+        )
+
+    [2] => Array
+        (
+            [nombre] => NombreEquipo 3
+            [cve] => CVE789
+            [area] => AreaEjemplo 3
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+===================================
+
+Consulta INSERT/UPDATE/DELETE
+
+Execute => Correct
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipos
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => NombreEquipo
+            [cve] => CVE123
+            [area] => AreaEjemplo
+        )
+
+    [1] => Array
+        (
+            [nombre] => NombreEquipo 2
+            [cve] => CVE456
+            [area] => AreaEjemplo 2
+        )
+
+    [2] => Array
+        (
+            [nombre] => NombreEquipo 3
+            [cve] => CVE789
+            [area] => AreaEjemplo 3
+        )
+
+    [3] => Array
+        (
+            [nombre] => NombreEquipo 4
+            [cve] => CVE987
+            [area] => AreaEjemplo 4
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Torti
+            [telefono] => 234432
+            [cve_equi_trabajo] => CVE123
+        )
+
+    [1] => Array
+        (
+            [nombre] => Tortas
+            [telefono] => 123321
+            [cve_equi_trabajo] => CVE123,CVE456
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipos
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => NombreEquipo
+            [cve] => CVE123
+            [area] => AreaEjemplo
+        )
+
+    [1] => Array
+        (
+            [nombre] => NombreEquipo 2
+            [cve] => CVE456
+            [area] => AreaEjemplo 2
+        )
+
+    [2] => Array
+        (
+            [nombre] => NombreEquipo 3
+            [cve] => CVE789
+            [area] => AreaEjemplo 3
+        )
+
+    [3] => Array
+        (
+            [nombre] => NombreEquipo 4
+            [cve] => CVE987
+            [area] => AreaEjemplo 4
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Torti
+            [telefono] => 234432
+            [cve_equi_trabajo] => CVE123
+        )
+
+    [1] => Array
+        (
+            [nombre] => Tortas
+            [telefono] => 123321
+            [cve_equi_trabajo] => CVE123,CVE456
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipos
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => NombreEquipo
+            [cve] => CVE123
+            [area] => AreaEjemplo
+        )
+
+    [1] => Array
+        (
+            [nombre] => NombreEquipo 2
+            [cve] => CVE456
+            [area] => AreaEjemplo 2
+        )
+
+    [2] => Array
+        (
+            [nombre] => NombreEquipo 3
+            [cve] => CVE789
+            [area] => AreaEjemplo 3
+        )
+
+    [3] => Array
+        (
+            [nombre] => NombreEquipo 4
+            [cve] => CVE987
+            [area] => AreaEjemplo 4
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+===================================
+
+Consulta INSERT/UPDATE/DELETE
+
+Execute => Correct
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipos
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => NombreEquipo
+            [cve] => CVE123
+            [area] => AreaEjemplo
+        )
+
+    [1] => Array
+        (
+            [nombre] => NombreEquipo 2
+            [cve] => CVE456
+            [area] => AreaEjemplo 2
+        )
+
+    [2] => Array
+        (
+            [nombre] => NombreEquipo 3
+            [cve] => CVE789
+            [area] => AreaEjemplo 3
+        )
+
+    [3] => Array
+        (
+            [nombre] => NombreEquipo 4
+            [cve] => CVE987
+            [area] => AreaEjemplo 4
+        )
+
+    [4] => Array
+        (
+            [nombre] => NombreEquipo 5
+            [cve] => CVE765
+            [area] => AreaEjemplo 5
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Torti
+            [telefono] => 234432
+            [cve_equi_trabajo] => CVE123
+        )
+
+    [1] => Array
+        (
+            [nombre] => Tortas
+            [telefono] => 123321
+            [cve_equi_trabajo] => CVE123,CVE456
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipos
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => NombreEquipo
+            [cve] => CVE123
+            [area] => AreaEjemplo
+        )
+
+    [1] => Array
+        (
+            [nombre] => NombreEquipo 2
+            [cve] => CVE456
+            [area] => AreaEjemplo 2
+        )
+
+    [2] => Array
+        (
+            [nombre] => NombreEquipo 3
+            [cve] => CVE789
+            [area] => AreaEjemplo 3
+        )
+
+    [3] => Array
+        (
+            [nombre] => NombreEquipo 4
+            [cve] => CVE987
+            [area] => AreaEjemplo 4
+        )
+
+    [4] => Array
+        (
+            [nombre] => NombreEquipo 5
+            [cve] => CVE765
+            [area] => AreaEjemplo 5
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Torti
+            [telefono] => 234432
+            [cve_equi_trabajo] => CVE123
+        )
+
+    [1] => Array
+        (
+            [nombre] => Tortas
+            [telefono] => 123321
+            [cve_equi_trabajo] => CVE123,CVE456
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipos
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => NombreEquipo
+            [cve] => CVE123
+            [area] => AreaEjemplo
+        )
+
+    [1] => Array
+        (
+            [nombre] => NombreEquipo 2
+            [cve] => CVE456
+            [area] => AreaEjemplo 2
+        )
+
+    [2] => Array
+        (
+            [nombre] => NombreEquipo 3
+            [cve] => CVE789
+            [area] => AreaEjemplo 3
+        )
+
+    [3] => Array
+        (
+            [nombre] => NombreEquipo 4
+            [cve] => CVE987
+            [area] => AreaEjemplo 4
+        )
+
+    [4] => Array
+        (
+            [nombre] => NombreEquipo 5
+            [cve] => CVE765
+            [area] => AreaEjemplo 5
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Torti
+            [telefono] => 234432
+            [cve_equi_trabajo] => CVE123
+        )
+
+    [1] => Array
+        (
+            [nombre] => Tortas
+            [telefono] => 123321
+            [cve_equi_trabajo] => CVE123,CVE456
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipos
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => NombreEquipo
+            [cve] => CVE123
+            [area] => AreaEjemplo
+        )
+
+    [1] => Array
+        (
+            [nombre] => NombreEquipo 2
+            [cve] => CVE456
+            [area] => AreaEjemplo 2
+        )
+
+    [2] => Array
+        (
+            [nombre] => NombreEquipo 3
+            [cve] => CVE789
+            [area] => AreaEjemplo 3
+        )
+
+    [3] => Array
+        (
+            [nombre] => NombreEquipo 4
+            [cve] => CVE987
+            [area] => AreaEjemplo 4
+        )
+
+    [4] => Array
+        (
+            [nombre] => NombreEquipo 5
+            [cve] => CVE765
+            [area] => AreaEjemplo 5
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Torti
+            [telefono] => 234432
+            [cve_equi_trabajo] => CVE123
+        )
+
+    [1] => Array
+        (
+            [nombre] => Tortas
+            [telefono] => 123321
+            [cve_equi_trabajo] => CVE123,CVE456
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipos
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => NombreEquipo
+            [cve] => CVE123
+            [area] => AreaEjemplo
+        )
+
+    [1] => Array
+        (
+            [nombre] => NombreEquipo 2
+            [cve] => CVE456
+            [area] => AreaEjemplo 2
+        )
+
+    [2] => Array
+        (
+            [nombre] => NombreEquipo 3
+            [cve] => CVE789
+            [area] => AreaEjemplo 3
+        )
+
+    [3] => Array
+        (
+            [nombre] => NombreEquipo 4
+            [cve] => CVE987
+            [area] => AreaEjemplo 4
+        )
+
+    [4] => Array
+        (
+            [nombre] => NombreEquipo 5
+            [cve] => CVE765
+            [area] => AreaEjemplo 5
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Torti
+            [telefono] => 234432
+            [cve_equi_trabajo] => CVE123
+        )
+
+    [1] => Array
+        (
+            [nombre] => Tortas
+            [telefono] => 123321
+            [cve_equi_trabajo] => CVE123,CVE456
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipos
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => NombreEquipo
+            [cve] => CVE123
+            [area] => AreaEjemplo
+        )
+
+    [1] => Array
+        (
+            [nombre] => NombreEquipo 2
+            [cve] => CVE456
+            [area] => AreaEjemplo 2
+        )
+
+    [2] => Array
+        (
+            [nombre] => NombreEquipo 3
+            [cve] => CVE789
+            [area] => AreaEjemplo 3
+        )
+
+    [3] => Array
+        (
+            [nombre] => NombreEquipo 4
+            [cve] => CVE987
+            [area] => AreaEjemplo 4
+        )
+
+    [4] => Array
+        (
+            [nombre] => NombreEquipo 5
+            [cve] => CVE765
+            [area] => AreaEjemplo 5
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Torti
+            [telefono] => 234432
+            [cve_equi_trabajo] => CVE123
+        )
+
+    [1] => Array
+        (
+            [nombre] => Tortas
+            [telefono] => 123321
+            [cve_equi_trabajo] => CVE123,CVE456
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipos
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => NombreEquipo
+            [cve] => CVE123
+            [area] => AreaEjemplo
+        )
+
+    [1] => Array
+        (
+            [nombre] => NombreEquipo 2
+            [cve] => CVE456
+            [area] => AreaEjemplo 2
+        )
+
+    [2] => Array
+        (
+            [nombre] => NombreEquipo 3
+            [cve] => CVE789
+            [area] => AreaEjemplo 3
+        )
+
+    [3] => Array
+        (
+            [nombre] => NombreEquipo 4
+            [cve] => CVE987
+            [area] => AreaEjemplo 4
+        )
+
+    [4] => Array
+        (
+            [nombre] => NombreEquipo 5
+            [cve] => CVE765
+            [area] => AreaEjemplo 5
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+===================================
+
+Consulta INSERT/UPDATE/DELETE
+
+Execute => Correct
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipos
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => NombreEquipo
+            [cve] => CVE123
+            [area] => AreaEjemplo
+        )
+
+    [1] => Array
+        (
+            [nombre] => NombreEquipo 2
+            [cve] => CVE456
+            [area] => AreaEjemplo 2
+        )
+
+    [2] => Array
+        (
+            [nombre] => NombreEquipo 3
+            [cve] => CVE789
+            [area] => AreaEjemplo 3
+        )
+
+    [3] => Array
+        (
+            [nombre] => NombreEquipo 4
+            [cve] => CVE987
+            [area] => AreaEjemplo 4
+        )
+
+    [4] => Array
+        (
+            [nombre] => NombreEquipo 5
+            [cve] => CVE765
+            [area] => AreaEjemplo 5
+        )
+
+    [5] => Array
+        (
+            [nombre] => NombreEquipo 6
+            [cve] => CVE432
+            [area] => AreaEjemplo 6
+        )
+
+)
+

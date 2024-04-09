@@ -53,44 +53,39 @@ class Querys extends Statement
 
   public static function setUsuarioSoporte($nombre, $telefono, $password, $equipos, $target, $fileTmpName) {
     $conn = Connection::connect();
-
-    $query = '';
+  
     if (!$conn) {
-      file_put_contents(self::LOG_FILE, "\nError de conexión\n", FILE_APPEND);
-      return null;
+      return ["Execute" => "Incorrect", "Error" => "Error de conexión"];
     }
-
+  
     if (move_uploaded_file($fileTmpName, $target)) {
       $query = "INSERT INTO de_usuario_soporte 
       (nombre, username, telefono, password, cve_equi_trabajo, url_foto) 
       VALUES 
-      (:nombre, :username, :telefono, :password, :equipos, :url_foto)";
+      (:nombre, :nombret, :telefono, :password, :equipos, :url_foto)";
       $stmt = self::prepareStatement($query);
-
+  
       if ($stmt) {
         $stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
-        $stmt->bindParam(':username', $telefono, PDO::PARAM_STR);
-        $stmt->bindParam(':telefono', $password, PDO::PARAM_STR);
-        $stmt->bindParam(':password', $equipos, PDO::PARAM_STR);
-        $stmt->bindParam(':equipos', $target, PDO::PARAM_STR);
+        $stmt->bindParam(':nombret', $nombre, PDO::PARAM_STR);
+        $stmt->bindParam(':telefono', $telefono, PDO::PARAM_STR);
+        $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+        $stmt->bindParam(':equipos', $equipos, PDO::PARAM_STR);
         $stmt->bindParam(':url_foto', $target, PDO::PARAM_STR);
         $result = self::executePreparedQuery($stmt);
+        
         if ($result !== false) {
-          file_put_contents(self::LOG_FILE, "\nExecute => Correct\n", FILE_APPEND);
-          return ["Execute" => "Correct"];;
+          return ["Execute" => "Correct"];
         } else {
-          file_put_contents(self::LOG_FILE, "\nExecute => Incorrect\n", FILE_APPEND);
-          return ["Execute" => "Incorrect"];
+          return ["Execute" => "Incorrect", "Error" => "Error al ejecutar la consulta"];
         }
       } else {
-        file_put_contents(self::LOG_FILE, "\nExecute => Incorrect sin stmt\n", FILE_APPEND);
-        return ["Execute" => "Incorrect"];
+        return ["Execute" => "Incorrect", "Error" => "Error al preparar la consulta"];
       }
     } else {
-      file_put_contents(self::LOG_FILE, "\nError de imagen". error_get_last() ."\n", FILE_APPEND);
-      return ["Execute" => "Incorrect", "Error" => "Sin Imagen"];
+      return ["Execute" => "Incorrect", "Error" => "Error al mover el archivo"];
     }
-  }
+}
 
   public static function getTable($catalogo)
   {
@@ -146,32 +141,34 @@ function addEquipoTrabajo()
 }
 
 function addUsuarioSoporte(){
-  file_put_contents('process.log', "\nAdentro de la primer funcion\n", FILE_APPEND);
-  $nombre = $_POST['nombre'];
-  $telefono = $_POST['telefono'];
-  $password = $_POST['password'];
-  $equipos = $_POST['equipos'];
-  $fileName = $_FILES['file']['name'];
-  $fileTmpName = $_FILES['file']['tmp_name'];
-  $dir = __DIR__ . '../../../src/user_images/';
-  $target = $dir . basename($fileName);
+  $nombre = $_POST['nombre'] ?? '';
+  $telefono = $_POST['telefono'] ?? '';
+  $password = $_POST['password'] ?? '';
+  $equipos = $_POST['equipos'] ?? '';
+  $fileName = $_FILES['file']['name'] ?? '';
+  $fileTmpName = $_FILES['file']['tmp_name'] ?? '';
+  $dir = '../../../src/user_images/';
 
-  file_put_contents('process.log', "\nPor revisar la imagen\n", FILE_APPEND);
+  if (!$nombre || !$telefono || !$password || !$equipos || !$fileName || !$fileTmpName) {
+    file_put_contents('process.log', 'Datos incompletos', FILE_APPEND);
+    return json_encode(["Execute" => "Incorrect", "Error" => "Datos incompletos"]);
+  }
+
   if ($_FILES['file']['name']){
-    $nuevaImagen = imageconversor($fileName, $fileTmpName, 100, 100, 50, 'webp');
-    file_put_contents('process.log', "\nDespues del conversor ". image_type_to_mime_type($nuevaImagen)."\n", FILE_APPEND);
-
-    if ($target == null) {
-      file_put_contents('process.log', "\nError de imagen\n", FILE_APPEND);
-      return ["Execute" => "Incorrect"];
+    $nuevaImagen = imageconversor($fileTmpName, 100, 100, 9, 'jpeg_to_png');
+    if (!$nuevaImagen) {
+      file_put_contents('process.log', "Error al convertir la imagen \n", FILE_APPEND);
+      return json_encode(["Execute" => "Incorrect", "Error" => "Error al convertir la imagen"]);
     }
+    
+    $target = $dir . $nuevaImagen;
+    file_put_contents('process.log', "Imagen convertida y guardada en: " . $target . " \n", FILE_APPEND);
 
     $data = Querys::setUsuarioSoporte($nombre, $telefono, $password, $equipos, $target, $fileTmpName);
     header('Content-Type: application/json');
     return json_encode($data);
   } else {
-    file_put_contents('process.log', "\nSin imagen\n", FILE_APPEND);
-    return ["Execute" => "Incorrect", "Error" => "Sin Imagen"];
+    return json_encode(["Execute" => "Incorrect", "Error" => "Sin Imagen"]);
   }
 }
 

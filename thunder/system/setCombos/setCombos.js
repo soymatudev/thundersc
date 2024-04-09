@@ -237,7 +237,7 @@ async function setComboEquiposTrabajo() {
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
 
-  $("#comboEquipo").empty();
+  $("#comboEquiposT").empty();
 
   data.forEach((option, index) => {
     $("#comboEquiposT").append(

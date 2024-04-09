@@ -96,6 +96,7 @@ option {
 }
 
 .select-area {
+  position: fixed;
   padding: 5px;
   margin: 45px 10px 0px 10px;
   border-left: 5px solid var(--color-principal);

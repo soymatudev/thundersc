@@ -1,3 +1,5 @@
+<?php
+$home = <<<HTML
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,14 +8,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>ThunderSC Admin</title>
-
-  <script src="
-  https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js
-  "></script>
-
-
-
-
 
   <!-- AG Grid CSS (Estilos) -->
   <link rel="stylesheet" href="../../../template/node_modules/ag-grid-community/styles/ag-grid.css" />
@@ -207,3 +201,8 @@
 </body>
 
 </html>
+HTML;
+
+echo $home;
+
+?>
