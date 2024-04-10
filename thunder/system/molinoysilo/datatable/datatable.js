@@ -44,7 +44,7 @@ async function setDataTable() {
   dataF.append("f_ini", f_ini);
   dataF.append("f_fin", f_fin);
 
-  const url = "/thundercloud/system/molinoysilo/datatable/call.php";
+  const url = "../../../../thundercloud/system/molinoysilo/datatable/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
   return data;

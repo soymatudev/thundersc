@@ -16,31 +16,31 @@
 
 
   <!-- AG Grid CSS (Estilos) -->
-  <link rel="stylesheet" href="/thunder/template/node_modules/ag-grid-community/styles/ag-grid.css" />
-  <link rel="stylesheet" href="/thunder/template/node_modules/ag-grid-community/styles/ag-theme-alpine.css" />
+  <link rel="stylesheet" href="../../../template/node_modules/ag-grid-community/styles/ag-grid.css" />
+  <link rel="stylesheet" href="../../../template/node_modules/ag-grid-community/styles/ag-theme-alpine.css" />
 
-  <script src="/thunder/template/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+  <script src="../../../template/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
     crossorigin="anonymous"></script>
-  <script src="/thunder/template/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+  <script src="../../../template/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
   <!-- plugins:css -->
-  <link rel="stylesheet" href="/thunder/template/assets/vendors/mdi/css/materialdesignicons.min.css" />
-  <link rel="stylesheet" href="/thunder/template/assets/vendors/css/vendor.bundle.base.css" />
+  <link rel="stylesheet" href="../../../template/assets/vendors/mdi/css/materialdesignicons.min.css" />
+  <link rel="stylesheet" href="../../../template/assets/vendors/css/vendor.bundle.base.css" />
   <!-- endinject -->
   <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="/thunder/template/assets/vendors/jvectormap/jquery-jvectormap.css" />
-  <link rel="stylesheet" href="/thunder/template/assets/vendors/flag-icon-css/css/flag-icon.min.css" />
-  <link rel="stylesheet" href="/thunder/template/assets/vendors/owl-carousel-2/owl.carousel.min.css" />
-  <link rel="stylesheet" href="/thunder/template/assets/vendors/owl-carousel-2/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="../../../template/assets/vendors/jvectormap/jquery-jvectormap.css" />
+  <link rel="stylesheet" href="../../../template/assets/vendors/flag-icon-css/css/flag-icon.min.css" />
+  <link rel="stylesheet" href="../../../template/assets/vendors/owl-carousel-2/owl.carousel.min.css" />
+  <link rel="stylesheet" href="../../../template/assets/vendors/owl-carousel-2/owl.theme.default.min.css" />
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <!-- endinject -->
   <!-- Layout styles -->
-  <link rel="stylesheet" href="/thunder/template/assets/css/style.css" />
-  <link rel="stylesheet" href="/thunder/template/assets/css/styleArea.css" />
-  <link rel="stylesheet" href="/thunder/template/assets/css/styleProgressBar.css" />
+  <link rel="stylesheet" href="../../../template/assets/css/style.css" />
+  <link rel="stylesheet" href="../../../template/assets/css/styleArea.css" />
+  <link rel="stylesheet" href="../../../template/assets/css/styleProgressBar.css" />
   
   <!-- End layout styles -->
-  <link rel="shortcut icon" href="/thunder/template/assets/images/favicon.png" />
+  <link rel="shortcut icon" href="../../../template/assets/images/favicon.png" />
 </head>
 
 <body class="sidebar-icon-only">
@@ -53,7 +53,7 @@
       <nav class="navbar p-0 fixed-top d-flex flex-row">
         <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
           <a class="navbar-brand brand-logo-mini" href="index.html"><img
-              src="/thunder/template/assets/images/logo-mini.svg" alt="logo" /></a>
+              src="../../../template/assets/images/logo-mini.svg" alt="logo" /></a>
         </div>
         <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -157,30 +157,30 @@
   </div>
   <!-- container-scroller -->
   <!-- plugins:js -->
-  <script src="/thunder/template/assets/vendors/js/vendor.bundle.base.js"></script>
+  <script src="../../../template/assets/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
   <!-- Plugin js for this page -->
-  <script src="/thunder/template/assets/vendors/chart.js/Chart.min.js"></script>
-  <script src="/thunder/template/assets/vendors/progressbar.js/progressbar.min.js"></script>
-  <script src="/thunder/template/assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
-  <script src="/thunder/template/assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-  <script src="/thunder/template/assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
+  <script src="../../../template/assets/vendors/chart.js/Chart.min.js"></script>
+  <script src="../../../template/assets/vendors/progressbar.js/progressbar.min.js"></script>
+  <script src="../../../template/assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+  <script src="../../../template/assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+  <script src="../../../template/assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>
   <!-- End plugin js for this page -->
   <!-- inject:js -->
-  <script src="/thunder/template/assets/js/off-canvas.js"></script>
-  <script src="/thunder/template/assets/js/hoverable-collapse.js"></script>
-  <script src="/thunder/template/assets/js/misc.js"></script>
-  <script src="/thunder/template/assets/js/settings.js"></script>
-  <script src="/thunder/template/assets/js/todolist.js"></script>
+  <script src="../../../template/assets/js/off-canvas.js"></script>
+  <script src="../../../template/assets/js/hoverable-collapse.js"></script>
+  <script src="../../../template/assets/js/misc.js"></script>
+  <script src="../../../template/assets/js/settings.js"></script>
+  <script src="../../../template/assets/js/todolist.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page -->
-  <script src="/thunder/template/assets/js/dashboard.js"></script>
-  <script defer src="/thunder/template/node_modules/ag-grid-community/dist/ag-grid-community.min.js"></script>
-  <script src="/thunder/template/assets/js/setTable.js"></script>
+  <script src="../../../template/assets/js/dashboard.js"></script>
+  <script defer src="../../../template/node_modules/ag-grid-community/dist/ag-grid-community.min.js"></script>
+  <script src="../../../template/assets/js/setTable.js"></script>
   <script src="../../sweetAlert2/sweetAlert.js"></script>
   <script src="./createChart.js"></script>
   <script src="./dashboards.js"></script>
-  <script src="/thunder/template/assets/js/menuIN-OUT.js"></script>
+  <script src="../../../template/assets/js/menuIN-OUT.js"></script>
   <script src="../../dataFetch/dataFetch.js"></script>
   <script src="../../combos/setCombos.js"></script>
   <!-- End custom js for this page -->

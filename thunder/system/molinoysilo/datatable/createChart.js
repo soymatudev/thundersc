@@ -24,7 +24,7 @@ async function getHistorialTable() {
   dataF.append("f_fin", f_fin);
   dataF.append("equipo", equipo);
 
-  const url = "/thundercloud/system/molinoysilo/datatable/call.php";
+  const url = "../../../../thundercloud/system/molinoysilo/datatable/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const historialData = await dataFetch(url, dataF);
 

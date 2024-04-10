@@ -1,10 +1,10 @@
 <?php
-/*
-===============================================================================
-Autor: Juan Maturana
-Fecha de Creación: 2024
-===============================================================================
-*/
+/*===============================================================================
+Autor: Juan Maturana - SoyMatudev
+Fecha de Creación: 10/02/2024
+ruta: thundersc/thundercloud/system/Connection/Connection.php
+===============================================================================*/
+
 date_default_timezone_set('America/Mexico_City');
 class Connection {
   private const LOG_FILE = 'process.log';

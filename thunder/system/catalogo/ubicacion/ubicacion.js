@@ -74,7 +74,7 @@ async function setZona() {
   dataF.append("variablekey", "addZona");
   dataF.append("nombre", $("#nombre").val().trim());
 
-  const url = "/thundercloud/system/catalogo/ubicacion/call.php";
+  const url = "../../../../thundercloud/system/catalogo/ubicacion/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
   
@@ -87,7 +87,7 @@ async function setArea () {
   dataF.append("variablekey", "addArea");
   dataF.append("nombre", $("#nombre").val().trim());
 
-  const url = "/thundercloud/system/catalogo/ubicacion/call.php";
+  const url = "../../../../thundercloud/system/catalogo/ubicacion/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
   
@@ -107,7 +107,7 @@ async function addRelacion() {
   console.log(zona);
   console.log(area);
 
-  const url = "/thundercloud/system/catalogo/ubicacion/call.php";
+  const url = "../../../../thundercloud/system/catalogo/ubicacion/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
   
@@ -120,7 +120,7 @@ async function showTable (catalogo) {
   dataF.append("variablekey", "showTable");
   dataF.append("catalogo", catalogo);
 
-  const url = "/thundercloud/system/catalogo/ubicacion/call.php";
+  const url = "../../../../thundercloud/system/catalogo/ubicacion/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
 

@@ -1,13 +1,13 @@
 <?php
+/*===============================================================================
+Autor: Juan Maturana - SoyMatudev
+Fecha de Creación: 15/02/2024
+ruta: thundersc/thundercloud/system/molinoysilo/molino/molino.php
+===============================================================================*/
+
 require_once('../../Connection/Connection.php');
 require_once('../../Connection/Statement.php');
-/*
-===============================================================================
-Autor: Juan Maturana
-Fecha de Creación: 14/12/2023
-Descripción: Devuelve lo datos solicitados sobre los Molinos y Silos
-===============================================================================
-*/
+
 class Querys extends Statement
 {
   private $conexion;

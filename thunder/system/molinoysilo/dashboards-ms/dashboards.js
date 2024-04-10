@@ -18,14 +18,14 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 // Creamos el Chart Tiempo Total por Semana para la pagina principal
 async function getTiempoTS() {
-  tiempoData = await getData("/thundercloud/system/molinoysilo/dashboards-ms/call.php", "getTiempoTS");
+  tiempoData = await getData("../../../../thundercloud/system/molinoysilo/dashboards-ms/call.php", "getTiempoTS");
   const nombres = Object.keys(tiempoData);
   console.log(tiempoData);
   processTiempoTS(nombres, tiempoData);
 }
 // Creamos el Chart Donut Activos para la pagina principal
 async function getActivos() {
-  activos = await getData("/thundercloud/system/molinoysilo/dashboards-ms/call.php", "getActivos");
+  activos = await getData("../../../../thundercloud/system/molinoysilo/dashboards-ms/call.php", "getActivos");
   unable = 0;
   disable = 0;
 
@@ -37,7 +37,7 @@ async function getActivos() {
 }
 // Creamos el Chart Volumen por Silos
 async function getVolumen() {
-  volumen = await getData("/thundercloud/system/molinoysilo/dashboards-ms/call.php", "getVolumen");
+  volumen = await getData("../../../../thundercloud/system/molinoysilo/dashboards-ms/call.php", "getVolumen");
   nombres = Object.keys(volumen);
   console.log(volumen);
   console.log(volumen["SILO-A"]);
@@ -57,7 +57,7 @@ function createSilos(nombres, volumen) {
     <h6>${nombre}</h6>
     <p>${volumen["SILO-A"][0].porcentaje}%</p>
     <p>${volumen["SILO-A"][0].dato_1} de ${volumen["SILO-A"][0].materia_prima}</p>
-    <img src="/thunder/template/assets/images/silo1.png" alt="Silo" class="siloImg">
+    <img src="../../../template/assets/images/silo1.png" alt="Silo" class="siloImg">
     <div class="container-progressbar">
             <input type="checkbox" id="water"/>
             <label for="water" class="label-progress">
@@ -83,7 +83,7 @@ function changeWidthAnimation(volumen) {
 
 // Creamos el Chart Volumen por Silos debajo de X porcentaje
 async function getSiloAlert() {
-  volumen = await getData("/thundercloud/system/molinoysilo/dashboards-ms/call.php", "getVolumen");
+  volumen = await getData("../../../../thundercloud/system/molinoysilo/dashboards-ms/call.php", "getVolumen");
   nombres = Object.keys(volumen);
 
   unable = 0;

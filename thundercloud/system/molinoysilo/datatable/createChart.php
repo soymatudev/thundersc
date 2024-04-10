@@ -1,13 +1,13 @@
 <?php
+/*===============================================================================
+Autor: Juan Maturana - SoyMatudev
+Fecha de Creación: 15/02/2024
+ruta: thundersc/thundercloud/system/molinoysilo/datatables/createChart.php
+===============================================================================*/
+
 require_once('../../Connection/Connection.php');
 require_once('../../Connection/Statement.php');
-/*
-===============================================================================
-Autor: Juan Maturana
-Fecha de Creación: 14/12/2023
-Descripción: Devuelve los datos para generar los Charts de la pagina Table
-===============================================================================
-*/
+
 class CreateChartTable extends Statement
 {
   private $conexion;

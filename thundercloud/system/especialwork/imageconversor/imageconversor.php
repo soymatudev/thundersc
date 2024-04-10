@@ -1,4 +1,9 @@
 <?php
+/*===============================================================================
+Autor: Juan Maturana - SoyMatudev
+Fecha de Creación: 09/10/2024
+ruta: thundersc/thundercloud/system/especialwork/imageconversor/imageconversor.
+===============================================================================*/
 function imageconversor($fileTmpName, $newWidth, $newHeight, $quality, $type) {
   $dir = '../../../src/user_images/';
 

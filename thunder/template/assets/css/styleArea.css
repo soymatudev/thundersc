@@ -96,7 +96,7 @@ option {
 }
 
 .select-area {
-  position: fixed;
+  /* position: fixed; */
   padding: 5px;
   margin: 45px 10px 0px 10px;
   border-left: 5px solid var(--color-principal);
@@ -281,7 +281,12 @@ pre {
 
 /* Modificar el color del borde */
 
+.select2-container--default {
+  /* min-width: 100%; */
+}
+
 .select2-container--default .select2-selection--single, .select2-container--default, .select2-container--default .select2-selection--multiple {
+  /* min-width: 100%; */
   background-color: #fff;
   border-radius: 6px;
   border: solid 1px var(--color-secundario);

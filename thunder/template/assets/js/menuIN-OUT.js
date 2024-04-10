@@ -1,10 +1,12 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     $("#menuOUT").hide();
-    $("#menuIN").on("click", function() {
+
+    await $("#menuIN").on("click", async function() {
         $("#menuIN").hide();
         $("#menuOUT").show();
     })
-    $("#menuOUT").on("click", function() {
+
+    await $("#menuOUT").on("click", async function() {
         $("#menuOUT").hide();
         $("#menuIN").show();
     })

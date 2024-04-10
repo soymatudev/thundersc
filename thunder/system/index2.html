@@ -42,19 +42,19 @@
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
                 <a class="nav-link" data-url="./molinoysilo/dashboards-ms/dashboards.php" id="Dashboards"
-                  onclick="createTab('Dashboards')">Dashboards MS</a>
+                  onclick="addTab('Dashboards')">Dashboards MS</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-url="./molinoysilo/molino/molino.php" id="Molino"
-                onclick="createTab('Molino')" >Molino</a>
+                onclick="addTab('Molino')" >Molino</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-url="./molinoysilo/silo/silo.php" id="Silo"
-                onclick="createTab('Silo')" >Silo</a>
+                onclick="addTab('Silo')" >Silo</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-url="./molinoysilo/datatable/datatable.php" id="Panel-Tecnico"
-                onclick="createTab('Panel-Tecnico')" >Panel Tecnico</a>
+                onclick="addTab('Panel-Tecnico')" >Panel Tecnico</a>
               </li>
             </ul>
           </div>
@@ -75,9 +75,9 @@
                 <div class="collapse" id="auth">
                   <ul class="nav flex-column sub-menu">
                     <li class="nav-item">
-                      <a data-url="http://localhost/thunder/template/index.html" id="in" onclick="createTab('in')"
+                      <a data-url="./mantenimiento/usuarioyequipo/usuarioyequipo.php" id="in" onclick="addTab('in')"
                         class="nav-link">
-                        Blank Page
+                        Usuarios y Grupos
                       </a>
                     </li>
                     <li class="nav-item">
@@ -97,7 +97,7 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" data-url="./table/table.html" id="if"
-                        onclick="createTab('if')">
+                        onclick="addTab('if')">
                         Register
                       </a>
                     </li>
@@ -105,16 +105,16 @@
                 </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-url="./table/table.html" id="ip"
-                  onclick="createTab('ip')">Registro</a>
+                <a class="nav-link" data-url="./mantenimiento/usuarioyequipo/usuarioyequipo.php" id="Usuarios y Grupos"
+                  onclick="addTab('Usuarios y Grupos')">Usuarios y Grupos</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-url="./catalogo_mp/catalogo_mp.html" id="ca"
-                onclick="createTab('ca')" >Catálogo</a>
+                onclick="addTab('ca')" >Catálogo</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-url="./nueva_ot/nueva_ot.html" id="M-OT"
-                  onclick="createTab('M-OT')">
+                  onclick="addTab('M-OT')">
                   Calendario y OT</a>
               </li>
             </ul>
@@ -128,9 +128,15 @@
           <div class="collapse" id="Calidad">
             <ul class="nav flex-column sub-menu">
               <li class="nav-item">
-                <a class="nav-link" data-url="./catalogo/maquina/maquina.php" id="C-Maquinas"
-                onclick="addTab('C-Maquinas')">
+                <a class="nav-link" data-url="./catalogo/maquina/maquina.php" id="Catalogo Maquinas"
+                onclick="addTab('Catalogo Maquinas')">
                   Maquinas
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-url="./catalogo/ubicacion/ubicacion.php" id="Catalogo Ubicaciones"
+                onclick="addTab('Catalogo Ubicaciones')">
+                  Ubicaciones
                 </a>
               </li>
             </ul>
@@ -163,14 +169,13 @@
                 <div class="row" id="tab-bar">
                   
                   <div class="col-1 body-tab" style="margin-left: 20px;">
-                    <button class="brn-tab-delete" onclick="deleteTab('tab-w2-1', 'tab-content-w2-1')">
+                    <button class="brn-tab-delete" >
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-circle-fill tab-delete" viewBox="0 0 16 16">
                         <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293z"></path>
                       </svg>
                     </button>
                     <a class="link-tab" href="#tab-content-1">w2</a>
                   </div>
-
 
                 </div>
 
@@ -186,7 +191,6 @@
                   <iframe src="./w2.php" class="iframe"></iframe>
                 </div>
               </div>
-              
               
             </div>
           </div>

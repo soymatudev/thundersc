@@ -1,14 +1,13 @@
 <?php
+/*===============================================================================
+Autor: Juan Maturana - SoyMatudev
+Fecha de Creación: 05/03/2024
+ruta: thundersc/thundercloud/system/mantenimiento/usuarioyequipo/usuarioyequipo.php
+===============================================================================*/
 require_once('../../Connection/Connection.php');
 require_once('../../Connection/Statement.php');
 require_once('../../especialwork/imageconversor/imageconversor.php');
-/*
-===============================================================================
-Autor: Juan Maturana
-Fecha de Creación: 14/12/2023
-Descripción: Devuelve lo datos solicitados sobre los Molinos y Silos
-===============================================================================
-*/
+
 class Querys extends Statement
 {
   private $conexion;

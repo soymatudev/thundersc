@@ -1,4 +1,10 @@
 <?php
+/*===============================================================================
+Autor: Juan Maturana - SoyMatudev
+Fecha de Creación: 26/02/2024
+ruta: thundersc/thundercloud/system/setCombos/call.php
+===============================================================================*/
+
 require_once('./setCombos.php');
 $key = $_POST['variablekey'];
 

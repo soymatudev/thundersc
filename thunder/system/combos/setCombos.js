@@ -5,7 +5,7 @@ async function showEquipo() {
 
   dataF.append("variablekey", "showEquipo");
 
-  const url = "/thundercloud/system/combos/setCombos.php";
+  const url = "../../../../thundercloud/system/combos/setCombos.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
   console.log(data);
@@ -24,7 +24,7 @@ async function showSubEquipo() {
 
   dataF.append("variablekey", "showSubEquipo");
 
-  const url = "/thundercloud/system/combos/setCombos.php";
+  const url = "../../../../thundercloud/system/combos/setCombos.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF);
   console.log(data);
