@@ -27,6 +27,7 @@ class Querys extends Statement
     $privateKey = openssl_pkey_get_private(file_get_contents('../ssl/thundersc_Key_privada.pem'));
 
     $permisos = openssl_public_encrypt($permisos, $encrypted, $publicKey);
+    $passCrypt = password_hash($password, PASSWORD_DEFAULT, ['cost' => 10]);
 
     $query = '';
     if (!$conn) {
@@ -40,7 +41,7 @@ class Querys extends Statement
 
     if ($stmt) {
       $stmt->bindParam(':username', $nombre, PDO::PARAM_STR);
-      $stmt->bindParam(':password', $password, PDO::PARAM_STR);
+      $stmt->bindParam(':password', $passCrypt, PDO::PARAM_STR);
       $stmt->bindParam(':permisos', $encrypted, PDO::PARAM_STR);
       $result = self::executePreparedQuery($stmt);
       if ($result !== false) {
