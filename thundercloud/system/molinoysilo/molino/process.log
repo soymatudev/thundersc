@@ -50157,3 +50157,269 @@ Execute TiempoT => Array
 
 )
 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [dato_1] => 60
+                )
+
+            [1] => Array
+                (
+                    [dato_1] => 60
+                )
+
+            [2] => Array
+                (
+                    [dato_1] => 60
+                )
+
+        )
+
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 1
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute HistorialA => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [dato_1] => 60
+                )
+
+            [1] => Array
+                (
+                    [dato_1] => 60
+                )
+
+            [2] => Array
+                (
+                    [dato_1] => 60
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute HistorialTiempo => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [hora_minutos] => 15:55
+                )
+
+            [1] => Array
+                (
+                    [hora_minutos] => 15:55
+                )
+
+            [2] => Array
+                (
+                    [hora_minutos] => 15:55
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoT => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [tiempo_trabajado_en_horas] => 50.4100
+                )
+
+        )
+
+)
+

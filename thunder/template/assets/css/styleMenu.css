@@ -21340,3 +21340,51 @@ a{
   border-top: 1px solid transparent;
 }
 .tooltip-inner{white-space: nowrap;}
+
+/* ========================================================= */
+
+
+:root {
+  --color-principal: #14285a;
+  --color-secundario: #1d51a7;
+  --color-terciario: #007bff;
+  --color-data: #b7e4ff;
+  --color-blanco: #ffffff;
+  --color-blanco-2: #f3f8fb;
+  --color-blanco-3: #f2f2f2;
+  --color-acentuacion: #d92129;
+  --color-shadow-1: #666666;
+  --bg-tooltip: rgba(29, 81, 167, 0.8);
+  --bg-span: rgba(53, 85, 166, 0.1);
+  --color-border: #cdd2da;
+  --dark-0: #495057;
+  --dark-1: #343a40;
+  --dark-2: #212629;
+}
+
+.form-control {
+  border-radius: 6px;
+  background: var(--color-blanco-3);
+  border: solid 2px var(--color-principal);
+}
+
+.form-control:focus {
+  border-radius: 6px;
+  background: var(--color-blanco-3);
+  border: solid 2px var(--color-principal);
+}
+
+.card-login {
+  background: #fff;
+  color:#000;
+  background: #ffffffc2;
+}
+
+.card .card-title{
+  color: #000;
+}
+.btn-primary {
+  border-radius: 50px;
+}
+
+/* ========================================================= */

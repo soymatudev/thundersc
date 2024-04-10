@@ -5496,3 +5496,108 @@ Execute => Array
 
 )
 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => usuarios
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Torti
+            [telefono] => 234432
+            [cve_equi_trabajo] => CVE123
+        )
+
+    [1] => Array
+        (
+            [nombre] => Tortas
+            [telefono] => 123321
+            [cve_equi_trabajo] => CVE123,CVE456
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipos
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => NombreEquipo
+            [cve] => CVE123
+            [area] => AreaEjemplo
+        )
+
+    [1] => Array
+        (
+            [nombre] => NombreEquipo 2
+            [cve] => CVE456
+            [area] => AreaEjemplo 2
+        )
+
+    [2] => Array
+        (
+            [nombre] => NombreEquipo 3
+            [cve] => CVE789
+            [area] => AreaEjemplo 3
+        )
+
+    [3] => Array
+        (
+            [nombre] => NombreEquipo 4
+            [cve] => CVE987
+            [area] => AreaEjemplo 4
+        )
+
+    [4] => Array
+        (
+            [nombre] => NombreEquipo 5
+            [cve] => CVE765
+            [area] => AreaEjemplo 5
+        )
+
+    [5] => Array
+        (
+            [nombre] => NombreEquipo 6
+            [cve] => CVE432
+            [area] => AreaEjemplo 6
+        )
+
+    [6] => Array
+        (
+            [nombre] => Nombre Equipo 7
+            [cve] => CVE000
+            [area] => AreaEjemplo 7
+        )
+
+)
+

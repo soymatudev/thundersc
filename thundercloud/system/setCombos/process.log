@@ -90595,3 +90595,330 @@ Execute => Array
 
 )
 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [cedis] => Maizoro
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [cve] => CVE123
+        )
+
+    [1] => Array
+        (
+            [cve] => CVE456
+        )
+
+    [2] => Array
+        (
+            [cve] => CVE789
+        )
+
+    [3] => Array
+        (
+            [cve] => CVE987
+        )
+
+    [4] => Array
+        (
+            [cve] => CVE765
+        )
+
+    [5] => Array
+        (
+            [cve] => CVE432
+        )
+
+    [6] => Array
+        (
+            [cve] => CVE000
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Zona1-Area1
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Componente 1
+        )
+
+    [1] => Array
+        (
+            [nombre] => Componente 2
+        )
+
+    [2] => Array
+        (
+            [nombre] => Componente 3
+        )
+
+    [3] => Array
+        (
+            [nombre] => Componente 4
+        )
+
+    [4] => Array
+        (
+            [nombre] => 
+        )
+
+    [5] => Array
+        (
+            [nombre] => Componente 5
+        )
+
+    [6] => Array
+        (
+            [nombre] => Componente 6
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Maquina Principal
+        )
+
+    [1] => Array
+        (
+            [nombre] => Maquina Secundaria
+        )
+
+    [2] => Array
+        (
+            [nombre] => Maquina Terciaria
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Equipo 1
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Sub Equipo 1
+        )
+
+    [1] => Array
+        (
+            [nombre] => Sub Equipo 2
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Zona1
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Area1
+        )
+
+)
+
