@@ -30,4 +30,10 @@ if ($key == "setComboCedis") {
     echo subequipomaq();
 } else if ($key == "setComboEquiposTrabajo") {
     echo equipostrabajo();
+} else if ($key == "setComboAsignatario") {
+    echo asignatario();
+} else if ($key == "setComboMarca") {
+    echo marca();
+} else if ($key == "setComboAlmacen") {
+    echo almacen();
 }

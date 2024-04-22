@@ -29,7 +29,7 @@
   <link rel="stylesheet" href="../template/assets/css/style.css" />
   <link rel="stylesheet" href="../template/assets/css/styleArea.css" />
   <!-- End layout styles -->
-  <link rel="shortcut icon" href="../template/assets/images/favicon.png" />
+  <link rel="shortcut icon" href="../template/assets/images/LogoThunderO.png" />
 </head>
 
 <body class="sidebar-icon-only">
@@ -58,8 +58,8 @@
 
           </div>
 
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod ipsa, dolorem autem tempore illum nemo deleniti quia animi dolores fugit pariatur possimus sint, inventore quibusdam alias dicta perspiciatis blanditiis amet?</p>
-
+        <!-- <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod ipsa, dolorem autem tempore illum nemo deleniti quia animi dolores fugit pariatur possimus sint, inventore quibusdam alias dicta perspiciatis blanditiis amet?</p>
+ -->
         </div>
       </div>
       <!-- content-wrapper ends -->

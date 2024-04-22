@@ -38,7 +38,7 @@
   <link rel="stylesheet" href="../../../template/assets/css/style.css" />
   <link rel="stylesheet" href="../../../template/assets/css/styleArea.css" />
   <!-- End layout styles -->
-  <link rel="shortcut icon" href="../../../template/assets/images/favicon.png" />
+  <link rel="shortcut icon" href="../../../template/assets/images/LogoThunderO.png" />
 </head>
 
 <body>

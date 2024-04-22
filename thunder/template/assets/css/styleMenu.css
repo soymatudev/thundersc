@@ -21366,6 +21366,7 @@ a{
   border-radius: 6px;
   background: var(--color-blanco-3);
   border: solid 2px var(--color-principal);
+  color: #000;
 }
 
 .form-control:focus {

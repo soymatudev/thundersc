@@ -82,4 +82,8 @@ class CustomDataTable {
     this.dataTable = new agGrid.createGrid(gridDiv, gridOptions);
     this.dataTableIsInitialized = true;
   }
+
+  async onBtnExport() {
+    this.dataTable.exportDataAsCsv();
+  }
 }

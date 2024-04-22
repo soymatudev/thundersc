@@ -40,7 +40,7 @@
   <link rel="stylesheet" href="../../../template/assets/css/styleProgressBar.css" />
   
   <!-- End layout styles -->
-  <link rel="shortcut icon" href="../../../template/assets/images/favicon.png" />
+  <link rel="shortcut icon" href="../../../template/assets/images/LogoThunderO.png" />
 </head>
 
 <body class="sidebar-icon-only">

@@ -2941,3 +2941,279 @@ Execute => Array
 
 )
 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [username] => Torti
+            [password] => torti
+            [permisos] => 
+        )
+
+    [1] => Array
+        (
+            [username] => Tortas
+            [password] => tortas
+            [permisos] => dashboard-ms, molino-ms, silo-ms, panel-tecnico-ms, ubicaciones-ca
+        )
+
+    [2] => Array
+        (
+            [username] => Kusanali
+            [password] => $2y$10$/Yhn8wfF.af73gAFdnyf1uZRELa7IHkYyrg5vlQqGJukTFm7rMESm
+            [permisos] => dashboard-ms, molino-ms, panel-tecnico-ms, nuevasot-man, ubicaciones-ca
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [username] => Torti
+            [password] => torti
+            [permisos] => 
+        )
+
+    [1] => Array
+        (
+            [username] => Tortas
+            [password] => tortas
+            [permisos] => dashboard-ms, molino-ms, silo-ms, panel-tecnico-ms, ubicaciones-ca
+        )
+
+    [2] => Array
+        (
+            [username] => Kusanali
+            [password] => $2y$10$/Yhn8wfF.af73gAFdnyf1uZRELa7IHkYyrg5vlQqGJukTFm7rMESm
+            [permisos] => dashboard-ms, molino-ms, panel-tecnico-ms, nuevasot-man, ubicaciones-ca
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [username] => Torti
+            [password] => torti
+            [permisos] => 
+        )
+
+    [1] => Array
+        (
+            [username] => Tortas
+            [password] => tortas
+            [permisos] => dashboard-ms, molino-ms, silo-ms, panel-tecnico-ms, ubicaciones-ca
+        )
+
+    [2] => Array
+        (
+            [username] => Kusanali
+            [password] => $2y$10$/Yhn8wfF.af73gAFdnyf1uZRELa7IHkYyrg5vlQqGJukTFm7rMESm
+            [permisos] => dashboard-ms, molino-ms, panel-tecnico-ms, nuevasot-man, ubicaciones-ca
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [username] => Torti
+            [password] => torti
+            [permisos] => 
+        )
+
+    [1] => Array
+        (
+            [username] => Tortas
+            [password] => tortas
+            [permisos] => dashboard-ms, molino-ms, silo-ms, panel-tecnico-ms, ubicaciones-ca
+        )
+
+    [2] => Array
+        (
+            [username] => Kusanali
+            [password] => $2y$10$/Yhn8wfF.af73gAFdnyf1uZRELa7IHkYyrg5vlQqGJukTFm7rMESm
+            [permisos] => dashboard-ms, molino-ms, panel-tecnico-ms, nuevasot-man, ubicaciones-ca
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [username] => Torti
+            [password] => torti
+            [permisos] => 
+        )
+
+    [1] => Array
+        (
+            [username] => Tortas
+            [password] => tortas
+            [permisos] => dashboard-ms, molino-ms, silo-ms, panel-tecnico-ms, ubicaciones-ca
+        )
+
+    [2] => Array
+        (
+            [username] => Kusanali
+            [password] => $2y$10$/Yhn8wfF.af73gAFdnyf1uZRELa7IHkYyrg5vlQqGJukTFm7rMESm
+            [permisos] => dashboard-ms, molino-ms, panel-tecnico-ms, nuevasot-man, ubicaciones-ca
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [username] => Torti
+            [password] => torti
+            [permisos] => 
+        )
+
+    [1] => Array
+        (
+            [username] => Tortas
+            [password] => tortas
+            [permisos] => dashboard-ms, molino-ms, silo-ms, panel-tecnico-ms, ubicaciones-ca
+        )
+
+    [2] => Array
+        (
+            [username] => Kusanali
+            [password] => $2y$10$/Yhn8wfF.af73gAFdnyf1uZRELa7IHkYyrg5vlQqGJukTFm7rMESm
+            [permisos] => dashboard-ms, molino-ms, panel-tecnico-ms, nuevasot-man, ubicaciones-ca
+        )
+
+)
+

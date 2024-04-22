@@ -335,6 +335,87 @@ class Querys extends Statement
     }
   }
 
+  public function getAsignatario () {
+    $con = Connection::connect();
+
+    if (!$con) {
+      file_put_contents(self::LOG_FILE, "\nError de conexión\n", FILE_APPEND);
+      return null;
+    }
+
+    $query = "SELECT CONCAT(nombre, ' ', apellidos) AS nombre FROM de_asignatario";
+    $stmt = self::prepareStatement($query);
+    if ($stmt) {
+      $result = self::executePreparedQuery($stmt);
+
+      if ($result !== false) {
+        file_put_contents(self::LOG_FILE, "\nExecute => Correct => Obentenemos los nombres\n", FILE_APPEND);
+        file_put_contents(self::LOG_FILE, "\nExecute => " . print_r($result, true) . "\n", FILE_APPEND);
+        return $result;
+      } else {
+        file_put_contents(self::LOG_FILE, "\nExecute => Incorrect\n", FILE_APPEND);
+        return ["Execute" => "Incorrect"];
+      }
+    } else {
+      file_put_contents(self::LOG_FILE, "\nExecute => Incorrect sin stmt\n", FILE_APPEND);
+      return ["Execute" => "Incorrect"];
+    }
+  }
+
+  public function getMarca () {
+    $con = Connection::connect();
+
+    if (!$con) {
+      file_put_contents(self::LOG_FILE, "\nError de conexión\n", FILE_APPEND);
+      return null;
+    }
+
+    $query = "SELECT DISTINCT nombre FROM de_marca";
+    $stmt = self::prepareStatement($query);
+    if ($stmt) {
+      $result = self::executePreparedQuery($stmt);
+
+      if ($result !== false) {
+        file_put_contents(self::LOG_FILE, "\nExecute => Correct => Obentenemos los nombres\n", FILE_APPEND);
+        file_put_contents(self::LOG_FILE, "\nExecute => " . print_r($result, true) . "\n", FILE_APPEND);
+        return $result;
+      } else {
+        file_put_contents(self::LOG_FILE, "\nExecute => Incorrect\n", FILE_APPEND);
+        return ["Execute" => "Incorrect"];
+      }
+    } else {
+      file_put_contents(self::LOG_FILE, "\nExecute => Incorrect sin stmt\n", FILE_APPEND);
+      return ["Execute" => "Incorrect"];
+    }
+  }
+
+  public function getAlmacen () {
+    $con = Connection::connect();
+
+    if (!$con) {
+      file_put_contents(self::LOG_FILE, "\nError de conexión\n", FILE_APPEND);
+      return null;
+    }
+
+    $query = "SELECT CONCAT(cve_alm, ' ', nombre) AS nombre FROM de_almacen";
+    $stmt = self::prepareStatement($query);
+    if ($stmt) {
+      $result = self::executePreparedQuery($stmt);
+
+      if ($result !== false) {
+        file_put_contents(self::LOG_FILE, "\nExecute => Correct => Obentenemos los nombres\n", FILE_APPEND);
+        file_put_contents(self::LOG_FILE, "\nExecute => " . print_r($result, true) . "\n", FILE_APPEND);
+        return $result;
+      } else {
+        file_put_contents(self::LOG_FILE, "\nExecute => Incorrect\n", FILE_APPEND);
+        return ["Execute" => "Incorrect"];
+      }
+    } else {
+      file_put_contents(self::LOG_FILE, "\nExecute => Incorrect sin stmt\n", FILE_APPEND);
+      return ["Execute" => "Incorrect"];
+    }
+  }
+
   public function cerrarConexion()
   {
     // Cierra la conexion cuando ya no sea necesaria
@@ -435,6 +516,30 @@ function subequipomaq() {
 function equipostrabajo() {
   $Querys = new Querys();
   $cedisData = $Querys->getEquipoTrabajo();
+  $Querys->cerrarConexion(); // Cierra la conexión después de obtener los datos
+  header('Content-Type: application/json');
+  return json_encode($cedisData);
+}
+
+function asignatario() {
+  $Querys = new Querys();
+  $cedisData = $Querys->getAsignatario();
+  $Querys->cerrarConexion(); // Cierra la conexión después de obtener los datos
+  header('Content-Type: application/json');
+  return json_encode($cedisData);
+}
+
+function marca() {
+  $Querys = new Querys();
+  $cedisData = $Querys->getMarca();
+  $Querys->cerrarConexion(); // Cierra la conexión después de obtener los datos
+  header('Content-Type: application/json');
+  return json_encode($cedisData);
+}
+
+function almacen() {
+  $Querys = new Querys();
+  $cedisData = $Querys->getAlmacen();
   $Querys->cerrarConexion(); // Cierra la conexión después de obtener los datos
   header('Content-Type: application/json');
   return json_encode($cedisData);

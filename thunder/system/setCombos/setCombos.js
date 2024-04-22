@@ -92,9 +92,13 @@ async function setComboZona() {
 
   $("#comboZona").empty();
 
+  $("#comboZona").append(
+    `<option value="${0}">${""}</option>`
+  );
+
   data.forEach((option, index) => {
     $("#comboZona").append(
-      `<option value="${index}">${option.nombre}</option>`
+      `<option value="${index+1}">${option.nombre}</option>`
     );
   });
 }
@@ -109,9 +113,13 @@ async function setComboArea() {
 
   $("#comboArea").empty();
 
+  $("#comboArea").append(
+    `<option value="${0}">${""}</option>`
+  );
+
   data.forEach((option, index) => {
     $("#comboArea").append(
-      `<option value="${index}">${option.nombre}</option>`
+      `<option value="${index+1}">${option.nombre}</option>`
     );
   });
 }
@@ -242,6 +250,75 @@ async function setComboEquiposTrabajo() {
   data.forEach((option, index) => {
     $("#comboEquiposT").append(
       `<option value="${index+1}">${option.cve}</option>`
+    );
+  });
+}
+/* Pensados para inventario */
+async function setComboAsignatario() {
+  const dataF = new FormData();
+  dataF.append("variablekey", "setComboAsignatario");
+
+  const url = "../../../../thundercloud/system/setCombos/call.php";
+  const header = { "Content-Type": "multipart/form-data" };
+  let data = await dataFetch(url, dataF);
+
+  if (data === null || data === undefined) {data = [{"nombre": "Sin Datos"}]}; 
+
+  $("#comboAsignatario").empty();
+
+  $("#comboAsignatario").append(
+    `<option value="${0}">${""}</option>`
+  );
+
+  data.forEach((option, index) => {
+    $("#comboAsignatario").append(
+      `<option value="${index+1}">${option.nombre}</option>`
+    );
+  });
+}
+
+async function setComboMarca() {
+  const dataF = new FormData();
+  dataF.append("variablekey", "setComboMarca");
+
+  const url = "../../../../thundercloud/system/setCombos/call.php";
+  const header = { "Content-Type": "multipart/form-data" };
+  let data = await dataFetch(url, dataF);
+
+  if (data === null || data === undefined) {data = [{"nombre": "Sin Datos"}]}; 
+
+  $("#comboMarca").empty();
+
+  $("#comboMarca").append(
+    `<option value="${0}">${""}</option>`
+  );
+
+  data.forEach((option, index) => {
+    $("#comboMarca").append(
+      `<option value="${index+1}">${option.nombre}</option>`
+    );
+  });
+}
+
+async function setComboAlmacen() {
+  const dataF = new FormData();
+  dataF.append("variablekey", "setComboAlmacen");
+
+  const url = "../../../../thundercloud/system/setCombos/call.php";
+  const header = { "Content-Type": "multipart/form-data" };
+  let data = await dataFetch(url, dataF);
+
+  if (data === null || data === undefined) {data = [{"nombre": "Sin Datos"}]}; 
+
+  $("#comboAlmacen").empty();
+
+  $("#comboAlmacen").append(
+    `<option value="${0}">${""}</option>`
+  );
+
+  data.forEach((option, index) => {
+    $("#comboAlmacen").append(
+      `<option value="${index+1}">${option.nombre}</option>`
     );
   });
 }

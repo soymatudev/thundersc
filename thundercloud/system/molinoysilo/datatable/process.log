@@ -26889,3 +26889,846 @@ Execute => Array
 
 )
 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [tipo] => SILO
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [id] => 394
+            [alias] => SILO-A
+            [fecha_hora] => 2024-01-22 12:36:25.00
+            [dato_1] => 218.06 Ton
+            [dato_2] => 0.05 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 99.82 %
+        )
+
+    [1] => Array
+        (
+            [id] => 395
+            [alias] => SILO-A
+            [fecha_hora] => 2024-01-22 13:19:05.00
+            [dato_1] => 217.26 Ton
+            [dato_2] => 0.15 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 99.45 %
+        )
+
+    [2] => Array
+        (
+            [id] => 396
+            [alias] => SILO-A
+            [fecha_hora] => 2024-01-22 13:19:18.00
+            [dato_1] => 216.46 Ton
+            [dato_2] => 0.25 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 99.09 %
+        )
+
+    [3] => Array
+        (
+            [id] => 397
+            [alias] => SILO-A
+            [fecha_hora] => 2024-01-22 13:19:24.00
+            [dato_1] => 218.38 Ton
+            [dato_2] => 0.01 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 99.96 %
+        )
+
+    [4] => Array
+        (
+            [id] => 398
+            [alias] => SILO-A
+            [fecha_hora] => 2024-01-22 14:45:30.00
+            [dato_1] => 217.26 Ton
+            [dato_2] => 0.15 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 99.45 %
+        )
+
+    [5] => Array
+        (
+            [id] => 400
+            [alias] => SILO-A
+            [fecha_hora] => 2024-01-22 15:13:51.00
+            [dato_1] => 201.67 Ton
+            [dato_2] => 2.1 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 92.32 %
+        )
+
+    [6] => Array
+        (
+            [id] => 401
+            [alias] => SILO-A
+            [fecha_hora] => 2024-01-22 15:13:57.00
+            [dato_1] => 177.69 Ton
+            [dato_2] => 5.1 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 81.34 %
+        )
+
+    [7] => Array
+        (
+            [id] => 402
+            [alias] => SILO-A
+            [fecha_hora] => 2024-01-22 15:14:01.00
+            [dato_1] => 193.68 Ton
+            [dato_2] => 3.1 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 88.66 %
+        )
+
+    [8] => Array
+        (
+            [id] => 403
+            [alias] => SILO-A
+            [fecha_hora] => 2024-01-22 15:19:45.00
+            [dato_1] => 137.73 Ton
+            [dato_2] => 10.1 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 63.04 %
+        )
+
+    [9] => Array
+        (
+            [id] => 404
+            [alias] => SILO-A
+            [fecha_hora] => 2024-01-22 15:20:02.00
+            [dato_1] => 57.79 Ton
+            [dato_2] => 20.1 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 26.45 %
+        )
+
+    [10] => Array
+        (
+            [id] => 406
+            [alias] => SILO-A
+            [fecha_hora] => 2024-01-22 15:47:54.00
+            [dato_1] => 218.30 Ton
+            [dato_2] => 0.02 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 99.93 %
+        )
+
+    [11] => Array
+        (
+            [id] => 419
+            [alias] => SILO-A
+            [fecha_hora] => 2024-01-29 15:41:23.00
+            [dato_1] => 210.47 Ton
+            [dato_2] => 1 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 96.34 %
+        )
+
+    [12] => Array
+        (
+            [id] => 420
+            [alias] => SILO-A
+            [fecha_hora] => 2024-01-29 15:41:27.00
+            [dato_1] => 202.47 Ton
+            [dato_2] => 2 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 92.68 %
+        )
+
+    [13] => Array
+        (
+            [id] => 421
+            [alias] => SILO-A
+            [fecha_hora] => 2024-01-29 15:41:29.00
+            [dato_1] => 210.47 Ton
+            [dato_2] => 1 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 96.34 %
+        )
+
+    [14] => Array
+        (
+            [id] => 433
+            [alias] => SILO-A
+            [fecha_hora] => 2024-03-25 00:00:00.00
+            [dato_1] => 214.86 Ton
+            [dato_2] => 0.45 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 98.35 %
+        )
+
+    [15] => Array
+        (
+            [id] => 434
+            [alias] => SILO-A
+            [fecha_hora] => 2024-03-25 00:00:00.00
+            [dato_1] => ERROR
+            [dato_2] => 45 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => ERROR
+        )
+
+    [16] => Array
+        (
+            [id] => 435
+            [alias] => SILO-A
+            [fecha_hora] => 2024-03-25 10:31:06.00
+            [dato_1] => ERROR
+            [dato_2] => 45 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => ERROR
+        )
+
+    [17] => Array
+        (
+            [id] => 436
+            [alias] => SILO-A
+            [fecha_hora] => 2024-03-28 12:45:38.00
+            [dato_1] => 138.53 Ton
+            [dato_2] => 10 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 63.41 %
+        )
+
+    [18] => Array
+        (
+            [id] => 437
+            [alias] => SILO-A
+            [fecha_hora] => 2024-04-01 09:50:38.00
+            [dato_1] => 138.53 Ton
+            [dato_2] => 10 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 63.41 %
+        )
+
+    [19] => Array
+        (
+            [id] => 442
+            [alias] => SILO-A
+            [fecha_hora] => 2024-04-02 08:22:15.00
+            [dato_1] => 138.53 Ton
+            [dato_2] => 10 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 63.41 %
+        )
+
+    [20] => Array
+        (
+            [id] => 448
+            [alias] => SILO-A
+            [fecha_hora] => 2024-04-04 15:51:37.00
+            [dato_1] => 138.53 Ton
+            [dato_2] => 10 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 63.41 %
+        )
+
+    [21] => Array
+        (
+            [id] => 457
+            [alias] => SILO-A
+            [fecha_hora] => 2024-04-10 15:55:29.00
+            [dato_1] => 138.53 Ton
+            [dato_2] => 10 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 63.41 %
+        )
+
+    [22] => Array
+        (
+            [id] => 458
+            [alias] => SILO-A
+            [fecha_hora] => 2024-04-10 15:55:30.00
+            [dato_1] => 138.53 Ton
+            [dato_2] => 10 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 63.41 %
+        )
+
+    [23] => Array
+        (
+            [id] => 459
+            [alias] => SILO-A
+            [fecha_hora] => 2024-04-10 15:55:31.00
+            [dato_1] => 138.53 Ton
+            [dato_2] => 10 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 63.41 %
+        )
+
+    [24] => Array
+        (
+            [id] => 463
+            [alias] => SILO-A
+            [fecha_hora] => 2024-04-11 08:57:30.00
+            [dato_1] => 138.53 Ton
+            [dato_2] => 10 m
+            [zona] => M01
+            [cedis] => Maizoro
+            [Volumen] => 63.41 %
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [tipo] => SILO
+        )
+
+)
+
+
+Cedis => Maizoro Grupo => M01 Equipo => SILO-A f_ini => 2023-09-26 00:00:00 f_fin => 2024-04-11 23:59:59 Tipo => SILO 
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [dato_1] => 218.06
+                )
+
+            [1] => Array
+                (
+                    [dato_1] => 217.26
+                )
+
+            [2] => Array
+                (
+                    [dato_1] => 216.46
+                )
+
+            [3] => Array
+                (
+                    [dato_1] => 218.38
+                )
+
+            [4] => Array
+                (
+                    [dato_1] => 217.26
+                )
+
+            [5] => Array
+                (
+                    [dato_1] => 201.67
+                )
+
+            [6] => Array
+                (
+                    [dato_1] => 177.69
+                )
+
+            [7] => Array
+                (
+                    [dato_1] => 193.68
+                )
+
+            [8] => Array
+                (
+                    [dato_1] => 137.73
+                )
+
+            [9] => Array
+                (
+                    [dato_1] => 57.79
+                )
+
+            [10] => Array
+                (
+                    [dato_1] => 218.30
+                )
+
+            [11] => Array
+                (
+                    [dato_1] => 210.47
+                )
+
+            [12] => Array
+                (
+                    [dato_1] => 202.47
+                )
+
+            [13] => Array
+                (
+                    [dato_1] => 210.47
+                )
+
+            [14] => Array
+                (
+                    [dato_1] => 214.86
+                )
+
+            [15] => Array
+                (
+                    [dato_1] => 0.00
+                )
+
+            [16] => Array
+                (
+                    [dato_1] => 0.00
+                )
+
+            [17] => Array
+                (
+                    [dato_1] => 138.53
+                )
+
+            [18] => Array
+                (
+                    [dato_1] => 138.53
+                )
+
+            [19] => Array
+                (
+                    [dato_1] => 138.53
+                )
+
+            [20] => Array
+                (
+                    [dato_1] => 138.53
+                )
+
+            [21] => Array
+                (
+                    [dato_1] => 138.53
+                )
+
+            [22] => Array
+                (
+                    [dato_1] => 138.53
+                )
+
+            [23] => Array
+                (
+                    [dato_1] => 138.53
+                )
+
+            [24] => Array
+                (
+                    [dato_1] => 138.53
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [hora_minutos] => Día-22 12:36
+                )
+
+            [1] => Array
+                (
+                    [hora_minutos] => Día-22 13:19
+                )
+
+            [2] => Array
+                (
+                    [hora_minutos] => Día-22 13:19
+                )
+
+            [3] => Array
+                (
+                    [hora_minutos] => Día-22 13:19
+                )
+
+            [4] => Array
+                (
+                    [hora_minutos] => Día-22 14:45
+                )
+
+            [5] => Array
+                (
+                    [hora_minutos] => Día-22 15:13
+                )
+
+            [6] => Array
+                (
+                    [hora_minutos] => Día-22 15:13
+                )
+
+            [7] => Array
+                (
+                    [hora_minutos] => Día-22 15:14
+                )
+
+            [8] => Array
+                (
+                    [hora_minutos] => Día-22 15:19
+                )
+
+            [9] => Array
+                (
+                    [hora_minutos] => Día-22 15:20
+                )
+
+            [10] => Array
+                (
+                    [hora_minutos] => Día-22 15:47
+                )
+
+            [11] => Array
+                (
+                    [hora_minutos] => Día-29 15:41
+                )
+
+            [12] => Array
+                (
+                    [hora_minutos] => Día-29 15:41
+                )
+
+            [13] => Array
+                (
+                    [hora_minutos] => Día-29 15:41
+                )
+
+            [14] => Array
+                (
+                    [hora_minutos] => Día-25 00:00
+                )
+
+            [15] => Array
+                (
+                    [hora_minutos] => Día-25 00:00
+                )
+
+            [16] => Array
+                (
+                    [hora_minutos] => Día-25 10:31
+                )
+
+            [17] => Array
+                (
+                    [hora_minutos] => Día-28 12:45
+                )
+
+            [18] => Array
+                (
+                    [hora_minutos] => Día-01 09:50
+                )
+
+            [19] => Array
+                (
+                    [hora_minutos] => Día-02 08:22
+                )
+
+            [20] => Array
+                (
+                    [hora_minutos] => Día-04 15:51
+                )
+
+            [21] => Array
+                (
+                    [hora_minutos] => Día-10 15:55
+                )
+
+            [22] => Array
+                (
+                    [hora_minutos] => Día-10 15:55
+                )
+
+            [23] => Array
+                (
+                    [hora_minutos] => Día-10 15:55
+                )
+
+            [24] => Array
+                (
+                    [hora_minutos] => Día-11 08:57
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [tipo] => SILO
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SILO-A] => Array
+        (
+            [0] => Array
+                (
+                    [Extra] => 99.82
+                )
+
+            [1] => Array
+                (
+                    [Extra] => 99.45
+                )
+
+            [2] => Array
+                (
+                    [Extra] => 99.09
+                )
+
+            [3] => Array
+                (
+                    [Extra] => 99.96
+                )
+
+            [4] => Array
+                (
+                    [Extra] => 99.45
+                )
+
+            [5] => Array
+                (
+                    [Extra] => 92.32
+                )
+
+            [6] => Array
+                (
+                    [Extra] => 81.34
+                )
+
+            [7] => Array
+                (
+                    [Extra] => 88.66
+                )
+
+            [8] => Array
+                (
+                    [Extra] => 63.04
+                )
+
+            [9] => Array
+                (
+                    [Extra] => 26.45
+                )
+
+            [10] => Array
+                (
+                    [Extra] => 99.93
+                )
+
+            [11] => Array
+                (
+                    [Extra] => 96.34
+                )
+
+            [12] => Array
+                (
+                    [Extra] => 92.68
+                )
+
+            [13] => Array
+                (
+                    [Extra] => 96.34
+                )
+
+            [14] => Array
+                (
+                    [Extra] => 98.35
+                )
+
+            [15] => Array
+                (
+                    [Extra] => 0.00
+                )
+
+            [16] => Array
+                (
+                    [Extra] => 0.00
+                )
+
+            [17] => Array
+                (
+                    [Extra] => 63.41
+                )
+
+            [18] => Array
+                (
+                    [Extra] => 63.41
+                )
+
+            [19] => Array
+                (
+                    [Extra] => 63.41
+                )
+
+            [20] => Array
+                (
+                    [Extra] => 63.41
+                )
+
+            [21] => Array
+                (
+                    [Extra] => 63.41
+                )
+
+            [22] => Array
+                (
+                    [Extra] => 63.41
+                )
+
+            [23] => Array
+                (
+                    [Extra] => 63.41
+                )
+
+            [24] => Array
+                (
+                    [Extra] => 63.41
+                )
+
+        )
+
+)
+

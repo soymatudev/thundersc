@@ -85,6 +85,10 @@ class CustomDataTable {
     this.dataTableIsInitialized = true;
   }
 
+  async onBtnExport() {
+    this.dataTable.exportDataAsCsv();
+  }
+
 }
 
 /* 

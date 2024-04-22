@@ -282,7 +282,7 @@ pre {
 /* Modificar el color del borde */
 
 .select2-container--default {
-  /* min-width: 100%; */
+  min-width: 100%;
 }
 
 .select2-container--default .select2-selection--single, .select2-container--default, .select2-container--default .select2-selection--multiple {
