@@ -56,11 +56,11 @@ async function dataFetch(url, body, header) {
       } else {
         if (data["Execute"] == "Correct") {
           //console.log("Esto es Data: " + data);
-          //alertSucces();
+          alertSucces();
           return;
         } else if (data["Execute"] == "Incorrect") {
           //console.log("Esto es Data: " + data);
-          //alertError();
+          alertError();
           return;
         }
         //console.log("Respuesta JSON:", data);
@@ -77,7 +77,7 @@ async function dataFetch(url, body, header) {
   } catch (error) {
     //alert("Acción Realizada");
     //alertSucces();
-    //alertError();
+    alertError();
     console.log("Error: ", error);
   }
 }

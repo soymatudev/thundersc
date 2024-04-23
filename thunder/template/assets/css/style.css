@@ -21472,3 +21472,10 @@ font-family: 'Lato';
 }
 }
 /**********End File Inputs**********/
+
+/**********Start Sweet Alert2*********/
+
+.swal2-modal .swal2-icon, .swal2-modal .swal2-success-ring {
+  margin-top: 0;
+  margin-bottom: 0px !important;
+}
