@@ -174,88 +174,116 @@ async function init() {
 async function setAsignatario() {
   const dataF = new FormData();
 
-  dataF.append("variablekey", "setAsignatario");
-  dataF.append("nombre", $("#nombre").val().trim());
-  dataF.append("apellidos", $("#apellidos").val().trim());
+  if ($("#nombre").val().trim() === "" || $("#apellidos").val().trim() === "") {
+    alertEmpty("El campo nombre o apellidos no puede estar vacío.");
+  } else {
+    dataF.append("variablekey", "setAsignatario");
+    dataF.append("nombre", $("#nombre").val().trim());
+    dataF.append("apellidos", $("#apellidos").val().trim());
+  }
 
   const url = "../../../../thundercloud/system/inventariosistemas/agregar/call.php";
   const header = { "Content-Type": "multipart/form-data" };
-  const data = await dataFetch(url, dataF)
+  const data = await dataFetch(url, dataF, "Asignatario agregado con éxito!", "Error al agregar asignatario, intenta de nuevo.")
 }
 
 async function setClasificacion() {
   const dataF = new FormData();
 
-  dataF.append("variablekey", "setClasificacion");
-  dataF.append("nombre", $("#nombre").val().trim());
+  if ($("#nombre").val().trim() === "") { 
+    alertEmpty("El campo nombre no puede estar vacío.");
+  } else {
+    dataF.append("variablekey", "setClasificacion");
+    dataF.append("nombre", $("#nombre").val().trim()); 
+  }
 
   const url = "../../../../thundercloud/system/inventariosistemas/agregar/call.php";
   const header = { "Content-Type": "multipart/form-data" };
-  const data = await dataFetch(url, dataF)
+  const data = await dataFetch(url, dataF, "Clasificación agregada con éxito!", "Error al agregar clasificación, intenta de nuevo.")
 }
 
 async function setMarca() {
   const dataF = new FormData();
 
-  dataF.append("variablekey", "setMarca");
-  dataF.append("nombre", $("#nombre").val().trim());
+  if ($("#nombre").val().trim() === "") { 
+    alertEmpty("El campo nombre no puede estar vacío.");
+  } else {
+    dataF.append("variablekey", "setMarca");
+    dataF.append("nombre", $("#nombre").val().trim());
+  }
 
   const url = "../../../../thundercloud/system/inventariosistemas/agregar/call.php";
   const header = { "Content-Type": "multipart/form-data" };
-  const data = await dataFetch(url, dataF)
+  const data = await dataFetch(url, dataF, "Marca agregada con éxito!", "Error al agregar marca, intenta de nuevo.")
 }
 
 async function setArea() {
   const dataF = new FormData();
 
-  dataF.append("variablekey", "setArea");
-  dataF.append("nombre", $("#nombre").val().trim());
+  if ($("#nombre").val().trim() === "") { 
+    alertEmpty("El campo nombre no puede estar vacío.");
+  } else {
+    dataF.append("variablekey", "setArea");
+    dataF.append("nombre", $("#nombre").val().trim());
+  }
 
   const url = "../../../../thundercloud/system/inventariosistemas/agregar/call.php";
   const header = { "Content-Type": "multipart/form-data" };
-  const data = await dataFetch(url, dataF)
+  const data = await dataFetch(url, dataF, "Área agregada con éxito!", "Error al agregar área, intenta de nuevo.")
 }
 
 async function setAlmacen() {
   const dataF = new FormData();
 
-  dataF.append("variablekey", "setAlmacen");
-  dataF.append("nombre", $("#nombre").val().trim());
-  dataF.append("cve", $("#cve").val().trim());
-  dataF.append("zona", $("#comboZona option:selected").text());
+  if ($("#nombre").val().trim() === "" || $("#cve").val().trim() === "" || $("#comboZona option:selected").text() === ""){ 
+    alertEmpty("El campo nombre, clave o zona no puede estar vacío.");
+  } else {
+    dataF.append("variablekey", "setAlmacen");
+    dataF.append("nombre", $("#nombre").val().trim());
+    dataF.append("cve", $("#cve").val().trim());
+    dataF.append("zona", $("#comboZona option:selected").text());
+  }
 
   const url = "../../../../thundercloud/system/inventariosistemas/agregar/call.php";
   const header = { "Content-Type": "multipart/form-data" };
-  const data = await dataFetch(url, dataF)
+  const data = await dataFetch(url, dataF, "Almacén agregado con éxito!", "Error al agregar almacén, intenta de nuevo.")
 }
 
 async function setZona() {
   const dataF = new FormData();
 
-  dataF.append("variablekey", "setZona");
-  dataF.append("nombre", $("#nombre").val().trim());
+  if ($("#nombre").val().trim() === "") { 
+    alertEmpty("El campo nombre no puede estar vacío.");
+  } else {
+    dataF.append("variablekey", "setZona");
+    dataF.append("nombre", $("#nombre").val().trim());
+  }
 
   const url = "../../../../thundercloud/system/inventariosistemas/agregar/call.php";
   const header = { "Content-Type": "multipart/form-data" };
-  const data = await dataFetch(url, dataF)
+  const data = await dataFetch(url, dataF, "Zona agregada con éxito!", "Error al agregar zona, intenta de nuevo.")
 }
 
 async function setEquipo() {
   const dataF = new FormData();
 
-  dataF.append("variablekey", "setEquipo");
-  dataF.append("numserie", $("#numserie").val().trim());
-  dataF.append("modelo", $("#modelo").val().trim());
-  dataF.append("clasificacion", $("#comboClasif option:selected").text());
-  dataF.append("marca", $("#comboMarca option:selected").text());
-  dataF.append("area", $("#comboArea option:selected").text());
-  dataF.append("almacen", $("#comboAlmacen option:selected").text());
-  dataF.append("asignatario", $("#comboAsignatario option:selected").text());
-  dataF.append("f_registro", $("#f_registro").val().trim());
+  if ($("#modelo").val().trim() === "" || $("#f_registro").val().trim() === "" || $("#numserie").val().trim() === "" || $("#comboClasif option:selected").text() === "" || $("#comboMarca option:selected").text() === "" || $("#comboArea option:selected").text() === "" || $("#comboAlmacen option:selected").text() === "" || $("#comboAsignatario option:selected").text() === "") { 
+    alertEmpty("Todos los campos son obligatorios.");
+  } else {
+    dataF.append("variablekey", "setEquipo");
+    dataF.append("numserie", $("#numserie").val().trim());
+    dataF.append("modelo", $("#modelo").val().trim());
+    dataF.append("clasificacion", $("#comboClasif option:selected").text());
+    dataF.append("marca", $("#comboMarca option:selected").text());
+    dataF.append("area", $("#comboArea option:selected").text());
+    dataF.append("almacen", $("#comboAlmacen option:selected").text());
+    dataF.append("asignatario", $("#comboAsignatario option:selected").text());
+    dataF.append("f_registro", $("#f_registro").val().trim());
+  }
 
   const url = "../../../../thundercloud/system/inventariosistemas/agregar/call.php";
   const header = { "Content-Type": "multipart/form-data" };
-  const data = await dataFetch(url, dataF)
+  const data = await dataFetch(url, dataF, "Equipo agregado con éxito!", "Error al agregar equipo, intenta de nuevo.")
 }
 
 async function showTable (catalogo) {

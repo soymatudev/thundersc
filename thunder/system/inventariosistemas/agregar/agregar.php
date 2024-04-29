@@ -7,7 +7,7 @@ $home = <<<HTML
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>ThunderSC Admin</title>
+  <title>ThunderSC</title>
 
   <!-- AG Grid CSS (Estilos) -->
   <link rel="stylesheet" href="../../../template/node_modules/ag-grid-community/styles/ag-grid.css" />
@@ -46,9 +46,9 @@ $home = <<<HTML
           <div id="divFormato">
             <p class="label-c-g">Agregar:</p>
             <select class="select col-md-2" name="materia" tabindex="-1" aria-hidden="true" id="comboFormato">
-              <option value="0">Equipo</option>
+              <option value="0">Hardware</option>
               <option value="1">Asignatario</option>
-              <option value="2">Clasficacion</option>
+              <option value="2">Equipo</option>
               <option value="3">Marca</option>
               <option value="4">Area</option>
               <option value="5">Almacen</option>
@@ -67,7 +67,7 @@ $home = <<<HTML
           </div>
 
           <div id="divComboClasificacion">
-            <p class="label-c-g">Clasificacion:</p>
+            <p class="label-c-g">Equipo:</p>
             <select class="select col-md-2" tabindex="-1" aria-hidden="true" id="comboClasif">
             </select>
           </div>

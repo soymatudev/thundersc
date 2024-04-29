@@ -33,7 +33,7 @@ class Querys extends Statement
       $query .= !empty($_POST['apellidos']) ? " AND apellidos LIKE '%" . $_POST['apellidos'] . "%'" : "";
     
     } else if ($catalogo == "clasificacion") {
-      $query = "SELECT nombre AS 'Clasificacion' FROM de_clasif_equi WHERE 1";
+      $query = "SELECT nombre AS 'Equipo' FROM de_clasif_equi WHERE 1";
       $query .= !empty($_POST['nombre']) ? " AND nombre LIKE '%" . $_POST['nombre'] . "%'" : "";
     
     } else if ($catalogo == "marca") {
@@ -58,7 +58,7 @@ class Querys extends Statement
     } else if ($catalogo == "equipo") {
       $query = "SELECT 
       fecha_registro, num_serie AS 'Numero_Serie', 
-      modelo, cla.nombre AS 'Clasificacion', 
+      modelo, cla.nombre AS 'Equipo', 
       mar.nombre AS 'Marca', 
       are.nombre AS 'Area', 
       CONCAT(asi.nombre, ' ', asi.apellidos) AS 'Asignatario', 

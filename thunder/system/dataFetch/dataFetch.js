@@ -4,7 +4,7 @@ Autor: Juan Maturana
 Fecha de Creación: 2024
 ===============================================================================
 */
-async function dataFetch(url, body, header) {
+async function dataFetch(url, body, msSuccess = "Todo fue bien!", msError1 = "Algo salio mal, intenta de nuevo o reportalo.", header) {
   try {
     const response = await fetch(url, {
       method: "POST",
@@ -56,7 +56,7 @@ async function dataFetch(url, body, header) {
       } else {
         if (data["Execute"] == "Correct") {
           //console.log("Esto es Data: " + data);
-          alertSucces();
+          alertSucces(msSuccess)
           return;
         } else if (data["Execute"] == "Incorrect") {
           //console.log("Esto es Data: " + data);

@@ -254,7 +254,7 @@ class Querys extends Statement
     if ($catalogo == "asignatario") {
       $query = "SELECT CONCAT(nombre, ' ', apellidos) AS 'Asignatario' FROM de_asignatario";
     } else if ($catalogo == "clasificacion") {
-      $query = "SELECT nombre AS 'Clasificacion' FROM de_clasif_equi";
+      $query = "SELECT nombre AS 'Equipo' FROM de_clasif_equi";
     } else if ($catalogo == "marca") {
       $query = "SELECT nombre AS 'Marca' FROM de_marca";
     } else if ($catalogo == "area") {
@@ -266,7 +266,7 @@ class Querys extends Statement
     } else if ($catalogo == "equipo") {
       $query = "SELECT 
       fecha_registro, num_serie AS 'Numero_Serie', 
-      modelo, cla.nombre AS 'Clasificacion', 
+      modelo, cla.nombre AS 'Equipo', 
       mar.nombre AS 'Marca', 
       are.nombre AS 'Area', 
       CONCAT(asi.nombre, ' ', asi.apellidos) AS 'Asignatario', 

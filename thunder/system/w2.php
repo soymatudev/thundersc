@@ -5,7 +5,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>ThunderSC Admin</title>
+  <title>ThunderSC</title>
 
   <!-- AG Grid CSS (Estilos) -->
   <link rel="stylesheet" href="../template/node_modules/ag-grid-community/styles/ag-grid.css" />
