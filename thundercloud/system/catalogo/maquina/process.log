@@ -34339,3 +34339,202 @@ Execute => Array
 
 )
 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipo
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [Nombre] => Equipo 1
+            [Num_Serie] => eq1
+            [Clasificacion] => Maquina Principal
+            [Componentes] => Componente 1
+            [Ubicacion] => Zona1-Area1
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => subequipo
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [Nombre] => Sub Equipo 1
+            [Num_Serie] => seq1
+            [Clasificacion] => Maquina Principal
+            [Componentes] => Componente 1
+            [Ubicacion] => Zona1-Area1
+        )
+
+    [1] => Array
+        (
+            [Nombre] => Sub Equipo 2
+            [Num_Serie] => seq2
+            [Clasificacion] => Maquina Secundaria
+            [Componentes] => Componente 1
+            [Ubicacion] => Zona1-Area1
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => componente
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Componente 1
+        )
+
+    [1] => Array
+        (
+            [nombre] => Componente 2
+        )
+
+    [2] => Array
+        (
+            [nombre] => Componente 3
+        )
+
+    [3] => Array
+        (
+            [nombre] => Componente 4
+        )
+
+    [4] => Array
+        (
+            [nombre] => 
+        )
+
+    [5] => Array
+        (
+            [nombre] => Componente 5
+        )
+
+    [6] => Array
+        (
+            [nombre] => Componente 6
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => clasificacion
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Maquina Principal
+        )
+
+    [1] => Array
+        (
+            [nombre] => Maquina Secundaria
+        )
+
+    [2] => Array
+        (
+            [nombre] => Maquina Terciaria
+        )
+
+    [3] => Array
+        (
+            [nombre] => Monitor
+        )
+
+    [4] => Array
+        (
+            [nombre] => Teclado
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => relacion
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Equipo 1
+            [Sub Equipos] => Sub Equipo 1,Sub Equipo 2
+            [componentes] => Componente 1
+        )
+
+)
+

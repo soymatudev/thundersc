@@ -120,6 +120,7 @@
   <script src="../template/assets/js/todolist.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page -->
+  <script defer src="../../thunder/system/sweetAlert2/sweetAlert.js"></script>
   <script src="../template/assets/js/dashboard.js"></script>
   <!-- End custom js for this page -->
 

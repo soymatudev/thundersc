@@ -62,13 +62,13 @@ class Statement
         }
       } else {
         file_put_contents(self::LOG_FILE, "Error en la consulta STMT: ", FILE_APPEND);
-        echo "Mal ejecutado";
+        //echo "Mal ejecutado";
         $stmt->closeCursor();
         return false;
       }
     } catch (PDOException $e) {
       file_put_contents(self::LOG_FILE, "Error en la consulta: " . $e->getMessage(), FILE_APPEND);
-      echo "Error en la consulta: " . $e->getMessage();
+      //echo "Error en la consulta: " . $e->getMessage();
       return false;
     }
   }

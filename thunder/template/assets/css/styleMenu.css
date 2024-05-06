@@ -21389,3 +21389,45 @@ a{
 }
 
 /* ========================================================= */
+
+#btn-killSession{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 0px 15px;
+  background: #fff;
+  border-radius: 100px;
+  border: solid 2px var(--color-terciario);
+  transition: .5s;
+}
+
+.btn-killSession{
+  color: var(--color-terciario);
+  width: 2.0em;
+  height: 2.0em;
+  cursor: pointer;
+  transition: .5s;
+}
+
+#btn-killSession:hover .btn-killSession{
+  color: #fff;
+  border: none;
+  /* box-shadow: 0px 0px 10px 0px var(--color-terciario); */
+  transition: .5s;
+}
+
+#btn-killSession:hover{
+  background-color: var(--color-principal);
+  border: solid 2px #fff;
+  transition: .5s;
+}
+
+#btn-login:hover {
+  background-color: var(--color-principal);
+  transition: .5s;
+}
+
+#btn-login:focus {
+  background-color: var(--color-principal);
+  transition: .5s;
+}

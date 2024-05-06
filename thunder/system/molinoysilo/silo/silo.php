@@ -1,3 +1,23 @@
+<?php
+
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+
+function verifyPermiss ($permiso) {
+  if (isset($_SESSION['permisos'])) {
+    $permisos = explode(", ", $_SESSION['permisos']);
+    return in_array($permiso, $permisos);
+  }
+  return false;
+}
+
+if (!verifyPermiss("silo-ms")) {
+  //header("Location: ../../index.php");
+  exit();
+}
+
+$home = <<<HTML
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,14 +26,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>ThunderSC Admin</title>
-
-  <script src="
-  https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js
-  "></script>
-
-
-
-
 
   <!-- AG Grid CSS (Estilos) -->
   <link rel="stylesheet" href="../../../template/node_modules/ag-grid-community/styles/ag-grid.css" />
@@ -72,20 +84,33 @@
           <div class="row">
 
           <div class="col-md-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <div class="container-zone">
-                    <div class="work-zone d-flex">
-                      <div class="container-grid">
-                        <div class="grid ag-theme-quartz-dark" id="container-tablaOne" style="height: 500px">
-                          <!-- Aqui se genera un grid -->
-                        </div>
+
+            <div class="card">
+              <div class="card-body">
+                <div class="container-zone">
+                  <div class="work-zone d-flex">
+                    <div class="container-grid">
+
+                    <div class="container-c-g" style="display: block; margin-bottom: 10px;">
+                      <p style="display: block; margin: 0;" >Diseno del silo:</p>
+                      <select class="cedis select2-hidden-accessible" id="desing-silo" style="min-width: 8em; text-align: center;" >
+                        <option value="0">Azul</option>
+                        <option value="0">Maya</option>
+                        <option value="0">Ladrillo</option>
+                      </select>
+                    </div>
+
+                      <div class="grid ag-theme-quartz-dark" id="container-tablaOne" 
+                      style="height: 500px; display: flex; flex-direction: row; align-items: flex-start; justify-content: space-evenly;">
+                        <!-- Aqui se genera un grid -->
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
@@ -186,3 +211,6 @@
 </body>
 
 </html>
+
+HTML;
+echo $home;

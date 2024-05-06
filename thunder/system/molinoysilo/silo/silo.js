@@ -12,6 +12,10 @@ document.addEventListener("DOMContentLoaded", async function () {
   await getVolumen();
   await getSiloAlert();
 
+  $("#desing-silo").change(async function () {
+    await getVolumen();
+    await getSiloAlert();
+  });
 });
 
 // Creamos el Chart Tiempo Total por Semana para la pagina principal
@@ -38,57 +42,70 @@ async function getActivos() {
 async function getVolumen() {
   volumen = await getData("../../../../thundercloud/system/molinoysilo/dashboards-ms/call.php", "getVolumen");
   nombres = Object.keys(volumen);
-  console.log(volumen);
-  console.log(volumen["SILO-A"]);
-  console.log(volumen["SILO-A"][0]);
-  console.log(volumen["SILO-A"][0].porcentaje);
-  console.log(volumen["SILO-A"][0].dato_1);
   createSilos(nombres, volumen);
 }
 
 function createSilos(nombres, volumen) {
+  $("#container-tablaOne").empty();
   const divSilos = document.getElementById("container-tablaOne");
   nombres.forEach((nombre) => {
+    let desing = $("#desing-silo option:selected").text();
+    let url = getSiloDesing(desing, Math.round(volumen[nombre][0].porcentaje));
     const silo = document.createElement("div");
-    silo.className = "silo col-12";
+    // 
+    silo.className = "silo col-2 col-md-2 col-lg-2 col-xl-2";
     silo.id = nombre;
     silo.innerHTML = `
     <h6>${nombre}</h6>
-    <p>${volumen["SILO-A"][0].porcentaje}%</p>
-    <p>${volumen["SILO-A"][0].dato_1} de ${volumen["SILO-A"][0].materia_prima}</p>
-    <img src="../../../template/assets/images/silo1.png" alt="Silo" class="siloImg">
-    <div class="container-progressbar">
-            <input type="checkbox" id="water"/>
-            <label for="water" class="label-progress">
-              <div id="fill"></div>
-            </label>
-          </div>
-        </div>
+    <p>${volumen[nombre][0].porcentaje}%</p>
+    <p>${volumen[nombre][0].dato_1} de ${volumen[nombre][0].materia_prima}</p>
+    <img src="${url}" alt="Silo" class="siloImg">
   `;
     divSilos.appendChild(silo);
+  //<progress id='p0' value='${volumen[nombre][0].porcentaje}' max='100'></progress>
+   // changeWidthAnimation(volumen[nombre][0].porcentaje);
   });
-
-  changeWidthAnimation(volumen["SILO-A"][0].porcentaje);
 }
 
-function changeWidthAnimation(volumen) {
-  const progressBar = document.querySelector('label div');
-  const desiredWidth = volumen;
-
-  if (desiredWidth) {
-    progressBar.style.setProperty('--progress-width', desiredWidth + '%'); // Establece el ancho usando una variable CSS
+function getSiloDesing(style, volumen) {
+  let url = "";
+  let path = "../../../template/assets/images/img-silos/";
+  if (volumen >= 0 && volumen <= 5) {
+    url = `${path}${style}_png/silo0.png`;
+  } else if (volumen >= 5 && volumen <= 10) {
+    url = `${path}${style}_png/silo10.png`;
+  } else if (volumen >= 10 && volumen <= 20) {
+    url = `${path}${style}_png/silo10.png`;
+  } else if (volumen >= 20 && volumen <= 30) {
+    url = `${path}${style}_png/silo20.png`;
+  } else if (volumen >= 30 && volumen <= 40) {
+    url = `${path}${style}_png/silo30.png`;
+  } else if (volumen >= 40 && volumen <= 50) {
+    url = `${path}${style}_png/silo40.png`;
+  } else if (volumen >= 50 && volumen <= 60) {
+    url = `${path}${style}_png/silo50.png`;
+  } else if (volumen >= 60 && volumen <= 70) {
+    url = `${path}${style}_png/silo60.png`;
+  } else if (volumen >= 70 && volumen <= 80) {
+    url = `${path}${style}_png/silo70.png`;
+  } else if (volumen >= 80 && volumen <= 90) {
+    url = `${path}${style}_png/silo80.png`;
+  } else if (volumen >= 90 && volumen <= 97) {
+    url = `${path}${style}_png/silo90.png`;
+  } else if (volumen >= 98 && volumen <= 100) {
+    url = `${path}${style}_png/silo100.png`;
   }
+  return url;
 }
 
 // Creamos el Chart Volumen por Silos debajo de X porcentaje
 async function getSiloAlert() {
   volumen = await getData("../../../../thundercloud/system/molinoysilo/dashboards-ms/call.php", "getVolumen");
-  console.log(volumen);
   nombres = Object.keys(volumen);
-
   unable = 0;
   disable = 0;
   nombres.forEach((nombre) => {
+    console.log( volumen[nombre][0].porcentaje);
     volumen[nombre][0].porcentaje >= 30 ? unable++ : disable++;
   });
 

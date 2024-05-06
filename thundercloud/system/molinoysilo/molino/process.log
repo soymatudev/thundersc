@@ -50895,3 +50895,239 @@ Execute TiempoT => Array
 
 )
 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [dato_1] => 30
+                )
+
+            [1] => Array
+                (
+                    [dato_1] => 30
+                )
+
+            [2] => Array
+                (
+                    [dato_1] => 30
+                )
+
+        )
+
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 1
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute HistorialA => Array
+(
+    [ElevadorM] => Array
+        (
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute HistorialTiempo => Array
+(
+    [ElevadorM] => Array
+        (
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoT => Array
+(
+    [ElevadorM] => Array
+        (
+            [0] => Array
+                (
+                    [tiempo_trabajado_en_horas] => 0.0006
+                )
+
+        )
+
+)
+

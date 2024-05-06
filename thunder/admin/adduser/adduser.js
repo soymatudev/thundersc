@@ -53,9 +53,9 @@ async function setUsuario() {
   dataF.append("permisos", permisos);
 
   const url =
-    "../../../thundercloud/log/user/call.php";
+    "../../../thundercloud/admin/user/call.php";
   const header = { "Content-Type": "multipart/form-data" };
-  const data = await dataFetch(url, dataF);
+  const data = await dataFetch(url, dataF, "Usuario Agregado", "Error al agregar usuario");
 }
 
 async function getPermisos() {
@@ -87,7 +87,7 @@ async function showTable(catalogo) {
   dataF.append("catalogo", catalogo);
 
   const url =
-    "../../../thundercloud/log/user/call.php";
+    "../../../thundercloud/admin/user/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   let data = await dataFetch(url, dataF);
 

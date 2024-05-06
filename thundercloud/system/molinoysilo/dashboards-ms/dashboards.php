@@ -59,7 +59,7 @@ class DatosMol extends Statement
     $activos = array();
 
     foreach ($NombreMolinos as $value) {
-      $query = "SELECT ma.dato_1 as 'dato_1' FROM ma_registro ma 
+      /* $query = "SELECT ma.dato_1 as 'dato_1' FROM ma_registro ma 
       JOIN equipo eq 
       JOIN de_agrupacion ag 
       JOIN empresa em ON ag.id_empresa = em.id 
@@ -67,11 +67,37 @@ class DatosMol extends Statement
       JOIN grupo gr ON ag.id_grupo = gr.id 
       WHERE ma.id_equipo = eq.id 
       AND eq.alias = :value 
-      AND eq.id_agrupacion = ag.id ORDER BY ma.fecha_hora DESC LIMIT 3";
+      AND eq.id_agrupacion = ag.id ORDER BY ma.fecha_hora DESC LIMIT 3"; */
+      $query = "SELECT ma.dato_1
+                  FROM ma_registro ma
+                  JOIN equipo eq ON ma.id_equipo = eq.id
+                  JOIN de_agrupacion ag ON eq.id_agrupacion = ag.id
+                  WHERE eq.alias = :value
+                  AND ma.fecha_hora >= NOW() - INTERVAL 1 HOUR
+                  ORDER BY ma.fecha_hora DESC
+                  LIMIT 3
+              
+              UNION ALL
+              (
+                SELECT 0.0
+                  FROM ma_registro ma
+                  WHERE NOT EXISTS (
+                      SELECT ma.dato_1
+                      FROM ma_registro ma
+                      JOIN equipo eq ON ma.id_equipo = eq.id
+                      JOIN de_agrupacion ag ON eq.id_agrupacion = ag.id
+                      WHERE eq.alias = :valueB
+                      AND ma.fecha_hora >= NOW() - INTERVAL 1 HOUR
+                      LIMIT 3
+                  )
+            LIMIT 3
+              )
+              LIMIT 3";
       
       $stmt = self::prepareStatement($query);
       if ($stmt) {
         $stmt->bindParam(':value', $value['alias']);
+        $stmt->bindParam(':valueB', $value['alias']);
         $resultados[$value['alias']] = self::executePreparedQuery($stmt);
         file_put_contents(self::LOG_FILE, "\nExecute => Correct\n", FILE_APPEND);
         file_put_contents(self::LOG_FILE, "\nExecute AmpereMol => ".print_r($resultados, true)."\n", FILE_APPEND);

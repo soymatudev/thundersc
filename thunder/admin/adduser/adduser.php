@@ -127,6 +127,21 @@ $home = <<<HTML
                   </li>
                 </ul>
               </li>
+
+              <li class="block-permiso" >
+                Inventario Sis.
+                <!-- <input class="padre-cat box-permiso" type="checkbox" id="permisoA" name="permisoA" value="A" /> -->
+                <ul>
+                  <li>
+                    Agregar
+                    <input class="cat box-permiso" type="checkbox" id="agregar-inv-sis" name="agregar-inv-sis" value="agregar-inv-sis" />
+                  </li>
+                  <li>
+                    Historial
+                    <input class="cat box-permiso" type="checkbox" id="historial-inv-sis" name="historial-inv-sis" value="historial-inv-sis" />
+                  </li>
+                </ul>
+              </li>
               
             </ul>
           </div>
@@ -199,11 +214,12 @@ $home = <<<HTML
   <!-- endinject -->
   <!-- Custom js for this page -->
 
+
+  <script defer src="../../system/sweetAlert2/sweetAlert.js"></script>
   <script defer src="../../system/dataFetch/dataFetch.js"></script>
   <script defer src="../../template/assets/js/dashboard.js"></script>
   <script defer src="../../template/node_modules/ag-grid-community/dist/ag-grid-community.min.js"></script>
   <script defer src="../../template/assets/js/setTable.js"></script>
-  <script defer src="../../sweetAlert2/sweetAlert.js"></script>
   <script defer src="./adduser.js"></script>
   
   <!-- End custom js for this page -->

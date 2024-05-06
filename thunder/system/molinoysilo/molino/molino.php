@@ -1,3 +1,23 @@
+<?php
+
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+
+function verifyPermiss ($permiso) {
+  if (isset($_SESSION['permisos'])) {
+    $permisos = explode(", ", $_SESSION['permisos']);
+    return in_array($permiso, $permisos);
+  }
+  return false;
+}
+
+if (!verifyPermiss("molino-ms")) {
+  //header("Location: ../../index.php");
+  exit();
+}
+
+$home = <<<HTML
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,14 +26,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>ThunderSC Admin</title>
-
-  <script src="
-  https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js
-  "></script>
-
-
-
-
 
   <!-- AG Grid CSS (Estilos) -->
   <link rel="stylesheet" href="../../../template/node_modules/ag-grid-community/styles/ag-grid.css" />
@@ -185,3 +197,5 @@
 </body>
 
 </html>
+HTML;
+echo $home;

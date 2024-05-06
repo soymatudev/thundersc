@@ -11739,3 +11739,123 @@ Execute => Array
 
 )
 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => zona
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Zona1
+        )
+
+    [1] => Array
+        (
+            [nombre] => Mexico
+        )
+
+    [2] => Array
+        (
+            [nombre] => Puebla
+        )
+
+    [3] => Array
+        (
+            [nombre] => 
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => area
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Area1
+        )
+
+    [1] => Array
+        (
+            [nombre] => Cajas
+        )
+
+    [2] => Array
+        (
+            [nombre] => Area2
+        )
+
+    [3] => Array
+        (
+            [nombre] => Area 3
+        )
+
+    [4] => Array
+        (
+            [nombre] => Area 4
+        )
+
+    [5] => Array
+        (
+            [nombre] => Area 5
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => ubicacion
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Zona1-Area1
+            [Zona] => Zona1
+            [Area] => Area1
+        )
+
+)
+

@@ -1,4 +1,22 @@
 <?php
+
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+
+function verifyPermiss ($permiso) {
+  if (isset($_SESSION['permisos'])) {
+    $permisos = explode(", ", $_SESSION['permisos']);
+    return in_array($permiso, $permisos);
+  }
+  return false;
+}
+
+if (!verifyPermiss("historial-inv-sis")) {
+  //header("Location: ../../index.php");
+  exit();
+}
+
 $home = <<<HTML
 <!DOCTYPE html>
 <html lang="es">
@@ -332,7 +350,4 @@ $home = <<<HTML
 
 </html>
 HTML;
-
 echo $home;
-
-?>

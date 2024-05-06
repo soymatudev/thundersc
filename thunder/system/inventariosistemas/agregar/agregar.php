@@ -1,4 +1,28 @@
 <?php
+
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+
+function verifyPermiss ($permiso) {
+  if (isset($_SESSION['permisos'])) {
+    $permisos = explode(", ", $_SESSION['permisos']);
+    return in_array($permiso, $permisos);
+  }
+  return false;
+}
+
+if (!verifyPermiss("agregar-inv-sis")) {
+  /* echo "<script>
+  if (window.self === window.top) {
+    header('Location: ../../index.php');
+  } </script>"; */
+  /* 
+  echo "<script>window.location.href = '../../../../thundercloud/system/inventariosistemas/historial/agregar.php'</script>";
+   */
+  exit();
+}
+
 $home = <<<HTML
 <!DOCTYPE html>
 <html lang="es">
@@ -321,7 +345,4 @@ $home = <<<HTML
 
 </html>
 HTML;
-
 echo $home;
-
-?>

@@ -27,7 +27,8 @@ class Codec {
         "b" => "ubicaciones-ca",
       ],
       "d" => [
-  
+        "a" => "agregar-inv-sis",
+        "b" => "historial-inv-sis",
       ],
       "e" => "",
       "f" => "",

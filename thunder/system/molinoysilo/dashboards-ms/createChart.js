@@ -37,9 +37,9 @@ function createCanva(idContainer, idCanva, title, idfull) {
     const ctx = document.getElementById(chartId);
   
     const tiempoPorcentual = [];
-  
+  //const value = parseFloat(data[nombre][0]["tiempo_trabajado_en_horas"]);
     nombres.forEach((nombre, index) => {
-      const value = parseFloat(data[nombre][0]["tiempo_trabajado_en_horas"]);
+      const value = parseFloat(data[nombre][0]);
       const porcentajePHora = 100 / 168;
       tiempoPorcentual[index] = (value * porcentajePHora).toFixed(1);
     });
