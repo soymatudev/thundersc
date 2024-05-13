@@ -45,8 +45,8 @@ $home = <<<HTML
   <div class="container-scroller">
     <!-- partial:partials/_sidebar.html -->
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
-      <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-        <a class="sidebar-brand brand-logo" href="index.html">ThunderSC Cloud</a>
+      <div class="sidebar-brand-wrapper d-flex align-items-center justify-content-center fixed-top">
+        <a class="sidebar-brand brand-logo" href="#">ThunderSC Cloud</a>
       </div>
       <ul class="nav">
         
@@ -166,16 +166,16 @@ $home = <<<HTML
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar navbar-w p-0 fixed-top d-flex flex-row">
-        <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
+        <!-- <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
           <a class="navbar-brand brand-logo-mini" href="index.html"><img
               src="../template/assets/images/logo-mini.svg" alt="logo" /></a>
-        </div>
+        </div> -->
         <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-menu"></span>
           </button>
 
-          <button class="navbar-toggler navbar-toggler align-self-center" type="button" id="btn-killSession">
+          <button class="align-self-center" type="button" id="btn-killSession">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left btn-killSession" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/>
               <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>

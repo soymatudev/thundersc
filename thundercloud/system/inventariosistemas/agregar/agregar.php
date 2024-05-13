@@ -276,7 +276,9 @@ class Querys extends Statement
       JOIN de_marca mar ON ma_equi_sis.id_marca = mar.id 
       JOIN de_area are ON ma_equi_sis.id_area = are.id 
       JOIN de_asignatario asi ON ma_equi_sis.id_asignatario = asi.id 
-      JOIN de_almacen alm ON ma_equi_sis.id_almacen = alm.id";
+      JOIN de_almacen alm ON ma_equi_sis.id_almacen = alm.id
+      ORDER BY ma_equi_sis.id
+      ";
     } 
     //$query = "SELECT nombre FROM de_$catalogo";
     $stmt = self::prepareStatement($query);

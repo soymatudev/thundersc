@@ -105,9 +105,9 @@ $home = <<<HTML
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar p-0 fixed-top d-flex flex-row">
-        <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
+        <!-- <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
           <a class="navbar-brand brand-logo-mini" href="index.html"><img src="../../../template/assets/images/logo-mini.svg" alt="logo" /></a>
-        </div>
+        </div> -->
         <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <svg id="menuOUT" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill arrow-icon" viewBox="0 0 16 16">

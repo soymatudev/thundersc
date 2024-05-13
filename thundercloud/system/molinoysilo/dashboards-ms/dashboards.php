@@ -174,7 +174,7 @@ class DatosMol extends Statement
 
   public static function getNomSilo()
   {
-    $query = "SELECT DISTINCT eq.alias as 'alias' FROM ma_registro ma 
+    $query = "SELECT GROUP_CONCAT(DISTINCT eq.alias SEPARATOR ', ') AS Silos, eq.materia_prima AS Mapri FROM ma_registro ma 
     JOIN equipo eq 
     JOIN de_agrupacion ag 
     JOIN empresa em ON ag.id_empresa = em.id 
@@ -182,7 +182,8 @@ class DatosMol extends Statement
     JOIN grupo gr ON ag.id_grupo = gr.id 
     WHERE ma.id_equipo = eq.id 
     AND eq.id_agrupacion = ag.id 
-    AND ag.id_grupo = 2";
+    AND ag.id_grupo = 2
+    GROUP BY eq.materia_prima";
     $stmt = self::prepareStatement($query);
 
     if ($stmt) {
@@ -205,39 +206,41 @@ class DatosMol extends Statement
     $resultados = array();
 
     if ($NombreSilos) {
-      foreach ($NombreSilos as $value) {
-        $query = "SELECT
-        CASE WHEN (ma.dato_1/100) > eq.alto THEN 0.00 ELSE 
-        ROUND
-        (
-          (
-            ((eq.ancho * eq.largo * (eq.alto - (CAST(ma.dato_1 AS DECIMAL(10, 2))/100))))
-            * 100
-          ) / (eq.ancho * eq.largo * eq.alto), 2
-        ) END AS porcentaje,
-        CASE WHEN 
-        (ma.dato_1/100) > eq.alto THEN 0.00 ELSE 
-        CONCAT(ROUND(((eq.ancho * eq.largo * (eq.alto - (CAST(ma.dato_1 AS DECIMAL(10, 2))/100)))*eq.densidad), 2), ' Ton') 
-        END AS dato_1,
-        eq.materia_prima
-    FROM ma_registro ma 
-    JOIN equipo eq 
-    JOIN de_agrupacion ag 
-    JOIN empresa em 
-    ON ag.id_empresa = em.id 
-    JOIN cedis ce 
-    ON ag.id_cedis = ce.id 
-    JOIN grupo gr 
-    ON ag.id_grupo = gr.id 
-    WHERE ma.id_equipo = eq.id 
-        AND eq.alias = :value AND eq.id_agrupacion = ag.id 
-        AND fecha_hora >= CONVERT(CURDATE(), DATETIME) 
-    ORDER BY ma.fecha_hora DESC 
-    LIMIT 1";
+      foreach ($NombreSilos as $valuexMaPri) {
+        foreach (explode(", " , $valuexMaPri["Silos"]) as $value) {
+          $query = "SELECT
+              CASE WHEN (ma.dato_1/100) > eq.alto THEN 0.00 ELSE 
+              ROUND
+              (
+                (
+                  ((eq.ancho * eq.largo * (eq.alto - (CAST(ma.dato_1 AS DECIMAL(10, 2))/100))))
+                  * 100
+                ) / (eq.ancho * eq.largo * eq.alto), 2
+              ) END AS porcentaje,
+              CASE WHEN 
+              (ma.dato_1/100) > eq.alto THEN 0.00 ELSE 
+              CONCAT(ROUND(((eq.ancho * eq.largo * (eq.alto - (CAST(ma.dato_1 AS DECIMAL(10, 2))/100)))*eq.densidad), 2), ' Ton') 
+              END AS dato_1,
+              eq.materia_prima
+          FROM ma_registro ma 
+          JOIN equipo eq 
+          JOIN de_agrupacion ag 
+          JOIN empresa em 
+          ON ag.id_empresa = em.id 
+          JOIN cedis ce 
+          ON ag.id_cedis = ce.id 
+          JOIN grupo gr 
+          ON ag.id_grupo = gr.id 
+          WHERE ma.id_equipo = eq.id 
+              AND eq.alias = :value AND eq.id_agrupacion = ag.id 
+              AND fecha_hora >= CONVERT(CURDATE(), DATETIME) 
+          ORDER BY ma.fecha_hora DESC 
+          LIMIT 1";
 
-        $stmt = self::prepareStatement($query);
-        $stmt->bindParam(':value', $value['alias']);
-        $resultados[$value['alias']] = self::executePreparedQuery($stmt);
+          $stmt = self::prepareStatement($query);
+          $stmt->bindParam(':value', $value);
+          $resultados[$valuexMaPri['Silos']] = self::executePreparedQuery($stmt);
+        }
       }
     }
     if ($resultados !== false) {

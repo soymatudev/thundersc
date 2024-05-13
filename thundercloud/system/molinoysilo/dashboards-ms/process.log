@@ -39808,3 +39808,1610 @@ Execute => Array
 
 )
 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [Silos] => SP1, SP2
+            [Mapri] => cereal
+        )
+
+    [1] => Array
+        (
+            [Silos] => SILO-A, SILO-C
+            [Mapri] => maiz
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+Error en la consulta: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNION ALL
+              (
+                SELECT 0.0
+                  FROM m...' at line 10
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [ElevadorM] => 
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [Silos] => SP1, SP2
+            [Mapri] => cereal
+        )
+
+    [1] => Array
+        (
+            [Silos] => SILO-A, SILO-C
+            [Mapri] => maiz
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+Error en la consulta: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNION ALL
+              (
+                SELECT 0.0
+                  FROM m...' at line 10
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [ElevadorM] => 
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [Silos] => SP1, SP2
+            [Mapri] => cereal
+        )
+
+    [1] => Array
+        (
+            [Silos] => SILO-A, SILO-C
+            [Mapri] => maiz
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+Error en la consulta: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNION ALL
+              (
+                SELECT 0.0
+                  FROM m...' at line 10
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [ElevadorM] => 
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [Silos] => SP1, SP2
+            [Mapri] => cereal
+        )
+
+    [1] => Array
+        (
+            [Silos] => SILO-A, SILO-C
+            [Mapri] => maiz
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+Error en la consulta: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNION ALL
+              (
+                SELECT 0.0
+                  FROM m...' at line 10
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [ElevadorM] => 
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [Silos] => SP1, SP2
+            [Mapri] => cereal
+        )
+
+    [1] => Array
+        (
+            [Silos] => SILO-A, SILO-C
+            [Mapri] => maiz
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SP1, SP2] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 0.00
+                    [dato_1] => 0.00
+                    [materia_prima] => cereal
+                )
+
+        )
+
+    [SILO-A, SILO-C] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.37
+                    [dato_1] => 138.29 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [Silos] => SP1, SP2
+            [Mapri] => cereal
+        )
+
+    [1] => Array
+        (
+            [Silos] => SILO-A, SILO-C
+            [Mapri] => maiz
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SP1, SP2] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 0.00
+                    [dato_1] => 0.00
+                    [materia_prima] => cereal
+                )
+
+        )
+
+    [SILO-A, SILO-C] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.37
+                    [dato_1] => 138.29 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+Error en la consulta: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNION ALL
+              (
+                SELECT 0.0
+                  FROM m...' at line 10
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [ElevadorM] => 
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [Silos] => SP1, SP2
+            [Mapri] => cereal
+        )
+
+    [1] => Array
+        (
+            [Silos] => SILO-A, SILO-C
+            [Mapri] => maiz
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SP1, SP2] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 0.00
+                    [dato_1] => 0.00
+                    [materia_prima] => cereal
+                )
+
+        )
+
+    [SILO-A, SILO-C] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.37
+                    [dato_1] => 138.29 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [Silos] => SP1, SP2
+            [Mapri] => cereal
+        )
+
+    [1] => Array
+        (
+            [Silos] => SILO-A, SILO-C
+            [Mapri] => maiz
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SP1, SP2] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 0.00
+                    [dato_1] => 0.00
+                    [materia_prima] => cereal
+                )
+
+        )
+
+    [SILO-A, SILO-C] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.37
+                    [dato_1] => 138.29 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+Error en la consulta: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNION ALL
+              (
+                SELECT 0.0
+                  FROM m...' at line 10
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [ElevadorM] => 
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [Silos] => SP1, SP2
+            [Mapri] => cereal
+        )
+
+    [1] => Array
+        (
+            [Silos] => SILO-A, SILO-C
+            [Mapri] => maiz
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+Error en la consulta: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNION ALL
+              (
+                SELECT 0.0
+                  FROM m...' at line 10
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [ElevadorM] => 
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [Silos] => SP1, SP2
+            [Mapri] => cereal
+        )
+
+    [1] => Array
+        (
+            [Silos] => SILO-A, SILO-C
+            [Mapri] => maiz
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SP1, SP2] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 0.00
+                    [dato_1] => 0.00
+                    [materia_prima] => cereal
+                )
+
+        )
+
+    [SILO-A, SILO-C] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.37
+                    [dato_1] => 138.29 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [Silos] => SP1, SP2
+            [Mapri] => cereal
+        )
+
+    [1] => Array
+        (
+            [Silos] => SILO-A, SILO-C
+            [Mapri] => maiz
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SP1, SP2] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 0.00
+                    [dato_1] => 0.00
+                    [materia_prima] => cereal
+                )
+
+        )
+
+    [SILO-A, SILO-C] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.37
+                    [dato_1] => 138.29 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [ElevadorM] => Array
+        (
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => ElevadorM
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+Error en la consulta: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNION ALL
+              (
+                SELECT 0.0
+                  FROM m...' at line 10
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [ElevadorM] => 
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [Silos] => SP1, SP2
+            [Mapri] => cereal
+        )
+
+    [1] => Array
+        (
+            [Silos] => SILO-A, SILO-C
+            [Mapri] => maiz
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SP1, SP2] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 0.00
+                    [dato_1] => 0.00
+                    [materia_prima] => cereal
+                )
+
+        )
+
+    [SILO-A, SILO-C] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.37
+                    [dato_1] => 138.29 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [Silos] => SP1, SP2
+            [Mapri] => cereal
+        )
+
+    [1] => Array
+        (
+            [Silos] => SILO-A, SILO-C
+            [Mapri] => maiz
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [SP1, SP2] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 0.00
+                    [dato_1] => 0.00
+                    [materia_prima] => cereal
+                )
+
+        )
+
+    [SILO-A, SILO-C] => Array
+        (
+            [0] => Array
+                (
+                    [porcentaje] => 63.37
+                    [dato_1] => 138.29 Ton
+                    [materia_prima] => maiz
+                )
+
+        )
+
+)
+
