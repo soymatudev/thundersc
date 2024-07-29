@@ -77,6 +77,25 @@ $home = <<<HTML
               <option value="4">Area</option>
               <option value="5">Almacen</option>
               <option value="6">Zona</option>
+              <option value="7">Eliminar</option>
+            </select>
+          </div>
+
+          <div id="divId">
+            <p class="label-c-g">ID:</p>
+            <input type="text" class="form_input bordes_redondeados input-area" name="numid" id="numid" />
+          </div>
+
+          <div id="divFormatoDelete">
+            <p class="label-c-g">Qué se elimina?:</p>
+            <select class="select col-md-2" name="materia" tabindex="-1" aria-hidden="true" id="comboFormatoDelete">
+              <option value="0">Hardware</option>
+              <option value="1">Asignatario</option>
+              <option value="2">Equipo</option>
+              <option value="3">Marca</option>
+              <option value="4">Area</option>
+              <option value="5">Almacen</option>
+              <option value="6">Zona</option>
             </select>
           </div>
 

@@ -241,6 +241,59 @@ class Querys extends Statement
     }
   }
 
+  public static function deleteElemento($elemento, $id)
+  {
+    $conn = Connection::connect();
+
+    $query = '';
+    if (!$conn) {
+      file_put_contents(self::LOG_FILE, "\nError de conexión\n", FILE_APPEND);
+      return null;
+    }
+
+    switch ($elemento) {
+      case "Asignatario":
+        $elemento = "de_asignatario";
+        break;
+      case "Clasificacion":
+        $elemento = "de_clasif_equi";
+        break;
+      case "Marca":
+        $elemento = "de_marca";
+        break;
+      case "Area":
+        $elemento = "de_area";
+        break;
+      case "Zona":
+        $elemento = "de_zona";
+        break;
+      case "Almacen":
+        $elemento = "de_almacen";
+        break;
+      case "Hardware":
+        $elemento = "ma_equi_sis";
+        break;
+    }
+
+    $query = "DELETE FROM $elemento WHERE id = :numid";
+    $stmt = self::prepareStatement($query);
+
+    if ($stmt) {
+      $stmt->bindParam(':numid', $id, PDO::PARAM_STR);
+      $result = self::executePreparedQuery($stmt);
+      if ($result !== false) {
+        file_put_contents(self::LOG_FILE, "\nExecute => Correct\n", FILE_APPEND);
+        return ["Execute" => "Correct"];;
+      } else {
+        file_put_contents(self::LOG_FILE, "\nExecute => Incorrect\n", FILE_APPEND);
+        return ["Execute" => "Incorrect"];
+      }
+    } else {
+      file_put_contents(self::LOG_FILE, "\nExecute => Incorrect sin stmt\n", FILE_APPEND);
+      return ["Execute" => "Incorrect"];
+    }
+  }
+
   public static function getTable($catalogo)
   {
     $conn = Connection::connect();
@@ -252,19 +305,20 @@ class Querys extends Statement
     }
     file_put_contents(self::LOG_FILE, "\nCatalogo => " . $catalogo . "\n", FILE_APPEND);
     if ($catalogo == "asignatario") {
-      $query = "SELECT CONCAT(nombre, ' ', apellidos) AS 'Asignatario' FROM de_asignatario";
+      $query = "SELECT id as ID, CONCAT(nombre, ' ', apellidos) AS 'Asignatario' FROM de_asignatario";
     } else if ($catalogo == "clasificacion") {
-      $query = "SELECT nombre AS 'Equipo' FROM de_clasif_equi";
+      $query = "SELECT id as ID, nombre AS 'Equipo' FROM de_clasif_equi";
     } else if ($catalogo == "marca") {
-      $query = "SELECT nombre AS 'Marca' FROM de_marca";
+      $query = "SELECT id as ID, nombre AS 'Marca' FROM de_marca";
     } else if ($catalogo == "area") {
-      $query = "SELECT nombre AS 'Area' FROM de_area";
+      $query = "SELECT id as ID, nombre AS 'Area' FROM de_area";
     } else if ($catalogo == "zona") {
-      $query = "SELECT nombre AS 'Zona' FROM de_zona";
+      $query = "SELECT id as ID, nombre AS 'Zona' FROM de_zona";
     } else if ($catalogo == "almacen") {
       $query = "SELECT alm.nombre AS 'Almacen', cve_alm AS 'Cve Almacen', dz.nombre AS 'Zona' FROM de_almacen alm JOIN de_zona dz ON alm.id_zona = dz.id";
     } else if ($catalogo == "equipo") {
       $query = "SELECT 
+      ma_equi_sis.id as ID,
       fecha_registro, num_serie AS 'Numero_Serie', 
       modelo, cla.nombre AS 'Equipo', 
       mar.nombre AS 'Marca', 
@@ -376,6 +430,16 @@ function addEquipo()
   $f_registro = $_POST['f_registro'];
 
   $data = Querys::setEquipo($numserie, $modelo, $clasificacion, $marca, $area, $almacen, $asignatario, $f_registro);
+  header('Content-Type: application/json');
+  return json_encode($data);
+}
+
+function dropElemento()
+{
+  $elemento = $_POST['elemento'];
+  $id = $_POST['id'];
+
+  $data = Querys::deleteElemento($elemento, $id);
   header('Content-Type: application/json');
   return json_encode($data);
 }

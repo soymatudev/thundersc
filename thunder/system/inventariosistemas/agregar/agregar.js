@@ -63,7 +63,34 @@ document.addEventListener("DOMContentLoaded" , async function () {
       await showTable("zona");
       await setComboZona();
       await clearFields();
-    }
+    } else if ($("#comboFormato").val() === "7") {
+      let tbl = "";
+      switch ($("#comboFormatoDelete").val()) {
+        case "0":
+          tbl = "equipo";
+          break;
+        case "1":
+          tbl = "asignatario";
+          break;
+        case "2":
+          tbl = "clasificacion";
+          break;
+        case "3":
+          tbl = "marca";
+          break;
+        case "4":
+          tbl = "area";
+          break;
+        case "5":
+          tbl = "zona";
+          break;
+        case "6":
+          tbl = "almacen";
+          break;
+      }
+      await deleteElemento();
+      await showTable(tbl);
+    } 
   });
 
 });
@@ -91,10 +118,12 @@ async function init() {
   $("#comboAsignatario").select2();
 
   
+  $("#divId").hide();
+  $("#divCVE").hide();
   $("#divNombre").hide();
   $("#divApellidos").hide();
   $("#divComboZona").hide();
-  $("#divCVE").hide();
+  $("#divFormatoDelete").hide();
   $("#CardEquipo").show();
 
   $("#comboFormato").on("change", function () {
@@ -109,14 +138,18 @@ async function init() {
       $("#divComboClasificacion").show();
       $("#CardEquipo").show();
       
+      $("#divId").hide();
       $("#divCVE").hide();
       $("#divNombre").hide();
       $("#divApellidos").hide();
       $("#divComboZona").hide();
+      $("#divFormatoDelete").hide();
+      $("#btn_Add").text("Agregar");
     } else if ($("#comboFormato").val() === "1") {
       $("#divNombre").show();
       $("#divApellidos").show();
 
+      $("#divId").hide();
       $("#divCVE").hide();
       $("#divFechaR").hide();
       $("#divModelo").hide();
@@ -125,12 +158,15 @@ async function init() {
       $("#divComboZona").hide();
       $("#divComboMarca").hide();
       $("#divComboAlmacen").hide();
+      $("#divFormatoDelete").hide();
       $("#divComboAsignatario").hide();
       $("#divComboClasificacion").hide();
       $("#CardEquipo").hide();
+      $("#btn_Add").text("Agregar");
     } else if ($("#comboFormato").val() === "2" || $("#comboFormato").val() === "3" || $("#comboFormato").val() === "4" || $("#comboFormato").val() === "6" ){
       $("#divNombre").show();
 
+      $("#divId").hide();
       $("#divCVE").hide();
       $("#divFechaR").hide();
       $("#divModelo").hide();
@@ -140,14 +176,17 @@ async function init() {
       $("#divComboZona").hide();
       $("#divComboMarca").hide();
       $("#divComboAlmacen").hide();
+      $("#divFormatoDelete").hide();
       $("#divComboAsignatario").hide();
       $("#divComboClasificacion").hide();
       $("#CardEquipo").hide();
+      $("#btn_Add").text("Agregar");
     } else if ($("#comboFormato").val() === "5") {
       $("#divCVE").show();
       $("#divNombre").show();
       $("#divComboZona").show();
 
+      $("#divId").hide();
       $("#divFechaR").hide();
       $("#divModelo").hide();
       $("#divNumserie").hide();
@@ -155,9 +194,29 @@ async function init() {
       $("#divApellidos").hide();
       $("#divComboMarca").hide();
       $("#divComboAlmacen").hide();
+      $("#divFormatoDelete").hide();
       $("#divComboAsignatario").hide();
       $("#divComboClasificacion").hide();
       $("#CardEquipo").hide();
+      $("#btn_Add").text("Agregar");
+    } else if ($("#comboFormato").val() === "7") {
+      $("#divId").show();
+      $("#CardEquipo").show();
+      $("#divFormatoDelete").show();
+      
+      $("#divCVE").hide();
+      $("#divNombre").hide();
+      $("#divFechaR").hide();
+      $("#divModelo").hide();
+      $("#divNumserie").hide();
+      $("#divComboZona").hide();
+      $("#divComboArea").hide();
+      $("#divApellidos").hide();
+      $("#divComboMarca").hide();
+      $("#divComboAlmacen").hide();
+      $("#divComboAsignatario").hide();
+      $("#divComboClasificacion").hide();
+      $("#btn_Add").text("Eliminar");
     }
   });
 
@@ -284,6 +343,20 @@ async function setEquipo() {
   const url = "../../../../thundercloud/system/inventariosistemas/agregar/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF, "Equipo agregado con éxito!", "Error al agregar equipo, intenta de nuevo.")
+}
+
+async function deleteElemento(){
+  const dataF = new FormData();
+  let elemento = $("#comboFormatoDelete option:selected").text();
+  let id = $("#numid").val();
+
+  dataF.append("variablekey", "deleteElemento");
+  dataF.append("elemento", elemento);
+  dataF.append("id", id);
+
+  const url = "../../../../thundercloud/system/inventariosistemas/agregar/call.php";
+  const header = { "Content-Type": "multipart/form-data" };
+  const data = await dataFetch(url, dataF, "Equipo agregado con éxito!", `Error al Eliminar ${elemento}, intenta de nuevo.`)
 }
 
 async function showTable (catalogo) {

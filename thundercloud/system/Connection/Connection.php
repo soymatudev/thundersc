@@ -7,7 +7,7 @@ ruta: thundersc/thundercloud/system/Connection/Connection.php
 
 date_default_timezone_set('America/Mexico_City');
 
-class Connection {
+/* class Connection {
   private const LOG_FILE = 'process.log';
   private static $conn = null;
 
@@ -48,9 +48,9 @@ class Connection {
     file_put_contents(self::LOG_FILE, "\n= NO Connection =\n", FILE_APPEND);
     file_put_contents(self::LOG_FILE, "Error: " . $message, FILE_APPEND);
   }
-} 
+}  */
 /* ~ ssh-keygen -t ed25519 -C "juanmaturana518@gmail.com"*/
-/* 
+ 
 class Connection {
   private const LOG_FILE = 'process.log';
   private static $conn = null;
@@ -58,7 +58,6 @@ class Connection {
   public static function connect(){
 
     $HOST = "127.0.0.1" ?: "127.0.0.1";
-    //$HOST = "192.168.1.67";
     $PORT = "3306" ?: '';
     $DBNAME = "nexthw" ?: "nexthw";
     $USER = "root" ?: "root";
@@ -92,4 +91,4 @@ class Connection {
     file_put_contents(self::LOG_FILE, "\n= NO Connection =\n", FILE_APPEND);
     file_put_contents(self::LOG_FILE, "Error: " . $message, FILE_APPEND);
   }
-} */
+} 
