@@ -5,3 +5,5 @@
 **.png
 **.jpeg
 **/node_modules/
+**vendor/*
+**composer.lock

@@ -75,9 +75,9 @@ async function dataFetch(url, body, msSuccess = "Todo fue bien!", msError1 = "Al
       return data; // Otra opción podría ser lanzar un error
     }
   } catch (error) {
-    alert("Acción Error");
+    //alert("Acción Error");
     //alertSucces();
-    //alertError();
+    alertError("Algo salio mal, intenta de nuevo");
     console.log("Error: ", error);
   }
 }

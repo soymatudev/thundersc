@@ -159,12 +159,20 @@ $home = <<<HTML
           <button class="bordes_redondeados shadow btn_consult btn" id="btn_Buscar">
             Buscar
           </button>
+          <div class="d-flex" style="gap: 10px;">
           <button class="bordes_redondeados shadow btn_consult btn" id="btn_Descargar">
             <!-- Descargar -->
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-arrow-down-fill" viewBox="0 0 16 16">
               <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1m-1 4v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 11.293V7.5a.5.5 0 0 1 1 0"/>
             </svg>
           </button>
+          <button class="bordes_redondeados shadow btn_consult btn" id="btn_PDF">
+            <!-- GENERAR PDF-->
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-arrow-down-fill" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path d="M0 64C0 28.7 28.7 0 64 0L224 0l0 128c0 17.7 14.3 32 32 32l128 0 0 144-208 0c-35.3 0-64 28.7-64 64l0 144-48 0c-35.3 0-64-28.7-64-64L0 64zm384 64l-128 0L256 0 384 128zM176 352l32 0c30.9 0 56 25.1 56 56s-25.1 56-56 56l-16 0 0 32c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-48 0-80c0-8.8 7.2-16 16-16zm32 80c13.3 0 24-10.7 24-24s-10.7-24-24-24l-16 0 0 48 16 0zm96-80l32 0c26.5 0 48 21.5 48 48l0 64c0 26.5-21.5 48-48 48l-32 0c-8.8 0-16-7.2-16-16l0-128c0-8.8 7.2-16 16-16zm32 128c8.8 0 16-7.2 16-16l0-64c0-8.8-7.2-16-16-16l-16 0 0 96 16 0zm80-112c0-8.8 7.2-16 16-16l48 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-32 0 0 32 32 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-32 0 0 48c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-64 0-64z"/>
+            </svg>
+          </button>
+          </div>
         </div>
 
       </div>
@@ -192,6 +200,22 @@ $home = <<<HTML
         <div class="content-wrapper">
 
         <div class="row">
+
+            <div class="col-md-12 grid-margin stretch-card" id="CardPDF" >
+              <div class="card">
+                <div class="card-body">
+                  <div class="container-zone">
+                    <div class="work-zone d-flex">
+                      <div class="container-grid">
+                        <div class="grid ag-theme-quartz-dark" id="container-PDF" style="height: 90vh">
+                          <!-- Aqui se genera un grid -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <div class="col-md-12 grid-margin stretch-card" id="CardEquipo" >
               <div class="card">

@@ -7,7 +7,7 @@ ruta: thundersc/thundercloud/system/Connection/Connection.php
 
 date_default_timezone_set('America/Mexico_City');
 
-/* class Connection {
+ /* class Connection {
   private const LOG_FILE = 'process.log';
   private static $conn = null;
 

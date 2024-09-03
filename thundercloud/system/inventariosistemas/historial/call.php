@@ -23,4 +23,6 @@ if ($key == "setAsignatario") {
     echo addEquipo();
 } else if ($key == "showTable") {
     echo showTable();
+} else if ($key == "getPDF") {
+    echo showDataPDF();
 }

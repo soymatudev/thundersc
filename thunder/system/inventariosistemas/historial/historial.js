@@ -26,11 +26,9 @@ document.addEventListener("DOMContentLoaded" , async function () {
   await init();
 
   $("#btn_Buscar").on("click", async function () {
+    $("#CardPDF").hide();
     if ($("#comboFormato").val() === "0") {
       await showTable("equipo");
-      /* $("#nombre").val("");
-      $("#cve").val("");
-      $("#area").val("");*/
     } else if ($("#comboFormato").val() === "1") {
       await showTable("asignatario");
 
@@ -70,6 +68,13 @@ document.addEventListener("DOMContentLoaded" , async function () {
     }
   });
 
+  $("#btn_PDF").on("click", async function () {
+    if ($("#comboFormato").val() == "0") {
+      $("#CardPDF").show();
+      await getPDF();
+    } 
+  });
+
 });
 
 async function init() {
@@ -89,9 +94,11 @@ async function init() {
   $("#divApellidos").hide();
   $("#divComboZona").hide();
   $("#divCVE").hide();
+  $("#CardPDF").hide();
   $("#CardEquipo").show();
 
   $("#comboFormato").on("change", async function () {
+    $("#CardPDF").hide();
     if ($("#comboFormato").val() === "0") {
       $("#divFechaInicio").show();
       $("#divFechaFin").show();
@@ -301,8 +308,6 @@ async function showTable (catalogo) {
   const header = { "Content-Type": "multipart/form-data" };
   let data = await dataFetch(url, dataF);
 
-  console.log(data);
-
   if (data === null || data === undefined) {data = [{"Datos": "Sin datos"}]}
 
   switch (catalogo) {
@@ -328,4 +333,71 @@ async function showTable (catalogo) {
       tableSeven.initDataTable(data);
       break;
   }
+}
+
+async function getPDF() {
+  const dataF = new FormData();
+  let catalogo = '';
+
+  if ($("#comboFormato").val() == "0") {
+    catalogo = "equipo";
+  } else if ($("#comboFormato").val() == "1") {
+    catalogo = "asignatario";
+  } else if ($("#comboFormato").val() == "2") {
+    catalogo = "clasificacion";
+  } else if ($("#comboFormato").val() == "3") {
+    catalogo = "marca";
+  } else if ($("#comboFormato").val() == "4") {
+    catalogo = "area";
+  } else if ($("#comboFormato").val() == "5") {
+    catalogo = "almacen";
+  } else if ($("#comboFormato").val() == "6") {
+    catalogo = "zona";
+  }
+
+  dataF.append("variablekey", "getPDF");
+  dataF.append("catalogo", catalogo);
+  dataF.append("numserie", $("#numserie").val().trim());
+  dataF.append("modelo", $("#modelo").val().trim());
+  dataF.append("clasificacion", $("#comboClasif option:selected").text());
+  dataF.append("marca", $("#comboMarca option:selected").text());
+  dataF.append("area", $("#comboArea option:selected").text());
+  dataF.append("almacen", $("#comboAlmacen option:selected").text());
+  dataF.append("asignatario", $("#comboAsignatario option:selected").text());
+  dataF.append("f_registro", $("#f_registro").val() ? $("#f_registro").val().trim() : null);
+
+  const url = "../../../../thundercloud/system/inventariosistemas/historial/call.php";
+  const header = { "Content-Type": "multipart/form-data" };
+  const data = await dataFetch(url, dataF);
+
+  if(data){
+    createPDF(data);
+  }
+
+}
+
+function createPDF(base64Data) {
+  // Decodificar base64
+  const byteCharacters = atob(base64Data);
+  const byteNumbers = new Array(byteCharacters.length);
+  for (let i = 0; i < byteCharacters.length; i++) {
+      byteNumbers[i] = byteCharacters.charCodeAt(i);
+  }
+  const byteArray = new Uint8Array(byteNumbers);
+
+  // Crear un Blob con los datos del PDF
+  const blob = new Blob([byteArray], { type: 'application/pdf' });
+  const url = URL.createObjectURL(blob);
+
+  $("#container-PDF").html("");
+
+  $("#container-PDF").append(`
+    <iframe src="${url}" style="width: 100%; height: 100%;"></iframe>
+  `);
+  
+  // Crear un enlace para descargar el archivo o abrirlo en una nueva ventana
+  /* const link = document.createElement('a');
+  link.href = url;
+  link.download = 'documento.pdf'; // Nombre del archivo PDF
+  link.click(); */
 }
