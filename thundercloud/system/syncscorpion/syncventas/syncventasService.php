@@ -43,7 +43,7 @@ class Syncventas {
         try {
         foreach ($almacenesP as $almacen => $server) {
             $status = $this->sync($almacen, $dia);
-            sleep(5);
+            sleep(60);
         }
         } catch (Exception $e) {
             file_put_contents(self::LOG_FILE, "\nError durante la ejecucion => \n". $e , FILE_APPEND);
