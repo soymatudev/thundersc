@@ -62,11 +62,17 @@ class Connection {
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../../');
     $dotenv->load();
 
-    $HOST = $_ENV['DB_HOST_Mai'] ?: '';
+    /* $HOST = $_ENV['DB_HOST_Mai'] ?: '';
     $PORT = $_ENV['DB_PORT_Mai'] ?: '';
     $DBNAME = $_ENV['DB_NAME_Mai'] ?: '';
     $USER = $_ENV['DB_USER_Mai'] ?: '';
-    $PASSWORD = $_ENV['DB_PASSWORD_Mai'] ?: '';
+    $PASSWORD = $_ENV['DB_PASSWORD_Mai'] ?: ''; */
+
+    $HOST = "127.0.0.1" ?: '';
+    $PORT = "3306" ?: '';
+    $DBNAME = "nexthw" ?: '';
+    $USER = "root" ?: '';
+    $PASSWORD = "www.aaz.com.mx" ?: '';
 
     $dsn = "mysql:host=$HOST;port=$PORT;dbname=$DBNAME;charset=utf8";
 
