@@ -7,7 +7,7 @@ ruta: thundersc/thundercloud/system/Connection/Connection.php
 
 date_default_timezone_set('America/Mexico_City');
 
- class Connection {
+ /* class Connection {
   private const LOG_FILE = 'process.log';
   private static $conn = null;
 
@@ -49,9 +49,9 @@ date_default_timezone_set('America/Mexico_City');
     file_put_contents(self::LOG_FILE, "\n= NO Connection =\n", FILE_APPEND);
     file_put_contents(self::LOG_FILE, "Error: " . $message, FILE_APPEND);
   }
-} 
+}  */
 
- /* 
+  
 class Connection {
   private const LOG_FILE = 'process.log';
   private static $conn = null;
@@ -95,4 +95,4 @@ class Connection {
     file_put_contents(self::LOG_FILE, "\n= NO Connection =\n", FILE_APPEND);
     file_put_contents(self::LOG_FILE, "Error: " . $message, FILE_APPEND);
   }
-}  */
+}  
