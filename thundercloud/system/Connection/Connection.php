@@ -65,7 +65,7 @@ class Connection {
     $PORT = $_ENV['DB_PORT_Mai'] ?: '';
     $DBNAME = $_ENV['DB_NAME_Mai'] ?: '';
     $USER = $_ENV['DB_USER_Mai'] ?: '';
-    $PASSWORD = "www.aaz.com.mx" ?: "www.aaz.com.mx";
+    $PASSWORD = $_ENV['DB_PASSWORD_Mai'] ?: '';
 
     $dsn = "mysql:host=$HOST;port=$PORT;dbname=$DBNAME;charset=utf8";
 
