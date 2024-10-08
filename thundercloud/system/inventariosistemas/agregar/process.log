@@ -55661,3 +55661,1623 @@ Execute => Array
 
 )
 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => asignatario
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 1
+            [Asignatario] => Juan Garcia
+        )
+
+    [1] => Array
+        (
+            [ID] => 3
+            [Asignatario] => Jesus Maturana
+        )
+
+    [2] => Array
+        (
+            [ID] => 4
+            [Asignatario] => Number Book
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => clasificacion
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 1
+            [Equipo] => Maquina Principal
+        )
+
+    [1] => Array
+        (
+            [ID] => 2
+            [Equipo] => Maquina Secundaria
+        )
+
+    [2] => Array
+        (
+            [ID] => 3
+            [Equipo] => Maquina Terciaria
+        )
+
+    [3] => Array
+        (
+            [ID] => 4
+            [Equipo] => Monitor
+        )
+
+    [4] => Array
+        (
+            [ID] => 7
+            [Equipo] => Teclado
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => marca
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 2
+            [Marca] => ACTEK
+        )
+
+    [1] => Array
+        (
+            [ID] => 3
+            [Marca] => Quaroni
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => area
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 1
+            [Area] => Area1
+        )
+
+    [1] => Array
+        (
+            [ID] => 3
+            [Area] => Cajas
+        )
+
+    [2] => Array
+        (
+            [ID] => 4
+            [Area] => Area2
+        )
+
+    [3] => Array
+        (
+            [ID] => 5
+            [Area] => Area 3
+        )
+
+    [4] => Array
+        (
+            [ID] => 6
+            [Area] => Area 4
+        )
+
+    [5] => Array
+        (
+            [ID] => 7
+            [Area] => Area 5
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => zona
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 1
+            [Zona] => Zona1
+        )
+
+    [1] => Array
+        (
+            [ID] => 3
+            [Zona] => Mexico
+        )
+
+    [2] => Array
+        (
+            [ID] => 4
+            [Zona] => Puebla
+        )
+
+    [3] => Array
+        (
+            [ID] => 5
+            [Zona] => 
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => almacen
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [Almacen] => Tizayuca
+            [Cve Almacen] => 211
+            [Zona] => Mexico
+        )
+
+    [1] => Array
+        (
+            [Almacen] => Progreso
+            [Cve Almacen] => 213
+            [Zona] => Mexico
+        )
+
+    [2] => Array
+        (
+            [Almacen] => R1
+            [Cve Almacen] => 212
+            [Zona] => Mexico
+        )
+
+    [3] => Array
+        (
+            [Almacen] => Actopan
+            [Cve Almacen] => 214
+            [Zona] => Mexico
+        )
+
+    [4] => Array
+        (
+            [Almacen] => Cuernavaca
+            [Cve Almacen] => 215
+            [Zona] => Mexico
+        )
+
+    [5] => Array
+        (
+            [Almacen] => Huichapan
+            [Cve Almacen] => 217
+            [Zona] => Mexico
+        )
+
+    [6] => Array
+        (
+            [Almacen] => Atizapan C&C 3
+            [Cve Almacen] => 219
+            [Zona] => Mexico
+        )
+
+    [7] => Array
+        (
+            [Almacen] => Valle Guadalupe
+            [Cve Almacen] => 220
+            [Zona] => Mexico
+        )
+
+    [8] => Array
+        (
+            [Almacen] => Chalco C&C
+            [Cve Almacen] => 221
+            [Zona] => Mexico
+        )
+
+    [9] => Array
+        (
+            [Almacen] => Tepatepec
+            [Cve Almacen] => 222
+            [Zona] => Mexico
+        )
+
+    [10] => Array
+        (
+            [Almacen] => Tulancingo
+            [Cve Almacen] => 224
+            [Zona] => Mexico
+        )
+
+    [11] => Array
+        (
+            [Almacen] => Matriz
+            [Cve Almacen] => 225
+            [Zona] => Mexico
+        )
+
+    [12] => Array
+        (
+            [Almacen] => Texcoco
+            [Cve Almacen] => 226
+            [Zona] => Mexico
+        )
+
+    [13] => Array
+        (
+            [Almacen] => Chalco 1
+            [Cve Almacen] => 227
+            [Zona] => Mexico
+        )
+
+    [14] => Array
+        (
+            [Almacen] => Sn Agustin
+            [Cve Almacen] => 228
+            [Zona] => Mexico
+        )
+
+    [15] => Array
+        (
+            [Almacen] => Chalco2
+            [Cve Almacen] => 245
+            [Zona] => Zona1
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipo
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 1
+            [fecha_registro] => 2024-04-22
+            [Numero_Serie] => 123
+            [modelo] => a
+            [Equipo] => Monitor
+            [Marca] => ACTEK
+            [Area] => Cajas
+            [Asignatario] => Juan Garcia
+            [Almacen] => 211 Tizayuca
+        )
+
+    [1] => Array
+        (
+            [ID] => 2
+            [fecha_registro] => 2024-04-30
+            [Numero_Serie] => 123
+            [modelo] => b
+            [Equipo] => Monitor
+            [Marca] => ACTEK
+            [Area] => Cajas
+            [Asignatario] => Juan Garcia
+            [Almacen] => 225 Matriz
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => asignatario
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 1
+            [Asignatario] => Juan Garcia
+        )
+
+    [1] => Array
+        (
+            [ID] => 3
+            [Asignatario] => Jesus Maturana
+        )
+
+    [2] => Array
+        (
+            [ID] => 4
+            [Asignatario] => Number Book
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => clasificacion
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 1
+            [Equipo] => Maquina Principal
+        )
+
+    [1] => Array
+        (
+            [ID] => 2
+            [Equipo] => Maquina Secundaria
+        )
+
+    [2] => Array
+        (
+            [ID] => 3
+            [Equipo] => Maquina Terciaria
+        )
+
+    [3] => Array
+        (
+            [ID] => 4
+            [Equipo] => Monitor
+        )
+
+    [4] => Array
+        (
+            [ID] => 7
+            [Equipo] => Teclado
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => marca
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 2
+            [Marca] => ACTEK
+        )
+
+    [1] => Array
+        (
+            [ID] => 3
+            [Marca] => Quaroni
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => area
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 1
+            [Area] => Area1
+        )
+
+    [1] => Array
+        (
+            [ID] => 3
+            [Area] => Cajas
+        )
+
+    [2] => Array
+        (
+            [ID] => 4
+            [Area] => Area2
+        )
+
+    [3] => Array
+        (
+            [ID] => 5
+            [Area] => Area 3
+        )
+
+    [4] => Array
+        (
+            [ID] => 6
+            [Area] => Area 4
+        )
+
+    [5] => Array
+        (
+            [ID] => 7
+            [Area] => Area 5
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => zona
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 1
+            [Zona] => Zona1
+        )
+
+    [1] => Array
+        (
+            [ID] => 3
+            [Zona] => Mexico
+        )
+
+    [2] => Array
+        (
+            [ID] => 4
+            [Zona] => Puebla
+        )
+
+    [3] => Array
+        (
+            [ID] => 5
+            [Zona] => 
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => almacen
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [Almacen] => Tizayuca
+            [Cve Almacen] => 211
+            [Zona] => Mexico
+        )
+
+    [1] => Array
+        (
+            [Almacen] => Progreso
+            [Cve Almacen] => 213
+            [Zona] => Mexico
+        )
+
+    [2] => Array
+        (
+            [Almacen] => R1
+            [Cve Almacen] => 212
+            [Zona] => Mexico
+        )
+
+    [3] => Array
+        (
+            [Almacen] => Actopan
+            [Cve Almacen] => 214
+            [Zona] => Mexico
+        )
+
+    [4] => Array
+        (
+            [Almacen] => Cuernavaca
+            [Cve Almacen] => 215
+            [Zona] => Mexico
+        )
+
+    [5] => Array
+        (
+            [Almacen] => Huichapan
+            [Cve Almacen] => 217
+            [Zona] => Mexico
+        )
+
+    [6] => Array
+        (
+            [Almacen] => Atizapan C&C 3
+            [Cve Almacen] => 219
+            [Zona] => Mexico
+        )
+
+    [7] => Array
+        (
+            [Almacen] => Valle Guadalupe
+            [Cve Almacen] => 220
+            [Zona] => Mexico
+        )
+
+    [8] => Array
+        (
+            [Almacen] => Chalco C&C
+            [Cve Almacen] => 221
+            [Zona] => Mexico
+        )
+
+    [9] => Array
+        (
+            [Almacen] => Tepatepec
+            [Cve Almacen] => 222
+            [Zona] => Mexico
+        )
+
+    [10] => Array
+        (
+            [Almacen] => Tulancingo
+            [Cve Almacen] => 224
+            [Zona] => Mexico
+        )
+
+    [11] => Array
+        (
+            [Almacen] => Matriz
+            [Cve Almacen] => 225
+            [Zona] => Mexico
+        )
+
+    [12] => Array
+        (
+            [Almacen] => Texcoco
+            [Cve Almacen] => 226
+            [Zona] => Mexico
+        )
+
+    [13] => Array
+        (
+            [Almacen] => Chalco 1
+            [Cve Almacen] => 227
+            [Zona] => Mexico
+        )
+
+    [14] => Array
+        (
+            [Almacen] => Sn Agustin
+            [Cve Almacen] => 228
+            [Zona] => Mexico
+        )
+
+    [15] => Array
+        (
+            [Almacen] => Chalco2
+            [Cve Almacen] => 245
+            [Zona] => Zona1
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipo
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 1
+            [fecha_registro] => 2024-04-22
+            [Numero_Serie] => 123
+            [modelo] => a
+            [Equipo] => Monitor
+            [Marca] => ACTEK
+            [Area] => Cajas
+            [Asignatario] => Juan Garcia
+            [Almacen] => 211 Tizayuca
+        )
+
+    [1] => Array
+        (
+            [ID] => 2
+            [fecha_registro] => 2024-04-30
+            [Numero_Serie] => 123
+            [modelo] => b
+            [Equipo] => Monitor
+            [Marca] => ACTEK
+            [Area] => Cajas
+            [Asignatario] => Juan Garcia
+            [Almacen] => 225 Matriz
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => asignatario
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 1
+            [Asignatario] => Juan Garcia
+        )
+
+    [1] => Array
+        (
+            [ID] => 3
+            [Asignatario] => Jesus Maturana
+        )
+
+    [2] => Array
+        (
+            [ID] => 4
+            [Asignatario] => Number Book
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => clasificacion
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 1
+            [Equipo] => Maquina Principal
+        )
+
+    [1] => Array
+        (
+            [ID] => 2
+            [Equipo] => Maquina Secundaria
+        )
+
+    [2] => Array
+        (
+            [ID] => 3
+            [Equipo] => Maquina Terciaria
+        )
+
+    [3] => Array
+        (
+            [ID] => 4
+            [Equipo] => Monitor
+        )
+
+    [4] => Array
+        (
+            [ID] => 7
+            [Equipo] => Teclado
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => marca
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 2
+            [Marca] => ACTEK
+        )
+
+    [1] => Array
+        (
+            [ID] => 3
+            [Marca] => Quaroni
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => area
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 1
+            [Area] => Area1
+        )
+
+    [1] => Array
+        (
+            [ID] => 3
+            [Area] => Cajas
+        )
+
+    [2] => Array
+        (
+            [ID] => 4
+            [Area] => Area2
+        )
+
+    [3] => Array
+        (
+            [ID] => 5
+            [Area] => Area 3
+        )
+
+    [4] => Array
+        (
+            [ID] => 6
+            [Area] => Area 4
+        )
+
+    [5] => Array
+        (
+            [ID] => 7
+            [Area] => Area 5
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => zona
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 1
+            [Zona] => Zona1
+        )
+
+    [1] => Array
+        (
+            [ID] => 3
+            [Zona] => Mexico
+        )
+
+    [2] => Array
+        (
+            [ID] => 4
+            [Zona] => Puebla
+        )
+
+    [3] => Array
+        (
+            [ID] => 5
+            [Zona] => 
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => almacen
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [Almacen] => Tizayuca
+            [Cve Almacen] => 211
+            [Zona] => Mexico
+        )
+
+    [1] => Array
+        (
+            [Almacen] => Progreso
+            [Cve Almacen] => 213
+            [Zona] => Mexico
+        )
+
+    [2] => Array
+        (
+            [Almacen] => R1
+            [Cve Almacen] => 212
+            [Zona] => Mexico
+        )
+
+    [3] => Array
+        (
+            [Almacen] => Actopan
+            [Cve Almacen] => 214
+            [Zona] => Mexico
+        )
+
+    [4] => Array
+        (
+            [Almacen] => Cuernavaca
+            [Cve Almacen] => 215
+            [Zona] => Mexico
+        )
+
+    [5] => Array
+        (
+            [Almacen] => Huichapan
+            [Cve Almacen] => 217
+            [Zona] => Mexico
+        )
+
+    [6] => Array
+        (
+            [Almacen] => Atizapan C&C 3
+            [Cve Almacen] => 219
+            [Zona] => Mexico
+        )
+
+    [7] => Array
+        (
+            [Almacen] => Valle Guadalupe
+            [Cve Almacen] => 220
+            [Zona] => Mexico
+        )
+
+    [8] => Array
+        (
+            [Almacen] => Chalco C&C
+            [Cve Almacen] => 221
+            [Zona] => Mexico
+        )
+
+    [9] => Array
+        (
+            [Almacen] => Tepatepec
+            [Cve Almacen] => 222
+            [Zona] => Mexico
+        )
+
+    [10] => Array
+        (
+            [Almacen] => Tulancingo
+            [Cve Almacen] => 224
+            [Zona] => Mexico
+        )
+
+    [11] => Array
+        (
+            [Almacen] => Matriz
+            [Cve Almacen] => 225
+            [Zona] => Mexico
+        )
+
+    [12] => Array
+        (
+            [Almacen] => Texcoco
+            [Cve Almacen] => 226
+            [Zona] => Mexico
+        )
+
+    [13] => Array
+        (
+            [Almacen] => Chalco 1
+            [Cve Almacen] => 227
+            [Zona] => Mexico
+        )
+
+    [14] => Array
+        (
+            [Almacen] => Sn Agustin
+            [Cve Almacen] => 228
+            [Zona] => Mexico
+        )
+
+    [15] => Array
+        (
+            [Almacen] => Chalco2
+            [Cve Almacen] => 245
+            [Zona] => Zona1
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipo
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 1
+            [fecha_registro] => 2024-04-22
+            [Numero_Serie] => 123
+            [modelo] => a
+            [Equipo] => Monitor
+            [Marca] => ACTEK
+            [Area] => Cajas
+            [Asignatario] => Juan Garcia
+            [Almacen] => 211 Tizayuca
+        )
+
+    [1] => Array
+        (
+            [ID] => 2
+            [fecha_registro] => 2024-04-30
+            [Numero_Serie] => 123
+            [modelo] => b
+            [Equipo] => Monitor
+            [Marca] => ACTEK
+            [Area] => Cajas
+            [Asignatario] => Juan Garcia
+            [Almacen] => 225 Matriz
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => asignatario
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 1
+            [Asignatario] => Juan Garcia
+        )
+
+    [1] => Array
+        (
+            [ID] => 3
+            [Asignatario] => Jesus Maturana
+        )
+
+    [2] => Array
+        (
+            [ID] => 4
+            [Asignatario] => Number Book
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => clasificacion
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 1
+            [Equipo] => Maquina Principal
+        )
+
+    [1] => Array
+        (
+            [ID] => 2
+            [Equipo] => Maquina Secundaria
+        )
+
+    [2] => Array
+        (
+            [ID] => 3
+            [Equipo] => Maquina Terciaria
+        )
+
+    [3] => Array
+        (
+            [ID] => 4
+            [Equipo] => Monitor
+        )
+
+    [4] => Array
+        (
+            [ID] => 7
+            [Equipo] => Teclado
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => marca
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 2
+            [Marca] => ACTEK
+        )
+
+    [1] => Array
+        (
+            [ID] => 3
+            [Marca] => Quaroni
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => area
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 1
+            [Area] => Area1
+        )
+
+    [1] => Array
+        (
+            [ID] => 3
+            [Area] => Cajas
+        )
+
+    [2] => Array
+        (
+            [ID] => 4
+            [Area] => Area2
+        )
+
+    [3] => Array
+        (
+            [ID] => 5
+            [Area] => Area 3
+        )
+
+    [4] => Array
+        (
+            [ID] => 6
+            [Area] => Area 4
+        )
+
+    [5] => Array
+        (
+            [ID] => 7
+            [Area] => Area 5
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => zona
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 1
+            [Zona] => Zona1
+        )
+
+    [1] => Array
+        (
+            [ID] => 3
+            [Zona] => Mexico
+        )
+
+    [2] => Array
+        (
+            [ID] => 4
+            [Zona] => Puebla
+        )
+
+    [3] => Array
+        (
+            [ID] => 5
+            [Zona] => 
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => almacen
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [Almacen] => Tizayuca
+            [Cve Almacen] => 211
+            [Zona] => Mexico
+        )
+
+    [1] => Array
+        (
+            [Almacen] => Progreso
+            [Cve Almacen] => 213
+            [Zona] => Mexico
+        )
+
+    [2] => Array
+        (
+            [Almacen] => R1
+            [Cve Almacen] => 212
+            [Zona] => Mexico
+        )
+
+    [3] => Array
+        (
+            [Almacen] => Actopan
+            [Cve Almacen] => 214
+            [Zona] => Mexico
+        )
+
+    [4] => Array
+        (
+            [Almacen] => Cuernavaca
+            [Cve Almacen] => 215
+            [Zona] => Mexico
+        )
+
+    [5] => Array
+        (
+            [Almacen] => Huichapan
+            [Cve Almacen] => 217
+            [Zona] => Mexico
+        )
+
+    [6] => Array
+        (
+            [Almacen] => Atizapan C&C 3
+            [Cve Almacen] => 219
+            [Zona] => Mexico
+        )
+
+    [7] => Array
+        (
+            [Almacen] => Valle Guadalupe
+            [Cve Almacen] => 220
+            [Zona] => Mexico
+        )
+
+    [8] => Array
+        (
+            [Almacen] => Chalco C&C
+            [Cve Almacen] => 221
+            [Zona] => Mexico
+        )
+
+    [9] => Array
+        (
+            [Almacen] => Tepatepec
+            [Cve Almacen] => 222
+            [Zona] => Mexico
+        )
+
+    [10] => Array
+        (
+            [Almacen] => Tulancingo
+            [Cve Almacen] => 224
+            [Zona] => Mexico
+        )
+
+    [11] => Array
+        (
+            [Almacen] => Matriz
+            [Cve Almacen] => 225
+            [Zona] => Mexico
+        )
+
+    [12] => Array
+        (
+            [Almacen] => Texcoco
+            [Cve Almacen] => 226
+            [Zona] => Mexico
+        )
+
+    [13] => Array
+        (
+            [Almacen] => Chalco 1
+            [Cve Almacen] => 227
+            [Zona] => Mexico
+        )
+
+    [14] => Array
+        (
+            [Almacen] => Sn Agustin
+            [Cve Almacen] => 228
+            [Zona] => Mexico
+        )
+
+    [15] => Array
+        (
+            [Almacen] => Chalco2
+            [Cve Almacen] => 245
+            [Zona] => Zona1
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+Catalogo => equipo
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [ID] => 1
+            [fecha_registro] => 2024-04-22
+            [Numero_Serie] => 123
+            [modelo] => a
+            [Equipo] => Monitor
+            [Marca] => ACTEK
+            [Area] => Cajas
+            [Asignatario] => Juan Garcia
+            [Almacen] => 211 Tizayuca
+        )
+
+    [1] => Array
+        (
+            [ID] => 2
+            [fecha_registro] => 2024-04-30
+            [Numero_Serie] => 123
+            [modelo] => b
+            [Equipo] => Monitor
+            [Marca] => ACTEK
+            [Area] => Cajas
+            [Asignatario] => Juan Garcia
+            [Almacen] => 225 Matriz
+        )
+
+)
+

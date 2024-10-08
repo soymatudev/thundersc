@@ -30,7 +30,10 @@ class Codec {
         "a" => "agregar-inv-sis",
         "b" => "historial-inv-sis",
       ],
-      "e" => "",
+      "e" => [
+        "a" => "panel-sync-scorpion",
+        "b" => "syncventas-sync-scorpion",
+      ],
       "f" => "",
       "g" => "",
       "h" => "",

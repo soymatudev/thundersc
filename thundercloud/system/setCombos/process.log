@@ -163330,3 +163330,2473 @@ Execute => Array
 
 )
 
+
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Error de conexión
+
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Error de conexión
+
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Error de conexión
+
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Error de conexión
+
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Error de conexión
+
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Error de conexión
+
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Error de conexión
+
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Error de conexión
+
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Error de conexión
+
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Error de conexión
+
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Error de conexión
+
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+=====================================================
+
+Connecting...
+
+= NO Connection =
+Error: Error en la conexión: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+Error de conexión
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Juan Garcia
+        )
+
+    [1] => Array
+        (
+            [nombre] => Jesus Maturana
+        )
+
+    [2] => Array
+        (
+            [nombre] => Number Book
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Maquina Principal
+        )
+
+    [1] => Array
+        (
+            [nombre] => Maquina Secundaria
+        )
+
+    [2] => Array
+        (
+            [nombre] => Maquina Terciaria
+        )
+
+    [3] => Array
+        (
+            [nombre] => Monitor
+        )
+
+    [4] => Array
+        (
+            [nombre] => Teclado
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => ACTEK
+        )
+
+    [1] => Array
+        (
+            [nombre] => Quaroni
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Area1
+        )
+
+    [1] => Array
+        (
+            [nombre] => Cajas
+        )
+
+    [2] => Array
+        (
+            [nombre] => Area2
+        )
+
+    [3] => Array
+        (
+            [nombre] => Area 3
+        )
+
+    [4] => Array
+        (
+            [nombre] => Area 4
+        )
+
+    [5] => Array
+        (
+            [nombre] => Area 5
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Zona1
+        )
+
+    [1] => Array
+        (
+            [nombre] => Mexico
+        )
+
+    [2] => Array
+        (
+            [nombre] => Puebla
+        )
+
+    [3] => Array
+        (
+            [nombre] => 
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => 211 Tizayuca
+        )
+
+    [1] => Array
+        (
+            [nombre] => 213 Progreso
+        )
+
+    [2] => Array
+        (
+            [nombre] => 212 R1
+        )
+
+    [3] => Array
+        (
+            [nombre] => 214 Actopan
+        )
+
+    [4] => Array
+        (
+            [nombre] => 215 Cuernavaca
+        )
+
+    [5] => Array
+        (
+            [nombre] => 217 Huichapan
+        )
+
+    [6] => Array
+        (
+            [nombre] => 219 Atizapan C&C 3
+        )
+
+    [7] => Array
+        (
+            [nombre] => 220 Valle Guadalupe
+        )
+
+    [8] => Array
+        (
+            [nombre] => 221 Chalco C&C
+        )
+
+    [9] => Array
+        (
+            [nombre] => 222 Tepatepec
+        )
+
+    [10] => Array
+        (
+            [nombre] => 224 Tulancingo
+        )
+
+    [11] => Array
+        (
+            [nombre] => 225 Matriz
+        )
+
+    [12] => Array
+        (
+            [nombre] => 226 Texcoco
+        )
+
+    [13] => Array
+        (
+            [nombre] => 227 Chalco 1
+        )
+
+    [14] => Array
+        (
+            [nombre] => 228 Sn Agustin
+        )
+
+    [15] => Array
+        (
+            [nombre] => 245 Chalco2
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Juan Garcia
+        )
+
+    [1] => Array
+        (
+            [nombre] => Jesus Maturana
+        )
+
+    [2] => Array
+        (
+            [nombre] => Number Book
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Maquina Principal
+        )
+
+    [1] => Array
+        (
+            [nombre] => Maquina Secundaria
+        )
+
+    [2] => Array
+        (
+            [nombre] => Maquina Terciaria
+        )
+
+    [3] => Array
+        (
+            [nombre] => Monitor
+        )
+
+    [4] => Array
+        (
+            [nombre] => Teclado
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => ACTEK
+        )
+
+    [1] => Array
+        (
+            [nombre] => Quaroni
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Area1
+        )
+
+    [1] => Array
+        (
+            [nombre] => Cajas
+        )
+
+    [2] => Array
+        (
+            [nombre] => Area2
+        )
+
+    [3] => Array
+        (
+            [nombre] => Area 3
+        )
+
+    [4] => Array
+        (
+            [nombre] => Area 4
+        )
+
+    [5] => Array
+        (
+            [nombre] => Area 5
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Zona1
+        )
+
+    [1] => Array
+        (
+            [nombre] => Mexico
+        )
+
+    [2] => Array
+        (
+            [nombre] => Puebla
+        )
+
+    [3] => Array
+        (
+            [nombre] => 
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => 211 Tizayuca
+        )
+
+    [1] => Array
+        (
+            [nombre] => 213 Progreso
+        )
+
+    [2] => Array
+        (
+            [nombre] => 212 R1
+        )
+
+    [3] => Array
+        (
+            [nombre] => 214 Actopan
+        )
+
+    [4] => Array
+        (
+            [nombre] => 215 Cuernavaca
+        )
+
+    [5] => Array
+        (
+            [nombre] => 217 Huichapan
+        )
+
+    [6] => Array
+        (
+            [nombre] => 219 Atizapan C&C 3
+        )
+
+    [7] => Array
+        (
+            [nombre] => 220 Valle Guadalupe
+        )
+
+    [8] => Array
+        (
+            [nombre] => 221 Chalco C&C
+        )
+
+    [9] => Array
+        (
+            [nombre] => 222 Tepatepec
+        )
+
+    [10] => Array
+        (
+            [nombre] => 224 Tulancingo
+        )
+
+    [11] => Array
+        (
+            [nombre] => 225 Matriz
+        )
+
+    [12] => Array
+        (
+            [nombre] => 226 Texcoco
+        )
+
+    [13] => Array
+        (
+            [nombre] => 227 Chalco 1
+        )
+
+    [14] => Array
+        (
+            [nombre] => 228 Sn Agustin
+        )
+
+    [15] => Array
+        (
+            [nombre] => 245 Chalco2
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Juan Garcia
+        )
+
+    [1] => Array
+        (
+            [nombre] => Jesus Maturana
+        )
+
+    [2] => Array
+        (
+            [nombre] => Number Book
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Maquina Principal
+        )
+
+    [1] => Array
+        (
+            [nombre] => Maquina Secundaria
+        )
+
+    [2] => Array
+        (
+            [nombre] => Maquina Terciaria
+        )
+
+    [3] => Array
+        (
+            [nombre] => Monitor
+        )
+
+    [4] => Array
+        (
+            [nombre] => Teclado
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => ACTEK
+        )
+
+    [1] => Array
+        (
+            [nombre] => Quaroni
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Area1
+        )
+
+    [1] => Array
+        (
+            [nombre] => Cajas
+        )
+
+    [2] => Array
+        (
+            [nombre] => Area2
+        )
+
+    [3] => Array
+        (
+            [nombre] => Area 3
+        )
+
+    [4] => Array
+        (
+            [nombre] => Area 4
+        )
+
+    [5] => Array
+        (
+            [nombre] => Area 5
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Zona1
+        )
+
+    [1] => Array
+        (
+            [nombre] => Mexico
+        )
+
+    [2] => Array
+        (
+            [nombre] => Puebla
+        )
+
+    [3] => Array
+        (
+            [nombre] => 
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => 211 Tizayuca
+        )
+
+    [1] => Array
+        (
+            [nombre] => 213 Progreso
+        )
+
+    [2] => Array
+        (
+            [nombre] => 212 R1
+        )
+
+    [3] => Array
+        (
+            [nombre] => 214 Actopan
+        )
+
+    [4] => Array
+        (
+            [nombre] => 215 Cuernavaca
+        )
+
+    [5] => Array
+        (
+            [nombre] => 217 Huichapan
+        )
+
+    [6] => Array
+        (
+            [nombre] => 219 Atizapan C&C 3
+        )
+
+    [7] => Array
+        (
+            [nombre] => 220 Valle Guadalupe
+        )
+
+    [8] => Array
+        (
+            [nombre] => 221 Chalco C&C
+        )
+
+    [9] => Array
+        (
+            [nombre] => 222 Tepatepec
+        )
+
+    [10] => Array
+        (
+            [nombre] => 224 Tulancingo
+        )
+
+    [11] => Array
+        (
+            [nombre] => 225 Matriz
+        )
+
+    [12] => Array
+        (
+            [nombre] => 226 Texcoco
+        )
+
+    [13] => Array
+        (
+            [nombre] => 227 Chalco 1
+        )
+
+    [14] => Array
+        (
+            [nombre] => 228 Sn Agustin
+        )
+
+    [15] => Array
+        (
+            [nombre] => 245 Chalco2
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => 211 Tizayuca
+        )
+
+    [1] => Array
+        (
+            [nombre] => 213 Progreso
+        )
+
+    [2] => Array
+        (
+            [nombre] => 212 R1
+        )
+
+    [3] => Array
+        (
+            [nombre] => 214 Actopan
+        )
+
+    [4] => Array
+        (
+            [nombre] => 215 Cuernavaca
+        )
+
+    [5] => Array
+        (
+            [nombre] => 217 Huichapan
+        )
+
+    [6] => Array
+        (
+            [nombre] => 219 Atizapan C&C 3
+        )
+
+    [7] => Array
+        (
+            [nombre] => 220 Valle Guadalupe
+        )
+
+    [8] => Array
+        (
+            [nombre] => 221 Chalco C&C
+        )
+
+    [9] => Array
+        (
+            [nombre] => 222 Tepatepec
+        )
+
+    [10] => Array
+        (
+            [nombre] => 224 Tulancingo
+        )
+
+    [11] => Array
+        (
+            [nombre] => 225 Matriz
+        )
+
+    [12] => Array
+        (
+            [nombre] => 226 Texcoco
+        )
+
+    [13] => Array
+        (
+            [nombre] => 227 Chalco 1
+        )
+
+    [14] => Array
+        (
+            [nombre] => 228 Sn Agustin
+        )
+
+    [15] => Array
+        (
+            [nombre] => 245 Chalco2
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => 211 Tizayuca
+        )
+
+    [1] => Array
+        (
+            [nombre] => 213 Progreso
+        )
+
+    [2] => Array
+        (
+            [nombre] => 212 R1
+        )
+
+    [3] => Array
+        (
+            [nombre] => 214 Actopan
+        )
+
+    [4] => Array
+        (
+            [nombre] => 215 Cuernavaca
+        )
+
+    [5] => Array
+        (
+            [nombre] => 217 Huichapan
+        )
+
+    [6] => Array
+        (
+            [nombre] => 219 Atizapan C&C 3
+        )
+
+    [7] => Array
+        (
+            [nombre] => 220 Valle Guadalupe
+        )
+
+    [8] => Array
+        (
+            [nombre] => 221 Chalco C&C
+        )
+
+    [9] => Array
+        (
+            [nombre] => 222 Tepatepec
+        )
+
+    [10] => Array
+        (
+            [nombre] => 224 Tulancingo
+        )
+
+    [11] => Array
+        (
+            [nombre] => 225 Matriz
+        )
+
+    [12] => Array
+        (
+            [nombre] => 226 Texcoco
+        )
+
+    [13] => Array
+        (
+            [nombre] => 227 Chalco 1
+        )
+
+    [14] => Array
+        (
+            [nombre] => 228 Sn Agustin
+        )
+
+    [15] => Array
+        (
+            [nombre] => 245 Chalco2
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => 211 Tizayuca
+        )
+
+    [1] => Array
+        (
+            [nombre] => 213 Progreso
+        )
+
+    [2] => Array
+        (
+            [nombre] => 212 R1
+        )
+
+    [3] => Array
+        (
+            [nombre] => 214 Actopan
+        )
+
+    [4] => Array
+        (
+            [nombre] => 215 Cuernavaca
+        )
+
+    [5] => Array
+        (
+            [nombre] => 217 Huichapan
+        )
+
+    [6] => Array
+        (
+            [nombre] => 219 Atizapan C&C 3
+        )
+
+    [7] => Array
+        (
+            [nombre] => 220 Valle Guadalupe
+        )
+
+    [8] => Array
+        (
+            [nombre] => 221 Chalco C&C
+        )
+
+    [9] => Array
+        (
+            [nombre] => 222 Tepatepec
+        )
+
+    [10] => Array
+        (
+            [nombre] => 224 Tulancingo
+        )
+
+    [11] => Array
+        (
+            [nombre] => 225 Matriz
+        )
+
+    [12] => Array
+        (
+            [nombre] => 226 Texcoco
+        )
+
+    [13] => Array
+        (
+            [nombre] => 227 Chalco 1
+        )
+
+    [14] => Array
+        (
+            [nombre] => 228 Sn Agustin
+        )
+
+    [15] => Array
+        (
+            [nombre] => 245 Chalco2
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => 211 Tizayuca
+        )
+
+    [1] => Array
+        (
+            [nombre] => 213 Progreso
+        )
+
+    [2] => Array
+        (
+            [nombre] => 212 R1
+        )
+
+    [3] => Array
+        (
+            [nombre] => 214 Actopan
+        )
+
+    [4] => Array
+        (
+            [nombre] => 215 Cuernavaca
+        )
+
+    [5] => Array
+        (
+            [nombre] => 217 Huichapan
+        )
+
+    [6] => Array
+        (
+            [nombre] => 219 Atizapan C&C 3
+        )
+
+    [7] => Array
+        (
+            [nombre] => 220 Valle Guadalupe
+        )
+
+    [8] => Array
+        (
+            [nombre] => 221 Chalco C&C
+        )
+
+    [9] => Array
+        (
+            [nombre] => 222 Tepatepec
+        )
+
+    [10] => Array
+        (
+            [nombre] => 224 Tulancingo
+        )
+
+    [11] => Array
+        (
+            [nombre] => 225 Matriz
+        )
+
+    [12] => Array
+        (
+            [nombre] => 226 Texcoco
+        )
+
+    [13] => Array
+        (
+            [nombre] => 227 Chalco 1
+        )
+
+    [14] => Array
+        (
+            [nombre] => 228 Sn Agustin
+        )
+
+    [15] => Array
+        (
+            [nombre] => 245 Chalco2
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => 211 Tizayuca
+        )
+
+    [1] => Array
+        (
+            [nombre] => 213 Progreso
+        )
+
+    [2] => Array
+        (
+            [nombre] => 212 R1
+        )
+
+    [3] => Array
+        (
+            [nombre] => 214 Actopan
+        )
+
+    [4] => Array
+        (
+            [nombre] => 215 Cuernavaca
+        )
+
+    [5] => Array
+        (
+            [nombre] => 217 Huichapan
+        )
+
+    [6] => Array
+        (
+            [nombre] => 219 Atizapan C&C 3
+        )
+
+    [7] => Array
+        (
+            [nombre] => 220 Valle Guadalupe
+        )
+
+    [8] => Array
+        (
+            [nombre] => 221 Chalco C&C
+        )
+
+    [9] => Array
+        (
+            [nombre] => 222 Tepatepec
+        )
+
+    [10] => Array
+        (
+            [nombre] => 224 Tulancingo
+        )
+
+    [11] => Array
+        (
+            [nombre] => 225 Matriz
+        )
+
+    [12] => Array
+        (
+            [nombre] => 226 Texcoco
+        )
+
+    [13] => Array
+        (
+            [nombre] => 227 Chalco 1
+        )
+
+    [14] => Array
+        (
+            [nombre] => 228 Sn Agustin
+        )
+
+    [15] => Array
+        (
+            [nombre] => 245 Chalco2
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => 211 Tizayuca
+        )
+
+    [1] => Array
+        (
+            [nombre] => 213 Progreso
+        )
+
+    [2] => Array
+        (
+            [nombre] => 212 R1
+        )
+
+    [3] => Array
+        (
+            [nombre] => 214 Actopan
+        )
+
+    [4] => Array
+        (
+            [nombre] => 215 Cuernavaca
+        )
+
+    [5] => Array
+        (
+            [nombre] => 217 Huichapan
+        )
+
+    [6] => Array
+        (
+            [nombre] => 219 Atizapan C&C 3
+        )
+
+    [7] => Array
+        (
+            [nombre] => 220 Valle Guadalupe
+        )
+
+    [8] => Array
+        (
+            [nombre] => 221 Chalco C&C
+        )
+
+    [9] => Array
+        (
+            [nombre] => 222 Tepatepec
+        )
+
+    [10] => Array
+        (
+            [nombre] => 224 Tulancingo
+        )
+
+    [11] => Array
+        (
+            [nombre] => 225 Matriz
+        )
+
+    [12] => Array
+        (
+            [nombre] => 226 Texcoco
+        )
+
+    [13] => Array
+        (
+            [nombre] => 227 Chalco 1
+        )
+
+    [14] => Array
+        (
+            [nombre] => 228 Sn Agustin
+        )
+
+    [15] => Array
+        (
+            [nombre] => 245 Chalco2
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Juan Garcia
+        )
+
+    [1] => Array
+        (
+            [nombre] => Jesus Maturana
+        )
+
+    [2] => Array
+        (
+            [nombre] => Number Book
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Maquina Principal
+        )
+
+    [1] => Array
+        (
+            [nombre] => Maquina Secundaria
+        )
+
+    [2] => Array
+        (
+            [nombre] => Maquina Terciaria
+        )
+
+    [3] => Array
+        (
+            [nombre] => Monitor
+        )
+
+    [4] => Array
+        (
+            [nombre] => Teclado
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => ACTEK
+        )
+
+    [1] => Array
+        (
+            [nombre] => Quaroni
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Area1
+        )
+
+    [1] => Array
+        (
+            [nombre] => Cajas
+        )
+
+    [2] => Array
+        (
+            [nombre] => Area2
+        )
+
+    [3] => Array
+        (
+            [nombre] => Area 3
+        )
+
+    [4] => Array
+        (
+            [nombre] => Area 4
+        )
+
+    [5] => Array
+        (
+            [nombre] => Area 5
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => Zona1
+        )
+
+    [1] => Array
+        (
+            [nombre] => Mexico
+        )
+
+    [2] => Array
+        (
+            [nombre] => Puebla
+        )
+
+    [3] => Array
+        (
+            [nombre] => 
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => 211 Tizayuca
+        )
+
+    [1] => Array
+        (
+            [nombre] => 213 Progreso
+        )
+
+    [2] => Array
+        (
+            [nombre] => 212 R1
+        )
+
+    [3] => Array
+        (
+            [nombre] => 214 Actopan
+        )
+
+    [4] => Array
+        (
+            [nombre] => 215 Cuernavaca
+        )
+
+    [5] => Array
+        (
+            [nombre] => 217 Huichapan
+        )
+
+    [6] => Array
+        (
+            [nombre] => 219 Atizapan C&C 3
+        )
+
+    [7] => Array
+        (
+            [nombre] => 220 Valle Guadalupe
+        )
+
+    [8] => Array
+        (
+            [nombre] => 221 Chalco C&C
+        )
+
+    [9] => Array
+        (
+            [nombre] => 222 Tepatepec
+        )
+
+    [10] => Array
+        (
+            [nombre] => 224 Tulancingo
+        )
+
+    [11] => Array
+        (
+            [nombre] => 225 Matriz
+        )
+
+    [12] => Array
+        (
+            [nombre] => 226 Texcoco
+        )
+
+    [13] => Array
+        (
+            [nombre] => 227 Chalco 1
+        )
+
+    [14] => Array
+        (
+            [nombre] => 228 Sn Agustin
+        )
+
+    [15] => Array
+        (
+            [nombre] => 245 Chalco2
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => 211 Tizayuca
+        )
+
+    [1] => Array
+        (
+            [nombre] => 213 Progreso
+        )
+
+    [2] => Array
+        (
+            [nombre] => 212 R1
+        )
+
+    [3] => Array
+        (
+            [nombre] => 214 Actopan
+        )
+
+    [4] => Array
+        (
+            [nombre] => 215 Cuernavaca
+        )
+
+    [5] => Array
+        (
+            [nombre] => 217 Huichapan
+        )
+
+    [6] => Array
+        (
+            [nombre] => 219 Atizapan C&C 3
+        )
+
+    [7] => Array
+        (
+            [nombre] => 220 Valle Guadalupe
+        )
+
+    [8] => Array
+        (
+            [nombre] => 221 Chalco C&C
+        )
+
+    [9] => Array
+        (
+            [nombre] => 222 Tepatepec
+        )
+
+    [10] => Array
+        (
+            [nombre] => 224 Tulancingo
+        )
+
+    [11] => Array
+        (
+            [nombre] => 225 Matriz
+        )
+
+    [12] => Array
+        (
+            [nombre] => 226 Texcoco
+        )
+
+    [13] => Array
+        (
+            [nombre] => 227 Chalco 1
+        )
+
+    [14] => Array
+        (
+            [nombre] => 228 Sn Agustin
+        )
+
+    [15] => Array
+        (
+            [nombre] => 245 Chalco2
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => 211 Tizayuca
+        )
+
+    [1] => Array
+        (
+            [nombre] => 213 Progreso
+        )
+
+    [2] => Array
+        (
+            [nombre] => 212 R1
+        )
+
+    [3] => Array
+        (
+            [nombre] => 214 Actopan
+        )
+
+    [4] => Array
+        (
+            [nombre] => 215 Cuernavaca
+        )
+
+    [5] => Array
+        (
+            [nombre] => 217 Huichapan
+        )
+
+    [6] => Array
+        (
+            [nombre] => 219 Atizapan C&C 3
+        )
+
+    [7] => Array
+        (
+            [nombre] => 220 Valle Guadalupe
+        )
+
+    [8] => Array
+        (
+            [nombre] => 221 Chalco C&C
+        )
+
+    [9] => Array
+        (
+            [nombre] => 222 Tepatepec
+        )
+
+    [10] => Array
+        (
+            [nombre] => 224 Tulancingo
+        )
+
+    [11] => Array
+        (
+            [nombre] => 225 Matriz
+        )
+
+    [12] => Array
+        (
+            [nombre] => 226 Texcoco
+        )
+
+    [13] => Array
+        (
+            [nombre] => 227 Chalco 1
+        )
+
+    [14] => Array
+        (
+            [nombre] => 228 Sn Agustin
+        )
+
+    [15] => Array
+        (
+            [nombre] => 245 Chalco2
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => 211 Tizayuca
+        )
+
+    [1] => Array
+        (
+            [nombre] => 213 Progreso
+        )
+
+    [2] => Array
+        (
+            [nombre] => 212 R1
+        )
+
+    [3] => Array
+        (
+            [nombre] => 214 Actopan
+        )
+
+    [4] => Array
+        (
+            [nombre] => 215 Cuernavaca
+        )
+
+    [5] => Array
+        (
+            [nombre] => 217 Huichapan
+        )
+
+    [6] => Array
+        (
+            [nombre] => 219 Atizapan C&C 3
+        )
+
+    [7] => Array
+        (
+            [nombre] => 220 Valle Guadalupe
+        )
+
+    [8] => Array
+        (
+            [nombre] => 221 Chalco C&C
+        )
+
+    [9] => Array
+        (
+            [nombre] => 222 Tepatepec
+        )
+
+    [10] => Array
+        (
+            [nombre] => 224 Tulancingo
+        )
+
+    [11] => Array
+        (
+            [nombre] => 225 Matriz
+        )
+
+    [12] => Array
+        (
+            [nombre] => 226 Texcoco
+        )
+
+    [13] => Array
+        (
+            [nombre] => 227 Chalco 1
+        )
+
+    [14] => Array
+        (
+            [nombre] => 228 Sn Agustin
+        )
+
+    [15] => Array
+        (
+            [nombre] => 245 Chalco2
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [nombre] => 211 Tizayuca
+        )
+
+    [1] => Array
+        (
+            [nombre] => 213 Progreso
+        )
+
+    [2] => Array
+        (
+            [nombre] => 212 R1
+        )
+
+    [3] => Array
+        (
+            [nombre] => 214 Actopan
+        )
+
+    [4] => Array
+        (
+            [nombre] => 215 Cuernavaca
+        )
+
+    [5] => Array
+        (
+            [nombre] => 217 Huichapan
+        )
+
+    [6] => Array
+        (
+            [nombre] => 219 Atizapan C&C 3
+        )
+
+    [7] => Array
+        (
+            [nombre] => 220 Valle Guadalupe
+        )
+
+    [8] => Array
+        (
+            [nombre] => 221 Chalco C&C
+        )
+
+    [9] => Array
+        (
+            [nombre] => 222 Tepatepec
+        )
+
+    [10] => Array
+        (
+            [nombre] => 224 Tulancingo
+        )
+
+    [11] => Array
+        (
+            [nombre] => 225 Matriz
+        )
+
+    [12] => Array
+        (
+            [nombre] => 226 Texcoco
+        )
+
+    [13] => Array
+        (
+            [nombre] => 227 Chalco 1
+        )
+
+    [14] => Array
+        (
+            [nombre] => 228 Sn Agustin
+        )
+
+    [15] => Array
+        (
+            [nombre] => 245 Chalco2
+        )
+
+)
+

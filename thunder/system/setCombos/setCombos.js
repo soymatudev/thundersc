@@ -322,3 +322,27 @@ async function setComboAlmacen() {
     );
   });
 }
+
+async function setComboAlmacenScorpion() {
+  const dataF = new FormData();
+  dataF.append("variablekey", "setComboAlmacenScorpion");
+
+  const url = "../../../../thundercloud/system/setCombos/call.php";
+  const header = { "Content-Type": "multipart/form-data" };
+  let data = await dataFetch(url, dataF);
+
+  if (data === null || data === undefined) {data = [{"nombre": "Sin Datos"}]}; 
+
+  $("#comboAlmacen").empty();
+
+  $("#comboAlmacen").append(
+    `<option value="${0}">${""}</option>`
+  );
+
+  data.forEach((option, index) => {
+    $("#comboAlmacen").append(
+      `<option value="${index+1}">${option.nombre}</option>`
+    );
+  });
+}
+

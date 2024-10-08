@@ -160,6 +160,29 @@ $home = <<<HTML
             </ul>
           </div>
         </li>
+        <!-- **************************** Sync Scorpion **************************** -->
+        <li class="nav-item menu-items">
+          <a class="nav-link" data-toggle="collapse" href="#div-SyncScorpion" aria-expanded="false" aria-controls="auth">
+            <span class="menu-title">Sync Scorpion</span>
+            <i class="menu-arrow"></i>
+          </a>
+          <div class="collapse" id="div-SyncScorpion">
+            <ul class="nav flex-column sub-menu">
+              <li class="nav-item">
+                <a class="nav-link" data-url="./syncscorpion/panel/panel.php" id="Panel de Control"
+                onclick="addTab('Panel de Control')">
+                  Panel de Control
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-url="./syncscorpion/syncventas/syncventas.php" id="Syncventas-Sync-Scorpion"
+                onclick="addTab('Syncventas-Sync-Scorpion')">
+                  Sincronizar Ventas
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
       </ul>
     </nav>
     <!-- partial -->

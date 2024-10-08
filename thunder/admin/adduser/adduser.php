@@ -142,6 +142,21 @@ $home = <<<HTML
                   </li>
                 </ul>
               </li>
+
+              <li class="block-permiso" >
+                sync scorpion
+                <!-- <input class="padre-cat box-permiso" type="checkbox" id="permisoA" name="permisoA" value="A" /> -->
+                <ul>
+                  <li>
+                    Panel de Control
+                    <input class="cat box-permiso" type="checkbox" id="panel-sync-scorpion" name="panel-sync-scorpion" value="panel-sync-scorpion" />
+                  </li>
+                  <li>
+                    Sincronizar Ventas
+                    <input class="cat box-permiso" type="checkbox" id="syncventas-sync-scorpion" name="syncventas-sync-scorpion" value="syncventas-sync-scorpion" />
+                  </li>
+                </ul>
+              </li>
               
             </ul>
           </div>

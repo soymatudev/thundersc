@@ -36,4 +36,6 @@ if ($key == "setComboCedis") {
     echo marca();
 } else if ($key == "setComboAlmacen") {
     echo almacen();
+} else if ($key == "setComboAlmacenScorpion") {
+    echo almacenScorpion();
 }
