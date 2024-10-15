@@ -336,7 +336,7 @@ if ($argc > 1) {
     //$methodArgs = array_slice($argv, 2);
     $almacenes = new AlmacenesSco();
     if (method_exists($class, $functionName)) {
-        call_user_func([$class, $functionName], $almacenes->almacenesP, '');
+        call_user_func([$class, $functionName], $almacenes->almacenes, '');
     } else {
         echo "Function $functionName not found\n";
     }
