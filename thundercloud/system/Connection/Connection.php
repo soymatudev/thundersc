@@ -21,7 +21,7 @@ class Connection {
     $localPort = $_ENV['DB_PORT_M'] ?: '';
     $localDBName = $_ENV['DB_NAME_M'] ?: '';
     $localUser = $_ENV['DB_USER_M'] ?: '';
-    $localPassword = "" ?: '';
+    $localPassword = $_ENV['DB_PASSWORD_M'] ?: '';
 
     $localDsn = "mysql:host=$localHost;port=$localPort;dbname=$localDBName;charset=utf8";
 
