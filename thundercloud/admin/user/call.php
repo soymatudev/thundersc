@@ -9,8 +9,12 @@ $key = $_POST['variablekey'];
 
 if ($key == "setUsuario") {
     echo addUsuario();
+} else if ($key == "updateUsuario") {
+    echo updateUsuario();
+} else if ($key == "deleteUsuario") {
+    echo deleteUsuario();
 } else if ($key == "setUsuario") {
-    echo addUsuarioSoporte();
+    //echo addUsuarioSoporte();
 } else if ($key == "showTable") {
     echo showTable();
 }

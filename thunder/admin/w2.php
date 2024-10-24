@@ -65,17 +65,25 @@
 
           </div>
 
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod ipsa, dolorem autem tempore illum nemo deleniti quia animi dolores fugit pariatur possimus sint, inventore quibusdam alias dicta perspiciatis blanditiis amet?</p>
+          <div class="admin-module">
+              <p>
+                  Bienvenido al módulo de administración, donde podrás gestionar usuarios y módulos de la aplicación. 
+                  <br>
+                  Este espacio está diseñado para facilitar la administración y optimización de las funcionalidades.
+              </p>
+              <p>
+                  Desarrollado por: <strong>matudev</strong>
+              </p>
+              <p>
+                  Para más información visita mi repositorio en GitHub:<!-- y acceso al código fuente, visita mi repositorio en GitHub:  -->
+                  <a href="https://github.com/soymatudev" target="_blank">soymatudev en GitHub</a>
+              </p>
+          </div>
 
         </div>
       </div>
       <!-- content-wrapper ends -->
       <!-- partial:partials/_footer.html -->
-      <!-- <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © Derechos reservador - PCZ 2024</span>
-            </div>
-          </footer> -->
       <!-- partial -->
     </div>
     <!-- main-panel ends -->

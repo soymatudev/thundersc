@@ -84,13 +84,6 @@ function deleteTab(tabid, tabContentId){
 }
 
 
-
-
-
-
-
-
-
 /* ====================================================== */
 
 //Add More Tab Functionality

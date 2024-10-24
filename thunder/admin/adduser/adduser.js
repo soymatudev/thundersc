@@ -5,7 +5,6 @@ Fecha de Creación: 10/04/2023
 ruta: thundersc/thunder/admin/adduser/adduser.js
 ===============================================================================*/
 let tableOne = "";
-//let tableTwo = "";
 document.addEventListener("DOMContentLoaded", async function () {
   tableOne = new CustomDataTable("container-tablaOne");
   //tableTwo = new CustomDataTable("container-tablaTwo");
@@ -17,7 +16,11 @@ document.addEventListener("DOMContentLoaded", async function () {
       await setUsuario();
       await showTable("usuarios");
     } else if ($("#comboOperacion").val() === "1") {
-      // Aquiva ir la logica cuando actulicemos los usuarios - este comentario si lo puse yo
+      await updateUsuario();
+      await showTable("usuarios");
+    } else if ($("#comboOperacion").val() === "2") {
+      await deleteUsuario();
+      await showTable("usuarios");
     }
   });
 });
@@ -28,7 +31,7 @@ async function init() {
   });
 
   $("#btn_Update").hide();
-  $("#comboOperacion").on("change", function () {
+  /* $("#comboOperacion").on("change", function () {
     if ($("#comboOperacion").val() === "0") {
       $("#btn_Add").show();
       $("#btn_Update").hide();
@@ -36,15 +39,13 @@ async function init() {
       $("#btn_Update").show();
       $("#btn_Add").hide();
     }
-  });
+  }); */
 
   await showTable("usuarios");
-  //await showTable("equipos");
 }
 
 async function setUsuario() {
   const permisos = await getPermisos();
-
   const dataF = new FormData();
 
   dataF.append("variablekey", "setUsuario");
@@ -56,6 +57,32 @@ async function setUsuario() {
     "../../../thundercloud/admin/user/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   const data = await dataFetch(url, dataF, "Usuario Agregado", "Error al agregar usuario");
+}
+
+async function updateUsuario() {
+  const permisos = await getPermisos();
+  const dataF = new FormData();
+
+  dataF.append("variablekey", "updateUsuario");
+  dataF.append("nombre", $("#nombre").val().trim());
+  dataF.append("password", $("#password").val().trim());
+  dataF.append("permisos", permisos);
+
+  const url =
+    "../../../thundercloud/admin/user/call.php";
+  const header = { "Content-Type": "multipart/form-data" };
+  const data = await dataFetch(url, dataF, "Usuario Actualizado", "Error al actualizar usuario");
+}
+
+async function deleteUsuario() {
+  const dataF = new FormData();
+
+  dataF.append("variablekey", "deleteUsuario");
+  dataF.append("nombre", $("#nombre").val().trim());
+  const url =
+    "../../../thundercloud/admin/user/call.php";
+  const header = { "Content-Type": "multipart/form-data" };
+  const data = await dataFetch(url, dataF, "Usuario Eliminado", "Error al eliminar usuario");
 }
 
 async function getPermisos() {
@@ -90,8 +117,6 @@ async function showTable(catalogo) {
     "../../../thundercloud/admin/user/call.php";
   const header = { "Content-Type": "multipart/form-data" };
   let data = await dataFetch(url, dataF);
-
-  console.log(data);
 
   if (data === null || data === undefined) {
     data = [{ Datos: "Sin datos" }];

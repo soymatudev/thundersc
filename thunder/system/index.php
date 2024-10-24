@@ -78,67 +78,6 @@ $home = <<<HTML
         </li>
 
         <li class="nav-item menu-items">
-          <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="auth">
-            <span class="menu-title">Mantenimiento</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="ui-basic">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item menu-items">
-                <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                  <span class="menu-title">User Pages</span>
-                  <i class="menu-arrow"></i>
-                </a>
-                <div class="collapse" id="auth">
-                  <ul class="nav flex-column sub-menu">
-                    <li class="nav-item">
-                      <a data-url="./mantenimiento/usuarioyequipo/usuarioyequipo.php" id="in" onclick="addTab('in')"
-                        class="nav-link">
-                        Usuarios y Grupos
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-url="./mantenimiento/usuarioyequipo/usuarioyequipo.php" id="Usuarios y Grupos"
-                  onclick="addTab('Usuarios y Grupos')">Usuarios y Grupos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-url="./catalogo_mp/catalogo_mp.html" id="ca"
-                onclick="addTab('ca')" >Catálogo</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-url="./nueva_ot/nueva_ot.html" id="M-OT"
-                  onclick="addTab('M-OT')">
-                  Calendario y OT</a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item menu-items">
-          <a class="nav-link" data-toggle="collapse" href="#Calidad" aria-expanded="false" aria-controls="auth">
-            <span class="menu-title">Catalogos</span>
-            <i class="menu-arrow"></i>
-          </a>
-          <div class="collapse" id="Calidad">
-            <ul class="nav flex-column sub-menu">
-              <li class="nav-item">
-                <a class="nav-link" data-url="./catalogo/maquina/maquina.php" id="Catalogo Maquinas"
-                onclick="addTab('Catalogo Maquinas')">
-                  Maquinas
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-url="./catalogo/ubicacion/ubicacion.php" id="Catalogo Ubicaciones"
-                onclick="addTab('Catalogo Ubicaciones')">
-                  Ubicaciones
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li>
-        <li class="nav-item menu-items">
           <a class="nav-link" data-toggle="collapse" href="#InventarioS" aria-expanded="false" aria-controls="auth">
             <span class="menu-title">Inventario Sistemas</span>
             <i class="menu-arrow"></i>
@@ -177,7 +116,7 @@ $home = <<<HTML
               <li class="nav-item">
                 <a class="nav-link" data-url="./syncscorpion/syncventas/syncventas.php" id="Syncventas-Sync-Scorpion"
                 onclick="addTab('Syncventas-Sync-Scorpion')">
-                  Sincronizar Ventas
+                  Sinc. Ventas
                 </a>
               </li>
             </ul>
@@ -189,12 +128,8 @@ $home = <<<HTML
     <div class="container-fluid page-body-wrapper">
       <!-- partial:partials/_navbar.html -->
       <nav class="navbar navbar-w p-0 fixed-top d-flex flex-row">
-        <!-- <div class="navbar-brand-wrapper d-flex d-lg-none align-items-center justify-content-center">
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img
-              src="../template/assets/images/logo-mini.svg" alt="logo" /></a>
-        </div> -->
         <div class="navbar-menu-wrapper flex-grow d-flex align-items-stretch">
-          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize" id="bt-menubar">
             <span class="mdi mdi-menu"></span>
           </button>
 
@@ -254,9 +189,9 @@ $home = <<<HTML
   <!-- plugins:js -->
   <script src="../template/assets/vendors/js/vendor.bundle.base.js"></script>
   <!-- endinject -->
-  <!-- Plugin js for this page -->
+  <!-- Plugin js for this page --><!-- 
   <script src="../template/assets/vendors/chart.js/Chart.min.js"></script>
-  <script src="../template/assets/vendors/progressbar.js/progressbar.min.js"></script>
+  <script src="../template/assets/vendors/progressbar.js/progressbar.min.js"></script> -->
   <script src="../template/assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
   <script src="../template/assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
   <script src="../template/assets/vendors/owl-carousel-2/owl.carousel.min.js"></script>

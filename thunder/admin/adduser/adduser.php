@@ -54,6 +54,7 @@ $home = <<<HTML
             <select class="select col-md-2" name="materia" tabindex="-1" aria-hidden="true" id="comboOperacion">
               <option value="0">Crear</option>
               <option value="1">Actualizar</option>
+              <option value="2">Eliminar</option>
             </select>
           </div>
 
@@ -165,7 +166,7 @@ $home = <<<HTML
 
         <div class="container-c-g container-button">
           <button class="bordes_redondeados shadow btn_consult btn" id="btn_Add">
-            Agregar
+            Aceptar
           </button>
           <button class="bordes_redondeados shadow btn_consult btn" id="btn_Update">
             Actualizar

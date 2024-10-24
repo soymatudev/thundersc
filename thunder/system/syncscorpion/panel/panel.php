@@ -168,7 +168,6 @@ $home = <<<HTML
   <!-- Custom js for this page -->
 
   <script defer src="../../dataFetch/dataFetch.js"></script>
-  <script defer src="../../inputFile/inputFile.js"></script>
   <script defer src="../../../template/assets/js/dashboard.js"></script>
   <script defer src="../../../template/node_modules/ag-grid-community/dist/ag-grid-community.min.js"></script>
   <script defer src="../../../template/assets/js/setTable.js"></script>

@@ -57,6 +57,75 @@ class Querys extends Statement
     }
   }
 
+  public static function upUsuario($nombre, $password, $permisos)
+  {
+    $conn = Connection::connect();
+    // Encriptar permisos
+    $publicKey = openssl_pkey_get_public(file_get_contents('../ssl/thundersc_Key_publica.pem'));
+    // Desencriptar permisos
+    $privateKey = openssl_pkey_get_private(file_get_contents('../ssl/thundersc_Key_privada.pem'));
+
+    $permisos = openssl_public_encrypt($permisos, $encrypted, $publicKey);
+    $passCrypt = password_hash($password, PASSWORD_DEFAULT, ['cost' => 10]);
+
+    $query = '';
+    if (!$conn) {
+      file_put_contents(self::LOG_FILE, "\nError de conexión\n", FILE_APPEND);
+      return null;
+    }
+
+    $query = "UPDATE thundersc_usuario SET password = :password, permisos = :permisos where username = :username";
+    file_put_contents(self::LOG_FILE, "\nExecute => $query\n", FILE_APPEND);
+    $stmt = self::prepareStatement($query);
+
+    if ($stmt) {
+      $stmt->bindParam(':username', $nombre, PDO::PARAM_STR);
+      $stmt->bindParam(':password', $passCrypt, PDO::PARAM_STR);
+      $stmt->bindParam(':permisos', $encrypted, PDO::PARAM_STR);
+      $result = self::executePreparedQuery($stmt);
+      if ($result !== false) {
+        file_put_contents(self::LOG_FILE, "\nExecute => Correct\n", FILE_APPEND);
+        return ["Execute" => "Correct"];
+      } else {
+        file_put_contents(self::LOG_FILE, "\nExecute => Incorrect\n", FILE_APPEND);
+        return ["Execute" => "Incorrect"];
+      }
+    } else {
+      file_put_contents(self::LOG_FILE, "\nExecute => Incorrect sin stmt\n", FILE_APPEND);
+      return ["Execute" => "Incorrect"];
+    }
+  }
+
+  public static function delUsuario($nombre)
+  {
+    $conn = Connection::connect();
+
+    $query = '';
+    if (!$conn) {
+      file_put_contents(self::LOG_FILE, "\nError de conexión\n", FILE_APPEND);
+      return null;
+    }
+
+    $query = "DELETE FROM thundersc_usuario where username = :username";
+    file_put_contents(self::LOG_FILE, "\nExecute => $query\n", FILE_APPEND);
+    $stmt = self::prepareStatement($query);
+
+    if ($stmt) {
+      $stmt->bindParam(':username', $nombre, PDO::PARAM_STR);
+      $result = self::executePreparedQuery($stmt);
+      if ($result !== false) {
+        file_put_contents(self::LOG_FILE, "\nExecute => Correct\n", FILE_APPEND);
+        return ["Execute" => "Correct"];
+      } else {
+        file_put_contents(self::LOG_FILE, "\nExecute => Incorrect\n", FILE_APPEND);
+        return ["Execute" => "Incorrect"];
+      }
+    } else {
+      file_put_contents(self::LOG_FILE, "\nExecute => Incorrect sin stmt\n", FILE_APPEND);
+      return ["Execute" => "Incorrect"];
+    }
+  }
+
   public static function setEquipoTrabajo($nombre, $cve, $area)
   {
     $conn = Connection::connect();
@@ -161,6 +230,30 @@ function addUsuario()
   header('Content-Type: application/json');
   return json_encode($data);
 }
+
+function updateUsuario()
+{
+  $nombre = $_POST['nombre'];
+  $password = $_POST['password'];
+  $permisos = explode(",", $_POST['permisos']);
+
+  $codec = new Codec();
+  $permisos = $codec->encode($permisos); 
+
+  $data = Querys::upUsuario($nombre, $password, $permisos);
+  header('Content-Type: application/json');
+  return json_encode($data);
+}
+
+function deleteUsuario()
+{
+  $nombre = $_POST['nombre'];
+
+  $data = Querys::delUsuario($nombre);
+  header('Content-Type: application/json');
+  return json_encode($data);
+}
+
 
 function addEquipoTrabajo()
 {

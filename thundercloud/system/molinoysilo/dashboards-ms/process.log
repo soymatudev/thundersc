@@ -41415,3 +41415,147 @@ Execute => Array
 
 )
 
+
+=====================================================
+
+Connecting...
+
+= Connection Correct (Local) =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => Sernidor106
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute TiempoTS => Array
+(
+    [Sernidor106] => Array
+        (
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct (Local) =
+
+=====================================================
+
+Connecting...
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct => Obentenemos los nombres
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [alias] => Sernidor106
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+Error en la consulta: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'UNION ALL
+              (
+                SELECT 0.0
+                  FROM m...' at line 10
+Execute => Correct
+
+Execute AmpereMol => Array
+(
+    [Sernidor106] => 
+)
+
+
+Execute => Correct
+
+Execute Activos => Array
+(
+    [0] => 
+)
+
+
+=====================================================
+
+Connecting...
+
+= Connection Correct (Local) =
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [0] => Array
+        (
+            [Silos] => Silo4B, Silo7B
+            [Mapri] => Maiz
+        )
+
+)
+
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+=====================================================
+
+Connecting...
+
+Consulta Select
+
+Execute => Correct
+
+Execute => Array
+(
+    [Silo4B, Silo7B] => Array
+        (
+        )
+
+)
+
