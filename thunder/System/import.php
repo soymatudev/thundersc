@@ -1,7 +1,6 @@
 <?php
 
 $globalImport = <<<HTML
-
   <link rel="stylesheet" href="/thundersc/thunder/template/node_modules/ag-grid-community/styles/ag-grid.css" />
   <link rel="stylesheet" href="/thundersc/thunder/template/node_modules/ag-grid-community/styles/ag-theme-alpine.css" />
 
@@ -52,5 +51,4 @@ $globalImport = <<<HTML
 
   <script src="/thundersc/thunder/template/assets/js/setTable.js"></script>
   <script src="/thundersc/thunder/template/assets/js/menuIN-OUT.js"></script>
-  
 HTML;
