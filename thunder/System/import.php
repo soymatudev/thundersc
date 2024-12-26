@@ -19,13 +19,13 @@ $globalImport = <<<HTML
   <link rel="stylesheet" href="/thundersc/thunder/template/assets/vendors/flag-icon-css/css/flag-icon.min.css" />
   <link rel="stylesheet" href="/thundersc/thunder/template/assets/vendors/owl-carousel-2/owl.carousel.min.css" />
   <link rel="stylesheet" href="/thundersc/thunder/template/assets/vendors/owl-carousel-2/owl.theme.default.min.css" />
-  <link rel="stylesheet" href="/thundersc/thunder/template/assets//vendors/select2/select2.min.css">
-  <link rel="stylesheet" href="/thundersc/thunder/template/node_modules/bootstrap-icons/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="/thundersc/thunder/template/assets//vendors/select2/select2.min.css" />
+  <link rel="stylesheet" href="/thundersc/thunder/template/node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
 
   <!-- Layout styles -->
   <link rel="stylesheet" href="/thundersc/thunder/template/assets/css/style.css" />
   <link rel="stylesheet" href="/thundersc/thunder/template/assets/css/styleArea.css" />
-  <link rel="stylesheet" href="/thundersc/thunder/template/assets/css/styleUser.css">
+  <link rel="stylesheet" href="/thundersc/thunder/template/assets/css/styleUser.css" />
   <!-- End layout styles -->
 
   <!-- plugins: jQuery -->
