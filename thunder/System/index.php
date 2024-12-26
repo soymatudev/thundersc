@@ -84,6 +84,15 @@ function generateMenuEmpresas($data) {
     return $html;
 }
 
+if (!function_exists('array_key_first')) {
+  function array_key_first(array $arr) {
+      foreach($arr as $key => $unused) {
+          return $key;
+      }
+      return NULL;
+  }
+}
+
 $usr = $_SESSION['username'];
 $cve = $_SESSION['cve_usu'];
 $menu = json_encode($_SESSION['menu']);

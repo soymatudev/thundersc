@@ -181,6 +181,16 @@ class LoginService {
     }
 
     public function setSession ($infoUsuario) {
+
+        if (!function_exists('array_key_first')) {
+            function array_key_first(array $arr) {
+                foreach($arr as $key => $unused) {
+                    return $key;
+                }
+                return NULL;
+            }
+        }
+        
         session_start();
         $_SESSION['username'] = $infoUsuario[0]['username'];
         $_SESSION['usrdescri'] = $infoUsuario[0]['descri'];
