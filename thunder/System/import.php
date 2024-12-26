@@ -19,7 +19,7 @@ $globalImport = <<<HTML
   <link rel="stylesheet" href="/thundersc/thunder/template/assets/vendors/flag-icon-css/css/flag-icon.min.css" />
   <link rel="stylesheet" href="/thundersc/thunder/template/assets/vendors/owl-carousel-2/owl.carousel.min.css" />
   <link rel="stylesheet" href="/thundersc/thunder/template/assets/vendors/owl-carousel-2/owl.theme.default.min.css" />
-  <link rel="stylesheet" href="/thundersc/thunder/template/assets//vendors/select2/select2.min.css" />
+  <link rel="stylesheet" href="/thundersc/thunder/template/assets/vendors/select2/select2.min.css" />
   <link rel="stylesheet" href="/thundersc/thunder/template/node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
 
   <!-- Layout styles -->
@@ -39,7 +39,6 @@ $globalImport = <<<HTML
   <script src="/thundersc/thunder/template/assets/js/off-canvas.js"></script>
   <script src="/thundersc/thunder/template/assets/js/hoverable-collapse.js"></script>
   <script src="/thundersc/thunder/template/assets/js/misc.js"></script>
-  <script src="/thundersc/thunder/template/assets/js/settings.js"></script>
   <script src="/thundersc/thunder/template/assets/js/todolist.js"></script>
 
 
