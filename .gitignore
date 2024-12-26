@@ -1,4 +1,5 @@
 **/process.log
+**/thunderlog.log
 **.log
 **.env
 **.sql

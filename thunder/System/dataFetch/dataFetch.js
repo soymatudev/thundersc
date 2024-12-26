@@ -1,0 +1,80 @@
+/*
+===============================================================================
+Autor: Juan Maturana
+Fecha de Creación: 2024
+===============================================================================
+*/
+async function dataFetch(url, body, msSuccess = "Todo fue bien!", msError1 = "Algo salio mal, intenta de nuevo o reportalo.", header) {
+  try {
+    
+    const response = await fetch(url, {
+      method: "POST",
+      headers: header,
+      body: body,
+    });
+
+    if (response.status === 500) {
+      throw new Error("Error interno del servidor");
+    } else if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    if (response.status === 204) {
+      alert("Operacion exitosa, no se resivio contenido");
+      return;
+    }
+
+    const contentType = response.headers.get("Content-Type");
+
+    if (
+      contentType &&
+      contentType.toLowerCase().includes("application/octet-stream")
+    ) {
+      // Si el contenido es un archivo descargable, descárgalo directamente
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = response.headers
+        .get("Content-Disposition")
+        .split("filename=")[1]
+        .replace(/\"/g, "");
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(url);
+    } else if (
+      contentType &&
+      contentType.toLowerCase().includes("application/json")
+    ) {
+      // Si el contenido es JSON, analízalo
+      const data = await response.json();
+      if (response.status === 500) {
+        throw new Error("Error interno del servidor");
+      } else if (response.status === 400) {
+        console.log("Error en la solicitud:", data.error);
+        // Puedes mostrar un mensaje al usuario indicando el error específico
+      } else {
+        if (data["Execute"] == "Correct") {
+          //console.log("Esto es Data: " + data);
+          alertSucces(msSuccess)
+          return;
+        } else if (data["Execute"] == "Incorrect") {
+          //console.log("Esto es Data: " + data);
+          alertError(msError1);
+          return;
+        }
+        //console.log("Respuesta JSON:", data);
+        return data;
+      }
+    } else {
+      let data= null;
+      return data; // Otra opción podría ser lanzar un error
+    }
+  } catch (error) {
+    //alert("Acción Error");
+    //alertSucces();
+    alertError("Algo salio mal, intenta de nuevo");
+    console.log("Error: ", error);
+  }
+}

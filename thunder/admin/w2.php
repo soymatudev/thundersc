@@ -55,7 +55,7 @@
                         text-align: center;
                         max-width: fit-content;
                       ">
-                        ThunderSC <br> Administradores
+                        Thunder Admin
                       </h1>
                     </div>
                   </div>
@@ -65,20 +65,9 @@
 
           </div>
 
-          <div class="admin-module">
-              <p>
-                  Bienvenido al módulo de administración, donde podrás gestionar usuarios y módulos de la aplicación. 
-                  <br>
-                  Este espacio está diseñado para facilitar la administración y optimización de las funcionalidades.
-              </p>
-              <p>
-                  Desarrollado por: <strong>matudev</strong>
-              </p>
-              <p>
-                  Para más información visita mi repositorio en GitHub:<!-- y acceso al código fuente, visita mi repositorio en GitHub:  -->
-                  <a href="https://github.com/soymatudev" target="_blank">soymatudev en GitHub</a>
-              </p>
-          </div>
+          <!-- <div class="admin-module">
+              Bienvenido
+          </div> -->
 
         </div>
       </div>

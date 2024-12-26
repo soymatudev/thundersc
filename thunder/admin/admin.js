@@ -41,6 +41,7 @@ function addTab(name) {
 
   menuTab.appendChild(tab);
   containerTab.appendChild(tabContent);
+  $("#bt-menubar").click();
 
 }
 

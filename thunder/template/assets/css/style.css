@@ -7473,7 +7473,18 @@
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; 
+
+  --background-next: #F4F7FC;
+  --color-principal: #14285A;
+  --color-secundario: #1D51A7;
+  --color-blanco: #FFFFFF;
+  --color-acentuacion: #D92129;
+  --bg-tooltip: rgba(29, 81, 167, .8);
+  --bg-span: rgba(53, 85, 166, .1);
+  --bg-button: #e9edf8;
+  --color-border: rgba(60, 60, 60, .33);
+}
 
 *,
 *::before,
@@ -11400,7 +11411,7 @@ input[type="button"].btn-block {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: #191c24;
+  background-color: var(--background-next);
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem; }
@@ -15717,7 +15728,7 @@ body,
 html {
   overflow-x: hidden;
   padding-right: 0 !important;
-  background-color: #191c24; }
+  background-color: var(--color-blanco); }
 
 *:-moz-full-screen,
 *:-webkit-full-screen,
@@ -19638,10 +19649,10 @@ body.avgrund-active {
   flex-direction: column;
   border-radius: 10px; }
   .swal2-modal .swal2-title {
-    font-size: 25px;
+    /* font-size: 25px; */
     line-height: 1;
     font-weight: 500;
-    color: #ffffff;
+    /* color: #ffffff; */
     font-weight: initial;
     margin-bottom: 0; }
   .swal2-modal .swal2-icon,
@@ -20624,7 +20635,7 @@ div.tagsinput {
 /* Sidebar */
 .sidebar {
   min-height: calc(100vh - 70px);
-  background: #191c24;
+  background: var(--color-blanco);
   font-weight: normal;
   padding: 0;
   width: 244px;
@@ -21092,7 +21103,7 @@ div.tagsinput {
     -ms-transition: all 0.25s ease; } }
 
 .page-body-wrapper {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
@@ -21100,7 +21111,8 @@ div.tagsinput {
   padding-left: 0;
   padding-right: 0;
   transition: all 0.25s ease;
-  width: calc(100% - 244px); }
+  width: calc(100% - 244px); 
+  margin: .5rem; }
   .page-body-wrapper.full-page-wrapper {
     width: 100%;
     min-height: 100vh; }
@@ -21110,7 +21122,9 @@ div.tagsinput {
 
 .container-scroller {
   display: flex;
-  position: relative; }
+  position: relative; 
+  margin-top: 2rem;
+}
 
 .main-panel {
   transition: width 0.25s ease, margin 0.25s ease;
@@ -21127,11 +21141,11 @@ div.tagsinput {
       width: 100%; } }
 
 .content-wrapper {
-  background: #000000;
-  padding: .5rem .5rem;
-  width: 100%;
+  background: var(--background-next);
+  /* padding: .5rem .5rem; */
+  /* width: 100%;
   -webkit-flex-grow: 1;
-  flex-grow: 1; }
+  flex-grow: 1;  */}
 
 /*# sourceMappingURL=maps/style.css.map */
 /* ================= Scroll bar ================= */
@@ -21166,13 +21180,8 @@ div.tagsinput {
   transition: .25s !important;
 }
 
-.sidebar{
-  max-height: 30px !important;
-}
-
 .navbar-menu-wrapper {
   position: absolute;
-  
   height: 30px !important;
   top: 1vh;
   left: -50px !important;
@@ -21502,4 +21511,263 @@ font-family: 'Lato';
     left: 70px !important;
   }
 
+}
+
+.bt-add-component{
+  border: none;
+  background: none;
+  transition: .5s;
+}
+
+.bt-add-component:hover{
+  cursor: pointer;
+  scale: 1.1;
+  transition: .5s;
+}
+
+.bt-add-component:active{
+  scale: 1.0;
+  transition: .5s;
+}
+
+
+/* ========= Style Grid ==========  */
+
+[class^=ag-], [class^=ag-]:after, [class^=ag-]:before, [class^=ag-]:focus {
+  color: var(--color-principal);
+}
+
+/* ========= Style Combo Button ==========  */
+
+
+#btnSelect {
+  width: 80%;
+  border-radius: 6px 0 0 6px;
+  border-right: none;
+}
+#btnPopUp {
+  width: 20%;
+  border-radius: 0 6px 6px 0;
+  border-left: none;
+}
+
+.combo-buttom {
+  width: 100%;
+  color: var(--color-secundario);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-blanco);
+  padding: 0.4rem;
+  cursor: pointer;
+  font-size: 12px;
+  height: 2.3rem;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+}
+
+.combo-buttom:hover,
+.combo-buttom:active {
+  background-color: var(--bg-span);
+}
+
+.combo-buttom .btn {
+  border-top: 0 !important;
+}
+
+.items .btn {
+  border: none;
+  border-left: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.visor-combo-rep {
+  height: calc(100vh - 120px);
+  min-height: 400px;
+  padding: 0.5rem;
+  width: 99%;
+}
+
+
+.swal2-popup.swal2-toast .swal2-close {
+  position: initial;
+  width: 0.5em;
+  height: 0.5em;
+  line-height: 0.5;
+  color: gray;
+  font-weight: bold;
+}
+
+.swal2-popup .swal2-close:hover {
+  color: #000000 !important;
+}
+
+body.swal2-toast-shown .swal2-container.swal2-top-end,
+body.swal2-toast-shown .swal2-container.swal2-top-right {
+  top: 1.5rem !important;
+}
+
+
+/*Input Radio*/
+.radio_btn {
+  margin: 0.3rem;
+}
+
+.radio_btn .radio-label {
+  cursor: pointer;
+  color: var(--color-secundario);
+}
+
+.radio_btn input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+
+.radio_btn input[type="radio"] + .radio-label:before {
+  content: '';
+  border-radius: 100%;
+  border: 1px solid var(--bg-tooltip);
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  position: relative;
+  margin-right: .2em;
+  vertical-align: top;
+  cursor: pointer;
+  text-align: center;
+  transition: all 250ms ease;
+}
+
+.radio_btn input[type="radio"]:checked + .radio-label:before {
+  background-color: var(--color-secundario);
+  box-shadow: inset 0 0 0 4px #f4f4f4;
+}
+
+.radio_btn input[type="radio"]:focus + .radio-label:before {
+  outline: 1px solid var(--color-principal);
+}
+
+.radio_btn input[type="radio"] + .radio-label:empty:before {
+  margin-right: 0;
+}
+
+.radio_btn input[type="radio"][disabled] + label {
+  background-color: #DDDDDD;
+}
+
+
+/*Form catalgo Buttom*/
+
+
+.form_catalog-button {
+  box-shadow: 0px 1px 0px 0px #f5f5f5;
+  background:linear-gradient(to bottom, #fafafa 5%, #f6f7f7 100%);
+  background-color:#fafafa;
+  border-radius:6px;
+  border:1px solid #bdc3c8;
+  display:inline-block;
+  cursor:pointer;
+  color:#14285a;
+  font-family:Arial;
+  font-size:16px;
+  font-weight: 600;
+  padding:1px 6px;
+  text-decoration:none;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  
+  /*text-shadow:0px -1px 0px #5b6178;*/
+}
+
+.form_catalog-button:hover {
+  background:linear-gradient(to bottom, #f6f7f7 5%, #fafafa 100%);
+  background-color:#f6f7f7;
+}
+
+.form_catalog-button:active {
+  position:relative;
+  top:1px;
+  border:1px solid #bdc3c8 !important;
+  background:linear-gradient(to bottom, #14285a 5%, #14285a 100%);
+  color:#f6f7f7;
+
+}
+
+.form_catalog-button:focus {
+  border:1px solid #22378a;
+}
+
+.form_catalog-button:disabled {
+  background:linear-gradient(to bottom, #dddddd 5%, #dddddd 100%);
+  background-color: #dddddd;
+  cursor: not-allowed;
+  pointer-events: all !important;
+}
+
+
+/*************Style Modal************8*/
+
+
+.modal {
+  display: none;
+}
+
+.modal-wrap {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 45;
+  background: rgba(20, 40, 90, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  position: relative;
+  top: 17px;
+  background-color: var(--color-blanco);
+  overflow-y: auto;
+  width: 95%;
+  height: 95%;
+  resize: both;
+  color: var(--color-principal);
+}
+
+.modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1px 7px;
+  cursor: pointer;
+  color: red;
+  font-size: 1.5rem;
+}
+
+.contenido_modal {
+  margin-top: initial;
+  height: 90%;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titulo_modal {
+  text-align: center;
+  top: 18px;
+}
+
+.content_modal {
+  width: 100%;
+}
+
+
+
+/*************Swal2 Input Sin Margen*************8*/
+
+.input2-nopadding {
+  margin-left: 0px;
+  margin-right: 0px;
 }

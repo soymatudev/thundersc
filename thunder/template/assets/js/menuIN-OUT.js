@@ -1,13 +1,9 @@
 document.addEventListener('DOMContentLoaded', async function() {
-    $("#menuOUT").hide();
+    let username = true;
 
     await $("#menuIN").on("click", async function() {
-        $("#menuIN").hide();
-        $("#menuOUT").show();
+        username ?  $("#title-user").hide() : $("#title-user").show();
+        username = !username;
     })
 
-    await $("#menuOUT").on("click", async function() {
-        $("#menuOUT").hide();
-        $("#menuIN").show();
-    })
 });

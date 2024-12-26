@@ -4,6 +4,8 @@ Autor: Juan Maturana
 Fecha de Creación: 10/04/2023
 ruta: thundersc/thundercloud/log/user/adduser.php
 ===============================================================================*/
+$uu = "admin";
+$cc = "thunder";
 $home = <<<HTML
 <!DOCTYPE html>
 <html lang="es">
@@ -49,7 +51,7 @@ $home = <<<HTML
 
         <div class="container-c-g">
 
-        <div id="divFormato">
+          <div id="divFormato">
             <p class="label-c-g">Operacion:</p>
             <select class="select col-md-2" name="materia" tabindex="-1" aria-hidden="true" id="comboOperacion">
               <option value="0">Crear</option>
@@ -210,6 +212,11 @@ $home = <<<HTML
     </div>
     <!-- page-body-wrapper ends -->
   </div>
+
+  <script>
+    const uu = JSON.parse('{$uu}');
+    const cc = JSON.parse('{$cc}');
+  </script>
   <!-- container-scroller -->
   <!-- plugins:js -->
   <script src="../../template/assets/vendors/js/vendor.bundle.base.js"></script>
@@ -230,6 +237,8 @@ $home = <<<HTML
   <!-- endinject -->
   <!-- Custom js for this page -->
 
+
+  <script src="../../Bridge/Bridge.js"></script>
 
   <script defer src="../../system/sweetAlert2/sweetAlert.js"></script>
   <script defer src="../../system/dataFetch/dataFetch.js"></script>
