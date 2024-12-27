@@ -43,6 +43,7 @@ $home = <<<HTML
         </div> 
 
         <div class="info-permi">
+            <button id="download-grid" class="icon-permi"><i class="bi bi-file-earmark-arrow-down"></i></button>
             <button id="crud_bt_add" class="icon-permi"><i class="bi bi-plus-square"></i></button>
             <button id="crud_bt_search" class="icon-permi"><i class="bi bi-search"></i></button>
             <button id="crud_bt_update" class="icon-permi"><i class="bi bi-pencil-square"></i></button>

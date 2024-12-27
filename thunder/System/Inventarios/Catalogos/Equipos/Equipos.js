@@ -365,4 +365,11 @@ function gridTotal(data, div = "#grid", pivote=false, data_total = false, single
 
   new agGrid.Grid(eGridDiv, gridOptions)
   gridOptions.api.setRowData(data)
+
+  $('#download-grid').on('click', function() {
+    gridOptions.api.exportDataAsCsv({
+      fileName: `Equipos.csv`, // Nombre del archivo
+      columnSeparator: ','           // Separador de columnas
+    });
+  });
 }
