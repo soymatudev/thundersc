@@ -81,7 +81,7 @@ class EquiposSerice
     }
   }
 
-  public function crudUpdate($uu, $cc, $serie, $cod_inv, $cve_marca, $cve_clasif, $f_regis, $status, $modelo) {
+  public function crudUpdate($uu, $cc, $codExist, $serie, $cod_inv, $cve_marca, $cve_clasif, $f_regis, $status, $modelo) {
     try {
       $this->conn = (new Connection(__DIR__, $cc))->connect();
       if (!$this->conn) {
@@ -92,14 +92,15 @@ class EquiposSerice
 
       $this->conn->beginTransaction();
 
-      $stmt = $this->conn->prepare("UPDATE ma_eqsis SET serie = :serie, cve_marca = :cve_marca, cve_clasif = :cve_clasif, f_regis = :f_regis, status = :status, modelo = :modelo WHERE cod_inv = :cod_inv");
+      $stmt = $this->conn->prepare("UPDATE ma_eqsis SET serie = :serie, cve_marca = :cve_marca, cve_clasif = :cve_clasif, f_regis = :f_regis, status = :status, modelo = :modelo, cod_inv = :cod_inv WHERE cod_inv = :cod_exist");
       $stmt->bindParam(':serie', $serie, PDO::PARAM_STR);
-      $stmt->bindParam(':cod_inv', $cod_inv, PDO::PARAM_STR);
+      $stmt->bindParam(':cod_exist', $codExist, PDO::PARAM_STR);
       $stmt->bindParam(':cve_marca', $cve_marca, PDO::PARAM_INT);
       $stmt->bindParam(':cve_clasif', $cve_clasif, PDO::PARAM_INT);
       $stmt->bindParam(':f_regis', $f_regis, PDO::PARAM_STR);
       $stmt->bindParam(':status', $status, PDO::PARAM_STR);
       $stmt->bindParam(':modelo', $modelo, PDO::PARAM_STR);
+      $stmt->bindParam(':cod_inv', $cod_inv, PDO::PARAM_STR);
       $this->thunderlog->writeLog("Execute => " . $stmt->queryString);
       $result = $stmt->execute();
 

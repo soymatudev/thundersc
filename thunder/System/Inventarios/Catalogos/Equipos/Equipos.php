@@ -43,6 +43,7 @@ $home = <<<HTML
         </div> 
 
         <div class="info-permi">
+            <button id="upload-file" class="icon-permi"><i class="bi bi-file-earmark-arrow-up"></i></button>
             <button id="download-grid" class="icon-permi"><i class="bi bi-file-earmark-arrow-down"></i></button>
             <button id="crud_bt_add" class="icon-permi"><i class="bi bi-plus-square"></i></button>
             <button id="crud_bt_search" class="icon-permi"><i class="bi bi-search"></i></button>
@@ -54,13 +55,18 @@ $home = <<<HTML
     </div>
 
 
-  <div class="container-scroller">
+  <div class="container-scroller content">
 
     <div class="container-fluid page-body-wrapper">
       <div class="main-panel content-wrapper">
         <div class="card d-flex" style="flex-direction: row; border: none;">
 
           <div class="col-3">
+            <div id="div-codexist">
+              <p class="label-c-g">Codigo Generado:</p>
+              <input type="text" maxlength="30" class="form_input bordes_redondeados input-area" name="codexis" id="codexis" placeholder="Codigo Asignado" />
+            </div>
+
             <div id="div-codi">
               <p class="label-c-g">Codigo de Inventario:</p>
               <input type="text" maxlength="5" class="form_input bordes_redondeados input-area" name="codigo" id="codigo" placeholder="Codigo" />

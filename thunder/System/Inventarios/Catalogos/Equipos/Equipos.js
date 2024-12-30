@@ -27,9 +27,10 @@ function init() {
   $("#crud_bt_search").off('click').on('click', function () { crudSearch(); });
   $("#crud_bt_update").off('click').on('click', function () { crudUpdate(); });
   $("#crud_bt_delete").off('click').on('click', function () { crudDelete(); });
+  $("#upload-file").off('click').on('click', function () { fileUp(); });
 
-  $("#codigo").on("change keyup", function (e) {
-    if(e.keyCode === 13 &&  $("#codigo").val().trim().length > 0) {
+  $("#codexis").on("change keyup", function (e) {
+    if(e.keyCode === 13 &&  $("#codexis").val().trim().length > 0) {
       getEquipo();
     }
   });
@@ -37,6 +38,7 @@ function init() {
   $("#btn_add").off('click').on('click', function () { addItemToArr(); });
   $("#btn_remove").off('click').on('click', function () { removeItemToArr(); });
   $("#crud_bt_search").hide();
+  $("#upload-file").hide();
 }
 
 function initPermi() {
@@ -52,12 +54,12 @@ function initCamp() {
   Componentes.clasificaciones(uu, cc, "div-clasificaciones");
   Funciones.FormatDate(["f_ini"]);
   setTimeout(() => {
-    $("#codigo, #serie, #select-marca, #select-clasificacion, #select-status, #f_ini, #modelo").prop("disabled", true);
+    $("#codigo, #codexis, #serie, #select-marca, #select-clasificacion, #select-status, #f_ini, #modelo").prop("disabled", true);
   }, 250);
 }
 
 function crudAdd() {
-  $("#crud_bt_add, #crud_bt_search, #crud_bt_update").prop("disabled", true);
+  $("#crud_bt_add, #crud_bt_search, #crud_bt_update, #codexis").prop("disabled", true);
   $("#crud_bt_save, #crud_bt_cancel").prop("disabled", false);
   $("#codigo, #serie, #select-marca, #select-clasificacion, #select-status, #f_ini, #modelo").prop("disabled", false);
   $("#btn_add, #btn_remove").prop("disabled", false);
@@ -67,11 +69,11 @@ function crudAdd() {
 }
 
 function crudSearch() {
-  $("#codigo").prop("disabled", false);
+  $("#codexis").prop("disabled", false);
 }
 
 function getEquipo() {
-  let args = $("#codigo").val().trim();
+  let args = $("#codexis").val().trim();
   let bridge = new Bridge(uu, cc, "System.Inventarios.Catalogos.Equipos.EquiposService.crudSearch", [args]);
   let response = bridge.databriged();
 
@@ -86,7 +88,6 @@ function getEquipo() {
         })
       } else {
         let datax = data.result;
-        console.log(datax);
         $("#serie").val(datax[0].serie);
         $("#select-marca").val(datax[0].cve_marca).trigger("change");
         $("#select-clasificacion").val(datax[0].cve_clasif).trigger("change");
@@ -104,13 +105,13 @@ function crudCancel() {
     if(result.value) {
       initPermi();
       $("#codigo, #serie").prop("disabled", true);
-      $("#select-marca, #select-clasificacion, #select-status, #f_ini, #modelo").prop("disabled", true);
+      $("#select-marca, #select-clasificacion, #select-status, #f_ini, #modelo, #codexis").prop("disabled", true);
     }
   })
 }
 
 function crudUpdate() {
-  $("#codigo, #serie, #select-marca, #select-clasificacion, #select-status, #f_ini, #modelo").prop("disabled", false);
+  $("#codigo, #serie, #select-marca, #select-clasificacion, #select-status, #f_ini, #modelo, #codexis").prop("disabled", false);
   $("#crud_bt_save, #crud_bt_cancel, #crud_bt_delete").prop("disabled", false);
   $("#crud_bt_add, #crud_bt_update, #crud_bt_search").prop("disabled", true);
   $("#crud_bt_delete").prop("disabled",  !Funciones.ThunderPermi("usrdelete"));
@@ -148,7 +149,7 @@ function crudSave() {
                   Swal.fire({
                     icon: "success",
                     title: "Exito al guardar",
-                    text: "Equipo creado con exito: " + args[0],
+                    text: "Equipo(s) creado con exito.",
                   })
                 }
                 initPermi();
@@ -160,7 +161,7 @@ function crudSave() {
       });
     }
   } else if (action === "UPDATE") {
-    let codigoInv = $("#codigo").val().trim();
+    let codigoExist = $("#codexis").val().trim();
     let serie = $("#serie").val().trim();
     let marca = $("#select-marca option:selected").text().trim();
     let cve_marca = $("#select-marca").val().trim();
@@ -170,12 +171,12 @@ function crudSave() {
     let status = $("#select-status").val().trim();
     let fecha = f_ini.split("-");
     let modelo = $("#modelo").val().trim();
-    /* let codigoGen = $("#select-marca option:selected").text().split("-")[1].slice(0,2) 
+    let codigoGen = $("#select-marca option:selected").text().split("-")[1].slice(0,2) 
     + $("#select-clasificacion option:selected").text().split("-")[1].slice(0,2)
     + $("#serie").val().trim().slice(0,5) + fecha[2] + fecha[1] + fecha[0].slice(2,4) 
-    + $("#codigo").val().trim(); */
-    let codigoGen = $("#codigo").val().trim();
-    if (codigoInv === "") {
+    + $("#codigo").val().trim();
+    //let codigoGen = $("#codigo").val().trim();
+    if (codigoExist.trim() === "") {
       Swal.fire({
         icon: "warning",
         title: "Campos vacios",
@@ -187,7 +188,7 @@ function crudSave() {
       ).then((result) => {
           if (result.value) {
             
-            let bridge = new Bridge(uu, cc, "System.Inventarios.Catalogos.Equipos.EquiposService.crudUpdate", [serie, codigoGen, cve_marca, cve_clasificacion, f_ini, status, modelo]);
+            let bridge = new Bridge(uu, cc, "System.Inventarios.Catalogos.Equipos.EquiposService.crudUpdate", [codigoExist, serie, codigoGen, cve_marca, cve_clasificacion, f_ini, status, modelo]);
             let response = bridge.databriged();
           
             response
@@ -202,7 +203,7 @@ function crudSave() {
                 } else {
                   Swal.fire({
                     icon: "success",
-                    title: "Exito al actualizar",
+                    title: "Exito al actualizar: " + codigoGen,
                     text: data.result,
                   })
                 }
@@ -372,4 +373,144 @@ function gridTotal(data, div = "#grid", pivote=false, data_total = false, single
       columnSeparator: ','           // Separador de columnas
     });
   });
+}
+
+
+// Subir con Archivo XSLX o CSV
+
+function fileUp() {
+  Funciones.insertarModal("modalExcel", "Subir Excel")
+  $("#modalExcel .contenido_modal").html(`
+      <div class="sec-info m-tb-05">
+          <li class="list-style-none">- Realiza el ingreso de los equipos especificados</li>
+          <li class="list-style-none">- Formato de columnas del archivo a subir : | Cod. Inv | Num. Serie | Modelo | Cve. Marca | Cve. Tipo | Fecha (AnoMesDias -> 20241201) | Estatus (A / N) |</li>
+      </div>
+      <div class="d-flex g-gap-05 align-center flex-wrap">
+          <input class="input-file" type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" id="fileArts"/>  
+          <div class="btn_consultar btns-file">
+              <button class="bordes_redondeados shadow" id="btnUpFile">Subir archivo</button>
+          </div>
+          <div class="sec-btn-aplicar"></div>
+      </div>
+      <div id="gridItemsExcel" class="ag-theme-balham"></div>
+  `)
+
+  $("#btnUpFile").off().click(() => {
+      let file = _id("fileArts").files
+      if (file.length > 0) {
+          $("#gridItemsExcel").html("").hide().before(loader)
+          let url = URL.createObjectURL(file[0])
+          makeRequest('GET', url,
+              (data) => {
+                  $(".spinner").remove()
+                  let workbook = convertDataToWorkbook(data)
+                  populateGrid(workbook)
+                  $("#gridItemsExcel").show()
+              },
+              (error) => msg("info", "Error al cargar archivo")
+          )
+      }
+  })
+}
+
+function makeRequest(method, url, success, error) {
+  let httpRequest = new XMLHttpRequest()
+  httpRequest.open("GET", url, true)
+  httpRequest.responseType = "arraybuffer"
+  httpRequest.open(method, url)
+  httpRequest.onload = () => success(httpRequest.response)
+  httpRequest.onerror = () => error(httpRequest.response)
+  httpRequest.send()
+}
+
+function convertDataToWorkbook(dataFile) {
+  let data = new Uint8Array(dataFile),
+      arr = []
+
+  for (let i = 0; i !== data.length; ++i) arr[i] = String.fromCharCode(data[i])
+
+  let bstr = arr.join("")
+  return XLSX.read(bstr, {type: "binary"})
+}
+
+function populateGrid(workbook) {
+  let firstSheetName = workbook.SheetNames[0],
+      worksheet = workbook.Sheets[firstSheetName],
+      rowData = [],
+      rowIndex = 1,
+      columns = {
+          'A': 'cod_inv',
+          'B': 'serie',
+          'C': 'modelo',
+          'D': 'cve_marca',
+          'E': 'cve_clasif',
+          'F': 'f_regis',
+          'G': 'status'
+      }
+
+  try {
+      while (worksheet['A' + rowIndex]) {
+          let row = {}
+          Object.keys(columns).forEach((column) => {
+              if (typeof worksheet[column + rowIndex] !== "undefined") {
+                  row[columns[column]] = worksheet[column + rowIndex].w
+              } else {
+                  throw new Exception("Error")
+              }
+          })
+          rowData.push(row)
+          rowIndex++
+      }
+  } catch (e) {
+      msg("info", "Las columnas del archivo no tienen el orden correcto")
+      $("#gridItemsExcel").html("")
+  }
+
+  if (rowData.length > 0) {
+      rowData.push([
+          {headerName: "Cod. Inv", field: "cod_inv", width: 81},
+          {headerName: "Serie", field: "serie", width: 81},
+          {headerName: "Modelo", field: "modelo", width: 81},
+          {headerName: "Cve. Marca", field: "cve_marca", width: 81},
+          {headerName: "Cve. Tipo", field: "cve_clasif", width: 81},
+          {headerName: "Fecha", field: "f_regis", width: 81},
+          {headerName: "Estatus", field: "status", width: 81}
+      ])
+      //console.log(rowData);
+      gridTotal(rowData, "#gridItemsExcel", false, false, false)
+
+      $(".sec-btn-aplicar").html(`<div class="btn_consultar">
+          <button class="bordes_redondeados shadow" id="btnAplicaArtic">Añadior artículos</button>
+      </div>`)
+
+      const applyCantid = () => {
+          rowData.forEach(x => {
+              let node = _this.goArts.api.getRowNode(x.cve_art)
+              if (typeof node !== "undefined") {
+                  if (node.data.clasif !== "X") {
+                      node.data.isFromExcel = true
+                      node.data[x.cve_alm] = x.cantidad
+                      node.gridApi.startEditingCell({
+                          rowIndex: node.rowIndex,
+                          colKey: x.cve_alm,
+                          keyPress: null,
+                          charPress: x.cantidad
+                      })
+                      node.gridApi.stopEditing()
+                      $("#cve_" + x.cve_art).css("border-right", ".3rem solid red")
+                  }
+              }
+
+          })
+          $("#modalExcel").remove()
+      }
+
+      $("#btnAplicaArtic").off().click(() => {
+          /*swal(getConfigSwalAlert('Actualmete tiene activada la configuración Tarimas Completas, ¿Desea mantener la configuración?', 'warning')).then((result) => {
+              if (typeof result.value === "undefined") $("#cbxTC").prop("checked", false)
+              applyCantid()
+          })*/
+          getXArch(rowData);
+      })
+  }
 }
