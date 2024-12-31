@@ -2,11 +2,10 @@
 /*===============================================================================
 Autor: Juan Maturana - soymatudev
 Fecha de Creación: 29/11/2024
-ruta: thundersc/thunder/System/Inventario/Consultas/InventarioxEquipos.js
+ruta: thundersc/thunder/System/Inventario/Consultas/IngresoxEquipo.js
 ===============================================================================*/
 
-let numPermi = 0; let ObjGrid = null;
-let arrItems = [];
+let ObjGrid = null;
 init();
 
 function init() {
@@ -14,11 +13,22 @@ function init() {
 
   Funciones.setComboButtom(consultar,"#comboButtom",['GRID']);
   Funciones.FormatDate(["f_ini", "f_fin"]);
-  $("#crud_bt_responsiva").off('click').on('click', function () { getResponsiva(); });
+
+  $("#select-formato").on("change", function() {
+    if($(this).val() === "0") {
+      $("#div-buttom-sinc").hide();
+      $("#comboButtom").show();
+      $("#div-fini").show();
+    } else if($(this).val() === "1") {
+      $("#div-buttom-sinc").show();
+      $("#comboButtom").hide();
+      $("#div-fini").hide();
+    }
+  })
 
   $('#download-grid').on('click', function() {
     ObjGrid.api.exportDataAsCsv({
-      fileName: 'InventarioxEquipo.csv', // Nombre del archivo
+      fileName: 'VtaScorpion.csv', // Nombre del archivo
       columnSeparator: ','           // Separador de columnas
     });
   });
@@ -26,7 +36,7 @@ function init() {
 
 function consultar() {
   let args = getFormData();
-  let bridge = new Bridge(uu, cc, "System.Inventarios.Consultas.InventarioxEquipos.InventarioxEquiposService.consulta", args);
+  let bridge = new Bridge(uu, cc, "System.Utilerias.RevisarVtaSco.RevisarVtaScoService.consulta", args);
   let response = bridge.databriged();
 
   response
@@ -40,7 +50,6 @@ function consultar() {
         })
       } else {
         $('#download-grid').prop("disabled", false);
-        arrItems = data.result;
         gridTotal(data.result, "#grid");
       }
 
@@ -50,73 +59,18 @@ function consultar() {
 }
 
 function getFormData() {
-  let cve_alm = $("#select-almacen").val().trim();
   let f_ini = $("#f_ini").val();
   let f_fin = $("#f_fin").val();
-  let status = $("#checkactive").prop("checked") ? 1 : 0;
   let formato = $("#btnSelect").val();
-  let marca = $("#select-marca").val().trim();
-  let clasif = $("#select-clasificacion").val().trim();
-  let empleado = $("#select-empleado").val().trim();
 
-  return [cve_alm, f_ini, f_fin, marca, clasif, empleado, status, formato];
+  return [f_ini, f_fin, formato];
 }
 
 function initCamp() {
-  $("#usuario, #password, #descri, #cve_modulo").prop("disabled", true);
+  $("#div-buttom-sinc").hide();
   $('#download-grid').prop("disabled", true);
-  Componentes.almacenes(uu, cc, "div-almacenes");
-  Componentes.marcas(uu, cc, "div-marcas");
-  Componentes.clasificaciones(uu, cc, "div-clasificaciones");
-  Componentes.empleados(uu, cc, "div-empleados");
 }
 
-
-function getResponsiva() {
-  try {
-    let args = arrItems;
-    let bridge = new Bridge(uu, cc, "System.Inventarios.Consultas.InventarioxEquipos.InventarioxEquiposService.getResponsiva", [args]);
-    let response = bridge.databriged();
-  
-    response
-    .then(response => response.json())
-    .then((data) => {
-      if(data.event > 0) {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: data.result,
-        })
-      } else {
-        Funciones.insertarModal("responsiva", "Responsisiva Sistemas")
-        createPDF(data.result);
-      }
-    });
-  } catch (error) {
-    Swal.showValidationMessage(`
-      Error al generar: ${error}
-    `);
-  }
-}
-
-function createPDF(base64Data) {
-  // Decodificar base64
-  const byteCharacters = atob(base64Data);
-  const byteNumbers = new Array(byteCharacters.length);
-  for (let i = 0; i < byteCharacters.length; i++) {
-      byteNumbers[i] = byteCharacters.charCodeAt(i);
-  }
-  const byteArray = new Uint8Array(byteNumbers);
-
-  // Crear un Blob con los datos del PDF
-  const blob = new Blob([byteArray], { type: 'application/pdf' });
-  const url = URL.createObjectURL(blob);
-
-  $(".contenido_modal").html("");
-  $(".contenido_modal").append(`
-    <iframe src="${url}" style="width: 100%; height: 100%;"></iframe>
-  `);
-}
 
 function gridTotal(data, div = "#grid", pivote=false, data_total = false, single = false) {
   //function grid(data, div = "#grid", pivote=false, data_total = false) {

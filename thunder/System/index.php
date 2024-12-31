@@ -195,6 +195,7 @@ $home = <<<HTML
 
   <script>
     let menu = $menu;
+    let usuk = "$usr";
   </script>
 
   <script src="../template/assets/vendors/js/vendor.bundle.base.js"></script>
@@ -214,7 +215,6 @@ $home = <<<HTML
 
   <script src="../Bridge/Bridge.js"></script>
   <script src="index.js"></script>
-  <script defer src="./dataFetch/dataFetch.js"></script>
   <script defer src="killSession.js"></script>
 
   <script>

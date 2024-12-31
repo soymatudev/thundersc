@@ -5,7 +5,7 @@ Fecha de Creación: 29/11/2024
 ruta: thundersc/thunder/System/Inventario/Consultas/IngresoxEquipo.js
 ===============================================================================*/
 
-let numPermi = 0; 
+let numPermi = 0; let ObjGrid = null;
 let arrModulos = [];
 init();
 
@@ -14,6 +14,13 @@ function init() {
 
   Funciones.setComboButtom(consultar,"#comboButtom",['GRID']);
   Funciones.FormatDate(["f_ini", "f_fin"]);
+
+  $('#download-grid').on('click', function() {
+    ObjGrid.api.exportDataAsCsv({
+      fileName: 'IngresoxEquipo.csv', // Nombre del archivo
+      columnSeparator: ','           // Separador de columnas
+    });
+  });
 }
 
 function consultar() {
@@ -102,11 +109,5 @@ function gridTotal(data, div = "#grid", pivote=false, data_total = false, single
 
   new agGrid.Grid(eGridDiv, gridOptions)
   gridOptions.api.setRowData(data)
-
-  $('#download-grid').on('click', function() {
-    gridOptions.api.exportDataAsCsv({
-      fileName: 'IngresoxEquipo.csv', // Nombre del archivo
-      columnSeparator: ','           // Separador de columnas
-    });
-  });
+  ObjGrid = gridOptions;
 }

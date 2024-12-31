@@ -5,13 +5,20 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 async function killSession() {
-  const dataF = new FormData();
+  let bridge = new Bridge(usuk, "cc", "System.killSession.killSession", []);
+  let response = bridge.databriged();
 
-  dataF.append("variablekey", "killSession");
-
-  const url = "../../thundercloud/System/killSession.php";
-  const header = { "Content-Type": "multipart/form-data" };
-  await dataFetch(url, dataF);
-
-  window.location.reload();
+  response
+    .then(response => response.json())
+    .then((data) => {
+      if(data.event > 0) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: data.result,
+        })
+      } else {
+        window.location.reload();
+      }
+    });
 }

@@ -46,8 +46,5 @@ $globalImport = <<<HTML
   <script src="/thundersc/thunder/System/Funciones/Funciones.js"></script>
   <script src="/thundersc/thunder/Bridge/Bridge.js"></script>
   <script src="/thundersc/thunder/System/Componentes/Componentes.js"></script>
-  <script src="/thundersc/thunder/System/sweetAlert2/sweetAlert.js"></script>
-
-  <script src="/thundersc/thunder/template/assets/js/setTable.js"></script>
   <script src="/thundersc/thunder/template/assets/js/menuIN-OUT.js"></script>
 HTML;

@@ -4,7 +4,7 @@ Autor: Juan Maturana - soymatudev
 Fecha de Creación: 05/12/2024
 ruta: thundersc/thunder/System/Inventarios/Catalogos/Equipos/Equipos.js
 ===============================================================================*/
-let arrItems = [], cve_item_remove = ""; let action = "";
+let arrItems = [], cve_item_remove = ""; let action = ""; let ObjGrid = null;
 let estructura = [
   {"headerName": "Cod. Inv", "field": "codgen", "width": 100},
   {"headerName": "Codigo", "field": "codigo", "width": 100},
@@ -33,6 +33,13 @@ function init() {
     if(e.keyCode === 13 &&  $("#codexis").val().trim().length > 0) {
       getEquipo();
     }
+  });
+
+  $('#download-grid').on('click', function() {
+    ObjGrid.api.exportDataAsCsv({
+      fileName: `Equipos.csv`, // Nombre del archivo
+      columnSeparator: ','           // Separador de columnas
+    });
   });
 
   $("#btn_add").off('click').on('click', function () { addItemToArr(); });
@@ -366,13 +373,7 @@ function gridTotal(data, div = "#grid", pivote=false, data_total = false, single
 
   new agGrid.Grid(eGridDiv, gridOptions)
   gridOptions.api.setRowData(data)
-
-  $('#download-grid').on('click', function() {
-    gridOptions.api.exportDataAsCsv({
-      fileName: `Equipos.csv`, // Nombre del archivo
-      columnSeparator: ','           // Separador de columnas
-    });
-  });
+  ObjGrid = gridOptions;
 }
 
 
