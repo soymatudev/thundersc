@@ -63,13 +63,13 @@ $home = <<<HTML
 
           <div class="col-3">
             <div id="div-codexist">
-              <p class="label-c-g">Codigo Generado:</p>
-              <input type="text" maxlength="30" class="form_input bordes_redondeados input-area" name="codexis" id="codexis" placeholder="Codigo Asignado" />
+              <p class="label-c-g">Codigo Largo:</p>
+              <input type="text" maxlength="30" class="form_input bordes_redondeados input-area" name="codexis" id="codexis" placeholder="" />
             </div>
 
             <div id="div-codi">
               <p class="label-c-g">Codigo de Inventario:</p>
-              <input type="text" maxlength="5" class="form_input bordes_redondeados input-area" name="codigo" id="codigo" placeholder="Codigo" />
+              <input type="text" maxlength="5" class="form_input bordes_redondeados input-area" name="codigo" id="codigo" placeholder="XXXXX" />
             </div>
 
             <div id="div-serie">
