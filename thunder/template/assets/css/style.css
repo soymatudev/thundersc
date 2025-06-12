@@ -21771,3 +21771,67 @@ body.swal2-toast-shown .swal2-container.swal2-top-right {
   margin-left: 0px;
   margin-right: 0px;
 }
+
+
+/************* Tabs Menu ************8*/
+
+.tab-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: smaller;
+}
+
+
+.tab-wrapper_arch {
+    padding: .5rem 0;
+}
+
+.tab-menu,
+.tab-menu_arch
+{
+    text-align: center;
+    margin: 0 0 .5rem 0;
+}
+
+.tab-menu li,
+.tab-menu_arch li
+{
+    position:relative;
+    color:#7b7b7b;
+    display: inline-block;
+    padding: 2px 18px;
+    cursor:pointer;
+    z-index:0;
+}
+
+.tab-menu li:hover,
+.tab-menu_arch li:hover
+{
+    color: var(--color-principal);
+}
+
+.tab-menu li.active,
+.tab-menu_arch li.active
+{
+    color: var(--color-principal);
+    opacity: 1;
+}
+
+.tab-menu li.active:hover,
+.tab-menu_arch li.active:hover
+{
+    color: var(--color-principal);
+}
+
+.tab-menu li.disabled {
+    pointer-events: visiblepainted;
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.line {
+  width: 100%;
+  background-color: var(--color-secundario);
+  height: .1rem;
+}
