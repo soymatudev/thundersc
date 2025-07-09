@@ -27,7 +27,7 @@ class SocketConnection
     $this->host = '192.168.10.100';
     $this->port = 1085;
 
-    /* $this->host = '127.0.0.1';cd
+    /* $this->host = '127.0.0.1';
     $this->port = 3000; */
   }
 
@@ -69,7 +69,7 @@ class SocketConnection
         // El cliente se desconectó
         socket_close($client);
         unset($client);
-        $this->thunderlog->writeLog("Cliente desconectado" . $this->conn);
+        $this->thunderlog->writeLog("Cliente desconectado");
     } else {
         $input = explode("|", trim($input));
         $this->socketQuery($input[1], $input[2], $input[0], $client);
@@ -80,16 +80,20 @@ class SocketConnection
     try {
         $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
         if ($socket === false) {
+            $this->thunderlog->writeLog("Error => " . socket_strerror(socket_last_error()));
             die("Error al crear socket: " . socket_strerror(socket_last_error()) . "\n");
         }
     
         // Conectar al servidor
         if (!socket_connect($socket, $this->host, $this->port)) {
+            $this->thunderlog->writeLog("Error => " . socket_strerror(socket_last_error($socket)));
+            $this->thunderlog->writeLog("Host: " . $this->host . " - Port: " . $this->port);
             die("No se pudo conectar al servidor: " . socket_strerror(socket_last_error($socket)) . "\n");
         }
 
-        $data = $data === 'ALL' ? $data : implode(",", $data);
+        $data = $data === 'ALL' ? $data : $data;
         $data .= "|" . $uu . "|" . $cc;
+        $this->thunderlog->writeLog("Data Enviada => " . $data);
         socket_write($socket, $data, strlen($data));
     } catch (Exception $e) {
         $this->thunderlog->writeLog("Error => " . $e->getMessage());
@@ -109,6 +113,7 @@ class SocketConnection
             $equipos = $data === 'ALL' ? "nombre like '%Temp%'" : "nombre = '".trim($valorhwd[0])."'";
 
             $query = "SELECT * FROM ma_equipo where $equipos";
+            $this->thunderlog->writeLog("Query => " . $query);
             $stmt = new Statement($this->conn, (null));
             $res = $stmt->prepareStatement($query);
 

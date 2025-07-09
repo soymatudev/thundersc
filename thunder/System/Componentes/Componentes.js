@@ -170,4 +170,28 @@ class Componentes{
         });
     }
 
+    static sensores(uu, cc, container = '') {
+        let bridge = new Bridge(uu, cc, "System.Componentes.ComponenteService.getSonsores");
+        let response = bridge.databriged();
+        let options = "";
+
+        response
+        .then(response => response.json())
+        .then((data) => {
+            data = data.result;
+            for(let i = 0; i < data.length; i++) {
+                options += `
+                    <option value="${data[i]['clave']}">${data[i]['clave']}-${data[i]['descri']}</option>
+                `;
+            }
+            $("#"+container).append(`
+                <select id="select-sensores" class="select col-md-2" tabindex="-1" aria-hidden="true">
+                    <option value=""></option>
+                    ${options}
+                </select>
+                `);
+            $("#select-sensores").select2();
+        });
+    }
+
 }

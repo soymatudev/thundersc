@@ -53,7 +53,16 @@ $home = <<<HTML
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <div class="box-form bordes_redondeados shadow select-area" id="select-area">
 
-          <div id="div-zonas"></div>
+      <div class="container-c-g">
+          <div id="div-zonas">
+            <p class="label-c-g">Zonas:</p>
+          </div>
+
+          <div id="div-sensores">
+            <p class="label-c-g">Sensores:</p>
+          </div>
+      </div>
+        
           <div class="" id="comboButtom"></div>
 
       </div>

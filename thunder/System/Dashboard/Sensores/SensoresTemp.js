@@ -17,7 +17,8 @@ function init() {
 }
 
 function consultar() {
-  let bridge = new Bridge(uu, cc, "System.Utilerias.TiendasNext.TiendasNextService.consulta", []);
+  let sensores = $("#select-sensores").val() == '' ? 'ALL' : $("#select-sensores option:selected").text().split("-")[1];
+  let bridge = new Bridge(uu, cc, "Sockets.SocketConnection.socketClient", [sensores]);
   let response = bridge.databriged();
 
   response
@@ -30,12 +31,8 @@ function consultar() {
           text: data.result,
         })
       } else {
-        $('#download-grid').prop("disabled", false);
-        gridTotal(data.result, "#grid");
+        console.log(data.result);
       }
-
-      $("#crud_bt_add").prop("disabled", false);
-      $("#crud_bt_save, #crud_bt_cancel").prop("disabled", true);
     });
 }
 
@@ -49,6 +46,7 @@ function getFormData() {
 
 function initCamp() {
   Componentes.zonas(uu, cc, "div-zonas");
+  Componentes.sensores(uu, cc, "div-sensores");
   $('#download-grid').prop("disabled", true);
 }
 

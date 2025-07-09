@@ -280,6 +280,41 @@ class ComponenteService
     }
   }
 
+  function getSonsores($uu, $cc) {
+    try {
+      $this->conn = (new Connection(__DIR__, $cc))->connect();
+      if (!$this->conn) {
+        $this->thunderlog->writeLog("Error de conexión" . $this->conn);
+        return null;
+      }
+
+      $query = "SELECT clave, nombre as descri FROM ma_equipo order by clave";
+      $stmt = new Statement($this->conn, (__DIR__));
+      $res = $stmt->prepareStatement($query);
+
+      if ($res) {
+        $result = $stmt->executePreparedQuery($res);
+        if ($result !== false) {
+
+          for ($x = 0; $x < count($result); $x++) {
+            $result[$x]['clave'] = thunderToUtf8(trim($result[$x]['clave']));
+            $result[$x]['descri'] = thunderToUtf8(trim($result[$x]['descri']));
+          }
+
+          ReturnEvent::returnResponse(0, "Sensores Obtenidas con Exito", $result);
+        } else {
+          $this->thunderlog->writeLog("Execute => Incorrect");
+          ReturnEvent::returnResponse(1, "Error en la consulta", "Error en la consulta");
+        }
+      } else {
+        $this->thunderlog->writeLog("Execute => Incorrect sin stmt");
+        ReturnEvent::returnResponse(1, "Error en la consulta", "Error en la consulta");
+      }
+    } catch (Exception $e) {
+      $this->thunderlog->writeLog("Error => " . $e->getMessage());
+    }
+  }
+
 }
 
 function main()
