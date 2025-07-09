@@ -21141,7 +21141,7 @@ div.tagsinput {
       width: 100%; } }
 
 .content-wrapper {
-  background: var(--background-next);
+  background: linear-gradient(to bottom, var(--background-next) 95%, var(--color-blanco) 5%);
   /* padding: .5rem .5rem; */
   /* width: 100%;
   -webkit-flex-grow: 1;

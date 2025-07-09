@@ -21161,7 +21161,7 @@ div.tagsinput {
 }
 
 .content-wrapper {
-  background: var(--background-next);
+  background: linear-gradient(to bottom, var(--background-next) 90%, var(--color-blanco) 10%);
   padding: 0;
 }
 

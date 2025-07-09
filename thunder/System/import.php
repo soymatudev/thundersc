@@ -5,6 +5,7 @@ $globalImport = <<<HTML
   <link rel="stylesheet" href="/thundersc/thunder/template/node_modules/ag-grid-community/styles/ag-theme-alpine.css" />
 
   <script src="/thundersc/thunder/template/node_modules/ag-grid-community/dist/ag-grid-community.min.js"></script>
+  <script src="/thundersc/thunder/template/node_modules/ag-charts-community/dist/umd/ag-charts-community.js"></script>
 
   <script src="/thundersc/thunder/template/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <script src="/thundersc/thunder/template/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>

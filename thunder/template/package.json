@@ -5,6 +5,7 @@
   "main": "index.html",
   "dependencies": {
     "@mdi/font": "^7.4.47",
+    "ag-charts-community": "^11.3.2",
     "ag-grid-community": "^31.1.1",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
