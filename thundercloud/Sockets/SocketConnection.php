@@ -27,7 +27,7 @@ class SocketConnection
     $this->host = '192.168.10.100';
     $this->port = 1085;
 
-    /* $this->host = '127.0.0.1';
+    /* $this->host = '127.0.0.1';cd
     $this->port = 3000; */
   }
 
