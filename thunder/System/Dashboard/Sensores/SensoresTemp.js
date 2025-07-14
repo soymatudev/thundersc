@@ -18,7 +18,8 @@ function init() {
 
 function consultar() {
   let sensores = $("#select-sensores").val() == '' ? 'ALL' : $("#select-sensores option:selected").text().split("-")[1];
-  let bridge = new Bridge(uu, cc, "Sockets.SocketConnection.socketClient", [sensores]);
+  sensores += "*web";
+  let bridge = new Bridge(uu, cc, "Sockets.SocketConnection2.socketHTTP", [sensores]);
   let response = bridge.databriged();
 
   response
@@ -31,7 +32,11 @@ function consultar() {
           text: data.result,
         })
       } else {
-        console.log(data.result);
+        Swal.fire({
+          icon: "soccess",
+          title: "Exito",
+          text: data.msg,
+        })
       }
     });
 }
