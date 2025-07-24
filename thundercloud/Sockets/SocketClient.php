@@ -45,6 +45,7 @@ class SocketClient
                 $this->thunderlog->writeLog("Error => " . socket_strerror(socket_last_error($socket)));
                 ReturnEvent::returnResponse(1, "Error al conectar al servidor", socket_strerror(socket_last_error($socket)));
             }
+            $data .= "*cron";
             $data = $data === 'ALL' ? $data : $data . "|" . 'CLI' . "|" . 'PCZMEX';
 
             socket_write($socket, $data);

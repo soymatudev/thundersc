@@ -90,7 +90,7 @@ class SocketConnection
                         } else if (str_contains($mensaje, "ALL")) {
 
                             $this->socketResponse($sock, "ALL");
-                            if (str_contains($mensaje, "*web")) $this->socketClose($sock);
+                            if (str_contains($mensaje, "*web") || str_contains($mensaje, "*cron")) $this->socketClose($sock);
 
                             continue;
                         }
