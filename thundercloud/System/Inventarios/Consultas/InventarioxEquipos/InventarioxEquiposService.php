@@ -81,6 +81,7 @@ class InventarioxEquiposService
             $result[$x]['clasif'] = thunderToUtf8(trim($result[$x]['clasif']));
             $result[$x]['f_movto'] = date("d/m/Y", strtotime($result[$x]['f_movto']));
             $result[$x]['status'] = thunderToUtf8(trim($result[$x]['status']));
+            $result[$x]['modelo'] = "";
           }
 
           if ($formato == "GRID") {

@@ -12,14 +12,14 @@ init();
 function init() {
   initCamp();
   Funciones.setComboButtom(consultar,"#comboButtom",['SENSOR']);
-  //getTermometerData();
-  //getDataChartLines();
+  getTermometerData();
+  getDataChartLines();
 }
 
 function consultar() {
   let sensores = $("#select-sensores").val() == '' ? 'ALL' : $("#select-sensores option:selected").text().split("-")[1];
   sensores += "*web";
-  let bridge = new Bridge(uu, cc, "Sockets.SocketConnection2.socketHTTP", [sensores]);
+  let bridge = new Bridge(uu, cc, "Sockets.SocketConnection.socketHTTP", [sensores]);
   let response = bridge.databriged();
 
   response
@@ -122,8 +122,11 @@ function chartLines (data, div = "") {
     series: series,
     axes: [
       {
-        type: "ordinal-time",
+        type: "time",
         position: "bottom",
+        label: {
+          format: "%d/%m %H:%M min",
+        },
       },
       {
         type: "number",
@@ -147,7 +150,7 @@ function sortData(data, equipo) {
     if(item.nombre === equipo) {
       a = a + 1;
       dataReturn.push({
-        time: new Date(item.fecha_hora).toLocaleString(),
+        time: new Date(item.fecha_hora),
         sensor: parseFloat(item.temp),
       });
     }

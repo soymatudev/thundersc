@@ -2,7 +2,7 @@
 /*===============================================================================
 Autor: Juan Maturana - SoyMatudev
 Fecha de Creación: 04/12/2024
-ruta: thundersc/thundercloud/system/Inventarios/Movimientos/Equipos/EquiposService.php
+ruta: thundersc/thundercloud/system/Dashboard/Sensores/SensoresTempService.php
 ===============================================================================*/
 
 require_once('../../Connection/Connection.php');
@@ -61,7 +61,7 @@ class SensoresTempService
         ReturnEvent::returnResponse(1, "Error en la consulta", "Error en la consulta");
         }
     } catch (Exception $e) {
-    $this->thunderlog->writeLog("Error => " . $e->getMessage());
+      $this->thunderlog->writeLog("Error => " . $e->getMessage());
     }
   }
 
@@ -121,8 +121,8 @@ class SensoresTempService
       and a.cve_zona = c.clave
       and a.cve_unidad = b.clave
       and a.clave = d.cve_equipo
-      and fecha_hora >= CURRENT_DATE-8
-      order by a.nombre";
+      and fecha_hora >= CURRENT_DATE-100
+      order by a.nombre, fecha_hora desc";
       $stmt = new Statement($this->conn, (null));
       $res = $stmt->prepareStatement($query);
 
@@ -139,7 +139,6 @@ class SensoresTempService
               $result[$x]['alias'] = thunderToUtf8(trim($result[$x]['alias']));
               $result[$x]['materia'] = thunderToUtf8(trim($result[$x]['materia']));
               $result[$x]['fecha_hora'] = date_format(date_create($result[$x]['fecha_hora']), "d M Y H:i:s");
-              //$result[$x]['fecha_hora'] = date_format(date_create($result[$x]['fecha_hora']), "d/m/Y H:i");
           }
           
           $equipos = array_unique(array_column($result, 'nombre'));

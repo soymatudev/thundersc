@@ -85,7 +85,7 @@ class SocketConnection
                         if ($mensaje === "exit" || $mensaje === "bye") {
 
                             $this->socketClose($sock);
-                            
+
                             continue;
                         } else if (str_contains($mensaje, "ALL")) {
 
@@ -99,10 +99,14 @@ class SocketConnection
                         if (count($partes) === 3) {
 
                             list($data, $uu, $cc) = $partes;
-                            $result = $this->socketQuery($uu, $cc, explode("*", $data)[0], $sock);
-                            $this->socketResponse($sock, "Ejecutando Consulta");
+                            $this->socketResponse($sock, explode("*", $data)[0]);
 
-                            if (str_contains($mensaje, "*web")) $this->socketClose($sock);
+                            if (str_contains($mensaje, "*web")) {
+                                $this->socketClose($sock);
+                            } else {
+                                $result = $this->socketQuery($uu, $cc, $data, $sock);
+                                $result ? socket_write($sock, "Datos insertados correctamente. \n") : socket_write($sock, "Error al procesar la consulta");
+                            }
                         } else {
                             socket_write($sock, "Mensaje no válido \n");
                         }
@@ -133,22 +137,33 @@ class SocketConnection
 
             $query = "SELECT * FROM ma_equipo where $equipos";
             $this->thunderlog->writeLog("Query => " . $query);
-
             $stmt = new Statement($this->conn, (null));
             $res = $stmt->prepareStatement($query);
             $result = $stmt->executePreparedQuery($res);
 
-            if ($result !== false) {
+            if (count($result) > 0) {
 
-                for ($x = 0; $x < count($result); $x++) {
-                    $result[$x]['clave'] = thunderToUtf8(trim($result[$x]['clave']));
-                    $this->thunderlog->writeLog("Execute => Correct => " . $result[$x]['clave']);
-                }
+                $query = "insert into ma_regzoro(cve_equipo, fecha_hora, dato_1, dato_2) values(:cve_equipo, now(), :dato_1, :dato_2)";
+                $this->thunderlog->writeLog("Query => " . $query);
+                $stmt = new Statement($this->conn, (null));
+                $res = $stmt->prepareStatement($query);
 
-                return $result;
+                $data = explode(",", $data);
+
+                $this->thunderlog->writeLog("data => " . print_r($data, true));
+                $res->bindParam(':cve_equipo', $result[0]['clave'], PDO::PARAM_STR);
+                $res->bindParam(':dato_1', $data[1], PDO::PARAM_STR);
+                $res->bindParam(':dato_2', $data[2], PDO::PARAM_STR);
+
+
+                $this->thunderlog->writeLog("Por ejecutar la consulta");
+                $result = $stmt->executePreparedQuery($res);
+                $this->thunderlog->writeLog("Consulta ejecutada correctamente");
+
+                return $result ? 1 : 0;
             } else {
-                $this->thunderlog->writeLog("Execute => Incorrect");
-                ReturnEvent::returnResponse(1, "Error en la consulta", "Error en la consulta");
+                $this->thunderlog->writeLog("Equipos no encontrados");
+                ReturnEvent::returnResponse(1, "Equipos no encontrados", "Error en la consulta");
             }
         } catch (Exception $e) {
             $this->thunderlog->writeLog("Error => " . $e->getMessage());
@@ -210,7 +225,6 @@ class SocketConnection
         }
         return implode(",", $c);
     }
-    
 }
 
 function main()

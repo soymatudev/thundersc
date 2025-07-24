@@ -1,19 +1,9 @@
 version: "3.8"
-
 services:
-  web:
-    build: 
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8080:8080"
+  thundersc:
+    build: .
+    ports: 
+      - "80:80"
     volumes:
-      - ./thunder/system:/thundersc/thunder/system
-      - ./thunder/template:/thundersc/thunder/template
-      - ./thundercloud:/thundersc/thundercloud
-    environment:
-      - HOST_URL=192.168.1.67
-      - USER_DB=root
-      - PASSWORD_DB=
-      - PORT_DB=''
-      - DBNAME=mp
+      - ./:/var/www/html/thundersc/
+    container_name: thundersc

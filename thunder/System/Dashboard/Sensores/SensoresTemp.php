@@ -69,15 +69,17 @@ $home = <<<HTML
     </nav>
 
     <div class="container-fluid page-body-wrapper">
-
-
       <div class="main-panel content-wrapper">
 
-        <div class="dashboard d-none"></div>
-        <div id="chart-lines" class="ag-theme-balham" style="height: 100%;"></div>
+        <div class="card" style="padding: 6px;">
+          <div class="dashboard" id="dashboard" style="height: 100%;"></div>
+        </div>
+
+        <div class="card" style="height: 60%;">
+          <div id="chart-lines" class="ag-theme-balham" style="height: 100%; width: 50%"></div>
+        </div>
 
       </div>
-
     </div>
 
   </div>
