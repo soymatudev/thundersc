@@ -5,8 +5,7 @@ Fecha de Creación: 08/07/2025
 ruta: thundersc/thundercloud/Sockets/SocketConnection.php
 ===============================================================================*/
 
-require_once('../System/Connection/Connection.php');
-require_once('../Config/Config.php');
+require_once('./../Config/Config.php');
 require_once('../ReturnEvent/ReturnEvent.php');
 require_once('../System/Connection/Statement.php');
 require_once('../ThunderLog/ThunderLog.php');
@@ -40,15 +39,18 @@ class SocketClient
                 ReturnEvent::returnResponse(1, "Error al crear el socket", socket_strerror(socket_last_error()));
             }
 
-            $this->thunderlog->writeLog("Conectando al servidor en " . $this->host . ":" . $this->port);
-            if (!socket_connect($socket, $this->host, $this->port)) {
-                $this->thunderlog->writeLog("Error => " . socket_strerror(socket_last_error($socket)));
-                ReturnEvent::returnResponse(1, "Error al conectar al servidor", socket_strerror(socket_last_error($socket)));
-            }
-            $data .= "*cron";
-            $data = $data === 'ALL' ? $data : $data . "|" . 'CLI' . "|" . 'PCZMEX';
+            while (true) {
+                $this->thunderlog->writeLog("Conectando al servidor en " . $this->host . ":" . $this->port);
+                if (!socket_connect($socket, $this->host, $this->port)) {
+                    $this->thunderlog->writeLog("Error => " . socket_strerror(socket_last_error($socket)));
+                    ReturnEvent::returnResponse(1, "Error al conectar al servidor", socket_strerror(socket_last_error($socket)));
+                }
+                $data .= "*cron";
+                $data = $data === 'ALL' ? $data : $data . "|" . 'CLI' . "|" . 'PCZMEX';
 
-            socket_write($socket, $data);
+                socket_write($socket, $data);
+                sleep(300);
+            }
         } catch (Exception $e) {
             $this->thunderlog->writeLog("Error => " . $e->getMessage());
             ReturnEvent::returnResponse(1, "Error al procesar la solicitud", $e->getMessage());
