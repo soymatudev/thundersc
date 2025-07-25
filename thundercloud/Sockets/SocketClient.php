@@ -39,19 +39,15 @@ class SocketClient
                 ReturnEvent::returnResponse(1, "Error al crear el socket", socket_strerror(socket_last_error()));
             }
 
-            while (true) {
-                $this->thunderlog->writeLog("Conectando al servidor en " . $this->host . ":" . $this->port);
-                if (!socket_connect($socket, $this->host, $this->port)) {
-                    $this->thunderlog->writeLog("Error => " . socket_strerror(socket_last_error($socket)));
-                    ReturnEvent::returnResponse(1, "Error al conectar al servidor", socket_strerror(socket_last_error($socket)));
-                }
-                $data .= "*cron";
-                $data = $data === 'ALL' ? $data : $data . "|" . 'CLI' . "|" . 'PCZMEX';
-
-                socket_write($socket, $data);
-                sleep(300); // Esperar 5 minutos antes de enviar el siguiente mensaje
-                socket_close($socket);
+            $this->thunderlog->writeLog("Conectando al servidor en " . $this->host . ":" . $this->port);
+            if (!socket_connect($socket, $this->host, $this->port)) {
+                $this->thunderlog->writeLog("Error => " . socket_strerror(socket_last_error($socket)));
+                ReturnEvent::returnResponse(1, "Error al conectar al servidor", socket_strerror(socket_last_error($socket)));
             }
+            $data .= "*cron";
+            $data = $data === 'ALL' ? $data : $data . "|" . 'CLI' . "|" . 'PCZMEX';
+
+            socket_write($socket, $data);
         } catch (Exception $e) {
             $this->thunderlog->writeLog("Error => " . $e->getMessage());
             ReturnEvent::returnResponse(1, "Error al procesar la solicitud", $e->getMessage());
