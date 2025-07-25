@@ -49,7 +49,8 @@ class SocketClient
                 $data = $data === 'ALL' ? $data : $data . "|" . 'CLI' . "|" . 'PCZMEX';
 
                 socket_write($socket, $data);
-                sleep(300);
+                sleep(300); // Esperar 5 minutos antes de enviar el siguiente mensaje
+                socket_close($socket);
             }
         } catch (Exception $e) {
             $this->thunderlog->writeLog("Error => " . $e->getMessage());
