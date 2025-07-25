@@ -5,7 +5,7 @@ Fecha de Creación: 08/07/2025
 ruta: thundersc/thundercloud/Sockets/SocketConnection.php
 ===============================================================================*/
 
-require_once('./../Config/Config.php');
+require_once(__DIR__ . '/../Config/Config.php');
 require_once('../ReturnEvent/ReturnEvent.php');
 require_once('../System/Connection/Statement.php');
 require_once('../ThunderLog/ThunderLog.php');
