@@ -51,7 +51,7 @@ function getFormData() {
 
 function initCamp() {
   Componentes.zonas(uu, cc, "div-zonas");
-  Componentes.sensores(uu, cc, "div-sensores");
+  //Componentes.sensores(uu, cc, "div-sensores");
   $('#download-grid').prop("disabled", true);
 }
 
@@ -71,7 +71,7 @@ function getTermometerData() {
       } else {
         data = data.result;
         data.forEach(item => {
-          new Thermometer(".dashboard", item.nombre, item.temp, -10, 20, false, 100, 20, "Fahrenheit");
+          new Thermometer(".dashboard", item.nombre, item.temp, -10, 20, false, "Fahrenheit", true);
         });
       
       }

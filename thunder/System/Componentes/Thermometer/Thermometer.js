@@ -7,9 +7,10 @@ class Thermometer {
 		minTemperature = -10,
 		maxTemperature = 100,
 		withInputs = false,
+		unit = 'Fahrenheit',
+		reload = false,
 		height = 100,
 		width = 20,
-		unit = 'Fahrenheit'
 	) {
 		this.div = div;
 		this.temperature = temperature;
@@ -20,6 +21,7 @@ class Thermometer {
 		this.width = width;
 		this.unit = unit;
 		this.nombre = nombre;
+		this.reload = reload;
 
 		this.config = {
 			minTemp: this.minTemperature,
@@ -48,6 +50,7 @@ class Thermometer {
 
 	setThermometer() {
 		// Crear un ID único para cada instancia
+		console.log("Creating Thermometer with ID: " + this.nombre);
 		const uniqueID = 'thermo-' + Math.random().toString(36).substring(2, 9);
 
 		const html = `
@@ -57,7 +60,12 @@ class Thermometer {
 					<div class="graduations"></div>
 				</div>
 
-                <p class="unit" style="color: #000;">${this.nombre}</p>
+				<div class="info-permi">
+					<p class="unit" style="color: #000;">${this.nombre}</p>
+					<button class="icon-permi ${!this.reload ? 'd-none' : ''} reload-thermometer">
+						<i class="bi bi-arrow-repeat"></i>
+					</button>
+				</div>
 				<div class="playground">
 					<div class="range">
 						<input class="minTemp" type="text" value="${this.temperature}">
@@ -68,7 +76,9 @@ class Thermometer {
 			</div>
 		`;
 
+
 		$(this.div).append(html);
+
 
 		// Guardar referencias internas a los elementos
 		const root = $(`#${uniqueID}`);
@@ -82,5 +92,60 @@ class Thermometer {
 
 		// Inicializar temperatura
 		this.setTemperature();
+		this.reloadThermometer(uniqueID);
 	}
+
+	reloadThermometer(uniqueID) {
+		$(`#${uniqueID} .reload-thermometer`).on("click", () => {
+			console.log("Reloading Thermometer with ID: " + uniqueID);
+			//$(`#${uniqueID} .rangeInput`).val(5);
+			this.updateSockets();
+			$(`#${uniqueID} .rangeInput`).val(this.temperature);
+			this.setTemperature();
+		})
+	}
+
+	updateSockets() {
+		let sensores = this.nombre;
+		sensores += "*web";
+		let bridge = new Bridge(uu, cc, "Sockets.SocketConnection.socketHTTP", [sensores]);
+		let response = bridge.databriged();
+		
+		response
+			.then(response => response.json())
+			.then((data) => {
+			if(data.event > 0) {
+				Swal.fire({
+				icon: "error",
+				title: "Error",
+				text: data.result,
+				})
+			} else {
+				this.getUltTemp();
+			}
+			});
+	}
+
+	getUltTemp() {
+		let bridge = new Bridge(uu, cc, "System.Dashboard.Sensores.SensoresTempService.getUltTemp", [this.nombre]);
+		let response = bridge.databriged();
+	  
+		response
+		  .then(response => response.json())
+		  .then((data) => {
+			if(data.event > 0) {
+			  Swal.fire({
+				icon: "error",
+				title: "Error",
+				text: data.result,
+			  })
+			} else {
+			  data = data.result;
+			  data.forEach(item => {
+				this.temperature = item.temp;
+			  });
+			
+			}
+		  });
+	  }
 }

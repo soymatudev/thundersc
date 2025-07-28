@@ -65,7 +65,7 @@ class SensoresTempService
     }
   }
 
-  function getUltTemp($uu, $cc) {
+  function getUltTemp($uu, $cc, $nombre = null) {
     try {
         $this->conn = (new Connection(null, $cc))->connect();
         if (!$this->conn) {
@@ -80,6 +80,7 @@ class SensoresTempService
         and a.cve_unidad = b.clave
         and a.clave = d.cve_equipo
         and fecha_hora = (SELECT MAX(fecha_hora) FROM ma_regzoro WHERE cve_equipo = a.clave)";
+        $query .= $nombre ? " and a.nombre = '$nombre'" : "";
         $stmt = new Statement($this->conn, (null));
         $res = $stmt->prepareStatement($query);
   

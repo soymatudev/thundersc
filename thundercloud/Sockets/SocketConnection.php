@@ -187,6 +187,7 @@ class SocketConnection
             $data = $data === 'ALL' ? $data : $data . "|" . $uu . "|" . $cc;
 
             socket_write($socketHTTP, $data);
+            ReturnEvent::returnResponse(0, "", "Datos enviados correctamente");
         } catch (Exception $e) {
             $this->thunderlog->writeLog("Error => " . $e->getMessage());
             ReturnEvent::returnResponse(1, "Error al procesar la solicitud", $e->getMessage());

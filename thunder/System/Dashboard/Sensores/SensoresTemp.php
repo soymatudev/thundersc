@@ -45,7 +45,7 @@ $home = <<<HTML
         </div> 
 
         <div class="info-permi">
-        </div>
+				</div>
     </div>
 
 
@@ -58,9 +58,9 @@ $home = <<<HTML
             <p class="label-c-g">Zonas:</p>
           </div>
 
-          <div id="div-sensores">
+          <!-- <div id="div-sensores">
             <p class="label-c-g">Sensores:</p>
-          </div>
+          </div> -->
       </div>
         
           <div class="" id="comboButtom"></div>
