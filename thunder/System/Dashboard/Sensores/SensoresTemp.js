@@ -14,6 +14,14 @@ function init() {
   Funciones.setComboButtom(consultar,"#comboButtom",['SENSOR']);
   getTermometerData();
   getDataChartLines();
+
+  /* $(".reload-thermometer").on("click", function() {
+    setTimeout(() => {
+      console.log("Le pico al rangeInput");
+      getDataChartLines();
+    }, 6500)
+  }); */
+  
 }
 
 function consultar() {

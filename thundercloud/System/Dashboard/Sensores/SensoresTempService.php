@@ -122,8 +122,8 @@ class SensoresTempService
       and a.cve_zona = c.clave
       and a.cve_unidad = b.clave
       and a.clave = d.cve_equipo
-      and fecha_hora >= CURRENT_DATE-100
-      order by a.nombre, fecha_hora desc";
+      and fecha_hora >= CURRENT_DATE-3
+      order by a.nombre, fecha_hora desc limit 5";
       $stmt = new Statement($this->conn, (null));
       $res = $stmt->prepareStatement($query);
 

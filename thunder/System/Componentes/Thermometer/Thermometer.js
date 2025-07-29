@@ -100,8 +100,14 @@ class Thermometer {
 			console.log("Reloading Thermometer with ID: " + uniqueID);
 			//$(`#${uniqueID} .rangeInput`).val(5);
 			this.updateSockets();
-			$(`#${uniqueID} .rangeInput`).val(this.temperature);
-			this.setTemperature();
+
+			setTimeout(() => {
+				console.log("Setting temperature for Thermometer with ID: " + uniqueID);
+				$(`#${uniqueID} .rangeInput`).val(this.temperature);
+				$(`#${uniqueID} .rangeInput`).trigger("change");
+				this.setTemperature();
+				getDataChartLines();
+			}, 6500);
 		})
 	}
 
@@ -121,8 +127,11 @@ class Thermometer {
 				text: data.result,
 				})
 			} else {
-				this.getUltTemp();
+				
 			}
+			setTimeout(() => {
+				this.getUltTemp();
+			}, 6000);
 			});
 	}
 
