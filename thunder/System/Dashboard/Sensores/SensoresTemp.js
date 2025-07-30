@@ -25,8 +25,9 @@ function init() {
 }
 
 function consultar() {
-  let sensores = $("#select-sensores").val() == '' ? 'ALL' : $("#select-sensores option:selected").text().split("-")[1];
+  let sensores = "ALL";
   sensores += "*web";
+  $("body").css("cursor", "wait");
   let bridge = new Bridge(uu, cc, "Sockets.SocketConnection.socketHTTP", [sensores]);
   let response = bridge.databriged();
 
@@ -40,12 +41,12 @@ function consultar() {
           text: data.result,
         })
       } else {
-        Swal.fire({
-          icon: "soccess",
-          title: "Exito",
-          text: data.msg,
-        })
       }
+      setTimeout(() => {
+        $("body").css("cursor", "default");
+        getTermometerData();
+        getDataChartLines();
+      }, 6000);
     });
 }
 
@@ -77,6 +78,7 @@ function getTermometerData() {
           text: data.result,
         })
       } else {
+        $("#dashboard").html("");
         data = data.result;
         data.forEach(item => {
           new Thermometer(".dashboard", item.nombre, item.temp, -10, 20, false, "Fahrenheit", true);

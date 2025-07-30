@@ -98,6 +98,7 @@ class Thermometer {
 	reloadThermometer(uniqueID) {
 		$(`#${uniqueID} .reload-thermometer`).on("click", () => {
 			console.log("Reloading Thermometer with ID: " + uniqueID);
+			$("body").css("cursor", "wait");
 			//$(`#${uniqueID} .rangeInput`).val(5);
 			this.updateSockets();
 
@@ -107,6 +108,7 @@ class Thermometer {
 				$(`#${uniqueID} .rangeInput`).trigger("change");
 				this.setTemperature();
 				getDataChartLines();
+				$("body").css("cursor", "default");
 			}, 6500);
 		})
 	}
