@@ -15,7 +15,7 @@ require_once(__DIR__ . '/Bot.php');
 
 class API_BOT {
 
-    function API () {
+    function API ($uu, $cc, $body = null) {
         $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../../');
         $dotenv->load();
     
@@ -58,7 +58,7 @@ function main()
     $data = json_decode($contenido, true);
     $componenteService = new API_BOT($data['uu']);
     $func = $data['function'];
-    $componenteService->$func($data['uu'], $data['cc'], ...$data['args']);
+    $componenteService->$func($data['uu'], $data['cc'], $data['args']);
 }
 
 main();
