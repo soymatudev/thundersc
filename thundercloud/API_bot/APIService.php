@@ -42,3 +42,5 @@ $BOT_TOKEN = $_ENV['TELEGRAM_BOT_TOKEN'] ?? null;
 
 // Crear instancia del bot
 $bot = new Bot($BOT_TOKEN, $chatId, $text);
+// Enviar respuesta
+$bot->bot_response();
