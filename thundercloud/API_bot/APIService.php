@@ -47,7 +47,7 @@ class API_BOT {
             $this->thunderlog->writeLog("Recibido mensaje de Telegram: chatId={$chatId}, text={$text}");
         
             // Logica para escoger el token del bot
-            $BOT_TOKEN = $_ENV['TELEGRAM_BOT_TOKEN'] ?? null;
+            $BOT_TOKEN = $_ENV['TELEGRAM_BOT_TOKEN'] ?: '';
         
             // Crear instancia del bot
             $bot = new Bot($BOT_TOKEN, $chatId, $text);
