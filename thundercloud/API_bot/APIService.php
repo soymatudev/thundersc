@@ -22,13 +22,6 @@ class API_BOT {
 
     function API ($uu, $cc, $body = null) {
         try {
-            $context  = stream_context_create(["http" => [
-                "header"  => "Content-Type: application/json\r\n",
-                "method"  => "POST",
-                "content" => json_encode($body),
-            ]]);
-            $response = file_get_contents("https://api.telegram.org/bot8024363859:AAE0AI1EXq7jGcrjeih170mPgEsd60Xg8vo/sendMessage", false, $context);
-            ReturnEvent::returnResponse(1, "Error del servidor", "No se ha implementado el servicio API_BOT");
             $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../../');
             $dotenv->load();
         
@@ -74,6 +67,7 @@ class API_BOT {
 function main()
 {
     // Leer el cuerpo de la solicitud HTTP
+    file_put_contents(__DIR__ . '/ThunderLog/Log/thunderlog.log', "API_BOT.php\n" . "Llego una peticion", FILE_APPEND);
     $contenido = file_get_contents("php://input");
     $data = json_decode($contenido, true);
     $componenteService = new API_BOT();
