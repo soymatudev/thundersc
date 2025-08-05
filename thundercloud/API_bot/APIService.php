@@ -22,7 +22,7 @@ class API_BOT {
 
     function API ($uu, $cc, $body = null) {
         try {
-            $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../../');
+            $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../');
             $dotenv->load();
         
             if ($_SERVER["REQUEST_METHOD"] !== "POST") {
