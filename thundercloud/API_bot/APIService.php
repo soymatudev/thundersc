@@ -6,7 +6,9 @@ ruta: thundersc/thundercloud/API_bot/BotService.php
 ===============================================================================*/
 
 date_default_timezone_set('America/Mexico_City');
+require_once(__DIR__ . '/../System/Connection/Connection.php');
 require_once(__DIR__ . '/../ReturnEvent/ReturnEvent.php');
+require_once(__DIR__ . '/../System/Connection/Statement.php');
 require_once(__DIR__ . '/../ThunderLog/Log/thunderlog.log');
 require_once(__DIR__ . '/../vendor/autoload.php');
 require_once(__DIR__ . '/BotService.php');
@@ -14,18 +16,16 @@ require_once(__DIR__ . '/BotService.php');
 class API_BOT {
     private $thunderlog = null;
 
-    function __construct()
+    public function __construct()
     {
         $this->thunderlog = new Log(null, "API_BOT");
     }
 
-    function API ($uu, $cc, $body = null) {
-        $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../');
-        $dotenv->load();
-        $BOT_TOKEN = $_ENV['TELEGRAM_BOT_TOKEN'] ?: ''; // Logica para escoger el token del bot
-
+    public function API ($uu, $cc, $body = null) {
         try {
-            
+            $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../');
+            $dotenv->load();
+            $BOT_TOKEN = $_ENV['TELEGRAM_BOT_TOKEN'] ?: ''; // Logica para escoger el token del bot
         
             if ($_SERVER["REQUEST_METHOD"] !== "POST") {
                 http_response_code(405);
