@@ -22,7 +22,7 @@ class Bot
     function __construct($token, $chatId = null, $text = null)
     {
         $this->token = $token;
-        $this->TELEGRAM_API = "https://api.telegram.org/bot".$this->token."/sendMessage";
+        $this->TELEGRAM_API = "https://api.telegram.org/bot".$token."/sendMessage";
         $this->chatId = $chatId;
         $this->text = $text;
         $this->thunderlog = new Log(null, "API_BOT");
