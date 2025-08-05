@@ -17,6 +17,7 @@ class Bot
     private $TELEGRAM_API = null;
     private $chatId = null;
     private $text = null;
+    private $thunderlog = null;
 
     function __construct($token, $chatId = null, $text = null)
     {
@@ -24,6 +25,7 @@ class Bot
         $this->TELEGRAM_API = "https://api.telegram.org/bot{$this->token}/sendMessage";
         $this->chatId = $chatId;
         $this->text = $text;
+        $this->thunderlog = new Log(null, "API_BOT");
     }
 
     function bot_response()
@@ -41,6 +43,7 @@ class Bot
             ],
         ];
         
+        $this->thunderlog->writeLog("Enviando mensaje a Telegram: " . json_encode($data));
         $context  = stream_context_create($options);
         $response = file_get_contents($this->TELEGRAM_API, false, $context);
         
