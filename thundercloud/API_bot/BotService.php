@@ -6,10 +6,9 @@ ruta: thundersc/thundercloud/API_bot/BotService.php
 ===============================================================================*/
 
 require_once(__DIR__ . '/../System/Connection/Connection.php');
-require_once(__DIR__ . '/../Config/Config.php');
 require_once(__DIR__ . '/../ReturnEvent/ReturnEvent.php');
 require_once(__DIR__ . '/../System/Connection/Statement.php');
-require_once(__DIR__ . '/../ThunderLog/ThunderLog.php');
+require_once(__DIR__ . '/../ThunderLog/Log/thunderlog.log');
 require_once(__DIR__ . '/../vendor/autoload.php');
 
 class Bot
