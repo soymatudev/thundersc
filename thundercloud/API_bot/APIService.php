@@ -9,7 +9,7 @@ require_once(__DIR__ . '/../System/Connection/Connection.php');
 require_once(__DIR__ . '/../Config/Config.php');
 require_once(__DIR__ . '/../ReturnEvent/ReturnEvent.php');
 require_once(__DIR__ . '/../System/Connection/Statement.php');
-require_once(__DIR__ . '/../ThunderLog/Log/thunderlog.php');
+require_once(__DIR__ . '/../ThunderLog/Log/thunderlog.log');
 require_once(__DIR__ . '/../vendor/autoload.php');
 require_once(__DIR__ . '/BotService.php');
 
