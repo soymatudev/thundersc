@@ -5,6 +5,7 @@ Fecha de Creación: 04/12/2024
 ruta: thundersc/thundercloud/API_bot/BotService.php
 ===============================================================================*/
 
+date_default_timezone_set('America/Mexico_City');
 require_once(__DIR__ . '/../System/Connection/Connection.php');
 require_once(__DIR__ . '/../ReturnEvent/ReturnEvent.php');
 require_once(__DIR__ . '/../System/Connection/Statement.php');
@@ -48,7 +49,7 @@ class API_BOT {
             $this->thunderlog->writeLog("Recibido mensaje de Telegram: chatId={$chatId}, text={$text}");
         
             // Logica para escoger el token del bot
-            $BOT_TOKEN = $_ENV['TELEGRAM_BOT_TOKEN'] ?? null;
+            $BOT_TOKEN = "8024363859:AAE0AI1EXq7jGcrjeih170mPgEsd60Xg8vo" ?? null;
         
             // Crear instancia del bot
             $bot = new Bot($BOT_TOKEN, $chatId, $text);
