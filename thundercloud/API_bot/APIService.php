@@ -14,6 +14,12 @@ require_once(__DIR__ . '/../vendor/autoload.php');
 require_once(__DIR__ . '/Bot.php');
 
 class API_BOT {
+    private $thunderlog = null;
+
+    function __construct()
+    {
+        $this->thunderlog = new Log(null, "API_BOT");
+    }
 
     function API ($uu, $cc, $body = null) {
         try {
@@ -27,7 +33,8 @@ class API_BOT {
                 exit;
             }
         
-            $body = json_decode(file_get_contents('php://input'), true);
+            //$body = json_decode(file_get_contents('php://input'), true);
+            $this->thunderlog->writeLog("Body " . $body);
         
             // Validar que venga algo válido de Telegram
             $chatId = $body['message']['chat']['id'] ?? null;
