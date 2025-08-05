@@ -58,6 +58,7 @@ class API_BOT {
         } catch (Exception $e) {
             // Manejo de errores
             http_response_code(500);
+            $this->thunderlog->writeLog("Error al procesar la solicitud: " . $e->getMessage());
             header('Content-Type: application/json');
             ReturnEvent::returnResponse(1, "Error del servidor", $e->getMessage());
         }
