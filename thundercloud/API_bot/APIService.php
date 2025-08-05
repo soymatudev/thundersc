@@ -70,7 +70,7 @@ function main()
     // Leer el cuerpo de la solicitud HTTP
     $contenido = file_get_contents("php://input");
     $data = json_decode($contenido, true);
-    $componenteService = new API_BOT($data['uu']);
+    $componenteService = new API_BOT();
     $func = $data['function'];
     $componenteService->$func($data['uu'], $data['cc'], $data['args']);
 }
