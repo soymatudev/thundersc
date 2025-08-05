@@ -33,8 +33,6 @@ class API_BOT {
                 exit;
             }
         
-            //$body = json_decode(file_get_contents('php://input'), true);
-            // Validar que venga algo válido de Telegram
             $chatId = $body['message']['chat']['id'] ?? null;
             $text = $body['message']['text'] ?? null;
         
@@ -49,15 +47,14 @@ class API_BOT {
             $this->thunderlog->writeLog("Recibido mensaje de Telegram: chatId={$chatId}, text={$text}");
         
             // Logica para escoger el token del bot
-            $BOT_TOKEN = "8024363859:AAE0AI1EXq7jGcrjeih170mPgEsd60Xg8vo" ?? null;
+            $BOT_TOKEN = $_ENV['TELEGRAM_BOT_TOKEN'] ?? null;
         
             // Crear instancia del bot
             $bot = new Bot($BOT_TOKEN, $chatId, $text);
-            // Enviar respuesta
+
             $response = $bot->bot_response();
             ReturnEvent::returnResponse(0, "Mensaje enviado correctamente", ["Todo bien" => "Simon"]);
         } catch (Exception $e) {
-            // Manejo de errores
             http_response_code(500);
             $this->thunderlog->writeLog("Error al procesar la solicitud: " . $e->getMessage());
             header('Content-Type: application/json');
