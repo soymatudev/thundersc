@@ -65,7 +65,7 @@ class API_BOT {
 function main()
 {
     // Leer el cuerpo de la solicitud HTTP
-    file_put_contents(__DIR__ . '/ThunderLog/Log/thunderlog.log', "API_BOT.php\n" . "Llego una peticion", FILE_APPEND);
+    file_put_contents(__DIR__ . '/../ThunderLog/Log/thunderlog.log', "API_BOT.php\n" . "Llego una peticion", FILE_APPEND);
     $contenido = file_get_contents("php://input");
     $data = json_decode($contenido, true);
     $componenteService = new API_BOT();
