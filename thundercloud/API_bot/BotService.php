@@ -47,6 +47,7 @@ class Bot
         
         // Responder al cliente
         header('Content-Type: application/json');
-        ReturnEvent::returnResponse(0, "Mensaje enviado correctamente", json_decode($response, true));
+        //ReturnEvent::returnResponse(0, "Mensaje enviado correctamente", json_decode($response, true));
+        return $response;
     }
 }

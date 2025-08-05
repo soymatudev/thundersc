@@ -11,7 +11,7 @@ require_once(__DIR__ . '/../ReturnEvent/ReturnEvent.php');
 require_once(__DIR__ . '/../System/Connection/Statement.php');
 require_once(__DIR__ . '/../ThunderLog/ThunderLog.php');
 require_once(__DIR__ . '/../vendor/autoload.php');
-require_once(__DIR__ . '/Bot.php');
+require_once(__DIR__ . '/BotService.php');
 
 class API_BOT {
     private $thunderlog = null;
@@ -55,7 +55,8 @@ class API_BOT {
             // Crear instancia del bot
             $bot = new Bot($BOT_TOKEN, $chatId, $text);
             // Enviar respuesta
-            $bot->bot_response();
+            $response = $bot->bot_response();
+            ReturnEvent::returnResponse(0, "Mensaje enviado correctamente", json_decode($response, true));
         } catch (Exception $e) {
             // Manejo de errores
             http_response_code(500);
