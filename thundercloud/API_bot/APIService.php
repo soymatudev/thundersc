@@ -40,11 +40,13 @@ class API_BOT {
             if (!$chatId || !$text) {
                 // Silenciosamente ignorar
                 header('Content-Type: application/json');
+                $this->thunderlog->writeLog("Datos incompletos: chatId o text no proporcionados");
                 ReturnEvent::returnResponse(1, "Datos incompletos", "El mensaje no contiene chatId o texto");
                 exit;
             }
+
+            $this->thunderlog->writeLog("Recibido mensaje de Telegram: chatId={$chatId}, text={$text}");
         
-            // Configuración del bot de Telegram 
             // Logica para escoger el token del bot
             $BOT_TOKEN = $_ENV['TELEGRAM_BOT_TOKEN'] ?? null;
         
@@ -65,7 +67,7 @@ class API_BOT {
 function main()
 {
     // Leer el cuerpo de la solicitud HTTP
-    file_put_contents(__DIR__ . '/../ThunderLog/Log/thunderlog.log', "API_BOT.php\n" . "Llego una peticion", FILE_APPEND);
+    file_put_contents(__DIR__ . '/../ThunderLog/Log/thunderlog.log', "API_BOT.php " . "Llego una peticion \n", FILE_APPEND);
     $contenido = file_get_contents("php://input");
     $data = json_decode($contenido, true);
     $componenteService = new API_BOT();
