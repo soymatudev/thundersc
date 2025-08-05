@@ -33,8 +33,6 @@ class API_BOT {
             }
         
             //$body = json_decode(file_get_contents('php://input'), true);
-            $this->thunderlog->writeLog("Body " . $body);
-        
             // Validar que venga algo válido de Telegram
             $chatId = $body['message']['chat']['id'] ?? null;
             $text = $body['message']['text'] ?? null;
