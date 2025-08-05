@@ -55,7 +55,7 @@ class API_BOT {
             $bot = new Bot($BOT_TOKEN, $chatId, $text);
             // Enviar respuesta
             $response = $bot->bot_response();
-            ReturnEvent::returnResponse(0, "Mensaje enviado correctamente", json_decode($response, true));
+            ReturnEvent::returnResponse(0, "Mensaje enviado correctamente", ["Todo bien" => "Simon"]);
         } catch (Exception $e) {
             // Manejo de errores
             http_response_code(500);
