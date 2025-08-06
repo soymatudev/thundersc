@@ -81,7 +81,7 @@ function getTermometerData() {
         $("#dashboard").html("");
         data = data.result;
         data.forEach(item => {
-          new Thermometer(".dashboard", item.nombre, item.temp, -10, 20, false, "Fahrenheit", true);
+          new Thermometer(".dashboard", item.nombre, item.temp, -10, 30, false, "Fahrenheit", true);
         });
       
       }

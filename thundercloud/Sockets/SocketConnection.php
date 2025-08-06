@@ -160,6 +160,8 @@ class SocketConnection
                 $result = $stmt->executePreparedQuery($res);
                 $this->thunderlog->writeLog("Consulta ejecutada correctamente");
 
+
+                $this->thunderlog->writeLog("Llamando a Boty");
                 $this->BotTemp($data[1], $data[2], $result[0]['nombre']);
 
                 return $result ? 1 : 0;
