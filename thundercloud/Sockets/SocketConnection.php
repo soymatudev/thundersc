@@ -149,6 +149,7 @@ class SocketConnection
                 $res = $stmt->prepareStatement($query);
 
                 $data = explode(",", $data);
+                $nombre = $result[0]['nombre'];
 
                 $this->thunderlog->writeLog("data => " . print_r($data, true));
                 $res->bindParam(':cve_equipo', $result[0]['clave'], PDO::PARAM_STR);
@@ -160,7 +161,7 @@ class SocketConnection
                 $this->thunderlog->writeLog("Consulta ejecutada correctamente");
 
                 $this->thunderlog->writeLog("Llamando a Boty");
-                $this->BotTemp($data[1], $data[2], $result[0]['nombre']);
+                $this->BotTemp($data[1], $data[2], $nombre);
 
                 return $result ? 1 : 0;
             } else {
