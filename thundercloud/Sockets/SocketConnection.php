@@ -230,39 +230,44 @@ class SocketConnection
     }
     
     function BotTemp($temperatura = null, $humedad = null, $sensor = null) {
+        try {
+            $this->thunderlog->writeLog("Enviando datos al bot de Telegram");
 
-        $this->thunderlog->writeLog("Enviando datos al bot de Telegram");
+            $msg = $temperatura != null ? "🌡️ Sensor: $sensor \n" . "Temperatura: $temperatura \n" . "Humedad: $humedad" : "Error: Sin Datos";
 
-        $msg = $temperatura != null ? "🌡️ Sensor: $sensor \n" . "Temperatura: $temperatura \n" . "Humedad: $humedad" : "Error: Sin Datos";
+            $objmsg = [
+                "update_id" => 7325450079,
+                "message" => [
+                    "message_id" => 1,
+                    "from" => [
+                        "id" => 7325450079,
+                        "is_bot" => false,
+                        "first_name" => "Juan"
+                    ],
+                    "chat" => [
+                        "id" => 7325450079,
+                        "first_name" => "Juan",
+                        "type" => "private"
+                    ],
+                    "date" => 1691170114,
+                    "text" => "🤖 Thundersc: \n" . "$msg"
+                ]
+            ];
 
-        $objmsg = [
-            "update_id" => 7325450079,
-            "message" => [
-                "message_id" => 1,
-                "from" => [
-                    "id" => 7325450079,
-                    "is_bot" => false,
-                    "first_name" => "Juan"
-                ],
-                "chat" => [
-                    "id" => 7325450079,
-                    "first_name" => "Juan",
-                    "type" => "private"
-                ],
-                "date" => 1691170114,
-                "text" => "🤖 Thundersc: \n" . "$msg"
-            ]
-        ];
+            $obj = [
+                'uu' => 'API_BOT',
+                'cc' => 'BotSensoresService',
+                'function' => 'API',
+                'args' => [$objmsg]
+            ];
 
-        $obj = [
-            'uu' => 'API_BOT',
-            'cc' => 'BotSensoresService',
-            'function' => 'API',
-            'args' => [$objmsg]
-        ];
-
-        $context  = stream_context_create($obj);
-        $response = file_get_contents(__DIR__."/../APIBot/APIService.php", false, $context);
+            $context  = stream_context_create($obj);
+            $response = file_get_contents(__DIR__."/../APIBot/APIService.php", false, $context);
+            header('Content-Type: application/json');
+        } catch (Exception $e) {
+            $this->thunderlog->writeLog("Error al enviar datos al bot de Telegram: " . $e->getMessage());
+            ReturnEvent::returnResponse(1, "Error al enviar datos al bot de Telegram", $e->getMessage());
+        }
     }
 }
 
