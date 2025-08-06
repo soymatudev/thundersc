@@ -50,7 +50,6 @@ class Thermometer {
 
 	setThermometer() {
 		// Crear un ID único para cada instancia
-		console.log("Creating Thermometer with ID: " + this.nombre);
 		const uniqueID = 'thermo-' + Math.random().toString(36).substring(2, 9);
 
 		const html = `
@@ -97,13 +96,11 @@ class Thermometer {
 
 	reloadThermometer(uniqueID) {
 		$(`#${uniqueID} .reload-thermometer`).on("click", () => {
-			console.log("Reloading Thermometer with ID: " + uniqueID);
 			$("body").css("cursor", "wait");
 			//$(`#${uniqueID} .rangeInput`).val(5);
 			this.updateSockets();
 
 			setTimeout(() => {
-				console.log("Setting temperature for Thermometer with ID: " + uniqueID);
 				$(`#${uniqueID} .rangeInput`).val(this.temperature);
 				$(`#${uniqueID} .rangeInput`).trigger("change");
 				this.setTemperature();

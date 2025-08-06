@@ -11,9 +11,10 @@ require_once(__DIR__ . '/../ReturnEvent/ReturnEvent.php');
 require_once(__DIR__ . '/../System/Connection/Statement.php');
 require_once(__DIR__ . '/../ThunderLog/Log/thunderlog.log');
 require_once(__DIR__ . '/../vendor/autoload.php');
-require_once(__DIR__ . '/BotService.php');
+require_once(__DIR__ . '/BotSensoresService.php');
 
 class API_BOT {
+    
     private $thunderlog = null;
 
     public function __construct()

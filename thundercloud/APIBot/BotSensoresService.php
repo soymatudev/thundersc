@@ -32,7 +32,7 @@ class Bot
     {
         $data = [
             'chat_id' => $this->chatId,
-            'text' => "🤖 Recibí tu mensaje desde Thundersc: \"{$this->text}\""
+            'text' => "🤖 Thundersc: \"{$this->text}\""
         ];
 
         $options = [

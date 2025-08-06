@@ -121,8 +121,6 @@ function chartLines (data, div = "") {
       yName: equipos[key],
     });
   }
-
-  console.log(series);
   
   const options = {
     container: $(div)[0],
@@ -144,6 +142,8 @@ function chartLines (data, div = "") {
         label: {
           format: "#{.1f} °F",
         },
+        min: -10,
+        max: 20,
       },
     ],
   };
@@ -167,14 +167,6 @@ function sortData(data, equipo) {
   })
   return dataReturn;
 }
-
-
-
-
-
-
-
-
 
 
 function grid(data, div = "#grid", pivote=false, data_total = false, single = false) {
