@@ -160,6 +160,8 @@ class SocketConnection
                 $result = $stmt->executePreparedQuery($res);
                 $this->thunderlog->writeLog("Consulta ejecutada correctamente");
 
+                $this->BotTemp($data[1], $data[2], $result[0]['nombre']);
+
                 return $result ? 1 : 0;
             } else {
                 $this->thunderlog->writeLog("Equipos no encontrados");
@@ -225,6 +227,42 @@ class SocketConnection
             $c[] = "'$item'";
         }
         return implode(",", $c);
+    }
+    
+    function BotTemp($temperatura = null, $humedad = null, $sensor = null) {
+
+        $this->thunderlog->writeLog("Enviando datos al bot de Telegram");
+
+        $msg = $temperatura != null ? "🌡️ Sensor: $sensor \n" . "Temperatura: $temperatura \n" . "Humedad: $humedad" : "Error: Sin Datos";
+
+        $objmsg = [
+            "update_id" => 7325450079,
+            "message" => [
+                "message_id" => 1,
+                "from" => [
+                    "id" => 7325450079,
+                    "is_bot" => false,
+                    "first_name" => "Juan"
+                ],
+                "chat" => [
+                    "id" => 7325450079,
+                    "first_name" => "Juan",
+                    "type" => "private"
+                ],
+                "date" => 1691170114,
+                "text" => "🤖 Thundersc: \n" . "$msg"
+            ]
+        ];
+
+        $obj = [
+            'uu' => 'API_BOT',
+            'cc' => 'BotSensoresService',
+            'function' => 'API',
+            'args' => [$objmsg]
+        ];
+
+        $context  = stream_context_create($obj);
+        $response = file_get_contents(__DIR__."/../APIBot/APIService.php", false, $context);
     }
 }
 
