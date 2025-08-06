@@ -262,7 +262,15 @@ class SocketConnection
                 'args' => [$objmsg]
             ];
 
-            $context  = stream_context_create($obj);
+            $options = [
+                'http' => [
+                    'header'  => "Content-Type: application/json\r\n",
+                    'method'  => 'POST',
+                    'content' => json_encode($obj),
+                ],
+            ];
+
+            $context  = stream_context_create($options);
             $response = file_get_contents(__DIR__."/../APIBot/APIService.php", false, $context);
             header('Content-Type: application/json');
         } catch (Exception $e) {
