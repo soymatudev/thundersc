@@ -155,14 +155,12 @@ class SocketConnection
                 $res->bindParam(':dato_1', $data[1], PDO::PARAM_STR);
                 $res->bindParam(':dato_2', $data[2], PDO::PARAM_STR);
 
+                $this->thunderlog->writeLog("Llamando a Boty");
+                $this->BotTemp($data[1], $data[2], $result[0]['nombre']);
 
                 $this->thunderlog->writeLog("Por ejecutar la consulta");
                 $result = $stmt->executePreparedQuery($res);
                 $this->thunderlog->writeLog("Consulta ejecutada correctamente");
-
-
-                $this->thunderlog->writeLog("Llamando a Boty");
-                $this->BotTemp($data[1], $data[2], $result[0]['nombre']);
 
                 return $result ? 1 : 0;
             } else {
