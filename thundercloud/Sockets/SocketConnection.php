@@ -241,38 +241,10 @@ class SocketConnection
 
             $msg = $temperatura != null ? "🌡️ Sensor: $sensor \n" . "Temperatura: $temperatura \n" . "Humedad: $humedad" : "Error: Sin Datos";
             $chatId = 7325450079;
-            $text = "$msg";
-            $objmsg = [
-                "update_id" => 151980837,
-                "message" => [
-                    "message_id" => 7,
-                    "from" => [
-                        "id" => 7325450079,
-                        "is_bot" => false,
-                        "first_name" => "Juan",
-                        "language_code" => "es",
-                    ],
-                    "chat" => [
-                        "id" => 7325450079,
-                        "first_name" => "Juan",
-                        "type" => "private"
-                    ],
-                    "date" => 1691170114,
-                    "text" => "🤖 Thundersc: \n" . "$msg"
-                ]
-            ];
-
-            $obj = [
-                'uu' => 'API_BOT',
-                'cc' => 'BotSensoresService',
-                'function' => 'API',
-                'args' => [$objmsg]
-            ];
-
+            $text = "\n $msg";
+    
             $bot = new Bot($BOT_TOKEN, $chatId, $text);
             $response = $bot->bot_response();
-            //$api = new API_BOT();
-            //$api->API('API_BOT', 'BotSensoresService', $objmsg);
             $this->thunderlog->writeLog("Datos enviados al bot de Telegram correctamente");
         } catch (Exception $e) {
             $this->thunderlog->writeLog("Error al enviar datos al bot de Telegram: " . $e->getMessage());
