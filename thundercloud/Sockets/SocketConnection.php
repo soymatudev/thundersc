@@ -11,6 +11,7 @@ require_once('../ReturnEvent/ReturnEvent.php');
 require_once('../System/Connection/Statement.php');
 require_once('../ThunderLog/ThunderLog.php');
 require_once('../vendor/autoload.php');
+require_once(__DIR__ . '/../APIBot/APIService.php');
 
 class SocketConnection
 {
@@ -233,18 +234,19 @@ class SocketConnection
     
     function BotTemp($temperatura = null, $humedad = null, $sensor = null) {
         try {
-            $this->thunderlog->writeLog("Enviando datos al bot de Telegram");
+            $this->thunderlog->writeLog("Enviando datos al bot de Telegra\n m");
 
             $msg = $temperatura != null ? "🌡️ Sensor: $sensor \n" . "Temperatura: $temperatura \n" . "Humedad: $humedad" : "Error: Sin Datos";
 
             $objmsg = [
-                "update_id" => 7325450079,
+                "update_id" => 151980837,
                 "message" => [
-                    "message_id" => 1,
+                    "message_id" => 7,
                     "from" => [
                         "id" => 7325450079,
                         "is_bot" => false,
-                        "first_name" => "Juan"
+                        "first_name" => "Juan",
+                        "language_code" => "es",
                     ],
                     "chat" => [
                         "id" => 7325450079,
@@ -263,17 +265,9 @@ class SocketConnection
                 'args' => [$objmsg]
             ];
 
-            $options = [
-                'http' => [
-                    'header'  => "Content-Type: application/json\r\n",
-                    'method'  => 'POST',
-                    'content' => json_encode($obj),
-                ],
-            ];
-
-            $context  = stream_context_create($options);
-            $response = file_get_contents(__DIR__."/../APIBot/APIService.php", false, $context);
-            header('Content-Type: application/json');
+            $api = new API_BOT();
+            $api->API('API_BOT', 'BotSensoresService', $objmsg);
+            $this->thunderlog->writeLog("Datos enviados al bot de Telegram correctamente");
         } catch (Exception $e) {
             $this->thunderlog->writeLog("Error al enviar datos al bot de Telegram: " . $e->getMessage());
             ReturnEvent::returnResponse(1, "Error al enviar datos al bot de Telegram", $e->getMessage());
