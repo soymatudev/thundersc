@@ -11,7 +11,7 @@ require_once('../ReturnEvent/ReturnEvent.php');
 require_once('../System/Connection/Statement.php');
 require_once('../ThunderLog/ThunderLog.php');
 require_once('../vendor/autoload.php');
-require_once(__DIR__ . '/../APIBot/APIService.php');
+require_once(__DIR__ . '/../APIBot/BotSensoresService.php');
 
 class SocketConnection
 {
@@ -234,10 +234,14 @@ class SocketConnection
     
     function BotTemp($temperatura = null, $humedad = null, $sensor = null) {
         try {
+            $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../');
+            $dotenv->load();
+            $BOT_TOKEN = $_ENV['TELEGRAM_BOT_TOKEN'] ?: ''; // Logica para escoger el token del bot
             $this->thunderlog->writeLog("Enviando datos al bot de Telegra\n m");
 
             $msg = $temperatura != null ? "🌡️ Sensor: $sensor \n" . "Temperatura: $temperatura \n" . "Humedad: $humedad" : "Error: Sin Datos";
-
+            $chatId = 7325450079;
+            $text = "$msg";
             $objmsg = [
                 "update_id" => 151980837,
                 "message" => [
@@ -265,8 +269,10 @@ class SocketConnection
                 'args' => [$objmsg]
             ];
 
-            $api = new API_BOT();
-            $api->API('API_BOT', 'BotSensoresService', $objmsg);
+            $bot = new Bot($BOT_TOKEN, $chatId, $text);
+            $response = $bot->bot_response();
+            //$api = new API_BOT();
+            //$api->API('API_BOT', 'BotSensoresService', $objmsg);
             $this->thunderlog->writeLog("Datos enviados al bot de Telegram correctamente");
         } catch (Exception $e) {
             $this->thunderlog->writeLog("Error al enviar datos al bot de Telegram: " . $e->getMessage());
