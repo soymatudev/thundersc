@@ -3,6 +3,7 @@ class Thermometer {
 	constructor(
 		div = "#div-thermometer",
 		nombre = "Thermometer",
+		alias = "Thermometer",
 		temperature = 50,
 		minTemperature = -10,
 		maxTemperature = 100,
@@ -21,6 +22,7 @@ class Thermometer {
 		this.width = width;
 		this.unit = unit;
 		this.nombre = nombre;
+		this.alias = alias;
 		this.reload = reload;
 
 		this.config = {
@@ -60,7 +62,7 @@ class Thermometer {
 				</div>
 
 				<div class="info-permi">
-					<p class="unit" style="color: #000;">${this.nombre}</p>
+					<p class="unit" style="color: #000;">${this.alias}</p>
 					<button class="icon-permi ${!this.reload ? 'd-none' : ''} reload-thermometer">
 						<i class="bi bi-arrow-repeat"></i>
 					</button>

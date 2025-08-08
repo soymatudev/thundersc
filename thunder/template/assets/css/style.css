@@ -21839,3 +21839,11 @@ body.swal2-toast-shown .swal2-container.swal2-top-right {
 .ag-charts-proxy-elem {
   color: transparent !important;
 }
+
+.ag-charts-proxy-legend-toolbar {
+  display: none !important;
+}
+
+.ag-charts-proxy-container {
+  display: none !important;
+}

@@ -81,7 +81,7 @@ function getTermometerData() {
         $("#dashboard").html("");
         data = data.result;
         data.forEach(item => {
-          new Thermometer(".dashboard", item.nombre, item.temp, -10, 30, false, "Fahrenheit", true);
+          new Thermometer(".dashboard", item.nombre, item.alias, item.temp, -10, 30, false, "Fahrenheit", true);
         });
       
       }
@@ -103,6 +103,7 @@ function getDataChartLines() {
       } else {
         data = data.result;
         chartLines(data, "#chart-lines");
+        chartHumLines(data, "#chart-hum");
       }
     });
 }
@@ -142,8 +143,8 @@ function chartLines (data, div = "") {
         label: {
           format: "#{.1f} °F",
         },
-        min: -10,
-        max: 20,
+        min: 10,
+        max: 22,
       },
     ],
   };
@@ -153,24 +154,68 @@ function chartLines (data, div = "") {
   AgCharts.create(options);
 }
 
-function sortData(data, equipo) {
+function chartHumLines (data, div = "") {
+  $(div).html("");
+  equipos = data.pop();
+  series = [];
+
+  for(let key in equipos) {
+    series.push({
+      type: "line",
+      data: sortData(data, equipos[key], "hum"),
+      xKey: "time",
+      yKey: "sensor",
+      yName: equipos[key],
+    });
+  }
+  
+  const options = {
+    container: $(div)[0],
+    title: {
+      text: "Registro de Humedad",
+    },
+    series: series,
+    axes: [
+      {
+        type: "time",
+        position: "bottom",
+        label: {
+          format: "%d/%m %H:%M min",
+        },
+      },
+      {
+        type: "number",
+        position: "left",
+        label: {
+          format: "#{.1f} %",
+        },
+        min: 0,
+        max: 100,
+      },
+    ],
+    legend: {
+      enabled: false // 🚀 Esto oculta la lista de botones
+    }
+  };
+  AgCharts.create(options);
+}
+
+function sortData(data, equipo, type = "temp") {
   let dataReturn = [];
-  let a = 1;
   data.forEach(item => {
-    if(item.nombre === equipo) {
-      a = a + 1;
+    if(item.alias === equipo) {
       dataReturn.push({
         time: new Date(item.fecha_hora),
-        sensor: parseFloat(item.temp),
+        sensor: type == "temp" ? parseFloat(item.temp) : parseFloat(item.hum),
       });
     }
   })
+  console.log("dataReturn", dataReturn);
   return dataReturn;
 }
 
 
 function grid(data, div = "#grid", pivote=false, data_total = false, single = false) {
-  //function grid(data, div = "#grid", pivote=false, data_total = false) {
   $(div).html("")
 
   let totales = [];

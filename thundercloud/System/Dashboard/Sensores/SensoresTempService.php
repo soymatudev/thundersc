@@ -142,7 +142,7 @@ class SensoresTempService
               $result[$x]['fecha_hora'] = date_format(date_create($result[$x]['fecha_hora']), "d M Y H:i:s");
           }
           
-          $equipos = array_unique(array_column($result, 'nombre'));
+          $equipos = array_unique(array_column($result, 'alias'));
           array_push($result, $equipos);
 
           $this->thunderlog->writeLog("Result => " . print_r($result, true));
@@ -155,7 +155,6 @@ class SensoresTempService
         $this->thunderlog->writeLog("Error => " . $e->getMessage());
     }
   }
-
 }
 
 function main()

@@ -75,8 +75,9 @@ $home = <<<HTML
           <div class="dashboard" id="dashboard" style="height: 100%;"></div>
         </div>
 
-        <div class="card" style="height: 60%;">
-          <div id="chart-lines" class="ag-theme-balham" style="height: 100%; width: 50%"></div>
+        <div class="card d-flex" style="height: 60%; flex-direction:row; justify-content: space-around;">
+          <div id="chart-lines" class="ag-theme-balham" style="height: 100%; width: 49%"></div>
+          <div id="chart-hum" class="ag-theme-balham" style="height: 100%; width: 49%"></div>
         </div>
 
       </div>

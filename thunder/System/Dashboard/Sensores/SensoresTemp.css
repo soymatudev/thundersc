@@ -11,3 +11,10 @@
     gap: 10rem;
 }
 
+.ag-charts-proxy-legend-toolbar {
+  display: none !important;
+}
+
+.ag-charts-proxy-container {
+  display: none !important;
+}
