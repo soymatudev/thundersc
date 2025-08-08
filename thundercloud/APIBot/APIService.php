@@ -9,12 +9,12 @@ date_default_timezone_set('America/Mexico_City');
 require_once(__DIR__ . '/../System/Connection/Connection.php');
 require_once(__DIR__ . '/../ReturnEvent/ReturnEvent.php');
 require_once(__DIR__ . '/../System/Connection/Statement.php');
-require_once(__DIR__ . '/../ThunderLog/Log/thunderlog.log');
+require_once(__DIR__ . '/../ThunderLog/ThunderLog.php');
 require_once(__DIR__ . '/../vendor/autoload.php');
 require_once(__DIR__ . '/BotSensoresService.php');
 
 class API_BOT {
-    
+
     private $thunderlog = null;
 
     public function __construct()

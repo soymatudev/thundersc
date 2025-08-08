@@ -210,7 +210,6 @@ function sortData(data, equipo, type = "temp") {
       });
     }
   })
-  console.log("dataReturn", dataReturn);
   return dataReturn;
 }
 
