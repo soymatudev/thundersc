@@ -19,7 +19,7 @@
   display: none !important;
 }
 
-.sensor-chart {
+.sensor-charts {
   height: 100%; 
   flex-direction: "row"; 
   justify-content: "space-around"; 
