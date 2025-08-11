@@ -75,7 +75,7 @@ $home = <<<HTML
           <div class="dashboard" id="dashboard" style="height: 100%;"></div>
         </div>
 
-        <div class="card d-flex row sensor-charts">
+        <div class="card d-flex row" style="height: 100%; flex-direction:row; justify-content: space-around; overflow: auto; gap: 12px;">
           <div id="chart-lines" class="ag-theme-balham col col-sm-12 col-md-6" style="height: 100%;"></div>
           <div id="chart-hum" class="ag-theme-balham col col-sm-12 col-md-6" style="height: 100%;"></div>
         </div>
