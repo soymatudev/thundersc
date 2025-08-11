@@ -48,7 +48,7 @@ class Bot
         $response = file_get_contents($this->TELEGRAM_API, false, $context);
         
         // Responder al cliente
-        header('Content-Type: application/json');
+        //header('Content-Type: application/json');
         //ReturnEvent::returnResponse(0, "Mensaje enviado correctamente", json_decode($response, true));
         ReturnEvent::returnResponse(0, "Mensaje enviado correctamente", ["Todo bien" => "Simon"]);
     }
