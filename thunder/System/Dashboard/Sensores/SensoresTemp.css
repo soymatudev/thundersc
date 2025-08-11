@@ -18,3 +18,11 @@
 .ag-charts-proxy-container {
   display: none !important;
 }
+
+.sensor-chart {
+  height: 100%; 
+  flex-direction: "row"; 
+  justify-content: "space-around"; 
+  overflow: "auto"; 
+  gap: 12px;
+}
