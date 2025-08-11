@@ -96,6 +96,8 @@ class SensoresTempService
                 $result[$x]['zona'] = thunderToUtf8(trim($result[$x]['zona']));
                 $result[$x]['alias'] = thunderToUtf8(trim($result[$x]['alias']));
                 $result[$x]['materia'] = thunderToUtf8(trim($result[$x]['materia']));
+                $result[$x]['temp'] = $result[$x]['temp'] - 1.5;
+                $result[$x]['hum'] = $result[$x]['hum'] - 1.5;
             }
 
             ReturnEvent::returnResponse(0, "Datos obtenidos con exito", $result);
@@ -140,6 +142,8 @@ class SensoresTempService
               $result[$x]['alias'] = thunderToUtf8(trim($result[$x]['alias']));
               $result[$x]['materia'] = thunderToUtf8(trim($result[$x]['materia']));
               $result[$x]['fecha_hora'] = date_format(date_create($result[$x]['fecha_hora']), "d M Y H:i:s");
+              $result[$x]['temp'] = $result[$x]['temp'] - 1.5;
+              $result[$x]['hum'] = $result[$x]['hum'] - 1.5;
           }
           
           $equipos = array_unique(array_column($result, 'alias'));
