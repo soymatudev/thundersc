@@ -21,7 +21,9 @@ function init() {
       getDataChartLines();
     }, 6500)
   }); */
-  
+  setTimeout(() => {
+    $("#menuIN").click();
+  }, 100);
 }
 
 function consultar() {

@@ -20357,6 +20357,9 @@ div.tagsinput {
   -webkit-transition: left 0.25s ease;
   -moz-transition: left 0.25s ease;
   -ms-transition: left 0.25s ease; }
+  @media (max-width: 480px) {
+    .navbar{
+      left: 255px; }}
   @media (max-width: 992px) {
     .navbar {
       /* left: 0; */ } }
@@ -20644,6 +20647,10 @@ div.tagsinput {
   -webkit-transition: width 0.25s ease, background 0.25s ease;
   -moz-transition: width 0.25s ease, background 0.25s ease;
   -ms-transition: width 0.25s ease, background 0.25s ease; }
+  @media (max-width: 480px) {
+    .sidebar{
+      width: 255px; }}
+
   .sidebar .sidebar-brand-wrapper {
     transition: width 0.25s ease, background 0.25s ease;
     -webkit-transition: width 0.25s ease, background 0.25s ease;
@@ -21276,6 +21283,7 @@ height: 100vh;
   border: 2px solid var(--color-border);
   border-bottom: 0px;
   margin-left: 6px;
+  min-width: fit-content;
   max-width: fit-content;
 }
 
