@@ -19,10 +19,14 @@
   display: none !important;
 }
 
-.sensor-charts {
+/* .sensor-charts {
   height: 100%; 
   flex-direction: "row"; 
   justify-content: "space-around"; 
   overflow: "auto"; 
   gap: 12px;
-}
+} */
+
+@media (max-width: 480px) {
+  .sensor-charts{
+    gap: 12px; }}
