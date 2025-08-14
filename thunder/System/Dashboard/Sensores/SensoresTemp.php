@@ -52,12 +52,16 @@ $home = <<<HTML
   <div class="container-scroller">
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
       <div class="box-form bordes_redondeados shadow select-area" id="select-area">
+      
+      <select id="formato">        
+          <option value="1">Dashboard</option>
+          <option value="2">Grid</option>
+      </select>
 
       <div class="container-c-g">
           <div id="div-zonas">
             <p class="label-c-g">Zonas:</p>
           </div>
-
           <!-- <div id="div-sensores">
             <p class="label-c-g">Sensores:</p>
           </div> -->
