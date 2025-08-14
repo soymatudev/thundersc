@@ -76,12 +76,12 @@ $home = <<<HTML
       <div class="main-panel content-wrapper">
 
         <div class="card" style="padding: 6px;">
-          <div class="dashboard" id="dashboard" style="height: 100%;"></div>
+          <div class="dashboard" id="dashboard"></div>
         </div>
 
-        <div class="card d-flex row sensor-charts" style="height: 100%; flex-direction:row; justify-content: space-around; overflow: auto;">
-          <div id="chart-lines" class="ag-theme-balham col col-sm-12 col-md-6" style="height: 100%;"></div>
-          <div id="chart-hum" class="ag-theme-balham col col-sm-12 col-md-6" style="height: 100%;"></div>
+        <div class="card d-flex row sensor-charts">
+          <div id="chart-lines" class="ag-theme-balham col col-sm-12 col-md-6"></div>
+          <div id="chart-hum" class="ag-theme-balham col col-sm-12 col-md-6"></div>
         </div>
 
       </div>
