@@ -253,7 +253,7 @@ function getListado() {
         })
       } else {
         data = data.result;
-        grid(data, "#grid", false, true, true);
+        grid(data, "#grid");
       }
     });
 }

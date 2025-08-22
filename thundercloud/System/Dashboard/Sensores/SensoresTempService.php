@@ -201,9 +201,15 @@ class SensoresTempService
         $result[$x]['hum'] = $result[$x]['hum'] - 1.5;
       }
     
-      $equipos = array_unique(array_column($result, 'alias'));
-      array_push($result, $equipos);
+      $headerGrid = [
+        ["headerName" => "Alias", "field" => "serie", "width" => 150],
+        ["headerName" => "Zona", "field" => "marca", "width" => 120],
+        ["headerName" => "Fecha", "field" => "clasif", "width" => 120],
+        ["headerName" => "Temperatura", "field" => "modelo", "width" => 120],
+        ["headerName" => "Humedad", "field" => "f_regis", "width" => 120]
+      ];
 
+      array_push($result, $headerGrid);
       $this->thunderlog->writeLog("Result => " . print_r($result, true));
       ReturnEvent::returnResponse(0, "Datos obtenidos con exito", $result);
     } catch (Exception $e) {
