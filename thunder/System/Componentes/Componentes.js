@@ -191,6 +191,7 @@ class Componentes{
                 </select>
                 `);
             $("#select-sensores").select2();
+            $("#select-sensores").next().css("width", "100%")
         });
     }
 

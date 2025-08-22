@@ -15,6 +15,19 @@ function init() {
   getTermometerData();
   getDataChartLines();
 
+  $("#formato").on("change", function() {
+    let formato = $(this).val();
+    if(formato == "1") {
+      Funciones.setComboButtom(consultar,"#comboButtom",['SENSOR']);
+      $(".consultas").hide();
+      $("#div-zonas").show();
+    } else {
+      Funciones.setComboButtom(consultar,"#comboButtom",['GRID']);
+      $(".consultas").show();
+      $("#div-zonas").hide();
+    }
+  });
+
   /* $(".reload-thermometer").on("click", function() {
     setTimeout(() => {
       console.log("Le pico al rangeInput");
@@ -27,6 +40,11 @@ function init() {
 }
 
 function consultar() {
+  let formato = $("#formato").val();
+  formato == "1" ? getInfoSensores() : getListado();
+}
+
+function getInfoSensores() {
   let sensores = "ALL";
   sensores += "*web";
   $("body").css("cursor", "wait");
@@ -62,7 +80,8 @@ function getFormData() {
 
 function initCamp() {
   Componentes.zonas(uu, cc, "div-zonas");
-  //Componentes.sensores(uu, cc, "div-sensores");
+  $(".consultas").hide();
+  Componentes.sensores(uu, cc, "div-sensores");
   $('#download-grid').prop("disabled", true);
 }
 
@@ -213,6 +232,30 @@ function sortData(data, equipo, type = "temp") {
     }
   })
   return dataReturn;
+}
+
+function getListado() {
+  let f_ini = $("#f_ini").val();
+  let f_fin = $("#f_fin").val();
+  let sensor = $("#select-sensores").val();
+
+  let bridge = new Bridge(uu, cc, "System.Dashboard.Sensores.SensoresTempService.getListados", [f_ini, f_fin, sensor]);
+  let response = bridge.databriged();
+  console.log("Response: ", response);
+  response
+    .then(response => response.json())
+    .then((data) => {
+      if(data.event > 0) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: data.result,
+        })
+      } else {
+        data = data.result;
+        grid(data, "#grid", false, true, true);
+      }
+    });
 }
 
 

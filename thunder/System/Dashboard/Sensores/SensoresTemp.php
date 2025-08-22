@@ -62,13 +62,25 @@ $home = <<<HTML
           <div id="div-zonas">
             <p class="label-c-g">Zonas:</p>
           </div>
-          <!-- <div id="div-sensores">
-            <p class="label-c-g">Sensores:</p>
-          </div> -->
-      </div>
-        
-          <div class="" id="comboButtom"></div>
 
+          <div class="consultas">
+            <div id="div-sensores">
+              <p class="label-c-g">Sensores:</p>
+            </div>
+
+            <div id="div-fini">
+              <p class="label-c-g">Fecha de Inicio:</p>
+              <input type="date" class="form_input bordes_redondeados input-area" name="fini" id="f_ini" />
+            </div>
+
+            <div id="div-ffin">
+              <p class="label-c-g">Fecha de Fin:</p>
+              <input type="date" class="form_input bordes_redondeados input-area" name="ffin" id="f_fin" />
+            </div>
+          </div>
+
+      </div>
+          <div class="" id="comboButtom"></div>
       </div>
     </nav>
 
@@ -83,6 +95,12 @@ $home = <<<HTML
           <div id="chart-lines" class="ag-theme-balham col col-sm-12 col-md-6"></div>
           <div id="chart-hum" class="ag-theme-balham col col-sm-12 col-md-6"></div>
         </div>
+
+        <div class="card grid-dev">
+          <div id="grid" class="ag-theme-balham"></div>
+        </div>
+
+        
 
       </div>
     </div>

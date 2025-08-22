@@ -126,7 +126,7 @@ class SensoresTempService
       and a.clave = d.cve_equipo
       and fecha_hora >= CURRENT_DATE-3
       order by a.nombre, fecha_hora desc limit 15";
-      $stmt = new Statement($this->conn, (null));
+      $stmt = new Statement($this->conn);
       $res = $stmt->prepareStatement($query);
 
       $result = $stmt->executePreparedQuery($res);
@@ -155,6 +155,57 @@ class SensoresTempService
       $this->thunderlog->writeLog("Execute => Incorrect");
       ReturnEvent::returnResponse(1, "Error en la consulta", "Error en la consulta");
       }
+    } catch (Exception $e) {
+        $this->thunderlog->writeLog("Error => " . $e->getMessage());
+    }
+  }
+
+  function getListados($uu, $cc, $f_ini, $f_fin, $sensor = null) {
+    try {
+      $this->conn = (new Connection(null, $cc))->connect();
+      if (!$this->conn) {
+        $this->thunderlog->writeLog("Error de conexión" . $this->conn);
+        return null;
+      }
+
+      //$sensor = isset($sensor) ? " and a.clave = '$sensor'" : "";
+      $sensor = "";
+      $query = "SELECT a.nombre, a.serie, a.modelo, b.descri as unidad, c.nombre as zona, a.alias, a.materia, d.fecha_hora, d.dato_1 as temp, d.dato_2 as hum 
+      from ma_equipo a, ma_unidad b, de_zona c, ma_regzoro d
+      where cve_unidad = 'TEM'
+      and a.cve_zona = c.clave
+      and a.cve_unidad = b.clave
+      and a.clave = d.cve_equipo
+      and fecha_hora between :f_ini and :f_fin
+      $sensor
+      order by a.nombre, fecha_hora";
+      $this->thunderlog->writeLog("$query");
+
+
+      $stmt = new Statement($this->conn);
+      $res = $stmt->prepareStatement($query);
+      $res->bindParam(':f_ini', $f_ini, PDO::PARAM_STR);
+      $res->bindParam(':f_fin', $f_fin, PDO::PARAM_STR);
+      $result = $stmt->executePreparedQuery($res);
+
+      for ($x = 0; $x < count($result); $x++) {
+        $result[$x]['nombre'] = thunderToUtf8(trim($result[$x]['nombre']));
+        $result[$x]['serie'] = thunderToUtf8(trim($result[$x]['serie']));
+        $result[$x]['modelo'] = thunderToUtf8(trim($result[$x]['modelo']));
+        $result[$x]['unidad'] = thunderToUtf8(trim($result[$x]['unidad']));
+        $result[$x]['zona'] = thunderToUtf8(trim($result[$x]['zona']));
+        $result[$x]['alias'] = thunderToUtf8(trim($result[$x]['alias']));
+        $result[$x]['materia'] = thunderToUtf8(trim($result[$x]['materia']));
+        $result[$x]['fecha_hora'] = date_format(date_create($result[$x]['fecha_hora']), "d M Y H:i:s");
+        $result[$x]['temp'] = $result[$x]['temp'] - 1.5;
+        $result[$x]['hum'] = $result[$x]['hum'] - 1.5;
+      }
+    
+      $equipos = array_unique(array_column($result, 'alias'));
+      array_push($result, $equipos);
+
+      $this->thunderlog->writeLog("Result => " . print_r($result, true));
+      ReturnEvent::returnResponse(0, "Datos obtenidos con exito", $result);
     } catch (Exception $e) {
         $this->thunderlog->writeLog("Error => " . $e->getMessage());
     }
