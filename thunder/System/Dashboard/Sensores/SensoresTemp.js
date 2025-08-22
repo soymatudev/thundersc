@@ -19,12 +19,12 @@ function init() {
     let formato = $(this).val();
     if(formato == "1") {
       Funciones.setComboButtom(consultar,"#comboButtom",['SENSOR']);
-      $(".consultas").hide();
-      $("#div-zonas").show();
+      $(".consultas, .grid-dev").hide();
+      $("#div-zonas, #dashboard-div").show();
     } else {
       Funciones.setComboButtom(consultar,"#comboButtom",['GRID']);
-      $(".consultas").show();
-      $("#div-zonas").hide();
+      $(".consultas, .grid-dev").show();
+      $("#div-zonas, #dashboard-div").hide();
     }
   });
 
@@ -41,7 +41,13 @@ function init() {
 
 function consultar() {
   let formato = $("#formato").val();
-  formato == "1" ? getInfoSensores() : getListado();
+  if (formato == "1") {
+    getInfoSensores();
+  } else {
+    getListado();
+    getDataChartLines();
+  }
+
 }
 
 function getInfoSensores() {
@@ -73,14 +79,14 @@ function getInfoSensores() {
 function getFormData() {
   let f_ini = $("#f_ini").val();
   let f_fin = $("#f_fin").val();
-  let formato = $("#btnSelect").val();
+  let formato = $("#select-sensores").val();
 
   return [f_ini, f_fin, formato];
 }
 
 function initCamp() {
   Componentes.zonas(uu, cc, "div-zonas");
-  $(".consultas").hide();
+  $(".consultas, .grid-dev").hide();
   Componentes.sensores(uu, cc, "div-sensores");
   $('#download-grid').prop("disabled", true);
 }
@@ -110,7 +116,8 @@ function getTermometerData() {
 }
 
 function getDataChartLines() {
-  let bridge = new Bridge(uu, cc, "System.Dashboard.Sensores.SensoresTempService.getDataLines", []);
+  let args = $("#formato").val() == "2" ? getFormData() : [];
+  let bridge = new Bridge(uu, cc, "System.Dashboard.Sensores.SensoresTempService.getDataLines", args);
   let response = bridge.databriged();
   response
     .then(response => response.json())
@@ -235,13 +242,8 @@ function sortData(data, equipo, type = "temp") {
 }
 
 function getListado() {
-  let f_ini = $("#f_ini").val();
-  let f_fin = $("#f_fin").val();
-  let sensor = $("#select-sensores").val();
-
-  let bridge = new Bridge(uu, cc, "System.Dashboard.Sensores.SensoresTempService.getListados", [f_ini, f_fin, sensor]);
+  let bridge = new Bridge(uu, cc, "System.Dashboard.Sensores.SensoresTempService.getListados", getFormData());
   let response = bridge.databriged();
-  console.log("Response: ", response);
   response
     .then(response => response.json())
     .then((data) => {

@@ -288,7 +288,7 @@ class ComponenteService
         return null;
       }
 
-      $query = "SELECT clave, nombre as descri FROM ma_equipo order by clave";
+      $query = "SELECT clave, alias as descri FROM ma_equipo order by clave";
       $stmt = new Statement($this->conn, (__DIR__));
       $res = $stmt->prepareStatement($query);
 

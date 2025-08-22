@@ -87,7 +87,11 @@ $home = <<<HTML
     <div class="container-fluid page-body-wrapper">
       <div class="main-panel content-wrapper">
 
-        <div class="card" style="padding: 6px;">
+        <div class="card grid-dev">
+          <div id="grid" class="ag-theme-balham" style="height: 45vh;"></div>
+        </div>
+
+        <div class="card" id="dashboard-div" style="padding: 6px;">
           <div class="dashboard" id="dashboard"></div>
         </div>
 
@@ -95,12 +99,6 @@ $home = <<<HTML
           <div id="chart-lines" class="ag-theme-balham col col-sm-12 col-md-6"></div>
           <div id="chart-hum" class="ag-theme-balham col col-sm-12 col-md-6"></div>
         </div>
-
-        <div class="card grid-dev">
-          <div id="grid" class="ag-theme-balham"></div>
-        </div>
-
-        
 
       </div>
     </div>
