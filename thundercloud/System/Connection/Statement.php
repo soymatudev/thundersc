@@ -17,7 +17,7 @@ class Statement
     $this->conexion = Connection::connect();
   } */
 
-  public function __construct($conexion, $path = "/thunder/thundercloud/ThunderLog/thunderlog.log") {
+  public function __construct($conexion, $path = "/var/www/html/thundersc/thundercloud/ThunderLog/Log") {
     self::$thunderlog = new Log($path);
     self::$conn = $conexion;
   }
