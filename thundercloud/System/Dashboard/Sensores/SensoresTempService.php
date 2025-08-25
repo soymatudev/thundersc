@@ -118,7 +118,7 @@ class SensoresTempService
         return null;
       }
 
-      $range = $f_ini != "" && $f_fin != "" ? "and fecha_hora between '$f_ini' and '$f_fin' " : " and fecha_hora >= CURRENT_DATE-3 ";
+      $range = $f_ini != "" && $f_fin != "" ? "and date(fecha_hora) between '$f_ini' and '$f_fin' " : " and fecha_hora >= CURRENT_DATE-3 ";
       $limit = $f_ini != "" && $f_fin != "" ? "" : " limit 15";
       $sensor = $sensor != "" ? " and a.clave = '$sensor'" : "";
 
@@ -176,7 +176,7 @@ class SensoresTempService
       and a.cve_zona = c.clave
       and a.cve_unidad = b.clave
       and a.clave = d.cve_equipo
-      and fecha_hora between :f_ini and :f_fin
+      and date(fecha_hora) between :f_ini and :f_fin
       $sensor
       order by a.nombre, fecha_hora";
       $this->thunderlog->writeLog("$query");
