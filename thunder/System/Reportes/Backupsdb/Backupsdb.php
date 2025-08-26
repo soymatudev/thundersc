@@ -41,7 +41,7 @@ $home = <<<HTML
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize" id="menuIN">
             <i class="bi bi-list menu-list"></i>
         </button>
-        <span class="title-modu">Backups DB</span>
+        <span class="title-modu">Backups</span>
         </div> 
 
         <div class="info-permi">
@@ -65,7 +65,7 @@ $home = <<<HTML
         </div>
 
         <div class="" id="comboButtom"></div>
-        
+
       </div>
     </nav>
 
