@@ -69,6 +69,55 @@ class Connection {
     }
   }
 
+  public function otherConnect($pdo) {
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../../');
+    $dotenv->load();
+    $server = $_ENV["DB_HOST_DEV"] ?: '';
+    $port = $_ENV["DB_PORT_{$pdo}_Matu"] ?: '';
+    $db = $_ENV["DB_NAME_{$pdo}_{$this->cc}_Matu"] ?: '';
+    $user = $_ENV["DB_USER_{$pdo}_Matu"] ?: '';
+    $password = $_ENV["DB_PASS_{$pdo}_Matu"] ?: '';
+
+    switch ($pdo) {
+      case 'informix':
+          $dsn = "informix:host={$server};service={$port};database={$db};protocol=onsoctcp;EnableScrollableCursors=1";
+          return $this->setConnOther($dsn, $user, $password);
+          break;
+      case 'mysql':
+          $dsn = "mysql:host={$server};port={$port};dbname={$db};charset=utf8mb4";
+          return $this->setConnOther($dsn, $user, $password);
+          break;
+      case 'pgsql':
+          $dsn = "pgsql:host={$server};port={$port};dbname={$db}";
+          return $this->setConnOther($dsn, $user, $password);
+          break;
+      case 'sqlite':
+          $dsn = "sqlite:{$db}";
+          return $this->setConnSQLite($dsn);
+          break;
+      default:
+          throw new Exception("Tipo de base de datos no soportado: {$db}");
+    }
+
+    $this->thunderlog->writeLog("=====================================================");
+    $this->thunderlog->writeLog("Connecting...");
+  }
+
+  public function setConnOther($dns, $user = null, $password = null) {
+    try {
+      self::$conn = new PDO($dns, $user, $password);
+      self::$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      // echo "Conexión exitosa a la base de datos SQLite.\n";
+      $this->thunderlog->writeLog("= Connection Correct (Production) =");
+      return self::$conn;
+    } catch (Exception $e) {
+      $this->thunderlog->writeLog("Error en la conexión de producción: " . $e->getMessage());
+      return null;
+    }
+  }
+
+  public function setConnSQLite() {}
+
   public function closeConnection() {
     self::$conn = null;
     $this->thunderlog->writeLog("= Connection Closed =");

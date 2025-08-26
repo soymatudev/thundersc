@@ -181,7 +181,7 @@ class SensoresTempService
       order by a.nombre, fecha_hora";
       $this->thunderlog->writeLog("$query");
 
-
+      $result = [];
       $stmt = new Statement($this->conn);
       $res = $stmt->prepareStatement($query);
       $res->bindParam(':f_ini', $f_ini, PDO::PARAM_STR);
