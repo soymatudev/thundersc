@@ -34,7 +34,9 @@ class BackupsdbService
       }
 
       $xperiodo = '';
-      $xperiodo = strlen($f_ini) > 0 && strlen($f_fin) > 0 ? "WHERE date(a.date) BETWEEN date('$f_ini') AND date('$f_fin')" : '';
+      $xperiodo = strlen($f_ini) > 0 && strlen($f_fin) > 0 
+      ? "WHERE date(a.date) BETWEEN date('$f_ini') AND date('$f_fin')" 
+      : 'WHERE date(a.date) BETWEEN date(today-2) AND date(today)';
 
       $query = "SELECT a.host, a.date, a.time, a.size, a.path, a.type, a.status, a.class from backups a
       $xperiodo
