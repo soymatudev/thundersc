@@ -22,6 +22,9 @@ function init() {
     });
   });
 
+  setTimeout(() => {
+    $("#menuIN").click();
+  }, 200);
   consultar();
 }
 

@@ -65,3 +65,30 @@
 .title-user{
     font-size: large;
 }
+
+@media (max-width: 480px) {
+    .dashboard {
+      gap: 1rem;
+    }
+  
+    .sensor-charts {
+      gap: 1rem;
+      padding: 0.5rem;
+    }
+  
+    .card {
+      padding: 2px !important;
+    }
+  
+    .title-modu {
+      font-size: 1rem;
+    }
+  
+    .menu-list {
+      font-size: 1.5rem;
+    }
+  
+    .title-user {
+      font-size: 1rem;
+    }
+  }
