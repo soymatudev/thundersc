@@ -54,9 +54,9 @@ class BackupsdbService
           $result[$x]['time'] = thunderToUtf8(trim($result[$x]['time']));
           $result[$x]['size'] = thunderToUtf8(trim($result[$x]['size']));
           $result[$x]['path'] = thunderToUtf8(trim($result[$x]['path']));
-          $result[$x]['status'] = $result[$x]['date'] == $today || $result[$x]['date'] == $yesterday ? "Succes" : "Warning";
+          $result[$x]['status'] = ($result[$x]['date'] == $today || $result[$x]['date'] == $yesterday) && $result[$x]['size'] != "-" ? "Succes" : "Warning";
           $result[$x]['date'] = date("d/m/Y", strtotime($result[$x]['date']));
-          $result[$x]['type'] = trim($result[$x]['type']) == "F" ? "Completo" : "Incremental";
+          $result[$x]['type'] = trim($result[$x]['type']) == "F" ? "Completo" : (trim($result[$x]['type']) == "I" ? "Incremental" : "Sin Backup");
           $result[$x]['class'] = thunderToUtf8(trim($result[$x]['class']));
         }
 
