@@ -40,7 +40,7 @@ class BackupsdbService
 
       $query = "SELECT a.host, a.date, a.time, a.size, a.path, a.type, a.status, a.class from backups a
       $xperiodo
-      order by a.date desc";
+      order by a.host, a.date desc";
       $stmt = new Statement($this->conn);
       $res = $stmt->prepareStatement($query);
       $this->thunderlog->writeLog("Query => " . $query);
