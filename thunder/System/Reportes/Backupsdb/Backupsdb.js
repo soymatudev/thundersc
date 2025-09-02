@@ -46,7 +46,7 @@ function consultar() {
         $('#download-grid').prop("disabled", false);
         grid(data.result, "#grid");
         count ++;
-        indicador();
+        indicador(data.result);
       }
     });
 }
@@ -57,10 +57,11 @@ function getFormData() {
   return [f_ini, f_fin];
 }
 
-function indicador() {
+function indicador(data) {
   $(`[col-id="status"]`).each((index, item) => {
     if(index == 0) return;
-    $(item).text() == "Succes" ? $(item).css("background-color", "#28a745") : $(item).css("background-color", "#dc3545");
+    //$(item).text() == "Succes" ? $(item).css("background-color", "#28a745") : $(item).css("background-color", "#dc3545");
+    $(item).css("background-color", data[index-1]['color']) 
     $(item).css("color", "#fff");
   })
 

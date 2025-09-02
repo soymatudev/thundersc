@@ -49,9 +49,9 @@ class API_BOT {
             $this->thunderlog->writeLog("Recibido mensaje de Telegram: chatId={$chatId}, text={$text}");
 
             // Crear instancia del bot
-            $bot = new Bot($BOT_TOKEN, $chatId, $text);
+            $bot = new Bot_Sensor($BOT_TOKEN);
 
-            $response = $bot->bot_response();
+            $response = $bot->bot_message($chatId, $text);
             ReturnEvent::returnResponse(0, "Mensaje enviado correctamente", ["Todo bien" => "Simon"]);
         } catch (Exception $e) {
             http_response_code(500);

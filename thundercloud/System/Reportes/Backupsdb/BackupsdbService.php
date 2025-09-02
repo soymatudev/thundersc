@@ -35,33 +35,49 @@ class BackupsdbService
 
       $xperiodo = '';
       $xperiodo = strlen($f_ini) > 0 && strlen($f_fin) > 0 
-      ? "WHERE date(a.date) BETWEEN date('$f_ini') AND date('$f_fin')" 
-      : 'WHERE date(a.date) BETWEEN date(CURRENT_DATE-2) AND date(CURRENT_DATE)';
+      ? "and date(a.f_movto) BETWEEN date('$f_ini') AND date('$f_fin')" 
+      : 'and date(a.f_movto) BETWEEN date(CURRENT_DATE-2) AND date(CURRENT_DATE)';
 
-      $query = "SELECT a.host, a.date, a.time, a.size, a.path, a.type, a.status, a.class from backups a
-      $xperiodo
-      order by a.host, a.date desc";
+      $query = "SELECT t.clave, t.descri,
+          COALESCE(t.date, '-') AS date, COALESCE(t.f_movto, '-') AS f_movto, COALESCE(t.time, '-') AS time,
+          COALESCE(t.size, '-') AS size, COALESCE(t.path, '-') AS path, COALESCE(t.type, '-') AS type,
+          COALESCE(t.status, '-') AS status, COALESCE(t.class, '-') AS class
+      FROM (
+          SELECT b.clave, b.descri, a.date, a.f_movto, a.time, a.size, a.path, a.type, a.status, a.class,
+              ROW_NUMBER() OVER (PARTITION BY b.clave ORDER BY a.date DESC, a.time DESC) AS rn
+          FROM ma_host b LEFT JOIN ma_backups a ON a.cve_host = b.clave
+          AND REGEXP_SUBSTR(a.size, '^[0-9]+(\.[0-9]+)?') > 0
+          order by b.clave, a.date desc
+      ) t
+      WHERE t.rn <= 1 OR t.rn IS NULL
+      ORDER BY t.clave, t.date DESC";
       $stmt = new Statement($this->conn);
       $res = $stmt->prepareStatement($query);
       $this->thunderlog->writeLog("Query => " . $query);
 
-      $today =  (new DateTime())->format('Y-m-d');
-      $yesterday =  ((new DateTime())->modify('-1 day'))->format('Y-m-d');
+      $dates = [
+        "today" => (new DateTime())->format('Y-m-d'),
+        "yesterday" => ((new DateTime())->modify('-1 day'))->format('Y-m-d'),
+        "yesterday2" => ((new DateTime())->modify('-2 day'))->format('Y-m-d')
+      ];
 
       $result = $stmt->executePreparedQuery($res);
         for ($x = 0; $x < count($result); $x++) {
-          $result[$x]['host'] = thunderToUtf8(trim($result[$x]['host']));
+          $result[$x]['clave'] = thunderToUtf8(trim($result[$x]['clave']));
+          $result[$x]['descri'] = thunderToUtf8(trim($result[$x]['descri']));
           $result[$x]['time'] = thunderToUtf8(trim($result[$x]['time']));
           $result[$x]['size'] = thunderToUtf8(trim($result[$x]['size']));
           $result[$x]['path'] = thunderToUtf8(trim($result[$x]['path']));
-          $result[$x]['status'] = ($result[$x]['date'] == $today || $result[$x]['date'] == $yesterday) && $result[$x]['size'] != "-" ? "Succes" : "Warning";
+          $result[$x]['status'] = ($result[$x]['date'] == $dates['today'] || $result[$x]['date'] == $dates['yesterday']) && $result[$x]['size'] != "-" ? "Succes" : "Warning";
+          $result[$x]['color'] = $this->setColor($result[$x]['date'], $result[$x]['size'], $dates);
           $result[$x]['date'] = date("d/m/Y", strtotime($result[$x]['date']));
           $result[$x]['type'] = trim($result[$x]['type']) == "F" ? "Completo" : (trim($result[$x]['type']) == "I" ? "Incremental" : "Sin Backup");
           $result[$x]['class'] = thunderToUtf8(trim($result[$x]['class']));
         }
 
         $headerGrid = [
-          ["headerName" => "Servidor", "field" => "host", "width" => 120],
+          ["headerName" => "Servidor", "field" => "clave", "width" => 120],
+          ["headerName" => "Nombre", "field" => "descri", "width" => 120],
           ["headerName" => "Fecha", "field" => "date", "width" => 120],
           ["headerName" => "Hora", "field" => "time", "width" => 120],
           ["headerName" => "Ruta", "field" => "path", "width" => 200],
@@ -76,6 +92,25 @@ class BackupsdbService
     } catch (Exception $e) {
       $this->thunderlog->writeLog("Error => " . $e->getMessage());
     }
+  }
+
+  public function setColor($date, $size, $dates = []) {
+    $color = "";
+    preg_match('/^(\d*\.?\d+)\s*([A-Za-z]+)?$/', $size, $sizereal);
+    if ($date == $dates['today'] || $date == $dates['yesterday']) {
+      $color = "#28a745"; // Verde
+    } elseif ($date == $dates['yesterday2']) {
+      $color = "#ffc107"; // Amarillo
+    } else {
+      $color = "#dc3545"; // Rojo
+    }
+    if ($size == "-") {
+      $color = "#dc3545"; // Rojo si no hay backup
+    } else if ($sizereal[2] == 'M' || ($sizereal[2] == "G" && $sizereal[1] < 20)) {
+      $color = "#ffc107"; // Rojo si no hay fecha
+    }
+    
+    return $color;
   }
 
   public function getAlmacenes($uu, $cc, $args)

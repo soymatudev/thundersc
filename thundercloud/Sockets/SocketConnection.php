@@ -240,11 +240,18 @@ class SocketConnection
             $this->thunderlog->writeLog("Enviando datos al bot de Telegra\n m");
 
             $msg = $temperatura != null ? "🌡️ Sensor: $sensor \n" . "Temperatura: $temperatura \n" . "Humedad: $humedad" : "Error: Sin Datos";
-            $chatId = 7325450079;
+            //$chatId = 7325450079;
             $text = "\n $msg";
+
+            /* foreach ($chatIds as $chat) {
+                $chatId = $chat['clave'];
+                $this->thunderlog->writeLog("Enviando mensaje a chatId: " . $chatId);
+                $bot = new Bot($BOT_TOKEN, $chatId, $text);
+                $response = $bot->bot_response();
+            } */
     
-            $bot = new Bot($BOT_TOKEN, $chatId, $text);
-            $response = $bot->bot_response();
+            $bot = new Bot_Sensor($BOT_TOKEN);
+            $response = $bot->bot_response("SITE", $text);
             $this->thunderlog->writeLog("Datos enviados al bot de Telegram correctamente");
         } catch (Exception $e) {
             $this->thunderlog->writeLog("Error al enviar datos al bot de Telegram: " . $e->getMessage());
