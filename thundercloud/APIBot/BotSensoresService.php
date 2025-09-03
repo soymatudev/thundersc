@@ -34,7 +34,7 @@ class Bot_Sensor
         $chatIds = $this->getChatids($type_chat);
         foreach($chatIds as $chat) {
             $data = [
-                'chat_id' => $chat,
+                'chat_id' => $chat['clave'],
                 'text' => "🤖 Thundersc: \"{$text}\""
             ];
     
