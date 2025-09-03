@@ -249,9 +249,15 @@ class SocketConnection
                 $bot = new Bot($BOT_TOKEN, $chatId, $text);
                 $response = $bot->bot_response();
             } */
-    
-            $bot = new Bot_Sensor($BOT_TOKEN);
-            $response = $bot->bot_response("SITE", $text);
+            if (floatval(trim($temperatura)) > 23.0) {
+                $text = "⚠️ Alerta de Temperatura Alta! ⚠️\n\n" . $msg;
+                $bot = new Bot_Sensor($BOT_TOKEN);
+                $response = $bot->bot_response("SITE", $text);
+            } else {
+                $text = "✅ Temperatura Normal ✅\n\n" . $msg;
+                $bot = new Bot_Sensor($BOT_TOKEN);
+                $response = $bot->bot_response("GEN", $text);
+            }
             $this->thunderlog->writeLog("Datos enviados al bot de Telegram correctamente");
         } catch (Exception $e) {
             $this->thunderlog->writeLog("Error al enviar datos al bot de Telegram: " . $e->getMessage());
