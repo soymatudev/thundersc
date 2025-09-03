@@ -57,8 +57,8 @@ class Bot_Sensor
         ReturnEvent::returnResponse(0, "Mensaje enviado correctamente", ["Todo bien" => "Simon"]);
     }
 
-    function bot_message($chat_id, $text) {
-            $chat_exists = $this->setChatId($chat_id);
+    function bot_message($chat_id, $text, $usuario, $type_chat = 'GEN') {
+            $chat_exists = $this->setChatId($chat_id, $usuario, $type_chat);
             if (!$chat_exists) {
                 $text = "No se pudo registrar el chatId en la base de datos";
                 //ReturnEvent::returnResponse(1, "Error al registrar chatId", "No se pudo registrar el chatId en la base de datos");
@@ -84,7 +84,7 @@ class Bot_Sensor
         ReturnEvent::returnResponse(0, "Mensaje enviado correctamente", ["Todo bien" => "Simon"]);
     }
 
-    function setChatId($chatid) {
+    function setChatId($chatid, $usuario = 'Usuario', $type_chat = 'GEN') {
         try {
             $this->conn = (new Connection(null, ['1-API_BOT-PCZMEX']))->connect();
             if (!$this->conn) {
@@ -102,10 +102,12 @@ class Bot_Sensor
             if (count($result) > 0) {
                 return true;
             } else {
-                $insertQuery = "INSERT INTO ma_chatids (clave, nombre, tipo, bot) VALUES (:chatId, 'Usuario', 'GEN', 'N')";
+                $insertQuery = "INSERT INTO ma_chatids (clave, nombre, tipo, bot) VALUES (:chatId, :usuario, :type_chat, 'N')";
                 $stmt = new Statement($this->conn, (null));
                 $res = $stmt->prepareStatement($insertQuery);
                 $res->bindParam(':chatId', $chatid, PDO::PARAM_STR);
+                $res->bindParam(':usuario', $usuario, PDO::PARAM_STR);
+                $res->bindParam(':type_chat', $type_chat, PDO::PARAM_STR);
                 $insertResult = $stmt->executePreparedQuery($res);
 
                 if ($insertResult) {

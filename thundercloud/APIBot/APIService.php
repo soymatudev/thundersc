@@ -37,6 +37,7 @@ class API_BOT {
         
             $chatId = $body['message']['chat']['id'] ?? null;
             $text = $body['message']['text'] ?? null;
+            $usuario = $body['message']['from']['first_name'] ?? 'Desconocido';
         
             if (!$chatId || !$text) {
                 // Silenciosamente ignorar
@@ -51,7 +52,7 @@ class API_BOT {
             // Crear instancia del bot
             $bot = new Bot_Sensor($BOT_TOKEN);
 
-            $response = $bot->bot_message($chatId, $text);
+            $response = $bot->bot_message($chatId, $text, $usuario, 'SITE');
             ReturnEvent::returnResponse(0, "Mensaje enviado correctamente", ["Todo bien" => "Simon"]);
         } catch (Exception $e) {
             http_response_code(500);
