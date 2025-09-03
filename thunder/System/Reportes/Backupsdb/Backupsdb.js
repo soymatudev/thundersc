@@ -46,7 +46,7 @@ function consultar() {
         $('#download-grid').prop("disabled", false);
         grid(data.result, "#grid");
         count ++;
-        indicador(data.result);
+        //indicador(data.result);
       }
     });
 }
@@ -80,7 +80,27 @@ function grid(data, div = "#grid", pivote=false, data_total = false, single = fa
   if (data_total) totales = data.pop();
 
   const gridOptions = {
-          columnDefs: data.pop(),
+          columnDefs: [
+            { headerName: "Servidor", field: "clave", width: 120 },
+            { headerName: "Nombre", field: "descri", width: 120 },
+            { headerName: "Fecha", field: "date", width: 120 },
+            { headerName: "Hora", field: "time", width: 120 },
+            { headerName: "Ruta", field: "path", width: 200 },
+            { headerName: "Tamaño", field: "size", width: 120 },
+            { headerName: "Tipo", field: "type", width: 120 },
+            { 
+              headerName: "Status", 
+              field: "status", 
+              width: 120, 
+              cellStyle: { color: "#fff", textAlign: "center" },
+              cellClassRules: {
+                "success": params => params.value === "success",
+                "warning": params => params.value === "warning",
+                "danger": params => params.value === "danger"
+              }
+            },
+            { headerName: "Calsif", field: "class", width: 120 }
+          ],
           defaultColDef: {
               sortable: true,
               filter: true,

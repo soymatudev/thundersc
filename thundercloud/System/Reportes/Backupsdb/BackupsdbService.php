@@ -68,7 +68,7 @@ class BackupsdbService
           $result[$x]['time'] = thunderToUtf8(trim($result[$x]['time']));
           $result[$x]['size'] = thunderToUtf8(trim($result[$x]['size']));
           $result[$x]['path'] = thunderToUtf8(trim($result[$x]['path']));
-          $result[$x]['status'] = ($result[$x]['date'] == $dates['today'] || $result[$x]['date'] == $dates['yesterday']) && $result[$x]['size'] != "-" ? "Succes" : "Warning";
+          $result[$x]['status'] =  $this->setColor($result[$x]['date'], $result[$x]['size'], $dates);
           $result[$x]['color'] = $this->setColor($result[$x]['date'], $result[$x]['size'], $dates);
           $result[$x]['date'] = date("d/m/Y", strtotime($result[$x]['date']));
           $result[$x]['type'] = trim($result[$x]['type']) == "F" ? "Completo" : (trim($result[$x]['type']) == "I" ? "Incremental" : "Sin Backup");
@@ -83,11 +83,11 @@ class BackupsdbService
           ["headerName" => "Ruta", "field" => "path", "width" => 200],
           ["headerName" => "Tamano", "field" => "size", "width" => 120],
           ["headerName" => "Tipo", "field" => "type", "width" => 120],
-          ["headerName" => "Status", "field" => "status", "width" => 120],
+          ["headerName" => "Status", "field" => "status", "width" => 120, "cellStyle" => ['color' => 'white']],
           ["headerName" => "Calsif", "field" => "class", "width" => 120]
         ];
 
-        array_push($result, $headerGrid);
+        //array_push($result, $headerGrid);
         ReturnEvent::returnResponse(0, "Datos obtennidos con exito", $result);
     } catch (Exception $e) {
       $this->thunderlog->writeLog("Error => " . $e->getMessage());
@@ -95,22 +95,27 @@ class BackupsdbService
   }
 
   public function setColor($date, $size, $dates = []) {
-    $color = "";
+    $color = ""; $class = "";
     preg_match('/^(\d*\.?\d+)\s*([A-Za-z]+)?$/', $size, $sizereal);
     if ($date == $dates['today'] || $date == $dates['yesterday']) {
       $color = "#28a745"; // Verde
+      $class = "success";
     } elseif ($date == $dates['yesterday2']) {
       $color = "#ffc107"; // Amarillo
+      $class = "warning";
     } else {
       $color = "#dc3545"; // Rojo
+      $class = "danger";
     }
     if ($size == "-") {
       $color = "#dc3545"; // Rojo si no hay backup
+      $class = "danger";
     } else if ($sizereal[2] == 'M' || ($sizereal[2] == "G" && $sizereal[1] < 20)) {
       $color = "#ffc107"; // Rojo si no hay fecha
+      $class = "warning";
     }
     
-    return $color;
+    return $class;
   }
 
   public function getAlmacenes($uu, $cc, $args)
