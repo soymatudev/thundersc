@@ -256,7 +256,7 @@ class SocketConnection
             } else {
                 $text = "✅ Temperatura Normal ✅\n\n" . $msg;
                 $bot = new Bot_Sensor($BOT_TOKEN);
-                $response = $bot->bot_response("GEN", $text);
+                $response = $bot->bot_response("SITE", $text);
             }
             $this->thunderlog->writeLog("Datos enviados al bot de Telegram correctamente");
         } catch (Exception $e) {
