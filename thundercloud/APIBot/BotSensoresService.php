@@ -86,7 +86,7 @@ class Bot_Sensor
 
     function setChatId($chatid, $usuario = 'Usuario', $type_chat = 'GEN') {
         try {
-            $this->conn = (new Connection(null, ['PCZMEX']))->connect();
+            $this->conn = (new Connection(null, 'PCZMEX'))->connect();
             if (!$this->conn) {
             $this->thunderlog->writeLog("Error de conexión" . $this->conn);
             return null;
@@ -125,7 +125,7 @@ class Bot_Sensor
 
     function getChatids($type_chat) {
         try {
-            $this->conn = (new Connection(null, ['PCZMEX']))->connect();
+            $this->conn = (new Connection(null, 'PCZMEX'))->connect();
             if (!$this->conn) {
             $this->thunderlog->writeLog("Error de conexión" . $this->conn);
             return null;
