@@ -237,7 +237,7 @@ class SocketConnection
             $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../');
             $dotenv->load();
             $BOT_TOKEN = $_ENV['TELEGRAM_BOT_TOKEN'] ?: ''; // Logica para escoger el token del bot
-            $this->thunderlog->writeLog("Enviando datos al bot de Telegra\n m");
+            $this->thunderlog->writeLog("Enviando datos al bot de Telegram");
 
             $msg = $temperatura != null ? "🌡️ Sensor: $sensor \n" . "Temperatura: $temperatura \n" . "Humedad: $humedad" : "Error: Sin Datos";
             //$chatId = 7325450079;
@@ -249,7 +249,7 @@ class SocketConnection
                 $bot = new Bot($BOT_TOKEN, $chatId, $text);
                 $response = $bot->bot_response();
             } */
-            if (floatval(trim($temperatura)) > 23.0) {
+            if (floatval($temperatura) > 23.0) {
                 $text = "⚠️ Alerta de Temperatura Alta! ⚠️\n\n" . $msg;
                 $bot = new Bot_Sensor($BOT_TOKEN);
                 $response = $bot->bot_response("SITE", $text);
