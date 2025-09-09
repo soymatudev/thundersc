@@ -150,7 +150,7 @@ class SocketConnection
                 $res = $stmt->prepareStatement($query);
 
                 $data = explode(",", $data);
-                $nombre = $result[0]['nombre'];
+                $nombre = $result[0]['alias'] ?: $result[0]['nombre'];
 
                 $this->thunderlog->writeLog("data => " . print_r($data, true));
                 $res->bindParam(':cve_equipo', $result[0]['clave'], PDO::PARAM_STR);
@@ -239,6 +239,9 @@ class SocketConnection
             $BOT_TOKEN = $_ENV['TELEGRAM_BOT_TOKEN'] ?: ''; // Logica para escoger el token del bot
             $this->thunderlog->writeLog("Enviando datos al bot de Telegram");
 
+            $temperatura = empty($temperatura) ? 0 : floatval($temperatura) - 1.5;
+            $humedad = empty($humedad) ? 0 : floatval($humedad) - 1.5;
+
             $msg = $temperatura != null ? "🌡️ Sensor: $sensor \n" . "Temperatura: $temperatura \n" . "Humedad: $humedad" : "Error: Sin Datos";
             //$chatId = 7325450079;
             $text = "\n $msg";
@@ -249,12 +252,12 @@ class SocketConnection
                 $bot = new Bot($BOT_TOKEN, $chatId, $text);
                 $response = $bot->bot_response();
             } */
-            if (floatval($temperatura) > 23.0) {
+            if ($temperatura > 23.0) {
                 $text = "\n ⚠️ Alerta de Temperatura Alta! ⚠️\n\n" . $msg;
                 $bot = new Bot_Sensor($BOT_TOKEN);
                 $response = $bot->bot_response("SITE", $text);
                 $this->thunderlog->writeLog("Datos enviados al bot de Telegram correctamente");
-            } else if(floatval($temperatura) < 3.0) {
+            } else if($temperatura < 3.0) {
                 $text = "\n ⚠️ Alerta de Temperatura Baja! ⚠️\n\n" . $msg;
                 $bot = new Bot_Sensor($BOT_TOKEN);
                 $response = $bot->bot_response("SITE", $text);
