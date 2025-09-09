@@ -252,6 +252,8 @@ class SocketConnection
                 $bot = new Bot($BOT_TOKEN, $chatId, $text);
                 $response = $bot->bot_response();
             } */
+
+            $this->thunderlog->writeLog($msg);
             if ($temperatura > 23.0) {
                 $text = "\n ⚠️ Alerta de Temperatura Alta! ⚠️\n\n" . $msg;
                 $bot = new Bot_Sensor($BOT_TOKEN);
