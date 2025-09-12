@@ -44,7 +44,7 @@ class BackupsdbService
           COALESCE(t.status, '-') AS status, COALESCE(t.class, '-') AS class
       FROM (
           SELECT b.clave, b.descri, a.date, a.f_movto, a.time, a.size, a.path, a.type, a.status, a.class,
-              ROW_NUMBER() OVER (PARTITION BY b.clave ORDER BY a.date DESC, a.time DESC) AS rn
+              ROW_NUMBER() OVER (PARTITION BY b.clave ORDER BY a.date DESC, a.type ASC, a.time DESC) AS rn
           FROM ma_host b LEFT JOIN ma_backups a ON a.cve_host = b.clave
           AND REGEXP_SUBSTR(a.size, '^[0-9]+(\.[0-9]+)?') > 0
           order by b.clave, a.date desc
