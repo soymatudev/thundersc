@@ -118,11 +118,11 @@ class SensoresTempService
         return null;
       }
 
-      $range = $f_ini != "" && $f_fin != "" ? "and date(fecha_hora) between '$f_ini' and '$f_fin' " : " and fecha_hora >= CURRENT_DATE-3 ";
+      $range = $f_ini != "" && $f_fin != "" ? " date(fecha_hora) between '$f_ini' and '$f_fin' " : "  fecha_hora >= CURRENT_DATE - INTERVAL '3 day' ";
       $limit = $f_ini != "" && $f_fin != "" ? "" : " limit 15";
       $sensor = $sensor != "" ? " and a.clave = '$sensor'" : "";
 
-      $query = "SELECT a.nombre, a.serie, a.modelo, b.descri as unidad, c.nombre as zona, a.alias, a.materia, d.fecha_hora, d.dato_1 as temp, d.dato_2 as hum 
+      /* $query = "SELECT a.nombre, a.serie, a.modelo, b.descri as unidad, c.nombre as zona, a.alias, a.materia, d.fecha_hora, d.dato_1 as temp, d.dato_2 as hum 
       from ma_equipo a, ma_unidad b, de_zona c, ma_regzoro d
       where cve_unidad = 'TEM'
       and a.cve_zona = c.clave
@@ -130,7 +130,18 @@ class SensoresTempService
       and a.clave = d.cve_equipo
       $range
       $sensor
-      order by a.nombre, fecha_hora desc $limit";
+      order by a.nombre, fecha_hora desc $limit"; */
+
+      $query = "SELECT a.nombre, a.serie, a.modelo, b.descri as unidad, c.nombre as zona, a.alias, a.materia, d.fecha_hora, d.dato_1 as temp, d.dato_2 as hum
+      FROM ma_equipo a, ma_unidad b, de_zona c, ma_regzoro d
+      WHERE cve_unidad = 'TEM'
+        AND a.cve_zona = c.clave
+        AND a.cve_unidad = b.clave
+        AND a.clave = d.cve_equipo
+        AND d.fecha_hora >= NOW() - INTERVAL '12 hour'
+        $sensor
+      ORDER BY a.nombre, d.fecha_hora DESC;
+      ";
       $this->thunderlog->writeLog("$query");
 
       $stmt = new Statement($this->conn);
@@ -153,7 +164,7 @@ class SensoresTempService
       $equipos = array_unique(array_column($result, 'alias'));
       array_push($result, $equipos);
 
-      //$this->thunderlog->writeLog("Result => " . print_r($result, true));
+      $this->thunderlog->writeLog("Result => " . print_r($result, true));
       ReturnEvent::returnResponse(0, "Datos obtenidos con exito", $result);
     } catch (Exception $e) {
         $this->thunderlog->writeLog("Error => " . $e->getMessage());
@@ -168,8 +179,8 @@ class SensoresTempService
         return null;
       }
 
-      //$sensor = isset($sensor) ? " and a.clave = '$sensor'" : "";
-      $sensor = "";
+      $sensor = isset($sensor) ? " and a.clave = '$sensor'" : "";
+      //$sensor = "";
       $query = "SELECT a.nombre, a.serie, a.modelo, b.descri as unidad, c.nombre as zona, a.alias, a.materia, d.fecha_hora, d.dato_1 as temp, d.dato_2 as hum 
       from ma_equipo a, ma_unidad b, de_zona c, ma_regzoro d
       where cve_unidad = 'TEM'

@@ -129,9 +129,8 @@ function getDataChartLines() {
           text: data.result,
         })
       } else {
-        data = data.result;
-        chartLines(data, "#chart-lines");
-        chartHumLines(data, "#chart-hum");
+        chartLines([...data.result], "#chart-lines");
+        chartHumLines(data.result, "#chart-hum");
       }
     });
 }
