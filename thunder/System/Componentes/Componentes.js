@@ -47,6 +47,7 @@ class Componentes{
                 </select>
              `);
             $("#select-almacen").select2();
+            $("#select-sensores").next().css("width", "100%")
         });
     }
 
@@ -71,6 +72,7 @@ class Componentes{
                 </select>
              `);
             $("#select-empleado").select2();
+            $("#select-sensores").next().css("width", "100%")
         });
     }
 
@@ -95,6 +97,7 @@ class Componentes{
                 </select>
                 `);
             $("#select-marca").select2();
+            $("#select-sensores").next().css("width", "100%")
         });
     }
 
@@ -119,6 +122,7 @@ class Componentes{
                 </select>
                 `);
             $("#select-departamento").select2();
+            $("#select-sensores").next().css("width", "100%")
         });
     }
 
@@ -143,6 +147,7 @@ class Componentes{
                 </select>
                 `);
             $("#select-clasificacion").select2();
+            $("#select-sensores").next().css("width", "100%")
         });
     }
 
@@ -167,6 +172,7 @@ class Componentes{
                 </select>
                 `);
             $("#select-zonas").select2();
+            $("#select-sensores").next().css("width", "100%")
         });
     }
 
