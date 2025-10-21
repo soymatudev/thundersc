@@ -47,7 +47,6 @@ function consultar() {
     getListado();
     getDataChartLines();
   }
-
 }
 
 function getInfoSensores() {
@@ -108,7 +107,7 @@ function getTermometerData() {
         $("#dashboard").html("");
         data = data.result;
         data.forEach(item => {
-          new Thermometer(".dashboard", item.nombre, item.alias, item.temp, -10, 30, false, "Fahrenheit", true);
+          new Thermometer(".dashboard", item.nombre, item.alias, item.temp, -10, 30, false, "Celcius", true, item.socket_port);
         });
       
       }

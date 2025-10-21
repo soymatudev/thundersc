@@ -10,6 +10,7 @@ class Thermometer {
 		withInputs = false,
 		unit = 'Fahrenheit',
 		reload = false,
+		socket_port = 3000,
 		height = 100,
 		width = 20,
 	) {
@@ -24,6 +25,7 @@ class Thermometer {
 		this.nombre = nombre;
 		this.alias = alias;
 		this.reload = reload;
+		this.socket_port = socket_port;
 
 		this.config = {
 			minTemp: this.minTemperature,
@@ -115,7 +117,7 @@ class Thermometer {
 	updateSockets() {
 		let sensores = this.nombre;
 		sensores += "*web";
-		let bridge = new Bridge(uu, cc, "Sockets.SocketConnection.socketHTTP", [sensores]);
+		let bridge = new Bridge(uu, cc, "Sockets.SocketConnection.socketHTTP", [sensores, this.socket_port]);
 		let response = bridge.databriged();
 		
 		response

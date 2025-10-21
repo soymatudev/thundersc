@@ -75,7 +75,8 @@ class SensoresTempService
   
         $query = "SELECT a.clave, a.nombre, a.serie, a.modelo, b.descri as unidad, c.nombre as zona, a.alias, a.materia, d.fecha_hora, 
         case when d.fecha_hora >= NOW() - INTERVAL '2 hour' then d.dato_1 else '0.0' end as temp, 
-        case when d.fecha_hora >= NOW() - INTERVAL '2 hour' then d.dato_2 else '0.0' end as hum 
+        case when d.fecha_hora >= NOW() - INTERVAL '2 hour' then d.dato_2 else '0.0' end as hum,
+        case when socket_port is not null then socket_port else '0000' end as socket_port
                 from ma_equipo a, ma_unidad b, de_zona c, ma_regzoro d
                 where cve_unidad = 'TEM'
                 and a.cve_zona = c.clave
@@ -100,6 +101,7 @@ class SensoresTempService
                 $result[$x]['materia'] = thunderToUtf8(trim($result[$x]['materia']));
                 $result[$x]['temp'] = $result[$x]['temp'] == 0.0 ? 0.0 : $result[$x]['temp'] - 1.5;
                 $result[$x]['hum'] = $result[$x]['hum'] == 0.0 ? 0.0 : $result[$x]['hum'] - 1.5;
+                $result[$x]['socket_port'] = thunderToUtf8(trim($result[$x]['socket_port']));
             }
 
             ReturnEvent::returnResponse(0, "Datos obtenidos con exito", $result);
@@ -166,7 +168,7 @@ class SensoresTempService
       $equipos = array_unique(array_column($result, 'alias'));
       array_push($result, $equipos);
 
-      $this->thunderlog->writeLog("Result => " . print_r($result, true));
+      $this->thunderlog->writeLog("Result => " . count($result));
       ReturnEvent::returnResponse(0, "Datos obtenidos con exito", $result);
     } catch (Exception $e) {
         $this->thunderlog->writeLog("Error => " . $e->getMessage());

@@ -27,6 +27,7 @@ class SocketConnection
         $this->conn = null;
         $this->thunderlog = new Log(null, $uu);
         $this->host = '192.168.10.100';
+        //$this->host = '127.0.0.1';
         $this->port = $port ?? 1085;
         /* $this->host = '127.0.0.1';
         $this->port = 3000; */
@@ -175,27 +176,66 @@ class SocketConnection
         }
     }
 
-    function socketHTTP($uu = null, $cc = null, $data)
+    function socketHTTP($uu = null, $cc = null, $data, $port = null)
     {
         try {
+            $this->port = $port ?? $this->port;
+
             $socketHTTP = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
             if ($socketHTTP === false) {
                 $this->thunderlog->writeLog("Error => " . socket_strerror(socket_last_error()));
                 ReturnEvent::returnResponse(1, "Error al crear el socket", socket_strerror(socket_last_error()));
             }
 
-            $this->thunderlog->writeLog("Conectando al servidor en " . $this->host . ":" . $this->port);
-            if (!socket_connect($socketHTTP, $this->host, $this->port)) {
-                $this->thunderlog->writeLog("Error => " . socket_strerror(socket_last_error($socketHTTP)));
-                ReturnEvent::returnResponse(1, "Error al conectar al servidor", socket_strerror(socket_last_error($socketHTTP)));
-            }
-            $data = $data === 'ALL' ? $data : $data . "|" . $uu . "|" . $cc;
+            if ($data === 'ALL'){
+            $ports = $this->getPorts($cc);
 
-            socket_write($socketHTTP, $data);
+                foreach($ports as $port) {
+                    $this->thunderlog->writeLog("Conectando al servidor en " . $this->host . ":" . $port);
+                    if (!socket_connect($socketHTTP, $this->host, $port)) {
+                        $this->thunderlog->writeLog("Error => " . socket_strerror(socket_last_error($socketHTTP)));
+                        ReturnEvent::returnResponse(1, "Error al conectar al servidor", socket_strerror(socket_last_error($socketHTTP)));
+                    }
+                    $data = $data === 'ALL' ? $data : $data . "|" . $uu . "|" . $cc;
+                    socket_write($socketHTTP, $data);
+                }
+            } else {
+                $this->thunderlog->writeLog("Conectando al servidor en " . $this->host . ":" . $this->port);
+                if (!socket_connect($socketHTTP, $this->host, $this->port)) {
+                    $this->thunderlog->writeLog("Error => " . socket_strerror(socket_last_error($socketHTTP)));
+                    ReturnEvent::returnResponse(1, "Error al conectar al servidor", socket_strerror(socket_last_error($socketHTTP)));
+                }
+                $data = $data . "|" . $uu . "|" . $cc;
+                socket_write($socketHTTP, $data);
+            }
             ReturnEvent::returnResponse(0, "", "Datos enviados correctamente");
         } catch (Exception $e) {
             $this->thunderlog->writeLog("Error => " . $e->getMessage());
             ReturnEvent::returnResponse(1, "Error al procesar la solicitud", $e->getMessage());
+        }
+    }
+
+    function getPorts($cc) {
+        try {
+
+            $this->conn = (new Connection(null, $cc))->connect();
+            if (!$this->conn) {
+                $this->thunderlog->writeLog("Error de conexión" . $this->conn);
+                return null;
+            }
+
+            $query = "SELECT distinct socket_port FROM ma_equipo";
+            $this->thunderlog->writeLog("Query => " . $query);
+            $stmt = new Statement($this->conn, (null));
+            $res = $stmt->prepareStatement($query);
+            $result = $stmt->executePreparedQuery($res);
+
+            $this->thunderlog->writeLog("Ports => " . print_r($result, true));
+
+            return $result;
+        } catch (Exception $e) {
+            $this->thunderlog->writeLog("Error => " . $e->getMessage());
+            return 0;
         }
     }
 
