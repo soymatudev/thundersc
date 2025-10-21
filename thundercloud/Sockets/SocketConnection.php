@@ -187,11 +187,11 @@ class SocketConnection
                 ReturnEvent::returnResponse(1, "Error al crear el socket", socket_strerror(socket_last_error()));
             }
 
-            if ($data === 'ALL'){
+            if (strpos($data, 'ALL') !== false) {
             $ports = $this->getPorts($cc);
 
                 foreach($ports as $port) {
-                    $this->thunderlog->writeLog("Conectando al servidor en " . $this->host . ":" . $port);
+                    $this->thunderlog->writeLog("ALL >> Conectando al servidor en " . $this->host . ":" . $port);
                     if (!socket_connect($socketHTTP, $this->host, $port)) {
                         $this->thunderlog->writeLog("Error => " . socket_strerror(socket_last_error($socketHTTP)));
                         ReturnEvent::returnResponse(1, "Error al conectar al servidor", socket_strerror(socket_last_error($socketHTTP)));
@@ -200,7 +200,7 @@ class SocketConnection
                     socket_write($socketHTTP, $data);
                 }
             } else {
-                $this->thunderlog->writeLog("Conectando al servidor en " . $this->host . ":" . $this->port);
+                $this->thunderlog->writeLog("Solo >> Conectando al servidor en " . $this->host . ":" . $this->port);
                 if (!socket_connect($socketHTTP, $this->host, $this->port)) {
                     $this->thunderlog->writeLog("Error => " . socket_strerror(socket_last_error($socketHTTP)));
                     ReturnEvent::returnResponse(1, "Error al conectar al servidor", socket_strerror(socket_last_error($socketHTTP)));

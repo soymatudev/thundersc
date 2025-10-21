@@ -126,16 +126,6 @@ class SensoresTempService
       $limit = $f_ini != "" && $f_fin != "" ? "" : " limit 15";
       $sensor = $sensor != "" ? " and a.clave = '$sensor'" : "";
 
-      /* $query = "SELECT a.nombre, a.serie, a.modelo, b.descri as unidad, c.nombre as zona, a.alias, a.materia, d.fecha_hora, d.dato_1 as temp, d.dato_2 as hum 
-      from ma_equipo a, ma_unidad b, de_zona c, ma_regzoro d
-      where cve_unidad = 'TEM'
-      and a.cve_zona = c.clave
-      and a.cve_unidad = b.clave
-      and a.clave = d.cve_equipo
-      $range
-      $sensor
-      order by a.nombre, fecha_hora desc $limit"; */
-
       $query = "SELECT a.nombre, a.serie, a.modelo, b.descri as unidad, c.nombre as zona, a.alias, a.materia, d.fecha_hora, d.dato_1 as temp, d.dato_2 as hum
       FROM ma_equipo a, ma_unidad b, de_zona c, ma_regzoro d
       WHERE cve_unidad = 'TEM'
