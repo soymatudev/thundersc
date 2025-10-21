@@ -22,12 +22,12 @@ class SocketConnection
     private $port = null;
     private $clientes = [];
 
-    public function __construct($uu)
+    public function __construct($uu, $port = 1085)
     {
         $this->conn = null;
         $this->thunderlog = new Log(null, $uu);
         $this->host = '192.168.10.100';
-        $this->port = 1085;
+        $this->port = $port ?? 1085;
         /* $this->host = '127.0.0.1';
         $this->port = 3000; */
     }
@@ -284,17 +284,18 @@ function main()
         global $argv;
 
         // Esperar argumentos: uu, cc, función, args
-        if (count($argv) > 3) {
+        if (count($argv) > 4) {
             echo "\nUso: php SocketConnection.php <uu> <cc> <function> [args...]\n";
             exit(1);
         }
 
         $function = $argv[1];
-        $uu = isset($argv[2]) ? $argv[2] : 'Cli';
-        $cc = isset($argv[3]) ? $argv[3] : '';
-        $args = array_slice($argv, 4);
-
-        $componenteService = new SocketConnection($uu);
+        $port = $argv[2] ?? null;
+        $uu = isset($argv[3]) ? $argv[3] : 'Cli';
+        $cc = isset($argv[4]) ? $argv[4] : '';
+        $args = array_slice($argv, 5);
+        
+        $componenteService = new SocketConnection($uu, $port);
         $componenteService->$function($uu);
     } else {
         // Leer el cuerpo de la solicitud HTTP
