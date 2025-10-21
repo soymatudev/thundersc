@@ -191,6 +191,7 @@ class SocketConnection
             $ports = $this->getPorts($cc);
 
                 foreach($ports as $port) {
+                    $port = $port['socket_port'];
                     $this->thunderlog->writeLog("ALL >> Conectando al servidor en " . $this->host . ":" . $port);
                     if (!socket_connect($socketHTTP, $this->host, $port)) {
                         $this->thunderlog->writeLog("Error => " . socket_strerror(socket_last_error($socketHTTP)));
