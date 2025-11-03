@@ -66,7 +66,6 @@ class Bot_Sensor
 
             if (!$chat_exists) $text = "No se pudo registrar el chatId en la base de datos";
 
-            $data = [];
             if ($type === 'callback') {
                 $MENU = new CallBackService();
                 $data = $MENU->callBackResponse($data['chat_id'], $data['callbackData']);
