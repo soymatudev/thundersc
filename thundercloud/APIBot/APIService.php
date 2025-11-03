@@ -44,6 +44,8 @@ class API_BOT {
                 $data = $this->getDataMessage($body);
                 $type = 'message';
             }
+
+            $this->thunderlog->writeLog("Datos del mensaje recibido: " . print_r($data));
         
             if (!$data['chatId'] || (isset($data['text']) && isset($data['texdatat']) )) {
                 // Silenciosamente ignorar
@@ -69,7 +71,7 @@ class API_BOT {
 
     function getDataMessage($body) {
         return [
-            'chatId' => $body['message']['chat']['id'] ?? null,
+            'chat_id' => $body['message']['chat']['id'] ?? null,
             'text' => $body['message']['text'] ?? null,
             'usuario' => $body['message']['from']['first_name'] ?? 'Desconocido'
         ];
@@ -77,7 +79,7 @@ class API_BOT {
 
     function getDataCallback($body) {
         return [
-            'chatId' => $body['callback_query']['message']['chat']['id'] ?? $body['callback_query']['from']['id'] ?? null,
+            'chat_id' => $body['callback_query']['message']['chat']['id'] ?? $body['callback_query']['from']['id'] ?? null,
             'data' => $body['callback_query']['data'] ?? null,
             'usuario' => $body['callback_query']['from']['first_name'] ?? 'Desconocido',
             'callbackData' => $body['callback_query']['data'] ?? null,
