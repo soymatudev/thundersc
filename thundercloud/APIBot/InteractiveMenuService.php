@@ -88,9 +88,9 @@ class InteractiveMenuService
         $data = [
             'chat_id' => $chat_id,
             'text' => "Seleccione el sensor al que se desea registrar:",
-            'reply_markup' => json_encode([
+            'reply_markup' => [
                 'inline_keyboard' => $inline_keyboard,
-            ]),
+            ],
         ];
 
         return json_encode($data);
