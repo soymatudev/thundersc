@@ -47,7 +47,7 @@ class API_BOT {
 
             $this->thunderlog->writeLog("Datos del mensaje recibido: " . print_r($data));
         
-            if (!$data['chatId'] || (isset($data['text']) && isset($data['texdatat']) )) {
+            if (!$data['chat_id'] || (isset($data['text']) && isset($data['data']) )) {
                 // Silenciosamente ignorar
                 header('Content-Type: application/json');
                 $this->thunderlog->writeLog("Datos incompletos: chatId o text no proporcionados");
@@ -62,8 +62,8 @@ class API_BOT {
             $response = $bot->bot_message($data, $type, 'SITE');
             ReturnEvent::returnResponse(0, "Mensaje enviado correctamente", ["Todo bien" => "Simon"]);
         } catch (Exception $e) {
-            http_response_code(500);
             $this->thunderlog->writeLog("Error al procesar la solicitud: " . $e->getMessage());
+            http_response_code(500);
             header('Content-Type: application/json');
             ReturnEvent::returnResponse(1, "Error del servidor", $e->getMessage());
         }
