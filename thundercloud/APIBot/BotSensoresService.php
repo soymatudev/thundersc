@@ -66,6 +66,7 @@ class Bot_Sensor
 
             if (!$chat_exists) $text = "No se pudo registrar el chatId en la base de datos";
 
+            $data = [];
             if ($type === 'callback') {
                 $MENU = new CallBackService();
                 $data = $MENU->callBackResponse($data['chat_id'], $data['callbackData']);
@@ -94,6 +95,7 @@ class Bot_Sensor
 
     function setChatId($chatid, $usuario = 'Usuario', $type_chat = 'GEN') {
         try {
+            $this->thunderlog->writeLog("Revisando ChatIds");
             $this->conn = (new Connection(null, 'PCZMEX'))->connect();
             if (!$this->conn) {
             $this->thunderlog->writeLog("Error de conexión" . $this->conn);
