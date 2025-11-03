@@ -17,6 +17,11 @@ class CallBackService
     private $thunderlog = null;
     private $conn = null;
 
+    function __construct()
+    {
+        $this->thunderlog = new Log(null, "API_BOT");
+    }
+
     function callBackResponse ($chat_id, $callback_query) {
         try {
             $this->conn = (new Connection(null, 'PCZMEX'))->connect();
@@ -36,6 +41,8 @@ class CallBackService
     }
 
     function setUsuxSensor ($chat_id, $callback_query) {
+        $this->thunderlog->writeLog("Callback recibido: " . $callback_query);
+
         $sensor_clave = explode("_", $callback_query)[1];
         $descri = explode("_", $callback_query)[2];
 

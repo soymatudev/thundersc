@@ -17,6 +17,11 @@ class InteractiveMenuService
     private $thunderlog = null;
     private $conn = null;
 
+    function __construct()
+    {
+        $this->thunderlog = new Log(null, "API_BOT");
+    }
+
     function getSensores() {
         try {
             $this->conn = (new Connection(null, 'PCZMEX'))->connect();
@@ -41,15 +46,15 @@ class InteractiveMenuService
     }
 
     function getInteractiveMenu($chat_id, $text) {
-        
-        if(!strpos($text, "/")) {
+        $this->thunderlog->writeLog("Comando recibido: " . $text);
+        /* if(!strpos($text, "/")) {
             $data = [
                 'chat_id' => $chat_id,
                 'text' => "🤖 Thundersc: \"{$text}\""
             ];
             return $data;
-        }
-
+        } */
+        
         if ($text === "/start") {
             return $this->command_start($chat_id, $text);
         }
