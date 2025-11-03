@@ -46,6 +46,18 @@ class CallBackService
         $sensor_clave = explode("_", $callback_query)[1];
         $descri = explode("_", $callback_query)[2];
 
+        $insertQuery = "SELECT COUNT(*) as total FROM ma_sesus WHERE cve_usu = '{$chat_id}' AND cve_ses = '{$sensor_clave}'";
+        $stmt = new Statement($this->conn, (null));
+        $res = $stmt->prepareStatement($insertQuery);
+        $insertResult = $stmt->executePreparedQuery($res);
+
+        if ($insertResult[0]['total'] > 0) {
+            return [
+                'chat_id' => $chat_id,
+                'text' => "⚠️ Ya estás registrado para el sensor: {$descri}",
+            ];
+        }
+
         $insertQuery = "INSERT INTO ma_sesus(cve_usu, cve_ses, cns_sn, alt_sn, baj_sn, cam_sn)
             VALUES ('{$chat_id}', '{$sensor_clave}', 'S', 'N', 'N', 'N')";
         $stmt = new Statement($this->conn, (null));
