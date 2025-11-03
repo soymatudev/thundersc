@@ -45,7 +45,7 @@ class API_BOT {
                 $type = 'message';
             }
 
-            $this->thunderlog->writeLog("Datos del mensaje recibido: " . print_r($data));
+            $this->thunderlog->writeLog("Datos del mensaje recibido: " . json_encode($data));
         
             if (!$data['chat_id'] || (isset($data['text']) && isset($data['data']) )) {
                 // Silenciosamente ignorar
@@ -55,7 +55,7 @@ class API_BOT {
                 exit;
             }
 
-            $this->thunderlog->writeLog("Recibido mensaje de Telegram: chatId={$data['chatId']}, text=".($data['text'] ?? $data['data']));
+            //$this->thunderlog->writeLog("Recibido mensaje de Telegram: chatId={$data['chatId']}, text=".($data['text'] ?? $data['data']));
 
             // Crear instancia del bot
             $bot = new Bot_Sensor($BOT_TOKEN);
