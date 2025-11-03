@@ -73,7 +73,7 @@ class API_BOT {
         $text = str_replace('\\', '', $body['message']['text']);
         return [
             'chat_id' => $body['message']['chat']['id'] ?? null,
-            'text' => $body['message']['text'] ?? null,
+            'text' => $text ?? null,
             'usuario' => $body['message']['from']['first_name'] ?? 'Desconocido'
         ];
     }
