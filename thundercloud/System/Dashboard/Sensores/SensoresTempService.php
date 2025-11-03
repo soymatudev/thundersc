@@ -33,10 +33,12 @@ class SensoresTempService
         }
   
         $query = "SELECT a.clave, a.nombre, a.serie, a.modelo, b.descri as unidad, c.nombre as zona, a.alias, a.materia 
-        from ma_equipo a, ma_unidad b, de_zona c 
+        from ma_equipo a, ma_unidad b, de_zona c, ma_sesus d
         where cve_unidad = 'TEM'
         and a.cve_zona = c.clave
-        and a.cve_unidad = b.clave";
+        and a.cve_unidad = b.clave
+        and a.clave = cast(d.cve_ses as integer)
+        and d.cve_usu = '".explode("-", $uu)[0]."'";
         $stmt = new Statement($this->conn, (null));
         $res = $stmt->prepareStatement($query);
   
@@ -77,11 +79,13 @@ class SensoresTempService
         case when d.fecha_hora >= NOW() - INTERVAL '2 hour' then d.dato_1 else '0.0' end as temp, 
         case when d.fecha_hora >= NOW() - INTERVAL '2 hour' then d.dato_2 else '0.0' end as hum,
         case when socket_port is not null then socket_port else '0000' end as socket_port
-                from ma_equipo a, ma_unidad b, de_zona c, ma_regzoro d
+                from ma_equipo a, ma_unidad b, de_zona c, ma_regzoro d, ma_sesus e
                 where cve_unidad = 'TEM'
                 and a.cve_zona = c.clave
                 and a.cve_unidad = b.clave
                 and a.clave = d.cve_equipo
+                and a.clave = cast(e.cve_ses as integer)
+                and e.cve_usu = '".explode("-", $uu)[0]."'
                 and fecha_hora = (SELECT MAX(fecha_hora) FROM ma_regzoro WHERE cve_equipo = a.clave)";
         $query .= $nombre ? " and a.nombre = '$nombre'" : "";
         $stmt = new Statement($this->conn, (null));
@@ -127,11 +131,13 @@ class SensoresTempService
       $sensor = $sensor != "" ? " and a.clave = '$sensor'" : "";
 
       $query = "SELECT a.nombre, a.serie, a.modelo, b.descri as unidad, c.nombre as zona, a.alias, a.materia, d.fecha_hora, d.dato_1 as temp, d.dato_2 as hum
-      FROM ma_equipo a, ma_unidad b, de_zona c, ma_regzoro d
+      FROM ma_equipo a, ma_unidad b, de_zona c, ma_regzoro d, ma_sesus e
       WHERE cve_unidad = 'TEM'
         AND a.cve_zona = c.clave
         AND a.cve_unidad = b.clave
         AND a.clave = d.cve_equipo
+        AND a.clave = cast(e.cve_ses as integer)
+        and e.cve_usu = '".explode("-", $uu)[0]."'
         AND d.fecha_hora >= NOW() - INTERVAL '12 hour'
         $sensor
       ORDER BY a.nombre, d.fecha_hora DESC;
@@ -176,11 +182,13 @@ class SensoresTempService
       $sensor = isset($sensor) ? " and a.clave = '$sensor'" : "";
       //$sensor = "";
       $query = "SELECT a.nombre, a.serie, a.modelo, b.descri as unidad, c.nombre as zona, a.alias, a.materia, d.fecha_hora, d.dato_1 as temp, d.dato_2 as hum 
-      from ma_equipo a, ma_unidad b, de_zona c, ma_regzoro d
+      from ma_equipo a, ma_unidad b, de_zona c, ma_regzoro d, ma_sesus e
       where cve_unidad = 'TEM'
       and a.cve_zona = c.clave
       and a.cve_unidad = b.clave
       and a.clave = d.cve_equipo
+      and a.clave = cast(e.cve_ses as integer)
+      and e.cve_usu = '".explode("-", $uu)[0]."'
       and date(fecha_hora) between :f_ini and :f_fin
       $sensor
       order by a.nombre, fecha_hora";

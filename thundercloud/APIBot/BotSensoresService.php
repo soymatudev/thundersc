@@ -11,6 +11,9 @@ require_once(__DIR__ . '/../System/Connection/Statement.php');
 require_once(__DIR__ . '/../ThunderLog/ThunderLog.php');
 require_once(__DIR__ . '/../vendor/autoload.php');
 
+require_once(__DIR__ . '/InteractiveMenuService.php');
+require_once(__DIR__ . '/CallBackService.php');
+
 class Bot_Sensor
 {
     private $token = null;
@@ -57,18 +60,19 @@ class Bot_Sensor
         ReturnEvent::returnResponse(0, "Mensaje enviado correctamente", ["Todo bien" => "Simon"]);
     }
 
-    function bot_message($chat_id, $text, $usuario, $type_chat = 'GEN') {
+    function bot_message($data, $type, $type_chat = 'GEN') {
         try {
-            $chat_exists = $this->setChatId($chat_id, $usuario, $type_chat);
-            if (!$chat_exists) {
-                $text = "No se pudo registrar el chatId en la base de datos";
-                //ReturnEvent::returnResponse(1, "Error al registrar chatId", "No se pudo registrar el chatId en la base de datos");
+            $chat_exists = $this->setChatId($data['chat_id'], $data['usuario'], $type_chat);
+
+            if (!$chat_exists) $text = "No se pudo registrar el chatId en la base de datos";
+
+            if ($type === 'callback') {
+                $MENU = new CallBackService();
+                $data = $MENU->callBackResponse($data['chat_id'], $data['callbackData']);
+            } else {
+                $MENU = new InteractiveMenuService();
+                $data = $MENU->getInteractiveMenu($data['chat_id'], $data['text']);
             }
-    
-            $data = [
-                'chat_id' => $chat_id,
-                'text' => "🤖 Thundersc: \"{$text}\""
-            ];
     
             $options = [
                 'http' => [
@@ -81,7 +85,6 @@ class Bot_Sensor
             $this->thunderlog->writeLog("Enviando mensaje a Telegram: " . json_encode($data));
             $context  = stream_context_create($options);
             $response = file_get_contents($this->TELEGRAM_API, false, $context);
-        
             ReturnEvent::returnResponse(0, "Mensaje enviado correctamente", ["Todo bien" => "Simon"]);
         } catch(Exception $e) {
             $this->thunderlog->writeLog("Error al enviar mensaje: " . $e->getMessage());
@@ -128,7 +131,7 @@ class Bot_Sensor
         }
     }
 
-    function getChatids($type_chat) {
+    function getChatids($type_chat, $alias) {
         try {
             $this->conn = (new Connection(null, 'PCZMEX'))->connect();
             if (!$this->conn) {
@@ -136,7 +139,12 @@ class Bot_Sensor
             return null;
             }
 
-            $query = "SELECT clave, nombre FROM ma_chatids WHERE bot = 'N' and tipo = '{$type_chat}'";
+            $query = "SELECT a.clave, a.nombre from ma_chatids a, ma_sesus b, ma_equipo c
+            where cast(a.clave as char(11)) = b.cve_usu
+            and b.cns_sn = 'S'
+            and c.clave = b.cve_ses
+            and a.bot = 'N'
+            and c.alias like '%".trim($alias)."%'";
             $stmt = new Statement($this->conn, (null));
             $res = $stmt->prepareStatement($query);
             $result = $stmt->executePreparedQuery($res);
@@ -148,4 +156,5 @@ class Bot_Sensor
             return [];
         }
     }
-}
+
+ }
