@@ -32,9 +32,9 @@ class Bot_Sensor
         $this->conn = null;
     }
 
-    function bot_response($type_chat, $text)
+    function bot_response($type_chat, $text, $sensor)
     {
-        $chatIds = $this->getChatids($type_chat);
+        $chatIds = $this->getChatids($type_chat, $sensor);
         foreach($chatIds as $chat) {
             $data = [
                 'chat_id' => $chat['clave'],

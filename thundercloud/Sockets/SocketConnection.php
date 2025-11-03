@@ -298,12 +298,12 @@ class SocketConnection
             if ($temperatura > 23.0) {
                 $text = "\n ⚠️ Alerta de Temperatura Alta! ⚠️\n\n" . $msg;
                 $bot = new Bot_Sensor($BOT_TOKEN);
-                $response = $bot->bot_response("SITE", $text);
+                $response = $bot->bot_response("SITE", $text, $sensor);
                 $this->thunderlog->writeLog("Datos enviados al bot de Telegram correctamente");
             } else if($temperatura < 3.0) {
                 $text = "\n ⚠️ Alerta de Temperatura Baja! ⚠️\n\n" . $msg;
                 $bot = new Bot_Sensor($BOT_TOKEN);
-                $response = $bot->bot_response("SITE", $text);
+                $response = $bot->bot_response("SITE", $text, $sensor);
                 $this->thunderlog->writeLog("Datos enviados al bot de Telegram correctamente");
             } /* else {
                 $text = "✅ Temperatura Normal ✅\n\n" . $msg;
