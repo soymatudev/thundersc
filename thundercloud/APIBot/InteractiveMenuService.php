@@ -93,6 +93,6 @@ class InteractiveMenuService
             ],
         ];
 
-        return json_encode($data);
+        return $data;
     }
 }

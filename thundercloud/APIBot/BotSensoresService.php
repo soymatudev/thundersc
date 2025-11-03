@@ -82,7 +82,7 @@ class Bot_Sensor
                 ],
             ];
             
-            $this->thunderlog->writeLog("Enviando mensaje a Telegram: " . $data);
+            $this->thunderlog->writeLog("Enviando mensaje a Telegram: " . json_encode($data));
             $context  = stream_context_create($options);
             $response = file_get_contents($this->TELEGRAM_API, false, $context);
             ReturnEvent::returnResponse(0, "Mensaje enviado correctamente", ["Todo bien" => "Simon"]);
