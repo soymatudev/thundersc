@@ -26,7 +26,7 @@ class SocketConnection
     {
         $this->conn = null;
         $this->thunderlog = new Log(null, $uu);
-        $this->host = '192.168.10.100';
+        $this->host = '148.230.206.170';
         //$this->host = '127.0.0.1';
         $this->port = $port ?? 1085;
         /* $this->host = '127.0.0.1';
