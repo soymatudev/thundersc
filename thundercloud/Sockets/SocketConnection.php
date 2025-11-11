@@ -11,6 +11,7 @@ require_once('../ReturnEvent/ReturnEvent.php');
 require_once('../System/Connection/Statement.php');
 require_once('../ThunderLog/ThunderLog.php');
 require_once('../vendor/autoload.php');
+require_once(__DIR__ . '/Events/MenuEvent.php');
 require_once(__DIR__ . '/../APIBot/BotSensoresService.php');
 
 class SocketConnection
@@ -26,11 +27,10 @@ class SocketConnection
     {
         $this->conn = null;
         $this->thunderlog = new Log(null, $uu);
-        $this->host = '148.230.206.170';
-        //$this->host = '127.0.0.1';
+        //$this->host = '148.230.206.170';
         $this->port = $port ?? 1085;
-        /* $this->host = '127.0.0.1';
-        $this->port = 3000; */
+        $this->host = '127.0.0.1';
+        $this->port = 3000;
     }
 
     function socketCreate()
@@ -87,7 +87,6 @@ class SocketConnection
                         if ($mensaje === "exit" || $mensaje === "bye") {
 
                             $this->socketClose($sock);
-
                             continue;
                         } else if (str_contains($mensaje, "ALL")) {
 
@@ -106,7 +105,9 @@ class SocketConnection
                             if (str_contains($mensaje, "*web")) {
                                 $this->socketClose($sock);
                             } else {
-                                $result = $this->socketQuery($uu, $cc, $data, $sock);
+                                $infosensor = $this->getInfoSensor($uu, $cc, $data);
+                                $MenuEvent = new MenuEvent();
+                                $result = $MenuEvent->getMenuEvent($uu, $cc, $data, $infosensor);
                                 $result ? socket_write($sock, "Datos insertados correctamente. \n") : socket_write($sock, "Error al procesar la consulta");
                             }
                         } else {
@@ -118,7 +119,7 @@ class SocketConnection
         }
     }
 
-    function socketQuery($uu, $cc, $data, $client)
+    function getInfoSensor($uu, $cc, $data)
     {
         try {
             $this->conn = (new Connection(null, $cc))->connect();
@@ -126,46 +127,16 @@ class SocketConnection
                 $this->thunderlog->writeLog("Error de conexión" . $this->conn);
                 return null;
             }
-            $this->thunderlog->writeLog("Parseando data");
+            $nombre = explode(",", $data)[0];
 
-            $datosoc = $data;
-            $valorhwd = $this->format($datosoc);
-            if (strlen($data) <= 0) {
-                $this->thunderlog->writeLog("Error al parsear data");
-                return null;
-            }
-
-            $equipos = $data === 'ALL' ? "nombre like '%Temp%'" : "nombre in (" . trim($valorhwd) . ")";
-
-            $query = "SELECT * FROM ma_equipo where $equipos";
+            $query = "SELECT * FROM ma_equipo where nombre in ('$nombre')";
             $this->thunderlog->writeLog("Query => " . $query);
             $stmt = new Statement($this->conn, (null));
             $res = $stmt->prepareStatement($query);
             $result = $stmt->executePreparedQuery($res);
 
             if (count($result) > 0) {
-
-                $query = "insert into ma_regzoro(cve_equipo, fecha_hora, dato_1, dato_2) values(:cve_equipo, now(), :dato_1, :dato_2)";
-                $this->thunderlog->writeLog("Query => " . $query);
-                $stmt = new Statement($this->conn, (null));
-                $res = $stmt->prepareStatement($query);
-
-                $data = explode(",", $data);
-                $nombre = $result[0]['alias'] ?: $result[0]['nombre'];
-
-                $this->thunderlog->writeLog("data => " . print_r($data, true));
-                $res->bindParam(':cve_equipo', $result[0]['clave'], PDO::PARAM_STR);
-                $res->bindParam(':dato_1', $data[1], PDO::PARAM_STR);
-                $res->bindParam(':dato_2', $data[2], PDO::PARAM_STR);
-
-                $this->thunderlog->writeLog("Por ejecutar la consulta");
-                $result = $stmt->executePreparedQuery($res);
-                $this->thunderlog->writeLog("Consulta ejecutada correctamente");
-
-                $this->thunderlog->writeLog("Llamando a Boty");
-                $this->BotTemp($data[1], $data[2], $nombre);
-
-                return $result ? 1 : 0;
+                return $result[0];
             } else {
                 $this->thunderlog->writeLog("Equipos no encontrados");
                 ReturnEvent::returnResponse(1, "Equipos no encontrados", "Error en la consulta");
@@ -188,9 +159,9 @@ class SocketConnection
             }
 
             if (strpos($data, 'ALL') !== false) {
-            $ports = $this->getPorts($cc);
+                $ports = $this->getPorts($cc);
 
-                foreach($ports as $port) {
+                foreach ($ports as $port) {
                     $port = $port['socket_port'];
                     $this->thunderlog->writeLog("ALL >> Conectando al servidor en " . $this->host . ":" . $port);
                     if (!socket_connect($socketHTTP, $this->host, $port)) {
@@ -216,7 +187,8 @@ class SocketConnection
         }
     }
 
-    function getPorts($cc) {
+    function getPorts($cc)
+    {
         try {
 
             $this->conn = (new Connection(null, $cc))->connect();
@@ -260,62 +232,6 @@ class SocketConnection
             $this->thunderlog->writeLog("Error al cerrar el socket del cliente.");
         }
     }
-
-
-    function format($data)
-    {
-        $b = explode(",", $data);
-        $c = [];
-        foreach ($b as $item) {
-            $item = trim($item);
-            $c[] = "'$item'";
-        }
-        return implode(",", $c);
-    }
-    
-    function BotTemp($temperatura = null, $humedad = null, $sensor = null) {
-        try {
-            $dotenv = Dotenv\Dotenv::createImmutable(__DIR__.'/../');
-            $dotenv->load();
-            $BOT_TOKEN = $_ENV['TELEGRAM_BOT_TOKEN'] ?: ''; // Logica para escoger el token del bot
-            $this->thunderlog->writeLog("Enviando datos al bot de Telegram");
-
-            $temperatura = empty($temperatura) ? 0 : floatval($temperatura) - 1.5;
-            $humedad = empty($humedad) ? 0 : floatval($humedad) - 1.5;
-
-            $msg = $temperatura != null ? "🌡️ Sensor: $sensor \n" . "Temperatura: $temperatura \n" . "Humedad: $humedad" : "Error: Sin Datos";
-            //$chatId = 7325450079;
-            $text = "\n $msg";
-
-            /* foreach ($chatIds as $chat) {
-                $chatId = $chat['clave'];
-                $this->thunderlog->writeLog("Enviando mensaje a chatId: " . $chatId);
-                $bot = new Bot($BOT_TOKEN, $chatId, $text);
-                $response = $bot->bot_response();
-            } */
-
-            $this->thunderlog->writeLog($msg);
-            if ($temperatura > 23.0) {
-                $text = "\n ⚠️ Alerta de Temperatura Alta! ⚠️\n\n" . $msg;
-                $bot = new Bot_Sensor($BOT_TOKEN);
-                $response = $bot->bot_response("SITE", $text, $sensor);
-                $this->thunderlog->writeLog("Datos enviados al bot de Telegram correctamente");
-            } else if($temperatura < 3.0) {
-                $text = "\n ⚠️ Alerta de Temperatura Baja! ⚠️\n\n" . $msg;
-                $bot = new Bot_Sensor($BOT_TOKEN);
-                $response = $bot->bot_response("SITE", $text, $sensor);
-                $this->thunderlog->writeLog("Datos enviados al bot de Telegram correctamente");
-            } /* else {
-                $text = "✅ Temperatura Normal ✅\n\n" . $msg;
-                $bot = new Bot_Sensor($BOT_TOKEN);
-                $response = $bot->bot_response("SITE", $text);
-            } */
-            $this->thunderlog->writeLog("");
-        } catch (Exception $e) {
-            $this->thunderlog->writeLog("Error al enviar datos al bot de Telegram: " . $e->getMessage());
-            ReturnEvent::returnResponse(1, "Error al enviar datos al bot de Telegram", $e->getMessage());
-        }
-    }
 }
 
 function main()
@@ -335,7 +251,7 @@ function main()
         $uu = isset($argv[3]) ? $argv[3] : 'Cli';
         $cc = isset($argv[4]) ? $argv[4] : '';
         $args = array_slice($argv, 5);
-        
+
         $componenteService = new SocketConnection($uu, $port);
         $componenteService->$function($uu);
     } else {
