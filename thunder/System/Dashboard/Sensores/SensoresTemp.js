@@ -170,8 +170,8 @@ function chartLines (data, div = "", min_temp = 10, max_temp = 22) {
         label: {
           format: "#{.1f} °C",
         },
-        min: min_temp-10,
-        max: max_temp+10,
+        min: parseFloat(min_temp)-10,
+        max: parseFloat(max_temp)+10,
       },
     ],
   };
