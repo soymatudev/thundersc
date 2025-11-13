@@ -75,7 +75,7 @@ class SensoresTempService
           return null;
         }
   
-        $query = "SELECT a.clave, a.nombre, a.serie, a.modelo, b.descri as unidad, c.nombre as zona, a.alias, a.materia, d.fecha_hora, 
+        $query = "SELECT a.clave, a.nombre, a.serie, a.modelo, b.descri as unidad, c.nombre as zona, a.alias, a.materia, d.fecha_hora, a.adc_1 as d_max, a.adc_3 as d_min,
         case when d.fecha_hora >= NOW() - INTERVAL '2 hour' then d.dato_1 else '0.0' end as temp, 
         case when d.fecha_hora >= NOW() - INTERVAL '2 hour' then d.dato_2 else '0.0' end as hum,
         case when socket_port is not null then socket_port else '0000' end as socket_port
@@ -163,6 +163,7 @@ class SensoresTempService
     
       $equipos = array_unique(array_column($result, 'alias'));
       array_push($result, $equipos);
+      array_push($result, ["d_max" => max(array_column($result, 'temp')), "d_min" => min(array_column($result, 'temp'))]);
 
       $this->thunderlog->writeLog("Result => " . count($result));
       ReturnEvent::returnResponse(0, "Datos obtenidos con exito", $result);

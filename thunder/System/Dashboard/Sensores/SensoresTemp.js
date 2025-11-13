@@ -107,7 +107,7 @@ function getTermometerData() {
         $("#dashboard").html("");
         data = data.result;
         data.forEach(item => {
-          new Thermometer(".dashboard", item.nombre, item.alias, item.temp, -10, 30, false, "Celcius", true, item.socket_port);
+          new Thermometer(".dashboard", item.nombre, item.alias, item.temp, (parseFloat(item.d_min)-13), (parseFloat(item.d_max)+13), false, "Celcius", true, item.socket_port);
         });
       
       }
@@ -128,13 +128,14 @@ function getDataChartLines() {
           text: data.result,
         })
       } else {
-        chartLines([...data.result], "#chart-lines");
+        let data_limits = data.result.pop();
+        chartLines([...data.result], "#chart-lines", data_limits[0], data_limits[1]);
         chartHumLines(data.result, "#chart-hum");
       }
     });
 }
 
-function chartLines (data, div = "") {
+function chartLines (data, div = "", min_temp = 10, max_temp = 22) {
   $(div).html("");
   equipos = data.pop();
   series = [];
@@ -167,10 +168,10 @@ function chartLines (data, div = "") {
         type: "number",
         position: "left",
         label: {
-          format: "#{.1f} °F",
+          format: "#{.1f} °C",
         },
-        min: 10,
-        max: 22,
+        min: min_temp-10,
+        max: max_temp+10,
       },
     ],
   };
