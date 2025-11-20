@@ -111,8 +111,10 @@ $home = <<<HTML
   </script>
 
 <script src="../../Componentes/Thermometer/Thermometer.js"></script>
+<script src="../../Componentes/Silo/Silo.js"></script>
   <script src="./SensoresTemp.js"></script>
   <link rel="stylesheet" href="../../Componentes/Thermometer/Thermometer.css">
+  <link rel="stylesheet" href="../../Componentes/Silo/Silo.css">
 </body>
 
 </html>

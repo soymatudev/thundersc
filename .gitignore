@@ -1,13 +1,65 @@
-**/process.log
-**/thunderlog.log
-**.log
-**.env
-**.sql
-**.png
-**.jpeg
-**/node_modules/
-**vendor/*
-**composer.lock
-**.env
-**/vendor/
-**.out
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+### Node ###
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+pnpm-debug.log
+
+
+# testing
+/coverage
+
+# production
+/build
+/dist
+
+# misc
+.DS_Store
+.env.local
+.env*.local
+.cache
+.parcel-cache
+.vscode/
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# Backend specific
+api/node_modules/
+api/.env
+api/build/
+api/dist/
+api/logs/
+
+# Frontend specific
+client/node_modules/
+client/.env
+client/build/
+client/dist/
+client/.vite/
+
+### JetBrains ###
+.idea/
+
+### VS Code ###
+.vscode/
+
+### Mac OS ###
+.DS_Store
+
+### Extras ###
+*.out
+*thundercloud/.env
+*thundercloud/composer.lock
+*thunder/template/assets/images/LogoThunderCube.png

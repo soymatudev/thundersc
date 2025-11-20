@@ -67,15 +67,17 @@ class SensoresTempService
     }
   }
 
-  function getUltTemp($uu, $cc, $nombre = null) {
+  function getUltTemp($uu, $cc, $cve_zona = null) {
     try {
         $this->conn = (new Connection(null, $cc))->connect();
         if (!$this->conn) {
           $this->thunderlog->writeLog("Error de conexión" . $this->conn);
           return null;
         }
+
+        $cve_zona = strlen($cve_zona) > 0 ? " and a.cve_zona = $cve_zona" : "";
   
-        $query = "SELECT a.clave, a.nombre, a.serie, a.modelo, b.descri as unidad, c.nombre as zona, a.alias, a.materia, d.fecha_hora, a.adc_1 as d_max, a.adc_3 as d_min,
+        $query = "SELECT a.clave, a.nombre, a.serie, a.modelo, a.cve_unidad, b.descri as unidad, c.nombre as zona, a.alias, a.materia, d.fecha_hora, a.adc_1 as d_max, a.adc_3 as d_min,
         case when d.fecha_hora >= NOW() - INTERVAL '2 hour' then d.dato_1 else '0.0' end as temp, 
         case when d.fecha_hora >= NOW() - INTERVAL '2 hour' then d.dato_2 else '0.0' end as hum,
         case when socket_port is not null then socket_port else '0000' end as socket_port
@@ -86,8 +88,8 @@ class SensoresTempService
                 and a.clave = d.cve_equipo
                 and a.clave = cast(e.cve_ses as integer)
                 and e.cve_usu = '".explode("-", $uu)[0]."'
-                and fecha_hora = (SELECT MAX(fecha_hora) FROM ma_regzoro WHERE cve_equipo = a.clave)";
-        $query .= $nombre ? " and a.nombre = '$nombre'" : "";
+                and fecha_hora = (SELECT MAX(fecha_hora) FROM ma_regzoro WHERE cve_equipo = a.clave)
+                $cve_zona";
         $stmt = new Statement($this->conn, (null));
         $res = $stmt->prepareStatement($query);
   
@@ -118,7 +120,7 @@ class SensoresTempService
     }
   }
 
-  function getDataLines($uu, $cc, $f_ini = null, $f_fin = null, $sensor = null) {
+  function getDataLines($uu, $cc, $f_ini = null, $f_fin = null, $cve_element = null, $type = null) {
     try {
       $this->conn = (new Connection(null, $cc))->connect();
       if (!$this->conn) {
@@ -128,7 +130,12 @@ class SensoresTempService
 
       $range = $f_ini != "" && $f_fin != "" ? " date(fecha_hora) between '$f_ini' and '$f_fin' " : "  fecha_hora >= CURRENT_DATE - INTERVAL '3 day' ";
       $limit = $f_ini != "" && $f_fin != "" ? "" : " limit 15";
-      $sensor = $sensor != "" ? " and a.clave = '$sensor'" : "";
+      $element = "";
+      if($type == "zona") {
+        $element = $cve_element != "" ? " and a.cve_zona = '$cve_element'" : "";
+      } else if ($type == "sensor"){
+        $element = $cve_element != "" ? " and a.clave = '$cve_element'" : "";
+      }
 
       $query = "SELECT a.nombre, a.serie, a.modelo, b.descri as unidad, c.nombre as zona, a.alias, a.materia, d.fecha_hora, d.dato_1 as temp, d.dato_2 as hum
       FROM ma_equipo a, ma_unidad b, de_zona c, ma_regzoro d, ma_sesus e
@@ -139,7 +146,7 @@ class SensoresTempService
         AND a.clave = cast(e.cve_ses as integer)
         and e.cve_usu = '".explode("-", $uu)[0]."'
         AND d.fecha_hora >= NOW() - INTERVAL '12 hour'
-        $sensor
+        $element
       ORDER BY a.nombre, d.fecha_hora DESC;
       ";
       $this->thunderlog->writeLog("$query");
@@ -172,7 +179,7 @@ class SensoresTempService
     }
   }
 
-  function getListados($uu, $cc, $f_ini, $f_fin, $sensor = null) {
+  function getListados($uu, $cc, $f_ini, $f_fin, $sensor = null, $type = null) {
     try {
       $this->conn = (new Connection(null, $cc))->connect();
       if (!$this->conn) {

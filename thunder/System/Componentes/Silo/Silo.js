@@ -74,7 +74,7 @@ class Silo {
                 <div class="silo-pied"></div>
             </div>
 
-            <div class="info-permi">
+            <div class="info-permi" style="color: #000;">
                 <p class="unit">${this.alias}</p>
                 <button class="icon-permi ${
                   !this.reload ? "d-none" : ""
@@ -82,7 +82,7 @@ class Silo {
                     <i class="bi bi-arrow-repeat"></i>
                 </button>
             </div>
-            <p class="distance-display" id="distance-${uniqueID}">Distancia: ${
+            <p class="distance-display" style="display: none;" id="distance-${uniqueID}">Distancia: ${
       this.distance
     } ${this.unit}</p>
             

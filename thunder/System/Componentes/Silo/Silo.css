@@ -1,0 +1,160 @@
+:root {
+    --silo-width: 85px;
+    --silo-height: 190px;
+    --silo-cuve-height: calc(var(--silo-height) * 0.8);
+    --silo-pied-height: calc(var(--silo-height) * 0.5);
+    --pourcent-font-size: 1rem;
+    --border-size: 5px;
+    --border-pied-size: 8px;
+
+    --border-color: #c0c7d0;
+    --border-pied-color: #b1b7bf;
+    --white: #ffffff;
+    --success: #05daaf;
+    --danger: #fd3037;
+    --warning: #ffdc00;
+    --primary: #5145cd;
+    /* Polígono: Tapa Cilindro (50% 0) a Cono Abajo (52% 100) */
+    --polygon: polygon(
+      50% 0%,
+      100% 0,
+      100% 70%,
+      52% 100%,
+      48% 100%,
+      0 70%,
+      0 0
+    );
+    /* Polígono para el Techo/Chapeau */
+    --polygon-chapeau: polygon(
+      52% 0%,
+      48% 0%,
+      0% 85%,
+      0% 100%,
+      100% 100%,
+      100% 85%
+    );
+  }
+
+  .silo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .silo {
+    position: relative;
+    width: var(--silo-width);
+    height: var(--silo-height);
+    margin-right: 1rem;
+  }
+
+  .silo-chapeau {
+    width: 100%;
+    height: calc(var(--silo-height) * 0.1);
+    background: var(--border-pied-color);
+    clip-path: var(--polygon-chapeau);
+    z-index: 3; /* Z-index alto para que esté encima */
+  }
+
+  /* Base/Soportes */
+  .silo-pied {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: var(--silo-pied-height);
+    border-bottom: 2px solid var(--border-pied-color);
+  }
+  .silo-pied:before,
+  .silo-pied:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: var(--border-pied-size);
+    height: 100%;
+    background: var(--border-pied-color);
+  }
+  .silo-pied:before {
+    left: calc(var(--border-size) * 2);
+  }
+  .silo-pied:after {
+    right: calc(var(--border-size) * 2);
+    left: auto;
+  }
+
+  /* Borde Exterior (La capa gris más grande) */
+  .silo-bordure-ext {
+    width: 100%;
+    height: var(--silo-cuve-height);
+    background: var(--border-color);
+    clip-path: var(--polygon);
+    z-index: 2;
+    position: absolute;
+    top: calc(
+      var(--silo-height) * 0.1 - 2px
+    ); /* Alinear justo debajo del chapeau */
+  }
+
+  /* Borde Interior (La capa blanca que da el efecto de profundidad) */
+  .silo-bordure-int {
+    width: calc(var(--silo-width) - var(--border-size) * 2);
+    height: calc(var(--silo-cuve-height) - var(--border-size));
+    margin-left: var(--border-size);
+    background: white;
+    clip-path: var(--polygon);
+    z-index: 1;
+  }
+
+  /* Contenido del Silo (El contenedor de la animación) */
+  .silo-contenu {
+    position: relative;
+    width: calc(var(--silo-width) - var(--border-size) * 4);
+    height: calc(var(--silo-cuve-height) - var(--border-size) * 2);
+    margin-left: var(--border-size);
+    background: white;
+    clip-path: var(--polygon);
+    overflow: hidden; /* Importante para que el llenado no se salga */
+  }
+
+  /* Lógica de colores (Aplicada a .silo-contenu por JS) */
+  .silo-contenu.plein .niveau {
+    background: var(--success);
+  }
+  .silo-contenu.intermediaire .niveau {
+    background: var(--warning);
+  }
+  .silo-contenu.vide .niveau {
+    background: var(--danger);
+  }
+  .silo-contenu.vide .pourcent {
+    color: var(--danger);
+  }
+
+  /* Nivel del Material (La parte que se anima) */
+  .niveau {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0; /* JS establece este valor */
+    background: var(--primary); /* Color por defecto */
+    z-index: 2;
+    transition: height 0.8s ease-in-out; /* Animación */
+    clip-path: var(--polygon); /* Aplica el clip-path al material */
+  }
+
+  /* Etiqueta de Porcentaje */
+  .pourcent {
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    color: #333;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    z-index: 3; /* Asegura que esté sobre el nivel */
+    font-size: var(--pourcent-font-size);
+  }

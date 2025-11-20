@@ -78,9 +78,10 @@ function getInfoSensores() {
 function getFormData() {
   let f_ini = $("#f_ini").val();
   let f_fin = $("#f_fin").val();
-  let formato = $("#select-sensores").val();
+  let cve_element = $("#formato").val() == "1"  ? $("#select-zonas").val() : $("#select-sensores").val();
+  let type = $("#formato").val() == "1" ? "zona" : "sensor";
 
-  return [f_ini, f_fin, formato];
+  return [f_ini, f_fin, cve_element, type];
 }
 
 function initCamp() {
@@ -91,7 +92,7 @@ function initCamp() {
 }
 
 function getTermometerData() {
-  let bridge = new Bridge(uu, cc, "System.Dashboard.Sensores.SensoresTempService.getUltTemp", []);
+  let bridge = new Bridge(uu, cc, "System.Dashboard.Sensores.SensoresTempService.getUltTemp", [$("#select-zonas").val()]);
   let response = bridge.databriged();
 
   response
@@ -106,8 +107,11 @@ function getTermometerData() {
       } else {
         $("#dashboard").html("");
         data = data.result;
+        //new Silo(".dashboard", "Nivel Silo Maizoro", "Silo Maizoro", 10, 80, "m", false, "%", true, 1085);
         data.forEach(item => {
-          new Thermometer(".dashboard", item.nombre, item.alias, item.temp, (parseFloat(item.d_min)-13), (parseFloat(item.d_max)+13), false, "Celcius", true, item.socket_port);
+          item.cve_unidad 
+          ? new Thermometer(".dashboard", item.nombre, item.alias, item.temp, (parseFloat(item.d_min)-13), (parseFloat(item.d_max)+13), false, "Celcius", true, item.socket_port)
+          : new Silo(".dashboard", item.nombre, item.alias, item.temp, item.altura, "m", false, "%", true, item.socket_port);
         });
       
       }
@@ -115,7 +119,8 @@ function getTermometerData() {
 }
 
 function getDataChartLines() {
-  let args = $("#formato").val() == "2" ? getFormData() : [];
+
+  let args = getFormData()
   let bridge = new Bridge(uu, cc, "System.Dashboard.Sensores.SensoresTempService.getDataLines", args);
   let response = bridge.databriged();
   response
