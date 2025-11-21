@@ -18,8 +18,7 @@ app.get('/', (req, res) => {
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); 
-// app.use(express.static('public'))
-; 
+// app.use(express.static('public')); 
 app.use('/api/almacenes', almacenesRouter);
 app.use('/api/marcas', marcasRouter);
 app.use('/api/equipos', equiposRouter);
@@ -45,9 +44,15 @@ app.get('/api/health', async (req, res) => {
   }
 });
 
+// ##### SOCKET.IO INTEGRATION #####
 
-app.listen(port, () => {
-  console.log(`API server listening on port ${port}`);
+const http = require('http');
+const { startTcpServer } = require('./src/utils/tcpServer');
+const httpServer = http.createServer(app);
+startTcpServer();
+
+httpServer.listen(port, () => {
+  console.log(`API server with Sockets listening on port ${port}`);
 });
 
 module.exports = app;

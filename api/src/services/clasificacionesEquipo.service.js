@@ -1,7 +1,6 @@
 const Logger = require('../utils/Logger');
 const QueryHandler = require('../utils/QueryHandler');
 
-
 exports.getAllClasificaciones = async () => {
     try {
         const dasificacions = await QueryHandler.execute('SELECT * FROM ma_clasif', [], 'main');

@@ -1,7 +1,6 @@
 const Logger = require('../utils/Logger');
 const QueryHandler = require('../utils/QueryHandler');
 
-
 exports.getAllEmpleados = async () => {
     try {
         const empleados = await QueryHandler.execute('SELECT * FROM ma_emple', [], 'main');

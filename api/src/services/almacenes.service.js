@@ -1,7 +1,6 @@
 const Logger = require('../utils/Logger');
 const QueryHandler = require('../utils/QueryHandler');
 
-
 exports.getAllAlmacenes = async () => {
     try {
         const almacenes = await QueryHandler.execute('SELECT * FROM ma_almac', [], 'main');
