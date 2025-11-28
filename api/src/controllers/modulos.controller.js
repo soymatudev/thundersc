@@ -2,9 +2,9 @@ const Logger = require('../utils/Logger');
 const modulosService = require('../services/modulos.service');
 
 exports.setModulo = async (req, res) => {
-    const moduloData = req.body;
+    const {moduloData, permisoModuloData} = req.body;
     try {
-        const newModulo = await modulosService.setModulo(moduloData);
+        const newModulo = await modulosService.setModulo(moduloData, permisoModuloData);
         res.status(201).json(newModulo);
     } catch (error) {
         Logger.error(`Error creating modulo: ${error.message}`);

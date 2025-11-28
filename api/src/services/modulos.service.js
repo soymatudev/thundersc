@@ -36,7 +36,20 @@ exports.updateModulo = async (cve, updateData) => {
     }
 }
 
-exports.setModulo = async (moduloData) => {
+exports.setModulo = async (moduloData, permisoModuloData) => {
+    try {
+        const newModulo = await createModulo(moduloData);
+        permisoModuloData.forEach(pm => pm.cve_modulo = newModulo.clave);
+        Logger.info(`Creating permiso modulo for modulo clave: ${JSON.stringify(permisoModuloData)}`);
+        await createPermisoModulo(permisoModuloData);
+        return newModulo;
+    } catch (error) {
+        Logger.error(`Error creating modulo with permissions: ${error.message}`);
+        throw new Error('Failed to create modulo with permissions due to server error');
+    }
+};
+
+const createModulo = async (moduloData) => {
     try {
         const newModulo = await prisma.ma_modulo.create({
             data: moduloData
@@ -45,5 +58,17 @@ exports.setModulo = async (moduloData) => {
     } catch (error) {
         Logger.error(`Error creating modulo: ${error.message}`);
         throw new Error('Failed to create modulo due to server error');
+    }
+}
+
+const createPermisoModulo = async (permisoModuloData) => {
+    try {
+        const newPermisoModulo = await prisma.permiso.createMany({
+            data: permisoModuloData
+        });
+        return newPermisoModulo;
+    } catch (error) {
+        Logger.error(`Error creating permiso modulo: ${error.message}`);
+        throw new Error('Failed to create permiso modulo due to server error');
     }
 }
