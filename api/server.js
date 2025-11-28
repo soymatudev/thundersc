@@ -1,5 +1,4 @@
 const express = require('express');
-const { getConnection, testConnection } = require('./src/config/database');
 const almacenesRouter = require('./src/routes/almacenes.routes');
 const marcasRouter = require('./src/routes/marcas.routes');
 const equiposRouter = require('./src/routes/equipos.routes');
@@ -8,6 +7,9 @@ const departamentosRouter = require('./src/routes/departamentos.routes');
 const clasificacionesEquiposRouter = require('./src/routes/clasificacionesEquipo.routes');
 const consultasRouter = require('./src/routes/consultas.routes');
 const movimientosRouter = require('./src/routes/movimientos.routes');
+const authRouter = require('./src/routes/auth.routes');
+const healthRouter = require('./src/routes/health.routes');
+const modulosRouter = require('./src/routes/modulos.routes');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -19,6 +21,7 @@ app.get('/', (req, res) => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true })); 
 // app.use(express.static('public')); 
+app.use('/api/modulos', modulosRouter);
 app.use('/api/almacenes', almacenesRouter);
 app.use('/api/marcas', marcasRouter);
 app.use('/api/equipos', equiposRouter);
@@ -27,22 +30,12 @@ app.use('/api/departamentos', departamentosRouter);
 app.use('/api/clasificaciones_equipos', clasificacionesEquiposRouter);
 app.use('/api/consultas', consultasRouter);
 app.use('/api/movimientos', movimientosRouter);
+app.use('/api/auth', authRouter);
 
 
 /* ##### HEALTH CHECK ##### */
 
-app.get('/api/health', async (req, res) => {
-  try {
-      const connection = testConnection();
-      if (connection) {
-          res.status(200).json({ status: 'OK', message: 'Database connection successful' });
-      } else {
-          res.status(500).json({ status: 'Error', message: 'Database connection failed' });
-      }
-  } catch (error) {
-      res.status(500).json({ status: 'Error', message: error.message });
-  }
-});
+app.use('/api/health', healthRouter);
 
 // ##### SOCKET.IO INTEGRATION #####
 

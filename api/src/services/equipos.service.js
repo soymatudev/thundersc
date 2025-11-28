@@ -1,7 +1,6 @@
 const Logger = require('../utils/Logger');
 const QueryHandler = require('../utils/QueryHandler');
 
-
 exports.getAllEquipos = async () => {
     try {
         const equipos = await QueryHandler.execute('SELECT * FROM ma_eqsis', [], 'main');

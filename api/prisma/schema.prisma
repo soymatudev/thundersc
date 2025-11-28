@@ -1,15 +1,239 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
-  provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  provider = "prisma-client-js"
+  output   = "./generated/prisma"
 }
 
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+model de_zona {
+  clave  Int    @id @default(autoincrement())
+  nombre String @db.VarChar(45)
+}
+
+model ma_almac {
+  clave  String? @unique(map: "uq_ma_almac_clave") @db.Char(3)
+  descri String? @db.Char(30)
+  domici String? @db.Char(70)
+  coloni String? @db.Char(30)
+  ciudad String? @db.Char(30)
+  munici String? @db.Char(3)
+  estado String? @db.Char(3)
+  pais   String? @db.Char(3)
+  codpos String? @db.Char(5)
+  telef1 String? @db.Char(15)
+  telef2 String? @db.Char(15)
+  id     Int     @id @default(autoincrement())
+}
+
+model ma_almacsco {
+  id     Int     @id @default(autoincrement())
+  clave  String? @db.VarChar(6)
+  descri String? @db.VarChar(100)
+  ip     String? @db.VarChar(20)
+  dbname String? @db.VarChar(20)
+  usr    String? @db.VarChar(20)
+  pass   String? @db.VarChar(20)
+  status String? @db.VarChar(2)
+}
+
+model ma_almus {
+  cve_usu Int?
+  cve_alm String? @db.Char(3)
+  cns_sn  String? @db.Char(1)
+  alt_sn  String? @db.Char(1)
+  baj_sn  String? @db.Char(1)
+  cam_sn  String? @db.Char(1)
+  id      Int     @id @default(autoincrement())
+}
+
+model ma_backups {
+  id       Int       @id @default(autoincrement())
+  cve_host String?   @db.VarChar(10)
+  date     DateTime? @db.Date
+  time     String?   @db.VarChar(10)
+  size     String?   @db.VarChar(10)
+  path     String?   @db.VarChar(75)
+  type     String?   @db.Char(1)
+  status   String?   @db.Char(1)
+  class    String?   @db.VarChar(10)
+  f_movto  DateTime? @db.Timestamp(6)
+}
+
+model ma_chatids {
+  clave  BigInt  @id
+  bot    String? @db.Char(1)
+  nombre String? @db.VarChar(50)
+  tipo   String? @db.VarChar(45)
+}
+
+model ma_clasif {
+  clave  Int     @id @default(autoincrement())
+  descri String? @db.Char(30)
+  type   String? @db.Char(3)
+}
+
+model ma_depar {
+  clave  Int     @id @default(autoincrement())
+  descri String? @db.Char(30)
+}
+
+model ma_emple {
+  id      Int     @id @default(autoincrement())
+  clave   String? @db.Char(5)
+  descri  String? @db.Char(40)
+  cve_zon String? @db.Char(3)
+}
+
+model ma_empre {
+  clave  String? @db.Char(2)
+  nombre String? @db.Char(60)
+  nomcor String? @db.Char(40)
+  base   String? @db.Char(30)
+  id     Int     @id @default(autoincrement())
+}
+
+model ma_eqasis {
+  clave     Int       @id @default(autoincrement())
+  cve_alm   String?   @db.Char(3)
+  cve_eqsis Int?
+  cve_emple Int?
+  cve_depar Int?
+  f_movto   DateTime? @db.Date
+}
+
+model ma_eqsis {
+  clave      Int       @id @default(autoincrement())
+  serie      String?   @db.Char(30)
+  cod_inv    String?   @db.Char(30)
+  cve_marca  Int?
+  cve_clasif Int?
+  modelo     String?   @db.Char(35)
+  f_regis    DateTime? @db.Date
+  status     String?   @db.Char(1)
+}
+
+model ma_equipo {
+  clave       Int        @id @default(autoincrement())
+  nombre      String?    @db.VarChar(20)
+  serie       String?    @unique @db.Char(6)
+  modelo      String?    @db.VarChar(6)
+  cve_unidad  String?    @db.Char(3)
+  cve_zona    Int?
+  zona        String?    @db.VarChar(5)
+  alias       String?    @db.VarChar(20)
+  ancho       Decimal?   @db.Decimal(4, 2)
+  largo       Decimal?   @db.Decimal(4, 2)
+  alto        Decimal?   @db.Decimal(4, 2)
+  densidad    Decimal?   @db.Decimal(4, 2)
+  materia     String?    @db.VarChar(45)
+  adc_1       Decimal?   @db.Decimal(12, 2)
+  adc_2       String?    @db.Char(5)
+  adc_3       Decimal?   @db.Decimal(12, 2)
+  adc_4       String?    @db.Char(5)
+  socket_port String?    @db.Char(4)
+  ma_unidad   ma_unidad? @relation(fields: [cve_unidad], references: [clave], onDelete: NoAction, onUpdate: NoAction, map: "fk_ma_equipo_cve_unidad")
+}
+
+model ma_host {
+  clave  String  @id @db.VarChar(10)
+  descri String? @db.VarChar(45)
+}
+
+model ma_marca {
+  clave  Int     @id @default(autoincrement())
+  descri String? @db.Char(20)
+  type   String? @db.Char(3)
+}
+
+model ma_regzoro {
+  clave      Int       @id @default(autoincrement())
+  cve_equipo BigInt?
+  fecha_hora DateTime? @db.Timestamp(2)
+  dato_1     String?   @default("0") @db.VarChar(10)
+  dato_2     String?   @default("0") @db.VarChar(10)
+  dato_3     String?   @default("0") @db.VarChar(10)
+}
+
+model ma_sesus {
+  cve_usu String? @db.Char(11)
+  cve_ses Int?
+  cns_sn  String? @db.Char(3)
+  alt_sn  String? @db.Char(3)
+  baj_sn  String? @db.Char(3)
+  cam_sn  String? @db.Char(3)
+  id      Int     @id @default(autoincrement())
+}
+
+model ma_unidad {
+  clave     String      @id @db.Char(3)
+  descri    String?     @db.VarChar(25)
+  ma_equipo ma_equipo[]
+}
+
+model ma_ventasco {
+  id        Int       @id @default(autoincrement())
+  tip_vta   String?   @db.VarChar(6)
+  cve_alm   String?   @db.VarChar(6)
+  vta_sco   Decimal?  @db.Decimal(30, 15)
+  vta_pcz   Decimal?  @db.Decimal(30, 15)
+  vta_dif   Decimal?  @db.Decimal(30, 15)
+  f_venta   DateTime? @db.Date
+  cve_vnd   String?   @db.VarChar(6)
+  devo_cred Decimal?  @db.Decimal(30, 15)
+  devo_cont Decimal?  @db.Decimal(30, 15)
+  devo      Decimal?  @db.Decimal(30, 15)
+  vta_cred  Decimal?  @db.Decimal(30, 15)
+  vta_cont  Decimal?  @db.Decimal(30, 15)
+  venta     Decimal?  @db.Decimal(30, 15)
+  comis     Decimal?  @db.Decimal(30, 15)
+  tot_vta   Decimal?  @db.Decimal(30, 15)
+  all_vta   Decimal?  @db.Decimal(30, 15)
+  status    String?   @db.VarChar(2)
+  adl1      String?   @db.VarChar(20)
+  adl2      String?   @db.VarChar(20)
+}
+
+model ma_empresa {
+  clave           String            @id @db.Char(10)
+  nombre          String?           @db.VarChar(20)
+  usuario_permiso usuario_permiso[]
+}
+
+model ma_modulo {
+  clave   Int       @id @default(autoincrement())
+  descri  String?   @db.VarChar(30)
+  ruta    String?   @db.VarChar(70)
+  menu    String?   @db.VarChar(70)
+  permiso permiso[]
+}
+
+model permiso {
+  clave           Int               @id @default(autoincrement())
+  cve_modulo      Int?
+  descri          String?           @db.VarChar(15)
+  ma_modulo       ma_modulo?        @relation(fields: [cve_modulo], references: [clave], onDelete: Restrict, onUpdate: NoAction, map: "fk_permiso_modulo")
+  usuario_permiso usuario_permiso[]
+}
+
+model usuario {
+  clave           Int               @id @default(autoincrement())
+  descri          String?           @db.VarChar(30)
+  username        String?           @unique @db.VarChar(10)
+  hash_password   String?
+  usuario_permiso usuario_permiso[]
+}
+
+model usuario_permiso {
+  clave       Int         @id @default(autoincrement())
+  cve_usuario Int?
+  cve_permiso Int?
+  cve_empresa String?     @db.Char(10)
+  ma_empresa  ma_empresa? @relation(fields: [cve_empresa], references: [clave], onDelete: Restrict, onUpdate: NoAction, map: "fk_usuper_empresa")
+  permiso     permiso?    @relation(fields: [cve_permiso], references: [clave], onDelete: Restrict, onUpdate: NoAction, map: "fk_usuper_permiso")
+  usuario     usuario?    @relation(fields: [cve_usuario], references: [clave], onDelete: Cascade, onUpdate: NoAction, map: "fk_usuper_usuario")
+
+  @@unique([cve_usuario, cve_permiso, cve_empresa])
 }

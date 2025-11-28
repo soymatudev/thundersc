@@ -1,7 +1,6 @@
 const Logger = require('../utils/Logger');
 const QueryHandler = require('../utils/QueryHandler');
 
-
 exports.getAllDepartamentos = async () => {
     try {
         const departamentos = await QueryHandler.execute('SELECT * FROM ma_depar', [], 'main');

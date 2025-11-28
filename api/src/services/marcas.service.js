@@ -1,7 +1,6 @@
 const Logger = require('../utils/Logger');
 const QueryHandler = require('../utils/QueryHandler');
 
-
 exports.getAllMarcas = async () => {
     try {
         const marcas = await QueryHandler.execute('SELECT * FROM ma_marca', [], 'main');

@@ -27,7 +27,7 @@ exports.initializeTelegramBot = () => {
         if (!token) {
             throw new Error('El token de Telegram no está definido en las variables de entorno (TELEGRAM_MatuExpress_TOKEN).');
         }
-        bot = new TelegramBot(token, { polling: true });
+        bot = new TelegramBot(token, { polling: true, agentOptions: { family: 4, keepAlive: true } });
         Logger.info('Servicio de Telegram iniciado y escuchando...');
     
         routerTelegramComandos(bot);
