@@ -1,13 +1,17 @@
 const express = require('express');
 const router = express.Router();
 
-const { getAllAlmacenes, getAlmacenesByCve, updateAlmacen, setAlmacen } = require('../controllers/almacenes.controller');
+const { getAlmacenesPaginados, getAllAlmacenes, getAlmacenesByCve, updateAlmacen, setAlmacen, deleteAlmacen } = require('../controllers/almacenes.controller');
 
 router.get('/', getAllAlmacenes);
+
+router.get('/paginated', getAlmacenesPaginados);
 
 router.get('/:cve', getAlmacenesByCve);
 
 router.put('/:cve', updateAlmacen);
+
+router.put('/delete/:cve', deleteAlmacen);
 
 router.post('/', setAlmacen);
 

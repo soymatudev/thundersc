@@ -23,7 +23,11 @@ export const AuthService = {
   },
 
   getProfile: async () => {
-      return api.get('/auth/profile');
+      return api.get('/auth/profile/');
   },
+
+    updateUser: async (cve, userData) => {
+        return api.put(`/auth/profile/${cve}`, userData);
+    },
 
 };

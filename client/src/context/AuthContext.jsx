@@ -12,8 +12,7 @@ export const AuthProvider = ({ children }) => {
   // Función para verificar si hay una sesión activa al cargar la app
   const checkAuth = async () => {
     try {
-      // Suponiendo que tienes un endpoint como /api/auth/profile que devuelve el usuario si la cookie es válida
-      const { user } = await AuthService.getProfile(21); 
+      const { user } = await AuthService.getProfile(); 
       setUser(user);
     } catch (error) {
       console.log('No active session found.');
@@ -33,7 +32,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      await AuthService.logoutUser(); // Llama al backend para invalidar la cookie
+      await AuthService.logoutUser();
     } catch (error) {
       console.error('Error during logout:', error);
     } finally {

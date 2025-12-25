@@ -11,17 +11,20 @@ exports.login = async (username, password) => {
                 username: username
             }
         });
+
         if (!user) {
             Logger.info(`Authentication failed for user: ${username}`);
             return null;
         }
 
+        Logger.info(`User found: ${JSON.stringify(user)}`);
         const passwordMatch = await bcrypt.compare(password, user.hash_password);
         if (!passwordMatch) {
             Logger.info(`Authentication failed for user: ${username}`);
             return null;
         }
 
+        user.hash_password = undefined;
         const token = generateToken(user);
         user.token = token;
         Logger.info(`User authenticated: ${username}`);
@@ -32,31 +35,30 @@ exports.login = async (username, password) => {
     }
 }
 
-exports.profile = async (userId) => {
+exports.profile = async (clave) => {
     try {
-        const user = await prisma.usuario.findMany({
-            where: { clave: userId }
-        });
-        if (!user) {
-            Logger.info(`Profile not found for user ID: ${user.username}`);
+        const userProfile = await prisma.$queryRaw`SELECT 
+        a.clave, a.descri, a.username, STRING_AGG(CAST(b.clave as TEXT), ',') as cve_permi, STRING_AGG(b.descri, ',') as permiso, 
+        d.clave as cve_modulo, d.descri as modulo, d.ruta, d.menu, c.cve_empresa
+        FROM usuario a, permiso b, usuario_permiso c, ma_modulo d
+        WHERE a.clave = ${parseInt(clave)}
+        and a.clave = c.cve_usuario
+        and b.clave = c.cve_permiso
+        and b.cve_modulo = d.clave
+        group by a.clave, d.clave, c.cve_empresa
+        order by d.descri`;
+
+        if (!userProfile) {
+            Logger.info(`Profile not found for user ID: ${clave}`);
             return null;
         }
 
-        const permisos = await getPermisosByUserId(user.clave);
-        user.permisos = permisos;
-        Logger.info(`Profile retrieved for user ID: ${user.username}`);
-        return user;
+        Logger.info(`Profile retrieved for user ID: ${clave}`);
+        return userProfile;
     } catch (error) {
-        Logger.error(`Error fetching profile for user ID ${user.username}: ${error.message}`);
+        Logger.error(`Error fetching profile for user ID ${clave}: ${error.message}`);
         throw new Error('Failed to fetch profile due to server error');
     }
-}
-
-const getPermisosByUserId = async (userId) => {
-    const permisos = await prisma.usuario_permiso.findMany({
-        where: { cve_usuario: userId }
-    });
-    return permisos;
 }
 
 exports.register = async (userData, usuarioPermisoData) => {
@@ -72,6 +74,42 @@ exports.register = async (userData, usuarioPermisoData) => {
     } catch (error) {
         Logger.error(`Error during user registration for ${userData.username}: ${error.message}`);
         throw new Error('User registration failed due to server error');
+    }
+}
+
+exports.updateUsuario = async (cve, updateData, usuarioPermisosData) => {
+    try {
+        const updatedUser = await updateUsuarioData(cve, updateData);
+        if (!updatedUser) {
+            Logger.info(`User not found for update: ${cve}`);
+            return null;
+        }
+        Logger.info(`User data updated: ${cve}`);
+
+        if (usuarioPermisosData && usuarioPermisosData.length > 0) {
+            usuarioPermisosData.forEach(up => up.cve_usuario = parseInt(cve));
+            const updatedPermisos = await updateUsuarioPermiso(cve, usuarioPermisosData);
+            if (!updatedPermisos) {
+                Logger.info(`User permissions not found for update: ${cve}`);
+                return null;
+            }
+            Logger.info(`User permissions updated: ${cve}`);
+        }
+        return updatedUser;
+    } catch (error) {
+        Logger.error(`Error updating user ${cve}: ${error.message}`);
+        throw new Error('User update failed due to server error');
+    }
+}
+
+exports.logout = async (req, res) => {
+    try {
+        res.clearCookie('access_token', { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'Strict' });
+        Logger.info(`User logged out successfully`);
+        return;
+    } catch (error) {
+        Logger.error(`Error during logout: ${error.message}`);
+        throw new Error('Logout failed due to server error');
     }
 }
 
@@ -96,57 +134,56 @@ const setusuarioPermiso = async (usuarioPermisoData) => {
 }
 
 const generateToken = (user) => {
-    const token = jwt.sign(
-        { userId: user.id, descri: user.descri, username: user.username },
-        process.env.JWT_SECRET,
-        { expiresIn: '1h' }
-    );
-    return token;
+    try {
+        const token = jwt.sign(
+            { userId: user.id, userCve: user.clave, descri: user.descri, username: user.username },
+            process.env.JWT_SECRET,
+            { expiresIn: '1h' }
+        );
+        return token;
+    } catch (error) {
+        Logger.error(`Error generating token for user ${user.username}: ${error.message}`);
+        throw new Error('Token generation failed');
+    }
 }
 
-exports.updateUsuario = async (cve, updateData) => {
+
+const getPermisosByUserId = async (userId) => {
+    const permisos = await prisma.usuario_permiso.findMany({
+        where: { cve_usuario: userId }
+    });
+    return permisos;
+}
+
+const updateUsuarioData = async (cve, updateData) => {
     try {
-        const usuario = await prisma.usuario.findFirst({
-            where: { username: cve }
+        if(updateData.hash_password) {
+            updateData.hash_password = await getPasswordHash(updateData.hash_password);
+        }
+        const result = await prisma.usuario.update({
+            where: { clave: parseInt(cve) },
+            data: updateData
         });
-        if (!usuario) {
+        return result;
+    } catch (error) {
+        if (error.code === 'P2025') {
             Logger.info(`User not found for update: ${cve}`);
             return null;
         }
-        const result = await prisma.usuario.update({
-            where: { id: usuario.id },
-            data: updateData
-        });
-        Logger.info(`User updated: ${cve}`);
-        return result;
-    } catch (error) {
         Logger.error(`Error updating user ${cve}: ${error.message}`);
         throw new Error('User update failed due to server error');
     }
 }
 
-exports.updateUsuarioPermiso = async (cve, updateData) => {
+const updateUsuarioPermiso = async (cve, usuarioPermisosData) => {
     try {
-        const usuario = await prisma.usuario.findFirst({
-            where: { username: cve }
+        await prisma.usuario_permiso.deleteMany({
+            where: { cve_usuario: parseInt(cve) }
         });
-        if (!usuario) {
-            Logger.info(`User not found for permission update: ${cve}`);
-            return null;
-        }
-        const usuarioPermiso = await prisma.usuario_permiso.findFirst({
-            where: { userId: usuario.id }
+        const newUsuarioPermisos = await prisma.usuario_permiso.createMany({
+            data: usuarioPermisosData
         });
-        if (!usuarioPermiso) {
-            Logger.info(`User permissions not found for update: ${cve}`);
-            return null;
-        }
-        const result = await prisma.usuario_permiso.update({
-            where: { id: usuarioPermiso.id },
-            data: updateData
-        });
-        Logger.info(`User permissions updated: ${cve}`);
-        return result;
+        return newUsuarioPermisos;
     } catch (error) {
         Logger.error(`Error updating permissions for user ${cve}: ${error.message}`);
         throw new Error('User permission update failed due to server error');

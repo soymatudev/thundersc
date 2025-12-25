@@ -138,7 +138,8 @@ exports.Prisma.Ma_almacScalarFieldEnum = {
   codpos: 'codpos',
   telef1: 'telef1',
   telef2: 'telef2',
-  id: 'id'
+  id: 'id',
+  status: 'status'
 };
 
 exports.Prisma.Ma_almacscoScalarFieldEnum = {

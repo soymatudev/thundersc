@@ -4131,6 +4131,7 @@ export namespace Prisma {
     telef1: string | null
     telef2: string | null
     id: number | null
+    status: boolean | null
   }
 
   export type Ma_almacMaxAggregateOutputType = {
@@ -4146,6 +4147,7 @@ export namespace Prisma {
     telef1: string | null
     telef2: string | null
     id: number | null
+    status: boolean | null
   }
 
   export type Ma_almacCountAggregateOutputType = {
@@ -4161,6 +4163,7 @@ export namespace Prisma {
     telef1: number
     telef2: number
     id: number
+    status: number
     _all: number
   }
 
@@ -4186,6 +4189,7 @@ export namespace Prisma {
     telef1?: true
     telef2?: true
     id?: true
+    status?: true
   }
 
   export type Ma_almacMaxAggregateInputType = {
@@ -4201,6 +4205,7 @@ export namespace Prisma {
     telef1?: true
     telef2?: true
     id?: true
+    status?: true
   }
 
   export type Ma_almacCountAggregateInputType = {
@@ -4216,6 +4221,7 @@ export namespace Prisma {
     telef1?: true
     telef2?: true
     id?: true
+    status?: true
     _all?: true
   }
 
@@ -4318,6 +4324,7 @@ export namespace Prisma {
     telef1: string | null
     telef2: string | null
     id: number
+    status: boolean | null
     _count: Ma_almacCountAggregateOutputType | null
     _avg: Ma_almacAvgAggregateOutputType | null
     _sum: Ma_almacSumAggregateOutputType | null
@@ -4352,6 +4359,7 @@ export namespace Prisma {
     telef1?: boolean
     telef2?: boolean
     id?: boolean
+    status?: boolean
   }, ExtArgs["result"]["ma_almac"]>
 
   export type ma_almacSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -4367,6 +4375,7 @@ export namespace Prisma {
     telef1?: boolean
     telef2?: boolean
     id?: boolean
+    status?: boolean
   }, ExtArgs["result"]["ma_almac"]>
 
   export type ma_almacSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -4382,6 +4391,7 @@ export namespace Prisma {
     telef1?: boolean
     telef2?: boolean
     id?: boolean
+    status?: boolean
   }, ExtArgs["result"]["ma_almac"]>
 
   export type ma_almacSelectScalar = {
@@ -4397,9 +4407,10 @@ export namespace Prisma {
     telef1?: boolean
     telef2?: boolean
     id?: boolean
+    status?: boolean
   }
 
-  export type ma_almacOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"clave" | "descri" | "domici" | "coloni" | "ciudad" | "munici" | "estado" | "pais" | "codpos" | "telef1" | "telef2" | "id", ExtArgs["result"]["ma_almac"]>
+  export type ma_almacOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"clave" | "descri" | "domici" | "coloni" | "ciudad" | "munici" | "estado" | "pais" | "codpos" | "telef1" | "telef2" | "id" | "status", ExtArgs["result"]["ma_almac"]>
 
   export type $ma_almacPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "ma_almac"
@@ -4417,6 +4428,7 @@ export namespace Prisma {
       telef1: string | null
       telef2: string | null
       id: number
+      status: boolean | null
     }, ExtArgs["result"]["ma_almac"]>
     composites: {}
   }
@@ -4852,6 +4864,7 @@ export namespace Prisma {
     readonly telef1: FieldRef<"ma_almac", 'String'>
     readonly telef2: FieldRef<"ma_almac", 'String'>
     readonly id: FieldRef<"ma_almac", 'Int'>
+    readonly status: FieldRef<"ma_almac", 'Boolean'>
   }
     
 
@@ -28824,7 +28837,8 @@ export namespace Prisma {
     codpos: 'codpos',
     telef1: 'telef1',
     telef2: 'telef2',
-    id: 'id'
+    id: 'id',
+    status: 'status'
   };
 
   export type Ma_almacScalarFieldEnum = (typeof Ma_almacScalarFieldEnum)[keyof typeof Ma_almacScalarFieldEnum]
@@ -29152,6 +29166,13 @@ export namespace Prisma {
 
 
   /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
+
+  /**
    * Reference to a field of type 'DateTime'
    */
   export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
@@ -29265,6 +29286,7 @@ export namespace Prisma {
     telef1?: StringNullableFilter<"ma_almac"> | string | null
     telef2?: StringNullableFilter<"ma_almac"> | string | null
     id?: IntFilter<"ma_almac"> | number
+    status?: BoolNullableFilter<"ma_almac"> | boolean | null
   }
 
   export type ma_almacOrderByWithRelationInput = {
@@ -29280,6 +29302,7 @@ export namespace Prisma {
     telef1?: SortOrderInput | SortOrder
     telef2?: SortOrderInput | SortOrder
     id?: SortOrder
+    status?: SortOrderInput | SortOrder
   }
 
   export type ma_almacWhereUniqueInput = Prisma.AtLeast<{
@@ -29298,6 +29321,7 @@ export namespace Prisma {
     codpos?: StringNullableFilter<"ma_almac"> | string | null
     telef1?: StringNullableFilter<"ma_almac"> | string | null
     telef2?: StringNullableFilter<"ma_almac"> | string | null
+    status?: BoolNullableFilter<"ma_almac"> | boolean | null
   }, "id" | "clave">
 
   export type ma_almacOrderByWithAggregationInput = {
@@ -29313,6 +29337,7 @@ export namespace Prisma {
     telef1?: SortOrderInput | SortOrder
     telef2?: SortOrderInput | SortOrder
     id?: SortOrder
+    status?: SortOrderInput | SortOrder
     _count?: ma_almacCountOrderByAggregateInput
     _avg?: ma_almacAvgOrderByAggregateInput
     _max?: ma_almacMaxOrderByAggregateInput
@@ -29336,6 +29361,7 @@ export namespace Prisma {
     telef1?: StringNullableWithAggregatesFilter<"ma_almac"> | string | null
     telef2?: StringNullableWithAggregatesFilter<"ma_almac"> | string | null
     id?: IntWithAggregatesFilter<"ma_almac"> | number
+    status?: BoolNullableWithAggregatesFilter<"ma_almac"> | boolean | null
   }
 
   export type ma_almacscoWhereInput = {
@@ -30705,6 +30731,7 @@ export namespace Prisma {
     codpos?: string | null
     telef1?: string | null
     telef2?: string | null
+    status?: boolean | null
   }
 
   export type ma_almacUncheckedCreateInput = {
@@ -30720,6 +30747,7 @@ export namespace Prisma {
     telef1?: string | null
     telef2?: string | null
     id?: number
+    status?: boolean | null
   }
 
   export type ma_almacUpdateInput = {
@@ -30734,6 +30762,7 @@ export namespace Prisma {
     codpos?: NullableStringFieldUpdateOperationsInput | string | null
     telef1?: NullableStringFieldUpdateOperationsInput | string | null
     telef2?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type ma_almacUncheckedUpdateInput = {
@@ -30749,6 +30778,7 @@ export namespace Prisma {
     telef1?: NullableStringFieldUpdateOperationsInput | string | null
     telef2?: NullableStringFieldUpdateOperationsInput | string | null
     id?: IntFieldUpdateOperationsInput | number
+    status?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type ma_almacCreateManyInput = {
@@ -30764,6 +30794,7 @@ export namespace Prisma {
     telef1?: string | null
     telef2?: string | null
     id?: number
+    status?: boolean | null
   }
 
   export type ma_almacUpdateManyMutationInput = {
@@ -30778,6 +30809,7 @@ export namespace Prisma {
     codpos?: NullableStringFieldUpdateOperationsInput | string | null
     telef1?: NullableStringFieldUpdateOperationsInput | string | null
     telef2?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type ma_almacUncheckedUpdateManyInput = {
@@ -30793,6 +30825,7 @@ export namespace Prisma {
     telef1?: NullableStringFieldUpdateOperationsInput | string | null
     telef2?: NullableStringFieldUpdateOperationsInput | string | null
     id?: IntFieldUpdateOperationsInput | number
+    status?: NullableBoolFieldUpdateOperationsInput | boolean | null
   }
 
   export type ma_almacscoCreateInput = {
@@ -32241,6 +32274,11 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
+  export type BoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
@@ -32259,6 +32297,7 @@ export namespace Prisma {
     telef1?: SortOrder
     telef2?: SortOrder
     id?: SortOrder
+    status?: SortOrder
   }
 
   export type ma_almacAvgOrderByAggregateInput = {
@@ -32278,6 +32317,7 @@ export namespace Prisma {
     telef1?: SortOrder
     telef2?: SortOrder
     id?: SortOrder
+    status?: SortOrder
   }
 
   export type ma_almacMinOrderByAggregateInput = {
@@ -32293,6 +32333,7 @@ export namespace Prisma {
     telef1?: SortOrder
     telef2?: SortOrder
     id?: SortOrder
+    status?: SortOrder
   }
 
   export type ma_almacSumOrderByAggregateInput = {
@@ -32315,6 +32356,14 @@ export namespace Prisma {
     _count?: NestedIntNullableFilter<$PrismaModel>
     _min?: NestedStringNullableFilter<$PrismaModel>
     _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type BoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
   }
 
   export type ma_almacscoCountOrderByAggregateInput = {
@@ -33333,6 +33382,10 @@ export namespace Prisma {
     set?: string | null
   }
 
+  export type NullableBoolFieldUpdateOperationsInput = {
+    set?: boolean | null
+  }
+
   export type NullableIntFieldUpdateOperationsInput = {
     set?: number | null
     increment?: number
@@ -33742,6 +33795,11 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
+  export type NestedBoolNullableFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableFilter<$PrismaModel> | boolean | null
+  }
+
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: string | StringFieldRefInput<$PrismaModel> | null
     in?: string[] | ListStringFieldRefInput<$PrismaModel> | null
@@ -33768,6 +33826,14 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type NestedBoolNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel> | null
+    not?: NestedBoolNullableWithAggregatesFilter<$PrismaModel> | boolean | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedBoolNullableFilter<$PrismaModel>
+    _max?: NestedBoolNullableFilter<$PrismaModel>
   }
 
   export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {

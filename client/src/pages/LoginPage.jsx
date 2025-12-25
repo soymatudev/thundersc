@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../hooks/useAuth';
 import { AuthService } from '../services/authService';
 import Input from '../components/common/Input';
@@ -9,13 +10,16 @@ const LoginPage = () => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
   const { login } = useAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
     try {
       const { user } = await AuthService.loginUser({ username, password });
-      login(user);
+      const userProfile = await AuthService.getProfile();
+      login(userProfile);
+      navigate('/');
     } catch (err) {
       setError('Credenciales incorrectas o error en el servidor.');
       console.error(err);

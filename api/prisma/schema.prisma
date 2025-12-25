@@ -14,18 +14,19 @@ model de_zona {
 }
 
 model ma_almac {
-  clave  String? @unique(map: "uq_ma_almac_clave") @db.Char(3)
-  descri String? @db.Char(30)
-  domici String? @db.Char(70)
-  coloni String? @db.Char(30)
-  ciudad String? @db.Char(30)
-  munici String? @db.Char(3)
-  estado String? @db.Char(3)
-  pais   String? @db.Char(3)
-  codpos String? @db.Char(5)
-  telef1 String? @db.Char(15)
-  telef2 String? @db.Char(15)
-  id     Int     @id @default(autoincrement())
+  clave  String?  @unique(map: "uq_ma_almac_clave") @db.Char(3)
+  descri String?  @db.Char(30)
+  domici String?  @db.Char(70)
+  coloni String?  @db.Char(30)
+  ciudad String?  @db.Char(30)
+  munici String?  @db.Char(3)
+  estado String?  @db.Char(3)
+  pais   String?  @db.Char(3)
+  codpos String?  @db.Char(5)
+  telef1 String?  @db.Char(15)
+  telef2 String?  @db.Char(15)
+  id     Int      @id @default(autoincrement())
+  status Boolean? @default(true)
 }
 
 model ma_almacsco {
