@@ -1,5 +1,7 @@
 const express = require('express');
 const cookierParser = require('cookie-parser');
+const Logger = require('./src/utils/Logger'); // Import Logger
+
 const almacenesRouter = require('./src/routes/almacenes.routes');
 const marcasRouter = require('./src/routes/marcas.routes');
 const equiposRouter = require('./src/routes/equipos.routes');
@@ -21,9 +23,9 @@ app.get('/', (req, res) => {
 });
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true })); 
+app.use(express.urlencoded({ extended: true }));
 app.use(cookierParser());
-// app.use(express.static('public')); 
+// app.use(express.static('public'));
 app.use('/modulos', modulosRouter);
 app.use('/almacenes', almacenesRouter);
 app.use('/marcas', marcasRouter);
@@ -40,6 +42,18 @@ app.use('/auth', authRouter);
 /* ##### HEALTH CHECK ##### */
 
 app.use('/health', healthRouter);
+
+// Global Error Handler Middleware
+app.use((err, req, res, next) => {
+  Logger.error(`Unhandled Error: ${err.message}`, err.stack);
+  // Default to 500 Internal Server Error, or use a custom status if available
+  const statusCode = err.statusCode || 500;
+  res.status(statusCode).json({
+    message: err.message || 'Internal Server Error',
+    // In production, you might not want to send the stack trace
+    // error: process.env.NODE_ENV === 'production' ? {} : err.stack,
+  });
+});
 
 // ##### SOCKET.IO INTEGRATION #####
 

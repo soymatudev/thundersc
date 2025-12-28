@@ -1,76 +1,52 @@
-const Logger = require('../utils/Logger');
-const QueryHandler = require('../utils/QueryHandler');
+const prisma = require('../config/prismaClient');
 
+/**
+ * Obtiene todos los departamentos de la base de datos.
+ * @returns {Promise<Array>} Una promesa que se resuelve en un array de departamentos.
+ */
 exports.getAllDepartamentos = async () => {
-    try {
-        const departamentos = await QueryHandler.execute('SELECT * FROM ma_depar', [], 'main');
-        return departamentos;
-    } catch (error) {
-        Logger.error(`Error fetching departamentos: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-}
+    return prisma.ma_depar.findMany();
+};
 
+/**
+ * Obtiene un departamento por su clave (ID).
+ * @param {number|string} cve La clave (ID) del departamento.
+ * @returns {Promise<Object|null>} Una promesa que se resuelve en el objeto del departamento o null si no se encuentra.
+ */
 exports.getDepartamentoByCve = async (cve) => {
-    try {
-        let sql = 'SELECT * FROM ma_depar WHERE clave = ?';
-        const departamentos = await QueryHandler.execute(sql, [cve], 'main');
-        return departamentos;
-    } catch (error) {
-        Logger.error(`Error fetching departamentos by cve: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
+    const departamentoId = parseInt(cve, 10);
+    if (isNaN(departamentoId)) {
+        throw new Error('La clave (ID) del departamento debe ser un número.');
     }
-}
+    return prisma.ma_depar.findUnique({
+        where: { clave: departamentoId },
+    });
+};
 
+/**
+ * Actualiza un departamento existente por su clave (ID).
+ * @param {number|string} cve La clave (ID) del departamento a actualizar.
+ * @param {Object} updateData Un objeto con los campos a actualizar.
+ * @returns {Promise<Object>} Una promesa que se resuelve en el objeto del departamento actualizado.
+ */
 exports.updateDepartamento = async (cve, updateData) => {
-    try {
-        let sql = 'UPDATE ma_depar SET ';
-        const params = [];
-        const updates = [];
-
-        for (const key in updateData) {
-            updates.push(`${key} = ?`);
-            params.push(updateData[key]);
-        }
-
-        sql += updates.join(', ') + ' WHERE clave = ?';
-        params.push(cve);
-
-        Logger.info(`Executing SQL: ${sql} with params: ${params}`);
-        const result = await QueryHandler.execute(sql, params, 'main');
-
-        if (result.affectedRows === 0) return null;
-
-        const updatedEepartamento = await QueryHandler.execute('SELECT * FROM ma_depar WHERE clave = ?', [cve], 'main');
-        return updatedEepartamento[0];
-    } catch (error) {
-        Logger.error(`Error updating departamento: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
+    const departamentoId = parseInt(cve, 10);
+    if (isNaN(departamentoId)) {
+        throw new Error('La clave (ID) del departamento debe ser un número.');
     }
-}
+    return prisma.ma_depar.update({
+        where: { clave: departamentoId },
+        data: updateData,
+    });
+};
 
+/**
+ * Crea un nuevo departamento.
+ * @param {Object} departamentoData Un objeto con los datos del nuevo departamento.
+ * @returns {Promise<Object>} Una promesa que se resuelve en el objeto del departamento recién creado.
+ */
 exports.setDepartamento = async (departamentoData) => {
-    try {
-        let sql = 'INSERT INTO ma_depar (';
-        const params = [];
-        const fields = [];
-        const placeholders = [];
-
-        for (const key in departamentoData) {
-            fields.push(key);
-            placeholders.push('?');
-            params.push(departamentoData[key]);
-        }
-
-        sql += fields.join(', ') + ') VALUES (' + placeholders.join(', ') + ')';
-
-        Logger.info(`Executing SQL: ${sql} with params: ${params}`);
-        const result = await QueryHandler.execute(sql, params, 'main');
-
-        const newDepartamento = await QueryHandler.execute('SELECT * FROM ma_depar WHERE clave = ?', [result.insertId], 'main');
-        return newDepartamento[0];
-    } catch (error) {
-        Logger.error(`Error inserting departamento: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-}
+    return prisma.ma_depar.create({
+        data: departamentoData,
+    });
+};

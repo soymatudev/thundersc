@@ -114,6 +114,8 @@ model ma_eqsis {
   modelo     String?   @db.Char(35)
   f_regis    DateTime? @db.Date
   status     String?   @db.Char(1)
+  marca      ma_marca? @relation(fields: [cve_marca], references: [clave])
+  clasif     ma_clasif? @relation(fields: [cve_clasif], references: [clave])
 }
 
 model ma_equipo {

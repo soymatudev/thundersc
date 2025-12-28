@@ -1,76 +1,52 @@
-const Logger = require('../utils/Logger');
-const QueryHandler = require('../utils/QueryHandler');
+const prisma = require('../config/prismaClient');
 
+/**
+ * Obtiene todos los equipos de la base de datos.
+ * @returns {Promise<Array>} Una promesa que se resuelve en un array de equipos.
+ */
 exports.getAllEquipos = async () => {
-    try {
-        const equipos = await QueryHandler.execute('SELECT * FROM ma_eqsis', [], 'main');
-        return equipos;
-    } catch (error) {
-        Logger.error(`Error fetching equipos: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-}
+    return prisma.ma_eqsis.findMany();
+};
 
+/**
+ * Obtiene un equipo por su clave (ID).
+ * @param {number|string} cve La clave (ID) del equipo.
+ * @returns {Promise<Object|null>} Una promesa que se resuelve en el objeto del equipo o null si no se encuentra.
+ */
 exports.getEquipoByCve = async (cve) => {
-    try {
-        let sql = 'SELECT * FROM ma_eqsis WHERE clave = ?';
-        const equipos = await QueryHandler.execute(sql, [cve], 'main');
-        return equipos;
-    } catch (error) {
-        Logger.error(`Error fetching equipos by cve: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
+    const equipoId = parseInt(cve, 10);
+    if (isNaN(equipoId)) {
+        throw new Error('La clave (ID) del equipo debe ser un número.');
     }
-}
+    return prisma.ma_eqsis.findUnique({
+        where: { clave: equipoId },
+    });
+};
 
+/**
+ * Actualiza un equipo existente por su clave (ID).
+ * @param {number|string} cve La clave (ID) del equipo a actualizar.
+ * @param {Object} updateData Un objeto con los campos a actualizar.
+ * @returns {Promise<Object>} Una promesa que se resuelve en el objeto del equipo actualizado.
+ */
 exports.updateEquipo = async (cve, updateData) => {
-    try {
-        let sql = 'UPDATE ma_eqsis SET ';
-        const params = [];
-        const updates = [];
-
-        for (const key in updateData) {
-            updates.push(`${key} = ?`);
-            params.push(updateData[key]);
-        }
-
-        sql += updates.join(', ') + ' WHERE clave = ?';
-        params.push(cve);
-
-        Logger.info(`Executing SQL: ${sql} with params: ${params}`);
-        const result = await QueryHandler.execute(sql, params, 'main');
-
-        if (result.affectedRows === 0) return null;
-
-        const updatedEquipo = await QueryHandler.execute('SELECT * FROM ma_eqsis WHERE clave = ?', [cve], 'main');
-        return updatedEquipo[0];
-    } catch (error) {
-        Logger.error(`Error updating equipo: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
+    const equipoId = parseInt(cve, 10);
+    if (isNaN(equipoId)) {
+        throw new Error('La clave (ID) del equipo debe ser un número.');
     }
-}
+    return prisma.ma_eqsis.update({
+        where: { clave: equipoId },
+        data: updateData,
+    });
+};
 
+/**
+ * Crea un nuevo equipo.
+ * @param {Object} equipoData Un objeto con los datos del nuevo equipo.
+ * @returns {Promise<Object>} Una promesa que se resuelve en el objeto del equipo recién creado.
+ */
 exports.setEquipo = async (equipoData) => {
-    try {
-        let sql = 'INSERT INTO ma_eqsis (';
-        const params = [];
-        const fields = [];
-        const placeholders = [];
-
-        for (const key in equipoData) {
-            fields.push(key);
-            placeholders.push('?');
-            params.push(equipoData[key]);
-        }
-
-        sql += fields.join(', ') + ') VALUES (' + placeholders.join(', ') + ')';
-
-        Logger.info(`Executing SQL: ${sql} with params: ${params}`);
-        const result = await QueryHandler.execute(sql, params, 'main');
-
-        const newEquipo = await QueryHandler.execute('SELECT * FROM ma_eqsis WHERE clave = ?', [result.insertId], 'main');
-        return newEquipo[0];
-    } catch (error) {
-        Logger.error(`Error inserting equipo: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-}
+    return prisma.ma_eqsis.create({
+        data: equipoData,
+    });
+};

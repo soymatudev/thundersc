@@ -1,125 +1,82 @@
-const Logger = require('../utils/Logger');
-const QueryHandler = require('../utils/QueryHandler');
+const prisma = require('../config/prismaClient');
 
-exports.setTelegramUsuario = async (UsuarioData) => {
-    try {
-        let existingUser = await this.getTelegramUsuarioByCve(UsuarioData.clave);
+exports.setTelegramUsuario = async (usuarioData) => {
+    const { clave } = usuarioData;
+    const existingUser = await prisma.ma_chatids.findUnique({
+        where: { clave: BigInt(clave) },
+    });
 
-        if (existingUser.length > 0) {
-            Logger.info(`User with clave ${UsuarioData.clave} already exists.`);
-            return existingUser[0];
-        }
-
-        let sql = 'INSERT INTO ma_chatids (';
-        const params = [];
-        const fields = [];
-        const placeholders = [];
-
-        for (const key in UsuarioData) {
-            fields.push(key);
-            placeholders.push('?');
-            params.push(UsuarioData[key]);
-        }
-
-        sql += fields.join(', ') + ') VALUES (' + placeholders.join(', ') + ')';
-
-        Logger.info(`Executing SQL: ${sql} with params: ${params}`);
-        const result = await QueryHandler.execute(sql, params, 'main');
-
-        const newAlmacen = await QueryHandler.execute('SELECT * FROM ma_chatids WHERE clave = ?', [result.insertId], 'main');
-        return newAlmacen[0];
-    } catch (error) {
-        Logger.error(`Error creating usuario telegram: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
+    if (existingUser) {
+        return existingUser;
     }
-}
+
+    return prisma.ma_chatids.create({
+        data: {
+            ...usuarioData,
+            clave: BigInt(usuarioData.clave),
+        }
+    });
+};
 
 exports.getTelegramUsuarios = async () => {
-    try {
-        const usuarios = await QueryHandler.execute('SELECT * FROM ma_chatids', [], 'main');
-        return usuarios;
-    } catch (error) {
-        Logger.error(`Error fetching usuarios: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-}
+    return prisma.ma_chatids.findMany();
+};
 
 exports.getTelegramUsuarioByCve = async (cve) => {
-    try {
-        let sql = 'SELECT * FROM ma_chatids WHERE clave = ?';
-        const usuarios = await QueryHandler.execute(sql, [cve], 'main');
-        return usuarios;
-    } catch (error) {
-        Logger.error(`Error fetching usuarios by cve: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
+    const usuarioId = BigInt(cve);
+    return prisma.ma_chatids.findUnique({
+        where: { clave: usuarioId },
+    });
+};
+
+exports.setTelegramUsuarioxSensor = async (usuarioSensorData) => {
+    const existingSubscription = await prisma.ma_sesus.findFirst({
+        where: {
+            cve_usu: usuarioSensorData.cve_usu,
+            cve_ses: usuarioSensorData.cve_ses,
+        },
+    });
+
+    if (existingSubscription) {
+        return existingSubscription;
     }
-}
 
-exports.setTelegramUsuarioxSensor = async (UsuarioData) => {
-    try {
-        const existingUser = await this.getTelegramUsuariosxSensor(UsuarioData);
-        if (existingUser.length > 0) {
-            Logger.info(`Usuario sensor with cve_usu ${UsuarioData.cve_usu} and cve_ses ${UsuarioData.cve_ses} already exists.`);
-            return null;
-        }
-        let sql = 'INSERT INTO ma_sesus (';
-        const params = [];
-        const fields = [];
-        const placeholders = [];
+    return prisma.ma_sesus.create({
+        data: usuarioSensorData,
+    });
+};
 
-        for (const key in UsuarioData) {
-            fields.push(key);
-            placeholders.push('?');
-            params.push(UsuarioData[key]);
-        }
-
-        sql += fields.join(', ') + ') VALUES (' +placeholders.join(', ') + ')';
-
-        Logger.info(`Executing SQL: ${sql} with params: ${params}`);
-        const result = await QueryHandler.execute(sql, params, 'main');
-
-        const newUsuario = await QueryHandler.execute('SELECT * FROM ma_sesus WHERE cve_usu = ?', [result.insertId], 'main');
-        return newUsuario[0];
-    } catch (error) {
-        Logger.error(`Error creating usuario sensor: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-}
-
-exports.getTelegramUsuariosxSensor = async (UsuarioData) => {
-    try {
-        params = [UsuarioData.cve_usu, UsuarioData.cve_ses];
-        const usuarios = await QueryHandler.execute('SELECT * FROM ma_sesus where cve_usu = ? and cve_ses = ?', params, 'main');
-        Logger.info(`Fetched usuarios sensores with params: ${params}`);
-        Logger.info(`Result: ${JSON.stringify(usuarios)}`);
-        return usuarios;
-    } catch (error) {
-        Logger.error(`Error fetching usuarios sensores: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-}
+exports.getTelegramUsuariosxSensor = async (usuarioData) => {
+    return prisma.ma_sesus.findMany({
+        where: {
+            cve_usu: usuarioData.cve_usu,
+            cve_ses: usuarioData.cve_ses,
+        },
+    });
+};
 
 /**
  * Obtiene todos los Chat IDs de Telegram suscritos a las alertas de un sensor específico.
  * 
- * @param {array} infoSensor - El nombre o identificador del sensor (ej. 'Temp02').
- * @returns {Promise<string[]>} - Una promesa que resuelve a un array de strings, donde cada string es un chat_id.
+ * @param {object} infoSensor - Objeto que contiene la clave del sensor.
+ * @param {number} infoSensor.clave - La clave del sensor.
+ * @param {string} infoSensor.alias - El alias del sensor.
+ * @returns {Promise<string[]>} - Una promesa que resuelve a un array de chat_ids.
  */
 exports.getChatIdsPorSensor = async (infoSensor) => {
-    const query = 'SELECT cve_usu as chat_id FROM ma_sesus WHERE cve_ses = ? and cns_sn = ?';
-    const params = [infoSensor.clave, "S"];
-    try {
-        Logger.info(`Buscando suscriptores para el sensor: ${infoSensor.alias}`);
-        const results = await QueryHandler.execute(query, params);
-        if (!results || results.length === 0) {
-            Logger.warn(`No se encontraron suscriptores de Telegram para el sensor: ${infoSensor.alias}`);
-            return [];
-        }
-        const chatIds = results.map(row => row.chat_id.trim());
-        Logger.info(`Suscriptores encontrados para ${infoSensor.alias}: ${chatIds.join(', ')}`);
-        return chatIds;
-    } catch (error) {
-        Logger.error(`Error al obtener los Chat IDs para el sensor ${infoSensor.alias}: ${error.message}`);
+    const results = await prisma.ma_sesus.findMany({
+        where: {
+            cve_ses: infoSensor.clave,
+            cns_sn: 'S',
+        },
+        select: {
+            cve_usu: true,
+        },
+    });
+
+    if (!results) {
         return [];
     }
+    
+    return results.map(row => row.cve_usu.trim());
 };

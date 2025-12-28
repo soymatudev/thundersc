@@ -1,76 +1,53 @@
-const Logger = require('../utils/Logger');
-const QueryHandler = require('../utils/QueryHandler');
+const prisma = require('../config/prismaClient');
 
+/**
+ * Obtiene todos los empleados de la base de datos.
+ * @returns {Promise<Array>} Una promesa que se resuelve en un array de empleados.
+ */
 exports.getAllEmpleados = async () => {
-    try {
-        const empleados = await QueryHandler.execute('SELECT * FROM ma_emple', [], 'main');
-        return empleados;
-    } catch (error) {
-        Logger.error(`Error fetching empleados: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-}
+    return prisma.ma_emple.findMany();
+};
 
+/**
+ * Obtiene un empleado por su ID.
+ * La función original recibía 'cve' pero lo usaba como 'id'. Se mantiene la lógica.
+ * @param {number|string} cve El ID del empleado.
+ * @returns {Promise<Object|null>} Una promesa que se resuelve en el objeto del empleado o null si no se encuentra.
+ */
 exports.getEmpleadoByCve = async (cve) => {
-    try {
-        let sql = 'SELECT * FROM ma_emple WHERE id = ?';
-        const empleados = await QueryHandler.execute(sql, [cve], 'main');
-        return empleados;
-    } catch (error) {
-        Logger.error(`Error fetching empleados by cve: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
+    const empleadoId = parseInt(cve, 10);
+    if (isNaN(empleadoId)) {
+        throw new Error('El ID del empleado debe ser un número.');
     }
-}
+    return prisma.ma_emple.findUnique({
+        where: { id: empleadoId },
+    });
+};
 
+/**
+ * Actualiza un empleado existente por su ID.
+ * @param {number|string} cve El ID del empleado a actualizar.
+ * @param {Object} updateData Un objeto con los campos a actualizar.
+ * @returns {Promise<Object>} Una promesa que se resuelve en el objeto del empleado actualizado.
+ */
 exports.updateEmpleado = async (cve, updateData) => {
-    try {
-        let sql = 'UPDATE ma_emple SET ';
-        const params = [];
-        const updates = [];
-
-        for (const key in updateData) {
-            updates.push(`${key} = ?`);
-            params.push(updateData[key]);
-        }
-
-        sql += updates.join(', ') + ' WHERE id = ?';
-        params.push(cve);
-
-        Logger.info(`Executing SQL: ${sql} with params: ${params}`);
-        const result = await QueryHandler.execute(sql, params, 'main');
-
-        if (result.affectedRows === 0) return null;
-
-        const updatedEmpleado = await QueryHandler.execute('SELECT * FROM ma_emple WHERE id = ?', [cve], 'main');
-        return updatedEmpleado[0];
-    } catch (error) {
-        Logger.error(`Error updating empleado: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
+    const empleadoId = parseInt(cve, 10);
+    if (isNaN(empleadoId)) {
+        throw new Error('El ID del empleado debe ser un número.');
     }
-}
+    return prisma.ma_emple.update({
+        where: { id: empleadoId },
+        data: updateData,
+    });
+};
 
+/**
+ * Crea un nuevo empleado.
+ * @param {Object} empleadoData Un objeto con los datos del nuevo empleado.
+ * @returns {Promise<Object>} Una promesa que se resuelve en el objeto del empleado recién creado.
+ */
 exports.setEmpleado = async (empleadoData) => {
-    try {
-        let sql = 'INSERT INTO ma_emple (';
-        const params = [];
-        const fields = [];
-        const placeholders = [];
-
-        for (const key in empleadoData) {
-            fields.push(key);
-            placeholders.push('?');
-            params.push(empleadoData[key]);
-        }
-
-        sql += fields.join(', ') + ') VALUES (' + placeholders.join(', ') + ')';
-
-        Logger.info(`Executing SQL: ${sql} with params: ${params}`);
-        const result = await QueryHandler.execute(sql, params, 'main');
-
-        const newEmpleado = await QueryHandler.execute('SELECT * FROM ma_emple WHERE id = ?', [result.insertId], 'main');
-        return newEmpleado[0];
-    } catch (error) {
-        Logger.error(`Error inserting empleado: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-}
+    return prisma.ma_emple.create({
+        data: empleadoData,
+    });
+};

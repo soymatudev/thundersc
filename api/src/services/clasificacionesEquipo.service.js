@@ -1,76 +1,52 @@
-const Logger = require('../utils/Logger');
-const QueryHandler = require('../utils/QueryHandler');
+const prisma = require('../config/prismaClient');
 
+/**
+ * Obtiene todas las clasificaciones de equipo de la base de datos.
+ * @returns {Promise<Array>} Una promesa que se resuelve en un array de clasificaciones.
+ */
 exports.getAllClasificaciones = async () => {
-    try {
-        const dasificacions = await QueryHandler.execute('SELECT * FROM ma_clasif', [], 'main');
-        return dasificacions;
-    } catch (error) {
-        Logger.error(`Error fetching dasificacions: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-}
+    return prisma.ma_clasif.findMany();
+};
 
+/**
+ * Obtiene una clasificación de equipo por su clave (ID).
+ * @param {number|string} cve La clave (ID) de la clasificación.
+ * @returns {Promise<Object|null>} Una promesa que se resuelve en el objeto de la clasificación o null si no se encuentra.
+ */
 exports.getClasificacionByCve = async (cve) => {
-    try {
-        let sql = 'SELECT * FROM ma_clasif WHERE clave = ?';
-        const dasificacions = await QueryHandler.execute(sql, [cve], 'main');
-        return dasificacions;
-    } catch (error) {
-        Logger.error(`Error fetching dasificacions by cve: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
+    const clasificacionId = parseInt(cve, 10);
+    if (isNaN(clasificacionId)) {
+        throw new Error('La clave (ID) de la clasificación debe ser un número.');
     }
-}
+    return prisma.ma_clasif.findUnique({
+        where: { clave: clasificacionId },
+    });
+};
 
+/**
+ * Actualiza una clasificación de equipo existente por su clave (ID).
+ * @param {number|string} cve La clave (ID) de la clasificación a actualizar.
+ * @param {Object} updateData Un objeto con los campos a actualizar.
+ * @returns {Promise<Object>} Una promesa que se resuelve en el objeto de la clasificación actualizada.
+ */
 exports.updateClasificacion = async (cve, updateData) => {
-    try {
-        let sql = 'UPDATE ma_clasif SET ';
-        const params = [];
-        const updates = [];
-
-        for (const key in updateData) {
-            updates.push(`${key} = ?`);
-            params.push(updateData[key]);
-        }
-
-        sql += updates.join(', ') + ' WHERE clave = ?';
-        params.push(cve);
-
-        Logger.info(`Executing SQL: ${sql} with params: ${params}`);
-        const result = await QueryHandler.execute(sql, params, 'main');
-
-        if (result.affectedRows === 0) return null;
-
-        const updatedEepartamento = await QueryHandler.execute('SELECT * FROM ma_clasif WHERE clave = ?', [cve], 'main');
-        return updatedEepartamento[0];
-    } catch (error) {
-        Logger.error(`Error updating dasificacion: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
+    const clasificacionId = parseInt(cve, 10);
+    if (isNaN(clasificacionId)) {
+        throw new Error('La clave (ID) de la clasificación debe ser un número.');
     }
-}
+    return prisma.ma_clasif.update({
+        where: { clave: clasificacionId },
+        data: updateData,
+    });
+};
 
+/**
+ * Crea una nueva clasificación de equipo.
+ * @param {Object} clasificacionData Un objeto con los datos de la nueva clasificación.
+ * @returns {Promise<Object>} Una promesa que se resuelve en el objeto de la clasificación recién creada.
+ */
 exports.setClasificacion = async (clasificacionData) => {
-    try {
-        let sql = 'INSERT INTO ma_clasif (';
-        const params = [];
-        const fields = [];
-        const placeholders = [];
-
-        for (const key in clasificacionData) {
-            fields.push(key);
-            placeholders.push('?');
-            params.push(clasificacionData[key]);
-        }
-
-        sql += fields.join(', ') + ') VALUES (' + placeholders.join(', ') + ')';
-
-        Logger.info(`Executing SQL: ${sql} with params: ${params}`);
-        const result = await QueryHandler.execute(sql, params, 'main');
-
-        const newClasificacion = await QueryHandler.execute('SELECT * FROM ma_clasif WHERE clave = ?', [result.insertId], 'main');
-        return newClasificacion[0];
-    } catch (error) {
-        Logger.error(`Error inserting clasificacion: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-}
+    return prisma.ma_clasif.create({
+        data: clasificacionData,
+    });
+};

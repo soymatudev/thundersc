@@ -9,20 +9,24 @@ const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
+    setLoading(true);
     try {
       const { user } = await AuthService.loginUser({ username, password });
       const userProfile = await AuthService.getProfile();
       login(userProfile);
       navigate('/');
     } catch (err) {
-      setError('Credenciales incorrectas o error en el servidor.');
+      setError(err.message || 'Credenciales incorrectas o error en el servidor.');
       console.error(err);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -51,6 +55,7 @@ const LoginPage = () => {
             onChange={(e) => setUsername(e.target.value)}
             autoComplete="email"
             required
+            disabled={loading}
           />
 
           <Input
@@ -61,6 +66,7 @@ const LoginPage = () => {
             onChange={(e) => setPassword(e.target.value)}
             autoComplete="current-password"
             required
+            disabled={loading}
           />
 
           <div className="flex items-center justify-between text-sm">
@@ -82,8 +88,8 @@ const LoginPage = () => {
           {error && <p className="text-red-500 text-sm text-center">{error}</p>}
 
           <div>
-            <Button type="submit" fullWidth={true}>
-              Iniciar Sesión
+            <Button type="submit" fullWidth={true} disabled={loading}>
+              {loading ? 'Iniciando...' : 'Iniciar Sesión'}
             </Button>
           </div>
         </form>
@@ -94,4 +100,3 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
-

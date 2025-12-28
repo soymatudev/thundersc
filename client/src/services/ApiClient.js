@@ -52,12 +52,6 @@ const handleErrors = async (response) => {
   if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));
 
-      if (response.status === 401) {
-          console.error('Unauthorized access - redirecting to login.');
-          window.location.href = '/login';
-          //throw new Error('Unauthorized: Please log in to continue.');
-      }
-
       const message = errorData.message || `Error: ${response.status} ${response.statusText}`;
       throw new Error(message);
   }

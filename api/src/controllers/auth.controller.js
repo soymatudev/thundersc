@@ -26,16 +26,20 @@ exports.register = async (req, res) => {
     }
 }
 
-exports.profile = async (req, res) => {
+exports.profile = async (req, res, next) => {
     try {
-        const userData = req.cookies['access_token'];
-        const userDataDecoded = jwt.verify(userData, process.env.JWT_SECRET);
-        const userProfile = await authService.profile(userDataDecoded.userCve);
-        if (!userProfile) return res.status(404).json({ message: 'User profile not found' });
+        // The user's basic info (including 'clave') is attached by the authMiddleware.
+        // We use this clave to get the full, aggregated profile from the service.
+        const userProfile = await authService.profile(req.user.clave);
+        
+        if (!userProfile || userProfile.length === 0) {
+            return res.status(404).json({ message: 'User profile data not found' });
+        }
+        
         res.status(200).json(userProfile);
     } catch (error) {
-        Logger.error(`Error fetching profile for user: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
+        // Pass any errors to the global error handler
+        next(error);
     }
 }
 

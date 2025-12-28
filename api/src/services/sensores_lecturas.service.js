@@ -1,4 +1,4 @@
-const QueryHandler = require('../utils/QueryHandler');
+const prisma = require('../config/prismaClient');
 const Logger = require('../utils/Logger');
 const telegramService = require('./telegram.service');
 const { getSensorByName } = require('./sensores.service');
@@ -26,18 +26,24 @@ exports.registrarLectura = async (data) => {
     return { success: true, message: 'Datos procesados' };
 };
 
-const eventTemperatura = async (data)  => {
+const eventTemperatura = async (data) => {
     const infoSensor = await getSensorByName(data.sensorName);
-    alertaTemperatura(data, infoSensor);
-    try {
-        const sql = 'INSERT INTO ma_regzoro (cve_equipo, fecha_hora, dato_1, dato_2, dato_3) VALUES (?,  NOW(), ?, ?, ?)';
-        const sensores = await QueryHandler.execute(sql, [infoSensor.clave, data.dato_1, data.dato_2, 0], 'main');
-        return sensores;
-    } catch (error) {
-        Logger.error(`Error fetching sensores: ${error.message}`);
-        //res.status(500).json({ message: 'Internal server error' });
+    if (!infoSensor) {
+        Logger.error(`No se encontró el sensor con nombre: ${data.sensorName}`);
         return null;
     }
+    
+    alertaTemperatura(data, infoSensor);
+    
+    return prisma.ma_regzoro.create({
+        data: {
+            cve_equipo: BigInt(infoSensor.clave),
+            fecha_hora: new Date(),
+            dato_1: data.dato_1.toString(),
+            dato_2: data.dato_2.toString(),
+            dato_3: '0',
+        }
+    });
 }
 
 const alertaTemperatura = (data, infoSensor) => {
@@ -56,6 +62,10 @@ const alertaTemperatura = (data, infoSensor) => {
 
 const eventNeg = async (data) => {
     const infoSensor = await getSensorByName(data.sensorName);
+    if (!infoSensor) {
+        Logger.error(`No se encontró el sensor con nombre: ${data.sensorName}`);
+        return;
+    }
     const mensaje = `\n ⚡ Alerta de Energia! ⚡\n 📟 Sensor: ${infoSensor.alias} fuera de servicio o sin energia`
     Logger.warn(mensaje);
     telegramService.enviarAlerta(infoSensor, mensaje);
@@ -63,16 +73,22 @@ const eventNeg = async (data) => {
 
 const eventDis = async (data) => {
     const infoSensor = await getSensorByName(data.sensorName);
-    alertaDis(data, infoSensor);
-    try {
-        const sql = 'INSERT INTO ma_regzoro (cve_equipo, fecha_hora, dato_1, dato_2, dato_3) VALUES (?,  NOW(), ?, ?, ?)';
-        const sensores = await QueryHandler.execute(sql, [infoSensor.clave, data.dato_1, data.dato_2, data.dato_3], 'main');
-        return sensores;
-    } catch (error) {
-        Logger.error(`Error fetching sensores: ${error.message}`);
-        //res.status(500).json({ message: 'Internal server error' });
+    if (!infoSensor) {
+        Logger.error(`No se encontró el sensor con nombre: ${data.sensorName}`);
         return null;
     }
+
+    alertaDis(data, infoSensor);
+    
+    return prisma.ma_regzoro.create({
+        data: {
+            cve_equipo: BigInt(infoSensor.clave),
+            fecha_hora: new Date(),
+            dato_1: data.dato_1.toString(),
+            dato_2: data.dato_2.toString(),
+            dato_3: data.dato_3.toString(),
+        }
+    });
 }
 
 const alertaDis = (data, infoSensor) => {
