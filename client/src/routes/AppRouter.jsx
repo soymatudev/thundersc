@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useAuth } from '../hooks/useAuth';
+import { useAuth } from '../shared/hooks/useAuth';
 
 // Páginas
-import LoginPage from '../pages/LoginPage';
-import DashboardPage from '../pages/DashboardPage'; // Lo crearemos en breve
+import LoginPage from '../features/auth/pages/LoginPage';
+import DashboardPage from '../features/dashboard/pages/DashboardPage'; // Lo crearemos en breve
 
 // Componentes de ruta
 import ProtectedRoute from './ProtectedRoute';
