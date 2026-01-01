@@ -4,11 +4,13 @@ import { useTabs } from '../context/TabsContext';
 
 // Importa las páginas de los módulos aquí
 import AlmacenesPage from '../../features/almacenes/pages/AlmacenesPage';
+import DepartamentosPage from '../../features/departamentos/pages/DepartamentosPage';
 
 // 1. Mapa de componentes
 // Asocia el 'id' del item del menú con el componente de la página que debe renderizar.
 const componentMap = {
   almacenes: <AlmacenesPage />,
+  departamentos: <DepartamentosPage />,
   // Agrega aquí otras páginas a medida que las vayas creando
   // marcas: <MarcasPage />,
   // equipos: <EquiposPage />,

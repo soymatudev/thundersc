@@ -1,7 +1,7 @@
 {
   "yaakVersion": "2025.8.2",
   "yaakSchema": 4,
-  "timestamp": "2025-11-27T16:07:53.243257801",
+  "timestamp": "2026-01-01T16:20:04.294703252",
   "resources": {
     "workspaces": [
       {
@@ -24,23 +24,121 @@
     "folders": [
       {
         "model": "folder",
-        "id": "fl_uqm6VdHhsz",
-        "createdAt": "2025-11-27T15:39:22.489641110",
-        "updatedAt": "2025-11-27T15:39:22.489642165",
+        "id": "fl_WjxzYkhVX6",
+        "createdAt": "2025-11-28T18:29:55.802749638",
+        "updatedAt": "2025-12-09T16:31:59.202571447",
         "workspaceId": "wk_DNLGyyCaD6",
-        "folderId": "fl_MBAkSRsBhX",
+        "folderId": null,
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Empresa",
+        "sortPriority": 9000.0
+      },
+      {
+        "model": "folder",
+        "id": "fl_i9n5WhRjXz",
+        "createdAt": "2025-11-28T18:03:18.042543289",
+        "updatedAt": "2025-12-09T16:31:59.206151305",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": null,
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Permisos",
+        "sortPriority": 11000.0
+      },
+      {
+        "model": "folder",
+        "id": "fl_N6Gc2N3Bie",
+        "createdAt": "2025-11-28T17:21:31.529941804",
+        "updatedAt": "2025-12-09T16:31:59.207945694",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": null,
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Auth",
+        "sortPriority": 12000.0
+      },
+      {
+        "model": "folder",
+        "id": "fl_iTEVPouerV",
+        "createdAt": "2025-11-28T15:23:11.907364247",
+        "updatedAt": "2025-12-09T16:31:59.204356054",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": null,
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Modulos",
+        "sortPriority": 10000.0
+      },
+      {
+        "model": "folder",
+        "id": "fl_sbaGJwFADn",
+        "createdAt": "2025-11-27T19:42:20.234669956",
+        "updatedAt": "2025-11-27T19:42:20.234671235",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": "fl_K6NdJS9FTV",
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Componentes",
+        "sortPriority": -1764272540234.0
+      },
+      {
+        "model": "folder",
+        "id": "fl_7YbYNJVKhA",
+        "createdAt": "2025-11-27T16:09:44.897882278",
+        "updatedAt": "2025-11-27T16:09:44.897882993",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": "fl_K6NdJS9FTV",
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Auth",
+        "sortPriority": -1764259784897.0
+      },
+      {
+        "model": "folder",
+        "id": "fl_jrfBS6NyY5",
+        "createdAt": "2025-11-27T16:09:35.409490485",
+        "updatedAt": "2025-11-27T16:09:35.409491535",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": "fl_K6NdJS9FTV",
+        "authentication": {},
+        "authenticationType": null,
+        "description": "",
+        "headers": [],
+        "name": "Health",
+        "sortPriority": -1764259775409.0
+      },
+      {
+        "model": "folder",
+        "id": "fl_K6NdJS9FTV",
+        "createdAt": "2025-11-27T16:09:24.713228139",
+        "updatedAt": "2025-12-09T16:31:59.151324061",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": null,
         "authentication": {},
         "authenticationType": null,
         "description": "",
         "headers": [],
         "name": "Universidad",
-        "sortPriority": -1764257962489.0
+        "sortPriority": 0.0
       },
       {
         "model": "folder",
         "id": "fl_RzguBhEWtd",
         "createdAt": "2025-11-19T22:20:20.638602931",
-        "updatedAt": "2025-11-19T22:20:20.638603757",
+        "updatedAt": "2025-12-09T16:31:59.187887252",
         "workspaceId": "wk_DNLGyyCaD6",
         "folderId": null,
         "authentication": {},
@@ -48,13 +146,13 @@
         "description": "",
         "headers": [],
         "name": "Movimientos",
-        "sortPriority": -1763590820638.0
+        "sortPriority": 1000.0
       },
       {
         "model": "folder",
         "id": "fl_h52kWAi6ZM",
         "createdAt": "2025-11-19T19:39:21.769849191",
-        "updatedAt": "2025-11-19T19:39:21.769850201",
+        "updatedAt": "2025-12-09T16:31:59.189780808",
         "workspaceId": "wk_DNLGyyCaD6",
         "folderId": null,
         "authentication": {},
@@ -62,13 +160,13 @@
         "description": "",
         "headers": [],
         "name": "Consultas",
-        "sortPriority": -1763581161769.0
+        "sortPriority": 2000.0
       },
       {
         "model": "folder",
         "id": "fl_rgpP4aH2kz",
         "createdAt": "2025-11-19T18:45:34.135688848",
-        "updatedAt": "2025-11-19T18:49:46.776632282",
+        "updatedAt": "2025-12-09T16:31:59.200762336",
         "workspaceId": "wk_DNLGyyCaD6",
         "folderId": null,
         "authentication": {},
@@ -76,13 +174,13 @@
         "description": "",
         "headers": [],
         "name": "Clasificaciones_Equipos",
-        "sortPriority": 5000.0
+        "sortPriority": 8000.0
       },
       {
         "model": "folder",
         "id": "fl_2pESkeUywL",
         "createdAt": "2025-11-19T18:25:42.851022541",
-        "updatedAt": "2025-11-19T18:49:46.766239325",
+        "updatedAt": "2025-12-09T16:31:59.197214165",
         "workspaceId": "wk_DNLGyyCaD6",
         "folderId": null,
         "authentication": {},
@@ -90,13 +188,13 @@
         "description": "",
         "headers": [],
         "name": "Empleados",
-        "sortPriority": 1000.0
+        "sortPriority": 6000.0
       },
       {
         "model": "folder",
         "id": "fl_vc4fejqNNi",
         "createdAt": "2025-11-19T18:25:38.491651159",
-        "updatedAt": "2025-11-19T18:49:52.041074644",
+        "updatedAt": "2025-12-09T16:31:59.195376430",
         "workspaceId": "wk_DNLGyyCaD6",
         "folderId": null,
         "authentication": {},
@@ -104,13 +202,13 @@
         "description": "",
         "headers": [],
         "name": "Equipos",
-        "sortPriority": 555.5555555555555
+        "sortPriority": 5000.0
       },
       {
         "model": "folder",
         "id": "fl_PnUxmdnaxa",
         "createdAt": "2025-11-19T18:25:31.226869242",
-        "updatedAt": "2025-11-19T18:49:46.728804056",
+        "updatedAt": "2025-12-09T16:31:59.191615163",
         "workspaceId": "wk_DNLGyyCaD6",
         "folderId": null,
         "authentication": {},
@@ -118,13 +216,13 @@
         "description": "",
         "headers": [],
         "name": "Marcas",
-        "sortPriority": 0.0
+        "sortPriority": 3000.0
       },
       {
         "model": "folder",
         "id": "fl_MBAkSRsBhX",
         "createdAt": "2025-11-19T18:25:26.125458066",
-        "updatedAt": "2025-11-19T18:49:49.952924327",
+        "updatedAt": "2025-12-09T16:31:59.193516564",
         "workspaceId": "wk_DNLGyyCaD6",
         "folderId": null,
         "authentication": {},
@@ -132,13 +230,13 @@
         "description": "",
         "headers": [],
         "name": "Almacenes",
-        "sortPriority": 333.3333333333333
+        "sortPriority": 4000.0
       },
       {
         "model": "folder",
         "id": "fl_FNnz9yGAqg",
         "createdAt": "2025-11-19T18:25:04.074898959",
-        "updatedAt": "2025-11-19T18:49:46.774199341",
+        "updatedAt": "2025-12-09T16:31:59.198955110",
         "workspaceId": "wk_DNLGyyCaD6",
         "folderId": null,
         "authentication": {},
@@ -146,10 +244,444 @@
         "description": "",
         "headers": [],
         "name": "Departamentos",
-        "sortPriority": 4000.0
+        "sortPriority": 7000.0
       }
     ],
     "httpRequests": [
+      {
+        "model": "http_request",
+        "id": "rq_SsioAgwA58",
+        "createdAt": "2025-12-09T16:31:50.774175908",
+        "updatedAt": "2025-12-09T17:19:21.775295944",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": null,
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "",
+        "sortPriority": 15000.0,
+        "url": "http://172.17.14.162/crm/kiosko",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_ZqwMEZP5ck",
+        "createdAt": "2025-12-04T15:38:36.709657843",
+        "updatedAt": "2025-12-04T15:41:57.886563045",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": "fl_N6Gc2N3Bie",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"userData\": {\n  \"descri\": \"Maturana\",\n  \"username\": \"matudev\",\n  \"hash_password\": \"mipass\"\n  },\n  \"usuarioPermisoData\": [\n    {\n      \"cve_permiso\": 15,\n      \"cve_empresa\": \"PCZMEX\"\n    }, \n    {\n      \"cve_permiso\": 16,\n      \"cve_empresa\": \"PCZMEX\"\n    }, \n    {\n      \"cve_permiso\": 17,\n      \"cve_empresa\": \"PCZMEX\"\n    }, \n    {\n      \"cve_permiso\": 18,\n      \"cve_empresa\": \"PCZMEX\"\n    }\n    \n  ]\n}\n"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "w9SyjHJEF0"
+          }
+        ],
+        "method": "PUT",
+        "name": "Update_Usuario",
+        "sortPriority": 2333.3343,
+        "url": "http://localhost:3000/auth/profile/23",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_9FQzmMSdGv",
+        "createdAt": "2025-11-28T21:08:24.933448961",
+        "updatedAt": "2025-12-01T18:43:52.649048415",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": "fl_N6Gc2N3Bie",
+        "authentication": {
+          "name": "access_token",
+          "payload": "{\n  \"access_toekn\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ3ZlIjoyMiwiZGVzY3JpIjoiTWF0dXJhbmEiLCJ1c2VybmFtZSI6Im1hdHVkZXYiLCJpYXQiOjE3NjQ2MTQ1MTYsImV4cCI6MTc2NDYxODExNn0.Fj7BfSBKK2bPKvSip8tonFVsGPouNc0IY_fIF7EeQ14\"\n}",
+          "secret": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ3ZlIjoyMiwiZGVzY3JpIjoiTWF0dXJhbmEiLCJ1c2VybmFtZSI6Im1hdHVkZXYiLCJpYXQiOjE3NjQ2MTQ1MTYsImV4cCI6MTc2NDYxODExNn0.Fj7BfSBKK2bPKvSip8tonFVsGPouNc0IY_fIF7EeQ14"
+        },
+        "authenticationType": "jwt",
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "TNtRARzMhz"
+          },
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "remRIwVSur"
+          }
+        ],
+        "method": "GET",
+        "name": "Profile",
+        "sortPriority": 6999.9998,
+        "url": "http://localhost:3000/auth/profile/",
+        "urlParameters": [
+          {
+            "enabled": true,
+            "name": "access_token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyQ3ZlIjoyMiwiZGVzY3JpIjoiTWF0dXJhbmEiLCJ1c2VybmFtZSI6Im1hdHVkZXYiLCJpYXQiOjE3NjQ2MTQ1MTYsImV4cCI6MTc2NDYxODExNn0.Fj7BfSBKK2bPKvSip8tonFVsGPouNc0IY_fIF7EeQ14",
+            "id": "EADevaT667"
+          },
+          {
+            "enabled": true,
+            "name": "",
+            "value": "",
+            "id": "09S7pUgcVX"
+          }
+        ]
+      },
+      {
+        "model": "http_request",
+        "id": "rq_Y4diq2hoh6",
+        "createdAt": "2025-11-28T18:34:28.437109905",
+        "updatedAt": "2025-11-28T18:36:37.526337205",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": "fl_WjxzYkhVX6",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"clave\": \"PCZMEX\",\n  \"nombre\": \"Mexico\"\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "Vcrqg52BTE"
+          }
+        ],
+        "method": "PUT",
+        "name": "updateEmpresa",
+        "sortPriority": 2000.0,
+        "url": "http://localhost:3000/empresas/PCZMEX",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_jVEJX7ndAs",
+        "createdAt": "2025-11-28T18:34:28.424907721",
+        "updatedAt": "2025-11-28T18:36:17.478721278",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": "fl_WjxzYkhVX6",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "EmpresaByCve",
+        "sortPriority": 1000.0,
+        "url": "http://localhost:3000/empresas/PCZMEX",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_3CS9wassV4",
+        "createdAt": "2025-11-28T18:34:28.412197409",
+        "updatedAt": "2025-11-28T18:36:17.488788527",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": "fl_WjxzYkhVX6",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"clave\": \"PCZMEX\",\n  \"nombre\": \"Mexico\"\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "taZmWF4VgM"
+          }
+        ],
+        "method": "POST",
+        "name": "SetEmpresa",
+        "sortPriority": 3000.0,
+        "url": "http://localhost:3000/empresas/",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_ZbEjuyWXKf",
+        "createdAt": "2025-11-28T18:34:28.398109244",
+        "updatedAt": "2025-11-28T18:36:17.473311353",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": "fl_WjxzYkhVX6",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "AllEmpresas",
+        "sortPriority": 0.0,
+        "url": "http://localhost:3000/empresas/",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_we5Tgeratz",
+        "createdAt": "2025-11-28T17:23:00.305744617",
+        "updatedAt": "2025-12-01T21:45:19.902322234",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": "fl_N6Gc2N3Bie",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"userData\": {\n  \"descri\": \"Maturana\",\n  \"username\": \"matudev\",\n  \"hash_password\": \"mipass\"\n  },\n  \"usuarioPermisoData\": [\n    {\n      \"cve_permiso\": 15,\n      \"cve_empresa\": \"PCZMEX\"\n    }, \n    {\n      \"cve_permiso\": 16,\n      \"cve_empresa\": \"PCZMEX\"\n    }, \n    {\n      \"cve_permiso\": 17,\n      \"cve_empresa\": \"PCZMEX\"\n    }, \n    {\n      \"cve_permiso\": 18,\n      \"cve_empresa\": \"PCZMEX\"\n    }\n    \n  ]\n}\n"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "w9SyjHJEF0"
+          }
+        ],
+        "method": "POST",
+        "name": "Registrar_Usuario",
+        "sortPriority": 2333.3333,
+        "url": "http://localhost:3000/auth/register",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_hmPbp4di2J",
+        "createdAt": "2025-11-28T17:21:40.041021169",
+        "updatedAt": "2025-11-28T18:48:04.874260686",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": "fl_N6Gc2N3Bie",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"username\": \"matudev\",\n  \"password\": \"mipass\"\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "aCHK7tEx49"
+          }
+        ],
+        "method": "POST",
+        "name": "Login",
+        "sortPriority": 6999.9999,
+        "url": "http://localhost:3000/auth/login",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_HUgd9cSLGM",
+        "createdAt": "2025-11-28T16:25:02.047901208",
+        "updatedAt": "2025-12-01T21:42:32.660055315",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": "fl_iTEVPouerV",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"moduloData\": {\n    \"clave\": 770,\n    \"descri\": \"Alamacenes\",\n    \"ruta\": \"System/Pruebas/Catalogos/Almacenes/Almacenes.jsx\",\n    \"menu\": \"Inicio.Inventarios.Catalogos\"\n  },\n  \"permisoModuloData\": [\n    {\n    \"descri\": \"usrinsert\"\n    },\n    {\n    \"descri\": \"usrupdate\"\n    },\n    {\n    \"descri\": \"usrdelete\"\n    },\n    {\n    \"descri\": \"usrprint\"\n    }\n  ]\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "QKwybRS0DA"
+          }
+        ],
+        "method": "POST",
+        "name": "createModulo",
+        "sortPriority": -1764260027054.997,
+        "url": "http://localhost:3000/modulos/",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_APMz8Jjbuc",
+        "createdAt": "2025-11-28T16:22:53.287002847",
+        "updatedAt": "2025-11-28T16:24:27.043494803",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": "fl_iTEVPouerV",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"clave\": 1,\n  \"descri\": \"Almacenes\",\n  \"ruta\": \"System/Inventarios/Catalogos/Almacenes/Almacenes.php\",\n  \"menu\": \"Inicio.Inventarios.Catalogos\"\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "QKwybRS0DA"
+          }
+        ],
+        "method": "PUT",
+        "name": "updateModulo",
+        "sortPriority": -1764260027054.998,
+        "url": "http://localhost:3000/api/modulos/1",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_FxSqd2skuU",
+        "createdAt": "2025-11-28T16:21:43.040370206",
+        "updatedAt": "2025-11-28T16:21:53.109012323",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": "fl_iTEVPouerV",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "AllModulosByCve",
+        "sortPriority": -1764260027054.999,
+        "url": "http://localhost:3000/api/modulos/1",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_bPkwoNWzEB",
+        "createdAt": "2025-11-28T15:23:19.591138580",
+        "updatedAt": "2025-11-28T16:21:41.169701051",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": "fl_iTEVPouerV",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "AllModulos",
+        "sortPriority": -1764260027055.0,
+        "url": "http://localhost:3000/api/modulos/",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_jvSu6SRcze",
+        "createdAt": "2025-11-27T19:42:25.163418313",
+        "updatedAt": "2025-11-27T19:43:00.369151162",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": "fl_sbaGJwFADn",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "",
+        "sortPriority": -1764260027055.0,
+        "url": "http://localhost:3000/componentes/roles",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_NgsyuJNHXr",
+        "createdAt": "2025-11-27T18:42:45.104466904",
+        "updatedAt": "2025-11-27T18:48:56.484660174",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": "fl_7YbYNJVKhA",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"useremail\": \"matudev@gmial.com\",\n  \"password\": \"mipass\"\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "hDjuEmzCiZ"
+          }
+        ],
+        "method": "POST",
+        "name": "Login",
+        "sortPriority": -1764260027055.0,
+        "url": "http://localhost:3000/api/auth/login",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_QaKbZAZreX",
+        "createdAt": "2025-11-27T17:16:44.582052871",
+        "updatedAt": "2025-11-27T17:24:54.930950378",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": "fl_7YbYNJVKhA",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {
+          "text": "{\n  \"id_rol\": 1,\n  \"nombre\": \"matudev\",\n  \"apellido_paterno\": \"Schurmann\",\n  \"apellido_materno\": \"Maturana\",\n  \"useremail\": \"matudev@gmail.com\",\n  \"password\": \"mipass\"\n}"
+        },
+        "bodyType": "application/json",
+        "description": "",
+        "headers": [
+          {
+            "enabled": true,
+            "name": "Content-Type",
+            "value": "application/json",
+            "id": "w9SyjHJEF0"
+          }
+        ],
+        "method": "POST",
+        "name": "Registrar_Usuario",
+        "sortPriority": -1764260027055.0,
+        "url": "http://localhost:3000/api/auth/register",
+        "urlParameters": []
+      },
+      {
+        "model": "http_request",
+        "id": "rq_oKRtL7zDBa",
+        "createdAt": "2025-11-27T16:13:47.055548267",
+        "updatedAt": "2025-11-27T19:42:53.930255054",
+        "workspaceId": "wk_DNLGyyCaD6",
+        "folderId": "fl_jrfBS6NyY5",
+        "authentication": {},
+        "authenticationType": null,
+        "body": {},
+        "bodyType": null,
+        "description": "",
+        "headers": [],
+        "method": "GET",
+        "name": "Health",
+        "sortPriority": -1764260027055.0,
+        "url": "http://localhost:3000/health",
+        "urlParameters": []
+      },
       {
         "model": "http_request",
         "id": "rq_gwbYQ3gmyG",
@@ -822,7 +1354,7 @@
         "model": "http_request",
         "id": "rq_Z7E5VzaWgw",
         "createdAt": "2025-11-18T22:47:26.650566023",
-        "updatedAt": "2025-11-19T18:25:48.024023918",
+        "updatedAt": "2025-12-01T22:39:44.702263200",
         "workspaceId": "wk_DNLGyyCaD6",
         "folderId": "fl_MBAkSRsBhX",
         "authentication": {},
@@ -834,14 +1366,14 @@
         "method": "GET",
         "name": "AlmacenByCve",
         "sortPriority": 1000.0,
-        "url": "http://localhost:3000/api/almacenes/001",
+        "url": "http://localhost:3000/almacenes/777",
         "urlParameters": []
       },
       {
         "model": "http_request",
         "id": "rq_9iSWXGbqXx",
         "createdAt": "2025-11-18T22:12:17.317880490",
-        "updatedAt": "2025-11-19T18:25:48.010932310",
+        "updatedAt": "2025-12-01T21:54:17.643154771",
         "workspaceId": "wk_DNLGyyCaD6",
         "folderId": "fl_MBAkSRsBhX",
         "authentication": {},
@@ -853,14 +1385,14 @@
         "method": "GET",
         "name": "AllAlmacenes",
         "sortPriority": 0.0,
-        "url": "http://localhost:3000/api/almacenes/",
+        "url": "http://localhost:3000/almacenes/",
         "urlParameters": []
       },
       {
         "model": "http_request",
         "id": "rq_PXXhG754Xy",
         "createdAt": "2025-11-18T19:28:09.269814488",
-        "updatedAt": "2025-11-19T18:49:46.781496236",
+        "updatedAt": "2025-12-09T16:31:59.211766030",
         "workspaceId": "wk_DNLGyyCaD6",
         "folderId": null,
         "authentication": {},
@@ -871,7 +1403,7 @@
         "headers": [],
         "method": "GET",
         "name": "healthCheck",
-        "sortPriority": 7000.0,
+        "sortPriority": 14000.0,
         "url": "http://localhost:3000/api/health",
         "urlParameters": []
       },
@@ -879,7 +1411,7 @@
         "model": "http_request",
         "id": "rq_Xf2wfBDc4h",
         "createdAt": "2025-11-18T18:56:14.450842351",
-        "updatedAt": "2025-11-19T18:49:46.779137958",
+        "updatedAt": "2025-12-09T16:31:59.209749384",
         "workspaceId": "wk_DNLGyyCaD6",
         "folderId": null,
         "authentication": {},
@@ -890,7 +1422,7 @@
         "headers": [],
         "method": "GET",
         "name": "server",
-        "sortPriority": 6000.0,
+        "sortPriority": 13000.0,
         "url": "http://localhost:3000/",
         "urlParameters": []
       }

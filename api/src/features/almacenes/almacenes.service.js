@@ -4,7 +4,7 @@ const { prisma } = require('../../shared/config/prismaClient');
 
 exports.getAllAlmacenes = async () => {
     try {
-        const almacenes = prisma.ma_almac.findMany();
+        const almacenes = await prisma.ma_almac.findMany();
         return almacenes;
     } catch (error) {
         Logger.error(`Error fetching almacenes: ${error.message}`);
@@ -14,7 +14,7 @@ exports.getAllAlmacenes = async () => {
 
 exports.getAlmacenesByCve = async (cve) => {
     try {
-        const almacenes = prisma.ma_almac.findFirst({
+        const almacenes = await prisma.ma_almac.findFirst({
             where: { clave: cve }
         });
         return almacenes;
@@ -27,7 +27,7 @@ exports.getAlmacenesByCve = async (cve) => {
 exports.updateAlmacen = async (cve, updateData) => {
     try {
         const almacen = await this.getAlmacenesByCve(cve);
-        const result = prisma.ma_almac.update({
+        const result = await prisma.ma_almac.update({
             where: { clave: cve, id: almacen.id },
             data: updateData
         });

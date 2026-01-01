@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { AlmacenesService } from '../services/almacenesService';
+import { Alerts } from '../../../shared/services/Alerts';
 import AlmacenCard from '../components/AlmacenCard';
 import Input from '../../../shared/components/Input';
 import Modal from '../../../shared/components/Modal';
@@ -14,7 +15,7 @@ const AlmacenesPage = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
-  
+
   const [isModalOpen, setModalOpen] = useState(false);
   const [editingAlmacen, setEditingAlmacen] = useState(null);
 
@@ -54,8 +55,21 @@ const AlmacenesPage = () => {
   };
 
   const handleDelete = async (clave) => {
-    await AlmacenesService.delete(clave);
-    fetchAlmacenes();
+    const confirmed = await Alerts.confirmAction(
+      '¿Estás seguro?',
+      'Esta acción no se puede deshacer.'
+    );
+
+    if (confirmed.isConfirmed) {
+      try {
+        await AlmacenesService.delete(clave);
+        Alerts.showSuccess('Eliminado', 'El almacén ha sido eliminado correctamente.');
+        fetchAlmacenes();
+      } catch (err) {
+        console.error('Error al eliminar el almacén:', err);
+        Alerts.showError('Error', `No se pudo eliminar: ${err.message}`);
+      }
+    }
   }
 
   const handleCloseModal = () => {
@@ -67,13 +81,16 @@ const AlmacenesPage = () => {
     try {
       if (editingAlmacen) {
         await AlmacenesService.update(editingAlmacen.clave, almacenData);
+        Alerts.showSuccess('Actualizado', 'El almacén ha sido actualizado correctamente.');
       } else {
         await AlmacenesService.create(almacenData);
+        Alerts.showSuccess('Creado', 'El almacén ha sido creado correctamente.');
       }
       handleCloseModal();
       fetchAlmacenes();
     } catch (err) {
       console.error('Error al guardar el almacén:', err);
+      Alerts.showError('Error', `No se pudo guardar: ${err.message}`);
     }
   };
 
@@ -107,7 +124,7 @@ const AlmacenesPage = () => {
               setCurrentPage(1);
             }}
           />
-          <button 
+          <button
             onClick={handleCreate}
             className="flex items-center gap-2 bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors shadow-md whitespace-nowrap"
           >
@@ -120,7 +137,7 @@ const AlmacenesPage = () => {
       {/* Contenido */}
       {loading && <p className="text-center text-gray-400">Cargando almacenes...</p>}
       {error && <p className="text-center text-red-500">{error}</p>}
-      
+
       {!loading && !error && (
         <>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -163,12 +180,12 @@ const AlmacenesPage = () => {
       )}
 
       {/* Modal para Crear/Editar */}
-      <Modal 
-        isOpen={isModalOpen} 
+      <Modal
+        isOpen={isModalOpen}
         onClose={handleCloseModal}
         title={editingAlmacen ? 'Editar Almacén' : 'Crear Nuevo Almacén'}
       >
-        <AlmacenForm 
+        <AlmacenForm
           onSave={handleSave}
           onCancel={handleCloseModal}
           almacenToEdit={editingAlmacen}
