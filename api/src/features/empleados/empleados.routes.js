@@ -1,14 +1,16 @@
 const express = require('express');
 const router = express.Router();
 
-const { getAllEmpleados, getEmpleadoByCve, updateEmpleado, setEmpleado } = require('./empleados.controller');
+const { getEmpleadosPaginados, getEmpleadoByCve, updateEmpleado, setEmpleado, deleteEmpleado } = require('./empleados.controller');
 
-router.get('/', getAllEmpleados);
+router.get('/', getEmpleadosPaginados);
 
 router.get('/:cve', getEmpleadoByCve);
 
 router.put('/:cve', updateEmpleado);
 
 router.post('/', setEmpleado);
+
+router.delete('/:cve', deleteEmpleado);
 
 module.exports = router;

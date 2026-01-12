@@ -5,7 +5,6 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
 }
 
 model de_zona {
@@ -71,9 +70,10 @@ model ma_chatids {
 }
 
 model ma_clasif {
-  clave  Int     @id @default(autoincrement())
-  descri String? @db.Char(30)
-  type   String? @db.Char(3)
+  clave   Int        @id @default(autoincrement())
+  descri  String?    @db.Char(30)
+  type    String?    @db.Char(3)
+  maEqses ma_eqsis[]
 }
 
 model ma_depar {
@@ -82,10 +82,11 @@ model ma_depar {
 }
 
 model ma_emple {
-  id      Int     @id @default(autoincrement())
-  clave   String? @db.Char(5)
-  descri  String? @db.Char(40)
-  cve_zon String? @db.Char(3)
+  id      Int      @id @default(autoincrement())
+  clave   String?  @db.Char(5)
+  descri  String?  @db.Char(40)
+  cve_zon String?  @db.Char(3)
+  status  Boolean? @default(true)
 }
 
 model ma_empre {
@@ -106,15 +107,15 @@ model ma_eqasis {
 }
 
 model ma_eqsis {
-  clave      Int       @id @default(autoincrement())
-  serie      String?   @db.Char(30)
-  cod_inv    String?   @db.Char(30)
+  clave      Int        @id @default(autoincrement())
+  serie      String?    @db.Char(30)
+  cod_inv    String?    @db.Char(30)
   cve_marca  Int?
   cve_clasif Int?
-  modelo     String?   @db.Char(35)
-  f_regis    DateTime? @db.Date
-  status     String?   @db.Char(1)
-  marca      ma_marca? @relation(fields: [cve_marca], references: [clave])
+  modelo     String?    @db.Char(35)
+  f_regis    DateTime?  @db.Date
+  status     String?    @db.Char(1)
+  marca      ma_marca?  @relation(fields: [cve_marca], references: [clave])
   clasif     ma_clasif? @relation(fields: [cve_clasif], references: [clave])
 }
 
@@ -146,9 +147,10 @@ model ma_host {
 }
 
 model ma_marca {
-  clave  Int     @id @default(autoincrement())
-  descri String? @db.Char(20)
-  type   String? @db.Char(3)
+  clave   Int        @id @default(autoincrement())
+  descri  String?    @db.Char(20)
+  type    String?    @db.Char(3)
+  maEqses ma_eqsis[]
 }
 
 model ma_regzoro {
@@ -202,6 +204,7 @@ model ma_ventasco {
 model ma_empresa {
   clave           String            @id @db.Char(10)
   nombre          String?           @db.VarChar(20)
+  status          Boolean?          @default(true)
   usuario_permiso usuario_permiso[]
 }
 

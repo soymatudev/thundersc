@@ -2,6 +2,38 @@ const Logger = require('../../shared/utils/Logger');
 const jwt = require('jsonwebtoken');
 const authService = require('./auth.service');
 
+exports.getAllUsers = async (req, res) => {
+    try {
+        const users = await authService.getAllUsers();
+        res.status(200).json(users);
+    } catch (error) {
+        Logger.error(`Error retrieving all users: ${error.message}`);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+}
+
+exports.getAllUsersWithPermissions = async (req, res) => {
+    try {
+        const users = await authService.getAllUsersWithPermissions();
+        res.status(200).json(users);
+    } catch (error) {
+        Logger.error(`Error retrieving users with permissions: ${error.message}`);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+}
+
+exports.getUserById = async (req, res) => {
+    const { cve } = req.params;
+    try {
+        const user = await authService.getUserById(cve);
+        if (!user) return res.status(404).json({ message: 'User not found' });
+        res.status(200).json(user);
+    } catch (error) {
+        Logger.error(`Error retrieving user with ID ${cve}: ${error.message}`);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+}
+
 exports.login = async (req, res) => {
     const { username, password } = req.body;
     try {
@@ -64,5 +96,18 @@ exports.updateUsuario = async (req, res) => {
     } catch (error) {
         Logger.error(`Error updating user ${cve}: ${error.message}`);
         res.status(500).json({ message: 'Internal server error' });
+    }
+}
+
+exports.getUsuariosPaginados = async (req, res, next) => {
+    try {
+        const { page = 1, pageSize = 12, descri } = req.query;
+        const pageInt = parseInt(page, 10);
+        const pageSizeInt = parseInt(pageSize, 10);
+
+        const result = await authService.getPaginated(pageInt, pageSizeInt, descri);
+        res.status(200).json(result);
+    } catch (error) {
+        next(error);
     }
 }

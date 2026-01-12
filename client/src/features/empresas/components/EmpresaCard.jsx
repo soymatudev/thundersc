@@ -1,0 +1,45 @@
+import React from 'react';
+import { Edit, Trash2, Building } from 'lucide-react';
+
+const EmpresaCard = ({ empresa, onEdit, onDelete }) => {
+  const { clave, nombre, status } = empresa;
+
+  const handleEdit = () => {
+    onEdit(empresa);
+  };
+
+  const handleDelete = () => {
+    onDelete(clave);
+  };
+
+  return (
+    <div className="bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform transform hover:-translate-y-1">
+      <div className="p-5">
+        <div className="flex items-start justify-between">
+          <div className="flex items-center gap-3">
+            <div className="bg-gray-700 p-2 rounded-lg">
+              <Building size={20} className="text-indigo-400" />
+            </div>
+            <h3 className="text-lg font-bold text-gray-100">{clave} - {nombre}</h3>
+          </div>
+          <span className={`px-2 py-1 text-xs font-semibold rounded-full ${
+            status ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'
+          }`}>
+            {status ? 'Activa' : 'Inactiva'}
+          </span>
+        </div>
+      </div>
+      
+      <div className="bg-gray-700/50 px-5 py-3 flex justify-end gap-2">
+        <button onClick={handleEdit} className="p-2 text-gray-400 hover:text-white hover:bg-gray-600 rounded-full transition-colors">
+          <Edit size={16} />
+        </button>
+        <button onClick={handleDelete} className="p-2 text-gray-400 hover:text-white hover:bg-red-500/50 rounded-full transition-colors">
+          <Trash2 size={16} />
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default EmpresaCard;

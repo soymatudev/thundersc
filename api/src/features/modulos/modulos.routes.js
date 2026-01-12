@@ -1,14 +1,10 @@
 const express = require('express');
 const router = express.Router();
-
-const { setModulo, getAllModulos, getModuloByCve, updateModulo } = require('./modulos.controller');
+const { getAllModulos, createModulo, updateModulo, deleteModulo } = require('./modulos.controller');
 
 router.get('/', getAllModulos);
-
-router.get('/:cve', getModuloByCve);
-
-router.put('/:cve', updateModulo);
-
-router.post('/', setModulo);
+router.post('/', createModulo);
+router.put('/:id', updateModulo);
+router.delete('/:id', deleteModulo);
 
 module.exports = router;

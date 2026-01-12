@@ -11,6 +11,47 @@ exports.getAllEmpresas = async () => {
     }
 }
 
+exports.getEmpresasPaginadas = async (page = 1, pageSize = 10, nombre = '') => {
+    try {
+        const skip = (page - 1) * pageSize;
+        const take = parseInt(pageSize, 10);
+
+        const where = nombre ? {
+            nombre: {
+                contains: nombre,
+                mode: 'insensitive',
+            },
+        } : {};
+
+        const [total, empresas] = await prisma.$transaction([
+            prisma.ma_empresa.count({ where }),
+            prisma.ma_empresa.findMany({
+                where,
+                skip,
+                take,
+                orderBy: {
+                    nombre: 'asc',
+                },
+            }),
+        ]);
+
+        const totalPages = Math.ceil(total / take);
+
+        return {
+            empresas,
+            pagination: {
+                total,
+                totalPages,
+                currentPage: page,
+                pageSize: take,
+            },
+        };
+    } catch (error) {
+        Logger.error(`Error fetching paginated empresas: ${error.message}`);
+        throw new Error(`Error fetching paginated empresas: ${error.message}`);
+    }
+};
+
 exports.getEmpresaByCve = async (cve) => {
     try {
         const empresa = await prisma.ma_empresa.findFirst({
@@ -45,5 +86,21 @@ exports.setEmpresa = async (empresaData) => {
     } catch (error) {
         Logger.error(`Error creating empresa: ${error.message}`);
         throw new Error('Failed to create empresa due to server error');
+    }
+}
+
+exports.deleteEmpresa = async (cve) => {
+    try {
+        const result = await prisma.ma_empresa.update({
+            where: { clave: cve },
+            data: { status: false }
+        });
+        return result;
+    } catch (error) {
+        Logger.error(`Error deleting empresa: ${error.message}`);
+        if (error.code === 'P2025') {
+            throw new Error('Empresa not found');
+        }
+        throw new Error(`Error deleting empresa: ${error.message}`);
     }
 }

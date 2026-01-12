@@ -4,6 +4,103 @@ const jwt = require('jsonwebtoken');
 const { prisma } = require('../../shared/config/prismaClient');
 require('dotenv').config();
 
+exports.getAllUsers = async () => {
+    try {
+        const users = await prisma.usuario.findMany();
+        Logger.info(`Retrieved all users: ${users.length} users found.`);
+        return users;
+    } catch (error) {
+        Logger.error(`Error retrieving all users: ${error.message}`);
+        throw new Error('Failed to retrieve users due to server error');
+    }
+}
+
+exports.getAllUsersWithPermissions = async () => {
+    try {
+        const users = await prisma.usuario.findMany();
+        for (const user of users) {
+            const permisos = await getPermisosByUserId(user.clave);
+            user.permisos = permisos;
+        }
+        Logger.info(`Retrieved all users with permissions: ${users.length} users found.`);
+        return users;
+    } catch (error) {
+        Logger.error(`Error retrieving users with permissions: ${error.message}`);
+        throw new Error('Failed to retrieve users with permissions due to server error');
+    }
+}
+
+exports.getPaginated = async (page, pageSize, descri) => {
+    const skip = (page - 1) * pageSize;
+    const take = pageSize;
+
+    const where = descri ? {
+        OR: [
+            {
+                descri: {
+                    contains: descri,
+                    mode: 'insensitive',
+                },
+            },
+            {
+                username: {
+                    contains: descri,
+                    mode: 'insensitive',
+                },
+            },
+        ],
+    } : {};
+
+    try {
+        const [total, usuarios] = await prisma.$transaction([
+            prisma.usuario.count({ where }),
+            prisma.usuario.findMany({
+                where,
+                include: {
+                    usuario_permiso: true, // Include the permissions
+                },
+                skip,
+                take,
+                orderBy: {
+                    descri: 'asc',
+                },
+            }),
+        ]);
+
+        const totalPages = Math.ceil(total / pageSize);
+
+        return {
+            usuarios,
+            pagination: {
+                total,
+                totalPages,
+                currentPage: page,
+                pageSize,
+            },
+        };
+    } catch (error) {
+        Logger.error(`Error retrieving paginated users: ${error.message}`);
+        throw new Error('Failed to retrieve paginated users due to server error');
+    }
+};
+
+exports.getUserById = async (cve) => {
+    try {
+        const user = await prisma.usuario.findUnique({
+            where: { clave: parseInt(cve) }
+        });
+        if (!user) {
+            Logger.info(`User not found with ID: ${cve}`);
+            return null;
+        }
+        Logger.info(`User retrieved with ID: ${cve}`);
+        return user;
+    } catch (error) {
+        Logger.error(`Error retrieving user with ID ${cve}: ${error.message}`);
+        throw new Error('Failed to retrieve user due to server error');
+    }
+}
+
 exports.login = async (username, password) => {
     try {
         const user = await prisma.usuario.findFirst({

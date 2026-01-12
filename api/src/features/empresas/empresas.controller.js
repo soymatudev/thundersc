@@ -12,6 +12,24 @@ exports.getAllEmpresas = async (req, res) => {
     }
 }
 
+exports.getEmpresasPaginadas = async (req, res) => {
+    try {
+        const { page, pageSize, nombre } = req.query;
+        const pageNum = parseInt(page, 10) || 1;
+        const pageSizeNum = parseInt(pageSize, 10) || 10;
+
+        const result = await empresasService.getEmpresasPaginadas(pageNum, pageSizeNum, nombre);
+
+        if (result.empresas.length === 0) {
+            return res.status(404).json({ message: 'No empresas found for the given criteria' });
+        }
+        res.status(200).json(result);
+    } catch (error) {
+        Logger.error(`Error fetching paginated empresas: ${error.message}`);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+}
+
 exports.getEmpresaByCve = async (req, res) => {
     const { cve } = req.params;
     try {
@@ -44,6 +62,18 @@ exports.setEmpresa = async (req, res) => {
         res.status(201).json(newEmpresa);
     } catch (error) {
         Logger.error(`Error creating empresa: ${error.message}`);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+}
+
+exports.deleteEmpresa = async (req, res) => {
+    const { cve } = req.params;
+    try {
+        const deletedEmpresa = await empresasService.deleteEmpresa(cve);
+        if (!deletedEmpresa) return res.status(404).json({ message: 'Empresa not found' });
+        res.status(200).json({ message: 'Empresa deleted successfully' });
+    } catch (error) {
+        Logger.error(`Error deleting empresa: ${error.message}`);
         res.status(500).json({ message: 'Internal server error' });
     }
 }
