@@ -2,12 +2,23 @@ const Logger = require('../../shared/utils/Logger');
 const empleadosService = require('./empleados.service');
 const { json } = require('express');
 
+exports.getAllEmpleados = async (req, res) => {
+    try {
+        const empleados = await empleadosService.getAllEmpleados();
+        res.status(200).json(empleados);
+    } catch (error) {
+        Logger.error(`Error fetching all empleados: ${error.message}`);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+}
+
 exports.getEmpleadosPaginados = async (req, res) => {
     try {
         const { page, pageSize, nombre } = req.query;
         const pageNum = parseInt(page, 10) || 1;
         const pageSizeNum = parseInt(pageSize, 10) || 10;
 
+        Logger.info(`Fetching empleados - Page: ${pageNum}, Page Size: ${pageSizeNum}, Nombre Filter: ${nombre || 'None'}`);
         const result = await empleadosService.getEmpleadosPaginados(pageNum, pageSizeNum, nombre);
 
         if (result.empleados.length === 0) {

@@ -13,6 +13,29 @@ exports.getAllMarcas = async (req, res) => {
     }
 }
 
+exports.getMarcasPaginadas = async (req, res) => {
+    try {
+        const { page, pageSize, descri } = req.query;
+
+        if (!page && !pageSize && !descri) {
+            const marcas = await marcasService.getAllMarcas();
+            if (marcas.length === 0) return res.status(404).json({ message: 'No marcas found' });
+            return res.status(200).json(marcas);
+        }
+        const pageNum = parseInt(page, 10) || 1;
+        const pageSizeNum = parseInt(pageSize, 10) || 10;
+        const result = await marcasService.getMarcasPaginadas(pageNum, pageSizeNum, descri);
+
+        if (result.marcas.length === 0) {
+            return res.status(404).json({ message: 'No marcas found for the given criteria' });
+        }
+        res.status(200).json(result);
+    } catch (error) {
+        Logger.error(`Error fetching marcas: ${error.message}`);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+}
+
 exports.getMarcaByCve = async (req, res) => {
     const { cve } = req.params;
     try {
@@ -45,6 +68,18 @@ exports.setMarca = async (req, res) => {
         res.status(201).json(newMarca);
     } catch (error) {
         Logger.error(`Error creating marca: ${error.message}`);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+}
+
+exports.deleteMarca = async (req, res) => {
+    const { cve } = req.params;
+    try {
+        const deletedMarca = await marcasService.deleteMarca(cve);
+        if (!deletedMarca) return res.status(404).json({ message: 'Marca not found' });
+        res.status(200).json({ message: 'Marca deleted successfully' });
+    } catch (error) {
+        Logger.error(`Error deleting marca: ${error.message}`);
         res.status(500).json({ message: 'Internal server error' });
     }
 }

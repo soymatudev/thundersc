@@ -9,6 +9,7 @@ import ModulosPage from '../../features/modulos/pages/ModulosPage';
 import UsuariosPage from '../../features/usuarios/pages/UsuariosPage';
 import EmpleadosPage from '../../features/empleados/pages/EmpleadosPage';
 import EmpresasPage from '../../features/empresas/pages/EmpresasPage';
+import MarcasPage from '../../features/marcas/pages/MarcasPage';
 
 // 1. Mapa de componentes
 // Asocia el 'id' del item del menú con el componente de la página que debe renderizar.
@@ -19,6 +20,7 @@ const componentMap = {
   usuarios: <UsuariosPage />,
   empleados: <EmpleadosPage />,
   empresas: <EmpresasPage />,
+  marcas: <MarcasPage />,
   // Agrega aquí otras páginas a medida que las vayas creando
   // marcas: <MarcasPage />,
   // equipos: <EquiposPage />,

@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 
-const { getEmpleadosPaginados, getEmpleadoByCve, updateEmpleado, setEmpleado, deleteEmpleado } = require('./empleados.controller');
+const { getAllEmpleados, getEmpleadosPaginados, getEmpleadoByCve, updateEmpleado, setEmpleado, deleteEmpleado } = require('./empleados.controller');
+
+router.get('/all', getAllEmpleados);
 
 router.get('/', getEmpleadosPaginados);
 

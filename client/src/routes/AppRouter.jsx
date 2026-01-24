@@ -7,10 +7,11 @@ import LoginPage from '../features/auth/pages/LoginPage';
 import DashboardPage from '../features/dashboard/pages/DashboardPage';
 import AlmacenesPage from '../features/almacenes/pages/AlmacenesPage';
 import DepartamentosPage from '../features/departamentos/pages/DepartamentosPage';
-import ModulosPage from '../features/modulos/pages/ModulosPage';
-import UsuariosPage from '../features/usuarios/pages/UsuariosPage';
 import EmpleadosPage from '../features/empleados/pages/EmpleadosPage';
 import EmpresasPage from '../features/empresas/pages/EmpresasPage';
+import MarcasPage from '../features/marcas/pages/MarcasPage';
+import ModulosPage from '../features/modulos/pages/ModulosPage';
+import UsuariosPage from '../features/usuarios/pages/UsuariosPage';
 
 
 // Componentes de ruta
@@ -69,6 +70,14 @@ const AppRouter = () => {
           element={
             <ProtectedRoute>
               <EmpresasPage />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/marcas" 
+          element={
+            <ProtectedRoute>
+              <MarcasPage />
             </ProtectedRoute>
           } 
         />
