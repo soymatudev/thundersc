@@ -5,6 +5,7 @@ generator client {
 
 datasource db {
   provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model de_zona {
@@ -70,31 +71,34 @@ model ma_chatids {
 }
 
 model ma_clasif {
-  clave   Int        @id @default(autoincrement())
-  descri  String?    @db.Char(30)
-  type    String?    @db.Char(3)
-  maEqses ma_eqsis[]
+  clave  Int     @id @default(autoincrement())
+  descri String? @db.Char(30)
+  type   String? @db.Char(3)
 }
 
 model ma_depar {
-  clave  Int     @id @default(autoincrement())
-  descri String? @db.Char(30)
+  clave    Int        @id @default(autoincrement())
+  descri   String?    @db.Char(30)
+  ma_emple ma_emple[]
 }
 
 model ma_emple {
-  id      Int      @id @default(autoincrement())
-  clave   String?  @db.Char(5)
-  descri  String?  @db.Char(40)
-  cve_zon String?  @db.Char(3)
-  status  Boolean? @default(true)
+  id        Int       @id @default(autoincrement())
+  clave     String?   @db.Char(5)
+  descri    String?   @db.Char(40)
+  cve_zon   String?   @db.Char(3)
+  status    Boolean?  @default(true)
+  cve_depar Int?
+  ma_depar  ma_depar? @relation(fields: [cve_depar], references: [clave], onUpdate: NoAction, map: "fk_emple_depar")
 }
 
 model ma_empre {
-  clave  String? @db.Char(2)
-  nombre String? @db.Char(60)
-  nomcor String? @db.Char(40)
-  base   String? @db.Char(30)
-  id     Int     @id @default(autoincrement())
+  clave  String?  @db.Char(2)
+  nombre String?  @db.Char(60)
+  nomcor String?  @db.Char(40)
+  base   String?  @db.Char(30)
+  id     Int      @id @default(autoincrement())
+  status Boolean? @default(true)
 }
 
 model ma_eqasis {
@@ -107,16 +111,14 @@ model ma_eqasis {
 }
 
 model ma_eqsis {
-  clave      Int        @id @default(autoincrement())
-  serie      String?    @db.Char(30)
-  cod_inv    String?    @db.Char(30)
+  clave      Int       @id @default(autoincrement())
+  serie      String?   @db.VarChar(50)
+  cod_inv    String?   @unique(map: "un_codinv") @db.VarChar(50)
   cve_marca  Int?
   cve_clasif Int?
-  modelo     String?    @db.Char(35)
-  f_regis    DateTime?  @db.Date
-  status     String?    @db.Char(1)
-  marca      ma_marca?  @relation(fields: [cve_marca], references: [clave])
-  clasif     ma_clasif? @relation(fields: [cve_clasif], references: [clave])
+  modelo     String?   @db.Char(35)
+  f_regis    DateTime? @db.Date
+  status     String?   @db.Char(1)
 }
 
 model ma_equipo {
@@ -147,10 +149,9 @@ model ma_host {
 }
 
 model ma_marca {
-  clave   Int        @id @default(autoincrement())
-  descri  String?    @db.Char(20)
-  type    String?    @db.Char(3)
-  maEqses ma_eqsis[]
+  clave  Int     @id @default(autoincrement())
+  descri String? @db.Char(20)
+  type   String? @db.Char(3)
 }
 
 model ma_regzoro {
@@ -242,4 +243,9 @@ model usuario_permiso {
   usuario     usuario?    @relation(fields: [cve_usuario], references: [clave], onDelete: Cascade, onUpdate: NoAction, map: "fk_usuper_usuario")
 
   @@unique([cve_usuario, cve_permiso, cve_empresa])
+}
+
+model ma_folio {
+  cve_clasif   Int  @id
+  ultimo_folio Int? @default(0)
 }

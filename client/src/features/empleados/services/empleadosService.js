@@ -4,6 +4,14 @@ const EMPLEADOS_ENDPOINT = '/empleados';
 
 export const EmpleadosService = {
   
+  getAll: async (filters = {}) => {
+    const params = new URLSearchParams();
+    //if (filters.depar) params.append('depar', filters.depar);
+    //if (filters.status !== undefined) params.append('status', filters.status);
+    
+    return api.get(`${EMPLEADOS_ENDPOINT}/all?${params.toString()}`);
+  },
+
   getPaginated: async (page, pageSize, nombre) => {
     const params = new URLSearchParams();
     if (page) params.append('page', page);

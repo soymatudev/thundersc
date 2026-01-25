@@ -9,7 +9,7 @@ export const MarcasService = {
    * @returns {Promise<Array>}
    */
   getAll: async () => {
-    return api.get(MARCAS_ENDPOINT);
+    return api.get(`${MARCAS_ENDPOINT}/all`);
   },
 
   /**

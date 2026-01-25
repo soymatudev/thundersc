@@ -1,24 +1,10 @@
 const { prisma } = require('../../shared/config/prismaClient');
+const { NotFoundError, BadRequestError } = require('../../shared/utils/CustomError');
 
-/**
- * Obtiene todas las marcas de la base de datos.
- * @returns {Promise<Array>} Una promesa que se resuelve en un array de marcas.
- */
-/**
- * Obtiene todas las marcas de la base de datos.
- * @returns {Promise<Array>} Una promesa que se resuelve en un array de marcas.
- */
 exports.getAllMarcas = async () => {
     return prisma.ma_marca.findMany();
 };
 
-/**
- * Obtiene marcas de forma paginada con filtro opcional por descripción.
- * @param {number} pageNum El número de página actual.
- * @param {number} pageSizeNum El tamaño de la página.
- * @param {string} descri Opcional: descripción para filtrar las marcas.
- * @returns {Promise<Object>} Un objeto con las marcas paginadas, total, página actual y total de páginas.
- */
 exports.getMarcasPaginadas = async (pageNum, pageSizeNum, descri) => {
     const skip = (pageNum - 1) * pageSizeNum;
     const whereClause = descri ? { descri: { contains: descri, mode: 'insensitive' } } : {};
@@ -29,9 +15,7 @@ exports.getMarcasPaginadas = async (pageNum, pageSizeNum, descri) => {
             skip: skip,
             take: pageSizeNum,
             where: whereClause,
-            orderBy: {
-                clave: 'asc', // O el campo que desees para ordenar
-            },
+            orderBy: { clave: 'asc' },
         }),
     ]);
 
@@ -45,60 +29,59 @@ exports.getMarcasPaginadas = async (pageNum, pageSizeNum, descri) => {
     };
 };
 
-/**
- * Obtiene una marca por su clave (ID).
- * @param {number|string} cve La clave (ID) de la marca.
- * @returns {Promise<Object|null>} Una promesa que se resuelve en el objeto de la marca o null si no se encuentra.
- */
 exports.getMarcaByCve = async (cve) => {
     const marcaId = parseInt(cve, 10);
     if (isNaN(marcaId)) {
-        throw new Error('La clave (ID) de la marca debe ser un número.');
+        throw new BadRequestError('El ID de la marca debe ser un número.');
     }
-    return prisma.ma_marca.findUnique({
+    const marca = await prisma.ma_marca.findUnique({
         where: { clave: marcaId },
     });
+    if (!marca) {
+        throw new NotFoundError(`No se encontró marca con la clave ${marcaId}`);
+    }
+    return marca;
 };
 
-/**
- * Actualiza una marca existente por su clave (ID).
- * @param {number|string} cve La clave (ID) de la marca a actualizar.
- * @param {Object} updateData Un objeto con los campos a actualizar.
- * @returns {Promise<Object>} Una promesa que se resuelve en el objeto de la marca actualizada.
- */
 exports.updateMarca = async (cve, updateData) => {
     const marcaId = parseInt(cve, 10);
     if (isNaN(marcaId)) {
-        throw new Error('La clave (ID) de la marca debe ser un número.');
+        throw new BadRequestError('El ID de la marca debe ser un número.');
     }
-    return prisma.ma_marca.update({
-        where: { clave: marcaId },
-        data: updateData,
-    });
+    try {
+        const updatedMarca = await prisma.ma_marca.update({
+            where: { clave: marcaId },
+            data: updateData,
+        });
+        return updatedMarca;
+    } catch (error) {
+        if (error.code === 'P2025') { // Prisma's 'Record to update not found'
+            throw new NotFoundError(`No se encontró marca con la clave ${marcaId}`);
+        }
+        throw error;
+    }
 };
 
-/**
- * Crea una nueva marca.
- * @param {Object} marcaData Un objeto con los datos de la nueva marca.
- * @returns {Promise<Object>} Una promesa que se resuelve en el objeto de la marca recién creada.
- */
 exports.setMarca = async (marcaData) => {
     return prisma.ma_marca.create({
         data: marcaData,
     });
 };
 
-/**
- * Elimina una marca por su clave (ID).
- * @param {number|string} cve La clave (ID) de la marca a eliminar.
- * @returns {Promise<Object>} Una promesa que se resuelve en el objeto de la marca eliminada.
- */
 exports.deleteMarca = async (cve) => {
     const marcaId = parseInt(cve, 10);
     if (isNaN(marcaId)) {
-        throw new Error('La clave (ID) de la marca debe ser un número.');
+        throw new BadRequestError('El ID de la marca debe ser un número.');
     }
-    return prisma.ma_marca.delete({
-        where: { clave: marcaId },
-    });
+    try {
+        const deletedMarca = await prisma.ma_marca.delete({
+            where: { clave: marcaId },
+        });
+        return deletedMarca;
+    } catch (error) {
+        if (error.code === 'P2025') { // Prisma's 'Record to delete not found'
+            throw new NotFoundError(`No se encontró marca con la clave ${marcaId}`);
+        }
+        throw error;
+    }
 };

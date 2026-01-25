@@ -3,11 +3,11 @@ const router = express.Router();
 
 const { getAllMarcas, getMarcaByCve, updateMarca, setMarca, deleteMarca, getMarcasPaginadas } = require('./marcas.controller');
 
-router.get('/', getMarcasPaginadas);
-
 router.get('/all', getAllMarcas);
 
 router.get('/:cve', getMarcaByCve);
+
+router.get('/', getMarcasPaginadas);
 
 router.put('/:cve', updateMarca);
 

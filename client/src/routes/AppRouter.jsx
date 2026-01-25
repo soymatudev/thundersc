@@ -12,6 +12,8 @@ import EmpresasPage from '../features/empresas/pages/EmpresasPage';
 import MarcasPage from '../features/marcas/pages/MarcasPage';
 import ModulosPage from '../features/modulos/pages/ModulosPage';
 import UsuariosPage from '../features/usuarios/pages/UsuariosPage';
+import EntradaMasivaEquiposPage from '../features/equipos/pages/EntradaMasivaEquiposPage';
+import EquiposPage from '../features/equipos/pages/EquiposPage';
 
 
 // Componentes de ruta
@@ -32,70 +34,86 @@ const AppRouter = () => {
         <Route path="/login" element={<LoginPage />} />
 
         {/* Rutas Protegidas */}
-        <Route 
-          path="/" 
+        <Route
+          path="/"
           element={
             <ProtectedRoute>
               <DashboardPage />
             </ProtectedRoute>
-          } 
+          }
         />
-        
-        <Route 
-          path="/almacenes" 
+
+        <Route
+          path="/almacenes"
           element={
             <ProtectedRoute>
               <AlmacenesPage />
             </ProtectedRoute>
-          } 
+          }
         />
-        <Route 
-          path="/departamentos" 
+        <Route
+          path="/departamentos"
           element={
             <ProtectedRoute>
               <DepartamentosPage />
             </ProtectedRoute>
-          } 
+          }
         />
-        <Route 
-          path="/empleados" 
+        <Route
+          path="/empleados"
           element={
             <ProtectedRoute>
               <EmpleadosPage />
             </ProtectedRoute>
-          } 
+          }
         />
-        <Route 
-          path="/empresas" 
+        <Route
+          path="/empresas"
           element={
             <ProtectedRoute>
               <EmpresasPage />
             </ProtectedRoute>
-          } 
+          }
         />
-        <Route 
-          path="/marcas" 
+        <Route
+          path="/marcas"
           element={
             <ProtectedRoute>
               <MarcasPage />
             </ProtectedRoute>
-          } 
+          }
         />
-        <Route 
-          path="/modulos" 
+        <Route
+          path="/modulos"
           element={
             <ProtectedRoute>
               <ModulosPage />
             </ProtectedRoute>
-          } 
+          }
         />
-        <Route 
-          path="/usuarios" 
+        <Route
+          path="/usuarios"
           element={
             <ProtectedRoute>
               <UsuariosPage />
             </ProtectedRoute>
-          } 
+          }
+        />
+        <Route
+          path="/movimiento_sequipos"
+          element={
+            <ProtectedRoute>
+              <EquiposPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/equipos"
+          element={
+            <ProtectedRoute>
+              <EntradaMasivaEquiposPage />
+            </ProtectedRoute>
+          }
         />
 
         {/* Ruta para cuando no se encuentra la página */}

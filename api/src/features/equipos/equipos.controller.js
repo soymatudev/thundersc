@@ -1,50 +1,51 @@
-const Logger = require('../../shared/utils/Logger');
 const equiposService = require('./equipos.service');
-const { json } = require('express');
+const asyncHandler = require('../../shared/utils/asyncHandler');
+const { NotFoundError } = require('../../shared/utils/CustomError');
 
-exports.getAllEquipos = async (req, res) => {
-    try {
-        const equipos = await equiposService.getAllEquipos();
-        if (equipos.length === 0) return res.status(404).json({ message: 'No equipos found' });
-        res.status(200).json(equipos);
-    } catch (error) {
-        Logger.error(`Error fetching equipos: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
+exports.getAllEquipos = asyncHandler(async (req, res) => {
+    const equipos = await equiposService.getAllEquipos();
+    if (!equipos || equipos.length === 0) {
+        throw new NotFoundError('No se encontraron equipos');
     }
-}
+    res.status(200).json(equipos);
+});
 
-exports.getEquipoByCve = async (req, res) => {
+exports.getEquipoByCve = asyncHandler(async (req, res) => {
     const { cve } = req.params;
-    try {
-        const equipos = await equiposService.getEquipoByCve(cve);
-        if (equipos.length === 0) return res.status(404).json({ message: 'No equipos found for the given cve' });
-        res.status(200).json(equipos);
-    } catch (error) {
-        Logger.error(`Error fetching equipos by cve: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-}
+    const equipo = await equiposService.getEquipoByCve(cve);
+    res.status(200).json(equipo);
+});
 
-exports.updateEquipo = async (req, res) => {
+exports.getEquipoBySerie = asyncHandler(async (req, res) => {
+    const { serie } = req.params;
+    const equipos = await equiposService.getEquipoBySerie(serie);
+    if (!equipos || equipos.length === 0) {
+        throw new NotFoundError(`No se encontró equipo con la serie ${serie}`);
+    }
+    res.status(200).json(equipos);
+});
+
+exports.updateEquipo = asyncHandler(async (req, res) => {
     const { cve } = req.params;
     const updateData = req.body;
-    try {
-        const updatedEquipo = await equiposService.updateEquipo(cve, updateData);
-        if (!updatedEquipo) return res.status(404).json({ message: 'Equipo not found' });
-        res.status(200).json(updatedEquipo);
-    } catch (error) {
-        Logger.error(`Error updating equipo: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-}
+    const updatedEquipo = await equiposService.updateEquipo(cve, updateData);
+    res.status(200).json(updatedEquipo);
+});
 
-exports.setEquipo = async (req, res) => {
+exports.setEquipo = asyncHandler(async (req, res) => {
     const equipoData = req.body;
-    try {
-        const newEquipo = await equiposService.setEquipo(equipoData);
-        res.status(201).json(newEquipo);
-    } catch (error) {
-        Logger.error(`Error creating equipo: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-}
+    const newEquipo = await equiposService.setEquipo(equipoData);
+    res.status(201).json(newEquipo);
+});
+
+exports.createMassiveEquipos = asyncHandler(async (req, res) => {
+    const equiposData = req.body;
+    const newEquipos = await equiposService.createMassiveEquipos(equiposData);
+    res.status(201).json(newEquipos);
+});
+
+exports.getFolioByClasif = asyncHandler(async (req, res) => {
+    const { cve_clasif } = req.params;
+    const folio = await equiposService.getFolioByClasif(cve_clasif);
+    res.status(200).json(folio);
+});
