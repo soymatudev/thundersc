@@ -2,6 +2,16 @@ const { prisma } = require('../../shared/config/prismaClient');
 const Logger = require('../../shared/utils/Logger');
 const telegramService = require('../telegram/telegram.service');
 const { getSensorByName } = require('./sensores.service');
+const tcpServer = require('../../shared/utils/tcpServer');
+
+/**
+ * Envía una señal de refresco a un sensor físico a través de su socket activo.
+ * @param {string} sensorName 
+ */
+exports.refreshSensor = async (sensorName) => {
+    Logger.info(`Solicitando refresco manual para sensor: ${sensorName}`);
+    return tcpServer.sendToSensor(sensorName, 'REFRESH');
+};
 
 /**
  * Procesa y registra la lectura de un sensor.

@@ -14,6 +14,8 @@ import ModulosPage from '../features/modulos/pages/ModulosPage';
 import UsuariosPage from '../features/usuarios/pages/UsuariosPage';
 import EntradaMasivaEquiposPage from '../features/equipos/pages/EntradaMasivaEquiposPage';
 import EquiposPage from '../features/equipos/pages/EquiposPage';
+import SensoresDashboard from '../features/sensores/SensoresDashboard';
+import MovimientosInventarioPage from '../features/movimientos/MovimientosInventarioPage';
 
 
 // Componentes de ruta
@@ -112,6 +114,22 @@ const AppRouter = () => {
           element={
             <ProtectedRoute>
               <EntradaMasivaEquiposPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/sensores"
+          element={
+            <ProtectedRoute>
+              <SensoresDashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/movimientos"
+          element={
+            <ProtectedRoute>
+              <MovimientosInventarioPage />
             </ProtectedRoute>
           }
         />

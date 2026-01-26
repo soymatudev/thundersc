@@ -1,57 +1,99 @@
 const { prisma } = require('../../shared/config/prismaClient');
+const { NotFoundError, BadRequestError } = require('../../shared/utils/CustomError');
 
 /**
- * Genera el reporte de inventario basado en el código de inventario del equipo.
+ * Busca un equipo por su código de inventario y retorna su ubicación actual.
  * @param {string} cod_inv - Código de inventario del equipo.
  */
-exports.getMovimientosByCodigoEquipo = async (cod_inv) => {
-    // Usamos $queryRaw para ejecutar una consulta compleja con JOINs de forma segura.
-    // Esto es mucho más seguro que el QueryHandler anterior porque previene fugas de conexión.
-    const query = `
-    SELECT a.serie, a.cod_inv, a.cve_marca, b.descri as marca, a.cve_clasif, c.descri as tipo, f_regis, a.modelo 
-    from ma_eqsis a, ma_marca b, ma_clasif c
-    WHERE a.cve_marca = b.clave
-    and a.cve_clasif = c.clave
-    and cod_inv = ?
-    `;
-    
-    // NOTA: Prisma's $queryRawUnsafe o una sintaxis similar podría ser necesaria dependiendo de la versión
-    // para usar '?' como placeholder. Por simplicidad, se asume una versión que lo permite
-    // o se usa $queryRaw`... and cod_inv = ${cod_inv}` si los parámetros son seguros.
-    // Para este caso, mantenemos la consulta original pero la ejecutamos con Prisma.
-    // En una implementación final, se recomienda usar las relaciones de Prisma como se planeó.
-    const data = await prisma.$queryRawUnsafe(query, cod_inv);
+exports.getEquipoWithLocation = async (cod_inv) => {
+    // 1. Buscar el equipo por código de inventario
+    const equipo = await prisma.ma_eqsis.findUnique({
+        where: { cod_inv: cod_inv.trim() },
+        include: {
+            ma_marca: {
+                select: { descri: true }
+            },
+            ma_clasif: {
+                select: { descri: true }
+            },
+        }
+    });
 
-    const processedData = data.map(row => ({
-        serie: row.serie ? row.serie.trim() : '',
-        cod_inv: row.cod_inv ? row.cod_inv.trim() : '',
-        cve_marca: row.cve_marca,
-        marca: row.marca ? row.marca.trim() : '',
-        cve_clasif: row.cve_clasif,
-        tipo: row.tipo ? row.tipo.trim() : '',
-        modelo: row.modelo ? row.modelo.trim() : '',
-        f_regis: new Date(row.f_regis).toLocaleDateString('es-MX', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit'
-        }),
-    }));
+    if (!equipo) {
+        throw new NotFoundError(`No se encontró equipo con el código de inventario: ${cod_inv}`);
+    }
 
-    return { data: processedData };
+    // 2. Obtener la última asignación/movimiento en ma_eqasis
+    const ultimaAsignacion = await prisma.ma_eqasis.findFirst({
+        where: { cve_eqsis: equipo.clave },
+        orderBy: { f_movto: 'desc' },
+        include: {
+            ma_emple: {
+                select: { descri: true, clave: true }
+            },
+            ma_depar: {
+                select: { descri: true }
+            }
+        }
+    });
+
+    // 3. Aplanar respuesta
+    return {
+        clave: equipo.clave,
+        cod_inv: equipo.cod_inv.trim(),
+        serie: equipo.serie?.trim() || 'S/N',
+        marca: equipo.ma_marca?.descri?.trim() || 'S/M',
+        modelo: equipo.modelo?.trim() || 'S/M',
+        tipo: equipo.ma_clasif?.descri?.trim() || 'GENERICO',
+        status: equipo.status?.trim() || 'A',
+        ubicacion_actual: {
+            empleado: ultimaAsignacion?.ma_emple?.descri?.trim() || 'SIN ASIGNAR',
+            departamento: ultimaAsignacion?.ma_depar?.descri?.trim() || 'ALMACEN',
+            f_movto: ultimaAsignacion?.f_movto,
+            cve_alm: ultimaAsignacion?.cve_alm?.trim() || '999'
+        }
+    };
 };
 
 /**
- * Crea un nuevo movimiento de asignación de equipo.
- * @param {object} movimientoData - Datos del movimiento a crear.
- * @param {string} movimientoData.cve_alm - Clave del almacén.
- * @param {number} movimientoData.cve_eqsis - Clave del equipo.
- * @param {number} movimientoData.cve_emple - Clave del empleado.
- * @param {number} movimientoData.cve_depar - Clave del departamento.
- * @param {string} movimientoData.f_movto - Fecha del movimiento.
- * @returns {Promise<Object>} El movimiento recién creado.
+ * Ejecuta un movimiento de inventario en una transacción.
+ * Actualiza ma_eqasis y el status de ma_eqsis.
  */
-exports.createMovimiento = async (movimientoData) => {
-    return prisma.ma_eqasis.create({
-        data: movimientoData,
+exports.executeMovement = async (movementData) => {
+    const { 
+        cve_eqsis, 
+        cve_emple, 
+        cve_depar, 
+        cve_alm, 
+        new_status, 
+        cve_usu_act 
+    } = movementData;
+
+    if (!cve_eqsis) {
+        throw new BadRequestError('Faltan datos obligatorios para el movimiento.');
+    }
+
+    return prisma.$transaction(async (tx) => {
+        // 1. Crear el registro en el historial (ma_eqasis)
+        const newHistory = await tx.ma_eqasis.create({
+            data: {
+                cve_eqsis: parseInt(cve_eqsis),
+                cve_emple: cve_emple ? parseInt(cve_emple) : null,
+                cve_depar: cve_depar ? parseInt(cve_depar) : null,
+                cve_alm: cve_alm || '999',
+                f_movto: new Date(),
+                // Nota: cve_usu_act es el usuario que realiza el cambio
+            }
+        });
+
+        // 2. Actualizar el estatus en el maestro de equipos (ma_eqsis)
+        if (new_status) {
+            await tx.ma_eqsis.update({
+                where: { clave: parseInt(cve_eqsis) },
+                data: { status: new_status }
+            });
+        }
+
+        return newHistory;
     });
-}
+};

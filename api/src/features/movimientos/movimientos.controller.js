@@ -1,25 +1,20 @@
 const Logger = require('../../shared/utils/Logger');
 const movimientosService = require('./movimientos.service');
+const asyncHandler = require('../../shared/utils/asyncHandler');
 
-exports.getMovimientosByCodigoEquipo = async (req, res) => {
-    try {
-        const { cod_inv } = req.params;
-        Logger.info('Inventory report request received');
-        const result = await movimientosService.getMovimientosByCodigoEquipo(cod_inv);
-        res.json(result);
-    } catch (error) {
-        Logger.error(`Controller error on getMovimientosByCodigoEquipo: ${error.message}`);
-        res.status(500).json({ message: 'Error al generar el reporte de inventario.' });
-    }
-};
+exports.getEquipoWithLocation = asyncHandler(async (req, res) => {
+    const { cod_inv } = req.params;
+    const result = await movimientosService.getEquipoWithLocation(cod_inv);
+    res.json(result);
+});
 
-exports.createMovimiento = async (req, res) => {
-    try {
-        const movimientoData = req.body;
-        const newMovimiento = await movimientosService.createMovimiento(movimientoData);
-        res.status(201).json(newMovimiento);
-    } catch (error) {
-        Logger.error(`Controller error on createMovimiento: ${error.message}`);
-        res.status(500).json({ message: 'Error al crear el movimiento.' });
-    }
-}
+exports.createMovimiento = asyncHandler(async (req, res) => {
+    const movementData = req.body;
+    // Inject current user for audit if needed, though ma_eqasis doesn't have it in schema yet
+    // we use it for business logic if necessary
+    const result = await movimientosService.executeMovement({
+        ...movementData,
+        cve_usu_act: req.user?.clave
+    });
+    res.status(201).json(result);
+});

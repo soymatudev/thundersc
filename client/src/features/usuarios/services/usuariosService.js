@@ -31,6 +31,10 @@ export const UsuariosService = {
     return api.put(`${AUTH_ENDPOINT}/profile/${cve}`, payload);
   },
 
+  getById: async (cve) => {
+    return api.get(`${AUTH_ENDPOINT}/users/${cve}`);
+  },
+
   /**
    * Elimina un usuario.
    * NOTA: Este endpoint es una suposición y podría necesitar ser creado en el backend.

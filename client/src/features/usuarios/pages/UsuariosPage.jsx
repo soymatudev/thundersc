@@ -48,9 +48,18 @@ const UsuariosPage = () => {
     setModalOpen(true);
   };
 
-  const handleEdit = (usuario) => {
-    setEditingUsuario(usuario);
-    setModalOpen(true);
+  const handleEdit = async (usuario) => {
+    try {
+      setLoading(true);
+      const fullUsuario = await UsuariosService.getById(usuario.clave);
+      setEditingUsuario(fullUsuario);
+      setModalOpen(true);
+    } catch (err) {
+      console.error('Error al cargar detalles del usuario:', err);
+      Alerts.showError('Error', 'No se pudieron cargar los detalles completos del usuario.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleDelete = async (clave) => {

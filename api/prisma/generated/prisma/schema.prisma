@@ -71,25 +71,28 @@ model ma_chatids {
 }
 
 model ma_clasif {
-  clave  Int     @id @default(autoincrement())
-  descri String? @db.Char(30)
-  type   String? @db.Char(3)
+  clave    Int        @id @default(autoincrement())
+  descri   String?    @db.Char(30)
+  type     String?    @db.Char(3)
+  ma_eqsis ma_eqsis[]
 }
 
 model ma_depar {
-  clave    Int        @id @default(autoincrement())
-  descri   String?    @db.Char(30)
-  ma_emple ma_emple[]
+  clave     Int         @id @default(autoincrement())
+  descri    String?     @db.Char(30)
+  ma_emple  ma_emple[]
+  ma_eqasis ma_eqasis[]
 }
 
 model ma_emple {
-  id        Int       @id @default(autoincrement())
-  clave     String?   @db.Char(5)
-  descri    String?   @db.Char(40)
-  cve_zon   String?   @db.Char(3)
-  status    Boolean?  @default(true)
+  id        Int         @id @default(autoincrement())
+  clave     String?     @db.Char(5)
+  descri    String?     @db.Char(40)
+  cve_zon   String?     @db.Char(3)
+  status    Boolean?    @default(true)
   cve_depar Int?
-  ma_depar  ma_depar? @relation(fields: [cve_depar], references: [clave], onUpdate: NoAction, map: "fk_emple_depar")
+  ma_depar  ma_depar?   @relation(fields: [cve_depar], references: [clave], onUpdate: NoAction, map: "fk_emple_depar")
+  ma_eqasis ma_eqasis[]
 }
 
 model ma_empre {
@@ -108,17 +111,23 @@ model ma_eqasis {
   cve_emple Int?
   cve_depar Int?
   f_movto   DateTime? @db.Date
+  ma_depar  ma_depar? @relation(fields: [cve_depar], references: [clave], onDelete: NoAction, onUpdate: NoAction, map: "fk_eqasis_depar")
+  ma_emple  ma_emple? @relation(fields: [cve_emple], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fk_eqasis_emple")
+  ma_eqsis  ma_eqsis? @relation(fields: [cve_eqsis], references: [clave], onDelete: NoAction, onUpdate: NoAction, map: "fk_eqasis_eqsis")
 }
 
 model ma_eqsis {
-  clave      Int       @id @default(autoincrement())
-  serie      String?   @db.VarChar(50)
-  cod_inv    String?   @unique(map: "un_codinv") @db.VarChar(50)
+  clave      Int         @id @default(autoincrement())
+  serie      String?     @db.VarChar(50)
+  cod_inv    String?     @unique(map: "un_codinv") @db.VarChar(50)
   cve_marca  Int?
   cve_clasif Int?
-  modelo     String?   @db.Char(35)
-  f_regis    DateTime? @db.Date
-  status     String?   @db.Char(1)
+  modelo     String?     @db.Char(35)
+  f_regis    DateTime?   @db.Date
+  status     String?     @db.Char(1)
+  ma_eqasis  ma_eqasis[]
+  ma_clasif  ma_clasif?  @relation(fields: [cve_clasif], references: [clave], onDelete: NoAction, onUpdate: NoAction, map: "fk_eqsis_clasif")
+  ma_marca   ma_marca?   @relation(fields: [cve_marca], references: [clave], onDelete: NoAction, onUpdate: NoAction, map: "fk_eqsis_marca")
 }
 
 model ma_equipo {
@@ -149,9 +158,10 @@ model ma_host {
 }
 
 model ma_marca {
-  clave  Int     @id @default(autoincrement())
-  descri String? @db.Char(20)
-  type   String? @db.Char(3)
+  clave    Int        @id @default(autoincrement())
+  descri   String?    @db.Char(20)
+  type     String?    @db.Char(3)
+  ma_eqsis ma_eqsis[]
 }
 
 model ma_regzoro {

@@ -3041,15 +3041,48 @@ export namespace Prisma {
 
 
   /**
+   * Count Type Ma_clasifCountOutputType
+   */
+
+  export type Ma_clasifCountOutputType = {
+    ma_eqsis: number
+  }
+
+  export type Ma_clasifCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ma_eqsis?: boolean | Ma_clasifCountOutputTypeCountMa_eqsisArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * Ma_clasifCountOutputType without action
+   */
+  export type Ma_clasifCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Ma_clasifCountOutputType
+     */
+    select?: Ma_clasifCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * Ma_clasifCountOutputType without action
+   */
+  export type Ma_clasifCountOutputTypeCountMa_eqsisArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ma_eqsisWhereInput
+  }
+
+
+  /**
    * Count Type Ma_deparCountOutputType
    */
 
   export type Ma_deparCountOutputType = {
     ma_emple: number
+    ma_eqasis: number
   }
 
   export type Ma_deparCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     ma_emple?: boolean | Ma_deparCountOutputTypeCountMa_empleArgs
+    ma_eqasis?: boolean | Ma_deparCountOutputTypeCountMa_eqasisArgs
   }
 
   // Custom InputTypes
@@ -3068,6 +3101,106 @@ export namespace Prisma {
    */
   export type Ma_deparCountOutputTypeCountMa_empleArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: ma_empleWhereInput
+  }
+
+  /**
+   * Ma_deparCountOutputType without action
+   */
+  export type Ma_deparCountOutputTypeCountMa_eqasisArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ma_eqasisWhereInput
+  }
+
+
+  /**
+   * Count Type Ma_empleCountOutputType
+   */
+
+  export type Ma_empleCountOutputType = {
+    ma_eqasis: number
+  }
+
+  export type Ma_empleCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ma_eqasis?: boolean | Ma_empleCountOutputTypeCountMa_eqasisArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * Ma_empleCountOutputType without action
+   */
+  export type Ma_empleCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Ma_empleCountOutputType
+     */
+    select?: Ma_empleCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * Ma_empleCountOutputType without action
+   */
+  export type Ma_empleCountOutputTypeCountMa_eqasisArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ma_eqasisWhereInput
+  }
+
+
+  /**
+   * Count Type Ma_eqsisCountOutputType
+   */
+
+  export type Ma_eqsisCountOutputType = {
+    ma_eqasis: number
+  }
+
+  export type Ma_eqsisCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ma_eqasis?: boolean | Ma_eqsisCountOutputTypeCountMa_eqasisArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * Ma_eqsisCountOutputType without action
+   */
+  export type Ma_eqsisCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Ma_eqsisCountOutputType
+     */
+    select?: Ma_eqsisCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * Ma_eqsisCountOutputType without action
+   */
+  export type Ma_eqsisCountOutputTypeCountMa_eqasisArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ma_eqasisWhereInput
+  }
+
+
+  /**
+   * Count Type Ma_marcaCountOutputType
+   */
+
+  export type Ma_marcaCountOutputType = {
+    ma_eqsis: number
+  }
+
+  export type Ma_marcaCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ma_eqsis?: boolean | Ma_marcaCountOutputTypeCountMa_eqsisArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * Ma_marcaCountOutputType without action
+   */
+  export type Ma_marcaCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Ma_marcaCountOutputType
+     */
+    select?: Ma_marcaCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * Ma_marcaCountOutputType without action
+   */
+  export type Ma_marcaCountOutputTypeCountMa_eqsisArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ma_eqsisWhereInput
   }
 
 
@@ -9772,6 +9905,8 @@ export namespace Prisma {
     clave?: boolean
     descri?: boolean
     type?: boolean
+    ma_eqsis?: boolean | ma_clasif$ma_eqsisArgs<ExtArgs>
+    _count?: boolean | Ma_clasifCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["ma_clasif"]>
 
   export type ma_clasifSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -9793,10 +9928,18 @@ export namespace Prisma {
   }
 
   export type ma_clasifOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"clave" | "descri" | "type", ExtArgs["result"]["ma_clasif"]>
+  export type ma_clasifInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ma_eqsis?: boolean | ma_clasif$ma_eqsisArgs<ExtArgs>
+    _count?: boolean | Ma_clasifCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type ma_clasifIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type ma_clasifIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
   export type $ma_clasifPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "ma_clasif"
-    objects: {}
+    objects: {
+      ma_eqsis: Prisma.$ma_eqsisPayload<ExtArgs>[]
+    }
     scalars: $Extensions.GetPayloadResult<{
       clave: number
       descri: string | null
@@ -10195,6 +10338,7 @@ export namespace Prisma {
    */
   export interface Prisma__ma_clasifClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    ma_eqsis<T extends ma_clasif$ma_eqsisArgs<ExtArgs> = {}>(args?: Subset<T, ma_clasif$ma_eqsisArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ma_eqsisPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -10244,6 +10388,10 @@ export namespace Prisma {
      */
     omit?: ma_clasifOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_clasifInclude<ExtArgs> | null
+    /**
      * Filter, which ma_clasif to fetch.
      */
     where: ma_clasifWhereUniqueInput
@@ -10262,6 +10410,10 @@ export namespace Prisma {
      */
     omit?: ma_clasifOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_clasifInclude<ExtArgs> | null
+    /**
      * Filter, which ma_clasif to fetch.
      */
     where: ma_clasifWhereUniqueInput
@@ -10279,6 +10431,10 @@ export namespace Prisma {
      * Omit specific fields from the ma_clasif
      */
     omit?: ma_clasifOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_clasifInclude<ExtArgs> | null
     /**
      * Filter, which ma_clasif to fetch.
      */
@@ -10328,6 +10484,10 @@ export namespace Prisma {
      */
     omit?: ma_clasifOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_clasifInclude<ExtArgs> | null
+    /**
      * Filter, which ma_clasif to fetch.
      */
     where?: ma_clasifWhereInput
@@ -10376,6 +10536,10 @@ export namespace Prisma {
      */
     omit?: ma_clasifOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_clasifInclude<ExtArgs> | null
+    /**
      * Filter, which ma_clasifs to fetch.
      */
     where?: ma_clasifWhereInput
@@ -10418,6 +10582,10 @@ export namespace Prisma {
      * Omit specific fields from the ma_clasif
      */
     omit?: ma_clasifOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_clasifInclude<ExtArgs> | null
     /**
      * The data needed to create a ma_clasif.
      */
@@ -10466,6 +10634,10 @@ export namespace Prisma {
      * Omit specific fields from the ma_clasif
      */
     omit?: ma_clasifOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_clasifInclude<ExtArgs> | null
     /**
      * The data needed to update a ma_clasif.
      */
@@ -10533,6 +10705,10 @@ export namespace Prisma {
      */
     omit?: ma_clasifOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_clasifInclude<ExtArgs> | null
+    /**
      * The filter to search for the ma_clasif to update in case it exists.
      */
     where: ma_clasifWhereUniqueInput
@@ -10559,6 +10735,10 @@ export namespace Prisma {
      */
     omit?: ma_clasifOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_clasifInclude<ExtArgs> | null
+    /**
      * Filter which ma_clasif to delete.
      */
     where: ma_clasifWhereUniqueInput
@@ -10579,6 +10759,30 @@ export namespace Prisma {
   }
 
   /**
+   * ma_clasif.ma_eqsis
+   */
+  export type ma_clasif$ma_eqsisArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_eqsis
+     */
+    select?: ma_eqsisSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_eqsis
+     */
+    omit?: ma_eqsisOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqsisInclude<ExtArgs> | null
+    where?: ma_eqsisWhereInput
+    orderBy?: ma_eqsisOrderByWithRelationInput | ma_eqsisOrderByWithRelationInput[]
+    cursor?: ma_eqsisWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Ma_eqsisScalarFieldEnum | Ma_eqsisScalarFieldEnum[]
+  }
+
+  /**
    * ma_clasif without action
    */
   export type ma_clasifDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -10590,6 +10794,10 @@ export namespace Prisma {
      * Omit specific fields from the ma_clasif
      */
     omit?: ma_clasifOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_clasifInclude<ExtArgs> | null
   }
 
 
@@ -10768,6 +10976,7 @@ export namespace Prisma {
     clave?: boolean
     descri?: boolean
     ma_emple?: boolean | ma_depar$ma_empleArgs<ExtArgs>
+    ma_eqasis?: boolean | ma_depar$ma_eqasisArgs<ExtArgs>
     _count?: boolean | Ma_deparCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["ma_depar"]>
 
@@ -10789,6 +10998,7 @@ export namespace Prisma {
   export type ma_deparOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"clave" | "descri", ExtArgs["result"]["ma_depar"]>
   export type ma_deparInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     ma_emple?: boolean | ma_depar$ma_empleArgs<ExtArgs>
+    ma_eqasis?: boolean | ma_depar$ma_eqasisArgs<ExtArgs>
     _count?: boolean | Ma_deparCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type ma_deparIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -10798,6 +11008,7 @@ export namespace Prisma {
     name: "ma_depar"
     objects: {
       ma_emple: Prisma.$ma_emplePayload<ExtArgs>[]
+      ma_eqasis: Prisma.$ma_eqasisPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       clave: number
@@ -11197,6 +11408,7 @@ export namespace Prisma {
   export interface Prisma__ma_deparClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     ma_emple<T extends ma_depar$ma_empleArgs<ExtArgs> = {}>(args?: Subset<T, ma_depar$ma_empleArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ma_emplePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    ma_eqasis<T extends ma_depar$ma_eqasisArgs<ExtArgs> = {}>(args?: Subset<T, ma_depar$ma_eqasisArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ma_eqasisPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -11640,6 +11852,30 @@ export namespace Prisma {
   }
 
   /**
+   * ma_depar.ma_eqasis
+   */
+  export type ma_depar$ma_eqasisArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_eqasis
+     */
+    select?: ma_eqasisSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_eqasis
+     */
+    omit?: ma_eqasisOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqasisInclude<ExtArgs> | null
+    where?: ma_eqasisWhereInput
+    orderBy?: ma_eqasisOrderByWithRelationInput | ma_eqasisOrderByWithRelationInput[]
+    cursor?: ma_eqasisWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Ma_eqasisScalarFieldEnum | Ma_eqasisScalarFieldEnum[]
+  }
+
+  /**
    * ma_depar without action
    */
   export type ma_deparDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -11869,6 +12105,8 @@ export namespace Prisma {
     status?: boolean
     cve_depar?: boolean
     ma_depar?: boolean | ma_emple$ma_deparArgs<ExtArgs>
+    ma_eqasis?: boolean | ma_emple$ma_eqasisArgs<ExtArgs>
+    _count?: boolean | Ma_empleCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["ma_emple"]>
 
   export type ma_empleSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -11903,6 +12141,8 @@ export namespace Prisma {
   export type ma_empleOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "clave" | "descri" | "cve_zon" | "status" | "cve_depar", ExtArgs["result"]["ma_emple"]>
   export type ma_empleInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     ma_depar?: boolean | ma_emple$ma_deparArgs<ExtArgs>
+    ma_eqasis?: boolean | ma_emple$ma_eqasisArgs<ExtArgs>
+    _count?: boolean | Ma_empleCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type ma_empleIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     ma_depar?: boolean | ma_emple$ma_deparArgs<ExtArgs>
@@ -11915,6 +12155,7 @@ export namespace Prisma {
     name: "ma_emple"
     objects: {
       ma_depar: Prisma.$ma_deparPayload<ExtArgs> | null
+      ma_eqasis: Prisma.$ma_eqasisPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -12318,6 +12559,7 @@ export namespace Prisma {
   export interface Prisma__ma_empleClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     ma_depar<T extends ma_emple$ma_deparArgs<ExtArgs> = {}>(args?: Subset<T, ma_emple$ma_deparArgs<ExtArgs>>): Prisma__ma_deparClient<$Result.GetResult<Prisma.$ma_deparPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    ma_eqasis<T extends ma_emple$ma_eqasisArgs<ExtArgs> = {}>(args?: Subset<T, ma_emple$ma_eqasisArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ma_eqasisPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -12765,6 +13007,30 @@ export namespace Prisma {
      */
     include?: ma_deparInclude<ExtArgs> | null
     where?: ma_deparWhereInput
+  }
+
+  /**
+   * ma_emple.ma_eqasis
+   */
+  export type ma_emple$ma_eqasisArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_eqasis
+     */
+    select?: ma_eqasisSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_eqasis
+     */
+    omit?: ma_eqasisOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqasisInclude<ExtArgs> | null
+    where?: ma_eqasisWhereInput
+    orderBy?: ma_eqasisOrderByWithRelationInput | ma_eqasisOrderByWithRelationInput[]
+    cursor?: ma_eqasisWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Ma_eqasisScalarFieldEnum | Ma_eqasisScalarFieldEnum[]
   }
 
   /**
@@ -14046,6 +14312,9 @@ export namespace Prisma {
     cve_emple?: boolean
     cve_depar?: boolean
     f_movto?: boolean
+    ma_depar?: boolean | ma_eqasis$ma_deparArgs<ExtArgs>
+    ma_emple?: boolean | ma_eqasis$ma_empleArgs<ExtArgs>
+    ma_eqsis?: boolean | ma_eqasis$ma_eqsisArgs<ExtArgs>
   }, ExtArgs["result"]["ma_eqasis"]>
 
   export type ma_eqasisSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -14055,6 +14324,9 @@ export namespace Prisma {
     cve_emple?: boolean
     cve_depar?: boolean
     f_movto?: boolean
+    ma_depar?: boolean | ma_eqasis$ma_deparArgs<ExtArgs>
+    ma_emple?: boolean | ma_eqasis$ma_empleArgs<ExtArgs>
+    ma_eqsis?: boolean | ma_eqasis$ma_eqsisArgs<ExtArgs>
   }, ExtArgs["result"]["ma_eqasis"]>
 
   export type ma_eqasisSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -14064,6 +14336,9 @@ export namespace Prisma {
     cve_emple?: boolean
     cve_depar?: boolean
     f_movto?: boolean
+    ma_depar?: boolean | ma_eqasis$ma_deparArgs<ExtArgs>
+    ma_emple?: boolean | ma_eqasis$ma_empleArgs<ExtArgs>
+    ma_eqsis?: boolean | ma_eqasis$ma_eqsisArgs<ExtArgs>
   }, ExtArgs["result"]["ma_eqasis"]>
 
   export type ma_eqasisSelectScalar = {
@@ -14076,10 +14351,29 @@ export namespace Prisma {
   }
 
   export type ma_eqasisOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"clave" | "cve_alm" | "cve_eqsis" | "cve_emple" | "cve_depar" | "f_movto", ExtArgs["result"]["ma_eqasis"]>
+  export type ma_eqasisInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ma_depar?: boolean | ma_eqasis$ma_deparArgs<ExtArgs>
+    ma_emple?: boolean | ma_eqasis$ma_empleArgs<ExtArgs>
+    ma_eqsis?: boolean | ma_eqasis$ma_eqsisArgs<ExtArgs>
+  }
+  export type ma_eqasisIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ma_depar?: boolean | ma_eqasis$ma_deparArgs<ExtArgs>
+    ma_emple?: boolean | ma_eqasis$ma_empleArgs<ExtArgs>
+    ma_eqsis?: boolean | ma_eqasis$ma_eqsisArgs<ExtArgs>
+  }
+  export type ma_eqasisIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ma_depar?: boolean | ma_eqasis$ma_deparArgs<ExtArgs>
+    ma_emple?: boolean | ma_eqasis$ma_empleArgs<ExtArgs>
+    ma_eqsis?: boolean | ma_eqasis$ma_eqsisArgs<ExtArgs>
+  }
 
   export type $ma_eqasisPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "ma_eqasis"
-    objects: {}
+    objects: {
+      ma_depar: Prisma.$ma_deparPayload<ExtArgs> | null
+      ma_emple: Prisma.$ma_emplePayload<ExtArgs> | null
+      ma_eqsis: Prisma.$ma_eqsisPayload<ExtArgs> | null
+    }
     scalars: $Extensions.GetPayloadResult<{
       clave: number
       cve_alm: string | null
@@ -14481,6 +14775,9 @@ export namespace Prisma {
    */
   export interface Prisma__ma_eqasisClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    ma_depar<T extends ma_eqasis$ma_deparArgs<ExtArgs> = {}>(args?: Subset<T, ma_eqasis$ma_deparArgs<ExtArgs>>): Prisma__ma_deparClient<$Result.GetResult<Prisma.$ma_deparPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    ma_emple<T extends ma_eqasis$ma_empleArgs<ExtArgs> = {}>(args?: Subset<T, ma_eqasis$ma_empleArgs<ExtArgs>>): Prisma__ma_empleClient<$Result.GetResult<Prisma.$ma_emplePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    ma_eqsis<T extends ma_eqasis$ma_eqsisArgs<ExtArgs> = {}>(args?: Subset<T, ma_eqasis$ma_eqsisArgs<ExtArgs>>): Prisma__ma_eqsisClient<$Result.GetResult<Prisma.$ma_eqsisPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -14533,6 +14830,10 @@ export namespace Prisma {
      */
     omit?: ma_eqasisOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqasisInclude<ExtArgs> | null
+    /**
      * Filter, which ma_eqasis to fetch.
      */
     where: ma_eqasisWhereUniqueInput
@@ -14551,6 +14852,10 @@ export namespace Prisma {
      */
     omit?: ma_eqasisOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqasisInclude<ExtArgs> | null
+    /**
      * Filter, which ma_eqasis to fetch.
      */
     where: ma_eqasisWhereUniqueInput
@@ -14568,6 +14873,10 @@ export namespace Prisma {
      * Omit specific fields from the ma_eqasis
      */
     omit?: ma_eqasisOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqasisInclude<ExtArgs> | null
     /**
      * Filter, which ma_eqasis to fetch.
      */
@@ -14617,6 +14926,10 @@ export namespace Prisma {
      */
     omit?: ma_eqasisOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqasisInclude<ExtArgs> | null
+    /**
      * Filter, which ma_eqasis to fetch.
      */
     where?: ma_eqasisWhereInput
@@ -14665,6 +14978,10 @@ export namespace Prisma {
      */
     omit?: ma_eqasisOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqasisInclude<ExtArgs> | null
+    /**
      * Filter, which ma_eqases to fetch.
      */
     where?: ma_eqasisWhereInput
@@ -14708,6 +15025,10 @@ export namespace Prisma {
      */
     omit?: ma_eqasisOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqasisInclude<ExtArgs> | null
+    /**
      * The data needed to create a ma_eqasis.
      */
     data?: XOR<ma_eqasisCreateInput, ma_eqasisUncheckedCreateInput>
@@ -14741,6 +15062,10 @@ export namespace Prisma {
      */
     data: ma_eqasisCreateManyInput | ma_eqasisCreateManyInput[]
     skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqasisIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -14755,6 +15080,10 @@ export namespace Prisma {
      * Omit specific fields from the ma_eqasis
      */
     omit?: ma_eqasisOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqasisInclude<ExtArgs> | null
     /**
      * The data needed to update a ma_eqasis.
      */
@@ -14807,6 +15136,10 @@ export namespace Prisma {
      * Limit how many ma_eqases to update.
      */
     limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqasisIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -14821,6 +15154,10 @@ export namespace Prisma {
      * Omit specific fields from the ma_eqasis
      */
     omit?: ma_eqasisOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqasisInclude<ExtArgs> | null
     /**
      * The filter to search for the ma_eqasis to update in case it exists.
      */
@@ -14848,6 +15185,10 @@ export namespace Prisma {
      */
     omit?: ma_eqasisOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqasisInclude<ExtArgs> | null
+    /**
      * Filter which ma_eqasis to delete.
      */
     where: ma_eqasisWhereUniqueInput
@@ -14868,6 +15209,63 @@ export namespace Prisma {
   }
 
   /**
+   * ma_eqasis.ma_depar
+   */
+  export type ma_eqasis$ma_deparArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_depar
+     */
+    select?: ma_deparSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_depar
+     */
+    omit?: ma_deparOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_deparInclude<ExtArgs> | null
+    where?: ma_deparWhereInput
+  }
+
+  /**
+   * ma_eqasis.ma_emple
+   */
+  export type ma_eqasis$ma_empleArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_emple
+     */
+    select?: ma_empleSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_emple
+     */
+    omit?: ma_empleOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_empleInclude<ExtArgs> | null
+    where?: ma_empleWhereInput
+  }
+
+  /**
+   * ma_eqasis.ma_eqsis
+   */
+  export type ma_eqasis$ma_eqsisArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_eqsis
+     */
+    select?: ma_eqsisSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_eqsis
+     */
+    omit?: ma_eqsisOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqsisInclude<ExtArgs> | null
+    where?: ma_eqsisWhereInput
+  }
+
+  /**
    * ma_eqasis without action
    */
   export type ma_eqasisDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -14879,6 +15277,10 @@ export namespace Prisma {
      * Omit specific fields from the ma_eqasis
      */
     omit?: ma_eqasisOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqasisInclude<ExtArgs> | null
   }
 
 
@@ -15112,6 +15514,10 @@ export namespace Prisma {
     modelo?: boolean
     f_regis?: boolean
     status?: boolean
+    ma_eqasis?: boolean | ma_eqsis$ma_eqasisArgs<ExtArgs>
+    ma_clasif?: boolean | ma_eqsis$ma_clasifArgs<ExtArgs>
+    ma_marca?: boolean | ma_eqsis$ma_marcaArgs<ExtArgs>
+    _count?: boolean | Ma_eqsisCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["ma_eqsis"]>
 
   export type ma_eqsisSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -15123,6 +15529,8 @@ export namespace Prisma {
     modelo?: boolean
     f_regis?: boolean
     status?: boolean
+    ma_clasif?: boolean | ma_eqsis$ma_clasifArgs<ExtArgs>
+    ma_marca?: boolean | ma_eqsis$ma_marcaArgs<ExtArgs>
   }, ExtArgs["result"]["ma_eqsis"]>
 
   export type ma_eqsisSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -15134,6 +15542,8 @@ export namespace Prisma {
     modelo?: boolean
     f_regis?: boolean
     status?: boolean
+    ma_clasif?: boolean | ma_eqsis$ma_clasifArgs<ExtArgs>
+    ma_marca?: boolean | ma_eqsis$ma_marcaArgs<ExtArgs>
   }, ExtArgs["result"]["ma_eqsis"]>
 
   export type ma_eqsisSelectScalar = {
@@ -15148,10 +15558,28 @@ export namespace Prisma {
   }
 
   export type ma_eqsisOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"clave" | "serie" | "cod_inv" | "cve_marca" | "cve_clasif" | "modelo" | "f_regis" | "status", ExtArgs["result"]["ma_eqsis"]>
+  export type ma_eqsisInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ma_eqasis?: boolean | ma_eqsis$ma_eqasisArgs<ExtArgs>
+    ma_clasif?: boolean | ma_eqsis$ma_clasifArgs<ExtArgs>
+    ma_marca?: boolean | ma_eqsis$ma_marcaArgs<ExtArgs>
+    _count?: boolean | Ma_eqsisCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type ma_eqsisIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ma_clasif?: boolean | ma_eqsis$ma_clasifArgs<ExtArgs>
+    ma_marca?: boolean | ma_eqsis$ma_marcaArgs<ExtArgs>
+  }
+  export type ma_eqsisIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ma_clasif?: boolean | ma_eqsis$ma_clasifArgs<ExtArgs>
+    ma_marca?: boolean | ma_eqsis$ma_marcaArgs<ExtArgs>
+  }
 
   export type $ma_eqsisPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "ma_eqsis"
-    objects: {}
+    objects: {
+      ma_eqasis: Prisma.$ma_eqasisPayload<ExtArgs>[]
+      ma_clasif: Prisma.$ma_clasifPayload<ExtArgs> | null
+      ma_marca: Prisma.$ma_marcaPayload<ExtArgs> | null
+    }
     scalars: $Extensions.GetPayloadResult<{
       clave: number
       serie: string | null
@@ -15555,6 +15983,9 @@ export namespace Prisma {
    */
   export interface Prisma__ma_eqsisClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    ma_eqasis<T extends ma_eqsis$ma_eqasisArgs<ExtArgs> = {}>(args?: Subset<T, ma_eqsis$ma_eqasisArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ma_eqasisPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    ma_clasif<T extends ma_eqsis$ma_clasifArgs<ExtArgs> = {}>(args?: Subset<T, ma_eqsis$ma_clasifArgs<ExtArgs>>): Prisma__ma_clasifClient<$Result.GetResult<Prisma.$ma_clasifPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    ma_marca<T extends ma_eqsis$ma_marcaArgs<ExtArgs> = {}>(args?: Subset<T, ma_eqsis$ma_marcaArgs<ExtArgs>>): Prisma__ma_marcaClient<$Result.GetResult<Prisma.$ma_marcaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -15609,6 +16040,10 @@ export namespace Prisma {
      */
     omit?: ma_eqsisOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqsisInclude<ExtArgs> | null
+    /**
      * Filter, which ma_eqsis to fetch.
      */
     where: ma_eqsisWhereUniqueInput
@@ -15627,6 +16062,10 @@ export namespace Prisma {
      */
     omit?: ma_eqsisOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqsisInclude<ExtArgs> | null
+    /**
      * Filter, which ma_eqsis to fetch.
      */
     where: ma_eqsisWhereUniqueInput
@@ -15644,6 +16083,10 @@ export namespace Prisma {
      * Omit specific fields from the ma_eqsis
      */
     omit?: ma_eqsisOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqsisInclude<ExtArgs> | null
     /**
      * Filter, which ma_eqsis to fetch.
      */
@@ -15693,6 +16136,10 @@ export namespace Prisma {
      */
     omit?: ma_eqsisOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqsisInclude<ExtArgs> | null
+    /**
      * Filter, which ma_eqsis to fetch.
      */
     where?: ma_eqsisWhereInput
@@ -15741,6 +16188,10 @@ export namespace Prisma {
      */
     omit?: ma_eqsisOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqsisInclude<ExtArgs> | null
+    /**
      * Filter, which ma_eqses to fetch.
      */
     where?: ma_eqsisWhereInput
@@ -15784,6 +16235,10 @@ export namespace Prisma {
      */
     omit?: ma_eqsisOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqsisInclude<ExtArgs> | null
+    /**
      * The data needed to create a ma_eqsis.
      */
     data?: XOR<ma_eqsisCreateInput, ma_eqsisUncheckedCreateInput>
@@ -15817,6 +16272,10 @@ export namespace Prisma {
      */
     data: ma_eqsisCreateManyInput | ma_eqsisCreateManyInput[]
     skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqsisIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -15831,6 +16290,10 @@ export namespace Prisma {
      * Omit specific fields from the ma_eqsis
      */
     omit?: ma_eqsisOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqsisInclude<ExtArgs> | null
     /**
      * The data needed to update a ma_eqsis.
      */
@@ -15883,6 +16346,10 @@ export namespace Prisma {
      * Limit how many ma_eqses to update.
      */
     limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqsisIncludeUpdateManyAndReturn<ExtArgs> | null
   }
 
   /**
@@ -15897,6 +16364,10 @@ export namespace Prisma {
      * Omit specific fields from the ma_eqsis
      */
     omit?: ma_eqsisOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqsisInclude<ExtArgs> | null
     /**
      * The filter to search for the ma_eqsis to update in case it exists.
      */
@@ -15924,6 +16395,10 @@ export namespace Prisma {
      */
     omit?: ma_eqsisOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqsisInclude<ExtArgs> | null
+    /**
      * Filter which ma_eqsis to delete.
      */
     where: ma_eqsisWhereUniqueInput
@@ -15944,6 +16419,68 @@ export namespace Prisma {
   }
 
   /**
+   * ma_eqsis.ma_eqasis
+   */
+  export type ma_eqsis$ma_eqasisArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_eqasis
+     */
+    select?: ma_eqasisSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_eqasis
+     */
+    omit?: ma_eqasisOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqasisInclude<ExtArgs> | null
+    where?: ma_eqasisWhereInput
+    orderBy?: ma_eqasisOrderByWithRelationInput | ma_eqasisOrderByWithRelationInput[]
+    cursor?: ma_eqasisWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Ma_eqasisScalarFieldEnum | Ma_eqasisScalarFieldEnum[]
+  }
+
+  /**
+   * ma_eqsis.ma_clasif
+   */
+  export type ma_eqsis$ma_clasifArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_clasif
+     */
+    select?: ma_clasifSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_clasif
+     */
+    omit?: ma_clasifOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_clasifInclude<ExtArgs> | null
+    where?: ma_clasifWhereInput
+  }
+
+  /**
+   * ma_eqsis.ma_marca
+   */
+  export type ma_eqsis$ma_marcaArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_marca
+     */
+    select?: ma_marcaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_marca
+     */
+    omit?: ma_marcaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_marcaInclude<ExtArgs> | null
+    where?: ma_marcaWhereInput
+  }
+
+  /**
    * ma_eqsis without action
    */
   export type ma_eqsisDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -15955,6 +16492,10 @@ export namespace Prisma {
      * Omit specific fields from the ma_eqsis
      */
     omit?: ma_eqsisOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqsisInclude<ExtArgs> | null
   }
 
 
@@ -18404,6 +18945,8 @@ export namespace Prisma {
     clave?: boolean
     descri?: boolean
     type?: boolean
+    ma_eqsis?: boolean | ma_marca$ma_eqsisArgs<ExtArgs>
+    _count?: boolean | Ma_marcaCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["ma_marca"]>
 
   export type ma_marcaSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -18425,10 +18968,18 @@ export namespace Prisma {
   }
 
   export type ma_marcaOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"clave" | "descri" | "type", ExtArgs["result"]["ma_marca"]>
+  export type ma_marcaInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    ma_eqsis?: boolean | ma_marca$ma_eqsisArgs<ExtArgs>
+    _count?: boolean | Ma_marcaCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type ma_marcaIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type ma_marcaIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
 
   export type $ma_marcaPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "ma_marca"
-    objects: {}
+    objects: {
+      ma_eqsis: Prisma.$ma_eqsisPayload<ExtArgs>[]
+    }
     scalars: $Extensions.GetPayloadResult<{
       clave: number
       descri: string | null
@@ -18827,6 +19378,7 @@ export namespace Prisma {
    */
   export interface Prisma__ma_marcaClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
+    ma_eqsis<T extends ma_marca$ma_eqsisArgs<ExtArgs> = {}>(args?: Subset<T, ma_marca$ma_eqsisArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ma_eqsisPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -18876,6 +19428,10 @@ export namespace Prisma {
      */
     omit?: ma_marcaOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_marcaInclude<ExtArgs> | null
+    /**
      * Filter, which ma_marca to fetch.
      */
     where: ma_marcaWhereUniqueInput
@@ -18894,6 +19450,10 @@ export namespace Prisma {
      */
     omit?: ma_marcaOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_marcaInclude<ExtArgs> | null
+    /**
      * Filter, which ma_marca to fetch.
      */
     where: ma_marcaWhereUniqueInput
@@ -18911,6 +19471,10 @@ export namespace Prisma {
      * Omit specific fields from the ma_marca
      */
     omit?: ma_marcaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_marcaInclude<ExtArgs> | null
     /**
      * Filter, which ma_marca to fetch.
      */
@@ -18960,6 +19524,10 @@ export namespace Prisma {
      */
     omit?: ma_marcaOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_marcaInclude<ExtArgs> | null
+    /**
      * Filter, which ma_marca to fetch.
      */
     where?: ma_marcaWhereInput
@@ -19008,6 +19576,10 @@ export namespace Prisma {
      */
     omit?: ma_marcaOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_marcaInclude<ExtArgs> | null
+    /**
      * Filter, which ma_marcas to fetch.
      */
     where?: ma_marcaWhereInput
@@ -19050,6 +19622,10 @@ export namespace Prisma {
      * Omit specific fields from the ma_marca
      */
     omit?: ma_marcaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_marcaInclude<ExtArgs> | null
     /**
      * The data needed to create a ma_marca.
      */
@@ -19098,6 +19674,10 @@ export namespace Prisma {
      * Omit specific fields from the ma_marca
      */
     omit?: ma_marcaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_marcaInclude<ExtArgs> | null
     /**
      * The data needed to update a ma_marca.
      */
@@ -19165,6 +19745,10 @@ export namespace Prisma {
      */
     omit?: ma_marcaOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_marcaInclude<ExtArgs> | null
+    /**
      * The filter to search for the ma_marca to update in case it exists.
      */
     where: ma_marcaWhereUniqueInput
@@ -19191,6 +19775,10 @@ export namespace Prisma {
      */
     omit?: ma_marcaOmit<ExtArgs> | null
     /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_marcaInclude<ExtArgs> | null
+    /**
      * Filter which ma_marca to delete.
      */
     where: ma_marcaWhereUniqueInput
@@ -19211,6 +19799,30 @@ export namespace Prisma {
   }
 
   /**
+   * ma_marca.ma_eqsis
+   */
+  export type ma_marca$ma_eqsisArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_eqsis
+     */
+    select?: ma_eqsisSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_eqsis
+     */
+    omit?: ma_eqsisOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_eqsisInclude<ExtArgs> | null
+    where?: ma_eqsisWhereInput
+    orderBy?: ma_eqsisOrderByWithRelationInput | ma_eqsisOrderByWithRelationInput[]
+    cursor?: ma_eqsisWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Ma_eqsisScalarFieldEnum | Ma_eqsisScalarFieldEnum[]
+  }
+
+  /**
    * ma_marca without action
    */
   export type ma_marcaDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -19222,6 +19834,10 @@ export namespace Prisma {
      * Omit specific fields from the ma_marca
      */
     omit?: ma_marcaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_marcaInclude<ExtArgs> | null
   }
 
 
@@ -30973,12 +31589,14 @@ export namespace Prisma {
     clave?: IntFilter<"ma_clasif"> | number
     descri?: StringNullableFilter<"ma_clasif"> | string | null
     type?: StringNullableFilter<"ma_clasif"> | string | null
+    ma_eqsis?: Ma_eqsisListRelationFilter
   }
 
   export type ma_clasifOrderByWithRelationInput = {
     clave?: SortOrder
     descri?: SortOrderInput | SortOrder
     type?: SortOrderInput | SortOrder
+    ma_eqsis?: ma_eqsisOrderByRelationAggregateInput
   }
 
   export type ma_clasifWhereUniqueInput = Prisma.AtLeast<{
@@ -30988,6 +31606,7 @@ export namespace Prisma {
     NOT?: ma_clasifWhereInput | ma_clasifWhereInput[]
     descri?: StringNullableFilter<"ma_clasif"> | string | null
     type?: StringNullableFilter<"ma_clasif"> | string | null
+    ma_eqsis?: Ma_eqsisListRelationFilter
   }, "clave">
 
   export type ma_clasifOrderByWithAggregationInput = {
@@ -31017,12 +31636,14 @@ export namespace Prisma {
     clave?: IntFilter<"ma_depar"> | number
     descri?: StringNullableFilter<"ma_depar"> | string | null
     ma_emple?: Ma_empleListRelationFilter
+    ma_eqasis?: Ma_eqasisListRelationFilter
   }
 
   export type ma_deparOrderByWithRelationInput = {
     clave?: SortOrder
     descri?: SortOrderInput | SortOrder
     ma_emple?: ma_empleOrderByRelationAggregateInput
+    ma_eqasis?: ma_eqasisOrderByRelationAggregateInput
   }
 
   export type ma_deparWhereUniqueInput = Prisma.AtLeast<{
@@ -31032,6 +31653,7 @@ export namespace Prisma {
     NOT?: ma_deparWhereInput | ma_deparWhereInput[]
     descri?: StringNullableFilter<"ma_depar"> | string | null
     ma_emple?: Ma_empleListRelationFilter
+    ma_eqasis?: Ma_eqasisListRelationFilter
   }, "clave">
 
   export type ma_deparOrderByWithAggregationInput = {
@@ -31063,6 +31685,7 @@ export namespace Prisma {
     status?: BoolNullableFilter<"ma_emple"> | boolean | null
     cve_depar?: IntNullableFilter<"ma_emple"> | number | null
     ma_depar?: XOR<Ma_deparNullableScalarRelationFilter, ma_deparWhereInput> | null
+    ma_eqasis?: Ma_eqasisListRelationFilter
   }
 
   export type ma_empleOrderByWithRelationInput = {
@@ -31073,6 +31696,7 @@ export namespace Prisma {
     status?: SortOrderInput | SortOrder
     cve_depar?: SortOrderInput | SortOrder
     ma_depar?: ma_deparOrderByWithRelationInput
+    ma_eqasis?: ma_eqasisOrderByRelationAggregateInput
   }
 
   export type ma_empleWhereUniqueInput = Prisma.AtLeast<{
@@ -31086,6 +31710,7 @@ export namespace Prisma {
     status?: BoolNullableFilter<"ma_emple"> | boolean | null
     cve_depar?: IntNullableFilter<"ma_emple"> | number | null
     ma_depar?: XOR<Ma_deparNullableScalarRelationFilter, ma_deparWhereInput> | null
+    ma_eqasis?: Ma_eqasisListRelationFilter
   }, "id">
 
   export type ma_empleOrderByWithAggregationInput = {
@@ -31183,6 +31808,9 @@ export namespace Prisma {
     cve_emple?: IntNullableFilter<"ma_eqasis"> | number | null
     cve_depar?: IntNullableFilter<"ma_eqasis"> | number | null
     f_movto?: DateTimeNullableFilter<"ma_eqasis"> | Date | string | null
+    ma_depar?: XOR<Ma_deparNullableScalarRelationFilter, ma_deparWhereInput> | null
+    ma_emple?: XOR<Ma_empleNullableScalarRelationFilter, ma_empleWhereInput> | null
+    ma_eqsis?: XOR<Ma_eqsisNullableScalarRelationFilter, ma_eqsisWhereInput> | null
   }
 
   export type ma_eqasisOrderByWithRelationInput = {
@@ -31192,6 +31820,9 @@ export namespace Prisma {
     cve_emple?: SortOrderInput | SortOrder
     cve_depar?: SortOrderInput | SortOrder
     f_movto?: SortOrderInput | SortOrder
+    ma_depar?: ma_deparOrderByWithRelationInput
+    ma_emple?: ma_empleOrderByWithRelationInput
+    ma_eqsis?: ma_eqsisOrderByWithRelationInput
   }
 
   export type ma_eqasisWhereUniqueInput = Prisma.AtLeast<{
@@ -31204,6 +31835,9 @@ export namespace Prisma {
     cve_emple?: IntNullableFilter<"ma_eqasis"> | number | null
     cve_depar?: IntNullableFilter<"ma_eqasis"> | number | null
     f_movto?: DateTimeNullableFilter<"ma_eqasis"> | Date | string | null
+    ma_depar?: XOR<Ma_deparNullableScalarRelationFilter, ma_deparWhereInput> | null
+    ma_emple?: XOR<Ma_empleNullableScalarRelationFilter, ma_empleWhereInput> | null
+    ma_eqsis?: XOR<Ma_eqsisNullableScalarRelationFilter, ma_eqsisWhereInput> | null
   }, "clave">
 
   export type ma_eqasisOrderByWithAggregationInput = {
@@ -31244,6 +31878,9 @@ export namespace Prisma {
     modelo?: StringNullableFilter<"ma_eqsis"> | string | null
     f_regis?: DateTimeNullableFilter<"ma_eqsis"> | Date | string | null
     status?: StringNullableFilter<"ma_eqsis"> | string | null
+    ma_eqasis?: Ma_eqasisListRelationFilter
+    ma_clasif?: XOR<Ma_clasifNullableScalarRelationFilter, ma_clasifWhereInput> | null
+    ma_marca?: XOR<Ma_marcaNullableScalarRelationFilter, ma_marcaWhereInput> | null
   }
 
   export type ma_eqsisOrderByWithRelationInput = {
@@ -31255,6 +31892,9 @@ export namespace Prisma {
     modelo?: SortOrderInput | SortOrder
     f_regis?: SortOrderInput | SortOrder
     status?: SortOrderInput | SortOrder
+    ma_eqasis?: ma_eqasisOrderByRelationAggregateInput
+    ma_clasif?: ma_clasifOrderByWithRelationInput
+    ma_marca?: ma_marcaOrderByWithRelationInput
   }
 
   export type ma_eqsisWhereUniqueInput = Prisma.AtLeast<{
@@ -31269,6 +31909,9 @@ export namespace Prisma {
     modelo?: StringNullableFilter<"ma_eqsis"> | string | null
     f_regis?: DateTimeNullableFilter<"ma_eqsis"> | Date | string | null
     status?: StringNullableFilter<"ma_eqsis"> | string | null
+    ma_eqasis?: Ma_eqasisListRelationFilter
+    ma_clasif?: XOR<Ma_clasifNullableScalarRelationFilter, ma_clasifWhereInput> | null
+    ma_marca?: XOR<Ma_marcaNullableScalarRelationFilter, ma_marcaWhereInput> | null
   }, "clave" | "cod_inv">
 
   export type ma_eqsisOrderByWithAggregationInput = {
@@ -31467,12 +32110,14 @@ export namespace Prisma {
     clave?: IntFilter<"ma_marca"> | number
     descri?: StringNullableFilter<"ma_marca"> | string | null
     type?: StringNullableFilter<"ma_marca"> | string | null
+    ma_eqsis?: Ma_eqsisListRelationFilter
   }
 
   export type ma_marcaOrderByWithRelationInput = {
     clave?: SortOrder
     descri?: SortOrderInput | SortOrder
     type?: SortOrderInput | SortOrder
+    ma_eqsis?: ma_eqsisOrderByRelationAggregateInput
   }
 
   export type ma_marcaWhereUniqueInput = Prisma.AtLeast<{
@@ -31482,6 +32127,7 @@ export namespace Prisma {
     NOT?: ma_marcaWhereInput | ma_marcaWhereInput[]
     descri?: StringNullableFilter<"ma_marca"> | string | null
     type?: StringNullableFilter<"ma_marca"> | string | null
+    ma_eqsis?: Ma_eqsisListRelationFilter
   }, "clave">
 
   export type ma_marcaOrderByWithAggregationInput = {
@@ -32515,23 +33161,27 @@ export namespace Prisma {
   export type ma_clasifCreateInput = {
     descri?: string | null
     type?: string | null
+    ma_eqsis?: ma_eqsisCreateNestedManyWithoutMa_clasifInput
   }
 
   export type ma_clasifUncheckedCreateInput = {
     clave?: number
     descri?: string | null
     type?: string | null
+    ma_eqsis?: ma_eqsisUncheckedCreateNestedManyWithoutMa_clasifInput
   }
 
   export type ma_clasifUpdateInput = {
     descri?: NullableStringFieldUpdateOperationsInput | string | null
     type?: NullableStringFieldUpdateOperationsInput | string | null
+    ma_eqsis?: ma_eqsisUpdateManyWithoutMa_clasifNestedInput
   }
 
   export type ma_clasifUncheckedUpdateInput = {
     clave?: IntFieldUpdateOperationsInput | number
     descri?: NullableStringFieldUpdateOperationsInput | string | null
     type?: NullableStringFieldUpdateOperationsInput | string | null
+    ma_eqsis?: ma_eqsisUncheckedUpdateManyWithoutMa_clasifNestedInput
   }
 
   export type ma_clasifCreateManyInput = {
@@ -32554,23 +33204,27 @@ export namespace Prisma {
   export type ma_deparCreateInput = {
     descri?: string | null
     ma_emple?: ma_empleCreateNestedManyWithoutMa_deparInput
+    ma_eqasis?: ma_eqasisCreateNestedManyWithoutMa_deparInput
   }
 
   export type ma_deparUncheckedCreateInput = {
     clave?: number
     descri?: string | null
     ma_emple?: ma_empleUncheckedCreateNestedManyWithoutMa_deparInput
+    ma_eqasis?: ma_eqasisUncheckedCreateNestedManyWithoutMa_deparInput
   }
 
   export type ma_deparUpdateInput = {
     descri?: NullableStringFieldUpdateOperationsInput | string | null
     ma_emple?: ma_empleUpdateManyWithoutMa_deparNestedInput
+    ma_eqasis?: ma_eqasisUpdateManyWithoutMa_deparNestedInput
   }
 
   export type ma_deparUncheckedUpdateInput = {
     clave?: IntFieldUpdateOperationsInput | number
     descri?: NullableStringFieldUpdateOperationsInput | string | null
     ma_emple?: ma_empleUncheckedUpdateManyWithoutMa_deparNestedInput
+    ma_eqasis?: ma_eqasisUncheckedUpdateManyWithoutMa_deparNestedInput
   }
 
   export type ma_deparCreateManyInput = {
@@ -32593,6 +33247,7 @@ export namespace Prisma {
     cve_zon?: string | null
     status?: boolean | null
     ma_depar?: ma_deparCreateNestedOneWithoutMa_empleInput
+    ma_eqasis?: ma_eqasisCreateNestedManyWithoutMa_empleInput
   }
 
   export type ma_empleUncheckedCreateInput = {
@@ -32602,6 +33257,7 @@ export namespace Prisma {
     cve_zon?: string | null
     status?: boolean | null
     cve_depar?: number | null
+    ma_eqasis?: ma_eqasisUncheckedCreateNestedManyWithoutMa_empleInput
   }
 
   export type ma_empleUpdateInput = {
@@ -32610,6 +33266,7 @@ export namespace Prisma {
     cve_zon?: NullableStringFieldUpdateOperationsInput | string | null
     status?: NullableBoolFieldUpdateOperationsInput | boolean | null
     ma_depar?: ma_deparUpdateOneWithoutMa_empleNestedInput
+    ma_eqasis?: ma_eqasisUpdateManyWithoutMa_empleNestedInput
   }
 
   export type ma_empleUncheckedUpdateInput = {
@@ -32619,6 +33276,7 @@ export namespace Prisma {
     cve_zon?: NullableStringFieldUpdateOperationsInput | string | null
     status?: NullableBoolFieldUpdateOperationsInput | boolean | null
     cve_depar?: NullableIntFieldUpdateOperationsInput | number | null
+    ma_eqasis?: ma_eqasisUncheckedUpdateManyWithoutMa_empleNestedInput
   }
 
   export type ma_empleCreateManyInput = {
@@ -32708,10 +33366,10 @@ export namespace Prisma {
 
   export type ma_eqasisCreateInput = {
     cve_alm?: string | null
-    cve_eqsis?: number | null
-    cve_emple?: number | null
-    cve_depar?: number | null
     f_movto?: Date | string | null
+    ma_depar?: ma_deparCreateNestedOneWithoutMa_eqasisInput
+    ma_emple?: ma_empleCreateNestedOneWithoutMa_eqasisInput
+    ma_eqsis?: ma_eqsisCreateNestedOneWithoutMa_eqasisInput
   }
 
   export type ma_eqasisUncheckedCreateInput = {
@@ -32725,10 +33383,10 @@ export namespace Prisma {
 
   export type ma_eqasisUpdateInput = {
     cve_alm?: NullableStringFieldUpdateOperationsInput | string | null
-    cve_eqsis?: NullableIntFieldUpdateOperationsInput | number | null
-    cve_emple?: NullableIntFieldUpdateOperationsInput | number | null
-    cve_depar?: NullableIntFieldUpdateOperationsInput | number | null
     f_movto?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ma_depar?: ma_deparUpdateOneWithoutMa_eqasisNestedInput
+    ma_emple?: ma_empleUpdateOneWithoutMa_eqasisNestedInput
+    ma_eqsis?: ma_eqsisUpdateOneWithoutMa_eqasisNestedInput
   }
 
   export type ma_eqasisUncheckedUpdateInput = {
@@ -32751,9 +33409,6 @@ export namespace Prisma {
 
   export type ma_eqasisUpdateManyMutationInput = {
     cve_alm?: NullableStringFieldUpdateOperationsInput | string | null
-    cve_eqsis?: NullableIntFieldUpdateOperationsInput | number | null
-    cve_emple?: NullableIntFieldUpdateOperationsInput | number | null
-    cve_depar?: NullableIntFieldUpdateOperationsInput | number | null
     f_movto?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   }
 
@@ -32769,11 +33424,12 @@ export namespace Prisma {
   export type ma_eqsisCreateInput = {
     serie?: string | null
     cod_inv?: string | null
-    cve_marca?: number | null
-    cve_clasif?: number | null
     modelo?: string | null
     f_regis?: Date | string | null
     status?: string | null
+    ma_eqasis?: ma_eqasisCreateNestedManyWithoutMa_eqsisInput
+    ma_clasif?: ma_clasifCreateNestedOneWithoutMa_eqsisInput
+    ma_marca?: ma_marcaCreateNestedOneWithoutMa_eqsisInput
   }
 
   export type ma_eqsisUncheckedCreateInput = {
@@ -32785,16 +33441,18 @@ export namespace Prisma {
     modelo?: string | null
     f_regis?: Date | string | null
     status?: string | null
+    ma_eqasis?: ma_eqasisUncheckedCreateNestedManyWithoutMa_eqsisInput
   }
 
   export type ma_eqsisUpdateInput = {
     serie?: NullableStringFieldUpdateOperationsInput | string | null
     cod_inv?: NullableStringFieldUpdateOperationsInput | string | null
-    cve_marca?: NullableIntFieldUpdateOperationsInput | number | null
-    cve_clasif?: NullableIntFieldUpdateOperationsInput | number | null
     modelo?: NullableStringFieldUpdateOperationsInput | string | null
     f_regis?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: NullableStringFieldUpdateOperationsInput | string | null
+    ma_eqasis?: ma_eqasisUpdateManyWithoutMa_eqsisNestedInput
+    ma_clasif?: ma_clasifUpdateOneWithoutMa_eqsisNestedInput
+    ma_marca?: ma_marcaUpdateOneWithoutMa_eqsisNestedInput
   }
 
   export type ma_eqsisUncheckedUpdateInput = {
@@ -32806,6 +33464,7 @@ export namespace Prisma {
     modelo?: NullableStringFieldUpdateOperationsInput | string | null
     f_regis?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: NullableStringFieldUpdateOperationsInput | string | null
+    ma_eqasis?: ma_eqasisUncheckedUpdateManyWithoutMa_eqsisNestedInput
   }
 
   export type ma_eqsisCreateManyInput = {
@@ -32822,8 +33481,6 @@ export namespace Prisma {
   export type ma_eqsisUpdateManyMutationInput = {
     serie?: NullableStringFieldUpdateOperationsInput | string | null
     cod_inv?: NullableStringFieldUpdateOperationsInput | string | null
-    cve_marca?: NullableIntFieldUpdateOperationsInput | number | null
-    cve_clasif?: NullableIntFieldUpdateOperationsInput | number | null
     modelo?: NullableStringFieldUpdateOperationsInput | string | null
     f_regis?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     status?: NullableStringFieldUpdateOperationsInput | string | null
@@ -33021,23 +33678,27 @@ export namespace Prisma {
   export type ma_marcaCreateInput = {
     descri?: string | null
     type?: string | null
+    ma_eqsis?: ma_eqsisCreateNestedManyWithoutMa_marcaInput
   }
 
   export type ma_marcaUncheckedCreateInput = {
     clave?: number
     descri?: string | null
     type?: string | null
+    ma_eqsis?: ma_eqsisUncheckedCreateNestedManyWithoutMa_marcaInput
   }
 
   export type ma_marcaUpdateInput = {
     descri?: NullableStringFieldUpdateOperationsInput | string | null
     type?: NullableStringFieldUpdateOperationsInput | string | null
+    ma_eqsis?: ma_eqsisUpdateManyWithoutMa_marcaNestedInput
   }
 
   export type ma_marcaUncheckedUpdateInput = {
     clave?: IntFieldUpdateOperationsInput | number
     descri?: NullableStringFieldUpdateOperationsInput | string | null
     type?: NullableStringFieldUpdateOperationsInput | string | null
+    ma_eqsis?: ma_eqsisUncheckedUpdateManyWithoutMa_marcaNestedInput
   }
 
   export type ma_marcaCreateManyInput = {
@@ -34074,6 +34735,16 @@ export namespace Prisma {
     _max?: NestedBigIntFilter<$PrismaModel>
   }
 
+  export type Ma_eqsisListRelationFilter = {
+    every?: ma_eqsisWhereInput
+    some?: ma_eqsisWhereInput
+    none?: ma_eqsisWhereInput
+  }
+
+  export type ma_eqsisOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
   export type ma_clasifCountOrderByAggregateInput = {
     clave?: SortOrder
     descri?: SortOrder
@@ -34106,7 +34777,17 @@ export namespace Prisma {
     none?: ma_empleWhereInput
   }
 
+  export type Ma_eqasisListRelationFilter = {
+    every?: ma_eqasisWhereInput
+    some?: ma_eqasisWhereInput
+    none?: ma_eqasisWhereInput
+  }
+
   export type ma_empleOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ma_eqasisOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
 
@@ -34210,6 +34891,16 @@ export namespace Prisma {
     id?: SortOrder
   }
 
+  export type Ma_empleNullableScalarRelationFilter = {
+    is?: ma_empleWhereInput | null
+    isNot?: ma_empleWhereInput | null
+  }
+
+  export type Ma_eqsisNullableScalarRelationFilter = {
+    is?: ma_eqsisWhereInput | null
+    isNot?: ma_eqsisWhereInput | null
+  }
+
   export type ma_eqasisCountOrderByAggregateInput = {
     clave?: SortOrder
     cve_alm?: SortOrder
@@ -34249,6 +34940,16 @@ export namespace Prisma {
     cve_eqsis?: SortOrder
     cve_emple?: SortOrder
     cve_depar?: SortOrder
+  }
+
+  export type Ma_clasifNullableScalarRelationFilter = {
+    is?: ma_clasifWhereInput | null
+    isNot?: ma_clasifWhereInput | null
+  }
+
+  export type Ma_marcaNullableScalarRelationFilter = {
+    is?: ma_marcaWhereInput | null
+    isNot?: ma_marcaWhereInput | null
   }
 
   export type ma_eqsisCountOrderByAggregateInput = {
@@ -34932,6 +35633,48 @@ export namespace Prisma {
     divide?: bigint | number
   }
 
+  export type ma_eqsisCreateNestedManyWithoutMa_clasifInput = {
+    create?: XOR<ma_eqsisCreateWithoutMa_clasifInput, ma_eqsisUncheckedCreateWithoutMa_clasifInput> | ma_eqsisCreateWithoutMa_clasifInput[] | ma_eqsisUncheckedCreateWithoutMa_clasifInput[]
+    connectOrCreate?: ma_eqsisCreateOrConnectWithoutMa_clasifInput | ma_eqsisCreateOrConnectWithoutMa_clasifInput[]
+    createMany?: ma_eqsisCreateManyMa_clasifInputEnvelope
+    connect?: ma_eqsisWhereUniqueInput | ma_eqsisWhereUniqueInput[]
+  }
+
+  export type ma_eqsisUncheckedCreateNestedManyWithoutMa_clasifInput = {
+    create?: XOR<ma_eqsisCreateWithoutMa_clasifInput, ma_eqsisUncheckedCreateWithoutMa_clasifInput> | ma_eqsisCreateWithoutMa_clasifInput[] | ma_eqsisUncheckedCreateWithoutMa_clasifInput[]
+    connectOrCreate?: ma_eqsisCreateOrConnectWithoutMa_clasifInput | ma_eqsisCreateOrConnectWithoutMa_clasifInput[]
+    createMany?: ma_eqsisCreateManyMa_clasifInputEnvelope
+    connect?: ma_eqsisWhereUniqueInput | ma_eqsisWhereUniqueInput[]
+  }
+
+  export type ma_eqsisUpdateManyWithoutMa_clasifNestedInput = {
+    create?: XOR<ma_eqsisCreateWithoutMa_clasifInput, ma_eqsisUncheckedCreateWithoutMa_clasifInput> | ma_eqsisCreateWithoutMa_clasifInput[] | ma_eqsisUncheckedCreateWithoutMa_clasifInput[]
+    connectOrCreate?: ma_eqsisCreateOrConnectWithoutMa_clasifInput | ma_eqsisCreateOrConnectWithoutMa_clasifInput[]
+    upsert?: ma_eqsisUpsertWithWhereUniqueWithoutMa_clasifInput | ma_eqsisUpsertWithWhereUniqueWithoutMa_clasifInput[]
+    createMany?: ma_eqsisCreateManyMa_clasifInputEnvelope
+    set?: ma_eqsisWhereUniqueInput | ma_eqsisWhereUniqueInput[]
+    disconnect?: ma_eqsisWhereUniqueInput | ma_eqsisWhereUniqueInput[]
+    delete?: ma_eqsisWhereUniqueInput | ma_eqsisWhereUniqueInput[]
+    connect?: ma_eqsisWhereUniqueInput | ma_eqsisWhereUniqueInput[]
+    update?: ma_eqsisUpdateWithWhereUniqueWithoutMa_clasifInput | ma_eqsisUpdateWithWhereUniqueWithoutMa_clasifInput[]
+    updateMany?: ma_eqsisUpdateManyWithWhereWithoutMa_clasifInput | ma_eqsisUpdateManyWithWhereWithoutMa_clasifInput[]
+    deleteMany?: ma_eqsisScalarWhereInput | ma_eqsisScalarWhereInput[]
+  }
+
+  export type ma_eqsisUncheckedUpdateManyWithoutMa_clasifNestedInput = {
+    create?: XOR<ma_eqsisCreateWithoutMa_clasifInput, ma_eqsisUncheckedCreateWithoutMa_clasifInput> | ma_eqsisCreateWithoutMa_clasifInput[] | ma_eqsisUncheckedCreateWithoutMa_clasifInput[]
+    connectOrCreate?: ma_eqsisCreateOrConnectWithoutMa_clasifInput | ma_eqsisCreateOrConnectWithoutMa_clasifInput[]
+    upsert?: ma_eqsisUpsertWithWhereUniqueWithoutMa_clasifInput | ma_eqsisUpsertWithWhereUniqueWithoutMa_clasifInput[]
+    createMany?: ma_eqsisCreateManyMa_clasifInputEnvelope
+    set?: ma_eqsisWhereUniqueInput | ma_eqsisWhereUniqueInput[]
+    disconnect?: ma_eqsisWhereUniqueInput | ma_eqsisWhereUniqueInput[]
+    delete?: ma_eqsisWhereUniqueInput | ma_eqsisWhereUniqueInput[]
+    connect?: ma_eqsisWhereUniqueInput | ma_eqsisWhereUniqueInput[]
+    update?: ma_eqsisUpdateWithWhereUniqueWithoutMa_clasifInput | ma_eqsisUpdateWithWhereUniqueWithoutMa_clasifInput[]
+    updateMany?: ma_eqsisUpdateManyWithWhereWithoutMa_clasifInput | ma_eqsisUpdateManyWithWhereWithoutMa_clasifInput[]
+    deleteMany?: ma_eqsisScalarWhereInput | ma_eqsisScalarWhereInput[]
+  }
+
   export type ma_empleCreateNestedManyWithoutMa_deparInput = {
     create?: XOR<ma_empleCreateWithoutMa_deparInput, ma_empleUncheckedCreateWithoutMa_deparInput> | ma_empleCreateWithoutMa_deparInput[] | ma_empleUncheckedCreateWithoutMa_deparInput[]
     connectOrCreate?: ma_empleCreateOrConnectWithoutMa_deparInput | ma_empleCreateOrConnectWithoutMa_deparInput[]
@@ -34939,11 +35682,25 @@ export namespace Prisma {
     connect?: ma_empleWhereUniqueInput | ma_empleWhereUniqueInput[]
   }
 
+  export type ma_eqasisCreateNestedManyWithoutMa_deparInput = {
+    create?: XOR<ma_eqasisCreateWithoutMa_deparInput, ma_eqasisUncheckedCreateWithoutMa_deparInput> | ma_eqasisCreateWithoutMa_deparInput[] | ma_eqasisUncheckedCreateWithoutMa_deparInput[]
+    connectOrCreate?: ma_eqasisCreateOrConnectWithoutMa_deparInput | ma_eqasisCreateOrConnectWithoutMa_deparInput[]
+    createMany?: ma_eqasisCreateManyMa_deparInputEnvelope
+    connect?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+  }
+
   export type ma_empleUncheckedCreateNestedManyWithoutMa_deparInput = {
     create?: XOR<ma_empleCreateWithoutMa_deparInput, ma_empleUncheckedCreateWithoutMa_deparInput> | ma_empleCreateWithoutMa_deparInput[] | ma_empleUncheckedCreateWithoutMa_deparInput[]
     connectOrCreate?: ma_empleCreateOrConnectWithoutMa_deparInput | ma_empleCreateOrConnectWithoutMa_deparInput[]
     createMany?: ma_empleCreateManyMa_deparInputEnvelope
     connect?: ma_empleWhereUniqueInput | ma_empleWhereUniqueInput[]
+  }
+
+  export type ma_eqasisUncheckedCreateNestedManyWithoutMa_deparInput = {
+    create?: XOR<ma_eqasisCreateWithoutMa_deparInput, ma_eqasisUncheckedCreateWithoutMa_deparInput> | ma_eqasisCreateWithoutMa_deparInput[] | ma_eqasisUncheckedCreateWithoutMa_deparInput[]
+    connectOrCreate?: ma_eqasisCreateOrConnectWithoutMa_deparInput | ma_eqasisCreateOrConnectWithoutMa_deparInput[]
+    createMany?: ma_eqasisCreateManyMa_deparInputEnvelope
+    connect?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
   }
 
   export type ma_empleUpdateManyWithoutMa_deparNestedInput = {
@@ -34960,6 +35717,20 @@ export namespace Prisma {
     deleteMany?: ma_empleScalarWhereInput | ma_empleScalarWhereInput[]
   }
 
+  export type ma_eqasisUpdateManyWithoutMa_deparNestedInput = {
+    create?: XOR<ma_eqasisCreateWithoutMa_deparInput, ma_eqasisUncheckedCreateWithoutMa_deparInput> | ma_eqasisCreateWithoutMa_deparInput[] | ma_eqasisUncheckedCreateWithoutMa_deparInput[]
+    connectOrCreate?: ma_eqasisCreateOrConnectWithoutMa_deparInput | ma_eqasisCreateOrConnectWithoutMa_deparInput[]
+    upsert?: ma_eqasisUpsertWithWhereUniqueWithoutMa_deparInput | ma_eqasisUpsertWithWhereUniqueWithoutMa_deparInput[]
+    createMany?: ma_eqasisCreateManyMa_deparInputEnvelope
+    set?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    disconnect?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    delete?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    connect?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    update?: ma_eqasisUpdateWithWhereUniqueWithoutMa_deparInput | ma_eqasisUpdateWithWhereUniqueWithoutMa_deparInput[]
+    updateMany?: ma_eqasisUpdateManyWithWhereWithoutMa_deparInput | ma_eqasisUpdateManyWithWhereWithoutMa_deparInput[]
+    deleteMany?: ma_eqasisScalarWhereInput | ma_eqasisScalarWhereInput[]
+  }
+
   export type ma_empleUncheckedUpdateManyWithoutMa_deparNestedInput = {
     create?: XOR<ma_empleCreateWithoutMa_deparInput, ma_empleUncheckedCreateWithoutMa_deparInput> | ma_empleCreateWithoutMa_deparInput[] | ma_empleUncheckedCreateWithoutMa_deparInput[]
     connectOrCreate?: ma_empleCreateOrConnectWithoutMa_deparInput | ma_empleCreateOrConnectWithoutMa_deparInput[]
@@ -34974,10 +35745,38 @@ export namespace Prisma {
     deleteMany?: ma_empleScalarWhereInput | ma_empleScalarWhereInput[]
   }
 
+  export type ma_eqasisUncheckedUpdateManyWithoutMa_deparNestedInput = {
+    create?: XOR<ma_eqasisCreateWithoutMa_deparInput, ma_eqasisUncheckedCreateWithoutMa_deparInput> | ma_eqasisCreateWithoutMa_deparInput[] | ma_eqasisUncheckedCreateWithoutMa_deparInput[]
+    connectOrCreate?: ma_eqasisCreateOrConnectWithoutMa_deparInput | ma_eqasisCreateOrConnectWithoutMa_deparInput[]
+    upsert?: ma_eqasisUpsertWithWhereUniqueWithoutMa_deparInput | ma_eqasisUpsertWithWhereUniqueWithoutMa_deparInput[]
+    createMany?: ma_eqasisCreateManyMa_deparInputEnvelope
+    set?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    disconnect?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    delete?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    connect?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    update?: ma_eqasisUpdateWithWhereUniqueWithoutMa_deparInput | ma_eqasisUpdateWithWhereUniqueWithoutMa_deparInput[]
+    updateMany?: ma_eqasisUpdateManyWithWhereWithoutMa_deparInput | ma_eqasisUpdateManyWithWhereWithoutMa_deparInput[]
+    deleteMany?: ma_eqasisScalarWhereInput | ma_eqasisScalarWhereInput[]
+  }
+
   export type ma_deparCreateNestedOneWithoutMa_empleInput = {
     create?: XOR<ma_deparCreateWithoutMa_empleInput, ma_deparUncheckedCreateWithoutMa_empleInput>
     connectOrCreate?: ma_deparCreateOrConnectWithoutMa_empleInput
     connect?: ma_deparWhereUniqueInput
+  }
+
+  export type ma_eqasisCreateNestedManyWithoutMa_empleInput = {
+    create?: XOR<ma_eqasisCreateWithoutMa_empleInput, ma_eqasisUncheckedCreateWithoutMa_empleInput> | ma_eqasisCreateWithoutMa_empleInput[] | ma_eqasisUncheckedCreateWithoutMa_empleInput[]
+    connectOrCreate?: ma_eqasisCreateOrConnectWithoutMa_empleInput | ma_eqasisCreateOrConnectWithoutMa_empleInput[]
+    createMany?: ma_eqasisCreateManyMa_empleInputEnvelope
+    connect?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+  }
+
+  export type ma_eqasisUncheckedCreateNestedManyWithoutMa_empleInput = {
+    create?: XOR<ma_eqasisCreateWithoutMa_empleInput, ma_eqasisUncheckedCreateWithoutMa_empleInput> | ma_eqasisCreateWithoutMa_empleInput[] | ma_eqasisUncheckedCreateWithoutMa_empleInput[]
+    connectOrCreate?: ma_eqasisCreateOrConnectWithoutMa_empleInput | ma_eqasisCreateOrConnectWithoutMa_empleInput[]
+    createMany?: ma_eqasisCreateManyMa_empleInputEnvelope
+    connect?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
   }
 
   export type ma_deparUpdateOneWithoutMa_empleNestedInput = {
@@ -34988,6 +35787,156 @@ export namespace Prisma {
     delete?: ma_deparWhereInput | boolean
     connect?: ma_deparWhereUniqueInput
     update?: XOR<XOR<ma_deparUpdateToOneWithWhereWithoutMa_empleInput, ma_deparUpdateWithoutMa_empleInput>, ma_deparUncheckedUpdateWithoutMa_empleInput>
+  }
+
+  export type ma_eqasisUpdateManyWithoutMa_empleNestedInput = {
+    create?: XOR<ma_eqasisCreateWithoutMa_empleInput, ma_eqasisUncheckedCreateWithoutMa_empleInput> | ma_eqasisCreateWithoutMa_empleInput[] | ma_eqasisUncheckedCreateWithoutMa_empleInput[]
+    connectOrCreate?: ma_eqasisCreateOrConnectWithoutMa_empleInput | ma_eqasisCreateOrConnectWithoutMa_empleInput[]
+    upsert?: ma_eqasisUpsertWithWhereUniqueWithoutMa_empleInput | ma_eqasisUpsertWithWhereUniqueWithoutMa_empleInput[]
+    createMany?: ma_eqasisCreateManyMa_empleInputEnvelope
+    set?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    disconnect?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    delete?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    connect?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    update?: ma_eqasisUpdateWithWhereUniqueWithoutMa_empleInput | ma_eqasisUpdateWithWhereUniqueWithoutMa_empleInput[]
+    updateMany?: ma_eqasisUpdateManyWithWhereWithoutMa_empleInput | ma_eqasisUpdateManyWithWhereWithoutMa_empleInput[]
+    deleteMany?: ma_eqasisScalarWhereInput | ma_eqasisScalarWhereInput[]
+  }
+
+  export type ma_eqasisUncheckedUpdateManyWithoutMa_empleNestedInput = {
+    create?: XOR<ma_eqasisCreateWithoutMa_empleInput, ma_eqasisUncheckedCreateWithoutMa_empleInput> | ma_eqasisCreateWithoutMa_empleInput[] | ma_eqasisUncheckedCreateWithoutMa_empleInput[]
+    connectOrCreate?: ma_eqasisCreateOrConnectWithoutMa_empleInput | ma_eqasisCreateOrConnectWithoutMa_empleInput[]
+    upsert?: ma_eqasisUpsertWithWhereUniqueWithoutMa_empleInput | ma_eqasisUpsertWithWhereUniqueWithoutMa_empleInput[]
+    createMany?: ma_eqasisCreateManyMa_empleInputEnvelope
+    set?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    disconnect?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    delete?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    connect?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    update?: ma_eqasisUpdateWithWhereUniqueWithoutMa_empleInput | ma_eqasisUpdateWithWhereUniqueWithoutMa_empleInput[]
+    updateMany?: ma_eqasisUpdateManyWithWhereWithoutMa_empleInput | ma_eqasisUpdateManyWithWhereWithoutMa_empleInput[]
+    deleteMany?: ma_eqasisScalarWhereInput | ma_eqasisScalarWhereInput[]
+  }
+
+  export type ma_deparCreateNestedOneWithoutMa_eqasisInput = {
+    create?: XOR<ma_deparCreateWithoutMa_eqasisInput, ma_deparUncheckedCreateWithoutMa_eqasisInput>
+    connectOrCreate?: ma_deparCreateOrConnectWithoutMa_eqasisInput
+    connect?: ma_deparWhereUniqueInput
+  }
+
+  export type ma_empleCreateNestedOneWithoutMa_eqasisInput = {
+    create?: XOR<ma_empleCreateWithoutMa_eqasisInput, ma_empleUncheckedCreateWithoutMa_eqasisInput>
+    connectOrCreate?: ma_empleCreateOrConnectWithoutMa_eqasisInput
+    connect?: ma_empleWhereUniqueInput
+  }
+
+  export type ma_eqsisCreateNestedOneWithoutMa_eqasisInput = {
+    create?: XOR<ma_eqsisCreateWithoutMa_eqasisInput, ma_eqsisUncheckedCreateWithoutMa_eqasisInput>
+    connectOrCreate?: ma_eqsisCreateOrConnectWithoutMa_eqasisInput
+    connect?: ma_eqsisWhereUniqueInput
+  }
+
+  export type ma_deparUpdateOneWithoutMa_eqasisNestedInput = {
+    create?: XOR<ma_deparCreateWithoutMa_eqasisInput, ma_deparUncheckedCreateWithoutMa_eqasisInput>
+    connectOrCreate?: ma_deparCreateOrConnectWithoutMa_eqasisInput
+    upsert?: ma_deparUpsertWithoutMa_eqasisInput
+    disconnect?: ma_deparWhereInput | boolean
+    delete?: ma_deparWhereInput | boolean
+    connect?: ma_deparWhereUniqueInput
+    update?: XOR<XOR<ma_deparUpdateToOneWithWhereWithoutMa_eqasisInput, ma_deparUpdateWithoutMa_eqasisInput>, ma_deparUncheckedUpdateWithoutMa_eqasisInput>
+  }
+
+  export type ma_empleUpdateOneWithoutMa_eqasisNestedInput = {
+    create?: XOR<ma_empleCreateWithoutMa_eqasisInput, ma_empleUncheckedCreateWithoutMa_eqasisInput>
+    connectOrCreate?: ma_empleCreateOrConnectWithoutMa_eqasisInput
+    upsert?: ma_empleUpsertWithoutMa_eqasisInput
+    disconnect?: ma_empleWhereInput | boolean
+    delete?: ma_empleWhereInput | boolean
+    connect?: ma_empleWhereUniqueInput
+    update?: XOR<XOR<ma_empleUpdateToOneWithWhereWithoutMa_eqasisInput, ma_empleUpdateWithoutMa_eqasisInput>, ma_empleUncheckedUpdateWithoutMa_eqasisInput>
+  }
+
+  export type ma_eqsisUpdateOneWithoutMa_eqasisNestedInput = {
+    create?: XOR<ma_eqsisCreateWithoutMa_eqasisInput, ma_eqsisUncheckedCreateWithoutMa_eqasisInput>
+    connectOrCreate?: ma_eqsisCreateOrConnectWithoutMa_eqasisInput
+    upsert?: ma_eqsisUpsertWithoutMa_eqasisInput
+    disconnect?: ma_eqsisWhereInput | boolean
+    delete?: ma_eqsisWhereInput | boolean
+    connect?: ma_eqsisWhereUniqueInput
+    update?: XOR<XOR<ma_eqsisUpdateToOneWithWhereWithoutMa_eqasisInput, ma_eqsisUpdateWithoutMa_eqasisInput>, ma_eqsisUncheckedUpdateWithoutMa_eqasisInput>
+  }
+
+  export type ma_eqasisCreateNestedManyWithoutMa_eqsisInput = {
+    create?: XOR<ma_eqasisCreateWithoutMa_eqsisInput, ma_eqasisUncheckedCreateWithoutMa_eqsisInput> | ma_eqasisCreateWithoutMa_eqsisInput[] | ma_eqasisUncheckedCreateWithoutMa_eqsisInput[]
+    connectOrCreate?: ma_eqasisCreateOrConnectWithoutMa_eqsisInput | ma_eqasisCreateOrConnectWithoutMa_eqsisInput[]
+    createMany?: ma_eqasisCreateManyMa_eqsisInputEnvelope
+    connect?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+  }
+
+  export type ma_clasifCreateNestedOneWithoutMa_eqsisInput = {
+    create?: XOR<ma_clasifCreateWithoutMa_eqsisInput, ma_clasifUncheckedCreateWithoutMa_eqsisInput>
+    connectOrCreate?: ma_clasifCreateOrConnectWithoutMa_eqsisInput
+    connect?: ma_clasifWhereUniqueInput
+  }
+
+  export type ma_marcaCreateNestedOneWithoutMa_eqsisInput = {
+    create?: XOR<ma_marcaCreateWithoutMa_eqsisInput, ma_marcaUncheckedCreateWithoutMa_eqsisInput>
+    connectOrCreate?: ma_marcaCreateOrConnectWithoutMa_eqsisInput
+    connect?: ma_marcaWhereUniqueInput
+  }
+
+  export type ma_eqasisUncheckedCreateNestedManyWithoutMa_eqsisInput = {
+    create?: XOR<ma_eqasisCreateWithoutMa_eqsisInput, ma_eqasisUncheckedCreateWithoutMa_eqsisInput> | ma_eqasisCreateWithoutMa_eqsisInput[] | ma_eqasisUncheckedCreateWithoutMa_eqsisInput[]
+    connectOrCreate?: ma_eqasisCreateOrConnectWithoutMa_eqsisInput | ma_eqasisCreateOrConnectWithoutMa_eqsisInput[]
+    createMany?: ma_eqasisCreateManyMa_eqsisInputEnvelope
+    connect?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+  }
+
+  export type ma_eqasisUpdateManyWithoutMa_eqsisNestedInput = {
+    create?: XOR<ma_eqasisCreateWithoutMa_eqsisInput, ma_eqasisUncheckedCreateWithoutMa_eqsisInput> | ma_eqasisCreateWithoutMa_eqsisInput[] | ma_eqasisUncheckedCreateWithoutMa_eqsisInput[]
+    connectOrCreate?: ma_eqasisCreateOrConnectWithoutMa_eqsisInput | ma_eqasisCreateOrConnectWithoutMa_eqsisInput[]
+    upsert?: ma_eqasisUpsertWithWhereUniqueWithoutMa_eqsisInput | ma_eqasisUpsertWithWhereUniqueWithoutMa_eqsisInput[]
+    createMany?: ma_eqasisCreateManyMa_eqsisInputEnvelope
+    set?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    disconnect?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    delete?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    connect?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    update?: ma_eqasisUpdateWithWhereUniqueWithoutMa_eqsisInput | ma_eqasisUpdateWithWhereUniqueWithoutMa_eqsisInput[]
+    updateMany?: ma_eqasisUpdateManyWithWhereWithoutMa_eqsisInput | ma_eqasisUpdateManyWithWhereWithoutMa_eqsisInput[]
+    deleteMany?: ma_eqasisScalarWhereInput | ma_eqasisScalarWhereInput[]
+  }
+
+  export type ma_clasifUpdateOneWithoutMa_eqsisNestedInput = {
+    create?: XOR<ma_clasifCreateWithoutMa_eqsisInput, ma_clasifUncheckedCreateWithoutMa_eqsisInput>
+    connectOrCreate?: ma_clasifCreateOrConnectWithoutMa_eqsisInput
+    upsert?: ma_clasifUpsertWithoutMa_eqsisInput
+    disconnect?: ma_clasifWhereInput | boolean
+    delete?: ma_clasifWhereInput | boolean
+    connect?: ma_clasifWhereUniqueInput
+    update?: XOR<XOR<ma_clasifUpdateToOneWithWhereWithoutMa_eqsisInput, ma_clasifUpdateWithoutMa_eqsisInput>, ma_clasifUncheckedUpdateWithoutMa_eqsisInput>
+  }
+
+  export type ma_marcaUpdateOneWithoutMa_eqsisNestedInput = {
+    create?: XOR<ma_marcaCreateWithoutMa_eqsisInput, ma_marcaUncheckedCreateWithoutMa_eqsisInput>
+    connectOrCreate?: ma_marcaCreateOrConnectWithoutMa_eqsisInput
+    upsert?: ma_marcaUpsertWithoutMa_eqsisInput
+    disconnect?: ma_marcaWhereInput | boolean
+    delete?: ma_marcaWhereInput | boolean
+    connect?: ma_marcaWhereUniqueInput
+    update?: XOR<XOR<ma_marcaUpdateToOneWithWhereWithoutMa_eqsisInput, ma_marcaUpdateWithoutMa_eqsisInput>, ma_marcaUncheckedUpdateWithoutMa_eqsisInput>
+  }
+
+  export type ma_eqasisUncheckedUpdateManyWithoutMa_eqsisNestedInput = {
+    create?: XOR<ma_eqasisCreateWithoutMa_eqsisInput, ma_eqasisUncheckedCreateWithoutMa_eqsisInput> | ma_eqasisCreateWithoutMa_eqsisInput[] | ma_eqasisUncheckedCreateWithoutMa_eqsisInput[]
+    connectOrCreate?: ma_eqasisCreateOrConnectWithoutMa_eqsisInput | ma_eqasisCreateOrConnectWithoutMa_eqsisInput[]
+    upsert?: ma_eqasisUpsertWithWhereUniqueWithoutMa_eqsisInput | ma_eqasisUpsertWithWhereUniqueWithoutMa_eqsisInput[]
+    createMany?: ma_eqasisCreateManyMa_eqsisInputEnvelope
+    set?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    disconnect?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    delete?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    connect?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+    update?: ma_eqasisUpdateWithWhereUniqueWithoutMa_eqsisInput | ma_eqasisUpdateWithWhereUniqueWithoutMa_eqsisInput[]
+    updateMany?: ma_eqasisUpdateManyWithWhereWithoutMa_eqsisInput | ma_eqasisUpdateManyWithWhereWithoutMa_eqsisInput[]
+    deleteMany?: ma_eqasisScalarWhereInput | ma_eqasisScalarWhereInput[]
   }
 
   export type ma_unidadCreateNestedOneWithoutMa_equipoInput = {
@@ -35012,6 +35961,48 @@ export namespace Prisma {
     delete?: ma_unidadWhereInput | boolean
     connect?: ma_unidadWhereUniqueInput
     update?: XOR<XOR<ma_unidadUpdateToOneWithWhereWithoutMa_equipoInput, ma_unidadUpdateWithoutMa_equipoInput>, ma_unidadUncheckedUpdateWithoutMa_equipoInput>
+  }
+
+  export type ma_eqsisCreateNestedManyWithoutMa_marcaInput = {
+    create?: XOR<ma_eqsisCreateWithoutMa_marcaInput, ma_eqsisUncheckedCreateWithoutMa_marcaInput> | ma_eqsisCreateWithoutMa_marcaInput[] | ma_eqsisUncheckedCreateWithoutMa_marcaInput[]
+    connectOrCreate?: ma_eqsisCreateOrConnectWithoutMa_marcaInput | ma_eqsisCreateOrConnectWithoutMa_marcaInput[]
+    createMany?: ma_eqsisCreateManyMa_marcaInputEnvelope
+    connect?: ma_eqsisWhereUniqueInput | ma_eqsisWhereUniqueInput[]
+  }
+
+  export type ma_eqsisUncheckedCreateNestedManyWithoutMa_marcaInput = {
+    create?: XOR<ma_eqsisCreateWithoutMa_marcaInput, ma_eqsisUncheckedCreateWithoutMa_marcaInput> | ma_eqsisCreateWithoutMa_marcaInput[] | ma_eqsisUncheckedCreateWithoutMa_marcaInput[]
+    connectOrCreate?: ma_eqsisCreateOrConnectWithoutMa_marcaInput | ma_eqsisCreateOrConnectWithoutMa_marcaInput[]
+    createMany?: ma_eqsisCreateManyMa_marcaInputEnvelope
+    connect?: ma_eqsisWhereUniqueInput | ma_eqsisWhereUniqueInput[]
+  }
+
+  export type ma_eqsisUpdateManyWithoutMa_marcaNestedInput = {
+    create?: XOR<ma_eqsisCreateWithoutMa_marcaInput, ma_eqsisUncheckedCreateWithoutMa_marcaInput> | ma_eqsisCreateWithoutMa_marcaInput[] | ma_eqsisUncheckedCreateWithoutMa_marcaInput[]
+    connectOrCreate?: ma_eqsisCreateOrConnectWithoutMa_marcaInput | ma_eqsisCreateOrConnectWithoutMa_marcaInput[]
+    upsert?: ma_eqsisUpsertWithWhereUniqueWithoutMa_marcaInput | ma_eqsisUpsertWithWhereUniqueWithoutMa_marcaInput[]
+    createMany?: ma_eqsisCreateManyMa_marcaInputEnvelope
+    set?: ma_eqsisWhereUniqueInput | ma_eqsisWhereUniqueInput[]
+    disconnect?: ma_eqsisWhereUniqueInput | ma_eqsisWhereUniqueInput[]
+    delete?: ma_eqsisWhereUniqueInput | ma_eqsisWhereUniqueInput[]
+    connect?: ma_eqsisWhereUniqueInput | ma_eqsisWhereUniqueInput[]
+    update?: ma_eqsisUpdateWithWhereUniqueWithoutMa_marcaInput | ma_eqsisUpdateWithWhereUniqueWithoutMa_marcaInput[]
+    updateMany?: ma_eqsisUpdateManyWithWhereWithoutMa_marcaInput | ma_eqsisUpdateManyWithWhereWithoutMa_marcaInput[]
+    deleteMany?: ma_eqsisScalarWhereInput | ma_eqsisScalarWhereInput[]
+  }
+
+  export type ma_eqsisUncheckedUpdateManyWithoutMa_marcaNestedInput = {
+    create?: XOR<ma_eqsisCreateWithoutMa_marcaInput, ma_eqsisUncheckedCreateWithoutMa_marcaInput> | ma_eqsisCreateWithoutMa_marcaInput[] | ma_eqsisUncheckedCreateWithoutMa_marcaInput[]
+    connectOrCreate?: ma_eqsisCreateOrConnectWithoutMa_marcaInput | ma_eqsisCreateOrConnectWithoutMa_marcaInput[]
+    upsert?: ma_eqsisUpsertWithWhereUniqueWithoutMa_marcaInput | ma_eqsisUpsertWithWhereUniqueWithoutMa_marcaInput[]
+    createMany?: ma_eqsisCreateManyMa_marcaInputEnvelope
+    set?: ma_eqsisWhereUniqueInput | ma_eqsisWhereUniqueInput[]
+    disconnect?: ma_eqsisWhereUniqueInput | ma_eqsisWhereUniqueInput[]
+    delete?: ma_eqsisWhereUniqueInput | ma_eqsisWhereUniqueInput[]
+    connect?: ma_eqsisWhereUniqueInput | ma_eqsisWhereUniqueInput[]
+    update?: ma_eqsisUpdateWithWhereUniqueWithoutMa_marcaInput | ma_eqsisUpdateWithWhereUniqueWithoutMa_marcaInput[]
+    updateMany?: ma_eqsisUpdateManyWithWhereWithoutMa_marcaInput | ma_eqsisUpdateManyWithWhereWithoutMa_marcaInput[]
+    deleteMany?: ma_eqsisScalarWhereInput | ma_eqsisScalarWhereInput[]
   }
 
   export type NullableBigIntFieldUpdateOperationsInput = {
@@ -35553,11 +36544,73 @@ export namespace Prisma {
     _max?: NestedBigIntNullableFilter<$PrismaModel>
   }
 
+  export type ma_eqsisCreateWithoutMa_clasifInput = {
+    serie?: string | null
+    cod_inv?: string | null
+    modelo?: string | null
+    f_regis?: Date | string | null
+    status?: string | null
+    ma_eqasis?: ma_eqasisCreateNestedManyWithoutMa_eqsisInput
+    ma_marca?: ma_marcaCreateNestedOneWithoutMa_eqsisInput
+  }
+
+  export type ma_eqsisUncheckedCreateWithoutMa_clasifInput = {
+    clave?: number
+    serie?: string | null
+    cod_inv?: string | null
+    cve_marca?: number | null
+    modelo?: string | null
+    f_regis?: Date | string | null
+    status?: string | null
+    ma_eqasis?: ma_eqasisUncheckedCreateNestedManyWithoutMa_eqsisInput
+  }
+
+  export type ma_eqsisCreateOrConnectWithoutMa_clasifInput = {
+    where: ma_eqsisWhereUniqueInput
+    create: XOR<ma_eqsisCreateWithoutMa_clasifInput, ma_eqsisUncheckedCreateWithoutMa_clasifInput>
+  }
+
+  export type ma_eqsisCreateManyMa_clasifInputEnvelope = {
+    data: ma_eqsisCreateManyMa_clasifInput | ma_eqsisCreateManyMa_clasifInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ma_eqsisUpsertWithWhereUniqueWithoutMa_clasifInput = {
+    where: ma_eqsisWhereUniqueInput
+    update: XOR<ma_eqsisUpdateWithoutMa_clasifInput, ma_eqsisUncheckedUpdateWithoutMa_clasifInput>
+    create: XOR<ma_eqsisCreateWithoutMa_clasifInput, ma_eqsisUncheckedCreateWithoutMa_clasifInput>
+  }
+
+  export type ma_eqsisUpdateWithWhereUniqueWithoutMa_clasifInput = {
+    where: ma_eqsisWhereUniqueInput
+    data: XOR<ma_eqsisUpdateWithoutMa_clasifInput, ma_eqsisUncheckedUpdateWithoutMa_clasifInput>
+  }
+
+  export type ma_eqsisUpdateManyWithWhereWithoutMa_clasifInput = {
+    where: ma_eqsisScalarWhereInput
+    data: XOR<ma_eqsisUpdateManyMutationInput, ma_eqsisUncheckedUpdateManyWithoutMa_clasifInput>
+  }
+
+  export type ma_eqsisScalarWhereInput = {
+    AND?: ma_eqsisScalarWhereInput | ma_eqsisScalarWhereInput[]
+    OR?: ma_eqsisScalarWhereInput[]
+    NOT?: ma_eqsisScalarWhereInput | ma_eqsisScalarWhereInput[]
+    clave?: IntFilter<"ma_eqsis"> | number
+    serie?: StringNullableFilter<"ma_eqsis"> | string | null
+    cod_inv?: StringNullableFilter<"ma_eqsis"> | string | null
+    cve_marca?: IntNullableFilter<"ma_eqsis"> | number | null
+    cve_clasif?: IntNullableFilter<"ma_eqsis"> | number | null
+    modelo?: StringNullableFilter<"ma_eqsis"> | string | null
+    f_regis?: DateTimeNullableFilter<"ma_eqsis"> | Date | string | null
+    status?: StringNullableFilter<"ma_eqsis"> | string | null
+  }
+
   export type ma_empleCreateWithoutMa_deparInput = {
     clave?: string | null
     descri?: string | null
     cve_zon?: string | null
     status?: boolean | null
+    ma_eqasis?: ma_eqasisCreateNestedManyWithoutMa_empleInput
   }
 
   export type ma_empleUncheckedCreateWithoutMa_deparInput = {
@@ -35566,6 +36619,7 @@ export namespace Prisma {
     descri?: string | null
     cve_zon?: string | null
     status?: boolean | null
+    ma_eqasis?: ma_eqasisUncheckedCreateNestedManyWithoutMa_empleInput
   }
 
   export type ma_empleCreateOrConnectWithoutMa_deparInput = {
@@ -35575,6 +36629,31 @@ export namespace Prisma {
 
   export type ma_empleCreateManyMa_deparInputEnvelope = {
     data: ma_empleCreateManyMa_deparInput | ma_empleCreateManyMa_deparInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ma_eqasisCreateWithoutMa_deparInput = {
+    cve_alm?: string | null
+    f_movto?: Date | string | null
+    ma_emple?: ma_empleCreateNestedOneWithoutMa_eqasisInput
+    ma_eqsis?: ma_eqsisCreateNestedOneWithoutMa_eqasisInput
+  }
+
+  export type ma_eqasisUncheckedCreateWithoutMa_deparInput = {
+    clave?: number
+    cve_alm?: string | null
+    cve_eqsis?: number | null
+    cve_emple?: number | null
+    f_movto?: Date | string | null
+  }
+
+  export type ma_eqasisCreateOrConnectWithoutMa_deparInput = {
+    where: ma_eqasisWhereUniqueInput
+    create: XOR<ma_eqasisCreateWithoutMa_deparInput, ma_eqasisUncheckedCreateWithoutMa_deparInput>
+  }
+
+  export type ma_eqasisCreateManyMa_deparInputEnvelope = {
+    data: ma_eqasisCreateManyMa_deparInput | ma_eqasisCreateManyMa_deparInput[]
     skipDuplicates?: boolean
   }
 
@@ -35606,18 +36685,73 @@ export namespace Prisma {
     cve_depar?: IntNullableFilter<"ma_emple"> | number | null
   }
 
+  export type ma_eqasisUpsertWithWhereUniqueWithoutMa_deparInput = {
+    where: ma_eqasisWhereUniqueInput
+    update: XOR<ma_eqasisUpdateWithoutMa_deparInput, ma_eqasisUncheckedUpdateWithoutMa_deparInput>
+    create: XOR<ma_eqasisCreateWithoutMa_deparInput, ma_eqasisUncheckedCreateWithoutMa_deparInput>
+  }
+
+  export type ma_eqasisUpdateWithWhereUniqueWithoutMa_deparInput = {
+    where: ma_eqasisWhereUniqueInput
+    data: XOR<ma_eqasisUpdateWithoutMa_deparInput, ma_eqasisUncheckedUpdateWithoutMa_deparInput>
+  }
+
+  export type ma_eqasisUpdateManyWithWhereWithoutMa_deparInput = {
+    where: ma_eqasisScalarWhereInput
+    data: XOR<ma_eqasisUpdateManyMutationInput, ma_eqasisUncheckedUpdateManyWithoutMa_deparInput>
+  }
+
+  export type ma_eqasisScalarWhereInput = {
+    AND?: ma_eqasisScalarWhereInput | ma_eqasisScalarWhereInput[]
+    OR?: ma_eqasisScalarWhereInput[]
+    NOT?: ma_eqasisScalarWhereInput | ma_eqasisScalarWhereInput[]
+    clave?: IntFilter<"ma_eqasis"> | number
+    cve_alm?: StringNullableFilter<"ma_eqasis"> | string | null
+    cve_eqsis?: IntNullableFilter<"ma_eqasis"> | number | null
+    cve_emple?: IntNullableFilter<"ma_eqasis"> | number | null
+    cve_depar?: IntNullableFilter<"ma_eqasis"> | number | null
+    f_movto?: DateTimeNullableFilter<"ma_eqasis"> | Date | string | null
+  }
+
   export type ma_deparCreateWithoutMa_empleInput = {
     descri?: string | null
+    ma_eqasis?: ma_eqasisCreateNestedManyWithoutMa_deparInput
   }
 
   export type ma_deparUncheckedCreateWithoutMa_empleInput = {
     clave?: number
     descri?: string | null
+    ma_eqasis?: ma_eqasisUncheckedCreateNestedManyWithoutMa_deparInput
   }
 
   export type ma_deparCreateOrConnectWithoutMa_empleInput = {
     where: ma_deparWhereUniqueInput
     create: XOR<ma_deparCreateWithoutMa_empleInput, ma_deparUncheckedCreateWithoutMa_empleInput>
+  }
+
+  export type ma_eqasisCreateWithoutMa_empleInput = {
+    cve_alm?: string | null
+    f_movto?: Date | string | null
+    ma_depar?: ma_deparCreateNestedOneWithoutMa_eqasisInput
+    ma_eqsis?: ma_eqsisCreateNestedOneWithoutMa_eqasisInput
+  }
+
+  export type ma_eqasisUncheckedCreateWithoutMa_empleInput = {
+    clave?: number
+    cve_alm?: string | null
+    cve_eqsis?: number | null
+    cve_depar?: number | null
+    f_movto?: Date | string | null
+  }
+
+  export type ma_eqasisCreateOrConnectWithoutMa_empleInput = {
+    where: ma_eqasisWhereUniqueInput
+    create: XOR<ma_eqasisCreateWithoutMa_empleInput, ma_eqasisUncheckedCreateWithoutMa_empleInput>
+  }
+
+  export type ma_eqasisCreateManyMa_empleInputEnvelope = {
+    data: ma_eqasisCreateManyMa_empleInput | ma_eqasisCreateManyMa_empleInput[]
+    skipDuplicates?: boolean
   }
 
   export type ma_deparUpsertWithoutMa_empleInput = {
@@ -35633,11 +36767,292 @@ export namespace Prisma {
 
   export type ma_deparUpdateWithoutMa_empleInput = {
     descri?: NullableStringFieldUpdateOperationsInput | string | null
+    ma_eqasis?: ma_eqasisUpdateManyWithoutMa_deparNestedInput
   }
 
   export type ma_deparUncheckedUpdateWithoutMa_empleInput = {
     clave?: IntFieldUpdateOperationsInput | number
     descri?: NullableStringFieldUpdateOperationsInput | string | null
+    ma_eqasis?: ma_eqasisUncheckedUpdateManyWithoutMa_deparNestedInput
+  }
+
+  export type ma_eqasisUpsertWithWhereUniqueWithoutMa_empleInput = {
+    where: ma_eqasisWhereUniqueInput
+    update: XOR<ma_eqasisUpdateWithoutMa_empleInput, ma_eqasisUncheckedUpdateWithoutMa_empleInput>
+    create: XOR<ma_eqasisCreateWithoutMa_empleInput, ma_eqasisUncheckedCreateWithoutMa_empleInput>
+  }
+
+  export type ma_eqasisUpdateWithWhereUniqueWithoutMa_empleInput = {
+    where: ma_eqasisWhereUniqueInput
+    data: XOR<ma_eqasisUpdateWithoutMa_empleInput, ma_eqasisUncheckedUpdateWithoutMa_empleInput>
+  }
+
+  export type ma_eqasisUpdateManyWithWhereWithoutMa_empleInput = {
+    where: ma_eqasisScalarWhereInput
+    data: XOR<ma_eqasisUpdateManyMutationInput, ma_eqasisUncheckedUpdateManyWithoutMa_empleInput>
+  }
+
+  export type ma_deparCreateWithoutMa_eqasisInput = {
+    descri?: string | null
+    ma_emple?: ma_empleCreateNestedManyWithoutMa_deparInput
+  }
+
+  export type ma_deparUncheckedCreateWithoutMa_eqasisInput = {
+    clave?: number
+    descri?: string | null
+    ma_emple?: ma_empleUncheckedCreateNestedManyWithoutMa_deparInput
+  }
+
+  export type ma_deparCreateOrConnectWithoutMa_eqasisInput = {
+    where: ma_deparWhereUniqueInput
+    create: XOR<ma_deparCreateWithoutMa_eqasisInput, ma_deparUncheckedCreateWithoutMa_eqasisInput>
+  }
+
+  export type ma_empleCreateWithoutMa_eqasisInput = {
+    clave?: string | null
+    descri?: string | null
+    cve_zon?: string | null
+    status?: boolean | null
+    ma_depar?: ma_deparCreateNestedOneWithoutMa_empleInput
+  }
+
+  export type ma_empleUncheckedCreateWithoutMa_eqasisInput = {
+    id?: number
+    clave?: string | null
+    descri?: string | null
+    cve_zon?: string | null
+    status?: boolean | null
+    cve_depar?: number | null
+  }
+
+  export type ma_empleCreateOrConnectWithoutMa_eqasisInput = {
+    where: ma_empleWhereUniqueInput
+    create: XOR<ma_empleCreateWithoutMa_eqasisInput, ma_empleUncheckedCreateWithoutMa_eqasisInput>
+  }
+
+  export type ma_eqsisCreateWithoutMa_eqasisInput = {
+    serie?: string | null
+    cod_inv?: string | null
+    modelo?: string | null
+    f_regis?: Date | string | null
+    status?: string | null
+    ma_clasif?: ma_clasifCreateNestedOneWithoutMa_eqsisInput
+    ma_marca?: ma_marcaCreateNestedOneWithoutMa_eqsisInput
+  }
+
+  export type ma_eqsisUncheckedCreateWithoutMa_eqasisInput = {
+    clave?: number
+    serie?: string | null
+    cod_inv?: string | null
+    cve_marca?: number | null
+    cve_clasif?: number | null
+    modelo?: string | null
+    f_regis?: Date | string | null
+    status?: string | null
+  }
+
+  export type ma_eqsisCreateOrConnectWithoutMa_eqasisInput = {
+    where: ma_eqsisWhereUniqueInput
+    create: XOR<ma_eqsisCreateWithoutMa_eqasisInput, ma_eqsisUncheckedCreateWithoutMa_eqasisInput>
+  }
+
+  export type ma_deparUpsertWithoutMa_eqasisInput = {
+    update: XOR<ma_deparUpdateWithoutMa_eqasisInput, ma_deparUncheckedUpdateWithoutMa_eqasisInput>
+    create: XOR<ma_deparCreateWithoutMa_eqasisInput, ma_deparUncheckedCreateWithoutMa_eqasisInput>
+    where?: ma_deparWhereInput
+  }
+
+  export type ma_deparUpdateToOneWithWhereWithoutMa_eqasisInput = {
+    where?: ma_deparWhereInput
+    data: XOR<ma_deparUpdateWithoutMa_eqasisInput, ma_deparUncheckedUpdateWithoutMa_eqasisInput>
+  }
+
+  export type ma_deparUpdateWithoutMa_eqasisInput = {
+    descri?: NullableStringFieldUpdateOperationsInput | string | null
+    ma_emple?: ma_empleUpdateManyWithoutMa_deparNestedInput
+  }
+
+  export type ma_deparUncheckedUpdateWithoutMa_eqasisInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    descri?: NullableStringFieldUpdateOperationsInput | string | null
+    ma_emple?: ma_empleUncheckedUpdateManyWithoutMa_deparNestedInput
+  }
+
+  export type ma_empleUpsertWithoutMa_eqasisInput = {
+    update: XOR<ma_empleUpdateWithoutMa_eqasisInput, ma_empleUncheckedUpdateWithoutMa_eqasisInput>
+    create: XOR<ma_empleCreateWithoutMa_eqasisInput, ma_empleUncheckedCreateWithoutMa_eqasisInput>
+    where?: ma_empleWhereInput
+  }
+
+  export type ma_empleUpdateToOneWithWhereWithoutMa_eqasisInput = {
+    where?: ma_empleWhereInput
+    data: XOR<ma_empleUpdateWithoutMa_eqasisInput, ma_empleUncheckedUpdateWithoutMa_eqasisInput>
+  }
+
+  export type ma_empleUpdateWithoutMa_eqasisInput = {
+    clave?: NullableStringFieldUpdateOperationsInput | string | null
+    descri?: NullableStringFieldUpdateOperationsInput | string | null
+    cve_zon?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ma_depar?: ma_deparUpdateOneWithoutMa_empleNestedInput
+  }
+
+  export type ma_empleUncheckedUpdateWithoutMa_eqasisInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    clave?: NullableStringFieldUpdateOperationsInput | string | null
+    descri?: NullableStringFieldUpdateOperationsInput | string | null
+    cve_zon?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cve_depar?: NullableIntFieldUpdateOperationsInput | number | null
+  }
+
+  export type ma_eqsisUpsertWithoutMa_eqasisInput = {
+    update: XOR<ma_eqsisUpdateWithoutMa_eqasisInput, ma_eqsisUncheckedUpdateWithoutMa_eqasisInput>
+    create: XOR<ma_eqsisCreateWithoutMa_eqasisInput, ma_eqsisUncheckedCreateWithoutMa_eqasisInput>
+    where?: ma_eqsisWhereInput
+  }
+
+  export type ma_eqsisUpdateToOneWithWhereWithoutMa_eqasisInput = {
+    where?: ma_eqsisWhereInput
+    data: XOR<ma_eqsisUpdateWithoutMa_eqasisInput, ma_eqsisUncheckedUpdateWithoutMa_eqasisInput>
+  }
+
+  export type ma_eqsisUpdateWithoutMa_eqasisInput = {
+    serie?: NullableStringFieldUpdateOperationsInput | string | null
+    cod_inv?: NullableStringFieldUpdateOperationsInput | string | null
+    modelo?: NullableStringFieldUpdateOperationsInput | string | null
+    f_regis?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
+    ma_clasif?: ma_clasifUpdateOneWithoutMa_eqsisNestedInput
+    ma_marca?: ma_marcaUpdateOneWithoutMa_eqsisNestedInput
+  }
+
+  export type ma_eqsisUncheckedUpdateWithoutMa_eqasisInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    serie?: NullableStringFieldUpdateOperationsInput | string | null
+    cod_inv?: NullableStringFieldUpdateOperationsInput | string | null
+    cve_marca?: NullableIntFieldUpdateOperationsInput | number | null
+    cve_clasif?: NullableIntFieldUpdateOperationsInput | number | null
+    modelo?: NullableStringFieldUpdateOperationsInput | string | null
+    f_regis?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type ma_eqasisCreateWithoutMa_eqsisInput = {
+    cve_alm?: string | null
+    f_movto?: Date | string | null
+    ma_depar?: ma_deparCreateNestedOneWithoutMa_eqasisInput
+    ma_emple?: ma_empleCreateNestedOneWithoutMa_eqasisInput
+  }
+
+  export type ma_eqasisUncheckedCreateWithoutMa_eqsisInput = {
+    clave?: number
+    cve_alm?: string | null
+    cve_emple?: number | null
+    cve_depar?: number | null
+    f_movto?: Date | string | null
+  }
+
+  export type ma_eqasisCreateOrConnectWithoutMa_eqsisInput = {
+    where: ma_eqasisWhereUniqueInput
+    create: XOR<ma_eqasisCreateWithoutMa_eqsisInput, ma_eqasisUncheckedCreateWithoutMa_eqsisInput>
+  }
+
+  export type ma_eqasisCreateManyMa_eqsisInputEnvelope = {
+    data: ma_eqasisCreateManyMa_eqsisInput | ma_eqasisCreateManyMa_eqsisInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ma_clasifCreateWithoutMa_eqsisInput = {
+    descri?: string | null
+    type?: string | null
+  }
+
+  export type ma_clasifUncheckedCreateWithoutMa_eqsisInput = {
+    clave?: number
+    descri?: string | null
+    type?: string | null
+  }
+
+  export type ma_clasifCreateOrConnectWithoutMa_eqsisInput = {
+    where: ma_clasifWhereUniqueInput
+    create: XOR<ma_clasifCreateWithoutMa_eqsisInput, ma_clasifUncheckedCreateWithoutMa_eqsisInput>
+  }
+
+  export type ma_marcaCreateWithoutMa_eqsisInput = {
+    descri?: string | null
+    type?: string | null
+  }
+
+  export type ma_marcaUncheckedCreateWithoutMa_eqsisInput = {
+    clave?: number
+    descri?: string | null
+    type?: string | null
+  }
+
+  export type ma_marcaCreateOrConnectWithoutMa_eqsisInput = {
+    where: ma_marcaWhereUniqueInput
+    create: XOR<ma_marcaCreateWithoutMa_eqsisInput, ma_marcaUncheckedCreateWithoutMa_eqsisInput>
+  }
+
+  export type ma_eqasisUpsertWithWhereUniqueWithoutMa_eqsisInput = {
+    where: ma_eqasisWhereUniqueInput
+    update: XOR<ma_eqasisUpdateWithoutMa_eqsisInput, ma_eqasisUncheckedUpdateWithoutMa_eqsisInput>
+    create: XOR<ma_eqasisCreateWithoutMa_eqsisInput, ma_eqasisUncheckedCreateWithoutMa_eqsisInput>
+  }
+
+  export type ma_eqasisUpdateWithWhereUniqueWithoutMa_eqsisInput = {
+    where: ma_eqasisWhereUniqueInput
+    data: XOR<ma_eqasisUpdateWithoutMa_eqsisInput, ma_eqasisUncheckedUpdateWithoutMa_eqsisInput>
+  }
+
+  export type ma_eqasisUpdateManyWithWhereWithoutMa_eqsisInput = {
+    where: ma_eqasisScalarWhereInput
+    data: XOR<ma_eqasisUpdateManyMutationInput, ma_eqasisUncheckedUpdateManyWithoutMa_eqsisInput>
+  }
+
+  export type ma_clasifUpsertWithoutMa_eqsisInput = {
+    update: XOR<ma_clasifUpdateWithoutMa_eqsisInput, ma_clasifUncheckedUpdateWithoutMa_eqsisInput>
+    create: XOR<ma_clasifCreateWithoutMa_eqsisInput, ma_clasifUncheckedCreateWithoutMa_eqsisInput>
+    where?: ma_clasifWhereInput
+  }
+
+  export type ma_clasifUpdateToOneWithWhereWithoutMa_eqsisInput = {
+    where?: ma_clasifWhereInput
+    data: XOR<ma_clasifUpdateWithoutMa_eqsisInput, ma_clasifUncheckedUpdateWithoutMa_eqsisInput>
+  }
+
+  export type ma_clasifUpdateWithoutMa_eqsisInput = {
+    descri?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type ma_clasifUncheckedUpdateWithoutMa_eqsisInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    descri?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type ma_marcaUpsertWithoutMa_eqsisInput = {
+    update: XOR<ma_marcaUpdateWithoutMa_eqsisInput, ma_marcaUncheckedUpdateWithoutMa_eqsisInput>
+    create: XOR<ma_marcaCreateWithoutMa_eqsisInput, ma_marcaUncheckedCreateWithoutMa_eqsisInput>
+    where?: ma_marcaWhereInput
+  }
+
+  export type ma_marcaUpdateToOneWithWhereWithoutMa_eqsisInput = {
+    where?: ma_marcaWhereInput
+    data: XOR<ma_marcaUpdateWithoutMa_eqsisInput, ma_marcaUncheckedUpdateWithoutMa_eqsisInput>
+  }
+
+  export type ma_marcaUpdateWithoutMa_eqsisInput = {
+    descri?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type ma_marcaUncheckedUpdateWithoutMa_eqsisInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    descri?: NullableStringFieldUpdateOperationsInput | string | null
+    type?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ma_unidadCreateWithoutMa_equipoInput = {
@@ -35674,6 +37089,53 @@ export namespace Prisma {
   export type ma_unidadUncheckedUpdateWithoutMa_equipoInput = {
     clave?: StringFieldUpdateOperationsInput | string
     descri?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type ma_eqsisCreateWithoutMa_marcaInput = {
+    serie?: string | null
+    cod_inv?: string | null
+    modelo?: string | null
+    f_regis?: Date | string | null
+    status?: string | null
+    ma_eqasis?: ma_eqasisCreateNestedManyWithoutMa_eqsisInput
+    ma_clasif?: ma_clasifCreateNestedOneWithoutMa_eqsisInput
+  }
+
+  export type ma_eqsisUncheckedCreateWithoutMa_marcaInput = {
+    clave?: number
+    serie?: string | null
+    cod_inv?: string | null
+    cve_clasif?: number | null
+    modelo?: string | null
+    f_regis?: Date | string | null
+    status?: string | null
+    ma_eqasis?: ma_eqasisUncheckedCreateNestedManyWithoutMa_eqsisInput
+  }
+
+  export type ma_eqsisCreateOrConnectWithoutMa_marcaInput = {
+    where: ma_eqsisWhereUniqueInput
+    create: XOR<ma_eqsisCreateWithoutMa_marcaInput, ma_eqsisUncheckedCreateWithoutMa_marcaInput>
+  }
+
+  export type ma_eqsisCreateManyMa_marcaInputEnvelope = {
+    data: ma_eqsisCreateManyMa_marcaInput | ma_eqsisCreateManyMa_marcaInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ma_eqsisUpsertWithWhereUniqueWithoutMa_marcaInput = {
+    where: ma_eqsisWhereUniqueInput
+    update: XOR<ma_eqsisUpdateWithoutMa_marcaInput, ma_eqsisUncheckedUpdateWithoutMa_marcaInput>
+    create: XOR<ma_eqsisCreateWithoutMa_marcaInput, ma_eqsisUncheckedCreateWithoutMa_marcaInput>
+  }
+
+  export type ma_eqsisUpdateWithWhereUniqueWithoutMa_marcaInput = {
+    where: ma_eqsisWhereUniqueInput
+    data: XOR<ma_eqsisUpdateWithoutMa_marcaInput, ma_eqsisUncheckedUpdateWithoutMa_marcaInput>
+  }
+
+  export type ma_eqsisUpdateManyWithWhereWithoutMa_marcaInput = {
+    where: ma_eqsisScalarWhereInput
+    data: XOR<ma_eqsisUpdateManyMutationInput, ma_eqsisUncheckedUpdateManyWithoutMa_marcaInput>
   }
 
   export type ma_equipoCreateWithoutMa_unidadInput = {
@@ -36094,6 +37556,47 @@ export namespace Prisma {
     hash_password?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
+  export type ma_eqsisCreateManyMa_clasifInput = {
+    clave?: number
+    serie?: string | null
+    cod_inv?: string | null
+    cve_marca?: number | null
+    modelo?: string | null
+    f_regis?: Date | string | null
+    status?: string | null
+  }
+
+  export type ma_eqsisUpdateWithoutMa_clasifInput = {
+    serie?: NullableStringFieldUpdateOperationsInput | string | null
+    cod_inv?: NullableStringFieldUpdateOperationsInput | string | null
+    modelo?: NullableStringFieldUpdateOperationsInput | string | null
+    f_regis?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
+    ma_eqasis?: ma_eqasisUpdateManyWithoutMa_eqsisNestedInput
+    ma_marca?: ma_marcaUpdateOneWithoutMa_eqsisNestedInput
+  }
+
+  export type ma_eqsisUncheckedUpdateWithoutMa_clasifInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    serie?: NullableStringFieldUpdateOperationsInput | string | null
+    cod_inv?: NullableStringFieldUpdateOperationsInput | string | null
+    cve_marca?: NullableIntFieldUpdateOperationsInput | number | null
+    modelo?: NullableStringFieldUpdateOperationsInput | string | null
+    f_regis?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
+    ma_eqasis?: ma_eqasisUncheckedUpdateManyWithoutMa_eqsisNestedInput
+  }
+
+  export type ma_eqsisUncheckedUpdateManyWithoutMa_clasifInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    serie?: NullableStringFieldUpdateOperationsInput | string | null
+    cod_inv?: NullableStringFieldUpdateOperationsInput | string | null
+    cve_marca?: NullableIntFieldUpdateOperationsInput | number | null
+    modelo?: NullableStringFieldUpdateOperationsInput | string | null
+    f_regis?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
   export type ma_empleCreateManyMa_deparInput = {
     id?: number
     clave?: string | null
@@ -36102,11 +37605,20 @@ export namespace Prisma {
     status?: boolean | null
   }
 
+  export type ma_eqasisCreateManyMa_deparInput = {
+    clave?: number
+    cve_alm?: string | null
+    cve_eqsis?: number | null
+    cve_emple?: number | null
+    f_movto?: Date | string | null
+  }
+
   export type ma_empleUpdateWithoutMa_deparInput = {
     clave?: NullableStringFieldUpdateOperationsInput | string | null
     descri?: NullableStringFieldUpdateOperationsInput | string | null
     cve_zon?: NullableStringFieldUpdateOperationsInput | string | null
     status?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ma_eqasis?: ma_eqasisUpdateManyWithoutMa_empleNestedInput
   }
 
   export type ma_empleUncheckedUpdateWithoutMa_deparInput = {
@@ -36115,6 +37627,7 @@ export namespace Prisma {
     descri?: NullableStringFieldUpdateOperationsInput | string | null
     cve_zon?: NullableStringFieldUpdateOperationsInput | string | null
     status?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ma_eqasis?: ma_eqasisUncheckedUpdateManyWithoutMa_empleNestedInput
   }
 
   export type ma_empleUncheckedUpdateManyWithoutMa_deparInput = {
@@ -36123,6 +37636,132 @@ export namespace Prisma {
     descri?: NullableStringFieldUpdateOperationsInput | string | null
     cve_zon?: NullableStringFieldUpdateOperationsInput | string | null
     status?: NullableBoolFieldUpdateOperationsInput | boolean | null
+  }
+
+  export type ma_eqasisUpdateWithoutMa_deparInput = {
+    cve_alm?: NullableStringFieldUpdateOperationsInput | string | null
+    f_movto?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ma_emple?: ma_empleUpdateOneWithoutMa_eqasisNestedInput
+    ma_eqsis?: ma_eqsisUpdateOneWithoutMa_eqasisNestedInput
+  }
+
+  export type ma_eqasisUncheckedUpdateWithoutMa_deparInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    cve_alm?: NullableStringFieldUpdateOperationsInput | string | null
+    cve_eqsis?: NullableIntFieldUpdateOperationsInput | number | null
+    cve_emple?: NullableIntFieldUpdateOperationsInput | number | null
+    f_movto?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type ma_eqasisUncheckedUpdateManyWithoutMa_deparInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    cve_alm?: NullableStringFieldUpdateOperationsInput | string | null
+    cve_eqsis?: NullableIntFieldUpdateOperationsInput | number | null
+    cve_emple?: NullableIntFieldUpdateOperationsInput | number | null
+    f_movto?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type ma_eqasisCreateManyMa_empleInput = {
+    clave?: number
+    cve_alm?: string | null
+    cve_eqsis?: number | null
+    cve_depar?: number | null
+    f_movto?: Date | string | null
+  }
+
+  export type ma_eqasisUpdateWithoutMa_empleInput = {
+    cve_alm?: NullableStringFieldUpdateOperationsInput | string | null
+    f_movto?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ma_depar?: ma_deparUpdateOneWithoutMa_eqasisNestedInput
+    ma_eqsis?: ma_eqsisUpdateOneWithoutMa_eqasisNestedInput
+  }
+
+  export type ma_eqasisUncheckedUpdateWithoutMa_empleInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    cve_alm?: NullableStringFieldUpdateOperationsInput | string | null
+    cve_eqsis?: NullableIntFieldUpdateOperationsInput | number | null
+    cve_depar?: NullableIntFieldUpdateOperationsInput | number | null
+    f_movto?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type ma_eqasisUncheckedUpdateManyWithoutMa_empleInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    cve_alm?: NullableStringFieldUpdateOperationsInput | string | null
+    cve_eqsis?: NullableIntFieldUpdateOperationsInput | number | null
+    cve_depar?: NullableIntFieldUpdateOperationsInput | number | null
+    f_movto?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type ma_eqasisCreateManyMa_eqsisInput = {
+    clave?: number
+    cve_alm?: string | null
+    cve_emple?: number | null
+    cve_depar?: number | null
+    f_movto?: Date | string | null
+  }
+
+  export type ma_eqasisUpdateWithoutMa_eqsisInput = {
+    cve_alm?: NullableStringFieldUpdateOperationsInput | string | null
+    f_movto?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    ma_depar?: ma_deparUpdateOneWithoutMa_eqasisNestedInput
+    ma_emple?: ma_empleUpdateOneWithoutMa_eqasisNestedInput
+  }
+
+  export type ma_eqasisUncheckedUpdateWithoutMa_eqsisInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    cve_alm?: NullableStringFieldUpdateOperationsInput | string | null
+    cve_emple?: NullableIntFieldUpdateOperationsInput | number | null
+    cve_depar?: NullableIntFieldUpdateOperationsInput | number | null
+    f_movto?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type ma_eqasisUncheckedUpdateManyWithoutMa_eqsisInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    cve_alm?: NullableStringFieldUpdateOperationsInput | string | null
+    cve_emple?: NullableIntFieldUpdateOperationsInput | number | null
+    cve_depar?: NullableIntFieldUpdateOperationsInput | number | null
+    f_movto?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type ma_eqsisCreateManyMa_marcaInput = {
+    clave?: number
+    serie?: string | null
+    cod_inv?: string | null
+    cve_clasif?: number | null
+    modelo?: string | null
+    f_regis?: Date | string | null
+    status?: string | null
+  }
+
+  export type ma_eqsisUpdateWithoutMa_marcaInput = {
+    serie?: NullableStringFieldUpdateOperationsInput | string | null
+    cod_inv?: NullableStringFieldUpdateOperationsInput | string | null
+    modelo?: NullableStringFieldUpdateOperationsInput | string | null
+    f_regis?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
+    ma_eqasis?: ma_eqasisUpdateManyWithoutMa_eqsisNestedInput
+    ma_clasif?: ma_clasifUpdateOneWithoutMa_eqsisNestedInput
+  }
+
+  export type ma_eqsisUncheckedUpdateWithoutMa_marcaInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    serie?: NullableStringFieldUpdateOperationsInput | string | null
+    cod_inv?: NullableStringFieldUpdateOperationsInput | string | null
+    cve_clasif?: NullableIntFieldUpdateOperationsInput | number | null
+    modelo?: NullableStringFieldUpdateOperationsInput | string | null
+    f_regis?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
+    ma_eqasis?: ma_eqasisUncheckedUpdateManyWithoutMa_eqsisNestedInput
+  }
+
+  export type ma_eqsisUncheckedUpdateManyWithoutMa_marcaInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    serie?: NullableStringFieldUpdateOperationsInput | string | null
+    cod_inv?: NullableStringFieldUpdateOperationsInput | string | null
+    cve_clasif?: NullableIntFieldUpdateOperationsInput | number | null
+    modelo?: NullableStringFieldUpdateOperationsInput | string | null
+    f_regis?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    status?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type ma_equipoCreateManyMa_unidadInput = {

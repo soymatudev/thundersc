@@ -4,7 +4,7 @@ const MODULOS_ENDPOINT = '/modulos';
 
 export const ModulosService = {
   getAll: async () => {
-    return api.get(MODULOS_ENDPOINT);
+    return api.get(`${MODULOS_ENDPOINT}/all`);
   },
 
   getPaginated: async (page = 1, pageSize = 20, term = '') => {

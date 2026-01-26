@@ -4,6 +4,25 @@ const { parseSensorData } = require('./parser');
 const sensoresLecturasService = require('../../features/sensores/sensores_lecturas.service');
 const { initializeTelegramBot } = require('../../features/telegram/telegram.service');
 
+// Mapa para rastrear sockets activos por nombre de sensor
+const activeSockets = new Map();
+
+/**
+ * Envía un mensaje a un sensor específico si está conectado.
+ * @param {string} sensorName 
+ * @param {string} message 
+ */
+exports.sendToSensor = (sensorName, message) => {
+    const socket = activeSockets.get(sensorName);
+    if (socket && !socket.destroyed) {
+        socket.write(`${message}\n`);
+        Logger.info(`Mensaje enviado a sensor ${sensorName}: ${message}`);
+        return true;
+    }
+    Logger.warn(`No se pudo enviar mensaje a ${sensorName}: Sensor no conectado o socket destruido.`);
+    return false;
+};
+
 exports.startTcpServer = () => {
     initializeTelegramBot();
     // Usar una variable de entorno para el puerto, con un valor por defecto.
@@ -18,6 +37,12 @@ exports.startTcpServer = () => {
             const parsedData = parseSensorData(messageString);
 
             if (parsedData) {
+                // Registrar el socket para permitir refrescos manuales
+                if (parsedData.sensorName) {
+                    socket.sensorName = parsedData.sensorName;
+                    activeSockets.set(parsedData.sensorName, socket);
+                }
+
                 sensoresLecturasService.registrarLectura(parsedData)
                     .then(response => {
                         Logger.info(`Datos de ${remoteAddress} procesados correctamente.`);
@@ -52,6 +77,10 @@ const socketMessageString = (data) => {
 const clientClose = (socket, remoteAddress) => {
     socket.on('close', () => {
         Logger.info(`Cliente TCP desconectado: ${remoteAddress}`);
+        if (socket.sensorName) {
+            activeSockets.delete(socket.sensorName);
+            Logger.info(`Sensor ${socket.sensorName} removido de sockets activos.`);
+        }
     });
 }
 

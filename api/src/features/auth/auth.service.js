@@ -87,7 +87,10 @@ exports.getPaginated = async (page, pageSize, descri) => {
 exports.getUserById = async (cve) => {
     try {
         const user = await prisma.usuario.findUnique({
-            where: { clave: parseInt(cve) }
+            where: { clave: parseInt(cve) },
+            include: {
+                usuario_permiso: true
+            }
         });
         if (!user) {
             Logger.info(`User not found with ID: ${cve}`);
