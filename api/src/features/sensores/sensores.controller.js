@@ -2,6 +2,7 @@ const sensoresService = require('./sensores.service');
 const sensoresLecturasService = require('./sensores_lecturas.service');
 const asyncHandler = require('../../shared/utils/asyncHandler');
 const { NotFoundError } = require('../../shared/utils/CustomError');
+const dayjs = require('dayjs');
 
 /**
  * Obtiene el estatus de todos los sensores para el dashboard.
@@ -35,6 +36,23 @@ exports.refreshSensor = asyncHandler(async (req, res) => {
  * Obtiene todos los sensores básicos.
  */
 exports.getAllSensores = asyncHandler(async (req, res) => {
-    const sensores = await sensoresService.getAllSensores();
     res.status(200).json(sensores);
 });
+
+/**
+ * Obtiene el historial de sensores.
+ */
+exports.getHistorico = asyncHandler(async (req, res) => {
+    let { fecha_inicio, fecha_fin, cve_equipo } = req.query;
+
+    if (!fecha_inicio || !fecha_fin) {
+        throw new Error('Parámetros fecha_inicio y fecha_fin son requeridos');
+    }
+
+    const start = dayjs(fecha_inicio).format('YYYY-MM-DD HH:mm:ss');
+    const end = dayjs(fecha_fin).format('YYYY-MM-DD HH:mm:ss');
+
+    const data = await sensoresService.getHistory(start, end, cve_equipo ? parseInt(cve_equipo) : undefined);
+    res.status(200).json(data);
+});
+

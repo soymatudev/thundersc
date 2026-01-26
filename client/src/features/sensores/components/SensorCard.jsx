@@ -35,6 +35,18 @@ const SensorCard = ({ sensor, onRefresh }) => {
         setTimeout(() => setIsRefreshing(false), 2000); // UI feedback
     };
 
+    // Card Body logic: check if reading is from today
+    const isToday = (date) => {
+        if (!date) return false;
+        const d = new Date(date);
+        const today = new Date();
+        return d.getDate() === today.getDate() &&
+            d.getMonth() === today.getMonth() &&
+            d.getFullYear() === today.getFullYear();
+    };
+
+    const isRecordOld = !isToday(sensor.last_check);
+
     return (
         <div className="bg-gray-800/40 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-5 shadow-xl hover:border-indigo-500/30 transition-all duration-300 group">
             {/* Card Header */}
@@ -57,7 +69,7 @@ const SensorCard = ({ sensor, onRefresh }) => {
                 {sensor.cve_unidad === 'TEM' ? (
                     <>
                         <Thermometer
-                            value={sensor.lectura?.temperatura || 0}
+                            value={isRecordOld ? 0 : (sensor.lectura?.temperatura || 0)}
                             min={sensor.adc_3} // Min
                             max={sensor.adc_1} // Max
                         />
@@ -68,7 +80,7 @@ const SensorCard = ({ sensor, onRefresh }) => {
                             </div>
                             <span className="text-gray-400 text-xs uppercase tracking-widest font-semibold">Humedad</span>
                             <span className="text-2xl font-bold text-gray-100 font-mono">
-                                {sensor.lectura?.humedad?.toFixed(1) || '0.0'}%
+                                {isRecordOld ? '0.0' : (sensor.lectura?.humedad?.toFixed(1) || '0.0')}%
                             </span>
                         </div>
                     </>
@@ -77,20 +89,21 @@ const SensorCard = ({ sensor, onRefresh }) => {
                         <div className="relative w-24 h-40 bg-gray-700/50 rounded-xl border-2 border-gray-600 overflow-hidden mb-3">
                             <div
                                 className="absolute bottom-0 w-full bg-indigo-500 shadow-[0_-5px_15px_rgba(99,102,241,0.5)] transition-all duration-1000"
-                                style={{ height: `${sensor.lectura?.nivel_porcentual || 0}%` }}
+                                style={{ height: `${isRecordOld ? 0 : (sensor.lectura?.nivel_porcentual || 0)}%` }}
                             />
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <Database size={40} className="text-white/20" />
                             </div>
                         </div>
                         <span className="text-2xl font-bold text-gray-100 font-mono">
-                            {sensor.lectura?.nivel_porcentual?.toFixed(1) || '0.0'}%
+                            {isRecordOld ? '0.0' : (sensor.lectura?.nivel_porcentual?.toFixed(1) || '0.0')}%
                         </span>
                     </div>
                 ) : (
                     <div className="text-gray-500 italic text-sm">Dispositivo no configurado</div>
                 )}
             </div>
+
 
             {/* Card Footer */}
             <div className="mt-6 pt-4 border-t border-gray-700/50 flex items-center justify-between text-xs text-gray-500">

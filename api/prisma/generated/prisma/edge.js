@@ -375,7 +375,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/matudev/Proyectos/thundersc/api/prisma/generated/prisma",
+      "value": "/var/www/html/thundersc/api/prisma/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -389,7 +389,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/matudev/Proyectos/thundersc/api/prisma/schema.prisma",
+    "sourceFilePath": "/var/www/html/thundersc/api/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -402,7 +402,6 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
-  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {

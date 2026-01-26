@@ -1,5 +1,7 @@
 const Logger = require('../../shared/utils/Logger');
 const { prisma } = require('../../shared/config/prismaClient');
+const dayjs = require('dayjs');
+
 
 /**
  * Obtiene todos los sensores (equipos) y la descripción de su unidad asociada.
@@ -89,15 +91,32 @@ exports.getDashboardStatus = async (userId) => {
         }
     });
 
-    const now = new Date();
-    const fiveMinutesAgo = new Date(now.getTime() - 5 * 60 * 1000);
+    const now = dayjs().toDate();
+    const MinutesAgo = dayjs(now).subtract(15, 'minute').format('YYYY-MM-DD HH:mm:ss');
 
     // 3. Para cada sensor, obtener la lectura más reciente
     const statusData = await Promise.all(sensores.map(async (sensor) => {
-        const ultimaLectura = await prisma.ma_regzoro.findFirst({
+        // Obtenemos el registro más reciente (sin filtros de fecha) para el status/is_online
+        const absoluteLast = await prisma.ma_regzoro.findFirst({
             where: { cve_equipo: BigInt(sensor.clave) },
             orderBy: { fecha_hora: 'desc' }
         });
+
+        const todayStart = dayjs().startOf('day').toDate();
+        let ultimaLectura = null;
+
+        if (absoluteLast) {
+            // Aplicar corrección de zona horaria manual solicitada por el usuario
+            const fecha = absoluteLast.fecha_hora;
+            absoluteLast.fecha_hora = new Date(fecha.getTime() + fecha.getTimezoneOffset() * 60000);
+
+            // Solo consideramos la lectura como "actual" si es de hoy
+            if (absoluteLast.fecha_hora >= todayStart) {
+                ultimaLectura = absoluteLast;
+            }
+        }
+
+        //console.log(dayjs(ultimaLectura.fecha_hora).format('YYYY-MM-DD HH:mm:ss'))
 
         // Mapeo básico
         const data = {
@@ -108,8 +127,8 @@ exports.getDashboardStatus = async (userId) => {
             unidad_desc: sensor.ma_unidad?.descri?.trim(),
             adc_1: parseFloat(sensor.adc_1) || 0, // Límite Superior (usualmente Temp)
             adc_3: parseFloat(sensor.adc_3) || 0, // Límite Inferior (usualmente Temp)
-            last_check: ultimaLectura ? ultimaLectura.fecha_hora : null,
-            is_online: ultimaLectura ? (new Date(ultimaLectura.fecha_hora) > fiveMinutesAgo) : false,
+            last_check: absoluteLast ? absoluteLast.fecha_hora : null,
+            is_online: ultimaLectura ? (dayjs(ultimaLectura.fecha_hora).format('YYYY-MM-DD HH:mm:ss') > MinutesAgo) : false,
             lectura: {}
         };
 
@@ -134,10 +153,88 @@ exports.getDashboardStatus = async (userId) => {
                     dato_3: ultimaLectura.dato_3
                 };
             }
+        } else {
+            // Si no hay lectura hoy, valores por defecto según regla de negocio
+            if (data.cve_unidad === 'TEM') {
+                data.lectura = { temperatura: 0, humedad: 0 };
+            } else if (data.cve_unidad === 'SIL') {
+                data.lectura = { nivel_porcentual: 0 };
+            } else {
+                data.lectura = { dato_1: 0, dato_2: 0, dato_3: '0' };
+            }
         }
 
         return data;
     }));
 
+
     return statusData;
 };
+
+/**
+ * Obtiene el historial de lecturas de sensores con downsampling opcional.
+ * @param {Date} fechaInicio 
+ * @param {Date} fechaFin 
+ * @param {number} [cveEquipo] 
+ * @returns {Promise<Array>}
+ */
+exports.getHistory = async (fechaInicioParam, fechaFinParam, cveEquipo) => {
+    const fechaInicio = fechaInicioParam;
+    const fechaFin = fechaFinParam;
+
+    // Calculamos el rango en horas
+    const diffHours = (fechaFin - fechaInicio) / (1000 * 60 * 60);
+    const needDownsampling = diffHours > 24;
+
+    let historyData;
+
+    // Downsampling por hora usando Raw Query de Prisma
+    // Casteamos dato_1 y dato_2 a float para promediar
+    // DATE_TRUNC('hour', fecha_hora) agrupa por hora
+    
+    // Usamos .toISOString() para asegurar formato compatible
+    let whereClause = `WHERE fecha_hora >= '${fechaInicio}' AND fecha_hora <= '${fechaFin}'`;
+
+    if (cveEquipo) {
+        whereClause += ` AND cve_equipo = ${cveEquipo}`;
+    }
+
+    historyData = await prisma.$queryRawUnsafe(`
+        SELECT 
+            cve_equipo,
+            fecha_hora,
+            AVG(CAST(NULLIF(dato_1, '') AS FLOAT)) as avg_val1,
+            AVG(CAST(NULLIF(dato_2, '') AS FLOAT)) as avg_val2
+        FROM "ma_regzoro"
+        ${whereClause}
+        GROUP BY cve_equipo, fecha_hora
+        ORDER BY fecha_hora ASC
+    `);
+
+    // Mapear resultado raw a formato estándar
+    historyData = historyData.map(row => ({
+        cve_equipo: Number(row.cve_equipo),
+        fecha_hora: dayjs(dayjs(row.fecha_hora).toString().split(' GMT')[0]).format('YYYY-MM-DD HH:mm:ss') , // Ajuste de zona horaria
+        dato_1: row.avg_val1,
+        dato_2: row.avg_val2
+    }));
+
+    // Enriquecer con nombre del sensor
+    // Primero obtenemos los sensores únicos involucrados
+    const sensorIds = [...new Set(historyData.map(d => d.cve_equipo))];
+    const sensores = await prisma.ma_equipo.findMany({
+        where: { clave: { in: sensorIds } },
+        select: { clave: true, alias: true, nombre: true }
+    });
+
+    const sensorMap = sensores.reduce((acc, s) => {
+        acc[s.clave] = s.alias || s.nombre;
+        return acc;
+    }, {});
+
+    return historyData.map(d => ({
+        ...d,
+        sensor_nombre: sensorMap[d.cve_equipo] || 'Desconocido'
+    }));
+};
+
