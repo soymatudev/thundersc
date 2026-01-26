@@ -26,7 +26,7 @@ app.set('trust proxy', 1);
 
 // Global Error Handler Middleware
 app.use((err, req, res, next) => {
-  Logger.error(`Unhandled Error: ${err.message}`, err.stack);
+  Logger.error(`Unhandled Error: ${err.message} ${err.stack}` , err.stack);
   // Default to 500 Internal Server Error, or use a custom status if available
   const statusCode = err.statusCode || 500;
   res.status(statusCode).json({

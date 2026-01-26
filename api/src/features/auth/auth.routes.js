@@ -27,7 +27,7 @@ router.get('/users-with-permissions', getAllUsersWithPermissions);
 router.get('/users/:cve', getUserById);
 
 // Apply the authentication middleware to this route
-router.get('/profile', profile);
+router.get('/profile', authMiddleware, profile);
 
 router.put('/profile/:cve', authMiddleware, updateUsuario); // Also protect the update route
 

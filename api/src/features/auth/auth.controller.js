@@ -41,6 +41,7 @@ exports.login = async (req, res) => {
         if (!user) return res.status(401).json({ message: 'Invalid username or password' });
         res.cookie('access_token', user.token, { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'Strict' })
         .status(200).json({message: 'Login successful', user: user});
+        req.user = user;
     } catch (error) {
         Logger.error(`Error during login for user ${username}: ${error.message}`);
         res.status(500).json({ message: 'Internal server error' });
