@@ -238,7 +238,7 @@ const generateToken = (user) => {
         const token = jwt.sign(
             { userId: user.id, userCve: user.clave, descri: user.descri, username: user.username },
             process.env.JWT_SECRET,
-            { expiresIn: '1h' }
+            { expiresIn: '2h' }
         );
         return token;
     } catch (error) {
