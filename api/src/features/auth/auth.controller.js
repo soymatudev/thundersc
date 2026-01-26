@@ -40,7 +40,7 @@ exports.login = async (req, res) => {
         const user = await authService.login(username, password);
         if (!user) return res.status(401).json({ message: 'Invalid username or password' });
         
-        res.cookie('access_token', user.token, { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'Strict' })
+        res.cookie('access_token', user.token, { httpOnly: true, secure: false, sameSite: 'Strict' })
         .status(200).json({message: 'Login successful', user: user});
     } catch (error) {
         Logger.error(`Error during login for user ${username}: ${error.message}`);
@@ -78,7 +78,7 @@ exports.profile = async (req, res, next) => {
 
 exports.logout = async (req, res) => {
     try {
-        res.clearCookie('access_token', { httpOnly: true, secure: process.env.NODE_ENV === 'production', sameSite: 'Strict' });
+        res.clearCookie('access_token', { httpOnly: true, secure: false, sameSite: 'Strict' });
         await authService.logout();
         res.status(200).json({ message: 'Logout successful' });
     } catch (error) {
