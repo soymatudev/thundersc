@@ -49,13 +49,17 @@ class ApiClient {
 }
 
 const handleErrors = async (response) => {
-  if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
+    if (response.status === 401) {
+        window.location.href = '/'; 
+        return;
+    }
 
-      const message = errorData.message || `Error: ${response.status} ${response.statusText}`;
-      throw new Error(message);
-  }
-  return response;
+    if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        const message = errorData.message || `Error: ${response.status}`;
+        throw new Error(message);
+    }
+    return response;
 };
 
 export const api = new ApiClient();

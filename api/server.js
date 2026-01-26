@@ -42,8 +42,8 @@ setInterval(() => {
     inactividadService.checkSensorsInactivity();
 }, 600000);
 
-httpServer.listen(process.env.SOCKET_PORT, () => {
-  console.log(`API server with Sockets listening on port ${process.env.SOCKET_PORT}`);
+httpServer.listen(port, () => {
+  console.log(`API server with Sockets listening on port ${port}`);
 });
 
 module.exports = app;

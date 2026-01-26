@@ -26,7 +26,7 @@ exports.sendToSensor = (sensorName, message) => {
 exports.startTcpServer = () => {
     initializeTelegramBot();
     // Usar una variable de entorno para el puerto, con un valor por defecto.
-    const TCP_PORT = process.env.TCP_PORT || 1085;
+    const TCP_PORT = process.env.SOCKET_PORT || 1085;
     const server = net.createServer((socket) => {
         const remoteAddress = `${socket.remoteAddress}:${socket.remotePort}`;
         Logger.info(`Nuevo cliente TCP conectado: ${remoteAddress}`);
