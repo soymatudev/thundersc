@@ -38,7 +38,33 @@ const SensorDataGrid = ({ sensorsList }) => {
             valueFormatter: (params) => params.value ? `${parseFloat(params.value).toFixed(1)}%` : '0.0%',
             flex: 1
         },
+        {
+            headerName: 'Estatus',
+            field: 'fecha_hora',
+            flex: 1.5,
+            cellRenderer: (params) => {
+                const reportDate = dayjs(params.value);
+                const isToday = reportDate.isValid() && reportDate.isAfter(dayjs().startOf('day'));
+
+                if (!isToday) {
+                    return (
+                        <div className="flex items-center h-full">
+                            <span className="bg-red-600/90 text-white text-[10px] font-black px-2 py-1 rounded-md border border-red-400 animate-pulse tracking-tighter">
+                                SIN SEÑAL (CRÍTICO)
+                            </span>
+                        </div>
+                    );
+                }
+                return (
+                    <div className="flex items-center gap-2 text-emerald-400 text-xs font-bold uppercase tracking-wider h-full">
+                        <div className="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]" />
+                        Operativo
+                    </div>
+                );
+            }
+        }
     ];
+
 
     const fetchReport = useCallback(async () => {
         setLoading(true);
@@ -115,8 +141,8 @@ const SensorDataGrid = ({ sensorsList }) => {
                                 key={s.id}
                                 onClick={() => toggleSensor(s.id)}
                                 className={`px-3 py-1 rounded-full text-xs font-medium border transition-all ${selectedSensors.includes(s.id)
-                                        ? 'bg-indigo-600 border-indigo-500 text-white shadow-lg'
-                                        : 'bg-gray-700/30 border-gray-600 text-gray-400 hover:border-gray-500'
+                                    ? 'bg-indigo-600 border-indigo-500 text-white shadow-lg'
+                                    : 'bg-gray-700/30 border-gray-600 text-gray-400 hover:border-gray-500'
                                     }`}
                             >
                                 {s.alias}

@@ -33,11 +33,17 @@ app.use((err, req, res, next) => {
 
 const http = require('http');
 const { startTcpServer } = require('./src/shared/utils/tcpServer');
+const inactividadService = require('./src/features/sensores/inactividad.service');
 const httpServer = http.createServer(app);
 startTcpServer();
 
-httpServer.listen(port, () => {
-  console.log(`API server with Sockets listening on port ${port}`);
+// Iniciar monitoreo de inactividad cada 10 minutos
+setInterval(() => {
+    inactividadService.checkSensorsInactivity();
+}, 600000);
+
+httpServer.listen(process.env.SOCKET_PORT, () => {
+  console.log(`API server with Sockets listening on port ${process.env.SOCKET_PORT}`);
 });
 
 module.exports = app;

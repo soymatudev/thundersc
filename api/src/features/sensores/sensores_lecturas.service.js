@@ -3,6 +3,8 @@ const Logger = require('../../shared/utils/Logger');
 const telegramService = require('../telegram/telegram.service');
 const { getSensorByName } = require('./sensores.service');
 const tcpServer = require('../../shared/utils/tcpServer');
+const inactividadService = require('./inactividad.service');
+
 
 /**
  * Envía una señal de refresco a un sensor físico a través de su socket activo.
@@ -44,6 +46,7 @@ const eventTemperatura = async (data) => {
     }
     
     alertaTemperatura(data, infoSensor);
+    inactividadService.resetAlert(infoSensor.clave);
     
     return prisma.ma_regzoro.create({
         data: {
@@ -89,6 +92,7 @@ const eventDis = async (data) => {
     }
 
     alertaDis(data, infoSensor);
+    inactividadService.resetAlert(infoSensor.clave);
     
     return prisma.ma_regzoro.create({
         data: {
