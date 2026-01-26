@@ -10,12 +10,18 @@ app.get('/', (req, res) => {
   res.send('Hello from the API!');
 });
 
+app.use(cors({
+  origin: 'http://nexthwd.pcz.com.mx:8080', // Sin el / al final
+  credentials: true // INDISPENSABLE para que viajen las cookies/tokens
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookierParser());
 
 // Use the main router
 app.use(mainRouter);
+app.set('trust proxy', 1);
 
 // Global Error Handler Middleware
 app.use((err, req, res, next) => {
