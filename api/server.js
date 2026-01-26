@@ -16,9 +16,10 @@ app.use(cors({
   credentials: true // INDISPENSABLE para que viajen las cookies/tokens
 }));
 
+
+app.use(cookierParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cookierParser());
 
 // Use the main router
 app.use(mainRouter);
