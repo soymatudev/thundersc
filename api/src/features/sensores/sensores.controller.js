@@ -56,3 +56,35 @@ exports.getHistorico = asyncHandler(async (req, res) => {
     res.status(200).json(data);
 });
 
+/**
+ * Obtiene el reporte de sensores para el Grid.
+ */
+exports.getReporte = asyncHandler(async (req, res) => {
+    const { fecha_inicio, fecha_fin, cve_equipos, skip, take } = req.query;
+
+    if (!fecha_inicio || !fecha_fin) {
+        throw new Error('Parámetros fecha_inicio y fecha_fin son requeridos');
+    }
+
+    // cve_equipos can be a comma-separated string or an array from query
+    let equiposArray = [];
+    if (cve_equipos) {
+        equiposArray = Array.isArray(cve_equipos) ? cve_equipos : cve_equipos.split(',');
+    }
+
+    const result = await sensoresService.getReportData(
+        { 
+            fecha_inicio, 
+            fecha_fin, 
+            cve_equipos: equiposArray.length > 0 ? equiposArray.map(id => parseInt(id)) : undefined 
+        },
+        { 
+            skip: skip ? parseInt(skip) : 0, 
+            take: take ? parseInt(take) : 100 
+        }
+    );
+
+    res.status(200).json(result);
+});
+
+

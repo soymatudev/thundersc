@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const authMiddleware = require('../../shared/middleware/auth.middleware');
-const { getDashboardStatus, getAllSensores, refreshSensor, getHistorico } = require('./sensores.controller');
+const { getDashboardStatus, getAllSensores, refreshSensor, getHistorico, getReporte } = require('./sensores.controller');
+
 
 
 // All sensor routes are protected
@@ -18,6 +19,10 @@ router.get('/all', getAllSensores);
 
 // Historico
 router.get('/historico', getHistorico);
+
+// Reporte para Grid
+router.get('/reporte', getReporte);
+
 
 
 module.exports = router;

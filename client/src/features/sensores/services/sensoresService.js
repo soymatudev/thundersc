@@ -23,5 +23,15 @@ export const SensoresService = {
     };
     const queryString = new URLSearchParams(params).toString();
     return api.get(`${SENSORES_ENDPOINT}/historico?${queryString}`);
+  },
+
+  getReporte: async (filters, pagination) => {
+    const params = {
+      ...filters,
+      ...pagination
+    };
+    const queryString = new URLSearchParams(params).toString();
+    return api.get(`${SENSORES_ENDPOINT}/reporte?${queryString}`);
   }
 };
+

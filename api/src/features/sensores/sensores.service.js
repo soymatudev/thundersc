@@ -238,3 +238,68 @@ exports.getHistory = async (fechaInicioParam, fechaFinParam, cveEquipo) => {
     }));
 };
 
+/**
+ * Obtiene los datos del reporte para el Grid.
+ * @param {Object} filters { fecha_inicio, fecha_fin, cve_equipos }
+ * @param {Object} pagination { skip, take }
+ * @returns {Promise<Object>} { data, total }
+ */
+exports.getReportData = async (filters, pagination = {}) => {
+    const { fecha_inicio, fecha_fin, cve_equipos } = filters;
+    const { skip = 0, take = 100 } = pagination;
+
+    let where = {
+        fecha_hora: {
+            gte: dayjs(fecha_inicio).toDate(),
+            lte: dayjs(fecha_fin).toDate()
+        }
+    };
+
+    if (cve_equipos && cve_equipos.length > 0) {
+        where.cve_equipo = { in: cve_equipos.map(id => BigInt(id)) };
+    }
+
+    const [data, total] = await Promise.all([
+        prisma.ma_regzoro.findMany({
+            where,
+            orderBy: { fecha_hora: 'desc' },
+            skip: parseInt(skip),
+            take: parseInt(take),
+            include: {
+                // ma_regzoro doesn't have a direct relation in schema, we'll map sensor names manually
+            }
+        }),
+        prisma.ma_regzoro.count({ where })
+    ]);
+
+    // Get sensor names for manual mapping
+    const sensorIds = [...new Set(data.map(d => Number(d.cve_equipo)))];
+    const sensores = await prisma.ma_equipo.findMany({
+        where: { clave: { in: sensorIds } },
+        select: { clave: true, alias: true, nombre: true }
+    });
+
+    const sensorMap = sensores.reduce((acc, s) => {
+        acc[s.clave] = s.alias || s.nombre;
+        return acc;
+    }, {});
+
+    const mappedData = data.map(d => {
+        // Timezone correction requested by user: align with local DB time
+        const formattedDate = dayjs(dayjs(d.fecha_hora).toString().split(' GMT')[0]).format('YYYY-MM-DD HH:mm:ss');
+        
+        return {
+            id: d.clave,
+            cve_equipo: Number(d.cve_equipo),
+            sensor_nombre: sensorMap[Number(d.cve_equipo)] || 'Desconocido',
+            fecha_hora: formattedDate,
+            dato_1: parseFloat(d.dato_1) || 0,
+            dato_2: parseFloat(d.dato_2) || 0,
+            dato_3: d.dato_3 || '0'
+        };
+    });
+
+    return { data: mappedData, total };
+};
+
+

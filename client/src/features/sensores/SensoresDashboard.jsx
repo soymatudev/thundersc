@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { SensoresService } from './services/sensoresService';
-import { LayoutGrid, AlertCircle, Loader2, History, CalendarDays, Clock } from 'lucide-react';
+import { LayoutGrid, AlertCircle, Loader2, History, CalendarDays, Clock, Table } from 'lucide-react';
 import SensorCard from './components/SensorCard';
 import TempHistoryChart from './components/TempHistoryChart';
 import HumHistoryChart from './components/HumHistoryChart';
+import SensorDataGrid from './components/SensorDataGrid';
 import Swal from 'sweetalert2';
+import dayjs from 'dayjs';
 
 const SensoresDashboard = () => {
+    const [activeTab, setActiveTab] = useState('dashboard'); // 'dashboard', 'table'
     const [sensores, setSensores] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -58,26 +61,25 @@ const SensoresDashboard = () => {
         }
     }, [historyFilter]);
 
-    // Inicial y Polling cada 60s
     useEffect(() => {
         fetchDashboard(true);
-        fetchHistory(); // Fetch initial history
+        fetchHistory();
 
         const interval = setInterval(() => {
             fetchDashboard();
         }, 60000);
         return () => clearInterval(interval);
-    }, [fetchDashboard]); // We don't depend on fetchHistory here to avoid loops if reference changes, but we should verify
+    }, [fetchDashboard]);
 
-    // Re-fetch history when filter changes
     useEffect(() => {
-        fetchHistory();
-    }, [fetchHistory]);
+        if (activeTab === 'dashboard') {
+            fetchHistory();
+        }
+    }, [fetchHistory, activeTab]);
 
     const handleManualRefresh = async (sensorName) => {
         try {
             await SensoresService.refreshSensor(sensorName);
-            // Opcional: Re-fetch dashboard after a small delay to catch the update
             setTimeout(() => fetchDashboard(), 1500);
         } catch (err) {
             Swal.fire({
@@ -103,7 +105,7 @@ const SensoresDashboard = () => {
     return (
         <div className="p-6 lg:p-8 space-y-8 animate-in fade-in duration-500">
             {/* Header Area */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                 <div>
                     <div className="flex items-center gap-3 mb-1">
                         <div className="p-2 bg-indigo-500/10 rounded-xl">
@@ -113,90 +115,113 @@ const SensoresDashboard = () => {
                     </div>
                     <p className="text-gray-400 text-sm italic ml-11">Datos actualizados cada 60 segundos</p>
                 </div>
+
+                {/* Main Tabs */}
+                <div className="flex bg-gray-800/80 p-1 rounded-2xl border border-gray-700/50 shadow-inner">
+                    <button
+                        onClick={() => setActiveTab('dashboard')}
+                        className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 ${activeTab === 'dashboard'
+                                ? 'bg-indigo-600 text-white shadow-lg'
+                                : 'text-gray-400 hover:text-gray-200'
+                            }`}
+                    >
+                        <LayoutGrid size={18} /> Dashboard
+                    </button>
+                    <button
+                        onClick={() => setActiveTab('table')}
+                        className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 ${activeTab === 'table'
+                                ? 'bg-indigo-600 text-white shadow-lg'
+                                : 'text-gray-400 hover:text-gray-200'
+                            }`}
+                    >
+                        <Table size={18} /> Tabla de Datos
+                    </button>
+                </div>
             </div>
 
             {error && (
-                <div className="bg-red-500/10 border border-red-500/20 p-4 rounded-2xl flex items-center gap-3 text-red-400">
+                <div className="bg-red-500/10 border border-red-500/20 p-4 rounded-2xl flex items-center gap-3 text-red-400 shadow-lg">
                     <AlertCircle size={20} />
                     <span className="text-sm font-medium">{error}</span>
                 </div>
             )}
 
-            {/* Grid de Sensores */}
-            {sensores.length > 0 ? (
+            {/* Tab Content */}
+            {activeTab === 'dashboard' ? (
                 <>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        {sensores.map(sensor => (
-                            <SensorCard
-                                key={sensor.id}
-                                sensor={sensor}
-                                onRefresh={handleManualRefresh}
-                            />
-                        ))}
-                    </div>
-
-                    {/* Historical Charts Section */}
-                    <div className="mt-12 space-y-6">
-                        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                            <div className="flex items-center gap-3">
-                                <History className="text-gray-400" size={24} />
-                                <h2 className="text-2xl font-bold text-white">Historial de Lecturas</h2>
+                    {/* Grid de Sensores */}
+                    {sensores.length > 0 ? (
+                        <>
+                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                                {sensores.map(sensor => (
+                                    <SensorCard
+                                        key={sensor.id}
+                                        sensor={sensor}
+                                        onRefresh={handleManualRefresh}
+                                    />
+                                ))}
                             </div>
 
-                            {/* Filter Controls */}
-                            <div className="flex bg-gray-800 rounded-lg p-1 border border-gray-700">
-                                <button
-                                    onClick={() => setHistoryFilter('4h')}
-                                    className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all ${historyFilter === '4h' ? 'bg-indigo-600 text-white shadow-lg' : 'text-gray-400 hover:text-white'
-                                        }`}
-                                >
-                                    <div className="flex items-center gap-2">
-                                        <Clock size={16} /> Últimas 4h
+                            {/* Historical Charts Section */}
+                            <div className="mt-12 space-y-6">
+                                <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                                    <div className="flex items-center gap-3">
+                                        <History className="text-gray-400" size={24} />
+                                        <h2 className="text-2xl font-bold text-white tracking-tight">Historial de Lecturas</h2>
                                     </div>
-                                </button>
-                                <button
-                                    onClick={() => setHistoryFilter('today')}
-                                    className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all ${historyFilter === 'today' ? 'bg-indigo-600 text-white shadow-lg' : 'text-gray-400 hover:text-white'
-                                        }`}
-                                >
-                                    <div className="flex items-center gap-2">
-                                        <CalendarDays size={16} /> Hoy
-                                    </div>
-                                </button>
-                                <button
-                                    onClick={() => setHistoryFilter('yesterday')}
-                                    className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all ${historyFilter === 'yesterday' ? 'bg-indigo-600 text-white shadow-lg' : 'text-gray-400 hover:text-white'
-                                        }`}
-                                >
-                                    <div className="flex items-center gap-2">
-                                        <History size={16} /> Ayer
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
 
-                        {loadingHistory ? (
-                            <div className="h-[350px] flex items-center justify-center bg-gray-800/30 rounded-2xl border border-gray-700/30">
-                                <Loader2 className="w-8 h-8 text-indigo-500 animate-spin" />
+                                    {/* Filter Controls */}
+                                    <div className="flex bg-gray-800 rounded-lg p-1 border border-gray-700 shadow-lg p-0.5">
+                                        <button
+                                            onClick={() => setHistoryFilter('4h')}
+                                            className={`px-4 py-1.5 rounded-md text-xs font-bold transition-all uppercase tracking-tighter ${historyFilter === '4h' ? 'bg-indigo-600 text-white shadow-lg' : 'text-gray-400 hover:text-white'
+                                                }`}
+                                        >
+                                            4h
+                                        </button>
+                                        <button
+                                            onClick={() => setHistoryFilter('today')}
+                                            className={`px-4 py-1.5 rounded-md text-xs font-bold transition-all uppercase tracking-tighter ${historyFilter === 'today' ? 'bg-indigo-600 text-white shadow-lg' : 'text-gray-400 hover:text-white'
+                                                }`}
+                                        >
+                                            Hoy
+                                        </button>
+                                        <button
+                                            onClick={() => setHistoryFilter('yesterday')}
+                                            className={`px-4 py-1.5 rounded-md text-xs font-bold transition-all uppercase tracking-tighter ${historyFilter === 'yesterday' ? 'bg-indigo-600 text-white shadow-lg' : 'text-gray-400 hover:text-white'
+                                                }`}
+                                        >
+                                            Ayer
+                                        </button>
+                                    </div>
+                                </div>
+
+                                {loadingHistory ? (
+                                    <div className="h-[350px] flex items-center justify-center bg-gray-800/30 rounded-2xl border border-gray-700/30">
+                                        <Loader2 className="w-8 h-8 text-indigo-500 animate-spin" />
+                                    </div>
+                                ) : (
+                                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-20">
+                                        <TempHistoryChart data={historyData} />
+                                        <HumHistoryChart data={historyData} />
+                                    </div>
+                                )}
                             </div>
-                        ) : (
-                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                                <TempHistoryChart data={historyData} />
-                                <HumHistoryChart data={historyData} />
+                        </>
+                    ) : (
+                        !error && (
+                            <div className="bg-gray-800/20 border border-dashed border-gray-700 rounded-3xl p-20 text-center flex flex-col items-center gap-4">
+                                <LayoutGrid className="w-16 h-16 text-gray-700" />
+                                <div className="space-y-1">
+                                    <h3 className="text-xl font-bold text-gray-400">No se encontraron sensores</h3>
+                                    <p className="text-gray-500 text-sm">No tienes permisos de consulta asignados.</p>
+                                </div>
                             </div>
-                        )}
-                    </div>
+                        )
+                    )}
                 </>
             ) : (
-                !error && (
-                    <div className="bg-gray-800/20 border border-dashed border-gray-700 rounded-3xl p-20 text-center flex flex-col items-center gap-4">
-                        <LayoutGrid className="w-16 h-16 text-gray-700" />
-                        <div className="space-y-1">
-                            <h3 className="text-xl font-bold text-gray-400">No se encontraron sensores</h3>
-                            <p className="text-gray-500 text-sm">No tienes permisos de consulta asignados para ningún sensor activo.</p>
-                        </div>
-                    </div>
-                )
+                <SensorDataGrid sensorsList={sensores} />
             )}
         </div>
     );
