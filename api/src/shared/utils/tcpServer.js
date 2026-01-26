@@ -98,7 +98,7 @@ const socketErrorTCP = (socket, remoteAddress) => {
 }
 
 const socketServerListen = (server, TCP_PORT) => {
-    server.listen(TCP_PORT, '0.0.0.0', () => {
+    server.listen(TCP_PORT, '148.230.206.170', () => {
         Logger.info(`Servidor TCP para sensores escuchando en el puerto ${TCP_PORT}`);
     });
 }
