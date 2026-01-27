@@ -6,7 +6,7 @@ import 'ag-grid-community/styles/ag-theme-quartz.css';
 import { SensoresService } from '../services/sensoresService';
 import { Download, Search, FilterX, Calendar, Users, Loader2 } from 'lucide-react';
 import * as XLSX from 'xlsx';
-import * as dayjs from 'dayjs';
+import dayjs from 'dayjs';
 
 ModuleRegistry.registerModules([AllCommunityModule]);
 
