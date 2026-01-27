@@ -6,7 +6,7 @@ const Logger = require('./Logger');
  * @returns {object|null} - Un objeto con los datos parseados o null si el formato es inválido.
  */
 const parseSensorData = (message) => {
-    const parts = message != "" ? message.split('|') : [];
+    const parts = message != "" && message.includes('|') ? message.split('|') : [];
     if (parts.length < 2) {
         Logger.warn(`Formato de mensaje inválido (sin '|'): ${message}`);
         return null;
