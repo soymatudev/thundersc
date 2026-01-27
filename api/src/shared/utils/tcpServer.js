@@ -45,7 +45,9 @@ exports.startTcpServer = () => {
             Logger.info(`Dato crudo TCP recibido de ${remoteAddress}: ${messageString}`);
             const parsedData = parseSensorData(messageString);
 
-            if (parsedData) {
+            if (messageString.toUpperCase() == 'ALL') {
+                socketsReport(activeSockets);
+            } else if (parsedData) {
                 // Registrar el socket para permitir refrescos manuales
                 if (parsedData.sensorName) {
                     socket.sensorName = parsedData.sensorName;
@@ -61,8 +63,6 @@ exports.startTcpServer = () => {
                         Logger.error(`Error al procesar datos TCP de ${remoteAddress}: ${error.message}`);
                         socket.write(`NACK: ${error.message}\n`);
                     });
-            } else if (messageString.toUpperCase() == 'ALL') {
-                socketsReport(activeSockets);
             } else {
                 Logger.warn(`Formato de mensaje TCP inválido de ${remoteAddress}: ${messageString}`);
                 socket.write('NACK: Formato de mensaje no válido.\n');
