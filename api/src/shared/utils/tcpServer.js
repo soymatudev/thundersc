@@ -49,6 +49,8 @@ exports.startTcpServer = () => {
             Logger.info(`Dato crudo TCP recibido de ${remoteAddress}: ${messageString}`);
             const parsedData = parseSensorData(messageString);
 
+            if (!messageString || typeof messageString !== 'string') return;
+
             if (messageString.toUpperCase().includes('ALL')) {
                 socketsReport(socket);
             } else if (parsedData) {
