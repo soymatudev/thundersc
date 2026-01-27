@@ -5,7 +5,6 @@ const Logger = require('./src/shared/utils/Logger'); // Import Logger
 const mainRouter = require('./src/index.routes');
 
 const app = express();
-const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
   res.send('Hello from the API!');
@@ -39,6 +38,9 @@ app.use((err, req, res, next) => {
 
 // ##### SOCKET.IO INTEGRATION #####
 
+const API_PORT = process.env.PORT || 4000;
+const TCP_PORT = process.env.SOCKET_PORT || 1085;
+
 const http = require('http');
 const { startTcpServer } = require('./src/shared/utils/tcpServer');
 const inactividadService = require('./src/features/sensores/inactividad.service');
@@ -50,8 +52,8 @@ setInterval(() => {
     inactividadService.checkSensorsInactivity();
 }, 600000);
 
-httpServer.listen(port, () => {
-  console.log(`API server with Sockets listening on port ${port}`);
+httpServer.listen(API_PORT, () => {
+  console.log(`API server with Sockets listening on port ${API_PORT}`);
 });
 
 module.exports = app;
