@@ -51,7 +51,7 @@ const eventTemperatura = async (data) => {
     return prisma.ma_regzoro.create({
         data: {
             cve_equipo: BigInt(infoSensor.clave),
-            fecha_hora: new Date(),
+            fecha_hora: dayjs().format('YYYY-MM-DD HH:mm:ss'),
             dato_1: data.dato_1.toString(),
             dato_2: data.dato_2.toString(),
             dato_3: '0',
@@ -97,7 +97,7 @@ const eventDis = async (data) => {
     return prisma.ma_regzoro.create({
         data: {
             cve_equipo: BigInt(infoSensor.clave),
-            fecha_hora: new Date(),
+            fecha_hora: dayjs().format('YYYY-MM-DD HH:mm:ss'),
             dato_1: data.dato_1.toString(),
             dato_2: data.dato_2.toString(),
             dato_3: data.dato_3.toString(),
