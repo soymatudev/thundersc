@@ -23,6 +23,15 @@ exports.sendToSensor = (sensorName, message) => {
     return false;
 };
 
+const socketsReport = (activeSockets)  => {
+    activeSockets.forEach((clientSocket, sensorName) => {
+        if (!clientSocket.destroyed) {
+            clientSocket.write(`BROADCAST: ${broadcastMessage}`);
+            Logger.info(`Enviado a: ${sensorName}`);
+        }
+    });
+}
+
 exports.startTcpServer = () => {
     initializeTelegramBot();
     // Usar una variable de entorno para el puerto, con un valor por defecto.
@@ -52,6 +61,8 @@ exports.startTcpServer = () => {
                         Logger.error(`Error al procesar datos TCP de ${remoteAddress}: ${error.message}`);
                         socket.write(`NACK: ${error.message}\n`);
                     });
+            } else if (messageString.toUpperCase() == 'ALL') {
+                socketsReport(activeSockets);
             } else {
                 Logger.warn(`Formato de mensaje TCP inválido de ${remoteAddress}: ${messageString}`);
                 socket.write('NACK: Formato de mensaje no válido.\n');
