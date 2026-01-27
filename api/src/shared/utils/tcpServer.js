@@ -85,7 +85,7 @@ exports.startTcpServer = () => {
 };
 
 const socketMessageString = (data) => {
-    const messageString = data.toString().trim();
+    if (data) messageString = data.toString().trim();
     if (messageString === '' ) return;
     if (messageString === 'exit' || messageString === 'bye') socketClose(socket, remoteAddress);
     return messageString;
