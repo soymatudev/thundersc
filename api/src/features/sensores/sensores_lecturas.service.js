@@ -13,7 +13,7 @@ const dayjs = require('dayjs');
  */
 exports.refreshSensor = async (sensorName) => {
     Logger.info(`Solicitando refresco manual para sensor: ${sensorName}`);
-    return tcpServer.sendToSensor(sensorName, 'REFRESH');
+    return tcpServer.sendToSensor(sensorName, sensorName);
 };
 
 /**
