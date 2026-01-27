@@ -5,6 +5,7 @@ const sensoresLecturasService = require('../../features/sensores/sensores_lectur
 const { initializeTelegramBot } = require('../../features/telegram/telegram.service');
 
 // Mapa para rastrear sockets activos por nombre de sensor
+const allConnections = new Set();
 const activeSockets = new Map();
 
 /**
@@ -23,14 +24,13 @@ exports.sendToSensor = (sensorName, message) => {
     return false;
 };
 
-const socketsReport = ()  => {
+const socketsReport = (socket)  => {
     Logger.info(">>> Difundiendo comando ALL a todos los dispositivos TCP conectados.");
     
-    activeSockets.forEach((socket, sensorName) => {
-        if (socket && !socket.destroyed) {
+    allConnections.forEach((client) => {
+        if (client !== socket && !client.destroyed) {
             // Enviamos el texto "ALL" seguido de un salto de línea
-            socket.write(`ALL\n`); 
-            Logger.info(`Comando enviado a: ${sensorName}`);
+            client.write(`ALL\n`); 
         }
     });
 }
@@ -41,6 +41,7 @@ exports.startTcpServer = () => {
     const TCP_PORT = process.env.SOCKET_PORT || 1085;
     const server = net.createServer((socket) => {
         const remoteAddress = `${socket.remoteAddress}:${socket.remotePort}`;
+        allConnections.add(socket);
         Logger.info(`Nuevo cliente TCP conectado: ${remoteAddress}`);
 
         socket.on('data', (data) => {
@@ -49,7 +50,7 @@ exports.startTcpServer = () => {
             const parsedData = parseSensorData(messageString);
 
             if (messageString.toUpperCase() == 'ALL') {
-                socketsReport();
+                socketsReport(socket);
             } else if (parsedData) {
                 // Registrar el socket para permitir refrescos manuales
                 if (parsedData.sensorName) {
