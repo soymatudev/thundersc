@@ -4,6 +4,7 @@ const telegramService = require('../telegram/telegram.service');
 const { getSensorByName } = require('./sensores.service');
 const tcpServer = require('../../shared/utils/tcpServer');
 const inactividadService = require('./inactividad.service');
+const dayjs = require('dayjs');
 
 
 /**
