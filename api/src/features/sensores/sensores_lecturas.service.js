@@ -49,14 +49,14 @@ const eventTemperatura = async (data) => {
     alertaTemperatura(data, infoSensor);
     inactividadService.resetAlert(infoSensor.clave);
     
-    return prisma.ma_regzoro.create({
-        data: {
-            cve_equipo: BigInt(infoSensor.clave),
-            dato_1: data.dato_1.toString(),
-            dato_2: data.dato_2.toString(),
-            dato_3: '0',
-        }
-    });
+    const cve_equipo = infoSensor.clave.toString(); // BigInt a String para el query
+    const dato_1 = data.dato_1.toString();
+    const dato_2 = data.dato_2.toString();
+
+    return prisma.$executeRaw`
+        INSERT INTO ma_regzoro (cve_equipo, fecha_hora, dato_1, dato_2, dato_3)
+        VALUES (${cve_equipo}, NOW(), ${dato_1}, ${dato_2}, '0')
+    `;
 }
 
 const alertaTemperatura = (data, infoSensor) => {
