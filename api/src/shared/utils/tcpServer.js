@@ -23,11 +23,14 @@ exports.sendToSensor = (sensorName, message) => {
     return false;
 };
 
-const socketsReport = (activeSockets)  => {
-    activeSockets.forEach((clientSocket, sensorName) => {
-        if (!clientSocket.destroyed) {
-            clientSocket.write(`BROADCAST: ${broadcastMessage}`);
-            Logger.info(`Enviado a: ${sensorName}`);
+const socketsReport = ()  => {
+    Logger.info(">>> Difundiendo comando ALL a todos los dispositivos TCP conectados.");
+    
+    activeSockets.forEach((socket, sensorName) => {
+        if (socket && !socket.destroyed) {
+            // Enviamos el texto "ALL" seguido de un salto de línea
+            socket.write(`ALL\n`); 
+            Logger.info(`Comando enviado a: ${sensorName}`);
         }
     });
 }
@@ -46,7 +49,7 @@ exports.startTcpServer = () => {
             const parsedData = parseSensorData(messageString);
 
             if (messageString.toUpperCase() == 'ALL') {
-                socketsReport(activeSockets);
+                socketsReport();
             } else if (parsedData) {
                 // Registrar el socket para permitir refrescos manuales
                 if (parsedData.sensorName) {
