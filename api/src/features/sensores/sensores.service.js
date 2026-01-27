@@ -163,7 +163,7 @@ exports.getDashboardStatus = async (userId) => {
                 data.lectura = { dato_1: 0, dato_2: 0, dato_3: '0' };
             }
         }
-
+        console.log(JSON.stringify(data));
         return data;
     }));
 
