@@ -105,14 +105,12 @@ exports.getDashboardStatus = async (userId) => {
         const todayStart = dayjs().startOf('day').toDate();
         let ultimaLectura = null;
 
-        console.log(todayStart, absoluteLast.fecha_hora);
         if (absoluteLast) {
             // Aplicar corrección de zona horaria manual solicitada por el usuario
             const fecha = absoluteLast.fecha_hora;
-            absoluteLast.fecha_hora = dayjs(dayjs(fecha).toString().split(' GMT')[0]).format('YYYY-MM-DD HH:mm:ss');
+            absoluteLast.fecha_hora = new Date(fecha.getTime() + fecha.getTimezoneOffset() * 60000);
 
             // Solo consideramos la lectura como "actual" si es de hoy
-            
             if (absoluteLast.fecha_hora >= todayStart) {
                 ultimaLectura = absoluteLast;
             }
