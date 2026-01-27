@@ -49,7 +49,7 @@ exports.startTcpServer = () => {
             Logger.info(`Dato crudo TCP recibido de ${remoteAddress}: ${messageString}`);
             const parsedData = parseSensorData(messageString);
 
-            if (messageString.toUpperCase() == 'ALL') {
+            if (messageString.toUpperCase().includes('ALL')) {
                 socketsReport(socket);
             } else if (parsedData) {
                 // Registrar el socket para permitir refrescos manuales
