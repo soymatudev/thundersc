@@ -28,12 +28,22 @@ const parseSensorData = (message) => {
             Logger.warn(`Formato de evento genérico inválido: ${dataPart}`);
             return null;
         }
+
+        /* 
+        data: {
+            cve_equipo: BigInt(infoSensor.clave),
+            fecha_hora: dayjs().format('YYYY-MM-DD HH:mm:ss'),
+            dato_1: data.dato_1.toString(),
+            dato_2: data.dato_2.toString(),
+            dato_3: data.dato_3.toString(),
+        } */
         return {
             type: 'generic_event',
             sensorName: dataValues[0],
             eventType: dataValues[2],
-            sensorModel: dataValues[3],
-            version: dataValues[4] || null,
+            dato_1: dataValues[3],
+            dato_2: dataValues[4] || null,
+            dato_3: dataValues[5] || null,
             user,
             company,
             rawData: message,
