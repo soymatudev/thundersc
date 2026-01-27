@@ -111,6 +111,7 @@ exports.getDashboardStatus = async (userId) => {
             absoluteLast.fecha_hora = dayjs(dayjs(fecha).toString().split(' GMT')[0]).format('YYYY-MM-DD HH:mm:ss');
 
             // Solo consideramos la lectura como "actual" si es de hoy
+            console.log(todayStart, absoluteLast.fecha_hora);
             if (absoluteLast.fecha_hora >= todayStart) {
                 ultimaLectura = absoluteLast;
             }
