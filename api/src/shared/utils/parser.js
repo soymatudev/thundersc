@@ -37,6 +37,7 @@ const parseSensorData = (message) => {
             dato_2: data.dato_2.toString(),
             dato_3: data.dato_3.toString(),
         } */
+        // Silo01,event,DIS,80.0,50.0,20.0|PCZMEX|PCZMEX
         return {
             type: 'generic_event',
             sensorName: dataValues[0],
