@@ -7,7 +7,6 @@ const Sidebar = ({ userProfile }) => {
   const { isSidebarOpen } = useUI();
   const userData = userProfile[0];
   const MENU_ITEMS = buildMenuTree(userProfile);
-  console.log(userProfile)
 
   return (
     <aside
