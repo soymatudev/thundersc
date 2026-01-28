@@ -39,8 +39,6 @@ app.use((err, req, res, next) => {
 // ##### SOCKET.IO INTEGRATION #####
 
 const API_PORT = process.env.PORT || 4000;
-const TCP_PORT = process.env.SOCKET_PORT || 1085;
-
 const http = require('http');
 const { startTcpServer } = require('./src/shared/utils/tcpServer');
 const inactividadService = require('./src/features/sensores/inactividad.service');

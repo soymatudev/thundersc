@@ -105,6 +105,17 @@ const SensorDataGrid = ({ sensorsList }) => {
         );
     };
 
+    const themeQuartzParams = () => {
+        return {
+            backgroundColor: '#1f2937', 
+            headerBackgroundColor: '#374151', 
+            cellTextColor: '#f9fafb', 
+            headerTextColor: '#f9fafb',
+            filterBackgroundColor: '#4b5563',
+            textColor: '#f9fafb'
+        }
+    }
+
     return (
         <div className="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-500">
             {/* Toolbar / Filters */}
@@ -187,7 +198,7 @@ const SensorDataGrid = ({ sensorsList }) => {
                             resizable: true,
                             filter: true,
                         }}
-                        theme={themeQuartz.withParams({ backgroundColor: '#1f2937' })}
+                        theme={themeQuartz.withParams(themeQuartzParams())}
                         className='ag-theme-quartz-dark'
                     />
                 </div>

@@ -86,18 +86,39 @@ const SensorCard = ({ sensor, onRefresh }) => {
                     </>
                 ) : sensor.cve_unidad === 'SIL' ? (
                     <div className="flex flex-col items-center w-full">
-                        <div className="relative w-24 h-40 bg-gray-700/50 rounded-xl border-2 border-gray-600 overflow-hidden mb-3">
+                        {/* Contenedor del Silo */}
+                        <div className="relative w-28 h-44 bg-gray-800/80 border-2 border-gray-600/50 shadow-inner mb-3"
+                            style={{
+                                clipPath: 'polygon(0% 0%, 100% 0%, 100% 70%, 50% 100%, 0% 70%)',
+                                WebkitClipPath: 'polygon(0% 0%, 100% 0%, 100% 70%, 50% 100%, 0% 70%)'
+                            }}>
+                            
+                            {/* Líquido/Contenido del Silo */}
                             <div
-                                className="absolute bottom-0 w-full bg-indigo-500 shadow-[0_-5px_15px_rgba(99,102,241,0.5)] transition-all duration-1000"
-                                style={{ height: `${isRecordOld ? 0 : (sensor.lectura?.nivel_porcentual || 0)}%` }}
+                                className="absolute bottom-0 w-full bg-gradient-to-t from-emerald-600 to-emerald-400 shadow-[0_0_20px_rgba(52,211,153,0.4)] transition-all duration-1000 ease-in-out"
+                                style={{ 
+                                    height: `${isRecordOld ? 0 : (sensor.lectura?.nivel_porcentual || 0)}%`,
+                                    // El líquido debe seguir la misma forma del contenedor
+                                    clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 50% 100%, 0% 100%)', 
+                                }}
                             />
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <Database size={40} className="text-white/20" />
+
+                            {/* Brillo de cristal (Efecto industrial) */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent pointer-events-none" />
+                            
+                            {/* Icono central */}
+                            <div className="absolute inset-0 flex items-center justify-center opacity-20">
+                                <Database size={32} className="text-white mb-8" />
                             </div>
                         </div>
-                        <span className="text-2xl font-bold text-gray-100 font-mono">
-                            {isRecordOld ? '0.0' : (sensor.lectura?.nivel_porcentual?.toFixed(1) || '0.0')}%
-                        </span>
+
+                        {/* Lectura porcentual */}
+                        <div className="flex flex-col items-center">
+                            <span className="text-3xl font-black text-emerald-400 font-mono tracking-tighter">
+                                {isRecordOld ? '0.0' : (sensor.lectura?.nivel_porcentual?.toFixed(1) || '0.0')}%
+                            </span>
+                            <span className="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Nivel de Silo</span>
+                        </div>
                     </div>
                 ) : (
                     <div className="text-gray-500 italic text-sm">Dispositivo no configurado</div>

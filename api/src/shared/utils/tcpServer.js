@@ -39,6 +39,7 @@ exports.startTcpServer = () => {
     initializeTelegramBot();
     // Usar una variable de entorno para el puerto, con un valor por defecto.
     const TCP_PORT = process.env.SOCKET_PORT || 1085;
+    const TCP_IP = process.env.SOCKET_IP || "0.0.0.0";
     const server = net.createServer((socket) => {
         const remoteAddress = `${socket.remoteAddress}:${socket.remotePort}`;
         allConnections.add(socket);
@@ -80,7 +81,7 @@ exports.startTcpServer = () => {
         socket.write('Bienvenido al Servidor TCP de Sensores\n');
     });
 
-    socketServerListen(server, TCP_PORT)
+    socketServerListen(server, TCP_PORT, TCP_IP);
     socketErrorServer(server);
 };
 
@@ -114,9 +115,9 @@ const socketErrorTCP = (socket, remoteAddress) => {
     });
 }
 
-const socketServerListen = (server, TCP_PORT) => {
-    server.listen(TCP_PORT, '148.230.206.170', () => {
-        Logger.info(`Servidor TCP para sensores escuchando en el puerto ${TCP_PORT}`);
+const socketServerListen = (server, TCP_PORT, TCP_IP) => {
+    server.listen(TCP_PORT, TCP_IP, () => {
+        Logger.info(`Servidor TCP ${TCP_IP} para sensores escuchando en el puerto ${TCP_PORT}`);
     });
 }
 
