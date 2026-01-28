@@ -223,19 +223,24 @@ exports.getHistory = async (fechaInicioParam, fechaFinParam, cveEquipo) => {
     const sensorIds = [...new Set(historyData.map(d => d.cve_equipo))];
     const sensores = await prisma.ma_equipo.findMany({
         where: { clave: { in: sensorIds } },
-        select: { clave: true, alias: true, nombre: true }
+        select: { clave: true, alias: true, nombre: true, cve_unidad: true }
     });
 
     const sensorMap = sensores.reduce((acc, s) => {
-        acc[s.clave] = s.alias || s.nombre;
+        acc[s.clave] = {
+            nombre: s.alias || s.nombre,
+            cve_unidad: s.cve_unidad?.trim()
+        };
         return acc;
     }, {});
 
     return historyData.map(d => ({
         ...d,
-        sensor_nombre: sensorMap[d.cve_equipo] || 'Desconocido'
+        sensor_nombre: sensorMap[d.cve_equipo]?.nombre || 'Desconocido',
+        cve_unidad: sensorMap[d.cve_equipo]?.cve_unidad || 'DES'
     }));
 };
+
 
 /**
  * Obtiene los datos del reporte para el Grid.

@@ -7,6 +7,7 @@ const Sidebar = ({ userProfile }) => {
   const { isSidebarOpen } = useUI();
   const userData = userProfile[0];
   const MENU_ITEMS = buildMenuTree(userProfile);
+  console.log(userProfile)
 
   return (
     <aside
@@ -20,7 +21,7 @@ const Sidebar = ({ userProfile }) => {
         <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-xl truncate">
           {userData?.username?.charAt(0).toUpperCase() || 'U'}
         </div>
-        <span className="font-bold text-lg text-gray-200 truncate">{userData?.descri || 'Usuario'}</span>
+        <span className="font-bold text-lg text-gray-200 truncate">{userData?.clave}-{userData?.descri || 'Usuario'}</span>
       </div>
 
       <div className="overflow-y-auto flex-1 py-4">

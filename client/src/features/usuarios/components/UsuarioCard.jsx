@@ -14,7 +14,7 @@ const UsuarioCard = ({ usuario, onEdit, onDelete }) => {
                         </div>
                         <div>
                             <h3 className="text-lg font-bold text-gray-100">{descri}</h3>
-                            <p className="text-sm text-gray-400">@{username}</p>
+                            <p className="text-sm text-gray-400">{clave} @{username}</p>
                         </div>
                     </div>
                 </div>

@@ -43,9 +43,9 @@ const TempHistoryChart = ({ data }) => {
     // We need to pivot the data for Recharts:
     // [ { timestamp: '...', 'Sensor 1': 20.5, 'Sensor 2': 15.0 }, ... ]
 
-    // 1. Get unique sensor names
-    
-    const sensors = [...new Set(data.map(d => d.sensor_nombre))];
+    // 1. Get unique sensor names (filtered by Clima)
+    const climateData = data.filter(d => d.cve_unidad === 'TEM');
+    const sensors = [...new Set(climateData.map(d => d.sensor_nombre))];
 
     // 2. Pivot
     // We can group by timestamp string, but we must be careful with slight time diffs if no downsampling.
@@ -54,7 +54,8 @@ const TempHistoryChart = ({ data }) => {
     // Recharts handles different x-values if we use type="number" on XAxis, but simpler is category/time.
 
     // Let's group by timestamp string equality.
-    const grouped = data.reduce((acc, curr) => {
+    const grouped = climateData.reduce((acc, curr) => {
+
         const timeKey = dayjs(curr.fecha_hora).millisecond(0);
         if (!acc[timeKey]) {
             acc[timeKey] = { timestamp: curr.fecha_hora };

@@ -5,8 +5,8 @@ import SensorCard from './components/SensorCard';
 import TempHistoryChart from './components/TempHistoryChart';
 import HumHistoryChart from './components/HumHistoryChart';
 import SensorDataGrid from './components/SensorDataGrid';
+import SiloHistoryChart from './components/SiloHistoryChart';
 import Swal from 'sweetalert2';
-import dayjs from 'dayjs';
 
 const SensoresDashboard = () => {
     const [activeTab, setActiveTab] = useState('dashboard'); // 'dashboard', 'table'
@@ -18,6 +18,9 @@ const SensoresDashboard = () => {
     const [historyData, setHistoryData] = useState([]);
     const [historyFilter, setHistoryFilter] = useState('4h'); // 4h, today, yesterday
     const [loadingHistory, setLoadingHistory] = useState(false);
+
+    // History Categories State
+    const [historyCategory, setHistoryCategory] = useState('clima'); // 'clima', 'operacion'
 
     const fetchDashboard = useCallback(async (showLoading = false) => {
         if (showLoading) setLoading(true);
@@ -102,6 +105,8 @@ const SensoresDashboard = () => {
         );
     }
 
+    const hasSiloData = historyData.some(d => d.cve_unidad === 'SIL');
+
     return (
         <div className="p-6 lg:p-8 space-y-8 animate-in fade-in duration-500">
             {/* Header Area */}
@@ -121,8 +126,8 @@ const SensoresDashboard = () => {
                     <button
                         onClick={() => setActiveTab('dashboard')}
                         className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 ${activeTab === 'dashboard'
-                                ? 'bg-indigo-600 text-white shadow-lg'
-                                : 'text-gray-400 hover:text-gray-200'
+                            ? 'bg-indigo-600 text-white shadow-lg'
+                            : 'text-gray-400 hover:text-gray-200'
                             }`}
                     >
                         <LayoutGrid size={18} /> Dashboard
@@ -130,8 +135,8 @@ const SensoresDashboard = () => {
                     <button
                         onClick={() => setActiveTab('table')}
                         className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 ${activeTab === 'table'
-                                ? 'bg-indigo-600 text-white shadow-lg'
-                                : 'text-gray-400 hover:text-gray-200'
+                            ? 'bg-indigo-600 text-white shadow-lg'
+                            : 'text-gray-400 hover:text-gray-200'
                             }`}
                     >
                         <Table size={18} /> Tabla de Datos
@@ -164,31 +169,51 @@ const SensoresDashboard = () => {
 
                             {/* Historical Charts Section */}
                             <div className="mt-12 space-y-6">
-                                <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                                    <div className="flex items-center gap-3">
-                                        <History className="text-gray-400" size={24} />
-                                        <h2 className="text-2xl font-bold text-white tracking-tight">Historial de Lecturas</h2>
+                                <div className="flex flex-col md:flex-row items-center justify-between gap-6 bg-gray-800/20 p-4 rounded-3xl border border-gray-700/30">
+                                    <div className="flex flex-col gap-1">
+                                        <div className="flex items-center gap-3">
+                                            <History className="text-indigo-400" size={24} />
+                                            <h2 className="text-2xl font-bold text-white tracking-tight">Historial de Lecturas</h2>
+                                        </div>
+
+                                        {/* Category Selection Toggle */}
+                                        <div className="flex items-center gap-2 mt-2">
+                                            <button
+                                                onClick={() => setHistoryCategory('clima')}
+                                                className={`px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all ${historyCategory === 'clima' ? 'bg-indigo-500 text-white shadow-lg' : 'bg-gray-700/50 text-gray-500 hover:text-gray-300'
+                                                    }`}
+                                            >
+                                                Temperatura
+                                            </button>
+                                            <button
+                                                onClick={() => setHistoryCategory('operacion')}
+                                                className={`px-3 py-1 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all ${historyCategory === 'operacion' ? 'bg-emerald-500 text-white shadow-lg' : 'bg-gray-700/50 text-gray-500 hover:text-gray-300'
+                                                    }`}
+                                            >
+                                                Operación
+                                            </button>
+                                        </div>
                                     </div>
 
                                     {/* Filter Controls */}
-                                    <div className="flex bg-gray-800 rounded-lg p-1 border border-gray-700 shadow-lg p-0.5">
+                                    <div className="flex bg-gray-900/50 rounded-xl p-1 border border-gray-700 shadow-lg">
                                         <button
                                             onClick={() => setHistoryFilter('4h')}
-                                            className={`px-4 py-1.5 rounded-md text-xs font-bold transition-all uppercase tracking-tighter ${historyFilter === '4h' ? 'bg-indigo-600 text-white shadow-lg' : 'text-gray-400 hover:text-white'
+                                            className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all uppercase tracking-tighter ${historyFilter === '4h' ? 'bg-indigo-600 text-white shadow-lg' : 'text-gray-400 hover:text-white'
                                                 }`}
                                         >
                                             4h
                                         </button>
                                         <button
                                             onClick={() => setHistoryFilter('today')}
-                                            className={`px-4 py-1.5 rounded-md text-xs font-bold transition-all uppercase tracking-tighter ${historyFilter === 'today' ? 'bg-indigo-600 text-white shadow-lg' : 'text-gray-400 hover:text-white'
+                                            className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all uppercase tracking-tighter ${historyFilter === 'today' ? 'bg-indigo-600 text-white shadow-lg' : 'text-gray-400 hover:text-white'
                                                 }`}
                                         >
                                             Hoy
                                         </button>
                                         <button
                                             onClick={() => setHistoryFilter('yesterday')}
-                                            className={`px-4 py-1.5 rounded-md text-xs font-bold transition-all uppercase tracking-tighter ${historyFilter === 'yesterday' ? 'bg-indigo-600 text-white shadow-lg' : 'text-gray-400 hover:text-white'
+                                            className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all uppercase tracking-tighter ${historyFilter === 'yesterday' ? 'bg-indigo-600 text-white shadow-lg' : 'text-gray-400 hover:text-white'
                                                 }`}
                                         >
                                             Ayer
@@ -197,13 +222,21 @@ const SensoresDashboard = () => {
                                 </div>
 
                                 {loadingHistory ? (
-                                    <div className="h-[350px] flex items-center justify-center bg-gray-800/30 rounded-2xl border border-gray-700/30">
+                                    <div className="h-[350px] flex items-center justify-center bg-gray-800/30 rounded-2xl border border-gray-700/30 shadow-inner">
                                         <Loader2 className="w-8 h-8 text-indigo-500 animate-spin" />
                                     </div>
                                 ) : (
-                                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-20">
-                                        <TempHistoryChart data={historyData} />
-                                        <HumHistoryChart data={historyData} />
+                                    <div className="pb-20">
+                                        {historyCategory === 'clima' ? (
+                                            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                                                <TempHistoryChart data={historyData} />
+                                                <HumHistoryChart data={historyData} />
+                                            </div>
+                                        ) : (
+                                            <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
+                                                <SiloHistoryChart data={historyData} />
+                                            </div>
+                                        )}
                                     </div>
                                 )}
                             </div>

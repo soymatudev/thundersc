@@ -1,4 +1,5 @@
 import React from 'react';
+import dayjs from 'dayjs';
 import {
     LineChart,
     Line,
@@ -36,10 +37,13 @@ const CustomTooltip = ({ active, payload, label }) => {
 };
 
 const HumHistoryChart = ({ data }) => {
-    const sensors = [...new Set(data.map(d => d.sensor_nombre))];
+    // 1. Get unique sensor names (filtered by Clima)
+    const climateData = data.filter(d => d.cve_unidad === 'TEM');
+    const sensors = [...new Set(climateData.map(d => d.sensor_nombre))];
 
-    const grouped = data.reduce((acc, curr) => {
-        const timeKey = new Date(curr.fecha_hora).getTime();
+    // 2. Pivot
+    const grouped = climateData.reduce((acc, curr) => {
+        const timeKey = dayjs(curr.fecha_hora).millisecond(0);
         if (!acc[timeKey]) {
             acc[timeKey] = { timestamp: curr.fecha_hora };
         }
@@ -48,8 +52,9 @@ const HumHistoryChart = ({ data }) => {
     }, {});
 
     const chartData = Object.values(grouped).sort((a, b) =>
-        new Date(a.timestamp) - new Date(b.timestamp)
+        dayjs(a.timestamp).toDate() - dayjs(b.timestamp).toDate()
     );
+
 
     return (
         <div className="w-full h-[350px] bg-gray-800/50 rounded-2xl p-4 border border-gray-700/50">
