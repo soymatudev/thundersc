@@ -36,8 +36,52 @@ exports.refreshSensor = asyncHandler(async (req, res) => {
  * Obtiene todos los sensores básicos.
  */
 exports.getAllSensores = asyncHandler(async (req, res) => {
-    res.status(200).json(sensores);
+    const data = await sensoresService.getAllSensores();
+    res.status(200).json(data);
 });
+
+/**
+ * Crea un sensor.
+ */
+exports.createSensor = asyncHandler(async (req, res) => {
+    const sensor = await sensoresService.createSensor(req.body);
+    res.status(201).json(sensor);
+});
+
+/**
+ * Actualiza un sensor.
+ */
+exports.updateSensor = asyncHandler(async (req, res) => {
+    const { clave } = req.params;
+    const sensor = await sensoresService.updateSensor(clave, req.body);
+    res.status(200).json(sensor);
+});
+
+/**
+ * Elimina un sensor.
+ */
+exports.deleteSensor = asyncHandler(async (req, res) => {
+    const { clave } = req.params;
+    await sensoresService.deleteSensor(clave);
+    res.status(204).send();
+});
+
+/**
+ * Obtiene catálogo de unidades.
+ */
+exports.getUnidades = asyncHandler(async (req, res) => {
+    const data = await sensoresService.getUnidades();
+    res.status(200).json(data);
+});
+
+/**
+ * Obtiene catálogo de zonas.
+ */
+exports.getZonas = asyncHandler(async (req, res) => {
+    const data = await sensoresService.getZonas();
+    res.status(200).json(data);
+});
+
 
 /**
  * Obtiene el historial de sensores.

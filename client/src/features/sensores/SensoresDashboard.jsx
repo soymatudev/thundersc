@@ -1,15 +1,17 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { SensoresService } from './services/sensoresService';
-import { LayoutGrid, AlertCircle, Loader2, History, CalendarDays, Clock, Table } from 'lucide-react';
+import { LayoutGrid, AlertCircle, Loader2, History, CalendarDays, Clock, Table, Settings } from 'lucide-react';
 import SensorCard from './components/SensorCard';
 import TempHistoryChart from './components/TempHistoryChart';
 import HumHistoryChart from './components/HumHistoryChart';
 import SensorDataGrid from './components/SensorDataGrid';
 import SiloHistoryChart from './components/SiloHistoryChart';
+import SensoresCatalog from './SensoresCatalog';
 import Swal from 'sweetalert2';
 
 const SensoresDashboard = () => {
-    const [activeTab, setActiveTab] = useState('dashboard'); // 'dashboard', 'table'
+    const [activeTab, setActiveTab] = useState('dashboard'); // 'dashboard', 'table', 'catalog'
+
     const [sensores, setSensores] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -141,6 +143,15 @@ const SensoresDashboard = () => {
                     >
                         <Table size={18} /> Tabla de Datos
                     </button>
+                    <button
+                        onClick={() => setActiveTab('catalog')}
+                        className={`flex items-center gap-2 px-6 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 ${activeTab === 'catalog'
+                            ? 'bg-indigo-600 text-white shadow-lg'
+                            : 'text-gray-400 hover:text-gray-200'
+                            }`}
+                    >
+                        <Settings size={18} /> Catálogo
+                    </button>
                 </div>
             </div>
 
@@ -253,11 +264,14 @@ const SensoresDashboard = () => {
                         )
                     )}
                 </>
-            ) : (
+            ) : activeTab === 'table' ? (
                 <SensorDataGrid sensorsList={sensores} />
+            ) : (
+                <SensoresCatalog />
             )}
         </div>
     );
 };
+
 
 export default SensoresDashboard;

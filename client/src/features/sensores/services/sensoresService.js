@@ -32,6 +32,27 @@ export const SensoresService = {
     };
     const queryString = new URLSearchParams(params).toString();
     return api.get(`${SENSORES_ENDPOINT}/reporte?${queryString}`);
+  },
+
+  create: async (data) => {
+    return api.post(SENSORES_ENDPOINT, data);
+  },
+
+  update: async (clave, data) => {
+    return api.put(`${SENSORES_ENDPOINT}/${clave}`, data);
+  },
+
+  delete: async (clave) => {
+    return api.delete(`${SENSORES_ENDPOINT}/${clave}`);
+  },
+
+  getUnidades: async () => {
+    return api.get(`${SENSORES_ENDPOINT}/unidades`);
+  },
+
+  getZonas: async () => {
+    return api.get(`${SENSORES_ENDPOINT}/zonas`);
   }
 };
+
 

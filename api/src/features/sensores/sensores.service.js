@@ -23,10 +23,69 @@ exports.getAllSensores = async () => {
         const { ma_unidad, ...rest } = equipo;
         return {
             ...rest,
-            unidad: ma_unidad ? ma_unidad.descri : null
+            unidad_desc: ma_unidad ? ma_unidad.descri?.trim() : null
         };
     });
 };
+
+/**
+ * Crea un nuevo sensor.
+ */
+exports.createSensor = async (data) => {
+    return prisma.ma_equipo.create({
+        data: {
+            ...data,
+            ancho: data.ancho ? parseFloat(data.ancho) : null,
+            largo: data.largo ? parseFloat(data.largo) : null,
+            alto: data.alto ? parseFloat(data.alto) : null,
+            densidad: data.densidad ? parseFloat(data.densidad) : null,
+            adc_1: data.adc_1 ? parseFloat(data.adc_1) : null,
+            adc_3: data.adc_3 ? parseFloat(data.adc_3) : null,
+        }
+    });
+};
+
+/**
+ * Actualiza un sensor existente.
+ */
+exports.updateSensor = async (clave, data) => {
+    return prisma.ma_equipo.update({
+        where: { clave: parseInt(clave) },
+        data: {
+            ...data,
+            ancho: data.ancho ? parseFloat(data.ancho) : null,
+            largo: data.largo ? parseFloat(data.largo) : null,
+            alto: data.alto ? parseFloat(data.alto) : null,
+            densidad: data.densidad ? parseFloat(data.densidad) : null,
+            adc_1: data.adc_1 ? parseFloat(data.adc_1) : null,
+            adc_3: data.adc_3 ? parseFloat(data.adc_3) : null,
+        }
+    });
+};
+
+/**
+ * Elimina un sensor.
+ */
+exports.deleteSensor = async (clave) => {
+    return prisma.ma_equipo.delete({
+        where: { clave: parseInt(clave) }
+    });
+};
+
+/**
+ * Obtiene el catálogo de unidades.
+ */
+exports.getUnidades = async () => {
+    return prisma.ma_unidad.findMany();
+};
+
+/**
+ * Obtiene el catálogo de zonas.
+ */
+exports.getZonas = async () => {
+    return prisma.de_zona.findMany();
+};
+
 
 /**
  * Obtiene un sensor por su clave (ID).
