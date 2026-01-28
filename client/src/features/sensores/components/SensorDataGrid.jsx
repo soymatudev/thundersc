@@ -1,12 +1,10 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-import { AllCommunityModule, ModuleRegistry } from 'ag-grid-community';
-import 'ag-grid-community/styles/ag-grid.css';
-import 'ag-grid-community/styles/ag-theme-quartz.css';
+import { AllCommunityModule, ModuleRegistry, themeQuartz} from 'ag-grid-community';
 import { SensoresService } from '../services/sensoresService';
 import { Download, Search, FilterX, Calendar, Users, Loader2 } from 'lucide-react';
 import * as XLSX from 'xlsx';
-import { dayjs } from 'dayjs';
+import dayjs from 'dayjs';
 
 ModuleRegistry.registerModules([AllCommunityModule]);
 
@@ -189,6 +187,7 @@ const SensorDataGrid = ({ sensorsList }) => {
                             resizable: true,
                             filter: true,
                         }}
+                        theme={themeQuartz.withParams({ backgroundColor: '#1f2937' })}
                         className='ag-theme-quartz-dark'
                     />
                 </div>
