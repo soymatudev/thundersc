@@ -193,8 +193,8 @@ exports.getDashboardStatus = async (userId) => {
 
         // Diferenciación de tipos
         if (ultimaLectura) {
-            const val1 = parseFloat(ultimaLectura.dato_1) / 100 || 0;
-            const val2 = parseFloat(ultimaLectura.dato_2) / 100 || 0;
+            const val1 = parseFloat(ultimaLectura.dato_1) || 0;
+            const val2 = parseFloat(ultimaLectura.dato_2) || 0;
 
             if (data.cve_unidad === 'TEM') { // TERMOMETRO
                 data.lectura = {
@@ -203,7 +203,7 @@ exports.getDashboardStatus = async (userId) => {
                 };
             } else if (data.cve_unidad === 'SIL') { // SILO
                 data.lectura = {
-                    nivel_porcentual: val1
+                    nivel_porcentual: (val1 / 100)
                 };
             } else {
                 data.lectura = {
