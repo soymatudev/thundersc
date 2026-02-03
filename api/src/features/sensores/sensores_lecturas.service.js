@@ -31,7 +31,7 @@ exports.registrarLectura = async (data) => {
     if (data.type === 'generic_event') {
         if (data.eventType === 'NEG') {
             await eventNeg(data);
-        } else if (data.eventType === 'DIS') {
+        } else if (data.eventType === 'DIST') {
             await eventDis(data);
         }
     }

@@ -193,8 +193,8 @@ exports.getDashboardStatus = async (userId) => {
 
         // Diferenciación de tipos
         if (ultimaLectura) {
-            const val1 = parseFloat(ultimaLectura.dato_1) || 0;
-            const val2 = parseFloat(ultimaLectura.dato_2) || 0;
+            const val1 = parseFloat(ultimaLectura.dato_1) / 100 || 0;
+            const val2 = parseFloat(ultimaLectura.dato_2) / 100 || 0;
 
             if (data.cve_unidad === 'TEM') { // TERMOMETRO
                 data.lectura = {
