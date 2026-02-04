@@ -138,6 +138,31 @@ export type usuario_permiso = $Result.DefaultSelection<Prisma.$usuario_permisoPa
  * 
  */
 export type ma_folio = $Result.DefaultSelection<Prisma.$ma_folioPayload>
+/**
+ * Model ma_catvj
+ * 
+ */
+export type ma_catvj = $Result.DefaultSelection<Prisma.$ma_catvjPayload>
+/**
+ * Model tr_viajes
+ * 
+ */
+export type tr_viajes = $Result.DefaultSelection<Prisma.$tr_viajesPayload>
+/**
+ * Model tr_paradas_gastos
+ * 
+ */
+export type tr_paradas_gastos = $Result.DefaultSelection<Prisma.$tr_paradas_gastosPayload>
+/**
+ * Model tr_evidencia
+ * 
+ */
+export type tr_evidencia = $Result.DefaultSelection<Prisma.$tr_evidenciaPayload>
+/**
+ * Model tr_notas_viaje
+ * 
+ */
+export type tr_notas_viaje = $Result.DefaultSelection<Prisma.$tr_notas_viajePayload>
 
 /**
  * ##  Prisma Client ʲˢ
@@ -506,6 +531,56 @@ export class PrismaClient<
     * ```
     */
   get ma_folio(): Prisma.ma_folioDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.ma_catvj`: Exposes CRUD operations for the **ma_catvj** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Ma_catvjs
+    * const ma_catvjs = await prisma.ma_catvj.findMany()
+    * ```
+    */
+  get ma_catvj(): Prisma.ma_catvjDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.tr_viajes`: Exposes CRUD operations for the **tr_viajes** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Tr_viajes
+    * const tr_viajes = await prisma.tr_viajes.findMany()
+    * ```
+    */
+  get tr_viajes(): Prisma.tr_viajesDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.tr_paradas_gastos`: Exposes CRUD operations for the **tr_paradas_gastos** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Tr_paradas_gastos
+    * const tr_paradas_gastos = await prisma.tr_paradas_gastos.findMany()
+    * ```
+    */
+  get tr_paradas_gastos(): Prisma.tr_paradas_gastosDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.tr_evidencia`: Exposes CRUD operations for the **tr_evidencia** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Tr_evidencias
+    * const tr_evidencias = await prisma.tr_evidencia.findMany()
+    * ```
+    */
+  get tr_evidencia(): Prisma.tr_evidenciaDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.tr_notas_viaje`: Exposes CRUD operations for the **tr_notas_viaje** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Tr_notas_viajes
+    * const tr_notas_viajes = await prisma.tr_notas_viaje.findMany()
+    * ```
+    */
+  get tr_notas_viaje(): Prisma.tr_notas_viajeDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -971,7 +1046,12 @@ export namespace Prisma {
     permiso: 'permiso',
     usuario: 'usuario',
     usuario_permiso: 'usuario_permiso',
-    ma_folio: 'ma_folio'
+    ma_folio: 'ma_folio',
+    ma_catvj: 'ma_catvj',
+    tr_viajes: 'tr_viajes',
+    tr_paradas_gastos: 'tr_paradas_gastos',
+    tr_evidencia: 'tr_evidencia',
+    tr_notas_viaje: 'tr_notas_viaje'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -990,7 +1070,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "de_zona" | "ma_almac" | "ma_almacsco" | "ma_almus" | "ma_backups" | "ma_chatids" | "ma_clasif" | "ma_depar" | "ma_emple" | "ma_empre" | "ma_eqasis" | "ma_eqsis" | "ma_equipo" | "ma_host" | "ma_marca" | "ma_regzoro" | "ma_sesus" | "ma_unidad" | "ma_ventasco" | "ma_empresa" | "ma_modulo" | "permiso" | "usuario" | "usuario_permiso" | "ma_folio"
+      modelProps: "de_zona" | "ma_almac" | "ma_almacsco" | "ma_almus" | "ma_backups" | "ma_chatids" | "ma_clasif" | "ma_depar" | "ma_emple" | "ma_empre" | "ma_eqasis" | "ma_eqsis" | "ma_equipo" | "ma_host" | "ma_marca" | "ma_regzoro" | "ma_sesus" | "ma_unidad" | "ma_ventasco" | "ma_empresa" | "ma_modulo" | "permiso" | "usuario" | "usuario_permiso" | "ma_folio" | "ma_catvj" | "tr_viajes" | "tr_paradas_gastos" | "tr_evidencia" | "tr_notas_viaje"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -2844,6 +2924,376 @@ export namespace Prisma {
           }
         }
       }
+      ma_catvj: {
+        payload: Prisma.$ma_catvjPayload<ExtArgs>
+        fields: Prisma.ma_catvjFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ma_catvjFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ma_catvjPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ma_catvjFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ma_catvjPayload>
+          }
+          findFirst: {
+            args: Prisma.ma_catvjFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ma_catvjPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ma_catvjFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ma_catvjPayload>
+          }
+          findMany: {
+            args: Prisma.ma_catvjFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ma_catvjPayload>[]
+          }
+          create: {
+            args: Prisma.ma_catvjCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ma_catvjPayload>
+          }
+          createMany: {
+            args: Prisma.ma_catvjCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.ma_catvjCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ma_catvjPayload>[]
+          }
+          delete: {
+            args: Prisma.ma_catvjDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ma_catvjPayload>
+          }
+          update: {
+            args: Prisma.ma_catvjUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ma_catvjPayload>
+          }
+          deleteMany: {
+            args: Prisma.ma_catvjDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ma_catvjUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ma_catvjUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ma_catvjPayload>[]
+          }
+          upsert: {
+            args: Prisma.ma_catvjUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ma_catvjPayload>
+          }
+          aggregate: {
+            args: Prisma.Ma_catvjAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateMa_catvj>
+          }
+          groupBy: {
+            args: Prisma.ma_catvjGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Ma_catvjGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ma_catvjCountArgs<ExtArgs>
+            result: $Utils.Optional<Ma_catvjCountAggregateOutputType> | number
+          }
+        }
+      }
+      tr_viajes: {
+        payload: Prisma.$tr_viajesPayload<ExtArgs>
+        fields: Prisma.tr_viajesFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.tr_viajesFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_viajesPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.tr_viajesFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_viajesPayload>
+          }
+          findFirst: {
+            args: Prisma.tr_viajesFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_viajesPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.tr_viajesFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_viajesPayload>
+          }
+          findMany: {
+            args: Prisma.tr_viajesFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_viajesPayload>[]
+          }
+          create: {
+            args: Prisma.tr_viajesCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_viajesPayload>
+          }
+          createMany: {
+            args: Prisma.tr_viajesCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.tr_viajesCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_viajesPayload>[]
+          }
+          delete: {
+            args: Prisma.tr_viajesDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_viajesPayload>
+          }
+          update: {
+            args: Prisma.tr_viajesUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_viajesPayload>
+          }
+          deleteMany: {
+            args: Prisma.tr_viajesDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.tr_viajesUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.tr_viajesUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_viajesPayload>[]
+          }
+          upsert: {
+            args: Prisma.tr_viajesUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_viajesPayload>
+          }
+          aggregate: {
+            args: Prisma.Tr_viajesAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTr_viajes>
+          }
+          groupBy: {
+            args: Prisma.tr_viajesGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Tr_viajesGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.tr_viajesCountArgs<ExtArgs>
+            result: $Utils.Optional<Tr_viajesCountAggregateOutputType> | number
+          }
+        }
+      }
+      tr_paradas_gastos: {
+        payload: Prisma.$tr_paradas_gastosPayload<ExtArgs>
+        fields: Prisma.tr_paradas_gastosFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.tr_paradas_gastosFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_paradas_gastosPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.tr_paradas_gastosFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_paradas_gastosPayload>
+          }
+          findFirst: {
+            args: Prisma.tr_paradas_gastosFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_paradas_gastosPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.tr_paradas_gastosFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_paradas_gastosPayload>
+          }
+          findMany: {
+            args: Prisma.tr_paradas_gastosFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_paradas_gastosPayload>[]
+          }
+          create: {
+            args: Prisma.tr_paradas_gastosCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_paradas_gastosPayload>
+          }
+          createMany: {
+            args: Prisma.tr_paradas_gastosCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.tr_paradas_gastosCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_paradas_gastosPayload>[]
+          }
+          delete: {
+            args: Prisma.tr_paradas_gastosDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_paradas_gastosPayload>
+          }
+          update: {
+            args: Prisma.tr_paradas_gastosUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_paradas_gastosPayload>
+          }
+          deleteMany: {
+            args: Prisma.tr_paradas_gastosDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.tr_paradas_gastosUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.tr_paradas_gastosUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_paradas_gastosPayload>[]
+          }
+          upsert: {
+            args: Prisma.tr_paradas_gastosUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_paradas_gastosPayload>
+          }
+          aggregate: {
+            args: Prisma.Tr_paradas_gastosAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTr_paradas_gastos>
+          }
+          groupBy: {
+            args: Prisma.tr_paradas_gastosGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Tr_paradas_gastosGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.tr_paradas_gastosCountArgs<ExtArgs>
+            result: $Utils.Optional<Tr_paradas_gastosCountAggregateOutputType> | number
+          }
+        }
+      }
+      tr_evidencia: {
+        payload: Prisma.$tr_evidenciaPayload<ExtArgs>
+        fields: Prisma.tr_evidenciaFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.tr_evidenciaFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_evidenciaPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.tr_evidenciaFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_evidenciaPayload>
+          }
+          findFirst: {
+            args: Prisma.tr_evidenciaFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_evidenciaPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.tr_evidenciaFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_evidenciaPayload>
+          }
+          findMany: {
+            args: Prisma.tr_evidenciaFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_evidenciaPayload>[]
+          }
+          create: {
+            args: Prisma.tr_evidenciaCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_evidenciaPayload>
+          }
+          createMany: {
+            args: Prisma.tr_evidenciaCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.tr_evidenciaCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_evidenciaPayload>[]
+          }
+          delete: {
+            args: Prisma.tr_evidenciaDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_evidenciaPayload>
+          }
+          update: {
+            args: Prisma.tr_evidenciaUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_evidenciaPayload>
+          }
+          deleteMany: {
+            args: Prisma.tr_evidenciaDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.tr_evidenciaUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.tr_evidenciaUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_evidenciaPayload>[]
+          }
+          upsert: {
+            args: Prisma.tr_evidenciaUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_evidenciaPayload>
+          }
+          aggregate: {
+            args: Prisma.Tr_evidenciaAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTr_evidencia>
+          }
+          groupBy: {
+            args: Prisma.tr_evidenciaGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Tr_evidenciaGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.tr_evidenciaCountArgs<ExtArgs>
+            result: $Utils.Optional<Tr_evidenciaCountAggregateOutputType> | number
+          }
+        }
+      }
+      tr_notas_viaje: {
+        payload: Prisma.$tr_notas_viajePayload<ExtArgs>
+        fields: Prisma.tr_notas_viajeFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.tr_notas_viajeFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_notas_viajePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.tr_notas_viajeFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_notas_viajePayload>
+          }
+          findFirst: {
+            args: Prisma.tr_notas_viajeFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_notas_viajePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.tr_notas_viajeFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_notas_viajePayload>
+          }
+          findMany: {
+            args: Prisma.tr_notas_viajeFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_notas_viajePayload>[]
+          }
+          create: {
+            args: Prisma.tr_notas_viajeCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_notas_viajePayload>
+          }
+          createMany: {
+            args: Prisma.tr_notas_viajeCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.tr_notas_viajeCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_notas_viajePayload>[]
+          }
+          delete: {
+            args: Prisma.tr_notas_viajeDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_notas_viajePayload>
+          }
+          update: {
+            args: Prisma.tr_notas_viajeUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_notas_viajePayload>
+          }
+          deleteMany: {
+            args: Prisma.tr_notas_viajeDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.tr_notas_viajeUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.tr_notas_viajeUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_notas_viajePayload>[]
+          }
+          upsert: {
+            args: Prisma.tr_notas_viajeUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$tr_notas_viajePayload>
+          }
+          aggregate: {
+            args: Prisma.Tr_notas_viajeAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTr_notas_viaje>
+          }
+          groupBy: {
+            args: Prisma.tr_notas_viajeGroupByArgs<ExtArgs>
+            result: $Utils.Optional<Tr_notas_viajeGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.tr_notas_viajeCountArgs<ExtArgs>
+            result: $Utils.Optional<Tr_notas_viajeCountAggregateOutputType> | number
+          }
+        }
+      }
     }
   } & {
     other: {
@@ -2965,6 +3415,11 @@ export namespace Prisma {
     usuario?: usuarioOmit
     usuario_permiso?: usuario_permisoOmit
     ma_folio?: ma_folioOmit
+    ma_catvj?: ma_catvjOmit
+    tr_viajes?: tr_viajesOmit
+    tr_paradas_gastos?: tr_paradas_gastosOmit
+    tr_evidencia?: tr_evidenciaOmit
+    tr_notas_viaje?: tr_notas_viajeOmit
   }
 
   /* Types for Logging */
@@ -3117,10 +3572,12 @@ export namespace Prisma {
 
   export type Ma_empleCountOutputType = {
     ma_eqasis: number
+    viajes: number
   }
 
   export type Ma_empleCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     ma_eqasis?: boolean | Ma_empleCountOutputTypeCountMa_eqasisArgs
+    viajes?: boolean | Ma_empleCountOutputTypeCountViajesArgs
   }
 
   // Custom InputTypes
@@ -3139,6 +3596,13 @@ export namespace Prisma {
    */
   export type Ma_empleCountOutputTypeCountMa_eqasisArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: ma_eqasisWhereInput
+  }
+
+  /**
+   * Ma_empleCountOutputType without action
+   */
+  export type Ma_empleCountOutputTypeCountViajesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tr_viajesWhereInput
   }
 
 
@@ -3356,6 +3820,108 @@ export namespace Prisma {
    */
   export type UsuarioCountOutputTypeCountUsuario_permisoArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: usuario_permisoWhereInput
+  }
+
+
+  /**
+   * Count Type Ma_catvjCountOutputType
+   */
+
+  export type Ma_catvjCountOutputType = {
+    paradas: number
+  }
+
+  export type Ma_catvjCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    paradas?: boolean | Ma_catvjCountOutputTypeCountParadasArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * Ma_catvjCountOutputType without action
+   */
+  export type Ma_catvjCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Ma_catvjCountOutputType
+     */
+    select?: Ma_catvjCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * Ma_catvjCountOutputType without action
+   */
+  export type Ma_catvjCountOutputTypeCountParadasArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tr_paradas_gastosWhereInput
+  }
+
+
+  /**
+   * Count Type Tr_viajesCountOutputType
+   */
+
+  export type Tr_viajesCountOutputType = {
+    paradas: number
+    notas: number
+  }
+
+  export type Tr_viajesCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    paradas?: boolean | Tr_viajesCountOutputTypeCountParadasArgs
+    notas?: boolean | Tr_viajesCountOutputTypeCountNotasArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * Tr_viajesCountOutputType without action
+   */
+  export type Tr_viajesCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Tr_viajesCountOutputType
+     */
+    select?: Tr_viajesCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * Tr_viajesCountOutputType without action
+   */
+  export type Tr_viajesCountOutputTypeCountParadasArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tr_paradas_gastosWhereInput
+  }
+
+  /**
+   * Tr_viajesCountOutputType without action
+   */
+  export type Tr_viajesCountOutputTypeCountNotasArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tr_notas_viajeWhereInput
+  }
+
+
+  /**
+   * Count Type Tr_paradas_gastosCountOutputType
+   */
+
+  export type Tr_paradas_gastosCountOutputType = {
+    evidencias: number
+  }
+
+  export type Tr_paradas_gastosCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    evidencias?: boolean | Tr_paradas_gastosCountOutputTypeCountEvidenciasArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * Tr_paradas_gastosCountOutputType without action
+   */
+  export type Tr_paradas_gastosCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Tr_paradas_gastosCountOutputType
+     */
+    select?: Tr_paradas_gastosCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * Tr_paradas_gastosCountOutputType without action
+   */
+  export type Tr_paradas_gastosCountOutputTypeCountEvidenciasArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tr_evidenciaWhereInput
   }
 
 
@@ -12106,6 +12672,7 @@ export namespace Prisma {
     cve_depar?: boolean
     ma_depar?: boolean | ma_emple$ma_deparArgs<ExtArgs>
     ma_eqasis?: boolean | ma_emple$ma_eqasisArgs<ExtArgs>
+    viajes?: boolean | ma_emple$viajesArgs<ExtArgs>
     _count?: boolean | Ma_empleCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["ma_emple"]>
 
@@ -12142,6 +12709,7 @@ export namespace Prisma {
   export type ma_empleInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     ma_depar?: boolean | ma_emple$ma_deparArgs<ExtArgs>
     ma_eqasis?: boolean | ma_emple$ma_eqasisArgs<ExtArgs>
+    viajes?: boolean | ma_emple$viajesArgs<ExtArgs>
     _count?: boolean | Ma_empleCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type ma_empleIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -12156,6 +12724,7 @@ export namespace Prisma {
     objects: {
       ma_depar: Prisma.$ma_deparPayload<ExtArgs> | null
       ma_eqasis: Prisma.$ma_eqasisPayload<ExtArgs>[]
+      viajes: Prisma.$tr_viajesPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: number
@@ -12560,6 +13129,7 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     ma_depar<T extends ma_emple$ma_deparArgs<ExtArgs> = {}>(args?: Subset<T, ma_emple$ma_deparArgs<ExtArgs>>): Prisma__ma_deparClient<$Result.GetResult<Prisma.$ma_deparPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
     ma_eqasis<T extends ma_emple$ma_eqasisArgs<ExtArgs> = {}>(args?: Subset<T, ma_emple$ma_eqasisArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ma_eqasisPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    viajes<T extends ma_emple$viajesArgs<ExtArgs> = {}>(args?: Subset<T, ma_emple$viajesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tr_viajesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -13031,6 +13601,30 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: Ma_eqasisScalarFieldEnum | Ma_eqasisScalarFieldEnum[]
+  }
+
+  /**
+   * ma_emple.viajes
+   */
+  export type ma_emple$viajesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_viajes
+     */
+    select?: tr_viajesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_viajes
+     */
+    omit?: tr_viajesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_viajesInclude<ExtArgs> | null
+    where?: tr_viajesWhereInput
+    orderBy?: tr_viajesOrderByWithRelationInput | tr_viajesOrderByWithRelationInput[]
+    cursor?: tr_viajesWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Tr_viajesScalarFieldEnum | Tr_viajesScalarFieldEnum[]
   }
 
   /**
@@ -30749,6 +31343,5714 @@ export namespace Prisma {
 
 
   /**
+   * Model ma_catvj
+   */
+
+  export type AggregateMa_catvj = {
+    _count: Ma_catvjCountAggregateOutputType | null
+    _avg: Ma_catvjAvgAggregateOutputType | null
+    _sum: Ma_catvjSumAggregateOutputType | null
+    _min: Ma_catvjMinAggregateOutputType | null
+    _max: Ma_catvjMaxAggregateOutputType | null
+  }
+
+  export type Ma_catvjAvgAggregateOutputType = {
+    clave: number | null
+  }
+
+  export type Ma_catvjSumAggregateOutputType = {
+    clave: number | null
+  }
+
+  export type Ma_catvjMinAggregateOutputType = {
+    clave: number | null
+    nombre: string | null
+    icono: string | null
+    color: string | null
+  }
+
+  export type Ma_catvjMaxAggregateOutputType = {
+    clave: number | null
+    nombre: string | null
+    icono: string | null
+    color: string | null
+  }
+
+  export type Ma_catvjCountAggregateOutputType = {
+    clave: number
+    nombre: number
+    icono: number
+    color: number
+    _all: number
+  }
+
+
+  export type Ma_catvjAvgAggregateInputType = {
+    clave?: true
+  }
+
+  export type Ma_catvjSumAggregateInputType = {
+    clave?: true
+  }
+
+  export type Ma_catvjMinAggregateInputType = {
+    clave?: true
+    nombre?: true
+    icono?: true
+    color?: true
+  }
+
+  export type Ma_catvjMaxAggregateInputType = {
+    clave?: true
+    nombre?: true
+    icono?: true
+    color?: true
+  }
+
+  export type Ma_catvjCountAggregateInputType = {
+    clave?: true
+    nombre?: true
+    icono?: true
+    color?: true
+    _all?: true
+  }
+
+  export type Ma_catvjAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ma_catvj to aggregate.
+     */
+    where?: ma_catvjWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ma_catvjs to fetch.
+     */
+    orderBy?: ma_catvjOrderByWithRelationInput | ma_catvjOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ma_catvjWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ma_catvjs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ma_catvjs.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned ma_catvjs
+    **/
+    _count?: true | Ma_catvjCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Ma_catvjAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Ma_catvjSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Ma_catvjMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Ma_catvjMaxAggregateInputType
+  }
+
+  export type GetMa_catvjAggregateType<T extends Ma_catvjAggregateArgs> = {
+        [P in keyof T & keyof AggregateMa_catvj]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateMa_catvj[P]>
+      : GetScalarType<T[P], AggregateMa_catvj[P]>
+  }
+
+
+
+
+  export type ma_catvjGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ma_catvjWhereInput
+    orderBy?: ma_catvjOrderByWithAggregationInput | ma_catvjOrderByWithAggregationInput[]
+    by: Ma_catvjScalarFieldEnum[] | Ma_catvjScalarFieldEnum
+    having?: ma_catvjScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Ma_catvjCountAggregateInputType | true
+    _avg?: Ma_catvjAvgAggregateInputType
+    _sum?: Ma_catvjSumAggregateInputType
+    _min?: Ma_catvjMinAggregateInputType
+    _max?: Ma_catvjMaxAggregateInputType
+  }
+
+  export type Ma_catvjGroupByOutputType = {
+    clave: number
+    nombre: string
+    icono: string
+    color: string
+    _count: Ma_catvjCountAggregateOutputType | null
+    _avg: Ma_catvjAvgAggregateOutputType | null
+    _sum: Ma_catvjSumAggregateOutputType | null
+    _min: Ma_catvjMinAggregateOutputType | null
+    _max: Ma_catvjMaxAggregateOutputType | null
+  }
+
+  type GetMa_catvjGroupByPayload<T extends ma_catvjGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Ma_catvjGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Ma_catvjGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Ma_catvjGroupByOutputType[P]>
+            : GetScalarType<T[P], Ma_catvjGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ma_catvjSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    clave?: boolean
+    nombre?: boolean
+    icono?: boolean
+    color?: boolean
+    paradas?: boolean | ma_catvj$paradasArgs<ExtArgs>
+    _count?: boolean | Ma_catvjCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["ma_catvj"]>
+
+  export type ma_catvjSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    clave?: boolean
+    nombre?: boolean
+    icono?: boolean
+    color?: boolean
+  }, ExtArgs["result"]["ma_catvj"]>
+
+  export type ma_catvjSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    clave?: boolean
+    nombre?: boolean
+    icono?: boolean
+    color?: boolean
+  }, ExtArgs["result"]["ma_catvj"]>
+
+  export type ma_catvjSelectScalar = {
+    clave?: boolean
+    nombre?: boolean
+    icono?: boolean
+    color?: boolean
+  }
+
+  export type ma_catvjOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"clave" | "nombre" | "icono" | "color", ExtArgs["result"]["ma_catvj"]>
+  export type ma_catvjInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    paradas?: boolean | ma_catvj$paradasArgs<ExtArgs>
+    _count?: boolean | Ma_catvjCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type ma_catvjIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type ma_catvjIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $ma_catvjPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "ma_catvj"
+    objects: {
+      paradas: Prisma.$tr_paradas_gastosPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      clave: number
+      nombre: string
+      icono: string
+      color: string
+    }, ExtArgs["result"]["ma_catvj"]>
+    composites: {}
+  }
+
+  type ma_catvjGetPayload<S extends boolean | null | undefined | ma_catvjDefaultArgs> = $Result.GetResult<Prisma.$ma_catvjPayload, S>
+
+  type ma_catvjCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ma_catvjFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Ma_catvjCountAggregateInputType | true
+    }
+
+  export interface ma_catvjDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ma_catvj'], meta: { name: 'ma_catvj' } }
+    /**
+     * Find zero or one Ma_catvj that matches the filter.
+     * @param {ma_catvjFindUniqueArgs} args - Arguments to find a Ma_catvj
+     * @example
+     * // Get one Ma_catvj
+     * const ma_catvj = await prisma.ma_catvj.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ma_catvjFindUniqueArgs>(args: SelectSubset<T, ma_catvjFindUniqueArgs<ExtArgs>>): Prisma__ma_catvjClient<$Result.GetResult<Prisma.$ma_catvjPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Ma_catvj that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ma_catvjFindUniqueOrThrowArgs} args - Arguments to find a Ma_catvj
+     * @example
+     * // Get one Ma_catvj
+     * const ma_catvj = await prisma.ma_catvj.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ma_catvjFindUniqueOrThrowArgs>(args: SelectSubset<T, ma_catvjFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ma_catvjClient<$Result.GetResult<Prisma.$ma_catvjPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Ma_catvj that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ma_catvjFindFirstArgs} args - Arguments to find a Ma_catvj
+     * @example
+     * // Get one Ma_catvj
+     * const ma_catvj = await prisma.ma_catvj.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ma_catvjFindFirstArgs>(args?: SelectSubset<T, ma_catvjFindFirstArgs<ExtArgs>>): Prisma__ma_catvjClient<$Result.GetResult<Prisma.$ma_catvjPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Ma_catvj that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ma_catvjFindFirstOrThrowArgs} args - Arguments to find a Ma_catvj
+     * @example
+     * // Get one Ma_catvj
+     * const ma_catvj = await prisma.ma_catvj.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ma_catvjFindFirstOrThrowArgs>(args?: SelectSubset<T, ma_catvjFindFirstOrThrowArgs<ExtArgs>>): Prisma__ma_catvjClient<$Result.GetResult<Prisma.$ma_catvjPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Ma_catvjs that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ma_catvjFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Ma_catvjs
+     * const ma_catvjs = await prisma.ma_catvj.findMany()
+     * 
+     * // Get first 10 Ma_catvjs
+     * const ma_catvjs = await prisma.ma_catvj.findMany({ take: 10 })
+     * 
+     * // Only select the `clave`
+     * const ma_catvjWithClaveOnly = await prisma.ma_catvj.findMany({ select: { clave: true } })
+     * 
+     */
+    findMany<T extends ma_catvjFindManyArgs>(args?: SelectSubset<T, ma_catvjFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ma_catvjPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Ma_catvj.
+     * @param {ma_catvjCreateArgs} args - Arguments to create a Ma_catvj.
+     * @example
+     * // Create one Ma_catvj
+     * const Ma_catvj = await prisma.ma_catvj.create({
+     *   data: {
+     *     // ... data to create a Ma_catvj
+     *   }
+     * })
+     * 
+     */
+    create<T extends ma_catvjCreateArgs>(args: SelectSubset<T, ma_catvjCreateArgs<ExtArgs>>): Prisma__ma_catvjClient<$Result.GetResult<Prisma.$ma_catvjPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Ma_catvjs.
+     * @param {ma_catvjCreateManyArgs} args - Arguments to create many Ma_catvjs.
+     * @example
+     * // Create many Ma_catvjs
+     * const ma_catvj = await prisma.ma_catvj.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ma_catvjCreateManyArgs>(args?: SelectSubset<T, ma_catvjCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Ma_catvjs and returns the data saved in the database.
+     * @param {ma_catvjCreateManyAndReturnArgs} args - Arguments to create many Ma_catvjs.
+     * @example
+     * // Create many Ma_catvjs
+     * const ma_catvj = await prisma.ma_catvj.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Ma_catvjs and only return the `clave`
+     * const ma_catvjWithClaveOnly = await prisma.ma_catvj.createManyAndReturn({
+     *   select: { clave: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ma_catvjCreateManyAndReturnArgs>(args?: SelectSubset<T, ma_catvjCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ma_catvjPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Ma_catvj.
+     * @param {ma_catvjDeleteArgs} args - Arguments to delete one Ma_catvj.
+     * @example
+     * // Delete one Ma_catvj
+     * const Ma_catvj = await prisma.ma_catvj.delete({
+     *   where: {
+     *     // ... filter to delete one Ma_catvj
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ma_catvjDeleteArgs>(args: SelectSubset<T, ma_catvjDeleteArgs<ExtArgs>>): Prisma__ma_catvjClient<$Result.GetResult<Prisma.$ma_catvjPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Ma_catvj.
+     * @param {ma_catvjUpdateArgs} args - Arguments to update one Ma_catvj.
+     * @example
+     * // Update one Ma_catvj
+     * const ma_catvj = await prisma.ma_catvj.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ma_catvjUpdateArgs>(args: SelectSubset<T, ma_catvjUpdateArgs<ExtArgs>>): Prisma__ma_catvjClient<$Result.GetResult<Prisma.$ma_catvjPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Ma_catvjs.
+     * @param {ma_catvjDeleteManyArgs} args - Arguments to filter Ma_catvjs to delete.
+     * @example
+     * // Delete a few Ma_catvjs
+     * const { count } = await prisma.ma_catvj.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ma_catvjDeleteManyArgs>(args?: SelectSubset<T, ma_catvjDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Ma_catvjs.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ma_catvjUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Ma_catvjs
+     * const ma_catvj = await prisma.ma_catvj.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ma_catvjUpdateManyArgs>(args: SelectSubset<T, ma_catvjUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Ma_catvjs and returns the data updated in the database.
+     * @param {ma_catvjUpdateManyAndReturnArgs} args - Arguments to update many Ma_catvjs.
+     * @example
+     * // Update many Ma_catvjs
+     * const ma_catvj = await prisma.ma_catvj.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Ma_catvjs and only return the `clave`
+     * const ma_catvjWithClaveOnly = await prisma.ma_catvj.updateManyAndReturn({
+     *   select: { clave: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ma_catvjUpdateManyAndReturnArgs>(args: SelectSubset<T, ma_catvjUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ma_catvjPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Ma_catvj.
+     * @param {ma_catvjUpsertArgs} args - Arguments to update or create a Ma_catvj.
+     * @example
+     * // Update or create a Ma_catvj
+     * const ma_catvj = await prisma.ma_catvj.upsert({
+     *   create: {
+     *     // ... data to create a Ma_catvj
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Ma_catvj we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ma_catvjUpsertArgs>(args: SelectSubset<T, ma_catvjUpsertArgs<ExtArgs>>): Prisma__ma_catvjClient<$Result.GetResult<Prisma.$ma_catvjPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Ma_catvjs.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ma_catvjCountArgs} args - Arguments to filter Ma_catvjs to count.
+     * @example
+     * // Count the number of Ma_catvjs
+     * const count = await prisma.ma_catvj.count({
+     *   where: {
+     *     // ... the filter for the Ma_catvjs we want to count
+     *   }
+     * })
+    **/
+    count<T extends ma_catvjCountArgs>(
+      args?: Subset<T, ma_catvjCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Ma_catvjCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Ma_catvj.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Ma_catvjAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Ma_catvjAggregateArgs>(args: Subset<T, Ma_catvjAggregateArgs>): Prisma.PrismaPromise<GetMa_catvjAggregateType<T>>
+
+    /**
+     * Group by Ma_catvj.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ma_catvjGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ma_catvjGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ma_catvjGroupByArgs['orderBy'] }
+        : { orderBy?: ma_catvjGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ma_catvjGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetMa_catvjGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the ma_catvj model
+   */
+  readonly fields: ma_catvjFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for ma_catvj.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ma_catvjClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    paradas<T extends ma_catvj$paradasArgs<ExtArgs> = {}>(args?: Subset<T, ma_catvj$paradasArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tr_paradas_gastosPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the ma_catvj model
+   */
+  interface ma_catvjFieldRefs {
+    readonly clave: FieldRef<"ma_catvj", 'Int'>
+    readonly nombre: FieldRef<"ma_catvj", 'String'>
+    readonly icono: FieldRef<"ma_catvj", 'String'>
+    readonly color: FieldRef<"ma_catvj", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * ma_catvj findUnique
+   */
+  export type ma_catvjFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_catvj
+     */
+    select?: ma_catvjSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_catvj
+     */
+    omit?: ma_catvjOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_catvjInclude<ExtArgs> | null
+    /**
+     * Filter, which ma_catvj to fetch.
+     */
+    where: ma_catvjWhereUniqueInput
+  }
+
+  /**
+   * ma_catvj findUniqueOrThrow
+   */
+  export type ma_catvjFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_catvj
+     */
+    select?: ma_catvjSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_catvj
+     */
+    omit?: ma_catvjOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_catvjInclude<ExtArgs> | null
+    /**
+     * Filter, which ma_catvj to fetch.
+     */
+    where: ma_catvjWhereUniqueInput
+  }
+
+  /**
+   * ma_catvj findFirst
+   */
+  export type ma_catvjFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_catvj
+     */
+    select?: ma_catvjSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_catvj
+     */
+    omit?: ma_catvjOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_catvjInclude<ExtArgs> | null
+    /**
+     * Filter, which ma_catvj to fetch.
+     */
+    where?: ma_catvjWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ma_catvjs to fetch.
+     */
+    orderBy?: ma_catvjOrderByWithRelationInput | ma_catvjOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ma_catvjs.
+     */
+    cursor?: ma_catvjWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ma_catvjs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ma_catvjs.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ma_catvjs.
+     */
+    distinct?: Ma_catvjScalarFieldEnum | Ma_catvjScalarFieldEnum[]
+  }
+
+  /**
+   * ma_catvj findFirstOrThrow
+   */
+  export type ma_catvjFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_catvj
+     */
+    select?: ma_catvjSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_catvj
+     */
+    omit?: ma_catvjOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_catvjInclude<ExtArgs> | null
+    /**
+     * Filter, which ma_catvj to fetch.
+     */
+    where?: ma_catvjWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ma_catvjs to fetch.
+     */
+    orderBy?: ma_catvjOrderByWithRelationInput | ma_catvjOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ma_catvjs.
+     */
+    cursor?: ma_catvjWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ma_catvjs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ma_catvjs.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ma_catvjs.
+     */
+    distinct?: Ma_catvjScalarFieldEnum | Ma_catvjScalarFieldEnum[]
+  }
+
+  /**
+   * ma_catvj findMany
+   */
+  export type ma_catvjFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_catvj
+     */
+    select?: ma_catvjSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_catvj
+     */
+    omit?: ma_catvjOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_catvjInclude<ExtArgs> | null
+    /**
+     * Filter, which ma_catvjs to fetch.
+     */
+    where?: ma_catvjWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ma_catvjs to fetch.
+     */
+    orderBy?: ma_catvjOrderByWithRelationInput | ma_catvjOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing ma_catvjs.
+     */
+    cursor?: ma_catvjWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ma_catvjs from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ma_catvjs.
+     */
+    skip?: number
+    distinct?: Ma_catvjScalarFieldEnum | Ma_catvjScalarFieldEnum[]
+  }
+
+  /**
+   * ma_catvj create
+   */
+  export type ma_catvjCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_catvj
+     */
+    select?: ma_catvjSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_catvj
+     */
+    omit?: ma_catvjOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_catvjInclude<ExtArgs> | null
+    /**
+     * The data needed to create a ma_catvj.
+     */
+    data: XOR<ma_catvjCreateInput, ma_catvjUncheckedCreateInput>
+  }
+
+  /**
+   * ma_catvj createMany
+   */
+  export type ma_catvjCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many ma_catvjs.
+     */
+    data: ma_catvjCreateManyInput | ma_catvjCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * ma_catvj createManyAndReturn
+   */
+  export type ma_catvjCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_catvj
+     */
+    select?: ma_catvjSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_catvj
+     */
+    omit?: ma_catvjOmit<ExtArgs> | null
+    /**
+     * The data used to create many ma_catvjs.
+     */
+    data: ma_catvjCreateManyInput | ma_catvjCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * ma_catvj update
+   */
+  export type ma_catvjUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_catvj
+     */
+    select?: ma_catvjSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_catvj
+     */
+    omit?: ma_catvjOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_catvjInclude<ExtArgs> | null
+    /**
+     * The data needed to update a ma_catvj.
+     */
+    data: XOR<ma_catvjUpdateInput, ma_catvjUncheckedUpdateInput>
+    /**
+     * Choose, which ma_catvj to update.
+     */
+    where: ma_catvjWhereUniqueInput
+  }
+
+  /**
+   * ma_catvj updateMany
+   */
+  export type ma_catvjUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update ma_catvjs.
+     */
+    data: XOR<ma_catvjUpdateManyMutationInput, ma_catvjUncheckedUpdateManyInput>
+    /**
+     * Filter which ma_catvjs to update
+     */
+    where?: ma_catvjWhereInput
+    /**
+     * Limit how many ma_catvjs to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * ma_catvj updateManyAndReturn
+   */
+  export type ma_catvjUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_catvj
+     */
+    select?: ma_catvjSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_catvj
+     */
+    omit?: ma_catvjOmit<ExtArgs> | null
+    /**
+     * The data used to update ma_catvjs.
+     */
+    data: XOR<ma_catvjUpdateManyMutationInput, ma_catvjUncheckedUpdateManyInput>
+    /**
+     * Filter which ma_catvjs to update
+     */
+    where?: ma_catvjWhereInput
+    /**
+     * Limit how many ma_catvjs to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * ma_catvj upsert
+   */
+  export type ma_catvjUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_catvj
+     */
+    select?: ma_catvjSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_catvj
+     */
+    omit?: ma_catvjOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_catvjInclude<ExtArgs> | null
+    /**
+     * The filter to search for the ma_catvj to update in case it exists.
+     */
+    where: ma_catvjWhereUniqueInput
+    /**
+     * In case the ma_catvj found by the `where` argument doesn't exist, create a new ma_catvj with this data.
+     */
+    create: XOR<ma_catvjCreateInput, ma_catvjUncheckedCreateInput>
+    /**
+     * In case the ma_catvj was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ma_catvjUpdateInput, ma_catvjUncheckedUpdateInput>
+  }
+
+  /**
+   * ma_catvj delete
+   */
+  export type ma_catvjDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_catvj
+     */
+    select?: ma_catvjSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_catvj
+     */
+    omit?: ma_catvjOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_catvjInclude<ExtArgs> | null
+    /**
+     * Filter which ma_catvj to delete.
+     */
+    where: ma_catvjWhereUniqueInput
+  }
+
+  /**
+   * ma_catvj deleteMany
+   */
+  export type ma_catvjDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ma_catvjs to delete
+     */
+    where?: ma_catvjWhereInput
+    /**
+     * Limit how many ma_catvjs to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * ma_catvj.paradas
+   */
+  export type ma_catvj$paradasArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_paradas_gastos
+     */
+    select?: tr_paradas_gastosSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_paradas_gastos
+     */
+    omit?: tr_paradas_gastosOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_paradas_gastosInclude<ExtArgs> | null
+    where?: tr_paradas_gastosWhereInput
+    orderBy?: tr_paradas_gastosOrderByWithRelationInput | tr_paradas_gastosOrderByWithRelationInput[]
+    cursor?: tr_paradas_gastosWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Tr_paradas_gastosScalarFieldEnum | Tr_paradas_gastosScalarFieldEnum[]
+  }
+
+  /**
+   * ma_catvj without action
+   */
+  export type ma_catvjDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ma_catvj
+     */
+    select?: ma_catvjSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ma_catvj
+     */
+    omit?: ma_catvjOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ma_catvjInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model tr_viajes
+   */
+
+  export type AggregateTr_viajes = {
+    _count: Tr_viajesCountAggregateOutputType | null
+    _avg: Tr_viajesAvgAggregateOutputType | null
+    _sum: Tr_viajesSumAggregateOutputType | null
+    _min: Tr_viajesMinAggregateOutputType | null
+    _max: Tr_viajesMaxAggregateOutputType | null
+  }
+
+  export type Tr_viajesAvgAggregateOutputType = {
+    clave: number | null
+    cve_emple: number | null
+    presupuesto: Decimal | null
+  }
+
+  export type Tr_viajesSumAggregateOutputType = {
+    clave: number | null
+    cve_emple: number | null
+    presupuesto: Decimal | null
+  }
+
+  export type Tr_viajesMinAggregateOutputType = {
+    clave: number | null
+    uuid_movil: string | null
+    cve_emple: number | null
+    titulo: string | null
+    fecha_inicio: Date | null
+    presupuesto: Decimal | null
+    status_viaje: string | null
+    sync_at: Date | null
+  }
+
+  export type Tr_viajesMaxAggregateOutputType = {
+    clave: number | null
+    uuid_movil: string | null
+    cve_emple: number | null
+    titulo: string | null
+    fecha_inicio: Date | null
+    presupuesto: Decimal | null
+    status_viaje: string | null
+    sync_at: Date | null
+  }
+
+  export type Tr_viajesCountAggregateOutputType = {
+    clave: number
+    uuid_movil: number
+    cve_emple: number
+    titulo: number
+    fecha_inicio: number
+    presupuesto: number
+    status_viaje: number
+    sync_at: number
+    _all: number
+  }
+
+
+  export type Tr_viajesAvgAggregateInputType = {
+    clave?: true
+    cve_emple?: true
+    presupuesto?: true
+  }
+
+  export type Tr_viajesSumAggregateInputType = {
+    clave?: true
+    cve_emple?: true
+    presupuesto?: true
+  }
+
+  export type Tr_viajesMinAggregateInputType = {
+    clave?: true
+    uuid_movil?: true
+    cve_emple?: true
+    titulo?: true
+    fecha_inicio?: true
+    presupuesto?: true
+    status_viaje?: true
+    sync_at?: true
+  }
+
+  export type Tr_viajesMaxAggregateInputType = {
+    clave?: true
+    uuid_movil?: true
+    cve_emple?: true
+    titulo?: true
+    fecha_inicio?: true
+    presupuesto?: true
+    status_viaje?: true
+    sync_at?: true
+  }
+
+  export type Tr_viajesCountAggregateInputType = {
+    clave?: true
+    uuid_movil?: true
+    cve_emple?: true
+    titulo?: true
+    fecha_inicio?: true
+    presupuesto?: true
+    status_viaje?: true
+    sync_at?: true
+    _all?: true
+  }
+
+  export type Tr_viajesAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tr_viajes to aggregate.
+     */
+    where?: tr_viajesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tr_viajes to fetch.
+     */
+    orderBy?: tr_viajesOrderByWithRelationInput | tr_viajesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: tr_viajesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tr_viajes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tr_viajes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned tr_viajes
+    **/
+    _count?: true | Tr_viajesCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Tr_viajesAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Tr_viajesSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Tr_viajesMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Tr_viajesMaxAggregateInputType
+  }
+
+  export type GetTr_viajesAggregateType<T extends Tr_viajesAggregateArgs> = {
+        [P in keyof T & keyof AggregateTr_viajes]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTr_viajes[P]>
+      : GetScalarType<T[P], AggregateTr_viajes[P]>
+  }
+
+
+
+
+  export type tr_viajesGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tr_viajesWhereInput
+    orderBy?: tr_viajesOrderByWithAggregationInput | tr_viajesOrderByWithAggregationInput[]
+    by: Tr_viajesScalarFieldEnum[] | Tr_viajesScalarFieldEnum
+    having?: tr_viajesScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Tr_viajesCountAggregateInputType | true
+    _avg?: Tr_viajesAvgAggregateInputType
+    _sum?: Tr_viajesSumAggregateInputType
+    _min?: Tr_viajesMinAggregateInputType
+    _max?: Tr_viajesMaxAggregateInputType
+  }
+
+  export type Tr_viajesGroupByOutputType = {
+    clave: number
+    uuid_movil: string
+    cve_emple: number
+    titulo: string
+    fecha_inicio: Date
+    presupuesto: Decimal
+    status_viaje: string
+    sync_at: Date
+    _count: Tr_viajesCountAggregateOutputType | null
+    _avg: Tr_viajesAvgAggregateOutputType | null
+    _sum: Tr_viajesSumAggregateOutputType | null
+    _min: Tr_viajesMinAggregateOutputType | null
+    _max: Tr_viajesMaxAggregateOutputType | null
+  }
+
+  type GetTr_viajesGroupByPayload<T extends tr_viajesGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Tr_viajesGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Tr_viajesGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Tr_viajesGroupByOutputType[P]>
+            : GetScalarType<T[P], Tr_viajesGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type tr_viajesSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    clave?: boolean
+    uuid_movil?: boolean
+    cve_emple?: boolean
+    titulo?: boolean
+    fecha_inicio?: boolean
+    presupuesto?: boolean
+    status_viaje?: boolean
+    sync_at?: boolean
+    empleado?: boolean | ma_empleDefaultArgs<ExtArgs>
+    paradas?: boolean | tr_viajes$paradasArgs<ExtArgs>
+    notas?: boolean | tr_viajes$notasArgs<ExtArgs>
+    _count?: boolean | Tr_viajesCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["tr_viajes"]>
+
+  export type tr_viajesSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    clave?: boolean
+    uuid_movil?: boolean
+    cve_emple?: boolean
+    titulo?: boolean
+    fecha_inicio?: boolean
+    presupuesto?: boolean
+    status_viaje?: boolean
+    sync_at?: boolean
+    empleado?: boolean | ma_empleDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["tr_viajes"]>
+
+  export type tr_viajesSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    clave?: boolean
+    uuid_movil?: boolean
+    cve_emple?: boolean
+    titulo?: boolean
+    fecha_inicio?: boolean
+    presupuesto?: boolean
+    status_viaje?: boolean
+    sync_at?: boolean
+    empleado?: boolean | ma_empleDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["tr_viajes"]>
+
+  export type tr_viajesSelectScalar = {
+    clave?: boolean
+    uuid_movil?: boolean
+    cve_emple?: boolean
+    titulo?: boolean
+    fecha_inicio?: boolean
+    presupuesto?: boolean
+    status_viaje?: boolean
+    sync_at?: boolean
+  }
+
+  export type tr_viajesOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"clave" | "uuid_movil" | "cve_emple" | "titulo" | "fecha_inicio" | "presupuesto" | "status_viaje" | "sync_at", ExtArgs["result"]["tr_viajes"]>
+  export type tr_viajesInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    empleado?: boolean | ma_empleDefaultArgs<ExtArgs>
+    paradas?: boolean | tr_viajes$paradasArgs<ExtArgs>
+    notas?: boolean | tr_viajes$notasArgs<ExtArgs>
+    _count?: boolean | Tr_viajesCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type tr_viajesIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    empleado?: boolean | ma_empleDefaultArgs<ExtArgs>
+  }
+  export type tr_viajesIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    empleado?: boolean | ma_empleDefaultArgs<ExtArgs>
+  }
+
+  export type $tr_viajesPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "tr_viajes"
+    objects: {
+      empleado: Prisma.$ma_emplePayload<ExtArgs>
+      paradas: Prisma.$tr_paradas_gastosPayload<ExtArgs>[]
+      notas: Prisma.$tr_notas_viajePayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      clave: number
+      uuid_movil: string
+      cve_emple: number
+      titulo: string
+      fecha_inicio: Date
+      presupuesto: Prisma.Decimal
+      status_viaje: string
+      sync_at: Date
+    }, ExtArgs["result"]["tr_viajes"]>
+    composites: {}
+  }
+
+  type tr_viajesGetPayload<S extends boolean | null | undefined | tr_viajesDefaultArgs> = $Result.GetResult<Prisma.$tr_viajesPayload, S>
+
+  type tr_viajesCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<tr_viajesFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Tr_viajesCountAggregateInputType | true
+    }
+
+  export interface tr_viajesDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['tr_viajes'], meta: { name: 'tr_viajes' } }
+    /**
+     * Find zero or one Tr_viajes that matches the filter.
+     * @param {tr_viajesFindUniqueArgs} args - Arguments to find a Tr_viajes
+     * @example
+     * // Get one Tr_viajes
+     * const tr_viajes = await prisma.tr_viajes.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends tr_viajesFindUniqueArgs>(args: SelectSubset<T, tr_viajesFindUniqueArgs<ExtArgs>>): Prisma__tr_viajesClient<$Result.GetResult<Prisma.$tr_viajesPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Tr_viajes that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {tr_viajesFindUniqueOrThrowArgs} args - Arguments to find a Tr_viajes
+     * @example
+     * // Get one Tr_viajes
+     * const tr_viajes = await prisma.tr_viajes.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends tr_viajesFindUniqueOrThrowArgs>(args: SelectSubset<T, tr_viajesFindUniqueOrThrowArgs<ExtArgs>>): Prisma__tr_viajesClient<$Result.GetResult<Prisma.$tr_viajesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Tr_viajes that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_viajesFindFirstArgs} args - Arguments to find a Tr_viajes
+     * @example
+     * // Get one Tr_viajes
+     * const tr_viajes = await prisma.tr_viajes.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends tr_viajesFindFirstArgs>(args?: SelectSubset<T, tr_viajesFindFirstArgs<ExtArgs>>): Prisma__tr_viajesClient<$Result.GetResult<Prisma.$tr_viajesPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Tr_viajes that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_viajesFindFirstOrThrowArgs} args - Arguments to find a Tr_viajes
+     * @example
+     * // Get one Tr_viajes
+     * const tr_viajes = await prisma.tr_viajes.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends tr_viajesFindFirstOrThrowArgs>(args?: SelectSubset<T, tr_viajesFindFirstOrThrowArgs<ExtArgs>>): Prisma__tr_viajesClient<$Result.GetResult<Prisma.$tr_viajesPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Tr_viajes that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_viajesFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Tr_viajes
+     * const tr_viajes = await prisma.tr_viajes.findMany()
+     * 
+     * // Get first 10 Tr_viajes
+     * const tr_viajes = await prisma.tr_viajes.findMany({ take: 10 })
+     * 
+     * // Only select the `clave`
+     * const tr_viajesWithClaveOnly = await prisma.tr_viajes.findMany({ select: { clave: true } })
+     * 
+     */
+    findMany<T extends tr_viajesFindManyArgs>(args?: SelectSubset<T, tr_viajesFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tr_viajesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Tr_viajes.
+     * @param {tr_viajesCreateArgs} args - Arguments to create a Tr_viajes.
+     * @example
+     * // Create one Tr_viajes
+     * const Tr_viajes = await prisma.tr_viajes.create({
+     *   data: {
+     *     // ... data to create a Tr_viajes
+     *   }
+     * })
+     * 
+     */
+    create<T extends tr_viajesCreateArgs>(args: SelectSubset<T, tr_viajesCreateArgs<ExtArgs>>): Prisma__tr_viajesClient<$Result.GetResult<Prisma.$tr_viajesPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Tr_viajes.
+     * @param {tr_viajesCreateManyArgs} args - Arguments to create many Tr_viajes.
+     * @example
+     * // Create many Tr_viajes
+     * const tr_viajes = await prisma.tr_viajes.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends tr_viajesCreateManyArgs>(args?: SelectSubset<T, tr_viajesCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Tr_viajes and returns the data saved in the database.
+     * @param {tr_viajesCreateManyAndReturnArgs} args - Arguments to create many Tr_viajes.
+     * @example
+     * // Create many Tr_viajes
+     * const tr_viajes = await prisma.tr_viajes.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Tr_viajes and only return the `clave`
+     * const tr_viajesWithClaveOnly = await prisma.tr_viajes.createManyAndReturn({
+     *   select: { clave: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends tr_viajesCreateManyAndReturnArgs>(args?: SelectSubset<T, tr_viajesCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tr_viajesPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Tr_viajes.
+     * @param {tr_viajesDeleteArgs} args - Arguments to delete one Tr_viajes.
+     * @example
+     * // Delete one Tr_viajes
+     * const Tr_viajes = await prisma.tr_viajes.delete({
+     *   where: {
+     *     // ... filter to delete one Tr_viajes
+     *   }
+     * })
+     * 
+     */
+    delete<T extends tr_viajesDeleteArgs>(args: SelectSubset<T, tr_viajesDeleteArgs<ExtArgs>>): Prisma__tr_viajesClient<$Result.GetResult<Prisma.$tr_viajesPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Tr_viajes.
+     * @param {tr_viajesUpdateArgs} args - Arguments to update one Tr_viajes.
+     * @example
+     * // Update one Tr_viajes
+     * const tr_viajes = await prisma.tr_viajes.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends tr_viajesUpdateArgs>(args: SelectSubset<T, tr_viajesUpdateArgs<ExtArgs>>): Prisma__tr_viajesClient<$Result.GetResult<Prisma.$tr_viajesPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Tr_viajes.
+     * @param {tr_viajesDeleteManyArgs} args - Arguments to filter Tr_viajes to delete.
+     * @example
+     * // Delete a few Tr_viajes
+     * const { count } = await prisma.tr_viajes.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends tr_viajesDeleteManyArgs>(args?: SelectSubset<T, tr_viajesDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tr_viajes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_viajesUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Tr_viajes
+     * const tr_viajes = await prisma.tr_viajes.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends tr_viajesUpdateManyArgs>(args: SelectSubset<T, tr_viajesUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tr_viajes and returns the data updated in the database.
+     * @param {tr_viajesUpdateManyAndReturnArgs} args - Arguments to update many Tr_viajes.
+     * @example
+     * // Update many Tr_viajes
+     * const tr_viajes = await prisma.tr_viajes.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Tr_viajes and only return the `clave`
+     * const tr_viajesWithClaveOnly = await prisma.tr_viajes.updateManyAndReturn({
+     *   select: { clave: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends tr_viajesUpdateManyAndReturnArgs>(args: SelectSubset<T, tr_viajesUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tr_viajesPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Tr_viajes.
+     * @param {tr_viajesUpsertArgs} args - Arguments to update or create a Tr_viajes.
+     * @example
+     * // Update or create a Tr_viajes
+     * const tr_viajes = await prisma.tr_viajes.upsert({
+     *   create: {
+     *     // ... data to create a Tr_viajes
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Tr_viajes we want to update
+     *   }
+     * })
+     */
+    upsert<T extends tr_viajesUpsertArgs>(args: SelectSubset<T, tr_viajesUpsertArgs<ExtArgs>>): Prisma__tr_viajesClient<$Result.GetResult<Prisma.$tr_viajesPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Tr_viajes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_viajesCountArgs} args - Arguments to filter Tr_viajes to count.
+     * @example
+     * // Count the number of Tr_viajes
+     * const count = await prisma.tr_viajes.count({
+     *   where: {
+     *     // ... the filter for the Tr_viajes we want to count
+     *   }
+     * })
+    **/
+    count<T extends tr_viajesCountArgs>(
+      args?: Subset<T, tr_viajesCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Tr_viajesCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Tr_viajes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tr_viajesAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Tr_viajesAggregateArgs>(args: Subset<T, Tr_viajesAggregateArgs>): Prisma.PrismaPromise<GetTr_viajesAggregateType<T>>
+
+    /**
+     * Group by Tr_viajes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_viajesGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends tr_viajesGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: tr_viajesGroupByArgs['orderBy'] }
+        : { orderBy?: tr_viajesGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, tr_viajesGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTr_viajesGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the tr_viajes model
+   */
+  readonly fields: tr_viajesFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for tr_viajes.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__tr_viajesClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    empleado<T extends ma_empleDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ma_empleDefaultArgs<ExtArgs>>): Prisma__ma_empleClient<$Result.GetResult<Prisma.$ma_emplePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    paradas<T extends tr_viajes$paradasArgs<ExtArgs> = {}>(args?: Subset<T, tr_viajes$paradasArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tr_paradas_gastosPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    notas<T extends tr_viajes$notasArgs<ExtArgs> = {}>(args?: Subset<T, tr_viajes$notasArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tr_notas_viajePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the tr_viajes model
+   */
+  interface tr_viajesFieldRefs {
+    readonly clave: FieldRef<"tr_viajes", 'Int'>
+    readonly uuid_movil: FieldRef<"tr_viajes", 'String'>
+    readonly cve_emple: FieldRef<"tr_viajes", 'Int'>
+    readonly titulo: FieldRef<"tr_viajes", 'String'>
+    readonly fecha_inicio: FieldRef<"tr_viajes", 'DateTime'>
+    readonly presupuesto: FieldRef<"tr_viajes", 'Decimal'>
+    readonly status_viaje: FieldRef<"tr_viajes", 'String'>
+    readonly sync_at: FieldRef<"tr_viajes", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * tr_viajes findUnique
+   */
+  export type tr_viajesFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_viajes
+     */
+    select?: tr_viajesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_viajes
+     */
+    omit?: tr_viajesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_viajesInclude<ExtArgs> | null
+    /**
+     * Filter, which tr_viajes to fetch.
+     */
+    where: tr_viajesWhereUniqueInput
+  }
+
+  /**
+   * tr_viajes findUniqueOrThrow
+   */
+  export type tr_viajesFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_viajes
+     */
+    select?: tr_viajesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_viajes
+     */
+    omit?: tr_viajesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_viajesInclude<ExtArgs> | null
+    /**
+     * Filter, which tr_viajes to fetch.
+     */
+    where: tr_viajesWhereUniqueInput
+  }
+
+  /**
+   * tr_viajes findFirst
+   */
+  export type tr_viajesFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_viajes
+     */
+    select?: tr_viajesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_viajes
+     */
+    omit?: tr_viajesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_viajesInclude<ExtArgs> | null
+    /**
+     * Filter, which tr_viajes to fetch.
+     */
+    where?: tr_viajesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tr_viajes to fetch.
+     */
+    orderBy?: tr_viajesOrderByWithRelationInput | tr_viajesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tr_viajes.
+     */
+    cursor?: tr_viajesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tr_viajes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tr_viajes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tr_viajes.
+     */
+    distinct?: Tr_viajesScalarFieldEnum | Tr_viajesScalarFieldEnum[]
+  }
+
+  /**
+   * tr_viajes findFirstOrThrow
+   */
+  export type tr_viajesFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_viajes
+     */
+    select?: tr_viajesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_viajes
+     */
+    omit?: tr_viajesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_viajesInclude<ExtArgs> | null
+    /**
+     * Filter, which tr_viajes to fetch.
+     */
+    where?: tr_viajesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tr_viajes to fetch.
+     */
+    orderBy?: tr_viajesOrderByWithRelationInput | tr_viajesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tr_viajes.
+     */
+    cursor?: tr_viajesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tr_viajes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tr_viajes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tr_viajes.
+     */
+    distinct?: Tr_viajesScalarFieldEnum | Tr_viajesScalarFieldEnum[]
+  }
+
+  /**
+   * tr_viajes findMany
+   */
+  export type tr_viajesFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_viajes
+     */
+    select?: tr_viajesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_viajes
+     */
+    omit?: tr_viajesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_viajesInclude<ExtArgs> | null
+    /**
+     * Filter, which tr_viajes to fetch.
+     */
+    where?: tr_viajesWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tr_viajes to fetch.
+     */
+    orderBy?: tr_viajesOrderByWithRelationInput | tr_viajesOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing tr_viajes.
+     */
+    cursor?: tr_viajesWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tr_viajes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tr_viajes.
+     */
+    skip?: number
+    distinct?: Tr_viajesScalarFieldEnum | Tr_viajesScalarFieldEnum[]
+  }
+
+  /**
+   * tr_viajes create
+   */
+  export type tr_viajesCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_viajes
+     */
+    select?: tr_viajesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_viajes
+     */
+    omit?: tr_viajesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_viajesInclude<ExtArgs> | null
+    /**
+     * The data needed to create a tr_viajes.
+     */
+    data: XOR<tr_viajesCreateInput, tr_viajesUncheckedCreateInput>
+  }
+
+  /**
+   * tr_viajes createMany
+   */
+  export type tr_viajesCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many tr_viajes.
+     */
+    data: tr_viajesCreateManyInput | tr_viajesCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * tr_viajes createManyAndReturn
+   */
+  export type tr_viajesCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_viajes
+     */
+    select?: tr_viajesSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_viajes
+     */
+    omit?: tr_viajesOmit<ExtArgs> | null
+    /**
+     * The data used to create many tr_viajes.
+     */
+    data: tr_viajesCreateManyInput | tr_viajesCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_viajesIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * tr_viajes update
+   */
+  export type tr_viajesUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_viajes
+     */
+    select?: tr_viajesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_viajes
+     */
+    omit?: tr_viajesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_viajesInclude<ExtArgs> | null
+    /**
+     * The data needed to update a tr_viajes.
+     */
+    data: XOR<tr_viajesUpdateInput, tr_viajesUncheckedUpdateInput>
+    /**
+     * Choose, which tr_viajes to update.
+     */
+    where: tr_viajesWhereUniqueInput
+  }
+
+  /**
+   * tr_viajes updateMany
+   */
+  export type tr_viajesUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update tr_viajes.
+     */
+    data: XOR<tr_viajesUpdateManyMutationInput, tr_viajesUncheckedUpdateManyInput>
+    /**
+     * Filter which tr_viajes to update
+     */
+    where?: tr_viajesWhereInput
+    /**
+     * Limit how many tr_viajes to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * tr_viajes updateManyAndReturn
+   */
+  export type tr_viajesUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_viajes
+     */
+    select?: tr_viajesSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_viajes
+     */
+    omit?: tr_viajesOmit<ExtArgs> | null
+    /**
+     * The data used to update tr_viajes.
+     */
+    data: XOR<tr_viajesUpdateManyMutationInput, tr_viajesUncheckedUpdateManyInput>
+    /**
+     * Filter which tr_viajes to update
+     */
+    where?: tr_viajesWhereInput
+    /**
+     * Limit how many tr_viajes to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_viajesIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * tr_viajes upsert
+   */
+  export type tr_viajesUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_viajes
+     */
+    select?: tr_viajesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_viajes
+     */
+    omit?: tr_viajesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_viajesInclude<ExtArgs> | null
+    /**
+     * The filter to search for the tr_viajes to update in case it exists.
+     */
+    where: tr_viajesWhereUniqueInput
+    /**
+     * In case the tr_viajes found by the `where` argument doesn't exist, create a new tr_viajes with this data.
+     */
+    create: XOR<tr_viajesCreateInput, tr_viajesUncheckedCreateInput>
+    /**
+     * In case the tr_viajes was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<tr_viajesUpdateInput, tr_viajesUncheckedUpdateInput>
+  }
+
+  /**
+   * tr_viajes delete
+   */
+  export type tr_viajesDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_viajes
+     */
+    select?: tr_viajesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_viajes
+     */
+    omit?: tr_viajesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_viajesInclude<ExtArgs> | null
+    /**
+     * Filter which tr_viajes to delete.
+     */
+    where: tr_viajesWhereUniqueInput
+  }
+
+  /**
+   * tr_viajes deleteMany
+   */
+  export type tr_viajesDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tr_viajes to delete
+     */
+    where?: tr_viajesWhereInput
+    /**
+     * Limit how many tr_viajes to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * tr_viajes.paradas
+   */
+  export type tr_viajes$paradasArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_paradas_gastos
+     */
+    select?: tr_paradas_gastosSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_paradas_gastos
+     */
+    omit?: tr_paradas_gastosOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_paradas_gastosInclude<ExtArgs> | null
+    where?: tr_paradas_gastosWhereInput
+    orderBy?: tr_paradas_gastosOrderByWithRelationInput | tr_paradas_gastosOrderByWithRelationInput[]
+    cursor?: tr_paradas_gastosWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Tr_paradas_gastosScalarFieldEnum | Tr_paradas_gastosScalarFieldEnum[]
+  }
+
+  /**
+   * tr_viajes.notas
+   */
+  export type tr_viajes$notasArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_notas_viaje
+     */
+    select?: tr_notas_viajeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_notas_viaje
+     */
+    omit?: tr_notas_viajeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_notas_viajeInclude<ExtArgs> | null
+    where?: tr_notas_viajeWhereInput
+    orderBy?: tr_notas_viajeOrderByWithRelationInput | tr_notas_viajeOrderByWithRelationInput[]
+    cursor?: tr_notas_viajeWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Tr_notas_viajeScalarFieldEnum | Tr_notas_viajeScalarFieldEnum[]
+  }
+
+  /**
+   * tr_viajes without action
+   */
+  export type tr_viajesDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_viajes
+     */
+    select?: tr_viajesSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_viajes
+     */
+    omit?: tr_viajesOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_viajesInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model tr_paradas_gastos
+   */
+
+  export type AggregateTr_paradas_gastos = {
+    _count: Tr_paradas_gastosCountAggregateOutputType | null
+    _avg: Tr_paradas_gastosAvgAggregateOutputType | null
+    _sum: Tr_paradas_gastosSumAggregateOutputType | null
+    _min: Tr_paradas_gastosMinAggregateOutputType | null
+    _max: Tr_paradas_gastosMaxAggregateOutputType | null
+  }
+
+  export type Tr_paradas_gastosAvgAggregateOutputType = {
+    clave: number | null
+    cve_viaje: number | null
+    cve_catvj: number | null
+    monto: Decimal | null
+    propina: Decimal | null
+    lat: number | null
+    lng: number | null
+  }
+
+  export type Tr_paradas_gastosSumAggregateOutputType = {
+    clave: number | null
+    cve_viaje: number | null
+    cve_catvj: number | null
+    monto: Decimal | null
+    propina: Decimal | null
+    lat: number | null
+    lng: number | null
+  }
+
+  export type Tr_paradas_gastosMinAggregateOutputType = {
+    clave: number | null
+    cve_viaje: number | null
+    cve_catvj: number | null
+    lugar: string | null
+    hora_registro: string | null
+    monto: Decimal | null
+    propina: Decimal | null
+    facturable: boolean | null
+    descripcion: string | null
+    lat: number | null
+    lng: number | null
+  }
+
+  export type Tr_paradas_gastosMaxAggregateOutputType = {
+    clave: number | null
+    cve_viaje: number | null
+    cve_catvj: number | null
+    lugar: string | null
+    hora_registro: string | null
+    monto: Decimal | null
+    propina: Decimal | null
+    facturable: boolean | null
+    descripcion: string | null
+    lat: number | null
+    lng: number | null
+  }
+
+  export type Tr_paradas_gastosCountAggregateOutputType = {
+    clave: number
+    cve_viaje: number
+    cve_catvj: number
+    lugar: number
+    hora_registro: number
+    monto: number
+    propina: number
+    facturable: number
+    descripcion: number
+    lat: number
+    lng: number
+    _all: number
+  }
+
+
+  export type Tr_paradas_gastosAvgAggregateInputType = {
+    clave?: true
+    cve_viaje?: true
+    cve_catvj?: true
+    monto?: true
+    propina?: true
+    lat?: true
+    lng?: true
+  }
+
+  export type Tr_paradas_gastosSumAggregateInputType = {
+    clave?: true
+    cve_viaje?: true
+    cve_catvj?: true
+    monto?: true
+    propina?: true
+    lat?: true
+    lng?: true
+  }
+
+  export type Tr_paradas_gastosMinAggregateInputType = {
+    clave?: true
+    cve_viaje?: true
+    cve_catvj?: true
+    lugar?: true
+    hora_registro?: true
+    monto?: true
+    propina?: true
+    facturable?: true
+    descripcion?: true
+    lat?: true
+    lng?: true
+  }
+
+  export type Tr_paradas_gastosMaxAggregateInputType = {
+    clave?: true
+    cve_viaje?: true
+    cve_catvj?: true
+    lugar?: true
+    hora_registro?: true
+    monto?: true
+    propina?: true
+    facturable?: true
+    descripcion?: true
+    lat?: true
+    lng?: true
+  }
+
+  export type Tr_paradas_gastosCountAggregateInputType = {
+    clave?: true
+    cve_viaje?: true
+    cve_catvj?: true
+    lugar?: true
+    hora_registro?: true
+    monto?: true
+    propina?: true
+    facturable?: true
+    descripcion?: true
+    lat?: true
+    lng?: true
+    _all?: true
+  }
+
+  export type Tr_paradas_gastosAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tr_paradas_gastos to aggregate.
+     */
+    where?: tr_paradas_gastosWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tr_paradas_gastos to fetch.
+     */
+    orderBy?: tr_paradas_gastosOrderByWithRelationInput | tr_paradas_gastosOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: tr_paradas_gastosWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tr_paradas_gastos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tr_paradas_gastos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned tr_paradas_gastos
+    **/
+    _count?: true | Tr_paradas_gastosCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Tr_paradas_gastosAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Tr_paradas_gastosSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Tr_paradas_gastosMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Tr_paradas_gastosMaxAggregateInputType
+  }
+
+  export type GetTr_paradas_gastosAggregateType<T extends Tr_paradas_gastosAggregateArgs> = {
+        [P in keyof T & keyof AggregateTr_paradas_gastos]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTr_paradas_gastos[P]>
+      : GetScalarType<T[P], AggregateTr_paradas_gastos[P]>
+  }
+
+
+
+
+  export type tr_paradas_gastosGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tr_paradas_gastosWhereInput
+    orderBy?: tr_paradas_gastosOrderByWithAggregationInput | tr_paradas_gastosOrderByWithAggregationInput[]
+    by: Tr_paradas_gastosScalarFieldEnum[] | Tr_paradas_gastosScalarFieldEnum
+    having?: tr_paradas_gastosScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Tr_paradas_gastosCountAggregateInputType | true
+    _avg?: Tr_paradas_gastosAvgAggregateInputType
+    _sum?: Tr_paradas_gastosSumAggregateInputType
+    _min?: Tr_paradas_gastosMinAggregateInputType
+    _max?: Tr_paradas_gastosMaxAggregateInputType
+  }
+
+  export type Tr_paradas_gastosGroupByOutputType = {
+    clave: number
+    cve_viaje: number
+    cve_catvj: number
+    lugar: string
+    hora_registro: string
+    monto: Decimal
+    propina: Decimal
+    facturable: boolean
+    descripcion: string | null
+    lat: number | null
+    lng: number | null
+    _count: Tr_paradas_gastosCountAggregateOutputType | null
+    _avg: Tr_paradas_gastosAvgAggregateOutputType | null
+    _sum: Tr_paradas_gastosSumAggregateOutputType | null
+    _min: Tr_paradas_gastosMinAggregateOutputType | null
+    _max: Tr_paradas_gastosMaxAggregateOutputType | null
+  }
+
+  type GetTr_paradas_gastosGroupByPayload<T extends tr_paradas_gastosGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Tr_paradas_gastosGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Tr_paradas_gastosGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Tr_paradas_gastosGroupByOutputType[P]>
+            : GetScalarType<T[P], Tr_paradas_gastosGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type tr_paradas_gastosSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    clave?: boolean
+    cve_viaje?: boolean
+    cve_catvj?: boolean
+    lugar?: boolean
+    hora_registro?: boolean
+    monto?: boolean
+    propina?: boolean
+    facturable?: boolean
+    descripcion?: boolean
+    lat?: boolean
+    lng?: boolean
+    viaje?: boolean | tr_viajesDefaultArgs<ExtArgs>
+    categoria?: boolean | ma_catvjDefaultArgs<ExtArgs>
+    evidencias?: boolean | tr_paradas_gastos$evidenciasArgs<ExtArgs>
+    _count?: boolean | Tr_paradas_gastosCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["tr_paradas_gastos"]>
+
+  export type tr_paradas_gastosSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    clave?: boolean
+    cve_viaje?: boolean
+    cve_catvj?: boolean
+    lugar?: boolean
+    hora_registro?: boolean
+    monto?: boolean
+    propina?: boolean
+    facturable?: boolean
+    descripcion?: boolean
+    lat?: boolean
+    lng?: boolean
+    viaje?: boolean | tr_viajesDefaultArgs<ExtArgs>
+    categoria?: boolean | ma_catvjDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["tr_paradas_gastos"]>
+
+  export type tr_paradas_gastosSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    clave?: boolean
+    cve_viaje?: boolean
+    cve_catvj?: boolean
+    lugar?: boolean
+    hora_registro?: boolean
+    monto?: boolean
+    propina?: boolean
+    facturable?: boolean
+    descripcion?: boolean
+    lat?: boolean
+    lng?: boolean
+    viaje?: boolean | tr_viajesDefaultArgs<ExtArgs>
+    categoria?: boolean | ma_catvjDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["tr_paradas_gastos"]>
+
+  export type tr_paradas_gastosSelectScalar = {
+    clave?: boolean
+    cve_viaje?: boolean
+    cve_catvj?: boolean
+    lugar?: boolean
+    hora_registro?: boolean
+    monto?: boolean
+    propina?: boolean
+    facturable?: boolean
+    descripcion?: boolean
+    lat?: boolean
+    lng?: boolean
+  }
+
+  export type tr_paradas_gastosOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"clave" | "cve_viaje" | "cve_catvj" | "lugar" | "hora_registro" | "monto" | "propina" | "facturable" | "descripcion" | "lat" | "lng", ExtArgs["result"]["tr_paradas_gastos"]>
+  export type tr_paradas_gastosInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    viaje?: boolean | tr_viajesDefaultArgs<ExtArgs>
+    categoria?: boolean | ma_catvjDefaultArgs<ExtArgs>
+    evidencias?: boolean | tr_paradas_gastos$evidenciasArgs<ExtArgs>
+    _count?: boolean | Tr_paradas_gastosCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type tr_paradas_gastosIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    viaje?: boolean | tr_viajesDefaultArgs<ExtArgs>
+    categoria?: boolean | ma_catvjDefaultArgs<ExtArgs>
+  }
+  export type tr_paradas_gastosIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    viaje?: boolean | tr_viajesDefaultArgs<ExtArgs>
+    categoria?: boolean | ma_catvjDefaultArgs<ExtArgs>
+  }
+
+  export type $tr_paradas_gastosPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "tr_paradas_gastos"
+    objects: {
+      viaje: Prisma.$tr_viajesPayload<ExtArgs>
+      categoria: Prisma.$ma_catvjPayload<ExtArgs>
+      evidencias: Prisma.$tr_evidenciaPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      clave: number
+      cve_viaje: number
+      cve_catvj: number
+      lugar: string
+      hora_registro: string
+      monto: Prisma.Decimal
+      propina: Prisma.Decimal
+      facturable: boolean
+      descripcion: string | null
+      lat: number | null
+      lng: number | null
+    }, ExtArgs["result"]["tr_paradas_gastos"]>
+    composites: {}
+  }
+
+  type tr_paradas_gastosGetPayload<S extends boolean | null | undefined | tr_paradas_gastosDefaultArgs> = $Result.GetResult<Prisma.$tr_paradas_gastosPayload, S>
+
+  type tr_paradas_gastosCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<tr_paradas_gastosFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Tr_paradas_gastosCountAggregateInputType | true
+    }
+
+  export interface tr_paradas_gastosDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['tr_paradas_gastos'], meta: { name: 'tr_paradas_gastos' } }
+    /**
+     * Find zero or one Tr_paradas_gastos that matches the filter.
+     * @param {tr_paradas_gastosFindUniqueArgs} args - Arguments to find a Tr_paradas_gastos
+     * @example
+     * // Get one Tr_paradas_gastos
+     * const tr_paradas_gastos = await prisma.tr_paradas_gastos.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends tr_paradas_gastosFindUniqueArgs>(args: SelectSubset<T, tr_paradas_gastosFindUniqueArgs<ExtArgs>>): Prisma__tr_paradas_gastosClient<$Result.GetResult<Prisma.$tr_paradas_gastosPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Tr_paradas_gastos that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {tr_paradas_gastosFindUniqueOrThrowArgs} args - Arguments to find a Tr_paradas_gastos
+     * @example
+     * // Get one Tr_paradas_gastos
+     * const tr_paradas_gastos = await prisma.tr_paradas_gastos.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends tr_paradas_gastosFindUniqueOrThrowArgs>(args: SelectSubset<T, tr_paradas_gastosFindUniqueOrThrowArgs<ExtArgs>>): Prisma__tr_paradas_gastosClient<$Result.GetResult<Prisma.$tr_paradas_gastosPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Tr_paradas_gastos that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_paradas_gastosFindFirstArgs} args - Arguments to find a Tr_paradas_gastos
+     * @example
+     * // Get one Tr_paradas_gastos
+     * const tr_paradas_gastos = await prisma.tr_paradas_gastos.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends tr_paradas_gastosFindFirstArgs>(args?: SelectSubset<T, tr_paradas_gastosFindFirstArgs<ExtArgs>>): Prisma__tr_paradas_gastosClient<$Result.GetResult<Prisma.$tr_paradas_gastosPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Tr_paradas_gastos that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_paradas_gastosFindFirstOrThrowArgs} args - Arguments to find a Tr_paradas_gastos
+     * @example
+     * // Get one Tr_paradas_gastos
+     * const tr_paradas_gastos = await prisma.tr_paradas_gastos.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends tr_paradas_gastosFindFirstOrThrowArgs>(args?: SelectSubset<T, tr_paradas_gastosFindFirstOrThrowArgs<ExtArgs>>): Prisma__tr_paradas_gastosClient<$Result.GetResult<Prisma.$tr_paradas_gastosPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Tr_paradas_gastos that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_paradas_gastosFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Tr_paradas_gastos
+     * const tr_paradas_gastos = await prisma.tr_paradas_gastos.findMany()
+     * 
+     * // Get first 10 Tr_paradas_gastos
+     * const tr_paradas_gastos = await prisma.tr_paradas_gastos.findMany({ take: 10 })
+     * 
+     * // Only select the `clave`
+     * const tr_paradas_gastosWithClaveOnly = await prisma.tr_paradas_gastos.findMany({ select: { clave: true } })
+     * 
+     */
+    findMany<T extends tr_paradas_gastosFindManyArgs>(args?: SelectSubset<T, tr_paradas_gastosFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tr_paradas_gastosPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Tr_paradas_gastos.
+     * @param {tr_paradas_gastosCreateArgs} args - Arguments to create a Tr_paradas_gastos.
+     * @example
+     * // Create one Tr_paradas_gastos
+     * const Tr_paradas_gastos = await prisma.tr_paradas_gastos.create({
+     *   data: {
+     *     // ... data to create a Tr_paradas_gastos
+     *   }
+     * })
+     * 
+     */
+    create<T extends tr_paradas_gastosCreateArgs>(args: SelectSubset<T, tr_paradas_gastosCreateArgs<ExtArgs>>): Prisma__tr_paradas_gastosClient<$Result.GetResult<Prisma.$tr_paradas_gastosPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Tr_paradas_gastos.
+     * @param {tr_paradas_gastosCreateManyArgs} args - Arguments to create many Tr_paradas_gastos.
+     * @example
+     * // Create many Tr_paradas_gastos
+     * const tr_paradas_gastos = await prisma.tr_paradas_gastos.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends tr_paradas_gastosCreateManyArgs>(args?: SelectSubset<T, tr_paradas_gastosCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Tr_paradas_gastos and returns the data saved in the database.
+     * @param {tr_paradas_gastosCreateManyAndReturnArgs} args - Arguments to create many Tr_paradas_gastos.
+     * @example
+     * // Create many Tr_paradas_gastos
+     * const tr_paradas_gastos = await prisma.tr_paradas_gastos.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Tr_paradas_gastos and only return the `clave`
+     * const tr_paradas_gastosWithClaveOnly = await prisma.tr_paradas_gastos.createManyAndReturn({
+     *   select: { clave: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends tr_paradas_gastosCreateManyAndReturnArgs>(args?: SelectSubset<T, tr_paradas_gastosCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tr_paradas_gastosPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Tr_paradas_gastos.
+     * @param {tr_paradas_gastosDeleteArgs} args - Arguments to delete one Tr_paradas_gastos.
+     * @example
+     * // Delete one Tr_paradas_gastos
+     * const Tr_paradas_gastos = await prisma.tr_paradas_gastos.delete({
+     *   where: {
+     *     // ... filter to delete one Tr_paradas_gastos
+     *   }
+     * })
+     * 
+     */
+    delete<T extends tr_paradas_gastosDeleteArgs>(args: SelectSubset<T, tr_paradas_gastosDeleteArgs<ExtArgs>>): Prisma__tr_paradas_gastosClient<$Result.GetResult<Prisma.$tr_paradas_gastosPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Tr_paradas_gastos.
+     * @param {tr_paradas_gastosUpdateArgs} args - Arguments to update one Tr_paradas_gastos.
+     * @example
+     * // Update one Tr_paradas_gastos
+     * const tr_paradas_gastos = await prisma.tr_paradas_gastos.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends tr_paradas_gastosUpdateArgs>(args: SelectSubset<T, tr_paradas_gastosUpdateArgs<ExtArgs>>): Prisma__tr_paradas_gastosClient<$Result.GetResult<Prisma.$tr_paradas_gastosPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Tr_paradas_gastos.
+     * @param {tr_paradas_gastosDeleteManyArgs} args - Arguments to filter Tr_paradas_gastos to delete.
+     * @example
+     * // Delete a few Tr_paradas_gastos
+     * const { count } = await prisma.tr_paradas_gastos.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends tr_paradas_gastosDeleteManyArgs>(args?: SelectSubset<T, tr_paradas_gastosDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tr_paradas_gastos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_paradas_gastosUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Tr_paradas_gastos
+     * const tr_paradas_gastos = await prisma.tr_paradas_gastos.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends tr_paradas_gastosUpdateManyArgs>(args: SelectSubset<T, tr_paradas_gastosUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tr_paradas_gastos and returns the data updated in the database.
+     * @param {tr_paradas_gastosUpdateManyAndReturnArgs} args - Arguments to update many Tr_paradas_gastos.
+     * @example
+     * // Update many Tr_paradas_gastos
+     * const tr_paradas_gastos = await prisma.tr_paradas_gastos.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Tr_paradas_gastos and only return the `clave`
+     * const tr_paradas_gastosWithClaveOnly = await prisma.tr_paradas_gastos.updateManyAndReturn({
+     *   select: { clave: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends tr_paradas_gastosUpdateManyAndReturnArgs>(args: SelectSubset<T, tr_paradas_gastosUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tr_paradas_gastosPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Tr_paradas_gastos.
+     * @param {tr_paradas_gastosUpsertArgs} args - Arguments to update or create a Tr_paradas_gastos.
+     * @example
+     * // Update or create a Tr_paradas_gastos
+     * const tr_paradas_gastos = await prisma.tr_paradas_gastos.upsert({
+     *   create: {
+     *     // ... data to create a Tr_paradas_gastos
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Tr_paradas_gastos we want to update
+     *   }
+     * })
+     */
+    upsert<T extends tr_paradas_gastosUpsertArgs>(args: SelectSubset<T, tr_paradas_gastosUpsertArgs<ExtArgs>>): Prisma__tr_paradas_gastosClient<$Result.GetResult<Prisma.$tr_paradas_gastosPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Tr_paradas_gastos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_paradas_gastosCountArgs} args - Arguments to filter Tr_paradas_gastos to count.
+     * @example
+     * // Count the number of Tr_paradas_gastos
+     * const count = await prisma.tr_paradas_gastos.count({
+     *   where: {
+     *     // ... the filter for the Tr_paradas_gastos we want to count
+     *   }
+     * })
+    **/
+    count<T extends tr_paradas_gastosCountArgs>(
+      args?: Subset<T, tr_paradas_gastosCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Tr_paradas_gastosCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Tr_paradas_gastos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tr_paradas_gastosAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Tr_paradas_gastosAggregateArgs>(args: Subset<T, Tr_paradas_gastosAggregateArgs>): Prisma.PrismaPromise<GetTr_paradas_gastosAggregateType<T>>
+
+    /**
+     * Group by Tr_paradas_gastos.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_paradas_gastosGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends tr_paradas_gastosGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: tr_paradas_gastosGroupByArgs['orderBy'] }
+        : { orderBy?: tr_paradas_gastosGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, tr_paradas_gastosGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTr_paradas_gastosGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the tr_paradas_gastos model
+   */
+  readonly fields: tr_paradas_gastosFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for tr_paradas_gastos.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__tr_paradas_gastosClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    viaje<T extends tr_viajesDefaultArgs<ExtArgs> = {}>(args?: Subset<T, tr_viajesDefaultArgs<ExtArgs>>): Prisma__tr_viajesClient<$Result.GetResult<Prisma.$tr_viajesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    categoria<T extends ma_catvjDefaultArgs<ExtArgs> = {}>(args?: Subset<T, ma_catvjDefaultArgs<ExtArgs>>): Prisma__ma_catvjClient<$Result.GetResult<Prisma.$ma_catvjPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    evidencias<T extends tr_paradas_gastos$evidenciasArgs<ExtArgs> = {}>(args?: Subset<T, tr_paradas_gastos$evidenciasArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tr_evidenciaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the tr_paradas_gastos model
+   */
+  interface tr_paradas_gastosFieldRefs {
+    readonly clave: FieldRef<"tr_paradas_gastos", 'Int'>
+    readonly cve_viaje: FieldRef<"tr_paradas_gastos", 'Int'>
+    readonly cve_catvj: FieldRef<"tr_paradas_gastos", 'Int'>
+    readonly lugar: FieldRef<"tr_paradas_gastos", 'String'>
+    readonly hora_registro: FieldRef<"tr_paradas_gastos", 'String'>
+    readonly monto: FieldRef<"tr_paradas_gastos", 'Decimal'>
+    readonly propina: FieldRef<"tr_paradas_gastos", 'Decimal'>
+    readonly facturable: FieldRef<"tr_paradas_gastos", 'Boolean'>
+    readonly descripcion: FieldRef<"tr_paradas_gastos", 'String'>
+    readonly lat: FieldRef<"tr_paradas_gastos", 'Float'>
+    readonly lng: FieldRef<"tr_paradas_gastos", 'Float'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * tr_paradas_gastos findUnique
+   */
+  export type tr_paradas_gastosFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_paradas_gastos
+     */
+    select?: tr_paradas_gastosSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_paradas_gastos
+     */
+    omit?: tr_paradas_gastosOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_paradas_gastosInclude<ExtArgs> | null
+    /**
+     * Filter, which tr_paradas_gastos to fetch.
+     */
+    where: tr_paradas_gastosWhereUniqueInput
+  }
+
+  /**
+   * tr_paradas_gastos findUniqueOrThrow
+   */
+  export type tr_paradas_gastosFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_paradas_gastos
+     */
+    select?: tr_paradas_gastosSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_paradas_gastos
+     */
+    omit?: tr_paradas_gastosOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_paradas_gastosInclude<ExtArgs> | null
+    /**
+     * Filter, which tr_paradas_gastos to fetch.
+     */
+    where: tr_paradas_gastosWhereUniqueInput
+  }
+
+  /**
+   * tr_paradas_gastos findFirst
+   */
+  export type tr_paradas_gastosFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_paradas_gastos
+     */
+    select?: tr_paradas_gastosSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_paradas_gastos
+     */
+    omit?: tr_paradas_gastosOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_paradas_gastosInclude<ExtArgs> | null
+    /**
+     * Filter, which tr_paradas_gastos to fetch.
+     */
+    where?: tr_paradas_gastosWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tr_paradas_gastos to fetch.
+     */
+    orderBy?: tr_paradas_gastosOrderByWithRelationInput | tr_paradas_gastosOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tr_paradas_gastos.
+     */
+    cursor?: tr_paradas_gastosWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tr_paradas_gastos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tr_paradas_gastos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tr_paradas_gastos.
+     */
+    distinct?: Tr_paradas_gastosScalarFieldEnum | Tr_paradas_gastosScalarFieldEnum[]
+  }
+
+  /**
+   * tr_paradas_gastos findFirstOrThrow
+   */
+  export type tr_paradas_gastosFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_paradas_gastos
+     */
+    select?: tr_paradas_gastosSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_paradas_gastos
+     */
+    omit?: tr_paradas_gastosOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_paradas_gastosInclude<ExtArgs> | null
+    /**
+     * Filter, which tr_paradas_gastos to fetch.
+     */
+    where?: tr_paradas_gastosWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tr_paradas_gastos to fetch.
+     */
+    orderBy?: tr_paradas_gastosOrderByWithRelationInput | tr_paradas_gastosOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tr_paradas_gastos.
+     */
+    cursor?: tr_paradas_gastosWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tr_paradas_gastos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tr_paradas_gastos.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tr_paradas_gastos.
+     */
+    distinct?: Tr_paradas_gastosScalarFieldEnum | Tr_paradas_gastosScalarFieldEnum[]
+  }
+
+  /**
+   * tr_paradas_gastos findMany
+   */
+  export type tr_paradas_gastosFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_paradas_gastos
+     */
+    select?: tr_paradas_gastosSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_paradas_gastos
+     */
+    omit?: tr_paradas_gastosOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_paradas_gastosInclude<ExtArgs> | null
+    /**
+     * Filter, which tr_paradas_gastos to fetch.
+     */
+    where?: tr_paradas_gastosWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tr_paradas_gastos to fetch.
+     */
+    orderBy?: tr_paradas_gastosOrderByWithRelationInput | tr_paradas_gastosOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing tr_paradas_gastos.
+     */
+    cursor?: tr_paradas_gastosWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tr_paradas_gastos from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tr_paradas_gastos.
+     */
+    skip?: number
+    distinct?: Tr_paradas_gastosScalarFieldEnum | Tr_paradas_gastosScalarFieldEnum[]
+  }
+
+  /**
+   * tr_paradas_gastos create
+   */
+  export type tr_paradas_gastosCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_paradas_gastos
+     */
+    select?: tr_paradas_gastosSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_paradas_gastos
+     */
+    omit?: tr_paradas_gastosOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_paradas_gastosInclude<ExtArgs> | null
+    /**
+     * The data needed to create a tr_paradas_gastos.
+     */
+    data: XOR<tr_paradas_gastosCreateInput, tr_paradas_gastosUncheckedCreateInput>
+  }
+
+  /**
+   * tr_paradas_gastos createMany
+   */
+  export type tr_paradas_gastosCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many tr_paradas_gastos.
+     */
+    data: tr_paradas_gastosCreateManyInput | tr_paradas_gastosCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * tr_paradas_gastos createManyAndReturn
+   */
+  export type tr_paradas_gastosCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_paradas_gastos
+     */
+    select?: tr_paradas_gastosSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_paradas_gastos
+     */
+    omit?: tr_paradas_gastosOmit<ExtArgs> | null
+    /**
+     * The data used to create many tr_paradas_gastos.
+     */
+    data: tr_paradas_gastosCreateManyInput | tr_paradas_gastosCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_paradas_gastosIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * tr_paradas_gastos update
+   */
+  export type tr_paradas_gastosUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_paradas_gastos
+     */
+    select?: tr_paradas_gastosSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_paradas_gastos
+     */
+    omit?: tr_paradas_gastosOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_paradas_gastosInclude<ExtArgs> | null
+    /**
+     * The data needed to update a tr_paradas_gastos.
+     */
+    data: XOR<tr_paradas_gastosUpdateInput, tr_paradas_gastosUncheckedUpdateInput>
+    /**
+     * Choose, which tr_paradas_gastos to update.
+     */
+    where: tr_paradas_gastosWhereUniqueInput
+  }
+
+  /**
+   * tr_paradas_gastos updateMany
+   */
+  export type tr_paradas_gastosUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update tr_paradas_gastos.
+     */
+    data: XOR<tr_paradas_gastosUpdateManyMutationInput, tr_paradas_gastosUncheckedUpdateManyInput>
+    /**
+     * Filter which tr_paradas_gastos to update
+     */
+    where?: tr_paradas_gastosWhereInput
+    /**
+     * Limit how many tr_paradas_gastos to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * tr_paradas_gastos updateManyAndReturn
+   */
+  export type tr_paradas_gastosUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_paradas_gastos
+     */
+    select?: tr_paradas_gastosSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_paradas_gastos
+     */
+    omit?: tr_paradas_gastosOmit<ExtArgs> | null
+    /**
+     * The data used to update tr_paradas_gastos.
+     */
+    data: XOR<tr_paradas_gastosUpdateManyMutationInput, tr_paradas_gastosUncheckedUpdateManyInput>
+    /**
+     * Filter which tr_paradas_gastos to update
+     */
+    where?: tr_paradas_gastosWhereInput
+    /**
+     * Limit how many tr_paradas_gastos to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_paradas_gastosIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * tr_paradas_gastos upsert
+   */
+  export type tr_paradas_gastosUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_paradas_gastos
+     */
+    select?: tr_paradas_gastosSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_paradas_gastos
+     */
+    omit?: tr_paradas_gastosOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_paradas_gastosInclude<ExtArgs> | null
+    /**
+     * The filter to search for the tr_paradas_gastos to update in case it exists.
+     */
+    where: tr_paradas_gastosWhereUniqueInput
+    /**
+     * In case the tr_paradas_gastos found by the `where` argument doesn't exist, create a new tr_paradas_gastos with this data.
+     */
+    create: XOR<tr_paradas_gastosCreateInput, tr_paradas_gastosUncheckedCreateInput>
+    /**
+     * In case the tr_paradas_gastos was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<tr_paradas_gastosUpdateInput, tr_paradas_gastosUncheckedUpdateInput>
+  }
+
+  /**
+   * tr_paradas_gastos delete
+   */
+  export type tr_paradas_gastosDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_paradas_gastos
+     */
+    select?: tr_paradas_gastosSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_paradas_gastos
+     */
+    omit?: tr_paradas_gastosOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_paradas_gastosInclude<ExtArgs> | null
+    /**
+     * Filter which tr_paradas_gastos to delete.
+     */
+    where: tr_paradas_gastosWhereUniqueInput
+  }
+
+  /**
+   * tr_paradas_gastos deleteMany
+   */
+  export type tr_paradas_gastosDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tr_paradas_gastos to delete
+     */
+    where?: tr_paradas_gastosWhereInput
+    /**
+     * Limit how many tr_paradas_gastos to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * tr_paradas_gastos.evidencias
+   */
+  export type tr_paradas_gastos$evidenciasArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_evidencia
+     */
+    select?: tr_evidenciaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_evidencia
+     */
+    omit?: tr_evidenciaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_evidenciaInclude<ExtArgs> | null
+    where?: tr_evidenciaWhereInput
+    orderBy?: tr_evidenciaOrderByWithRelationInput | tr_evidenciaOrderByWithRelationInput[]
+    cursor?: tr_evidenciaWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: Tr_evidenciaScalarFieldEnum | Tr_evidenciaScalarFieldEnum[]
+  }
+
+  /**
+   * tr_paradas_gastos without action
+   */
+  export type tr_paradas_gastosDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_paradas_gastos
+     */
+    select?: tr_paradas_gastosSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_paradas_gastos
+     */
+    omit?: tr_paradas_gastosOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_paradas_gastosInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model tr_evidencia
+   */
+
+  export type AggregateTr_evidencia = {
+    _count: Tr_evidenciaCountAggregateOutputType | null
+    _avg: Tr_evidenciaAvgAggregateOutputType | null
+    _sum: Tr_evidenciaSumAggregateOutputType | null
+    _min: Tr_evidenciaMinAggregateOutputType | null
+    _max: Tr_evidenciaMaxAggregateOutputType | null
+  }
+
+  export type Tr_evidenciaAvgAggregateOutputType = {
+    clave: number | null
+    cve_parada: number | null
+  }
+
+  export type Tr_evidenciaSumAggregateOutputType = {
+    clave: number | null
+    cve_parada: number | null
+  }
+
+  export type Tr_evidenciaMinAggregateOutputType = {
+    clave: number | null
+    cve_parada: number | null
+    tipo_archivo: string | null
+    url_archivo: string | null
+    fuente: string | null
+  }
+
+  export type Tr_evidenciaMaxAggregateOutputType = {
+    clave: number | null
+    cve_parada: number | null
+    tipo_archivo: string | null
+    url_archivo: string | null
+    fuente: string | null
+  }
+
+  export type Tr_evidenciaCountAggregateOutputType = {
+    clave: number
+    cve_parada: number
+    tipo_archivo: number
+    url_archivo: number
+    fuente: number
+    _all: number
+  }
+
+
+  export type Tr_evidenciaAvgAggregateInputType = {
+    clave?: true
+    cve_parada?: true
+  }
+
+  export type Tr_evidenciaSumAggregateInputType = {
+    clave?: true
+    cve_parada?: true
+  }
+
+  export type Tr_evidenciaMinAggregateInputType = {
+    clave?: true
+    cve_parada?: true
+    tipo_archivo?: true
+    url_archivo?: true
+    fuente?: true
+  }
+
+  export type Tr_evidenciaMaxAggregateInputType = {
+    clave?: true
+    cve_parada?: true
+    tipo_archivo?: true
+    url_archivo?: true
+    fuente?: true
+  }
+
+  export type Tr_evidenciaCountAggregateInputType = {
+    clave?: true
+    cve_parada?: true
+    tipo_archivo?: true
+    url_archivo?: true
+    fuente?: true
+    _all?: true
+  }
+
+  export type Tr_evidenciaAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tr_evidencia to aggregate.
+     */
+    where?: tr_evidenciaWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tr_evidencias to fetch.
+     */
+    orderBy?: tr_evidenciaOrderByWithRelationInput | tr_evidenciaOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: tr_evidenciaWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tr_evidencias from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tr_evidencias.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned tr_evidencias
+    **/
+    _count?: true | Tr_evidenciaCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Tr_evidenciaAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Tr_evidenciaSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Tr_evidenciaMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Tr_evidenciaMaxAggregateInputType
+  }
+
+  export type GetTr_evidenciaAggregateType<T extends Tr_evidenciaAggregateArgs> = {
+        [P in keyof T & keyof AggregateTr_evidencia]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTr_evidencia[P]>
+      : GetScalarType<T[P], AggregateTr_evidencia[P]>
+  }
+
+
+
+
+  export type tr_evidenciaGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tr_evidenciaWhereInput
+    orderBy?: tr_evidenciaOrderByWithAggregationInput | tr_evidenciaOrderByWithAggregationInput[]
+    by: Tr_evidenciaScalarFieldEnum[] | Tr_evidenciaScalarFieldEnum
+    having?: tr_evidenciaScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Tr_evidenciaCountAggregateInputType | true
+    _avg?: Tr_evidenciaAvgAggregateInputType
+    _sum?: Tr_evidenciaSumAggregateInputType
+    _min?: Tr_evidenciaMinAggregateInputType
+    _max?: Tr_evidenciaMaxAggregateInputType
+  }
+
+  export type Tr_evidenciaGroupByOutputType = {
+    clave: number
+    cve_parada: number
+    tipo_archivo: string
+    url_archivo: string
+    fuente: string | null
+    _count: Tr_evidenciaCountAggregateOutputType | null
+    _avg: Tr_evidenciaAvgAggregateOutputType | null
+    _sum: Tr_evidenciaSumAggregateOutputType | null
+    _min: Tr_evidenciaMinAggregateOutputType | null
+    _max: Tr_evidenciaMaxAggregateOutputType | null
+  }
+
+  type GetTr_evidenciaGroupByPayload<T extends tr_evidenciaGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Tr_evidenciaGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Tr_evidenciaGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Tr_evidenciaGroupByOutputType[P]>
+            : GetScalarType<T[P], Tr_evidenciaGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type tr_evidenciaSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    clave?: boolean
+    cve_parada?: boolean
+    tipo_archivo?: boolean
+    url_archivo?: boolean
+    fuente?: boolean
+    parada?: boolean | tr_paradas_gastosDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["tr_evidencia"]>
+
+  export type tr_evidenciaSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    clave?: boolean
+    cve_parada?: boolean
+    tipo_archivo?: boolean
+    url_archivo?: boolean
+    fuente?: boolean
+    parada?: boolean | tr_paradas_gastosDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["tr_evidencia"]>
+
+  export type tr_evidenciaSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    clave?: boolean
+    cve_parada?: boolean
+    tipo_archivo?: boolean
+    url_archivo?: boolean
+    fuente?: boolean
+    parada?: boolean | tr_paradas_gastosDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["tr_evidencia"]>
+
+  export type tr_evidenciaSelectScalar = {
+    clave?: boolean
+    cve_parada?: boolean
+    tipo_archivo?: boolean
+    url_archivo?: boolean
+    fuente?: boolean
+  }
+
+  export type tr_evidenciaOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"clave" | "cve_parada" | "tipo_archivo" | "url_archivo" | "fuente", ExtArgs["result"]["tr_evidencia"]>
+  export type tr_evidenciaInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    parada?: boolean | tr_paradas_gastosDefaultArgs<ExtArgs>
+  }
+  export type tr_evidenciaIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    parada?: boolean | tr_paradas_gastosDefaultArgs<ExtArgs>
+  }
+  export type tr_evidenciaIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    parada?: boolean | tr_paradas_gastosDefaultArgs<ExtArgs>
+  }
+
+  export type $tr_evidenciaPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "tr_evidencia"
+    objects: {
+      parada: Prisma.$tr_paradas_gastosPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      clave: number
+      cve_parada: number
+      tipo_archivo: string
+      url_archivo: string
+      fuente: string | null
+    }, ExtArgs["result"]["tr_evidencia"]>
+    composites: {}
+  }
+
+  type tr_evidenciaGetPayload<S extends boolean | null | undefined | tr_evidenciaDefaultArgs> = $Result.GetResult<Prisma.$tr_evidenciaPayload, S>
+
+  type tr_evidenciaCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<tr_evidenciaFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Tr_evidenciaCountAggregateInputType | true
+    }
+
+  export interface tr_evidenciaDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['tr_evidencia'], meta: { name: 'tr_evidencia' } }
+    /**
+     * Find zero or one Tr_evidencia that matches the filter.
+     * @param {tr_evidenciaFindUniqueArgs} args - Arguments to find a Tr_evidencia
+     * @example
+     * // Get one Tr_evidencia
+     * const tr_evidencia = await prisma.tr_evidencia.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends tr_evidenciaFindUniqueArgs>(args: SelectSubset<T, tr_evidenciaFindUniqueArgs<ExtArgs>>): Prisma__tr_evidenciaClient<$Result.GetResult<Prisma.$tr_evidenciaPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Tr_evidencia that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {tr_evidenciaFindUniqueOrThrowArgs} args - Arguments to find a Tr_evidencia
+     * @example
+     * // Get one Tr_evidencia
+     * const tr_evidencia = await prisma.tr_evidencia.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends tr_evidenciaFindUniqueOrThrowArgs>(args: SelectSubset<T, tr_evidenciaFindUniqueOrThrowArgs<ExtArgs>>): Prisma__tr_evidenciaClient<$Result.GetResult<Prisma.$tr_evidenciaPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Tr_evidencia that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_evidenciaFindFirstArgs} args - Arguments to find a Tr_evidencia
+     * @example
+     * // Get one Tr_evidencia
+     * const tr_evidencia = await prisma.tr_evidencia.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends tr_evidenciaFindFirstArgs>(args?: SelectSubset<T, tr_evidenciaFindFirstArgs<ExtArgs>>): Prisma__tr_evidenciaClient<$Result.GetResult<Prisma.$tr_evidenciaPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Tr_evidencia that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_evidenciaFindFirstOrThrowArgs} args - Arguments to find a Tr_evidencia
+     * @example
+     * // Get one Tr_evidencia
+     * const tr_evidencia = await prisma.tr_evidencia.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends tr_evidenciaFindFirstOrThrowArgs>(args?: SelectSubset<T, tr_evidenciaFindFirstOrThrowArgs<ExtArgs>>): Prisma__tr_evidenciaClient<$Result.GetResult<Prisma.$tr_evidenciaPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Tr_evidencias that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_evidenciaFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Tr_evidencias
+     * const tr_evidencias = await prisma.tr_evidencia.findMany()
+     * 
+     * // Get first 10 Tr_evidencias
+     * const tr_evidencias = await prisma.tr_evidencia.findMany({ take: 10 })
+     * 
+     * // Only select the `clave`
+     * const tr_evidenciaWithClaveOnly = await prisma.tr_evidencia.findMany({ select: { clave: true } })
+     * 
+     */
+    findMany<T extends tr_evidenciaFindManyArgs>(args?: SelectSubset<T, tr_evidenciaFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tr_evidenciaPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Tr_evidencia.
+     * @param {tr_evidenciaCreateArgs} args - Arguments to create a Tr_evidencia.
+     * @example
+     * // Create one Tr_evidencia
+     * const Tr_evidencia = await prisma.tr_evidencia.create({
+     *   data: {
+     *     // ... data to create a Tr_evidencia
+     *   }
+     * })
+     * 
+     */
+    create<T extends tr_evidenciaCreateArgs>(args: SelectSubset<T, tr_evidenciaCreateArgs<ExtArgs>>): Prisma__tr_evidenciaClient<$Result.GetResult<Prisma.$tr_evidenciaPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Tr_evidencias.
+     * @param {tr_evidenciaCreateManyArgs} args - Arguments to create many Tr_evidencias.
+     * @example
+     * // Create many Tr_evidencias
+     * const tr_evidencia = await prisma.tr_evidencia.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends tr_evidenciaCreateManyArgs>(args?: SelectSubset<T, tr_evidenciaCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Tr_evidencias and returns the data saved in the database.
+     * @param {tr_evidenciaCreateManyAndReturnArgs} args - Arguments to create many Tr_evidencias.
+     * @example
+     * // Create many Tr_evidencias
+     * const tr_evidencia = await prisma.tr_evidencia.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Tr_evidencias and only return the `clave`
+     * const tr_evidenciaWithClaveOnly = await prisma.tr_evidencia.createManyAndReturn({
+     *   select: { clave: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends tr_evidenciaCreateManyAndReturnArgs>(args?: SelectSubset<T, tr_evidenciaCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tr_evidenciaPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Tr_evidencia.
+     * @param {tr_evidenciaDeleteArgs} args - Arguments to delete one Tr_evidencia.
+     * @example
+     * // Delete one Tr_evidencia
+     * const Tr_evidencia = await prisma.tr_evidencia.delete({
+     *   where: {
+     *     // ... filter to delete one Tr_evidencia
+     *   }
+     * })
+     * 
+     */
+    delete<T extends tr_evidenciaDeleteArgs>(args: SelectSubset<T, tr_evidenciaDeleteArgs<ExtArgs>>): Prisma__tr_evidenciaClient<$Result.GetResult<Prisma.$tr_evidenciaPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Tr_evidencia.
+     * @param {tr_evidenciaUpdateArgs} args - Arguments to update one Tr_evidencia.
+     * @example
+     * // Update one Tr_evidencia
+     * const tr_evidencia = await prisma.tr_evidencia.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends tr_evidenciaUpdateArgs>(args: SelectSubset<T, tr_evidenciaUpdateArgs<ExtArgs>>): Prisma__tr_evidenciaClient<$Result.GetResult<Prisma.$tr_evidenciaPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Tr_evidencias.
+     * @param {tr_evidenciaDeleteManyArgs} args - Arguments to filter Tr_evidencias to delete.
+     * @example
+     * // Delete a few Tr_evidencias
+     * const { count } = await prisma.tr_evidencia.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends tr_evidenciaDeleteManyArgs>(args?: SelectSubset<T, tr_evidenciaDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tr_evidencias.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_evidenciaUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Tr_evidencias
+     * const tr_evidencia = await prisma.tr_evidencia.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends tr_evidenciaUpdateManyArgs>(args: SelectSubset<T, tr_evidenciaUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tr_evidencias and returns the data updated in the database.
+     * @param {tr_evidenciaUpdateManyAndReturnArgs} args - Arguments to update many Tr_evidencias.
+     * @example
+     * // Update many Tr_evidencias
+     * const tr_evidencia = await prisma.tr_evidencia.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Tr_evidencias and only return the `clave`
+     * const tr_evidenciaWithClaveOnly = await prisma.tr_evidencia.updateManyAndReturn({
+     *   select: { clave: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends tr_evidenciaUpdateManyAndReturnArgs>(args: SelectSubset<T, tr_evidenciaUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tr_evidenciaPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Tr_evidencia.
+     * @param {tr_evidenciaUpsertArgs} args - Arguments to update or create a Tr_evidencia.
+     * @example
+     * // Update or create a Tr_evidencia
+     * const tr_evidencia = await prisma.tr_evidencia.upsert({
+     *   create: {
+     *     // ... data to create a Tr_evidencia
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Tr_evidencia we want to update
+     *   }
+     * })
+     */
+    upsert<T extends tr_evidenciaUpsertArgs>(args: SelectSubset<T, tr_evidenciaUpsertArgs<ExtArgs>>): Prisma__tr_evidenciaClient<$Result.GetResult<Prisma.$tr_evidenciaPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Tr_evidencias.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_evidenciaCountArgs} args - Arguments to filter Tr_evidencias to count.
+     * @example
+     * // Count the number of Tr_evidencias
+     * const count = await prisma.tr_evidencia.count({
+     *   where: {
+     *     // ... the filter for the Tr_evidencias we want to count
+     *   }
+     * })
+    **/
+    count<T extends tr_evidenciaCountArgs>(
+      args?: Subset<T, tr_evidenciaCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Tr_evidenciaCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Tr_evidencia.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tr_evidenciaAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Tr_evidenciaAggregateArgs>(args: Subset<T, Tr_evidenciaAggregateArgs>): Prisma.PrismaPromise<GetTr_evidenciaAggregateType<T>>
+
+    /**
+     * Group by Tr_evidencia.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_evidenciaGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends tr_evidenciaGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: tr_evidenciaGroupByArgs['orderBy'] }
+        : { orderBy?: tr_evidenciaGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, tr_evidenciaGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTr_evidenciaGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the tr_evidencia model
+   */
+  readonly fields: tr_evidenciaFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for tr_evidencia.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__tr_evidenciaClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    parada<T extends tr_paradas_gastosDefaultArgs<ExtArgs> = {}>(args?: Subset<T, tr_paradas_gastosDefaultArgs<ExtArgs>>): Prisma__tr_paradas_gastosClient<$Result.GetResult<Prisma.$tr_paradas_gastosPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the tr_evidencia model
+   */
+  interface tr_evidenciaFieldRefs {
+    readonly clave: FieldRef<"tr_evidencia", 'Int'>
+    readonly cve_parada: FieldRef<"tr_evidencia", 'Int'>
+    readonly tipo_archivo: FieldRef<"tr_evidencia", 'String'>
+    readonly url_archivo: FieldRef<"tr_evidencia", 'String'>
+    readonly fuente: FieldRef<"tr_evidencia", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * tr_evidencia findUnique
+   */
+  export type tr_evidenciaFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_evidencia
+     */
+    select?: tr_evidenciaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_evidencia
+     */
+    omit?: tr_evidenciaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_evidenciaInclude<ExtArgs> | null
+    /**
+     * Filter, which tr_evidencia to fetch.
+     */
+    where: tr_evidenciaWhereUniqueInput
+  }
+
+  /**
+   * tr_evidencia findUniqueOrThrow
+   */
+  export type tr_evidenciaFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_evidencia
+     */
+    select?: tr_evidenciaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_evidencia
+     */
+    omit?: tr_evidenciaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_evidenciaInclude<ExtArgs> | null
+    /**
+     * Filter, which tr_evidencia to fetch.
+     */
+    where: tr_evidenciaWhereUniqueInput
+  }
+
+  /**
+   * tr_evidencia findFirst
+   */
+  export type tr_evidenciaFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_evidencia
+     */
+    select?: tr_evidenciaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_evidencia
+     */
+    omit?: tr_evidenciaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_evidenciaInclude<ExtArgs> | null
+    /**
+     * Filter, which tr_evidencia to fetch.
+     */
+    where?: tr_evidenciaWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tr_evidencias to fetch.
+     */
+    orderBy?: tr_evidenciaOrderByWithRelationInput | tr_evidenciaOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tr_evidencias.
+     */
+    cursor?: tr_evidenciaWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tr_evidencias from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tr_evidencias.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tr_evidencias.
+     */
+    distinct?: Tr_evidenciaScalarFieldEnum | Tr_evidenciaScalarFieldEnum[]
+  }
+
+  /**
+   * tr_evidencia findFirstOrThrow
+   */
+  export type tr_evidenciaFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_evidencia
+     */
+    select?: tr_evidenciaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_evidencia
+     */
+    omit?: tr_evidenciaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_evidenciaInclude<ExtArgs> | null
+    /**
+     * Filter, which tr_evidencia to fetch.
+     */
+    where?: tr_evidenciaWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tr_evidencias to fetch.
+     */
+    orderBy?: tr_evidenciaOrderByWithRelationInput | tr_evidenciaOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tr_evidencias.
+     */
+    cursor?: tr_evidenciaWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tr_evidencias from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tr_evidencias.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tr_evidencias.
+     */
+    distinct?: Tr_evidenciaScalarFieldEnum | Tr_evidenciaScalarFieldEnum[]
+  }
+
+  /**
+   * tr_evidencia findMany
+   */
+  export type tr_evidenciaFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_evidencia
+     */
+    select?: tr_evidenciaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_evidencia
+     */
+    omit?: tr_evidenciaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_evidenciaInclude<ExtArgs> | null
+    /**
+     * Filter, which tr_evidencias to fetch.
+     */
+    where?: tr_evidenciaWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tr_evidencias to fetch.
+     */
+    orderBy?: tr_evidenciaOrderByWithRelationInput | tr_evidenciaOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing tr_evidencias.
+     */
+    cursor?: tr_evidenciaWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tr_evidencias from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tr_evidencias.
+     */
+    skip?: number
+    distinct?: Tr_evidenciaScalarFieldEnum | Tr_evidenciaScalarFieldEnum[]
+  }
+
+  /**
+   * tr_evidencia create
+   */
+  export type tr_evidenciaCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_evidencia
+     */
+    select?: tr_evidenciaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_evidencia
+     */
+    omit?: tr_evidenciaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_evidenciaInclude<ExtArgs> | null
+    /**
+     * The data needed to create a tr_evidencia.
+     */
+    data: XOR<tr_evidenciaCreateInput, tr_evidenciaUncheckedCreateInput>
+  }
+
+  /**
+   * tr_evidencia createMany
+   */
+  export type tr_evidenciaCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many tr_evidencias.
+     */
+    data: tr_evidenciaCreateManyInput | tr_evidenciaCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * tr_evidencia createManyAndReturn
+   */
+  export type tr_evidenciaCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_evidencia
+     */
+    select?: tr_evidenciaSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_evidencia
+     */
+    omit?: tr_evidenciaOmit<ExtArgs> | null
+    /**
+     * The data used to create many tr_evidencias.
+     */
+    data: tr_evidenciaCreateManyInput | tr_evidenciaCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_evidenciaIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * tr_evidencia update
+   */
+  export type tr_evidenciaUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_evidencia
+     */
+    select?: tr_evidenciaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_evidencia
+     */
+    omit?: tr_evidenciaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_evidenciaInclude<ExtArgs> | null
+    /**
+     * The data needed to update a tr_evidencia.
+     */
+    data: XOR<tr_evidenciaUpdateInput, tr_evidenciaUncheckedUpdateInput>
+    /**
+     * Choose, which tr_evidencia to update.
+     */
+    where: tr_evidenciaWhereUniqueInput
+  }
+
+  /**
+   * tr_evidencia updateMany
+   */
+  export type tr_evidenciaUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update tr_evidencias.
+     */
+    data: XOR<tr_evidenciaUpdateManyMutationInput, tr_evidenciaUncheckedUpdateManyInput>
+    /**
+     * Filter which tr_evidencias to update
+     */
+    where?: tr_evidenciaWhereInput
+    /**
+     * Limit how many tr_evidencias to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * tr_evidencia updateManyAndReturn
+   */
+  export type tr_evidenciaUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_evidencia
+     */
+    select?: tr_evidenciaSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_evidencia
+     */
+    omit?: tr_evidenciaOmit<ExtArgs> | null
+    /**
+     * The data used to update tr_evidencias.
+     */
+    data: XOR<tr_evidenciaUpdateManyMutationInput, tr_evidenciaUncheckedUpdateManyInput>
+    /**
+     * Filter which tr_evidencias to update
+     */
+    where?: tr_evidenciaWhereInput
+    /**
+     * Limit how many tr_evidencias to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_evidenciaIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * tr_evidencia upsert
+   */
+  export type tr_evidenciaUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_evidencia
+     */
+    select?: tr_evidenciaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_evidencia
+     */
+    omit?: tr_evidenciaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_evidenciaInclude<ExtArgs> | null
+    /**
+     * The filter to search for the tr_evidencia to update in case it exists.
+     */
+    where: tr_evidenciaWhereUniqueInput
+    /**
+     * In case the tr_evidencia found by the `where` argument doesn't exist, create a new tr_evidencia with this data.
+     */
+    create: XOR<tr_evidenciaCreateInput, tr_evidenciaUncheckedCreateInput>
+    /**
+     * In case the tr_evidencia was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<tr_evidenciaUpdateInput, tr_evidenciaUncheckedUpdateInput>
+  }
+
+  /**
+   * tr_evidencia delete
+   */
+  export type tr_evidenciaDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_evidencia
+     */
+    select?: tr_evidenciaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_evidencia
+     */
+    omit?: tr_evidenciaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_evidenciaInclude<ExtArgs> | null
+    /**
+     * Filter which tr_evidencia to delete.
+     */
+    where: tr_evidenciaWhereUniqueInput
+  }
+
+  /**
+   * tr_evidencia deleteMany
+   */
+  export type tr_evidenciaDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tr_evidencias to delete
+     */
+    where?: tr_evidenciaWhereInput
+    /**
+     * Limit how many tr_evidencias to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * tr_evidencia without action
+   */
+  export type tr_evidenciaDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_evidencia
+     */
+    select?: tr_evidenciaSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_evidencia
+     */
+    omit?: tr_evidenciaOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_evidenciaInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model tr_notas_viaje
+   */
+
+  export type AggregateTr_notas_viaje = {
+    _count: Tr_notas_viajeCountAggregateOutputType | null
+    _avg: Tr_notas_viajeAvgAggregateOutputType | null
+    _sum: Tr_notas_viajeSumAggregateOutputType | null
+    _min: Tr_notas_viajeMinAggregateOutputType | null
+    _max: Tr_notas_viajeMaxAggregateOutputType | null
+  }
+
+  export type Tr_notas_viajeAvgAggregateOutputType = {
+    clave: number | null
+    cve_viaje: number | null
+  }
+
+  export type Tr_notas_viajeSumAggregateOutputType = {
+    clave: number | null
+    cve_viaje: number | null
+  }
+
+  export type Tr_notas_viajeMinAggregateOutputType = {
+    clave: number | null
+    cve_viaje: number | null
+    titulo: string | null
+    tipo_nota: string | null
+  }
+
+  export type Tr_notas_viajeMaxAggregateOutputType = {
+    clave: number | null
+    cve_viaje: number | null
+    titulo: string | null
+    tipo_nota: string | null
+  }
+
+  export type Tr_notas_viajeCountAggregateOutputType = {
+    clave: number
+    cve_viaje: number
+    titulo: number
+    contenido: number
+    tipo_nota: number
+    _all: number
+  }
+
+
+  export type Tr_notas_viajeAvgAggregateInputType = {
+    clave?: true
+    cve_viaje?: true
+  }
+
+  export type Tr_notas_viajeSumAggregateInputType = {
+    clave?: true
+    cve_viaje?: true
+  }
+
+  export type Tr_notas_viajeMinAggregateInputType = {
+    clave?: true
+    cve_viaje?: true
+    titulo?: true
+    tipo_nota?: true
+  }
+
+  export type Tr_notas_viajeMaxAggregateInputType = {
+    clave?: true
+    cve_viaje?: true
+    titulo?: true
+    tipo_nota?: true
+  }
+
+  export type Tr_notas_viajeCountAggregateInputType = {
+    clave?: true
+    cve_viaje?: true
+    titulo?: true
+    contenido?: true
+    tipo_nota?: true
+    _all?: true
+  }
+
+  export type Tr_notas_viajeAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tr_notas_viaje to aggregate.
+     */
+    where?: tr_notas_viajeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tr_notas_viajes to fetch.
+     */
+    orderBy?: tr_notas_viajeOrderByWithRelationInput | tr_notas_viajeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: tr_notas_viajeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tr_notas_viajes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tr_notas_viajes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned tr_notas_viajes
+    **/
+    _count?: true | Tr_notas_viajeCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: Tr_notas_viajeAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: Tr_notas_viajeSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: Tr_notas_viajeMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: Tr_notas_viajeMaxAggregateInputType
+  }
+
+  export type GetTr_notas_viajeAggregateType<T extends Tr_notas_viajeAggregateArgs> = {
+        [P in keyof T & keyof AggregateTr_notas_viaje]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTr_notas_viaje[P]>
+      : GetScalarType<T[P], AggregateTr_notas_viaje[P]>
+  }
+
+
+
+
+  export type tr_notas_viajeGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: tr_notas_viajeWhereInput
+    orderBy?: tr_notas_viajeOrderByWithAggregationInput | tr_notas_viajeOrderByWithAggregationInput[]
+    by: Tr_notas_viajeScalarFieldEnum[] | Tr_notas_viajeScalarFieldEnum
+    having?: tr_notas_viajeScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: Tr_notas_viajeCountAggregateInputType | true
+    _avg?: Tr_notas_viajeAvgAggregateInputType
+    _sum?: Tr_notas_viajeSumAggregateInputType
+    _min?: Tr_notas_viajeMinAggregateInputType
+    _max?: Tr_notas_viajeMaxAggregateInputType
+  }
+
+  export type Tr_notas_viajeGroupByOutputType = {
+    clave: number
+    cve_viaje: number
+    titulo: string
+    contenido: JsonValue
+    tipo_nota: string
+    _count: Tr_notas_viajeCountAggregateOutputType | null
+    _avg: Tr_notas_viajeAvgAggregateOutputType | null
+    _sum: Tr_notas_viajeSumAggregateOutputType | null
+    _min: Tr_notas_viajeMinAggregateOutputType | null
+    _max: Tr_notas_viajeMaxAggregateOutputType | null
+  }
+
+  type GetTr_notas_viajeGroupByPayload<T extends tr_notas_viajeGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<Tr_notas_viajeGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof Tr_notas_viajeGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], Tr_notas_viajeGroupByOutputType[P]>
+            : GetScalarType<T[P], Tr_notas_viajeGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type tr_notas_viajeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    clave?: boolean
+    cve_viaje?: boolean
+    titulo?: boolean
+    contenido?: boolean
+    tipo_nota?: boolean
+    viaje?: boolean | tr_viajesDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["tr_notas_viaje"]>
+
+  export type tr_notas_viajeSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    clave?: boolean
+    cve_viaje?: boolean
+    titulo?: boolean
+    contenido?: boolean
+    tipo_nota?: boolean
+    viaje?: boolean | tr_viajesDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["tr_notas_viaje"]>
+
+  export type tr_notas_viajeSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    clave?: boolean
+    cve_viaje?: boolean
+    titulo?: boolean
+    contenido?: boolean
+    tipo_nota?: boolean
+    viaje?: boolean | tr_viajesDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["tr_notas_viaje"]>
+
+  export type tr_notas_viajeSelectScalar = {
+    clave?: boolean
+    cve_viaje?: boolean
+    titulo?: boolean
+    contenido?: boolean
+    tipo_nota?: boolean
+  }
+
+  export type tr_notas_viajeOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"clave" | "cve_viaje" | "titulo" | "contenido" | "tipo_nota", ExtArgs["result"]["tr_notas_viaje"]>
+  export type tr_notas_viajeInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    viaje?: boolean | tr_viajesDefaultArgs<ExtArgs>
+  }
+  export type tr_notas_viajeIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    viaje?: boolean | tr_viajesDefaultArgs<ExtArgs>
+  }
+  export type tr_notas_viajeIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    viaje?: boolean | tr_viajesDefaultArgs<ExtArgs>
+  }
+
+  export type $tr_notas_viajePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "tr_notas_viaje"
+    objects: {
+      viaje: Prisma.$tr_viajesPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      clave: number
+      cve_viaje: number
+      titulo: string
+      contenido: Prisma.JsonValue
+      tipo_nota: string
+    }, ExtArgs["result"]["tr_notas_viaje"]>
+    composites: {}
+  }
+
+  type tr_notas_viajeGetPayload<S extends boolean | null | undefined | tr_notas_viajeDefaultArgs> = $Result.GetResult<Prisma.$tr_notas_viajePayload, S>
+
+  type tr_notas_viajeCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<tr_notas_viajeFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: Tr_notas_viajeCountAggregateInputType | true
+    }
+
+  export interface tr_notas_viajeDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['tr_notas_viaje'], meta: { name: 'tr_notas_viaje' } }
+    /**
+     * Find zero or one Tr_notas_viaje that matches the filter.
+     * @param {tr_notas_viajeFindUniqueArgs} args - Arguments to find a Tr_notas_viaje
+     * @example
+     * // Get one Tr_notas_viaje
+     * const tr_notas_viaje = await prisma.tr_notas_viaje.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends tr_notas_viajeFindUniqueArgs>(args: SelectSubset<T, tr_notas_viajeFindUniqueArgs<ExtArgs>>): Prisma__tr_notas_viajeClient<$Result.GetResult<Prisma.$tr_notas_viajePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Tr_notas_viaje that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {tr_notas_viajeFindUniqueOrThrowArgs} args - Arguments to find a Tr_notas_viaje
+     * @example
+     * // Get one Tr_notas_viaje
+     * const tr_notas_viaje = await prisma.tr_notas_viaje.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends tr_notas_viajeFindUniqueOrThrowArgs>(args: SelectSubset<T, tr_notas_viajeFindUniqueOrThrowArgs<ExtArgs>>): Prisma__tr_notas_viajeClient<$Result.GetResult<Prisma.$tr_notas_viajePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Tr_notas_viaje that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_notas_viajeFindFirstArgs} args - Arguments to find a Tr_notas_viaje
+     * @example
+     * // Get one Tr_notas_viaje
+     * const tr_notas_viaje = await prisma.tr_notas_viaje.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends tr_notas_viajeFindFirstArgs>(args?: SelectSubset<T, tr_notas_viajeFindFirstArgs<ExtArgs>>): Prisma__tr_notas_viajeClient<$Result.GetResult<Prisma.$tr_notas_viajePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Tr_notas_viaje that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_notas_viajeFindFirstOrThrowArgs} args - Arguments to find a Tr_notas_viaje
+     * @example
+     * // Get one Tr_notas_viaje
+     * const tr_notas_viaje = await prisma.tr_notas_viaje.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends tr_notas_viajeFindFirstOrThrowArgs>(args?: SelectSubset<T, tr_notas_viajeFindFirstOrThrowArgs<ExtArgs>>): Prisma__tr_notas_viajeClient<$Result.GetResult<Prisma.$tr_notas_viajePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Tr_notas_viajes that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_notas_viajeFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Tr_notas_viajes
+     * const tr_notas_viajes = await prisma.tr_notas_viaje.findMany()
+     * 
+     * // Get first 10 Tr_notas_viajes
+     * const tr_notas_viajes = await prisma.tr_notas_viaje.findMany({ take: 10 })
+     * 
+     * // Only select the `clave`
+     * const tr_notas_viajeWithClaveOnly = await prisma.tr_notas_viaje.findMany({ select: { clave: true } })
+     * 
+     */
+    findMany<T extends tr_notas_viajeFindManyArgs>(args?: SelectSubset<T, tr_notas_viajeFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tr_notas_viajePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Tr_notas_viaje.
+     * @param {tr_notas_viajeCreateArgs} args - Arguments to create a Tr_notas_viaje.
+     * @example
+     * // Create one Tr_notas_viaje
+     * const Tr_notas_viaje = await prisma.tr_notas_viaje.create({
+     *   data: {
+     *     // ... data to create a Tr_notas_viaje
+     *   }
+     * })
+     * 
+     */
+    create<T extends tr_notas_viajeCreateArgs>(args: SelectSubset<T, tr_notas_viajeCreateArgs<ExtArgs>>): Prisma__tr_notas_viajeClient<$Result.GetResult<Prisma.$tr_notas_viajePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Tr_notas_viajes.
+     * @param {tr_notas_viajeCreateManyArgs} args - Arguments to create many Tr_notas_viajes.
+     * @example
+     * // Create many Tr_notas_viajes
+     * const tr_notas_viaje = await prisma.tr_notas_viaje.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends tr_notas_viajeCreateManyArgs>(args?: SelectSubset<T, tr_notas_viajeCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Tr_notas_viajes and returns the data saved in the database.
+     * @param {tr_notas_viajeCreateManyAndReturnArgs} args - Arguments to create many Tr_notas_viajes.
+     * @example
+     * // Create many Tr_notas_viajes
+     * const tr_notas_viaje = await prisma.tr_notas_viaje.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Tr_notas_viajes and only return the `clave`
+     * const tr_notas_viajeWithClaveOnly = await prisma.tr_notas_viaje.createManyAndReturn({
+     *   select: { clave: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends tr_notas_viajeCreateManyAndReturnArgs>(args?: SelectSubset<T, tr_notas_viajeCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tr_notas_viajePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Tr_notas_viaje.
+     * @param {tr_notas_viajeDeleteArgs} args - Arguments to delete one Tr_notas_viaje.
+     * @example
+     * // Delete one Tr_notas_viaje
+     * const Tr_notas_viaje = await prisma.tr_notas_viaje.delete({
+     *   where: {
+     *     // ... filter to delete one Tr_notas_viaje
+     *   }
+     * })
+     * 
+     */
+    delete<T extends tr_notas_viajeDeleteArgs>(args: SelectSubset<T, tr_notas_viajeDeleteArgs<ExtArgs>>): Prisma__tr_notas_viajeClient<$Result.GetResult<Prisma.$tr_notas_viajePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Tr_notas_viaje.
+     * @param {tr_notas_viajeUpdateArgs} args - Arguments to update one Tr_notas_viaje.
+     * @example
+     * // Update one Tr_notas_viaje
+     * const tr_notas_viaje = await prisma.tr_notas_viaje.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends tr_notas_viajeUpdateArgs>(args: SelectSubset<T, tr_notas_viajeUpdateArgs<ExtArgs>>): Prisma__tr_notas_viajeClient<$Result.GetResult<Prisma.$tr_notas_viajePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Tr_notas_viajes.
+     * @param {tr_notas_viajeDeleteManyArgs} args - Arguments to filter Tr_notas_viajes to delete.
+     * @example
+     * // Delete a few Tr_notas_viajes
+     * const { count } = await prisma.tr_notas_viaje.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends tr_notas_viajeDeleteManyArgs>(args?: SelectSubset<T, tr_notas_viajeDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tr_notas_viajes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_notas_viajeUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Tr_notas_viajes
+     * const tr_notas_viaje = await prisma.tr_notas_viaje.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends tr_notas_viajeUpdateManyArgs>(args: SelectSubset<T, tr_notas_viajeUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Tr_notas_viajes and returns the data updated in the database.
+     * @param {tr_notas_viajeUpdateManyAndReturnArgs} args - Arguments to update many Tr_notas_viajes.
+     * @example
+     * // Update many Tr_notas_viajes
+     * const tr_notas_viaje = await prisma.tr_notas_viaje.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Tr_notas_viajes and only return the `clave`
+     * const tr_notas_viajeWithClaveOnly = await prisma.tr_notas_viaje.updateManyAndReturn({
+     *   select: { clave: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends tr_notas_viajeUpdateManyAndReturnArgs>(args: SelectSubset<T, tr_notas_viajeUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$tr_notas_viajePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Tr_notas_viaje.
+     * @param {tr_notas_viajeUpsertArgs} args - Arguments to update or create a Tr_notas_viaje.
+     * @example
+     * // Update or create a Tr_notas_viaje
+     * const tr_notas_viaje = await prisma.tr_notas_viaje.upsert({
+     *   create: {
+     *     // ... data to create a Tr_notas_viaje
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Tr_notas_viaje we want to update
+     *   }
+     * })
+     */
+    upsert<T extends tr_notas_viajeUpsertArgs>(args: SelectSubset<T, tr_notas_viajeUpsertArgs<ExtArgs>>): Prisma__tr_notas_viajeClient<$Result.GetResult<Prisma.$tr_notas_viajePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Tr_notas_viajes.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_notas_viajeCountArgs} args - Arguments to filter Tr_notas_viajes to count.
+     * @example
+     * // Count the number of Tr_notas_viajes
+     * const count = await prisma.tr_notas_viaje.count({
+     *   where: {
+     *     // ... the filter for the Tr_notas_viajes we want to count
+     *   }
+     * })
+    **/
+    count<T extends tr_notas_viajeCountArgs>(
+      args?: Subset<T, tr_notas_viajeCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], Tr_notas_viajeCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Tr_notas_viaje.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {Tr_notas_viajeAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends Tr_notas_viajeAggregateArgs>(args: Subset<T, Tr_notas_viajeAggregateArgs>): Prisma.PrismaPromise<GetTr_notas_viajeAggregateType<T>>
+
+    /**
+     * Group by Tr_notas_viaje.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {tr_notas_viajeGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends tr_notas_viajeGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: tr_notas_viajeGroupByArgs['orderBy'] }
+        : { orderBy?: tr_notas_viajeGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, tr_notas_viajeGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTr_notas_viajeGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the tr_notas_viaje model
+   */
+  readonly fields: tr_notas_viajeFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for tr_notas_viaje.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__tr_notas_viajeClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    viaje<T extends tr_viajesDefaultArgs<ExtArgs> = {}>(args?: Subset<T, tr_viajesDefaultArgs<ExtArgs>>): Prisma__tr_viajesClient<$Result.GetResult<Prisma.$tr_viajesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the tr_notas_viaje model
+   */
+  interface tr_notas_viajeFieldRefs {
+    readonly clave: FieldRef<"tr_notas_viaje", 'Int'>
+    readonly cve_viaje: FieldRef<"tr_notas_viaje", 'Int'>
+    readonly titulo: FieldRef<"tr_notas_viaje", 'String'>
+    readonly contenido: FieldRef<"tr_notas_viaje", 'Json'>
+    readonly tipo_nota: FieldRef<"tr_notas_viaje", 'String'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * tr_notas_viaje findUnique
+   */
+  export type tr_notas_viajeFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_notas_viaje
+     */
+    select?: tr_notas_viajeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_notas_viaje
+     */
+    omit?: tr_notas_viajeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_notas_viajeInclude<ExtArgs> | null
+    /**
+     * Filter, which tr_notas_viaje to fetch.
+     */
+    where: tr_notas_viajeWhereUniqueInput
+  }
+
+  /**
+   * tr_notas_viaje findUniqueOrThrow
+   */
+  export type tr_notas_viajeFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_notas_viaje
+     */
+    select?: tr_notas_viajeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_notas_viaje
+     */
+    omit?: tr_notas_viajeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_notas_viajeInclude<ExtArgs> | null
+    /**
+     * Filter, which tr_notas_viaje to fetch.
+     */
+    where: tr_notas_viajeWhereUniqueInput
+  }
+
+  /**
+   * tr_notas_viaje findFirst
+   */
+  export type tr_notas_viajeFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_notas_viaje
+     */
+    select?: tr_notas_viajeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_notas_viaje
+     */
+    omit?: tr_notas_viajeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_notas_viajeInclude<ExtArgs> | null
+    /**
+     * Filter, which tr_notas_viaje to fetch.
+     */
+    where?: tr_notas_viajeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tr_notas_viajes to fetch.
+     */
+    orderBy?: tr_notas_viajeOrderByWithRelationInput | tr_notas_viajeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tr_notas_viajes.
+     */
+    cursor?: tr_notas_viajeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tr_notas_viajes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tr_notas_viajes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tr_notas_viajes.
+     */
+    distinct?: Tr_notas_viajeScalarFieldEnum | Tr_notas_viajeScalarFieldEnum[]
+  }
+
+  /**
+   * tr_notas_viaje findFirstOrThrow
+   */
+  export type tr_notas_viajeFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_notas_viaje
+     */
+    select?: tr_notas_viajeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_notas_viaje
+     */
+    omit?: tr_notas_viajeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_notas_viajeInclude<ExtArgs> | null
+    /**
+     * Filter, which tr_notas_viaje to fetch.
+     */
+    where?: tr_notas_viajeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tr_notas_viajes to fetch.
+     */
+    orderBy?: tr_notas_viajeOrderByWithRelationInput | tr_notas_viajeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for tr_notas_viajes.
+     */
+    cursor?: tr_notas_viajeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tr_notas_viajes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tr_notas_viajes.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of tr_notas_viajes.
+     */
+    distinct?: Tr_notas_viajeScalarFieldEnum | Tr_notas_viajeScalarFieldEnum[]
+  }
+
+  /**
+   * tr_notas_viaje findMany
+   */
+  export type tr_notas_viajeFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_notas_viaje
+     */
+    select?: tr_notas_viajeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_notas_viaje
+     */
+    omit?: tr_notas_viajeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_notas_viajeInclude<ExtArgs> | null
+    /**
+     * Filter, which tr_notas_viajes to fetch.
+     */
+    where?: tr_notas_viajeWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of tr_notas_viajes to fetch.
+     */
+    orderBy?: tr_notas_viajeOrderByWithRelationInput | tr_notas_viajeOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing tr_notas_viajes.
+     */
+    cursor?: tr_notas_viajeWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` tr_notas_viajes from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` tr_notas_viajes.
+     */
+    skip?: number
+    distinct?: Tr_notas_viajeScalarFieldEnum | Tr_notas_viajeScalarFieldEnum[]
+  }
+
+  /**
+   * tr_notas_viaje create
+   */
+  export type tr_notas_viajeCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_notas_viaje
+     */
+    select?: tr_notas_viajeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_notas_viaje
+     */
+    omit?: tr_notas_viajeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_notas_viajeInclude<ExtArgs> | null
+    /**
+     * The data needed to create a tr_notas_viaje.
+     */
+    data: XOR<tr_notas_viajeCreateInput, tr_notas_viajeUncheckedCreateInput>
+  }
+
+  /**
+   * tr_notas_viaje createMany
+   */
+  export type tr_notas_viajeCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many tr_notas_viajes.
+     */
+    data: tr_notas_viajeCreateManyInput | tr_notas_viajeCreateManyInput[]
+    skipDuplicates?: boolean
+  }
+
+  /**
+   * tr_notas_viaje createManyAndReturn
+   */
+  export type tr_notas_viajeCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_notas_viaje
+     */
+    select?: tr_notas_viajeSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_notas_viaje
+     */
+    omit?: tr_notas_viajeOmit<ExtArgs> | null
+    /**
+     * The data used to create many tr_notas_viajes.
+     */
+    data: tr_notas_viajeCreateManyInput | tr_notas_viajeCreateManyInput[]
+    skipDuplicates?: boolean
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_notas_viajeIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * tr_notas_viaje update
+   */
+  export type tr_notas_viajeUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_notas_viaje
+     */
+    select?: tr_notas_viajeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_notas_viaje
+     */
+    omit?: tr_notas_viajeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_notas_viajeInclude<ExtArgs> | null
+    /**
+     * The data needed to update a tr_notas_viaje.
+     */
+    data: XOR<tr_notas_viajeUpdateInput, tr_notas_viajeUncheckedUpdateInput>
+    /**
+     * Choose, which tr_notas_viaje to update.
+     */
+    where: tr_notas_viajeWhereUniqueInput
+  }
+
+  /**
+   * tr_notas_viaje updateMany
+   */
+  export type tr_notas_viajeUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update tr_notas_viajes.
+     */
+    data: XOR<tr_notas_viajeUpdateManyMutationInput, tr_notas_viajeUncheckedUpdateManyInput>
+    /**
+     * Filter which tr_notas_viajes to update
+     */
+    where?: tr_notas_viajeWhereInput
+    /**
+     * Limit how many tr_notas_viajes to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * tr_notas_viaje updateManyAndReturn
+   */
+  export type tr_notas_viajeUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_notas_viaje
+     */
+    select?: tr_notas_viajeSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_notas_viaje
+     */
+    omit?: tr_notas_viajeOmit<ExtArgs> | null
+    /**
+     * The data used to update tr_notas_viajes.
+     */
+    data: XOR<tr_notas_viajeUpdateManyMutationInput, tr_notas_viajeUncheckedUpdateManyInput>
+    /**
+     * Filter which tr_notas_viajes to update
+     */
+    where?: tr_notas_viajeWhereInput
+    /**
+     * Limit how many tr_notas_viajes to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_notas_viajeIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * tr_notas_viaje upsert
+   */
+  export type tr_notas_viajeUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_notas_viaje
+     */
+    select?: tr_notas_viajeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_notas_viaje
+     */
+    omit?: tr_notas_viajeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_notas_viajeInclude<ExtArgs> | null
+    /**
+     * The filter to search for the tr_notas_viaje to update in case it exists.
+     */
+    where: tr_notas_viajeWhereUniqueInput
+    /**
+     * In case the tr_notas_viaje found by the `where` argument doesn't exist, create a new tr_notas_viaje with this data.
+     */
+    create: XOR<tr_notas_viajeCreateInput, tr_notas_viajeUncheckedCreateInput>
+    /**
+     * In case the tr_notas_viaje was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<tr_notas_viajeUpdateInput, tr_notas_viajeUncheckedUpdateInput>
+  }
+
+  /**
+   * tr_notas_viaje delete
+   */
+  export type tr_notas_viajeDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_notas_viaje
+     */
+    select?: tr_notas_viajeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_notas_viaje
+     */
+    omit?: tr_notas_viajeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_notas_viajeInclude<ExtArgs> | null
+    /**
+     * Filter which tr_notas_viaje to delete.
+     */
+    where: tr_notas_viajeWhereUniqueInput
+  }
+
+  /**
+   * tr_notas_viaje deleteMany
+   */
+  export type tr_notas_viajeDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which tr_notas_viajes to delete
+     */
+    where?: tr_notas_viajeWhereInput
+    /**
+     * Limit how many tr_notas_viajes to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * tr_notas_viaje without action
+   */
+  export type tr_notas_viajeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the tr_notas_viaje
+     */
+    select?: tr_notas_viajeSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the tr_notas_viaje
+     */
+    omit?: tr_notas_viajeOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: tr_notas_viajeInclude<ExtArgs> | null
+  }
+
+
+  /**
    * Enums
    */
 
@@ -31065,12 +37367,82 @@ export namespace Prisma {
   export type Ma_folioScalarFieldEnum = (typeof Ma_folioScalarFieldEnum)[keyof typeof Ma_folioScalarFieldEnum]
 
 
+  export const Ma_catvjScalarFieldEnum: {
+    clave: 'clave',
+    nombre: 'nombre',
+    icono: 'icono',
+    color: 'color'
+  };
+
+  export type Ma_catvjScalarFieldEnum = (typeof Ma_catvjScalarFieldEnum)[keyof typeof Ma_catvjScalarFieldEnum]
+
+
+  export const Tr_viajesScalarFieldEnum: {
+    clave: 'clave',
+    uuid_movil: 'uuid_movil',
+    cve_emple: 'cve_emple',
+    titulo: 'titulo',
+    fecha_inicio: 'fecha_inicio',
+    presupuesto: 'presupuesto',
+    status_viaje: 'status_viaje',
+    sync_at: 'sync_at'
+  };
+
+  export type Tr_viajesScalarFieldEnum = (typeof Tr_viajesScalarFieldEnum)[keyof typeof Tr_viajesScalarFieldEnum]
+
+
+  export const Tr_paradas_gastosScalarFieldEnum: {
+    clave: 'clave',
+    cve_viaje: 'cve_viaje',
+    cve_catvj: 'cve_catvj',
+    lugar: 'lugar',
+    hora_registro: 'hora_registro',
+    monto: 'monto',
+    propina: 'propina',
+    facturable: 'facturable',
+    descripcion: 'descripcion',
+    lat: 'lat',
+    lng: 'lng'
+  };
+
+  export type Tr_paradas_gastosScalarFieldEnum = (typeof Tr_paradas_gastosScalarFieldEnum)[keyof typeof Tr_paradas_gastosScalarFieldEnum]
+
+
+  export const Tr_evidenciaScalarFieldEnum: {
+    clave: 'clave',
+    cve_parada: 'cve_parada',
+    tipo_archivo: 'tipo_archivo',
+    url_archivo: 'url_archivo',
+    fuente: 'fuente'
+  };
+
+  export type Tr_evidenciaScalarFieldEnum = (typeof Tr_evidenciaScalarFieldEnum)[keyof typeof Tr_evidenciaScalarFieldEnum]
+
+
+  export const Tr_notas_viajeScalarFieldEnum: {
+    clave: 'clave',
+    cve_viaje: 'cve_viaje',
+    titulo: 'titulo',
+    contenido: 'contenido',
+    tipo_nota: 'tipo_nota'
+  };
+
+  export type Tr_notas_viajeScalarFieldEnum = (typeof Tr_notas_viajeScalarFieldEnum)[keyof typeof Tr_notas_viajeScalarFieldEnum]
+
+
   export const SortOrder: {
     asc: 'asc',
     desc: 'desc'
   };
 
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+  export const JsonNullValueInput: {
+    JsonNull: typeof JsonNull
+  };
+
+  export type JsonNullValueInput = (typeof JsonNullValueInput)[keyof typeof JsonNullValueInput]
 
 
   export const QueryMode: {
@@ -31087,6 +37459,15 @@ export namespace Prisma {
   };
 
   export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
+
+
+  export const JsonNullValueFilter: {
+    DbNull: typeof DbNull,
+    JsonNull: typeof JsonNull,
+    AnyNull: typeof AnyNull
+  };
+
+  export type JsonNullValueFilter = (typeof JsonNullValueFilter)[keyof typeof JsonNullValueFilter]
 
 
   /**
@@ -31182,6 +37563,20 @@ export namespace Prisma {
    * Reference to a field of type 'Float[]'
    */
   export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'Json'
+   */
+  export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
+    
+
+
+  /**
+   * Reference to a field of type 'QueryMode'
+   */
+  export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
     
   /**
    * Deep Input Types
@@ -31686,6 +38081,7 @@ export namespace Prisma {
     cve_depar?: IntNullableFilter<"ma_emple"> | number | null
     ma_depar?: XOR<Ma_deparNullableScalarRelationFilter, ma_deparWhereInput> | null
     ma_eqasis?: Ma_eqasisListRelationFilter
+    viajes?: Tr_viajesListRelationFilter
   }
 
   export type ma_empleOrderByWithRelationInput = {
@@ -31697,6 +38093,7 @@ export namespace Prisma {
     cve_depar?: SortOrderInput | SortOrder
     ma_depar?: ma_deparOrderByWithRelationInput
     ma_eqasis?: ma_eqasisOrderByRelationAggregateInput
+    viajes?: tr_viajesOrderByRelationAggregateInput
   }
 
   export type ma_empleWhereUniqueInput = Prisma.AtLeast<{
@@ -31711,6 +38108,7 @@ export namespace Prisma {
     cve_depar?: IntNullableFilter<"ma_emple"> | number | null
     ma_depar?: XOR<Ma_deparNullableScalarRelationFilter, ma_deparWhereInput> | null
     ma_eqasis?: Ma_eqasisListRelationFilter
+    viajes?: Tr_viajesListRelationFilter
   }, "id">
 
   export type ma_empleOrderByWithAggregationInput = {
@@ -32739,6 +39137,343 @@ export namespace Prisma {
     ultimo_folio?: IntNullableWithAggregatesFilter<"ma_folio"> | number | null
   }
 
+  export type ma_catvjWhereInput = {
+    AND?: ma_catvjWhereInput | ma_catvjWhereInput[]
+    OR?: ma_catvjWhereInput[]
+    NOT?: ma_catvjWhereInput | ma_catvjWhereInput[]
+    clave?: IntFilter<"ma_catvj"> | number
+    nombre?: StringFilter<"ma_catvj"> | string
+    icono?: StringFilter<"ma_catvj"> | string
+    color?: StringFilter<"ma_catvj"> | string
+    paradas?: Tr_paradas_gastosListRelationFilter
+  }
+
+  export type ma_catvjOrderByWithRelationInput = {
+    clave?: SortOrder
+    nombre?: SortOrder
+    icono?: SortOrder
+    color?: SortOrder
+    paradas?: tr_paradas_gastosOrderByRelationAggregateInput
+  }
+
+  export type ma_catvjWhereUniqueInput = Prisma.AtLeast<{
+    clave?: number
+    nombre?: string
+    AND?: ma_catvjWhereInput | ma_catvjWhereInput[]
+    OR?: ma_catvjWhereInput[]
+    NOT?: ma_catvjWhereInput | ma_catvjWhereInput[]
+    icono?: StringFilter<"ma_catvj"> | string
+    color?: StringFilter<"ma_catvj"> | string
+    paradas?: Tr_paradas_gastosListRelationFilter
+  }, "clave" | "nombre">
+
+  export type ma_catvjOrderByWithAggregationInput = {
+    clave?: SortOrder
+    nombre?: SortOrder
+    icono?: SortOrder
+    color?: SortOrder
+    _count?: ma_catvjCountOrderByAggregateInput
+    _avg?: ma_catvjAvgOrderByAggregateInput
+    _max?: ma_catvjMaxOrderByAggregateInput
+    _min?: ma_catvjMinOrderByAggregateInput
+    _sum?: ma_catvjSumOrderByAggregateInput
+  }
+
+  export type ma_catvjScalarWhereWithAggregatesInput = {
+    AND?: ma_catvjScalarWhereWithAggregatesInput | ma_catvjScalarWhereWithAggregatesInput[]
+    OR?: ma_catvjScalarWhereWithAggregatesInput[]
+    NOT?: ma_catvjScalarWhereWithAggregatesInput | ma_catvjScalarWhereWithAggregatesInput[]
+    clave?: IntWithAggregatesFilter<"ma_catvj"> | number
+    nombre?: StringWithAggregatesFilter<"ma_catvj"> | string
+    icono?: StringWithAggregatesFilter<"ma_catvj"> | string
+    color?: StringWithAggregatesFilter<"ma_catvj"> | string
+  }
+
+  export type tr_viajesWhereInput = {
+    AND?: tr_viajesWhereInput | tr_viajesWhereInput[]
+    OR?: tr_viajesWhereInput[]
+    NOT?: tr_viajesWhereInput | tr_viajesWhereInput[]
+    clave?: IntFilter<"tr_viajes"> | number
+    uuid_movil?: StringFilter<"tr_viajes"> | string
+    cve_emple?: IntFilter<"tr_viajes"> | number
+    titulo?: StringFilter<"tr_viajes"> | string
+    fecha_inicio?: DateTimeFilter<"tr_viajes"> | Date | string
+    presupuesto?: DecimalFilter<"tr_viajes"> | Decimal | DecimalJsLike | number | string
+    status_viaje?: StringFilter<"tr_viajes"> | string
+    sync_at?: DateTimeFilter<"tr_viajes"> | Date | string
+    empleado?: XOR<Ma_empleScalarRelationFilter, ma_empleWhereInput>
+    paradas?: Tr_paradas_gastosListRelationFilter
+    notas?: Tr_notas_viajeListRelationFilter
+  }
+
+  export type tr_viajesOrderByWithRelationInput = {
+    clave?: SortOrder
+    uuid_movil?: SortOrder
+    cve_emple?: SortOrder
+    titulo?: SortOrder
+    fecha_inicio?: SortOrder
+    presupuesto?: SortOrder
+    status_viaje?: SortOrder
+    sync_at?: SortOrder
+    empleado?: ma_empleOrderByWithRelationInput
+    paradas?: tr_paradas_gastosOrderByRelationAggregateInput
+    notas?: tr_notas_viajeOrderByRelationAggregateInput
+  }
+
+  export type tr_viajesWhereUniqueInput = Prisma.AtLeast<{
+    clave?: number
+    uuid_movil?: string
+    AND?: tr_viajesWhereInput | tr_viajesWhereInput[]
+    OR?: tr_viajesWhereInput[]
+    NOT?: tr_viajesWhereInput | tr_viajesWhereInput[]
+    cve_emple?: IntFilter<"tr_viajes"> | number
+    titulo?: StringFilter<"tr_viajes"> | string
+    fecha_inicio?: DateTimeFilter<"tr_viajes"> | Date | string
+    presupuesto?: DecimalFilter<"tr_viajes"> | Decimal | DecimalJsLike | number | string
+    status_viaje?: StringFilter<"tr_viajes"> | string
+    sync_at?: DateTimeFilter<"tr_viajes"> | Date | string
+    empleado?: XOR<Ma_empleScalarRelationFilter, ma_empleWhereInput>
+    paradas?: Tr_paradas_gastosListRelationFilter
+    notas?: Tr_notas_viajeListRelationFilter
+  }, "clave" | "uuid_movil">
+
+  export type tr_viajesOrderByWithAggregationInput = {
+    clave?: SortOrder
+    uuid_movil?: SortOrder
+    cve_emple?: SortOrder
+    titulo?: SortOrder
+    fecha_inicio?: SortOrder
+    presupuesto?: SortOrder
+    status_viaje?: SortOrder
+    sync_at?: SortOrder
+    _count?: tr_viajesCountOrderByAggregateInput
+    _avg?: tr_viajesAvgOrderByAggregateInput
+    _max?: tr_viajesMaxOrderByAggregateInput
+    _min?: tr_viajesMinOrderByAggregateInput
+    _sum?: tr_viajesSumOrderByAggregateInput
+  }
+
+  export type tr_viajesScalarWhereWithAggregatesInput = {
+    AND?: tr_viajesScalarWhereWithAggregatesInput | tr_viajesScalarWhereWithAggregatesInput[]
+    OR?: tr_viajesScalarWhereWithAggregatesInput[]
+    NOT?: tr_viajesScalarWhereWithAggregatesInput | tr_viajesScalarWhereWithAggregatesInput[]
+    clave?: IntWithAggregatesFilter<"tr_viajes"> | number
+    uuid_movil?: StringWithAggregatesFilter<"tr_viajes"> | string
+    cve_emple?: IntWithAggregatesFilter<"tr_viajes"> | number
+    titulo?: StringWithAggregatesFilter<"tr_viajes"> | string
+    fecha_inicio?: DateTimeWithAggregatesFilter<"tr_viajes"> | Date | string
+    presupuesto?: DecimalWithAggregatesFilter<"tr_viajes"> | Decimal | DecimalJsLike | number | string
+    status_viaje?: StringWithAggregatesFilter<"tr_viajes"> | string
+    sync_at?: DateTimeWithAggregatesFilter<"tr_viajes"> | Date | string
+  }
+
+  export type tr_paradas_gastosWhereInput = {
+    AND?: tr_paradas_gastosWhereInput | tr_paradas_gastosWhereInput[]
+    OR?: tr_paradas_gastosWhereInput[]
+    NOT?: tr_paradas_gastosWhereInput | tr_paradas_gastosWhereInput[]
+    clave?: IntFilter<"tr_paradas_gastos"> | number
+    cve_viaje?: IntFilter<"tr_paradas_gastos"> | number
+    cve_catvj?: IntFilter<"tr_paradas_gastos"> | number
+    lugar?: StringFilter<"tr_paradas_gastos"> | string
+    hora_registro?: StringFilter<"tr_paradas_gastos"> | string
+    monto?: DecimalFilter<"tr_paradas_gastos"> | Decimal | DecimalJsLike | number | string
+    propina?: DecimalFilter<"tr_paradas_gastos"> | Decimal | DecimalJsLike | number | string
+    facturable?: BoolFilter<"tr_paradas_gastos"> | boolean
+    descripcion?: StringNullableFilter<"tr_paradas_gastos"> | string | null
+    lat?: FloatNullableFilter<"tr_paradas_gastos"> | number | null
+    lng?: FloatNullableFilter<"tr_paradas_gastos"> | number | null
+    viaje?: XOR<Tr_viajesScalarRelationFilter, tr_viajesWhereInput>
+    categoria?: XOR<Ma_catvjScalarRelationFilter, ma_catvjWhereInput>
+    evidencias?: Tr_evidenciaListRelationFilter
+  }
+
+  export type tr_paradas_gastosOrderByWithRelationInput = {
+    clave?: SortOrder
+    cve_viaje?: SortOrder
+    cve_catvj?: SortOrder
+    lugar?: SortOrder
+    hora_registro?: SortOrder
+    monto?: SortOrder
+    propina?: SortOrder
+    facturable?: SortOrder
+    descripcion?: SortOrderInput | SortOrder
+    lat?: SortOrderInput | SortOrder
+    lng?: SortOrderInput | SortOrder
+    viaje?: tr_viajesOrderByWithRelationInput
+    categoria?: ma_catvjOrderByWithRelationInput
+    evidencias?: tr_evidenciaOrderByRelationAggregateInput
+  }
+
+  export type tr_paradas_gastosWhereUniqueInput = Prisma.AtLeast<{
+    clave?: number
+    AND?: tr_paradas_gastosWhereInput | tr_paradas_gastosWhereInput[]
+    OR?: tr_paradas_gastosWhereInput[]
+    NOT?: tr_paradas_gastosWhereInput | tr_paradas_gastosWhereInput[]
+    cve_viaje?: IntFilter<"tr_paradas_gastos"> | number
+    cve_catvj?: IntFilter<"tr_paradas_gastos"> | number
+    lugar?: StringFilter<"tr_paradas_gastos"> | string
+    hora_registro?: StringFilter<"tr_paradas_gastos"> | string
+    monto?: DecimalFilter<"tr_paradas_gastos"> | Decimal | DecimalJsLike | number | string
+    propina?: DecimalFilter<"tr_paradas_gastos"> | Decimal | DecimalJsLike | number | string
+    facturable?: BoolFilter<"tr_paradas_gastos"> | boolean
+    descripcion?: StringNullableFilter<"tr_paradas_gastos"> | string | null
+    lat?: FloatNullableFilter<"tr_paradas_gastos"> | number | null
+    lng?: FloatNullableFilter<"tr_paradas_gastos"> | number | null
+    viaje?: XOR<Tr_viajesScalarRelationFilter, tr_viajesWhereInput>
+    categoria?: XOR<Ma_catvjScalarRelationFilter, ma_catvjWhereInput>
+    evidencias?: Tr_evidenciaListRelationFilter
+  }, "clave">
+
+  export type tr_paradas_gastosOrderByWithAggregationInput = {
+    clave?: SortOrder
+    cve_viaje?: SortOrder
+    cve_catvj?: SortOrder
+    lugar?: SortOrder
+    hora_registro?: SortOrder
+    monto?: SortOrder
+    propina?: SortOrder
+    facturable?: SortOrder
+    descripcion?: SortOrderInput | SortOrder
+    lat?: SortOrderInput | SortOrder
+    lng?: SortOrderInput | SortOrder
+    _count?: tr_paradas_gastosCountOrderByAggregateInput
+    _avg?: tr_paradas_gastosAvgOrderByAggregateInput
+    _max?: tr_paradas_gastosMaxOrderByAggregateInput
+    _min?: tr_paradas_gastosMinOrderByAggregateInput
+    _sum?: tr_paradas_gastosSumOrderByAggregateInput
+  }
+
+  export type tr_paradas_gastosScalarWhereWithAggregatesInput = {
+    AND?: tr_paradas_gastosScalarWhereWithAggregatesInput | tr_paradas_gastosScalarWhereWithAggregatesInput[]
+    OR?: tr_paradas_gastosScalarWhereWithAggregatesInput[]
+    NOT?: tr_paradas_gastosScalarWhereWithAggregatesInput | tr_paradas_gastosScalarWhereWithAggregatesInput[]
+    clave?: IntWithAggregatesFilter<"tr_paradas_gastos"> | number
+    cve_viaje?: IntWithAggregatesFilter<"tr_paradas_gastos"> | number
+    cve_catvj?: IntWithAggregatesFilter<"tr_paradas_gastos"> | number
+    lugar?: StringWithAggregatesFilter<"tr_paradas_gastos"> | string
+    hora_registro?: StringWithAggregatesFilter<"tr_paradas_gastos"> | string
+    monto?: DecimalWithAggregatesFilter<"tr_paradas_gastos"> | Decimal | DecimalJsLike | number | string
+    propina?: DecimalWithAggregatesFilter<"tr_paradas_gastos"> | Decimal | DecimalJsLike | number | string
+    facturable?: BoolWithAggregatesFilter<"tr_paradas_gastos"> | boolean
+    descripcion?: StringNullableWithAggregatesFilter<"tr_paradas_gastos"> | string | null
+    lat?: FloatNullableWithAggregatesFilter<"tr_paradas_gastos"> | number | null
+    lng?: FloatNullableWithAggregatesFilter<"tr_paradas_gastos"> | number | null
+  }
+
+  export type tr_evidenciaWhereInput = {
+    AND?: tr_evidenciaWhereInput | tr_evidenciaWhereInput[]
+    OR?: tr_evidenciaWhereInput[]
+    NOT?: tr_evidenciaWhereInput | tr_evidenciaWhereInput[]
+    clave?: IntFilter<"tr_evidencia"> | number
+    cve_parada?: IntFilter<"tr_evidencia"> | number
+    tipo_archivo?: StringFilter<"tr_evidencia"> | string
+    url_archivo?: StringFilter<"tr_evidencia"> | string
+    fuente?: StringNullableFilter<"tr_evidencia"> | string | null
+    parada?: XOR<Tr_paradas_gastosScalarRelationFilter, tr_paradas_gastosWhereInput>
+  }
+
+  export type tr_evidenciaOrderByWithRelationInput = {
+    clave?: SortOrder
+    cve_parada?: SortOrder
+    tipo_archivo?: SortOrder
+    url_archivo?: SortOrder
+    fuente?: SortOrderInput | SortOrder
+    parada?: tr_paradas_gastosOrderByWithRelationInput
+  }
+
+  export type tr_evidenciaWhereUniqueInput = Prisma.AtLeast<{
+    clave?: number
+    AND?: tr_evidenciaWhereInput | tr_evidenciaWhereInput[]
+    OR?: tr_evidenciaWhereInput[]
+    NOT?: tr_evidenciaWhereInput | tr_evidenciaWhereInput[]
+    cve_parada?: IntFilter<"tr_evidencia"> | number
+    tipo_archivo?: StringFilter<"tr_evidencia"> | string
+    url_archivo?: StringFilter<"tr_evidencia"> | string
+    fuente?: StringNullableFilter<"tr_evidencia"> | string | null
+    parada?: XOR<Tr_paradas_gastosScalarRelationFilter, tr_paradas_gastosWhereInput>
+  }, "clave">
+
+  export type tr_evidenciaOrderByWithAggregationInput = {
+    clave?: SortOrder
+    cve_parada?: SortOrder
+    tipo_archivo?: SortOrder
+    url_archivo?: SortOrder
+    fuente?: SortOrderInput | SortOrder
+    _count?: tr_evidenciaCountOrderByAggregateInput
+    _avg?: tr_evidenciaAvgOrderByAggregateInput
+    _max?: tr_evidenciaMaxOrderByAggregateInput
+    _min?: tr_evidenciaMinOrderByAggregateInput
+    _sum?: tr_evidenciaSumOrderByAggregateInput
+  }
+
+  export type tr_evidenciaScalarWhereWithAggregatesInput = {
+    AND?: tr_evidenciaScalarWhereWithAggregatesInput | tr_evidenciaScalarWhereWithAggregatesInput[]
+    OR?: tr_evidenciaScalarWhereWithAggregatesInput[]
+    NOT?: tr_evidenciaScalarWhereWithAggregatesInput | tr_evidenciaScalarWhereWithAggregatesInput[]
+    clave?: IntWithAggregatesFilter<"tr_evidencia"> | number
+    cve_parada?: IntWithAggregatesFilter<"tr_evidencia"> | number
+    tipo_archivo?: StringWithAggregatesFilter<"tr_evidencia"> | string
+    url_archivo?: StringWithAggregatesFilter<"tr_evidencia"> | string
+    fuente?: StringNullableWithAggregatesFilter<"tr_evidencia"> | string | null
+  }
+
+  export type tr_notas_viajeWhereInput = {
+    AND?: tr_notas_viajeWhereInput | tr_notas_viajeWhereInput[]
+    OR?: tr_notas_viajeWhereInput[]
+    NOT?: tr_notas_viajeWhereInput | tr_notas_viajeWhereInput[]
+    clave?: IntFilter<"tr_notas_viaje"> | number
+    cve_viaje?: IntFilter<"tr_notas_viaje"> | number
+    titulo?: StringFilter<"tr_notas_viaje"> | string
+    contenido?: JsonFilter<"tr_notas_viaje">
+    tipo_nota?: StringFilter<"tr_notas_viaje"> | string
+    viaje?: XOR<Tr_viajesScalarRelationFilter, tr_viajesWhereInput>
+  }
+
+  export type tr_notas_viajeOrderByWithRelationInput = {
+    clave?: SortOrder
+    cve_viaje?: SortOrder
+    titulo?: SortOrder
+    contenido?: SortOrder
+    tipo_nota?: SortOrder
+    viaje?: tr_viajesOrderByWithRelationInput
+  }
+
+  export type tr_notas_viajeWhereUniqueInput = Prisma.AtLeast<{
+    clave?: number
+    AND?: tr_notas_viajeWhereInput | tr_notas_viajeWhereInput[]
+    OR?: tr_notas_viajeWhereInput[]
+    NOT?: tr_notas_viajeWhereInput | tr_notas_viajeWhereInput[]
+    cve_viaje?: IntFilter<"tr_notas_viaje"> | number
+    titulo?: StringFilter<"tr_notas_viaje"> | string
+    contenido?: JsonFilter<"tr_notas_viaje">
+    tipo_nota?: StringFilter<"tr_notas_viaje"> | string
+    viaje?: XOR<Tr_viajesScalarRelationFilter, tr_viajesWhereInput>
+  }, "clave">
+
+  export type tr_notas_viajeOrderByWithAggregationInput = {
+    clave?: SortOrder
+    cve_viaje?: SortOrder
+    titulo?: SortOrder
+    contenido?: SortOrder
+    tipo_nota?: SortOrder
+    _count?: tr_notas_viajeCountOrderByAggregateInput
+    _avg?: tr_notas_viajeAvgOrderByAggregateInput
+    _max?: tr_notas_viajeMaxOrderByAggregateInput
+    _min?: tr_notas_viajeMinOrderByAggregateInput
+    _sum?: tr_notas_viajeSumOrderByAggregateInput
+  }
+
+  export type tr_notas_viajeScalarWhereWithAggregatesInput = {
+    AND?: tr_notas_viajeScalarWhereWithAggregatesInput | tr_notas_viajeScalarWhereWithAggregatesInput[]
+    OR?: tr_notas_viajeScalarWhereWithAggregatesInput[]
+    NOT?: tr_notas_viajeScalarWhereWithAggregatesInput | tr_notas_viajeScalarWhereWithAggregatesInput[]
+    clave?: IntWithAggregatesFilter<"tr_notas_viaje"> | number
+    cve_viaje?: IntWithAggregatesFilter<"tr_notas_viaje"> | number
+    titulo?: StringWithAggregatesFilter<"tr_notas_viaje"> | string
+    contenido?: JsonWithAggregatesFilter<"tr_notas_viaje">
+    tipo_nota?: StringWithAggregatesFilter<"tr_notas_viaje"> | string
+  }
+
   export type de_zonaCreateInput = {
     nombre: string
   }
@@ -33248,6 +39983,7 @@ export namespace Prisma {
     status?: boolean | null
     ma_depar?: ma_deparCreateNestedOneWithoutMa_empleInput
     ma_eqasis?: ma_eqasisCreateNestedManyWithoutMa_empleInput
+    viajes?: tr_viajesCreateNestedManyWithoutEmpleadoInput
   }
 
   export type ma_empleUncheckedCreateInput = {
@@ -33258,6 +39994,7 @@ export namespace Prisma {
     status?: boolean | null
     cve_depar?: number | null
     ma_eqasis?: ma_eqasisUncheckedCreateNestedManyWithoutMa_empleInput
+    viajes?: tr_viajesUncheckedCreateNestedManyWithoutEmpleadoInput
   }
 
   export type ma_empleUpdateInput = {
@@ -33267,6 +40004,7 @@ export namespace Prisma {
     status?: NullableBoolFieldUpdateOperationsInput | boolean | null
     ma_depar?: ma_deparUpdateOneWithoutMa_empleNestedInput
     ma_eqasis?: ma_eqasisUpdateManyWithoutMa_empleNestedInput
+    viajes?: tr_viajesUpdateManyWithoutEmpleadoNestedInput
   }
 
   export type ma_empleUncheckedUpdateInput = {
@@ -33277,6 +40015,7 @@ export namespace Prisma {
     status?: NullableBoolFieldUpdateOperationsInput | boolean | null
     cve_depar?: NullableIntFieldUpdateOperationsInput | number | null
     ma_eqasis?: ma_eqasisUncheckedUpdateManyWithoutMa_empleNestedInput
+    viajes?: tr_viajesUncheckedUpdateManyWithoutEmpleadoNestedInput
   }
 
   export type ma_empleCreateManyInput = {
@@ -34309,6 +41048,338 @@ export namespace Prisma {
     ultimo_folio?: NullableIntFieldUpdateOperationsInput | number | null
   }
 
+  export type ma_catvjCreateInput = {
+    nombre: string
+    icono: string
+    color: string
+    paradas?: tr_paradas_gastosCreateNestedManyWithoutCategoriaInput
+  }
+
+  export type ma_catvjUncheckedCreateInput = {
+    clave?: number
+    nombre: string
+    icono: string
+    color: string
+    paradas?: tr_paradas_gastosUncheckedCreateNestedManyWithoutCategoriaInput
+  }
+
+  export type ma_catvjUpdateInput = {
+    nombre?: StringFieldUpdateOperationsInput | string
+    icono?: StringFieldUpdateOperationsInput | string
+    color?: StringFieldUpdateOperationsInput | string
+    paradas?: tr_paradas_gastosUpdateManyWithoutCategoriaNestedInput
+  }
+
+  export type ma_catvjUncheckedUpdateInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    nombre?: StringFieldUpdateOperationsInput | string
+    icono?: StringFieldUpdateOperationsInput | string
+    color?: StringFieldUpdateOperationsInput | string
+    paradas?: tr_paradas_gastosUncheckedUpdateManyWithoutCategoriaNestedInput
+  }
+
+  export type ma_catvjCreateManyInput = {
+    clave?: number
+    nombre: string
+    icono: string
+    color: string
+  }
+
+  export type ma_catvjUpdateManyMutationInput = {
+    nombre?: StringFieldUpdateOperationsInput | string
+    icono?: StringFieldUpdateOperationsInput | string
+    color?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ma_catvjUncheckedUpdateManyInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    nombre?: StringFieldUpdateOperationsInput | string
+    icono?: StringFieldUpdateOperationsInput | string
+    color?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type tr_viajesCreateInput = {
+    uuid_movil: string
+    titulo: string
+    fecha_inicio: Date | string
+    presupuesto: Decimal | DecimalJsLike | number | string
+    status_viaje?: string
+    sync_at?: Date | string
+    empleado: ma_empleCreateNestedOneWithoutViajesInput
+    paradas?: tr_paradas_gastosCreateNestedManyWithoutViajeInput
+    notas?: tr_notas_viajeCreateNestedManyWithoutViajeInput
+  }
+
+  export type tr_viajesUncheckedCreateInput = {
+    clave?: number
+    uuid_movil: string
+    cve_emple: number
+    titulo: string
+    fecha_inicio: Date | string
+    presupuesto: Decimal | DecimalJsLike | number | string
+    status_viaje?: string
+    sync_at?: Date | string
+    paradas?: tr_paradas_gastosUncheckedCreateNestedManyWithoutViajeInput
+    notas?: tr_notas_viajeUncheckedCreateNestedManyWithoutViajeInput
+  }
+
+  export type tr_viajesUpdateInput = {
+    uuid_movil?: StringFieldUpdateOperationsInput | string
+    titulo?: StringFieldUpdateOperationsInput | string
+    fecha_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    presupuesto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    status_viaje?: StringFieldUpdateOperationsInput | string
+    sync_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    empleado?: ma_empleUpdateOneRequiredWithoutViajesNestedInput
+    paradas?: tr_paradas_gastosUpdateManyWithoutViajeNestedInput
+    notas?: tr_notas_viajeUpdateManyWithoutViajeNestedInput
+  }
+
+  export type tr_viajesUncheckedUpdateInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    uuid_movil?: StringFieldUpdateOperationsInput | string
+    cve_emple?: IntFieldUpdateOperationsInput | number
+    titulo?: StringFieldUpdateOperationsInput | string
+    fecha_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    presupuesto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    status_viaje?: StringFieldUpdateOperationsInput | string
+    sync_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    paradas?: tr_paradas_gastosUncheckedUpdateManyWithoutViajeNestedInput
+    notas?: tr_notas_viajeUncheckedUpdateManyWithoutViajeNestedInput
+  }
+
+  export type tr_viajesCreateManyInput = {
+    clave?: number
+    uuid_movil: string
+    cve_emple: number
+    titulo: string
+    fecha_inicio: Date | string
+    presupuesto: Decimal | DecimalJsLike | number | string
+    status_viaje?: string
+    sync_at?: Date | string
+  }
+
+  export type tr_viajesUpdateManyMutationInput = {
+    uuid_movil?: StringFieldUpdateOperationsInput | string
+    titulo?: StringFieldUpdateOperationsInput | string
+    fecha_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    presupuesto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    status_viaje?: StringFieldUpdateOperationsInput | string
+    sync_at?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type tr_viajesUncheckedUpdateManyInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    uuid_movil?: StringFieldUpdateOperationsInput | string
+    cve_emple?: IntFieldUpdateOperationsInput | number
+    titulo?: StringFieldUpdateOperationsInput | string
+    fecha_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    presupuesto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    status_viaje?: StringFieldUpdateOperationsInput | string
+    sync_at?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type tr_paradas_gastosCreateInput = {
+    lugar: string
+    hora_registro: string
+    monto: Decimal | DecimalJsLike | number | string
+    propina?: Decimal | DecimalJsLike | number | string
+    facturable?: boolean
+    descripcion?: string | null
+    lat?: number | null
+    lng?: number | null
+    viaje: tr_viajesCreateNestedOneWithoutParadasInput
+    categoria: ma_catvjCreateNestedOneWithoutParadasInput
+    evidencias?: tr_evidenciaCreateNestedManyWithoutParadaInput
+  }
+
+  export type tr_paradas_gastosUncheckedCreateInput = {
+    clave?: number
+    cve_viaje: number
+    cve_catvj: number
+    lugar: string
+    hora_registro: string
+    monto: Decimal | DecimalJsLike | number | string
+    propina?: Decimal | DecimalJsLike | number | string
+    facturable?: boolean
+    descripcion?: string | null
+    lat?: number | null
+    lng?: number | null
+    evidencias?: tr_evidenciaUncheckedCreateNestedManyWithoutParadaInput
+  }
+
+  export type tr_paradas_gastosUpdateInput = {
+    lugar?: StringFieldUpdateOperationsInput | string
+    hora_registro?: StringFieldUpdateOperationsInput | string
+    monto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    propina?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    facturable?: BoolFieldUpdateOperationsInput | boolean
+    descripcion?: NullableStringFieldUpdateOperationsInput | string | null
+    lat?: NullableFloatFieldUpdateOperationsInput | number | null
+    lng?: NullableFloatFieldUpdateOperationsInput | number | null
+    viaje?: tr_viajesUpdateOneRequiredWithoutParadasNestedInput
+    categoria?: ma_catvjUpdateOneRequiredWithoutParadasNestedInput
+    evidencias?: tr_evidenciaUpdateManyWithoutParadaNestedInput
+  }
+
+  export type tr_paradas_gastosUncheckedUpdateInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    cve_viaje?: IntFieldUpdateOperationsInput | number
+    cve_catvj?: IntFieldUpdateOperationsInput | number
+    lugar?: StringFieldUpdateOperationsInput | string
+    hora_registro?: StringFieldUpdateOperationsInput | string
+    monto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    propina?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    facturable?: BoolFieldUpdateOperationsInput | boolean
+    descripcion?: NullableStringFieldUpdateOperationsInput | string | null
+    lat?: NullableFloatFieldUpdateOperationsInput | number | null
+    lng?: NullableFloatFieldUpdateOperationsInput | number | null
+    evidencias?: tr_evidenciaUncheckedUpdateManyWithoutParadaNestedInput
+  }
+
+  export type tr_paradas_gastosCreateManyInput = {
+    clave?: number
+    cve_viaje: number
+    cve_catvj: number
+    lugar: string
+    hora_registro: string
+    monto: Decimal | DecimalJsLike | number | string
+    propina?: Decimal | DecimalJsLike | number | string
+    facturable?: boolean
+    descripcion?: string | null
+    lat?: number | null
+    lng?: number | null
+  }
+
+  export type tr_paradas_gastosUpdateManyMutationInput = {
+    lugar?: StringFieldUpdateOperationsInput | string
+    hora_registro?: StringFieldUpdateOperationsInput | string
+    monto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    propina?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    facturable?: BoolFieldUpdateOperationsInput | boolean
+    descripcion?: NullableStringFieldUpdateOperationsInput | string | null
+    lat?: NullableFloatFieldUpdateOperationsInput | number | null
+    lng?: NullableFloatFieldUpdateOperationsInput | number | null
+  }
+
+  export type tr_paradas_gastosUncheckedUpdateManyInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    cve_viaje?: IntFieldUpdateOperationsInput | number
+    cve_catvj?: IntFieldUpdateOperationsInput | number
+    lugar?: StringFieldUpdateOperationsInput | string
+    hora_registro?: StringFieldUpdateOperationsInput | string
+    monto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    propina?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    facturable?: BoolFieldUpdateOperationsInput | boolean
+    descripcion?: NullableStringFieldUpdateOperationsInput | string | null
+    lat?: NullableFloatFieldUpdateOperationsInput | number | null
+    lng?: NullableFloatFieldUpdateOperationsInput | number | null
+  }
+
+  export type tr_evidenciaCreateInput = {
+    tipo_archivo: string
+    url_archivo: string
+    fuente?: string | null
+    parada: tr_paradas_gastosCreateNestedOneWithoutEvidenciasInput
+  }
+
+  export type tr_evidenciaUncheckedCreateInput = {
+    clave?: number
+    cve_parada: number
+    tipo_archivo: string
+    url_archivo: string
+    fuente?: string | null
+  }
+
+  export type tr_evidenciaUpdateInput = {
+    tipo_archivo?: StringFieldUpdateOperationsInput | string
+    url_archivo?: StringFieldUpdateOperationsInput | string
+    fuente?: NullableStringFieldUpdateOperationsInput | string | null
+    parada?: tr_paradas_gastosUpdateOneRequiredWithoutEvidenciasNestedInput
+  }
+
+  export type tr_evidenciaUncheckedUpdateInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    cve_parada?: IntFieldUpdateOperationsInput | number
+    tipo_archivo?: StringFieldUpdateOperationsInput | string
+    url_archivo?: StringFieldUpdateOperationsInput | string
+    fuente?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tr_evidenciaCreateManyInput = {
+    clave?: number
+    cve_parada: number
+    tipo_archivo: string
+    url_archivo: string
+    fuente?: string | null
+  }
+
+  export type tr_evidenciaUpdateManyMutationInput = {
+    tipo_archivo?: StringFieldUpdateOperationsInput | string
+    url_archivo?: StringFieldUpdateOperationsInput | string
+    fuente?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tr_evidenciaUncheckedUpdateManyInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    cve_parada?: IntFieldUpdateOperationsInput | number
+    tipo_archivo?: StringFieldUpdateOperationsInput | string
+    url_archivo?: StringFieldUpdateOperationsInput | string
+    fuente?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tr_notas_viajeCreateInput = {
+    titulo: string
+    contenido: JsonNullValueInput | InputJsonValue
+    tipo_nota?: string
+    viaje: tr_viajesCreateNestedOneWithoutNotasInput
+  }
+
+  export type tr_notas_viajeUncheckedCreateInput = {
+    clave?: number
+    cve_viaje: number
+    titulo: string
+    contenido: JsonNullValueInput | InputJsonValue
+    tipo_nota?: string
+  }
+
+  export type tr_notas_viajeUpdateInput = {
+    titulo?: StringFieldUpdateOperationsInput | string
+    contenido?: JsonNullValueInput | InputJsonValue
+    tipo_nota?: StringFieldUpdateOperationsInput | string
+    viaje?: tr_viajesUpdateOneRequiredWithoutNotasNestedInput
+  }
+
+  export type tr_notas_viajeUncheckedUpdateInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    cve_viaje?: IntFieldUpdateOperationsInput | number
+    titulo?: StringFieldUpdateOperationsInput | string
+    contenido?: JsonNullValueInput | InputJsonValue
+    tipo_nota?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type tr_notas_viajeCreateManyInput = {
+    clave?: number
+    cve_viaje: number
+    titulo: string
+    contenido: JsonNullValueInput | InputJsonValue
+    tipo_nota?: string
+  }
+
+  export type tr_notas_viajeUpdateManyMutationInput = {
+    titulo?: StringFieldUpdateOperationsInput | string
+    contenido?: JsonNullValueInput | InputJsonValue
+    tipo_nota?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type tr_notas_viajeUncheckedUpdateManyInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    cve_viaje?: IntFieldUpdateOperationsInput | number
+    titulo?: StringFieldUpdateOperationsInput | string
+    contenido?: JsonNullValueInput | InputJsonValue
+    tipo_nota?: StringFieldUpdateOperationsInput | string
+  }
+
   export type IntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -34817,6 +41888,16 @@ export namespace Prisma {
   export type Ma_deparNullableScalarRelationFilter = {
     is?: ma_deparWhereInput | null
     isNot?: ma_deparWhereInput | null
+  }
+
+  export type Tr_viajesListRelationFilter = {
+    every?: tr_viajesWhereInput
+    some?: tr_viajesWhereInput
+    none?: tr_viajesWhereInput
+  }
+
+  export type tr_viajesOrderByRelationAggregateInput = {
+    _count?: SortOrder
   }
 
   export type ma_empleCountOrderByAggregateInput = {
@@ -35593,6 +42674,399 @@ export namespace Prisma {
     ultimo_folio?: SortOrder
   }
 
+  export type Tr_paradas_gastosListRelationFilter = {
+    every?: tr_paradas_gastosWhereInput
+    some?: tr_paradas_gastosWhereInput
+    none?: tr_paradas_gastosWhereInput
+  }
+
+  export type tr_paradas_gastosOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ma_catvjCountOrderByAggregateInput = {
+    clave?: SortOrder
+    nombre?: SortOrder
+    icono?: SortOrder
+    color?: SortOrder
+  }
+
+  export type ma_catvjAvgOrderByAggregateInput = {
+    clave?: SortOrder
+  }
+
+  export type ma_catvjMaxOrderByAggregateInput = {
+    clave?: SortOrder
+    nombre?: SortOrder
+    icono?: SortOrder
+    color?: SortOrder
+  }
+
+  export type ma_catvjMinOrderByAggregateInput = {
+    clave?: SortOrder
+    nombre?: SortOrder
+    icono?: SortOrder
+    color?: SortOrder
+  }
+
+  export type ma_catvjSumOrderByAggregateInput = {
+    clave?: SortOrder
+  }
+
+  export type DateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
+  export type DecimalFilter<$PrismaModel = never> = {
+    equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
+    lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    not?: NestedDecimalFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string
+  }
+
+  export type Ma_empleScalarRelationFilter = {
+    is?: ma_empleWhereInput
+    isNot?: ma_empleWhereInput
+  }
+
+  export type Tr_notas_viajeListRelationFilter = {
+    every?: tr_notas_viajeWhereInput
+    some?: tr_notas_viajeWhereInput
+    none?: tr_notas_viajeWhereInput
+  }
+
+  export type tr_notas_viajeOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type tr_viajesCountOrderByAggregateInput = {
+    clave?: SortOrder
+    uuid_movil?: SortOrder
+    cve_emple?: SortOrder
+    titulo?: SortOrder
+    fecha_inicio?: SortOrder
+    presupuesto?: SortOrder
+    status_viaje?: SortOrder
+    sync_at?: SortOrder
+  }
+
+  export type tr_viajesAvgOrderByAggregateInput = {
+    clave?: SortOrder
+    cve_emple?: SortOrder
+    presupuesto?: SortOrder
+  }
+
+  export type tr_viajesMaxOrderByAggregateInput = {
+    clave?: SortOrder
+    uuid_movil?: SortOrder
+    cve_emple?: SortOrder
+    titulo?: SortOrder
+    fecha_inicio?: SortOrder
+    presupuesto?: SortOrder
+    status_viaje?: SortOrder
+    sync_at?: SortOrder
+  }
+
+  export type tr_viajesMinOrderByAggregateInput = {
+    clave?: SortOrder
+    uuid_movil?: SortOrder
+    cve_emple?: SortOrder
+    titulo?: SortOrder
+    fecha_inicio?: SortOrder
+    presupuesto?: SortOrder
+    status_viaje?: SortOrder
+    sync_at?: SortOrder
+  }
+
+  export type tr_viajesSumOrderByAggregateInput = {
+    clave?: SortOrder
+    cve_emple?: SortOrder
+    presupuesto?: SortOrder
+  }
+
+  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
+  export type DecimalWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
+    lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    not?: NestedDecimalWithAggregatesFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedDecimalFilter<$PrismaModel>
+    _sum?: NestedDecimalFilter<$PrismaModel>
+    _min?: NestedDecimalFilter<$PrismaModel>
+    _max?: NestedDecimalFilter<$PrismaModel>
+  }
+
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type FloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type Tr_viajesScalarRelationFilter = {
+    is?: tr_viajesWhereInput
+    isNot?: tr_viajesWhereInput
+  }
+
+  export type Ma_catvjScalarRelationFilter = {
+    is?: ma_catvjWhereInput
+    isNot?: ma_catvjWhereInput
+  }
+
+  export type Tr_evidenciaListRelationFilter = {
+    every?: tr_evidenciaWhereInput
+    some?: tr_evidenciaWhereInput
+    none?: tr_evidenciaWhereInput
+  }
+
+  export type tr_evidenciaOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type tr_paradas_gastosCountOrderByAggregateInput = {
+    clave?: SortOrder
+    cve_viaje?: SortOrder
+    cve_catvj?: SortOrder
+    lugar?: SortOrder
+    hora_registro?: SortOrder
+    monto?: SortOrder
+    propina?: SortOrder
+    facturable?: SortOrder
+    descripcion?: SortOrder
+    lat?: SortOrder
+    lng?: SortOrder
+  }
+
+  export type tr_paradas_gastosAvgOrderByAggregateInput = {
+    clave?: SortOrder
+    cve_viaje?: SortOrder
+    cve_catvj?: SortOrder
+    monto?: SortOrder
+    propina?: SortOrder
+    lat?: SortOrder
+    lng?: SortOrder
+  }
+
+  export type tr_paradas_gastosMaxOrderByAggregateInput = {
+    clave?: SortOrder
+    cve_viaje?: SortOrder
+    cve_catvj?: SortOrder
+    lugar?: SortOrder
+    hora_registro?: SortOrder
+    monto?: SortOrder
+    propina?: SortOrder
+    facturable?: SortOrder
+    descripcion?: SortOrder
+    lat?: SortOrder
+    lng?: SortOrder
+  }
+
+  export type tr_paradas_gastosMinOrderByAggregateInput = {
+    clave?: SortOrder
+    cve_viaje?: SortOrder
+    cve_catvj?: SortOrder
+    lugar?: SortOrder
+    hora_registro?: SortOrder
+    monto?: SortOrder
+    propina?: SortOrder
+    facturable?: SortOrder
+    descripcion?: SortOrder
+    lat?: SortOrder
+    lng?: SortOrder
+  }
+
+  export type tr_paradas_gastosSumOrderByAggregateInput = {
+    clave?: SortOrder
+    cve_viaje?: SortOrder
+    cve_catvj?: SortOrder
+    monto?: SortOrder
+    propina?: SortOrder
+    lat?: SortOrder
+    lng?: SortOrder
+  }
+
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
+  export type FloatNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedFloatNullableFilter<$PrismaModel>
+    _min?: NestedFloatNullableFilter<$PrismaModel>
+    _max?: NestedFloatNullableFilter<$PrismaModel>
+  }
+
+  export type Tr_paradas_gastosScalarRelationFilter = {
+    is?: tr_paradas_gastosWhereInput
+    isNot?: tr_paradas_gastosWhereInput
+  }
+
+  export type tr_evidenciaCountOrderByAggregateInput = {
+    clave?: SortOrder
+    cve_parada?: SortOrder
+    tipo_archivo?: SortOrder
+    url_archivo?: SortOrder
+    fuente?: SortOrder
+  }
+
+  export type tr_evidenciaAvgOrderByAggregateInput = {
+    clave?: SortOrder
+    cve_parada?: SortOrder
+  }
+
+  export type tr_evidenciaMaxOrderByAggregateInput = {
+    clave?: SortOrder
+    cve_parada?: SortOrder
+    tipo_archivo?: SortOrder
+    url_archivo?: SortOrder
+    fuente?: SortOrder
+  }
+
+  export type tr_evidenciaMinOrderByAggregateInput = {
+    clave?: SortOrder
+    cve_parada?: SortOrder
+    tipo_archivo?: SortOrder
+    url_archivo?: SortOrder
+    fuente?: SortOrder
+  }
+
+  export type tr_evidenciaSumOrderByAggregateInput = {
+    clave?: SortOrder
+    cve_parada?: SortOrder
+  }
+  export type JsonFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
+
+  export type tr_notas_viajeCountOrderByAggregateInput = {
+    clave?: SortOrder
+    cve_viaje?: SortOrder
+    titulo?: SortOrder
+    contenido?: SortOrder
+    tipo_nota?: SortOrder
+  }
+
+  export type tr_notas_viajeAvgOrderByAggregateInput = {
+    clave?: SortOrder
+    cve_viaje?: SortOrder
+  }
+
+  export type tr_notas_viajeMaxOrderByAggregateInput = {
+    clave?: SortOrder
+    cve_viaje?: SortOrder
+    titulo?: SortOrder
+    tipo_nota?: SortOrder
+  }
+
+  export type tr_notas_viajeMinOrderByAggregateInput = {
+    clave?: SortOrder
+    cve_viaje?: SortOrder
+    titulo?: SortOrder
+    tipo_nota?: SortOrder
+  }
+
+  export type tr_notas_viajeSumOrderByAggregateInput = {
+    clave?: SortOrder
+    cve_viaje?: SortOrder
+  }
+  export type JsonWithAggregatesFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, Exclude<keyof Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>,
+        Required<JsonWithAggregatesFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<JsonWithAggregatesFilterBase<$PrismaModel>>, 'path'>>
+
+  export type JsonWithAggregatesFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedJsonFilter<$PrismaModel>
+    _max?: NestedJsonFilter<$PrismaModel>
+  }
+
   export type StringFieldUpdateOperationsInput = {
     set?: string
   }
@@ -35772,11 +43246,25 @@ export namespace Prisma {
     connect?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
   }
 
+  export type tr_viajesCreateNestedManyWithoutEmpleadoInput = {
+    create?: XOR<tr_viajesCreateWithoutEmpleadoInput, tr_viajesUncheckedCreateWithoutEmpleadoInput> | tr_viajesCreateWithoutEmpleadoInput[] | tr_viajesUncheckedCreateWithoutEmpleadoInput[]
+    connectOrCreate?: tr_viajesCreateOrConnectWithoutEmpleadoInput | tr_viajesCreateOrConnectWithoutEmpleadoInput[]
+    createMany?: tr_viajesCreateManyEmpleadoInputEnvelope
+    connect?: tr_viajesWhereUniqueInput | tr_viajesWhereUniqueInput[]
+  }
+
   export type ma_eqasisUncheckedCreateNestedManyWithoutMa_empleInput = {
     create?: XOR<ma_eqasisCreateWithoutMa_empleInput, ma_eqasisUncheckedCreateWithoutMa_empleInput> | ma_eqasisCreateWithoutMa_empleInput[] | ma_eqasisUncheckedCreateWithoutMa_empleInput[]
     connectOrCreate?: ma_eqasisCreateOrConnectWithoutMa_empleInput | ma_eqasisCreateOrConnectWithoutMa_empleInput[]
     createMany?: ma_eqasisCreateManyMa_empleInputEnvelope
     connect?: ma_eqasisWhereUniqueInput | ma_eqasisWhereUniqueInput[]
+  }
+
+  export type tr_viajesUncheckedCreateNestedManyWithoutEmpleadoInput = {
+    create?: XOR<tr_viajesCreateWithoutEmpleadoInput, tr_viajesUncheckedCreateWithoutEmpleadoInput> | tr_viajesCreateWithoutEmpleadoInput[] | tr_viajesUncheckedCreateWithoutEmpleadoInput[]
+    connectOrCreate?: tr_viajesCreateOrConnectWithoutEmpleadoInput | tr_viajesCreateOrConnectWithoutEmpleadoInput[]
+    createMany?: tr_viajesCreateManyEmpleadoInputEnvelope
+    connect?: tr_viajesWhereUniqueInput | tr_viajesWhereUniqueInput[]
   }
 
   export type ma_deparUpdateOneWithoutMa_empleNestedInput = {
@@ -35803,6 +43291,20 @@ export namespace Prisma {
     deleteMany?: ma_eqasisScalarWhereInput | ma_eqasisScalarWhereInput[]
   }
 
+  export type tr_viajesUpdateManyWithoutEmpleadoNestedInput = {
+    create?: XOR<tr_viajesCreateWithoutEmpleadoInput, tr_viajesUncheckedCreateWithoutEmpleadoInput> | tr_viajesCreateWithoutEmpleadoInput[] | tr_viajesUncheckedCreateWithoutEmpleadoInput[]
+    connectOrCreate?: tr_viajesCreateOrConnectWithoutEmpleadoInput | tr_viajesCreateOrConnectWithoutEmpleadoInput[]
+    upsert?: tr_viajesUpsertWithWhereUniqueWithoutEmpleadoInput | tr_viajesUpsertWithWhereUniqueWithoutEmpleadoInput[]
+    createMany?: tr_viajesCreateManyEmpleadoInputEnvelope
+    set?: tr_viajesWhereUniqueInput | tr_viajesWhereUniqueInput[]
+    disconnect?: tr_viajesWhereUniqueInput | tr_viajesWhereUniqueInput[]
+    delete?: tr_viajesWhereUniqueInput | tr_viajesWhereUniqueInput[]
+    connect?: tr_viajesWhereUniqueInput | tr_viajesWhereUniqueInput[]
+    update?: tr_viajesUpdateWithWhereUniqueWithoutEmpleadoInput | tr_viajesUpdateWithWhereUniqueWithoutEmpleadoInput[]
+    updateMany?: tr_viajesUpdateManyWithWhereWithoutEmpleadoInput | tr_viajesUpdateManyWithWhereWithoutEmpleadoInput[]
+    deleteMany?: tr_viajesScalarWhereInput | tr_viajesScalarWhereInput[]
+  }
+
   export type ma_eqasisUncheckedUpdateManyWithoutMa_empleNestedInput = {
     create?: XOR<ma_eqasisCreateWithoutMa_empleInput, ma_eqasisUncheckedCreateWithoutMa_empleInput> | ma_eqasisCreateWithoutMa_empleInput[] | ma_eqasisUncheckedCreateWithoutMa_empleInput[]
     connectOrCreate?: ma_eqasisCreateOrConnectWithoutMa_empleInput | ma_eqasisCreateOrConnectWithoutMa_empleInput[]
@@ -35815,6 +43317,20 @@ export namespace Prisma {
     update?: ma_eqasisUpdateWithWhereUniqueWithoutMa_empleInput | ma_eqasisUpdateWithWhereUniqueWithoutMa_empleInput[]
     updateMany?: ma_eqasisUpdateManyWithWhereWithoutMa_empleInput | ma_eqasisUpdateManyWithWhereWithoutMa_empleInput[]
     deleteMany?: ma_eqasisScalarWhereInput | ma_eqasisScalarWhereInput[]
+  }
+
+  export type tr_viajesUncheckedUpdateManyWithoutEmpleadoNestedInput = {
+    create?: XOR<tr_viajesCreateWithoutEmpleadoInput, tr_viajesUncheckedCreateWithoutEmpleadoInput> | tr_viajesCreateWithoutEmpleadoInput[] | tr_viajesUncheckedCreateWithoutEmpleadoInput[]
+    connectOrCreate?: tr_viajesCreateOrConnectWithoutEmpleadoInput | tr_viajesCreateOrConnectWithoutEmpleadoInput[]
+    upsert?: tr_viajesUpsertWithWhereUniqueWithoutEmpleadoInput | tr_viajesUpsertWithWhereUniqueWithoutEmpleadoInput[]
+    createMany?: tr_viajesCreateManyEmpleadoInputEnvelope
+    set?: tr_viajesWhereUniqueInput | tr_viajesWhereUniqueInput[]
+    disconnect?: tr_viajesWhereUniqueInput | tr_viajesWhereUniqueInput[]
+    delete?: tr_viajesWhereUniqueInput | tr_viajesWhereUniqueInput[]
+    connect?: tr_viajesWhereUniqueInput | tr_viajesWhereUniqueInput[]
+    update?: tr_viajesUpdateWithWhereUniqueWithoutEmpleadoInput | tr_viajesUpdateWithWhereUniqueWithoutEmpleadoInput[]
+    updateMany?: tr_viajesUpdateManyWithWhereWithoutEmpleadoInput | tr_viajesUpdateManyWithWhereWithoutEmpleadoInput[]
+    deleteMany?: tr_viajesScalarWhereInput | tr_viajesScalarWhereInput[]
   }
 
   export type ma_deparCreateNestedOneWithoutMa_eqasisInput = {
@@ -36287,6 +43803,268 @@ export namespace Prisma {
     update?: XOR<XOR<usuarioUpdateToOneWithWhereWithoutUsuario_permisoInput, usuarioUpdateWithoutUsuario_permisoInput>, usuarioUncheckedUpdateWithoutUsuario_permisoInput>
   }
 
+  export type tr_paradas_gastosCreateNestedManyWithoutCategoriaInput = {
+    create?: XOR<tr_paradas_gastosCreateWithoutCategoriaInput, tr_paradas_gastosUncheckedCreateWithoutCategoriaInput> | tr_paradas_gastosCreateWithoutCategoriaInput[] | tr_paradas_gastosUncheckedCreateWithoutCategoriaInput[]
+    connectOrCreate?: tr_paradas_gastosCreateOrConnectWithoutCategoriaInput | tr_paradas_gastosCreateOrConnectWithoutCategoriaInput[]
+    createMany?: tr_paradas_gastosCreateManyCategoriaInputEnvelope
+    connect?: tr_paradas_gastosWhereUniqueInput | tr_paradas_gastosWhereUniqueInput[]
+  }
+
+  export type tr_paradas_gastosUncheckedCreateNestedManyWithoutCategoriaInput = {
+    create?: XOR<tr_paradas_gastosCreateWithoutCategoriaInput, tr_paradas_gastosUncheckedCreateWithoutCategoriaInput> | tr_paradas_gastosCreateWithoutCategoriaInput[] | tr_paradas_gastosUncheckedCreateWithoutCategoriaInput[]
+    connectOrCreate?: tr_paradas_gastosCreateOrConnectWithoutCategoriaInput | tr_paradas_gastosCreateOrConnectWithoutCategoriaInput[]
+    createMany?: tr_paradas_gastosCreateManyCategoriaInputEnvelope
+    connect?: tr_paradas_gastosWhereUniqueInput | tr_paradas_gastosWhereUniqueInput[]
+  }
+
+  export type tr_paradas_gastosUpdateManyWithoutCategoriaNestedInput = {
+    create?: XOR<tr_paradas_gastosCreateWithoutCategoriaInput, tr_paradas_gastosUncheckedCreateWithoutCategoriaInput> | tr_paradas_gastosCreateWithoutCategoriaInput[] | tr_paradas_gastosUncheckedCreateWithoutCategoriaInput[]
+    connectOrCreate?: tr_paradas_gastosCreateOrConnectWithoutCategoriaInput | tr_paradas_gastosCreateOrConnectWithoutCategoriaInput[]
+    upsert?: tr_paradas_gastosUpsertWithWhereUniqueWithoutCategoriaInput | tr_paradas_gastosUpsertWithWhereUniqueWithoutCategoriaInput[]
+    createMany?: tr_paradas_gastosCreateManyCategoriaInputEnvelope
+    set?: tr_paradas_gastosWhereUniqueInput | tr_paradas_gastosWhereUniqueInput[]
+    disconnect?: tr_paradas_gastosWhereUniqueInput | tr_paradas_gastosWhereUniqueInput[]
+    delete?: tr_paradas_gastosWhereUniqueInput | tr_paradas_gastosWhereUniqueInput[]
+    connect?: tr_paradas_gastosWhereUniqueInput | tr_paradas_gastosWhereUniqueInput[]
+    update?: tr_paradas_gastosUpdateWithWhereUniqueWithoutCategoriaInput | tr_paradas_gastosUpdateWithWhereUniqueWithoutCategoriaInput[]
+    updateMany?: tr_paradas_gastosUpdateManyWithWhereWithoutCategoriaInput | tr_paradas_gastosUpdateManyWithWhereWithoutCategoriaInput[]
+    deleteMany?: tr_paradas_gastosScalarWhereInput | tr_paradas_gastosScalarWhereInput[]
+  }
+
+  export type tr_paradas_gastosUncheckedUpdateManyWithoutCategoriaNestedInput = {
+    create?: XOR<tr_paradas_gastosCreateWithoutCategoriaInput, tr_paradas_gastosUncheckedCreateWithoutCategoriaInput> | tr_paradas_gastosCreateWithoutCategoriaInput[] | tr_paradas_gastosUncheckedCreateWithoutCategoriaInput[]
+    connectOrCreate?: tr_paradas_gastosCreateOrConnectWithoutCategoriaInput | tr_paradas_gastosCreateOrConnectWithoutCategoriaInput[]
+    upsert?: tr_paradas_gastosUpsertWithWhereUniqueWithoutCategoriaInput | tr_paradas_gastosUpsertWithWhereUniqueWithoutCategoriaInput[]
+    createMany?: tr_paradas_gastosCreateManyCategoriaInputEnvelope
+    set?: tr_paradas_gastosWhereUniqueInput | tr_paradas_gastosWhereUniqueInput[]
+    disconnect?: tr_paradas_gastosWhereUniqueInput | tr_paradas_gastosWhereUniqueInput[]
+    delete?: tr_paradas_gastosWhereUniqueInput | tr_paradas_gastosWhereUniqueInput[]
+    connect?: tr_paradas_gastosWhereUniqueInput | tr_paradas_gastosWhereUniqueInput[]
+    update?: tr_paradas_gastosUpdateWithWhereUniqueWithoutCategoriaInput | tr_paradas_gastosUpdateWithWhereUniqueWithoutCategoriaInput[]
+    updateMany?: tr_paradas_gastosUpdateManyWithWhereWithoutCategoriaInput | tr_paradas_gastosUpdateManyWithWhereWithoutCategoriaInput[]
+    deleteMany?: tr_paradas_gastosScalarWhereInput | tr_paradas_gastosScalarWhereInput[]
+  }
+
+  export type ma_empleCreateNestedOneWithoutViajesInput = {
+    create?: XOR<ma_empleCreateWithoutViajesInput, ma_empleUncheckedCreateWithoutViajesInput>
+    connectOrCreate?: ma_empleCreateOrConnectWithoutViajesInput
+    connect?: ma_empleWhereUniqueInput
+  }
+
+  export type tr_paradas_gastosCreateNestedManyWithoutViajeInput = {
+    create?: XOR<tr_paradas_gastosCreateWithoutViajeInput, tr_paradas_gastosUncheckedCreateWithoutViajeInput> | tr_paradas_gastosCreateWithoutViajeInput[] | tr_paradas_gastosUncheckedCreateWithoutViajeInput[]
+    connectOrCreate?: tr_paradas_gastosCreateOrConnectWithoutViajeInput | tr_paradas_gastosCreateOrConnectWithoutViajeInput[]
+    createMany?: tr_paradas_gastosCreateManyViajeInputEnvelope
+    connect?: tr_paradas_gastosWhereUniqueInput | tr_paradas_gastosWhereUniqueInput[]
+  }
+
+  export type tr_notas_viajeCreateNestedManyWithoutViajeInput = {
+    create?: XOR<tr_notas_viajeCreateWithoutViajeInput, tr_notas_viajeUncheckedCreateWithoutViajeInput> | tr_notas_viajeCreateWithoutViajeInput[] | tr_notas_viajeUncheckedCreateWithoutViajeInput[]
+    connectOrCreate?: tr_notas_viajeCreateOrConnectWithoutViajeInput | tr_notas_viajeCreateOrConnectWithoutViajeInput[]
+    createMany?: tr_notas_viajeCreateManyViajeInputEnvelope
+    connect?: tr_notas_viajeWhereUniqueInput | tr_notas_viajeWhereUniqueInput[]
+  }
+
+  export type tr_paradas_gastosUncheckedCreateNestedManyWithoutViajeInput = {
+    create?: XOR<tr_paradas_gastosCreateWithoutViajeInput, tr_paradas_gastosUncheckedCreateWithoutViajeInput> | tr_paradas_gastosCreateWithoutViajeInput[] | tr_paradas_gastosUncheckedCreateWithoutViajeInput[]
+    connectOrCreate?: tr_paradas_gastosCreateOrConnectWithoutViajeInput | tr_paradas_gastosCreateOrConnectWithoutViajeInput[]
+    createMany?: tr_paradas_gastosCreateManyViajeInputEnvelope
+    connect?: tr_paradas_gastosWhereUniqueInput | tr_paradas_gastosWhereUniqueInput[]
+  }
+
+  export type tr_notas_viajeUncheckedCreateNestedManyWithoutViajeInput = {
+    create?: XOR<tr_notas_viajeCreateWithoutViajeInput, tr_notas_viajeUncheckedCreateWithoutViajeInput> | tr_notas_viajeCreateWithoutViajeInput[] | tr_notas_viajeUncheckedCreateWithoutViajeInput[]
+    connectOrCreate?: tr_notas_viajeCreateOrConnectWithoutViajeInput | tr_notas_viajeCreateOrConnectWithoutViajeInput[]
+    createMany?: tr_notas_viajeCreateManyViajeInputEnvelope
+    connect?: tr_notas_viajeWhereUniqueInput | tr_notas_viajeWhereUniqueInput[]
+  }
+
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
+  }
+
+  export type DecimalFieldUpdateOperationsInput = {
+    set?: Decimal | DecimalJsLike | number | string
+    increment?: Decimal | DecimalJsLike | number | string
+    decrement?: Decimal | DecimalJsLike | number | string
+    multiply?: Decimal | DecimalJsLike | number | string
+    divide?: Decimal | DecimalJsLike | number | string
+  }
+
+  export type ma_empleUpdateOneRequiredWithoutViajesNestedInput = {
+    create?: XOR<ma_empleCreateWithoutViajesInput, ma_empleUncheckedCreateWithoutViajesInput>
+    connectOrCreate?: ma_empleCreateOrConnectWithoutViajesInput
+    upsert?: ma_empleUpsertWithoutViajesInput
+    connect?: ma_empleWhereUniqueInput
+    update?: XOR<XOR<ma_empleUpdateToOneWithWhereWithoutViajesInput, ma_empleUpdateWithoutViajesInput>, ma_empleUncheckedUpdateWithoutViajesInput>
+  }
+
+  export type tr_paradas_gastosUpdateManyWithoutViajeNestedInput = {
+    create?: XOR<tr_paradas_gastosCreateWithoutViajeInput, tr_paradas_gastosUncheckedCreateWithoutViajeInput> | tr_paradas_gastosCreateWithoutViajeInput[] | tr_paradas_gastosUncheckedCreateWithoutViajeInput[]
+    connectOrCreate?: tr_paradas_gastosCreateOrConnectWithoutViajeInput | tr_paradas_gastosCreateOrConnectWithoutViajeInput[]
+    upsert?: tr_paradas_gastosUpsertWithWhereUniqueWithoutViajeInput | tr_paradas_gastosUpsertWithWhereUniqueWithoutViajeInput[]
+    createMany?: tr_paradas_gastosCreateManyViajeInputEnvelope
+    set?: tr_paradas_gastosWhereUniqueInput | tr_paradas_gastosWhereUniqueInput[]
+    disconnect?: tr_paradas_gastosWhereUniqueInput | tr_paradas_gastosWhereUniqueInput[]
+    delete?: tr_paradas_gastosWhereUniqueInput | tr_paradas_gastosWhereUniqueInput[]
+    connect?: tr_paradas_gastosWhereUniqueInput | tr_paradas_gastosWhereUniqueInput[]
+    update?: tr_paradas_gastosUpdateWithWhereUniqueWithoutViajeInput | tr_paradas_gastosUpdateWithWhereUniqueWithoutViajeInput[]
+    updateMany?: tr_paradas_gastosUpdateManyWithWhereWithoutViajeInput | tr_paradas_gastosUpdateManyWithWhereWithoutViajeInput[]
+    deleteMany?: tr_paradas_gastosScalarWhereInput | tr_paradas_gastosScalarWhereInput[]
+  }
+
+  export type tr_notas_viajeUpdateManyWithoutViajeNestedInput = {
+    create?: XOR<tr_notas_viajeCreateWithoutViajeInput, tr_notas_viajeUncheckedCreateWithoutViajeInput> | tr_notas_viajeCreateWithoutViajeInput[] | tr_notas_viajeUncheckedCreateWithoutViajeInput[]
+    connectOrCreate?: tr_notas_viajeCreateOrConnectWithoutViajeInput | tr_notas_viajeCreateOrConnectWithoutViajeInput[]
+    upsert?: tr_notas_viajeUpsertWithWhereUniqueWithoutViajeInput | tr_notas_viajeUpsertWithWhereUniqueWithoutViajeInput[]
+    createMany?: tr_notas_viajeCreateManyViajeInputEnvelope
+    set?: tr_notas_viajeWhereUniqueInput | tr_notas_viajeWhereUniqueInput[]
+    disconnect?: tr_notas_viajeWhereUniqueInput | tr_notas_viajeWhereUniqueInput[]
+    delete?: tr_notas_viajeWhereUniqueInput | tr_notas_viajeWhereUniqueInput[]
+    connect?: tr_notas_viajeWhereUniqueInput | tr_notas_viajeWhereUniqueInput[]
+    update?: tr_notas_viajeUpdateWithWhereUniqueWithoutViajeInput | tr_notas_viajeUpdateWithWhereUniqueWithoutViajeInput[]
+    updateMany?: tr_notas_viajeUpdateManyWithWhereWithoutViajeInput | tr_notas_viajeUpdateManyWithWhereWithoutViajeInput[]
+    deleteMany?: tr_notas_viajeScalarWhereInput | tr_notas_viajeScalarWhereInput[]
+  }
+
+  export type tr_paradas_gastosUncheckedUpdateManyWithoutViajeNestedInput = {
+    create?: XOR<tr_paradas_gastosCreateWithoutViajeInput, tr_paradas_gastosUncheckedCreateWithoutViajeInput> | tr_paradas_gastosCreateWithoutViajeInput[] | tr_paradas_gastosUncheckedCreateWithoutViajeInput[]
+    connectOrCreate?: tr_paradas_gastosCreateOrConnectWithoutViajeInput | tr_paradas_gastosCreateOrConnectWithoutViajeInput[]
+    upsert?: tr_paradas_gastosUpsertWithWhereUniqueWithoutViajeInput | tr_paradas_gastosUpsertWithWhereUniqueWithoutViajeInput[]
+    createMany?: tr_paradas_gastosCreateManyViajeInputEnvelope
+    set?: tr_paradas_gastosWhereUniqueInput | tr_paradas_gastosWhereUniqueInput[]
+    disconnect?: tr_paradas_gastosWhereUniqueInput | tr_paradas_gastosWhereUniqueInput[]
+    delete?: tr_paradas_gastosWhereUniqueInput | tr_paradas_gastosWhereUniqueInput[]
+    connect?: tr_paradas_gastosWhereUniqueInput | tr_paradas_gastosWhereUniqueInput[]
+    update?: tr_paradas_gastosUpdateWithWhereUniqueWithoutViajeInput | tr_paradas_gastosUpdateWithWhereUniqueWithoutViajeInput[]
+    updateMany?: tr_paradas_gastosUpdateManyWithWhereWithoutViajeInput | tr_paradas_gastosUpdateManyWithWhereWithoutViajeInput[]
+    deleteMany?: tr_paradas_gastosScalarWhereInput | tr_paradas_gastosScalarWhereInput[]
+  }
+
+  export type tr_notas_viajeUncheckedUpdateManyWithoutViajeNestedInput = {
+    create?: XOR<tr_notas_viajeCreateWithoutViajeInput, tr_notas_viajeUncheckedCreateWithoutViajeInput> | tr_notas_viajeCreateWithoutViajeInput[] | tr_notas_viajeUncheckedCreateWithoutViajeInput[]
+    connectOrCreate?: tr_notas_viajeCreateOrConnectWithoutViajeInput | tr_notas_viajeCreateOrConnectWithoutViajeInput[]
+    upsert?: tr_notas_viajeUpsertWithWhereUniqueWithoutViajeInput | tr_notas_viajeUpsertWithWhereUniqueWithoutViajeInput[]
+    createMany?: tr_notas_viajeCreateManyViajeInputEnvelope
+    set?: tr_notas_viajeWhereUniqueInput | tr_notas_viajeWhereUniqueInput[]
+    disconnect?: tr_notas_viajeWhereUniqueInput | tr_notas_viajeWhereUniqueInput[]
+    delete?: tr_notas_viajeWhereUniqueInput | tr_notas_viajeWhereUniqueInput[]
+    connect?: tr_notas_viajeWhereUniqueInput | tr_notas_viajeWhereUniqueInput[]
+    update?: tr_notas_viajeUpdateWithWhereUniqueWithoutViajeInput | tr_notas_viajeUpdateWithWhereUniqueWithoutViajeInput[]
+    updateMany?: tr_notas_viajeUpdateManyWithWhereWithoutViajeInput | tr_notas_viajeUpdateManyWithWhereWithoutViajeInput[]
+    deleteMany?: tr_notas_viajeScalarWhereInput | tr_notas_viajeScalarWhereInput[]
+  }
+
+  export type tr_viajesCreateNestedOneWithoutParadasInput = {
+    create?: XOR<tr_viajesCreateWithoutParadasInput, tr_viajesUncheckedCreateWithoutParadasInput>
+    connectOrCreate?: tr_viajesCreateOrConnectWithoutParadasInput
+    connect?: tr_viajesWhereUniqueInput
+  }
+
+  export type ma_catvjCreateNestedOneWithoutParadasInput = {
+    create?: XOR<ma_catvjCreateWithoutParadasInput, ma_catvjUncheckedCreateWithoutParadasInput>
+    connectOrCreate?: ma_catvjCreateOrConnectWithoutParadasInput
+    connect?: ma_catvjWhereUniqueInput
+  }
+
+  export type tr_evidenciaCreateNestedManyWithoutParadaInput = {
+    create?: XOR<tr_evidenciaCreateWithoutParadaInput, tr_evidenciaUncheckedCreateWithoutParadaInput> | tr_evidenciaCreateWithoutParadaInput[] | tr_evidenciaUncheckedCreateWithoutParadaInput[]
+    connectOrCreate?: tr_evidenciaCreateOrConnectWithoutParadaInput | tr_evidenciaCreateOrConnectWithoutParadaInput[]
+    createMany?: tr_evidenciaCreateManyParadaInputEnvelope
+    connect?: tr_evidenciaWhereUniqueInput | tr_evidenciaWhereUniqueInput[]
+  }
+
+  export type tr_evidenciaUncheckedCreateNestedManyWithoutParadaInput = {
+    create?: XOR<tr_evidenciaCreateWithoutParadaInput, tr_evidenciaUncheckedCreateWithoutParadaInput> | tr_evidenciaCreateWithoutParadaInput[] | tr_evidenciaUncheckedCreateWithoutParadaInput[]
+    connectOrCreate?: tr_evidenciaCreateOrConnectWithoutParadaInput | tr_evidenciaCreateOrConnectWithoutParadaInput[]
+    createMany?: tr_evidenciaCreateManyParadaInputEnvelope
+    connect?: tr_evidenciaWhereUniqueInput | tr_evidenciaWhereUniqueInput[]
+  }
+
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
+  }
+
+  export type NullableFloatFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type tr_viajesUpdateOneRequiredWithoutParadasNestedInput = {
+    create?: XOR<tr_viajesCreateWithoutParadasInput, tr_viajesUncheckedCreateWithoutParadasInput>
+    connectOrCreate?: tr_viajesCreateOrConnectWithoutParadasInput
+    upsert?: tr_viajesUpsertWithoutParadasInput
+    connect?: tr_viajesWhereUniqueInput
+    update?: XOR<XOR<tr_viajesUpdateToOneWithWhereWithoutParadasInput, tr_viajesUpdateWithoutParadasInput>, tr_viajesUncheckedUpdateWithoutParadasInput>
+  }
+
+  export type ma_catvjUpdateOneRequiredWithoutParadasNestedInput = {
+    create?: XOR<ma_catvjCreateWithoutParadasInput, ma_catvjUncheckedCreateWithoutParadasInput>
+    connectOrCreate?: ma_catvjCreateOrConnectWithoutParadasInput
+    upsert?: ma_catvjUpsertWithoutParadasInput
+    connect?: ma_catvjWhereUniqueInput
+    update?: XOR<XOR<ma_catvjUpdateToOneWithWhereWithoutParadasInput, ma_catvjUpdateWithoutParadasInput>, ma_catvjUncheckedUpdateWithoutParadasInput>
+  }
+
+  export type tr_evidenciaUpdateManyWithoutParadaNestedInput = {
+    create?: XOR<tr_evidenciaCreateWithoutParadaInput, tr_evidenciaUncheckedCreateWithoutParadaInput> | tr_evidenciaCreateWithoutParadaInput[] | tr_evidenciaUncheckedCreateWithoutParadaInput[]
+    connectOrCreate?: tr_evidenciaCreateOrConnectWithoutParadaInput | tr_evidenciaCreateOrConnectWithoutParadaInput[]
+    upsert?: tr_evidenciaUpsertWithWhereUniqueWithoutParadaInput | tr_evidenciaUpsertWithWhereUniqueWithoutParadaInput[]
+    createMany?: tr_evidenciaCreateManyParadaInputEnvelope
+    set?: tr_evidenciaWhereUniqueInput | tr_evidenciaWhereUniqueInput[]
+    disconnect?: tr_evidenciaWhereUniqueInput | tr_evidenciaWhereUniqueInput[]
+    delete?: tr_evidenciaWhereUniqueInput | tr_evidenciaWhereUniqueInput[]
+    connect?: tr_evidenciaWhereUniqueInput | tr_evidenciaWhereUniqueInput[]
+    update?: tr_evidenciaUpdateWithWhereUniqueWithoutParadaInput | tr_evidenciaUpdateWithWhereUniqueWithoutParadaInput[]
+    updateMany?: tr_evidenciaUpdateManyWithWhereWithoutParadaInput | tr_evidenciaUpdateManyWithWhereWithoutParadaInput[]
+    deleteMany?: tr_evidenciaScalarWhereInput | tr_evidenciaScalarWhereInput[]
+  }
+
+  export type tr_evidenciaUncheckedUpdateManyWithoutParadaNestedInput = {
+    create?: XOR<tr_evidenciaCreateWithoutParadaInput, tr_evidenciaUncheckedCreateWithoutParadaInput> | tr_evidenciaCreateWithoutParadaInput[] | tr_evidenciaUncheckedCreateWithoutParadaInput[]
+    connectOrCreate?: tr_evidenciaCreateOrConnectWithoutParadaInput | tr_evidenciaCreateOrConnectWithoutParadaInput[]
+    upsert?: tr_evidenciaUpsertWithWhereUniqueWithoutParadaInput | tr_evidenciaUpsertWithWhereUniqueWithoutParadaInput[]
+    createMany?: tr_evidenciaCreateManyParadaInputEnvelope
+    set?: tr_evidenciaWhereUniqueInput | tr_evidenciaWhereUniqueInput[]
+    disconnect?: tr_evidenciaWhereUniqueInput | tr_evidenciaWhereUniqueInput[]
+    delete?: tr_evidenciaWhereUniqueInput | tr_evidenciaWhereUniqueInput[]
+    connect?: tr_evidenciaWhereUniqueInput | tr_evidenciaWhereUniqueInput[]
+    update?: tr_evidenciaUpdateWithWhereUniqueWithoutParadaInput | tr_evidenciaUpdateWithWhereUniqueWithoutParadaInput[]
+    updateMany?: tr_evidenciaUpdateManyWithWhereWithoutParadaInput | tr_evidenciaUpdateManyWithWhereWithoutParadaInput[]
+    deleteMany?: tr_evidenciaScalarWhereInput | tr_evidenciaScalarWhereInput[]
+  }
+
+  export type tr_paradas_gastosCreateNestedOneWithoutEvidenciasInput = {
+    create?: XOR<tr_paradas_gastosCreateWithoutEvidenciasInput, tr_paradas_gastosUncheckedCreateWithoutEvidenciasInput>
+    connectOrCreate?: tr_paradas_gastosCreateOrConnectWithoutEvidenciasInput
+    connect?: tr_paradas_gastosWhereUniqueInput
+  }
+
+  export type tr_paradas_gastosUpdateOneRequiredWithoutEvidenciasNestedInput = {
+    create?: XOR<tr_paradas_gastosCreateWithoutEvidenciasInput, tr_paradas_gastosUncheckedCreateWithoutEvidenciasInput>
+    connectOrCreate?: tr_paradas_gastosCreateOrConnectWithoutEvidenciasInput
+    upsert?: tr_paradas_gastosUpsertWithoutEvidenciasInput
+    connect?: tr_paradas_gastosWhereUniqueInput
+    update?: XOR<XOR<tr_paradas_gastosUpdateToOneWithWhereWithoutEvidenciasInput, tr_paradas_gastosUpdateWithoutEvidenciasInput>, tr_paradas_gastosUncheckedUpdateWithoutEvidenciasInput>
+  }
+
+  export type tr_viajesCreateNestedOneWithoutNotasInput = {
+    create?: XOR<tr_viajesCreateWithoutNotasInput, tr_viajesUncheckedCreateWithoutNotasInput>
+    connectOrCreate?: tr_viajesCreateOrConnectWithoutNotasInput
+    connect?: tr_viajesWhereUniqueInput
+  }
+
+  export type tr_viajesUpdateOneRequiredWithoutNotasNestedInput = {
+    create?: XOR<tr_viajesCreateWithoutNotasInput, tr_viajesUncheckedCreateWithoutNotasInput>
+    connectOrCreate?: tr_viajesCreateOrConnectWithoutNotasInput
+    upsert?: tr_viajesUpsertWithoutNotasInput
+    connect?: tr_viajesWhereUniqueInput
+    update?: XOR<XOR<tr_viajesUpdateToOneWithWhereWithoutNotasInput, tr_viajesUpdateWithoutNotasInput>, tr_viajesUncheckedUpdateWithoutNotasInput>
+  }
+
   export type NestedIntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -36544,6 +44322,110 @@ export namespace Prisma {
     _max?: NestedBigIntNullableFilter<$PrismaModel>
   }
 
+  export type NestedDateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
+  export type NestedDecimalFilter<$PrismaModel = never> = {
+    equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
+    lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    not?: NestedDecimalFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string
+  }
+
+  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
+  export type NestedDecimalWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    in?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
+    notIn?: Decimal[] | DecimalJsLike[] | number[] | string[] | ListDecimalFieldRefInput<$PrismaModel>
+    lt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    lte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gt?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    gte?: Decimal | DecimalJsLike | number | string | DecimalFieldRefInput<$PrismaModel>
+    not?: NestedDecimalWithAggregatesFilter<$PrismaModel> | Decimal | DecimalJsLike | number | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedDecimalFilter<$PrismaModel>
+    _sum?: NestedDecimalFilter<$PrismaModel>
+    _min?: NestedDecimalFilter<$PrismaModel>
+    _max?: NestedDecimalFilter<$PrismaModel>
+  }
+
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel> | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedFloatNullableFilter<$PrismaModel>
+    _min?: NestedFloatNullableFilter<$PrismaModel>
+    _max?: NestedFloatNullableFilter<$PrismaModel>
+  }
+  export type NestedJsonFilter<$PrismaModel = never> =
+    | PatchUndefined<
+        Either<Required<NestedJsonFilterBase<$PrismaModel>>, Exclude<keyof Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>,
+        Required<NestedJsonFilterBase<$PrismaModel>>
+      >
+    | OptionalFlat<Omit<Required<NestedJsonFilterBase<$PrismaModel>>, 'path'>>
+
+  export type NestedJsonFilterBase<$PrismaModel = never> = {
+    equals?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+    path?: string[]
+    mode?: QueryMode | EnumQueryModeFieldRefInput<$PrismaModel>
+    string_contains?: string | StringFieldRefInput<$PrismaModel>
+    string_starts_with?: string | StringFieldRefInput<$PrismaModel>
+    string_ends_with?: string | StringFieldRefInput<$PrismaModel>
+    array_starts_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_ends_with?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    array_contains?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | null
+    lt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    lte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gt?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    gte?: InputJsonValue | JsonFieldRefInput<$PrismaModel>
+    not?: InputJsonValue | JsonFieldRefInput<$PrismaModel> | JsonNullValueFilter
+  }
+
   export type ma_eqsisCreateWithoutMa_clasifInput = {
     serie?: string | null
     cod_inv?: string | null
@@ -36611,6 +44493,7 @@ export namespace Prisma {
     cve_zon?: string | null
     status?: boolean | null
     ma_eqasis?: ma_eqasisCreateNestedManyWithoutMa_empleInput
+    viajes?: tr_viajesCreateNestedManyWithoutEmpleadoInput
   }
 
   export type ma_empleUncheckedCreateWithoutMa_deparInput = {
@@ -36620,6 +44503,7 @@ export namespace Prisma {
     cve_zon?: string | null
     status?: boolean | null
     ma_eqasis?: ma_eqasisUncheckedCreateNestedManyWithoutMa_empleInput
+    viajes?: tr_viajesUncheckedCreateNestedManyWithoutEmpleadoInput
   }
 
   export type ma_empleCreateOrConnectWithoutMa_deparInput = {
@@ -36754,6 +44638,39 @@ export namespace Prisma {
     skipDuplicates?: boolean
   }
 
+  export type tr_viajesCreateWithoutEmpleadoInput = {
+    uuid_movil: string
+    titulo: string
+    fecha_inicio: Date | string
+    presupuesto: Decimal | DecimalJsLike | number | string
+    status_viaje?: string
+    sync_at?: Date | string
+    paradas?: tr_paradas_gastosCreateNestedManyWithoutViajeInput
+    notas?: tr_notas_viajeCreateNestedManyWithoutViajeInput
+  }
+
+  export type tr_viajesUncheckedCreateWithoutEmpleadoInput = {
+    clave?: number
+    uuid_movil: string
+    titulo: string
+    fecha_inicio: Date | string
+    presupuesto: Decimal | DecimalJsLike | number | string
+    status_viaje?: string
+    sync_at?: Date | string
+    paradas?: tr_paradas_gastosUncheckedCreateNestedManyWithoutViajeInput
+    notas?: tr_notas_viajeUncheckedCreateNestedManyWithoutViajeInput
+  }
+
+  export type tr_viajesCreateOrConnectWithoutEmpleadoInput = {
+    where: tr_viajesWhereUniqueInput
+    create: XOR<tr_viajesCreateWithoutEmpleadoInput, tr_viajesUncheckedCreateWithoutEmpleadoInput>
+  }
+
+  export type tr_viajesCreateManyEmpleadoInputEnvelope = {
+    data: tr_viajesCreateManyEmpleadoInput | tr_viajesCreateManyEmpleadoInput[]
+    skipDuplicates?: boolean
+  }
+
   export type ma_deparUpsertWithoutMa_empleInput = {
     update: XOR<ma_deparUpdateWithoutMa_empleInput, ma_deparUncheckedUpdateWithoutMa_empleInput>
     create: XOR<ma_deparCreateWithoutMa_empleInput, ma_deparUncheckedCreateWithoutMa_empleInput>
@@ -36792,6 +44709,36 @@ export namespace Prisma {
     data: XOR<ma_eqasisUpdateManyMutationInput, ma_eqasisUncheckedUpdateManyWithoutMa_empleInput>
   }
 
+  export type tr_viajesUpsertWithWhereUniqueWithoutEmpleadoInput = {
+    where: tr_viajesWhereUniqueInput
+    update: XOR<tr_viajesUpdateWithoutEmpleadoInput, tr_viajesUncheckedUpdateWithoutEmpleadoInput>
+    create: XOR<tr_viajesCreateWithoutEmpleadoInput, tr_viajesUncheckedCreateWithoutEmpleadoInput>
+  }
+
+  export type tr_viajesUpdateWithWhereUniqueWithoutEmpleadoInput = {
+    where: tr_viajesWhereUniqueInput
+    data: XOR<tr_viajesUpdateWithoutEmpleadoInput, tr_viajesUncheckedUpdateWithoutEmpleadoInput>
+  }
+
+  export type tr_viajesUpdateManyWithWhereWithoutEmpleadoInput = {
+    where: tr_viajesScalarWhereInput
+    data: XOR<tr_viajesUpdateManyMutationInput, tr_viajesUncheckedUpdateManyWithoutEmpleadoInput>
+  }
+
+  export type tr_viajesScalarWhereInput = {
+    AND?: tr_viajesScalarWhereInput | tr_viajesScalarWhereInput[]
+    OR?: tr_viajesScalarWhereInput[]
+    NOT?: tr_viajesScalarWhereInput | tr_viajesScalarWhereInput[]
+    clave?: IntFilter<"tr_viajes"> | number
+    uuid_movil?: StringFilter<"tr_viajes"> | string
+    cve_emple?: IntFilter<"tr_viajes"> | number
+    titulo?: StringFilter<"tr_viajes"> | string
+    fecha_inicio?: DateTimeFilter<"tr_viajes"> | Date | string
+    presupuesto?: DecimalFilter<"tr_viajes"> | Decimal | DecimalJsLike | number | string
+    status_viaje?: StringFilter<"tr_viajes"> | string
+    sync_at?: DateTimeFilter<"tr_viajes"> | Date | string
+  }
+
   export type ma_deparCreateWithoutMa_eqasisInput = {
     descri?: string | null
     ma_emple?: ma_empleCreateNestedManyWithoutMa_deparInput
@@ -36814,6 +44761,7 @@ export namespace Prisma {
     cve_zon?: string | null
     status?: boolean | null
     ma_depar?: ma_deparCreateNestedOneWithoutMa_empleInput
+    viajes?: tr_viajesCreateNestedManyWithoutEmpleadoInput
   }
 
   export type ma_empleUncheckedCreateWithoutMa_eqasisInput = {
@@ -36823,6 +44771,7 @@ export namespace Prisma {
     cve_zon?: string | null
     status?: boolean | null
     cve_depar?: number | null
+    viajes?: tr_viajesUncheckedCreateNestedManyWithoutEmpleadoInput
   }
 
   export type ma_empleCreateOrConnectWithoutMa_eqasisInput = {
@@ -36895,6 +44844,7 @@ export namespace Prisma {
     cve_zon?: NullableStringFieldUpdateOperationsInput | string | null
     status?: NullableBoolFieldUpdateOperationsInput | boolean | null
     ma_depar?: ma_deparUpdateOneWithoutMa_empleNestedInput
+    viajes?: tr_viajesUpdateManyWithoutEmpleadoNestedInput
   }
 
   export type ma_empleUncheckedUpdateWithoutMa_eqasisInput = {
@@ -36904,6 +44854,7 @@ export namespace Prisma {
     cve_zon?: NullableStringFieldUpdateOperationsInput | string | null
     status?: NullableBoolFieldUpdateOperationsInput | boolean | null
     cve_depar?: NullableIntFieldUpdateOperationsInput | number | null
+    viajes?: tr_viajesUncheckedUpdateManyWithoutEmpleadoNestedInput
   }
 
   export type ma_eqsisUpsertWithoutMa_eqasisInput = {
@@ -37556,6 +45507,519 @@ export namespace Prisma {
     hash_password?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
+  export type tr_paradas_gastosCreateWithoutCategoriaInput = {
+    lugar: string
+    hora_registro: string
+    monto: Decimal | DecimalJsLike | number | string
+    propina?: Decimal | DecimalJsLike | number | string
+    facturable?: boolean
+    descripcion?: string | null
+    lat?: number | null
+    lng?: number | null
+    viaje: tr_viajesCreateNestedOneWithoutParadasInput
+    evidencias?: tr_evidenciaCreateNestedManyWithoutParadaInput
+  }
+
+  export type tr_paradas_gastosUncheckedCreateWithoutCategoriaInput = {
+    clave?: number
+    cve_viaje: number
+    lugar: string
+    hora_registro: string
+    monto: Decimal | DecimalJsLike | number | string
+    propina?: Decimal | DecimalJsLike | number | string
+    facturable?: boolean
+    descripcion?: string | null
+    lat?: number | null
+    lng?: number | null
+    evidencias?: tr_evidenciaUncheckedCreateNestedManyWithoutParadaInput
+  }
+
+  export type tr_paradas_gastosCreateOrConnectWithoutCategoriaInput = {
+    where: tr_paradas_gastosWhereUniqueInput
+    create: XOR<tr_paradas_gastosCreateWithoutCategoriaInput, tr_paradas_gastosUncheckedCreateWithoutCategoriaInput>
+  }
+
+  export type tr_paradas_gastosCreateManyCategoriaInputEnvelope = {
+    data: tr_paradas_gastosCreateManyCategoriaInput | tr_paradas_gastosCreateManyCategoriaInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type tr_paradas_gastosUpsertWithWhereUniqueWithoutCategoriaInput = {
+    where: tr_paradas_gastosWhereUniqueInput
+    update: XOR<tr_paradas_gastosUpdateWithoutCategoriaInput, tr_paradas_gastosUncheckedUpdateWithoutCategoriaInput>
+    create: XOR<tr_paradas_gastosCreateWithoutCategoriaInput, tr_paradas_gastosUncheckedCreateWithoutCategoriaInput>
+  }
+
+  export type tr_paradas_gastosUpdateWithWhereUniqueWithoutCategoriaInput = {
+    where: tr_paradas_gastosWhereUniqueInput
+    data: XOR<tr_paradas_gastosUpdateWithoutCategoriaInput, tr_paradas_gastosUncheckedUpdateWithoutCategoriaInput>
+  }
+
+  export type tr_paradas_gastosUpdateManyWithWhereWithoutCategoriaInput = {
+    where: tr_paradas_gastosScalarWhereInput
+    data: XOR<tr_paradas_gastosUpdateManyMutationInput, tr_paradas_gastosUncheckedUpdateManyWithoutCategoriaInput>
+  }
+
+  export type tr_paradas_gastosScalarWhereInput = {
+    AND?: tr_paradas_gastosScalarWhereInput | tr_paradas_gastosScalarWhereInput[]
+    OR?: tr_paradas_gastosScalarWhereInput[]
+    NOT?: tr_paradas_gastosScalarWhereInput | tr_paradas_gastosScalarWhereInput[]
+    clave?: IntFilter<"tr_paradas_gastos"> | number
+    cve_viaje?: IntFilter<"tr_paradas_gastos"> | number
+    cve_catvj?: IntFilter<"tr_paradas_gastos"> | number
+    lugar?: StringFilter<"tr_paradas_gastos"> | string
+    hora_registro?: StringFilter<"tr_paradas_gastos"> | string
+    monto?: DecimalFilter<"tr_paradas_gastos"> | Decimal | DecimalJsLike | number | string
+    propina?: DecimalFilter<"tr_paradas_gastos"> | Decimal | DecimalJsLike | number | string
+    facturable?: BoolFilter<"tr_paradas_gastos"> | boolean
+    descripcion?: StringNullableFilter<"tr_paradas_gastos"> | string | null
+    lat?: FloatNullableFilter<"tr_paradas_gastos"> | number | null
+    lng?: FloatNullableFilter<"tr_paradas_gastos"> | number | null
+  }
+
+  export type ma_empleCreateWithoutViajesInput = {
+    clave?: string | null
+    descri?: string | null
+    cve_zon?: string | null
+    status?: boolean | null
+    ma_depar?: ma_deparCreateNestedOneWithoutMa_empleInput
+    ma_eqasis?: ma_eqasisCreateNestedManyWithoutMa_empleInput
+  }
+
+  export type ma_empleUncheckedCreateWithoutViajesInput = {
+    id?: number
+    clave?: string | null
+    descri?: string | null
+    cve_zon?: string | null
+    status?: boolean | null
+    cve_depar?: number | null
+    ma_eqasis?: ma_eqasisUncheckedCreateNestedManyWithoutMa_empleInput
+  }
+
+  export type ma_empleCreateOrConnectWithoutViajesInput = {
+    where: ma_empleWhereUniqueInput
+    create: XOR<ma_empleCreateWithoutViajesInput, ma_empleUncheckedCreateWithoutViajesInput>
+  }
+
+  export type tr_paradas_gastosCreateWithoutViajeInput = {
+    lugar: string
+    hora_registro: string
+    monto: Decimal | DecimalJsLike | number | string
+    propina?: Decimal | DecimalJsLike | number | string
+    facturable?: boolean
+    descripcion?: string | null
+    lat?: number | null
+    lng?: number | null
+    categoria: ma_catvjCreateNestedOneWithoutParadasInput
+    evidencias?: tr_evidenciaCreateNestedManyWithoutParadaInput
+  }
+
+  export type tr_paradas_gastosUncheckedCreateWithoutViajeInput = {
+    clave?: number
+    cve_catvj: number
+    lugar: string
+    hora_registro: string
+    monto: Decimal | DecimalJsLike | number | string
+    propina?: Decimal | DecimalJsLike | number | string
+    facturable?: boolean
+    descripcion?: string | null
+    lat?: number | null
+    lng?: number | null
+    evidencias?: tr_evidenciaUncheckedCreateNestedManyWithoutParadaInput
+  }
+
+  export type tr_paradas_gastosCreateOrConnectWithoutViajeInput = {
+    where: tr_paradas_gastosWhereUniqueInput
+    create: XOR<tr_paradas_gastosCreateWithoutViajeInput, tr_paradas_gastosUncheckedCreateWithoutViajeInput>
+  }
+
+  export type tr_paradas_gastosCreateManyViajeInputEnvelope = {
+    data: tr_paradas_gastosCreateManyViajeInput | tr_paradas_gastosCreateManyViajeInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type tr_notas_viajeCreateWithoutViajeInput = {
+    titulo: string
+    contenido: JsonNullValueInput | InputJsonValue
+    tipo_nota?: string
+  }
+
+  export type tr_notas_viajeUncheckedCreateWithoutViajeInput = {
+    clave?: number
+    titulo: string
+    contenido: JsonNullValueInput | InputJsonValue
+    tipo_nota?: string
+  }
+
+  export type tr_notas_viajeCreateOrConnectWithoutViajeInput = {
+    where: tr_notas_viajeWhereUniqueInput
+    create: XOR<tr_notas_viajeCreateWithoutViajeInput, tr_notas_viajeUncheckedCreateWithoutViajeInput>
+  }
+
+  export type tr_notas_viajeCreateManyViajeInputEnvelope = {
+    data: tr_notas_viajeCreateManyViajeInput | tr_notas_viajeCreateManyViajeInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type ma_empleUpsertWithoutViajesInput = {
+    update: XOR<ma_empleUpdateWithoutViajesInput, ma_empleUncheckedUpdateWithoutViajesInput>
+    create: XOR<ma_empleCreateWithoutViajesInput, ma_empleUncheckedCreateWithoutViajesInput>
+    where?: ma_empleWhereInput
+  }
+
+  export type ma_empleUpdateToOneWithWhereWithoutViajesInput = {
+    where?: ma_empleWhereInput
+    data: XOR<ma_empleUpdateWithoutViajesInput, ma_empleUncheckedUpdateWithoutViajesInput>
+  }
+
+  export type ma_empleUpdateWithoutViajesInput = {
+    clave?: NullableStringFieldUpdateOperationsInput | string | null
+    descri?: NullableStringFieldUpdateOperationsInput | string | null
+    cve_zon?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    ma_depar?: ma_deparUpdateOneWithoutMa_empleNestedInput
+    ma_eqasis?: ma_eqasisUpdateManyWithoutMa_empleNestedInput
+  }
+
+  export type ma_empleUncheckedUpdateWithoutViajesInput = {
+    id?: IntFieldUpdateOperationsInput | number
+    clave?: NullableStringFieldUpdateOperationsInput | string | null
+    descri?: NullableStringFieldUpdateOperationsInput | string | null
+    cve_zon?: NullableStringFieldUpdateOperationsInput | string | null
+    status?: NullableBoolFieldUpdateOperationsInput | boolean | null
+    cve_depar?: NullableIntFieldUpdateOperationsInput | number | null
+    ma_eqasis?: ma_eqasisUncheckedUpdateManyWithoutMa_empleNestedInput
+  }
+
+  export type tr_paradas_gastosUpsertWithWhereUniqueWithoutViajeInput = {
+    where: tr_paradas_gastosWhereUniqueInput
+    update: XOR<tr_paradas_gastosUpdateWithoutViajeInput, tr_paradas_gastosUncheckedUpdateWithoutViajeInput>
+    create: XOR<tr_paradas_gastosCreateWithoutViajeInput, tr_paradas_gastosUncheckedCreateWithoutViajeInput>
+  }
+
+  export type tr_paradas_gastosUpdateWithWhereUniqueWithoutViajeInput = {
+    where: tr_paradas_gastosWhereUniqueInput
+    data: XOR<tr_paradas_gastosUpdateWithoutViajeInput, tr_paradas_gastosUncheckedUpdateWithoutViajeInput>
+  }
+
+  export type tr_paradas_gastosUpdateManyWithWhereWithoutViajeInput = {
+    where: tr_paradas_gastosScalarWhereInput
+    data: XOR<tr_paradas_gastosUpdateManyMutationInput, tr_paradas_gastosUncheckedUpdateManyWithoutViajeInput>
+  }
+
+  export type tr_notas_viajeUpsertWithWhereUniqueWithoutViajeInput = {
+    where: tr_notas_viajeWhereUniqueInput
+    update: XOR<tr_notas_viajeUpdateWithoutViajeInput, tr_notas_viajeUncheckedUpdateWithoutViajeInput>
+    create: XOR<tr_notas_viajeCreateWithoutViajeInput, tr_notas_viajeUncheckedCreateWithoutViajeInput>
+  }
+
+  export type tr_notas_viajeUpdateWithWhereUniqueWithoutViajeInput = {
+    where: tr_notas_viajeWhereUniqueInput
+    data: XOR<tr_notas_viajeUpdateWithoutViajeInput, tr_notas_viajeUncheckedUpdateWithoutViajeInput>
+  }
+
+  export type tr_notas_viajeUpdateManyWithWhereWithoutViajeInput = {
+    where: tr_notas_viajeScalarWhereInput
+    data: XOR<tr_notas_viajeUpdateManyMutationInput, tr_notas_viajeUncheckedUpdateManyWithoutViajeInput>
+  }
+
+  export type tr_notas_viajeScalarWhereInput = {
+    AND?: tr_notas_viajeScalarWhereInput | tr_notas_viajeScalarWhereInput[]
+    OR?: tr_notas_viajeScalarWhereInput[]
+    NOT?: tr_notas_viajeScalarWhereInput | tr_notas_viajeScalarWhereInput[]
+    clave?: IntFilter<"tr_notas_viaje"> | number
+    cve_viaje?: IntFilter<"tr_notas_viaje"> | number
+    titulo?: StringFilter<"tr_notas_viaje"> | string
+    contenido?: JsonFilter<"tr_notas_viaje">
+    tipo_nota?: StringFilter<"tr_notas_viaje"> | string
+  }
+
+  export type tr_viajesCreateWithoutParadasInput = {
+    uuid_movil: string
+    titulo: string
+    fecha_inicio: Date | string
+    presupuesto: Decimal | DecimalJsLike | number | string
+    status_viaje?: string
+    sync_at?: Date | string
+    empleado: ma_empleCreateNestedOneWithoutViajesInput
+    notas?: tr_notas_viajeCreateNestedManyWithoutViajeInput
+  }
+
+  export type tr_viajesUncheckedCreateWithoutParadasInput = {
+    clave?: number
+    uuid_movil: string
+    cve_emple: number
+    titulo: string
+    fecha_inicio: Date | string
+    presupuesto: Decimal | DecimalJsLike | number | string
+    status_viaje?: string
+    sync_at?: Date | string
+    notas?: tr_notas_viajeUncheckedCreateNestedManyWithoutViajeInput
+  }
+
+  export type tr_viajesCreateOrConnectWithoutParadasInput = {
+    where: tr_viajesWhereUniqueInput
+    create: XOR<tr_viajesCreateWithoutParadasInput, tr_viajesUncheckedCreateWithoutParadasInput>
+  }
+
+  export type ma_catvjCreateWithoutParadasInput = {
+    nombre: string
+    icono: string
+    color: string
+  }
+
+  export type ma_catvjUncheckedCreateWithoutParadasInput = {
+    clave?: number
+    nombre: string
+    icono: string
+    color: string
+  }
+
+  export type ma_catvjCreateOrConnectWithoutParadasInput = {
+    where: ma_catvjWhereUniqueInput
+    create: XOR<ma_catvjCreateWithoutParadasInput, ma_catvjUncheckedCreateWithoutParadasInput>
+  }
+
+  export type tr_evidenciaCreateWithoutParadaInput = {
+    tipo_archivo: string
+    url_archivo: string
+    fuente?: string | null
+  }
+
+  export type tr_evidenciaUncheckedCreateWithoutParadaInput = {
+    clave?: number
+    tipo_archivo: string
+    url_archivo: string
+    fuente?: string | null
+  }
+
+  export type tr_evidenciaCreateOrConnectWithoutParadaInput = {
+    where: tr_evidenciaWhereUniqueInput
+    create: XOR<tr_evidenciaCreateWithoutParadaInput, tr_evidenciaUncheckedCreateWithoutParadaInput>
+  }
+
+  export type tr_evidenciaCreateManyParadaInputEnvelope = {
+    data: tr_evidenciaCreateManyParadaInput | tr_evidenciaCreateManyParadaInput[]
+    skipDuplicates?: boolean
+  }
+
+  export type tr_viajesUpsertWithoutParadasInput = {
+    update: XOR<tr_viajesUpdateWithoutParadasInput, tr_viajesUncheckedUpdateWithoutParadasInput>
+    create: XOR<tr_viajesCreateWithoutParadasInput, tr_viajesUncheckedCreateWithoutParadasInput>
+    where?: tr_viajesWhereInput
+  }
+
+  export type tr_viajesUpdateToOneWithWhereWithoutParadasInput = {
+    where?: tr_viajesWhereInput
+    data: XOR<tr_viajesUpdateWithoutParadasInput, tr_viajesUncheckedUpdateWithoutParadasInput>
+  }
+
+  export type tr_viajesUpdateWithoutParadasInput = {
+    uuid_movil?: StringFieldUpdateOperationsInput | string
+    titulo?: StringFieldUpdateOperationsInput | string
+    fecha_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    presupuesto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    status_viaje?: StringFieldUpdateOperationsInput | string
+    sync_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    empleado?: ma_empleUpdateOneRequiredWithoutViajesNestedInput
+    notas?: tr_notas_viajeUpdateManyWithoutViajeNestedInput
+  }
+
+  export type tr_viajesUncheckedUpdateWithoutParadasInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    uuid_movil?: StringFieldUpdateOperationsInput | string
+    cve_emple?: IntFieldUpdateOperationsInput | number
+    titulo?: StringFieldUpdateOperationsInput | string
+    fecha_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    presupuesto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    status_viaje?: StringFieldUpdateOperationsInput | string
+    sync_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    notas?: tr_notas_viajeUncheckedUpdateManyWithoutViajeNestedInput
+  }
+
+  export type ma_catvjUpsertWithoutParadasInput = {
+    update: XOR<ma_catvjUpdateWithoutParadasInput, ma_catvjUncheckedUpdateWithoutParadasInput>
+    create: XOR<ma_catvjCreateWithoutParadasInput, ma_catvjUncheckedCreateWithoutParadasInput>
+    where?: ma_catvjWhereInput
+  }
+
+  export type ma_catvjUpdateToOneWithWhereWithoutParadasInput = {
+    where?: ma_catvjWhereInput
+    data: XOR<ma_catvjUpdateWithoutParadasInput, ma_catvjUncheckedUpdateWithoutParadasInput>
+  }
+
+  export type ma_catvjUpdateWithoutParadasInput = {
+    nombre?: StringFieldUpdateOperationsInput | string
+    icono?: StringFieldUpdateOperationsInput | string
+    color?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type ma_catvjUncheckedUpdateWithoutParadasInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    nombre?: StringFieldUpdateOperationsInput | string
+    icono?: StringFieldUpdateOperationsInput | string
+    color?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type tr_evidenciaUpsertWithWhereUniqueWithoutParadaInput = {
+    where: tr_evidenciaWhereUniqueInput
+    update: XOR<tr_evidenciaUpdateWithoutParadaInput, tr_evidenciaUncheckedUpdateWithoutParadaInput>
+    create: XOR<tr_evidenciaCreateWithoutParadaInput, tr_evidenciaUncheckedCreateWithoutParadaInput>
+  }
+
+  export type tr_evidenciaUpdateWithWhereUniqueWithoutParadaInput = {
+    where: tr_evidenciaWhereUniqueInput
+    data: XOR<tr_evidenciaUpdateWithoutParadaInput, tr_evidenciaUncheckedUpdateWithoutParadaInput>
+  }
+
+  export type tr_evidenciaUpdateManyWithWhereWithoutParadaInput = {
+    where: tr_evidenciaScalarWhereInput
+    data: XOR<tr_evidenciaUpdateManyMutationInput, tr_evidenciaUncheckedUpdateManyWithoutParadaInput>
+  }
+
+  export type tr_evidenciaScalarWhereInput = {
+    AND?: tr_evidenciaScalarWhereInput | tr_evidenciaScalarWhereInput[]
+    OR?: tr_evidenciaScalarWhereInput[]
+    NOT?: tr_evidenciaScalarWhereInput | tr_evidenciaScalarWhereInput[]
+    clave?: IntFilter<"tr_evidencia"> | number
+    cve_parada?: IntFilter<"tr_evidencia"> | number
+    tipo_archivo?: StringFilter<"tr_evidencia"> | string
+    url_archivo?: StringFilter<"tr_evidencia"> | string
+    fuente?: StringNullableFilter<"tr_evidencia"> | string | null
+  }
+
+  export type tr_paradas_gastosCreateWithoutEvidenciasInput = {
+    lugar: string
+    hora_registro: string
+    monto: Decimal | DecimalJsLike | number | string
+    propina?: Decimal | DecimalJsLike | number | string
+    facturable?: boolean
+    descripcion?: string | null
+    lat?: number | null
+    lng?: number | null
+    viaje: tr_viajesCreateNestedOneWithoutParadasInput
+    categoria: ma_catvjCreateNestedOneWithoutParadasInput
+  }
+
+  export type tr_paradas_gastosUncheckedCreateWithoutEvidenciasInput = {
+    clave?: number
+    cve_viaje: number
+    cve_catvj: number
+    lugar: string
+    hora_registro: string
+    monto: Decimal | DecimalJsLike | number | string
+    propina?: Decimal | DecimalJsLike | number | string
+    facturable?: boolean
+    descripcion?: string | null
+    lat?: number | null
+    lng?: number | null
+  }
+
+  export type tr_paradas_gastosCreateOrConnectWithoutEvidenciasInput = {
+    where: tr_paradas_gastosWhereUniqueInput
+    create: XOR<tr_paradas_gastosCreateWithoutEvidenciasInput, tr_paradas_gastosUncheckedCreateWithoutEvidenciasInput>
+  }
+
+  export type tr_paradas_gastosUpsertWithoutEvidenciasInput = {
+    update: XOR<tr_paradas_gastosUpdateWithoutEvidenciasInput, tr_paradas_gastosUncheckedUpdateWithoutEvidenciasInput>
+    create: XOR<tr_paradas_gastosCreateWithoutEvidenciasInput, tr_paradas_gastosUncheckedCreateWithoutEvidenciasInput>
+    where?: tr_paradas_gastosWhereInput
+  }
+
+  export type tr_paradas_gastosUpdateToOneWithWhereWithoutEvidenciasInput = {
+    where?: tr_paradas_gastosWhereInput
+    data: XOR<tr_paradas_gastosUpdateWithoutEvidenciasInput, tr_paradas_gastosUncheckedUpdateWithoutEvidenciasInput>
+  }
+
+  export type tr_paradas_gastosUpdateWithoutEvidenciasInput = {
+    lugar?: StringFieldUpdateOperationsInput | string
+    hora_registro?: StringFieldUpdateOperationsInput | string
+    monto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    propina?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    facturable?: BoolFieldUpdateOperationsInput | boolean
+    descripcion?: NullableStringFieldUpdateOperationsInput | string | null
+    lat?: NullableFloatFieldUpdateOperationsInput | number | null
+    lng?: NullableFloatFieldUpdateOperationsInput | number | null
+    viaje?: tr_viajesUpdateOneRequiredWithoutParadasNestedInput
+    categoria?: ma_catvjUpdateOneRequiredWithoutParadasNestedInput
+  }
+
+  export type tr_paradas_gastosUncheckedUpdateWithoutEvidenciasInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    cve_viaje?: IntFieldUpdateOperationsInput | number
+    cve_catvj?: IntFieldUpdateOperationsInput | number
+    lugar?: StringFieldUpdateOperationsInput | string
+    hora_registro?: StringFieldUpdateOperationsInput | string
+    monto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    propina?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    facturable?: BoolFieldUpdateOperationsInput | boolean
+    descripcion?: NullableStringFieldUpdateOperationsInput | string | null
+    lat?: NullableFloatFieldUpdateOperationsInput | number | null
+    lng?: NullableFloatFieldUpdateOperationsInput | number | null
+  }
+
+  export type tr_viajesCreateWithoutNotasInput = {
+    uuid_movil: string
+    titulo: string
+    fecha_inicio: Date | string
+    presupuesto: Decimal | DecimalJsLike | number | string
+    status_viaje?: string
+    sync_at?: Date | string
+    empleado: ma_empleCreateNestedOneWithoutViajesInput
+    paradas?: tr_paradas_gastosCreateNestedManyWithoutViajeInput
+  }
+
+  export type tr_viajesUncheckedCreateWithoutNotasInput = {
+    clave?: number
+    uuid_movil: string
+    cve_emple: number
+    titulo: string
+    fecha_inicio: Date | string
+    presupuesto: Decimal | DecimalJsLike | number | string
+    status_viaje?: string
+    sync_at?: Date | string
+    paradas?: tr_paradas_gastosUncheckedCreateNestedManyWithoutViajeInput
+  }
+
+  export type tr_viajesCreateOrConnectWithoutNotasInput = {
+    where: tr_viajesWhereUniqueInput
+    create: XOR<tr_viajesCreateWithoutNotasInput, tr_viajesUncheckedCreateWithoutNotasInput>
+  }
+
+  export type tr_viajesUpsertWithoutNotasInput = {
+    update: XOR<tr_viajesUpdateWithoutNotasInput, tr_viajesUncheckedUpdateWithoutNotasInput>
+    create: XOR<tr_viajesCreateWithoutNotasInput, tr_viajesUncheckedCreateWithoutNotasInput>
+    where?: tr_viajesWhereInput
+  }
+
+  export type tr_viajesUpdateToOneWithWhereWithoutNotasInput = {
+    where?: tr_viajesWhereInput
+    data: XOR<tr_viajesUpdateWithoutNotasInput, tr_viajesUncheckedUpdateWithoutNotasInput>
+  }
+
+  export type tr_viajesUpdateWithoutNotasInput = {
+    uuid_movil?: StringFieldUpdateOperationsInput | string
+    titulo?: StringFieldUpdateOperationsInput | string
+    fecha_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    presupuesto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    status_viaje?: StringFieldUpdateOperationsInput | string
+    sync_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    empleado?: ma_empleUpdateOneRequiredWithoutViajesNestedInput
+    paradas?: tr_paradas_gastosUpdateManyWithoutViajeNestedInput
+  }
+
+  export type tr_viajesUncheckedUpdateWithoutNotasInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    uuid_movil?: StringFieldUpdateOperationsInput | string
+    cve_emple?: IntFieldUpdateOperationsInput | number
+    titulo?: StringFieldUpdateOperationsInput | string
+    fecha_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    presupuesto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    status_viaje?: StringFieldUpdateOperationsInput | string
+    sync_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    paradas?: tr_paradas_gastosUncheckedUpdateManyWithoutViajeNestedInput
+  }
+
   export type ma_eqsisCreateManyMa_clasifInput = {
     clave?: number
     serie?: string | null
@@ -37619,6 +46083,7 @@ export namespace Prisma {
     cve_zon?: NullableStringFieldUpdateOperationsInput | string | null
     status?: NullableBoolFieldUpdateOperationsInput | boolean | null
     ma_eqasis?: ma_eqasisUpdateManyWithoutMa_empleNestedInput
+    viajes?: tr_viajesUpdateManyWithoutEmpleadoNestedInput
   }
 
   export type ma_empleUncheckedUpdateWithoutMa_deparInput = {
@@ -37628,6 +46093,7 @@ export namespace Prisma {
     cve_zon?: NullableStringFieldUpdateOperationsInput | string | null
     status?: NullableBoolFieldUpdateOperationsInput | boolean | null
     ma_eqasis?: ma_eqasisUncheckedUpdateManyWithoutMa_empleNestedInput
+    viajes?: tr_viajesUncheckedUpdateManyWithoutEmpleadoNestedInput
   }
 
   export type ma_empleUncheckedUpdateManyWithoutMa_deparInput = {
@@ -37669,6 +46135,16 @@ export namespace Prisma {
     f_movto?: Date | string | null
   }
 
+  export type tr_viajesCreateManyEmpleadoInput = {
+    clave?: number
+    uuid_movil: string
+    titulo: string
+    fecha_inicio: Date | string
+    presupuesto: Decimal | DecimalJsLike | number | string
+    status_viaje?: string
+    sync_at?: Date | string
+  }
+
   export type ma_eqasisUpdateWithoutMa_empleInput = {
     cve_alm?: NullableStringFieldUpdateOperationsInput | string | null
     f_movto?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -37690,6 +46166,39 @@ export namespace Prisma {
     cve_eqsis?: NullableIntFieldUpdateOperationsInput | number | null
     cve_depar?: NullableIntFieldUpdateOperationsInput | number | null
     f_movto?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  }
+
+  export type tr_viajesUpdateWithoutEmpleadoInput = {
+    uuid_movil?: StringFieldUpdateOperationsInput | string
+    titulo?: StringFieldUpdateOperationsInput | string
+    fecha_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    presupuesto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    status_viaje?: StringFieldUpdateOperationsInput | string
+    sync_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    paradas?: tr_paradas_gastosUpdateManyWithoutViajeNestedInput
+    notas?: tr_notas_viajeUpdateManyWithoutViajeNestedInput
+  }
+
+  export type tr_viajesUncheckedUpdateWithoutEmpleadoInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    uuid_movil?: StringFieldUpdateOperationsInput | string
+    titulo?: StringFieldUpdateOperationsInput | string
+    fecha_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    presupuesto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    status_viaje?: StringFieldUpdateOperationsInput | string
+    sync_at?: DateTimeFieldUpdateOperationsInput | Date | string
+    paradas?: tr_paradas_gastosUncheckedUpdateManyWithoutViajeNestedInput
+    notas?: tr_notas_viajeUncheckedUpdateManyWithoutViajeNestedInput
+  }
+
+  export type tr_viajesUncheckedUpdateManyWithoutEmpleadoInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    uuid_movil?: StringFieldUpdateOperationsInput | string
+    titulo?: StringFieldUpdateOperationsInput | string
+    fecha_inicio?: DateTimeFieldUpdateOperationsInput | Date | string
+    presupuesto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    status_viaje?: StringFieldUpdateOperationsInput | string
+    sync_at?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ma_eqasisCreateManyMa_eqsisInput = {
@@ -37931,6 +46440,166 @@ export namespace Prisma {
     clave?: IntFieldUpdateOperationsInput | number
     cve_permiso?: NullableIntFieldUpdateOperationsInput | number | null
     cve_empresa?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tr_paradas_gastosCreateManyCategoriaInput = {
+    clave?: number
+    cve_viaje: number
+    lugar: string
+    hora_registro: string
+    monto: Decimal | DecimalJsLike | number | string
+    propina?: Decimal | DecimalJsLike | number | string
+    facturable?: boolean
+    descripcion?: string | null
+    lat?: number | null
+    lng?: number | null
+  }
+
+  export type tr_paradas_gastosUpdateWithoutCategoriaInput = {
+    lugar?: StringFieldUpdateOperationsInput | string
+    hora_registro?: StringFieldUpdateOperationsInput | string
+    monto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    propina?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    facturable?: BoolFieldUpdateOperationsInput | boolean
+    descripcion?: NullableStringFieldUpdateOperationsInput | string | null
+    lat?: NullableFloatFieldUpdateOperationsInput | number | null
+    lng?: NullableFloatFieldUpdateOperationsInput | number | null
+    viaje?: tr_viajesUpdateOneRequiredWithoutParadasNestedInput
+    evidencias?: tr_evidenciaUpdateManyWithoutParadaNestedInput
+  }
+
+  export type tr_paradas_gastosUncheckedUpdateWithoutCategoriaInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    cve_viaje?: IntFieldUpdateOperationsInput | number
+    lugar?: StringFieldUpdateOperationsInput | string
+    hora_registro?: StringFieldUpdateOperationsInput | string
+    monto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    propina?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    facturable?: BoolFieldUpdateOperationsInput | boolean
+    descripcion?: NullableStringFieldUpdateOperationsInput | string | null
+    lat?: NullableFloatFieldUpdateOperationsInput | number | null
+    lng?: NullableFloatFieldUpdateOperationsInput | number | null
+    evidencias?: tr_evidenciaUncheckedUpdateManyWithoutParadaNestedInput
+  }
+
+  export type tr_paradas_gastosUncheckedUpdateManyWithoutCategoriaInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    cve_viaje?: IntFieldUpdateOperationsInput | number
+    lugar?: StringFieldUpdateOperationsInput | string
+    hora_registro?: StringFieldUpdateOperationsInput | string
+    monto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    propina?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    facturable?: BoolFieldUpdateOperationsInput | boolean
+    descripcion?: NullableStringFieldUpdateOperationsInput | string | null
+    lat?: NullableFloatFieldUpdateOperationsInput | number | null
+    lng?: NullableFloatFieldUpdateOperationsInput | number | null
+  }
+
+  export type tr_paradas_gastosCreateManyViajeInput = {
+    clave?: number
+    cve_catvj: number
+    lugar: string
+    hora_registro: string
+    monto: Decimal | DecimalJsLike | number | string
+    propina?: Decimal | DecimalJsLike | number | string
+    facturable?: boolean
+    descripcion?: string | null
+    lat?: number | null
+    lng?: number | null
+  }
+
+  export type tr_notas_viajeCreateManyViajeInput = {
+    clave?: number
+    titulo: string
+    contenido: JsonNullValueInput | InputJsonValue
+    tipo_nota?: string
+  }
+
+  export type tr_paradas_gastosUpdateWithoutViajeInput = {
+    lugar?: StringFieldUpdateOperationsInput | string
+    hora_registro?: StringFieldUpdateOperationsInput | string
+    monto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    propina?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    facturable?: BoolFieldUpdateOperationsInput | boolean
+    descripcion?: NullableStringFieldUpdateOperationsInput | string | null
+    lat?: NullableFloatFieldUpdateOperationsInput | number | null
+    lng?: NullableFloatFieldUpdateOperationsInput | number | null
+    categoria?: ma_catvjUpdateOneRequiredWithoutParadasNestedInput
+    evidencias?: tr_evidenciaUpdateManyWithoutParadaNestedInput
+  }
+
+  export type tr_paradas_gastosUncheckedUpdateWithoutViajeInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    cve_catvj?: IntFieldUpdateOperationsInput | number
+    lugar?: StringFieldUpdateOperationsInput | string
+    hora_registro?: StringFieldUpdateOperationsInput | string
+    monto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    propina?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    facturable?: BoolFieldUpdateOperationsInput | boolean
+    descripcion?: NullableStringFieldUpdateOperationsInput | string | null
+    lat?: NullableFloatFieldUpdateOperationsInput | number | null
+    lng?: NullableFloatFieldUpdateOperationsInput | number | null
+    evidencias?: tr_evidenciaUncheckedUpdateManyWithoutParadaNestedInput
+  }
+
+  export type tr_paradas_gastosUncheckedUpdateManyWithoutViajeInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    cve_catvj?: IntFieldUpdateOperationsInput | number
+    lugar?: StringFieldUpdateOperationsInput | string
+    hora_registro?: StringFieldUpdateOperationsInput | string
+    monto?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    propina?: DecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string
+    facturable?: BoolFieldUpdateOperationsInput | boolean
+    descripcion?: NullableStringFieldUpdateOperationsInput | string | null
+    lat?: NullableFloatFieldUpdateOperationsInput | number | null
+    lng?: NullableFloatFieldUpdateOperationsInput | number | null
+  }
+
+  export type tr_notas_viajeUpdateWithoutViajeInput = {
+    titulo?: StringFieldUpdateOperationsInput | string
+    contenido?: JsonNullValueInput | InputJsonValue
+    tipo_nota?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type tr_notas_viajeUncheckedUpdateWithoutViajeInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    titulo?: StringFieldUpdateOperationsInput | string
+    contenido?: JsonNullValueInput | InputJsonValue
+    tipo_nota?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type tr_notas_viajeUncheckedUpdateManyWithoutViajeInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    titulo?: StringFieldUpdateOperationsInput | string
+    contenido?: JsonNullValueInput | InputJsonValue
+    tipo_nota?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type tr_evidenciaCreateManyParadaInput = {
+    clave?: number
+    tipo_archivo: string
+    url_archivo: string
+    fuente?: string | null
+  }
+
+  export type tr_evidenciaUpdateWithoutParadaInput = {
+    tipo_archivo?: StringFieldUpdateOperationsInput | string
+    url_archivo?: StringFieldUpdateOperationsInput | string
+    fuente?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tr_evidenciaUncheckedUpdateWithoutParadaInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    tipo_archivo?: StringFieldUpdateOperationsInput | string
+    url_archivo?: StringFieldUpdateOperationsInput | string
+    fuente?: NullableStringFieldUpdateOperationsInput | string | null
+  }
+
+  export type tr_evidenciaUncheckedUpdateManyWithoutParadaInput = {
+    clave?: IntFieldUpdateOperationsInput | number
+    tipo_archivo?: StringFieldUpdateOperationsInput | string
+    url_archivo?: StringFieldUpdateOperationsInput | string
+    fuente?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
 

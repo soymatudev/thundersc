@@ -349,9 +349,61 @@ exports.Prisma.Ma_folioScalarFieldEnum = {
   ultimo_folio: 'ultimo_folio'
 };
 
+exports.Prisma.Ma_catvjScalarFieldEnum = {
+  clave: 'clave',
+  nombre: 'nombre',
+  icono: 'icono',
+  color: 'color'
+};
+
+exports.Prisma.Tr_viajesScalarFieldEnum = {
+  clave: 'clave',
+  uuid_movil: 'uuid_movil',
+  cve_emple: 'cve_emple',
+  titulo: 'titulo',
+  fecha_inicio: 'fecha_inicio',
+  presupuesto: 'presupuesto',
+  status_viaje: 'status_viaje',
+  sync_at: 'sync_at'
+};
+
+exports.Prisma.Tr_paradas_gastosScalarFieldEnum = {
+  clave: 'clave',
+  cve_viaje: 'cve_viaje',
+  cve_catvj: 'cve_catvj',
+  lugar: 'lugar',
+  hora_registro: 'hora_registro',
+  monto: 'monto',
+  propina: 'propina',
+  facturable: 'facturable',
+  descripcion: 'descripcion',
+  lat: 'lat',
+  lng: 'lng'
+};
+
+exports.Prisma.Tr_evidenciaScalarFieldEnum = {
+  clave: 'clave',
+  cve_parada: 'cve_parada',
+  tipo_archivo: 'tipo_archivo',
+  url_archivo: 'url_archivo',
+  fuente: 'fuente'
+};
+
+exports.Prisma.Tr_notas_viajeScalarFieldEnum = {
+  clave: 'clave',
+  cve_viaje: 'cve_viaje',
+  titulo: 'titulo',
+  contenido: 'contenido',
+  tipo_nota: 'tipo_nota'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
+};
+
+exports.Prisma.JsonNullValueInput = {
+  JsonNull: Prisma.JsonNull
 };
 
 exports.Prisma.QueryMode = {
@@ -362,6 +414,12 @@ exports.Prisma.QueryMode = {
 exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
+};
+
+exports.Prisma.JsonNullValueFilter = {
+  DbNull: Prisma.DbNull,
+  JsonNull: Prisma.JsonNull,
+  AnyNull: Prisma.AnyNull
 };
 
 
@@ -390,7 +448,12 @@ exports.Prisma.ModelName = {
   permiso: 'permiso',
   usuario: 'usuario',
   usuario_permiso: 'usuario_permiso',
-  ma_folio: 'ma_folio'
+  ma_folio: 'ma_folio',
+  ma_catvj: 'ma_catvj',
+  tr_viajes: 'tr_viajes',
+  tr_paradas_gastos: 'tr_paradas_gastos',
+  tr_evidencia: 'tr_evidencia',
+  tr_notas_viaje: 'tr_notas_viaje'
 };
 
 /**

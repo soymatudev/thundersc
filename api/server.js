@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const cookierParser = require('cookie-parser');
-const Logger = require('./src/shared/utils/Logger'); // Import Logger
+const Logger = require('./src/shared/utils/Logger');
 const mainRouter = require('./src/index.routes');
 
 const app = express();
@@ -11,23 +11,22 @@ app.get('/', (req, res) => {
 });
 
 app.use(cors({
-  origin: 'http://nexthwd.pcz.com.mx:8080', // Sin el / al final
-  credentials: true // INDISPENSABLE para que viajen las cookies/tokens
+  origin: 'http://nexthwd.pcz.com.mx:8080',
+  credentials: true 
 }));
 
 
 app.use(cookierParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use('/uploads', express.static(path.join(__dirname, 'public/uploads')));
 
-// Use the main router
 app.use(mainRouter);
 app.set('trust proxy', 1);
 
-// Global Error Handler Middleware
 app.use((err, req, res, next) => {
   Logger.error(`Unhandled Error: ${err.message} ${err.stack}` , err.stack);
-  // Default to 500 Internal Server Error, or use a custom status if available
+
   const statusCode = err.statusCode || 500;
   res.status(statusCode).json({
     message: err.message || 'Internal Server Error',
