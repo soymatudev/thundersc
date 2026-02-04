@@ -63,7 +63,7 @@ exports.uploadEvidencia = asyncHandler(async (req, res) => {
 
     // Generamos las URLs de todos los archivos subidos
     const urls = req.files.map(file => 
-        `${req.protocol}://${req.get('host')}/uploads/viaticos/${file.filename}`
+        `${req.protocol}://${req.get('host')}/uploads/viajes/${file.filename}`
     );
 
     res.status(201).json({
