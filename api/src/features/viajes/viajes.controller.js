@@ -10,6 +10,14 @@ exports.getAllViajes = asyncHandler(async (req, res) => {
     res.status(200).json(viajes);
 });
 
+exports.getViajesAdmin = asyncHandler(async (req, res) => {
+    const reporte = await viajesService.getViajesAdmin();
+    if (!reporte || reporte.length === 0) {
+        throw new NotFoundError('No se encontraron viajes para el reporte');
+    }
+    res.json(reporte);
+});
+
 exports.getViajesPaginadas = asyncHandler(async (req, res) => {
     const { page, pageSize, destino } = req.query;
     const pageNum = parseInt(page, 10) || 1;

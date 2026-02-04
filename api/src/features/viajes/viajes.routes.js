@@ -2,9 +2,11 @@ const express = require('express');
 const router = express.Router();
 const uploadMiddleware = require('../../shared/middleware/upload.middleware');
 
-const { getAllViajes, getViajesPaginadas, getViajeById, getViajeByEmpleado, updateViaje, setViaje, uploadEvidencia, deleteViaje } = require('./viajes.controller');
+const { getAllViajes, getViajesAdmin, getViajesPaginadas, getViajeById, getViajeByEmpleado, updateViaje, setViaje, uploadEvidencia, deleteViaje } = require('./viajes.controller');
 
 router.get('/', getAllViajes);
+
+router.get('/detallado', getViajesAdmin);
 
 router.get('/paginated', getViajesPaginadas);
 

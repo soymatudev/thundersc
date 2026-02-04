@@ -63,3 +63,6 @@ client/.vite/
 *thundercloud/.env
 *thundercloud/composer.lock
 *thunder/template/assets/images/LogoThunderCube.png
+
+### Public ###
+/public/uploads/

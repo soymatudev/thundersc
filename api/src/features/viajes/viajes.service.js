@@ -8,6 +8,22 @@ exports.getAllViajes = async () => {
     return viajes;
 }
 
+exports.getViajesAdmin = async () => {
+    const viajes = await prisma.tr_viajes.findMany({
+        include: {
+            empleado: { select: { descri: true } },
+            paradas: { select: { monto: true, propina: true } }
+        },
+        orderBy: { sync_at: 'desc' }
+    });
+
+    const reporte = viajes.map(v => ({
+        ...v,
+        total_gastado: v.paradas.reduce((acc, p) => acc + Number(p.monto) + Number(p.propina), 0)
+    }));
+    return reporte;
+}
+
 exports.getViajesPaginadas = async (page = 1, pageSize = 10, destino = '') => {
     const skip = (page - 1) * pageSize;
     const take = parseInt(pageSize, 10);
@@ -57,8 +73,12 @@ exports.getViajeById = async (idOrUuid) => {
             ? { clave: idNum } 
             : { uuid_movil: idOrUuid },
         include: {
+            empleado: { select: { descri: true } },
             paradas: {
-                include: { evidencias: true }
+                include: { 
+                    evidencias: true,
+                    categoria: true
+                }
             },
             notas: true
         }
