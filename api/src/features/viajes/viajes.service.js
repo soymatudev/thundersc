@@ -49,13 +49,18 @@ exports.getViajesPaginadas = async (page = 1, pageSize = 10, destino = '') => {
 }
 
 exports.getViajeById = async (id) => {
-    const viaje = await prisma.tr_viajes.findUnique({
-        where: { id: parseInt(id, 10) },
+    const idNum = parseInt(id, 10);
+    if (isNaN(idNum)) throw new Error('ID de viaje no válido');
+
+    return await prisma.tr_viajes.findUnique({
+        where: {
+            clave: idNum 
+        },
+        include: {
+            paradas: { include: { evidencias: true } },
+            notas: true
+        }
     });
-    if (!viaje || !viaje.activo) {
-        throw new NotFoundError(`No se encontró viaje con el ID ${id}`);
-    }
-    return viaje;
 }
 
 exports.getViajeByEmpleado = async (empleadoId) => {
@@ -201,10 +206,10 @@ const mapearParadas = (paradas) => {
         lat: p.lat,
         lng: p.lng,
         evidencias: {
-            create: p.evidencias?.map(e => ({
-                tipo_archivo: e.tipo_archivo,
+            create: p.evidencias?.filter(e => e.url_archivo).map(e => ({
+                tipo_archivo: e.tipo_archivo || 'image/jpeg',
                 url_archivo: e.url_archivo,
-                fuente: e.fuente
+                fuente: e.fuente || 'App'
             })) || []
         }
     }));
