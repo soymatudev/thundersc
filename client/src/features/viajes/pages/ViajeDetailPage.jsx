@@ -73,7 +73,7 @@ const ViajeDetailPage = ({ id: propId, onBack }) => {
                     </div>
                     <h2 className="text-2xl font-black text-white">{error || 'Viaje no encontrado'}</h2>
                     <button
-                        onClick={() => navigate('/viajes')}
+                        onClick={handleBack}
                         className="px-8 py-3 bg-indigo-600 text-white rounded-2xl font-bold hover:bg-indigo-700 transition-all flex items-center justify-center gap-2 mx-auto"
                     >
                         <ArrowLeft size={18} /> Volver a la lista
