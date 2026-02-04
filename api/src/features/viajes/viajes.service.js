@@ -48,20 +48,22 @@ exports.getViajesPaginadas = async (page = 1, pageSize = 10, destino = '') => {
     };
 }
 
-exports.getViajeById = async (id) => {
-    const idNum = parseInt(id, 10);
-    if (isNaN(idNum)) throw new Error('ID de viaje no válido');
+exports.getViajeById = async (idOrUuid) => {
+    const idNum = parseInt(idOrUuid, 10);
+    const isNumber = !isNaN(idNum) && /^\d+$/.test(idOrUuid);
 
-    return await prisma.tr_viajes.findUnique({
-        where: {
-            clave: idNum 
-        },
+    return await prisma.tr_viajes.findFirst({
+        where: isNumber 
+            ? { clave: idNum } 
+            : { uuid_movil: idOrUuid },
         include: {
-            paradas: { include: { evidencias: true } },
+            paradas: {
+                include: { evidencias: true }
+            },
             notas: true
         }
     });
-}
+};
 
 exports.getViajeByEmpleado = async (empleadoId) => {
     const viajes = await prisma.tr_viajes.findMany({
