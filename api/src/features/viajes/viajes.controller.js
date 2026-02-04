@@ -49,15 +49,18 @@ exports.setViaje = asyncHandler(async (req, res) => {
 });
 
 exports.uploadEvidencia = asyncHandler(async (req, res) => {
-    if (!req.file) {
-        return res.status(400).json({ ok: false, msg: 'No se subió ningún archivo' });
+    if (!req.files || req.files.length === 0) {
+        return res.status(400).json({ ok: false, msg: 'No se subieron archivos' });
     }
 
-    const fileUrl = `${req.protocol}://${req.get('host')}/uploads/viaticos/${req.file.filename}`;
+    // Generamos las URLs de todos los archivos subidos
+    const urls = req.files.map(file => 
+        `${req.protocol}://${req.get('host')}/uploads/viaticos/${file.filename}`
+    );
 
     res.status(201).json({
         ok: true,
-        url: fileUrl
+        urls: urls // Devolvemos el array de URLs
     });
 });
 

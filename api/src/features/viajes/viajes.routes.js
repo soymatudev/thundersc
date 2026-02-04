@@ -16,7 +16,7 @@ router.put('/:id', updateViaje);
 
 router.post('/', setViaje);
 
-router.post('/upload', uploadMiddleware.single('file'), uploadEvidencia);
+router.post('/upload', uploadMiddleware.array('files', 5), uploadEvidencia);
 
 router.delete('/:id', deleteViaje);
 
