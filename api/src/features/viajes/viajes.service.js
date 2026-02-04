@@ -133,8 +133,9 @@ exports.updateViaje = async (id, updateData) => {
 }
 
 exports.setViaje = async (viajeData) => {
-    const { uuid_movil, cve_emple, paradas, notas, ...datosViaje } = viajeData;
+    const { uuid_movil, cve_emple, paradas, notas, fecha_inicio, ...datosViaje } = viajeData;
 
+    const fechaDate = new Date(fecha_inicio + 'T00:00:00');
     return await prisma.$transaction(async (tx) => {
         // 1. Buscamos si ya existe para decidir si hacemos Update o Create
         const viajeExistente = await tx.tr_viajes.findUnique({
@@ -162,6 +163,7 @@ exports.setViaje = async (viajeData) => {
                 data: {
                     ...datosViaje,
                     uuid_movil,
+                    fecha_inicio: fechaDate,
                     cve_emple: parseInt(cve_emple),
                     paradas: { create: mapearParadas(paradas) },
                     notas: { create: mapearNotas(notas) }
@@ -185,28 +187,35 @@ exports.closeViaje = async (id) => {
     });
 };
 
-// Funciones auxiliares para no repetir código
-const mapearParadas = (paradas) => paradas.map(p => ({
-    cve_catvj: p.cve_catvj,
-    lugar: p.lugar,
-    hora_registro: p.hora_registro,
-    monto: p.monto,
-    propina: p.propina || 0,
-    facturable: p.facturable,
-    descripcion: p.descripcion,
-    lat: p.lat,
-    lng: p.lng,
-    evidencias: {
-        create: p.evidencias?.map(e => ({
-            tipo_archivo: e.tipo_archivo,
-            url_archivo: e.url_archivo,
-            fuente: e.fuente
-        })) || []
-    }
-}));
+const mapearParadas = (paradas) => {
+    if (!paradas || !Array.isArray(paradas)) return [];
+    
+    return paradas.map(p => ({
+        cve_catvj: p.cve_catvj,
+        lugar: p.lugar,
+        hora_registro: p.hora_registro,
+        monto: p.monto,
+        propina: p.propina || 0,
+        facturable: p.facturable,
+        descripcion: p.descripcion,
+        lat: p.lat,
+        lng: p.lng,
+        evidencias: {
+            create: p.evidencias?.map(e => ({
+                tipo_archivo: e.tipo_archivo,
+                url_archivo: e.url_archivo,
+                fuente: e.fuente
+            })) || []
+        }
+    }));
+};
 
-const mapearNotas = (notas) => notas.map(n => ({
-    titulo: n.titulo,
-    contenido: n.contenido,
-    tipo_nota: n.tipo_nota
-}));
+const mapearNotas = (notas) => {
+    if (!notas || !Array.isArray(notas)) return [];
+    
+    return notas.map(n => ({
+        titulo: n.titulo,
+        contenido: n.contenido,
+        tipo_nota: n.tipo_nota
+    }));
+};
