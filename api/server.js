@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const cookierParser = require('cookie-parser');
 const Logger = require('./src/shared/utils/Logger');
 const mainRouter = require('./src/index.routes');

@@ -48,6 +48,19 @@ exports.setViaje = asyncHandler(async (req, res) => {
     res.status(201).json(newViaje);
 });
 
+exports.uploadEvidencia = asyncHandler(async (req, res) => {
+    if (!req.file) {
+        return res.status(400).json({ ok: false, msg: 'No se subió ningún archivo' });
+    }
+
+    const fileUrl = `${req.protocol}://${req.get('host')}/uploads/viaticos/${req.file.filename}`;
+
+    res.status(201).json({
+        ok: true,
+        url: fileUrl
+    });
+});
+
 exports.deleteViaje = asyncHandler(async (req, res) => {
     const { id } = req.params;
     await viajesService.deleteViaje(id);
