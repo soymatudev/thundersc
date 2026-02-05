@@ -178,8 +178,15 @@ exports.setViaje = async (viajeData) => {
         });
 
         if (viajeExistente) {
+            const paradasActuales = await tx.tr_paradas_gastos.findMany({
+                where: { cve_viaje: viajeExistente.clave },
+                select: { clave: true }
+            });
+
+            const idsParadas = paradasActuales.map(p => p.clave);
+
             // Lógica de Actualización (limpiamos paradas/notas antiguas para evitar basura)
-            await tx.tr_evidencia.deleteMany({ where: { cve_parada: { cve_viaje: viajeExistente.clave } } });
+            if (idsParadas.length > 0) await tx.tr_evidencia.deleteMany({ where: { cve_parada: { in: idsParadas } } });
             await tx.tr_paradas_gastos.deleteMany({ where: { cve_viaje: viajeExistente.clave } });
             await tx.tr_notas_viaje.deleteMany({ where: { cve_viaje: viajeExistente.clave } });
 
