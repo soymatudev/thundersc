@@ -1,5 +1,6 @@
 const { prisma } = require('../../shared/config/prismaClient');
 const { NotFoundError } = require('../../shared/utils/CustomError');
+const dayjs = require('dayjs');
 
 exports.getAllViajes = async () => {
     const viajes = await prisma.tr_viajes.findMany({
@@ -85,6 +86,13 @@ exports.getViajeById = async (idOrUuid) => {
     });
 };
 
+exports.downloadViaje = async (uuid) => {
+    return await prisma.tr_viajes.findUnique({
+        where: { uuid_movil: uuid },
+        include: { paradas: { include: { evidencias: true } }, notas: true }
+    });
+}
+
 exports.getViajeByEmpleado = async (empleadoId) => {
     const viajes = await prisma.tr_viajes.findMany({
         where: {
@@ -162,7 +170,7 @@ exports.updateViaje = async (id, updateData) => {
 exports.setViaje = async (viajeData) => {
     const { uuid_movil, cve_emple, paradas, notas, fecha_inicio, ...datosViaje } = viajeData;
 
-    const fechaDate = new Date(fecha_inicio + 'T00:00:00');
+    const fechaDate = dayjs().format('YYYY-MM-DDTHH:mm:ss.SSS');
     return await prisma.$transaction(async (tx) => {
         // 1. Buscamos si ya existe para decidir si hacemos Update o Create
         const viajeExistente = await tx.tr_viajes.findUnique({
@@ -171,6 +179,7 @@ exports.setViaje = async (viajeData) => {
 
         if (viajeExistente) {
             // Lógica de Actualización (limpiamos paradas/notas antiguas para evitar basura)
+            await tx.tr_evidencia.deleteMany({ where: { cve_viaje: viajeExistente.clave } });
             await tx.tr_paradas_gastos.deleteMany({ where: { cve_viaje: viajeExistente.clave } });
             await tx.tr_notas_viaje.deleteMany({ where: { cve_viaje: viajeExistente.clave } });
 

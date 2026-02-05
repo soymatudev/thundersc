@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const uploadMiddleware = require('../../shared/middleware/upload.middleware');
 
-const { getAllViajes, getViajesAdmin, getViajesPaginadas, getViajeById, getViajeByEmpleado, updateViaje, setViaje, uploadEvidencia, deleteViaje } = require('./viajes.controller');
+const { getAllViajes, getViajesAdmin, getViajesPaginadas, getViajeById, getViajeByEmpleado, downloadViaje, updateViaje, setViaje, uploadEvidencia, deleteViaje } = require('./viajes.controller');
 
 router.get('/', getAllViajes);
 
@@ -13,6 +13,8 @@ router.get('/paginated', getViajesPaginadas);
 router.get('/:id', getViajeById);
 
 router.get('/:id', getViajeByEmpleado);
+
+router.get('/download/:id', downloadViaje);
 
 router.put('/:id', updateViaje);
 

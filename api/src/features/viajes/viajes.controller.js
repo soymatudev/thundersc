@@ -43,6 +43,14 @@ exports.getViajeByEmpleado = asyncHandler(async (req, res) => {
     res.status(200).json(viaje);
 });
 
+
+exports.downloadViaje = asyncHandler(async (req, res) => {
+    const { uuid } = req.params;
+    const viaje = await viajesService.downloadViaje(uuid);
+    if (!viaje) return res.status(404).json({ msg: "Viaje no encontrado" });
+    res.json(viaje);
+});
+
 exports.updateViaje = asyncHandler(async (req, res) => {
     const { id } = req.params;
     const updateData = req.body;
