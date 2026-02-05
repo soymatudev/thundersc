@@ -179,7 +179,7 @@ exports.setViaje = async (viajeData) => {
 
         if (viajeExistente) {
             // Lógica de Actualización (limpiamos paradas/notas antiguas para evitar basura)
-            await tx.tr_evidencia.deleteMany({ where: { cve_parada: { cve_viaje: viajeClave } } });
+            await tx.tr_evidencia.deleteMany({ where: { cve_parada: { cve_viaje: viajeExistente.clave } } });
             await tx.tr_paradas_gastos.deleteMany({ where: { cve_viaje: viajeExistente.clave } });
             await tx.tr_notas_viaje.deleteMany({ where: { cve_viaje: viajeExistente.clave } });
 
