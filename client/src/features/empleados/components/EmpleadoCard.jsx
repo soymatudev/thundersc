@@ -20,7 +20,7 @@ const EmpleadoCard = ({ empleado, onEdit, onDelete }) => {
             <div className="bg-gray-700 p-2 rounded-lg">
               <User size={20} className="text-indigo-400" />
             </div>
-            <h3 className="text-lg font-bold text-gray-100">{clave} - {descri}</h3>
+            <h3 className="text-lg font-bold text-gray-100">{id} - {descri}</h3>
           </div>
           <span className={`px-2 py-1 text-xs font-semibold rounded-full ${
             status ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'
