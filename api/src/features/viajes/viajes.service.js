@@ -89,7 +89,7 @@ exports.getViajeById = async (idOrUuid) => {
 exports.downloadViaje = async (uuid) => {
     return await prisma.tr_viajes.findUnique({
         where: { uuid_movil: uuid },
-        include: { paradas: { include: { evidencias: true } }, notas: true }
+        include: { paradas: { include: { evidencias: true } }, notas: true, empleado: { select: { descri: true } } }
     });
 }
 
@@ -170,7 +170,8 @@ exports.updateViaje = async (id, updateData) => {
 exports.setViaje = async (viajeData) => {
     const { uuid_movil, cve_emple, paradas, notas, fecha_inicio, ...datosViaje } = viajeData;
 
-    const fechaDate = dayjs().format('YYYY-MM-DDTHH:mm:ss.SSS');
+    // Fecha con ISO-8601
+    const fechaDate = dayjs(fecha_inicio).toDate();
     return await prisma.$transaction(async (tx) => {
         // 1. Buscamos si ya existe para decidir si hacemos Update o Create
         const viajeExistente = await tx.tr_viajes.findUnique({
