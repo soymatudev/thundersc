@@ -33,7 +33,7 @@ exports.setTelegramUsuarioxSensor = async (usuarioSensorData) => {
     const existingSubscription = await prisma.ma_sesus.findFirst({
         where: {
             cve_usu: `"${usuarioSensorData.cve_usu}"`,
-            cve_ses: usuarioSensorData.cve_ses,
+            cve_ses: parseInt(usuarioSensorData.cve_ses),
         },
     });
 
