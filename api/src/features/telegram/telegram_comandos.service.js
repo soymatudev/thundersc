@@ -45,7 +45,7 @@ exports.comandoSetSensor = (bot) => {
     bot.onText(/\/setsensor/, async (msg) => {
         let sensores = await getAllSensores();
         const inline_keyboard = sensores.map(sensor => ([{
-            text: `${sensor.alias} (${sensor.unidad})`,
+            text: `${sensor.alias} (${sensor.unidad_desc})`,
             callback_data: `setsensor_${sensor.clave}`
         }]))
         const options = {
