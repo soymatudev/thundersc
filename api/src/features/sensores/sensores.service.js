@@ -97,7 +97,7 @@ exports.getSensorByCve = async (cve) => {
     if (isNaN(sensorId)) {
         throw new Error('La clave (ID) del sensor debe ser un número.');
     }
-    return prisma.ma_equipo.findUnique({
+    return await prisma.ma_equipo.findUnique({
         where: { clave: sensorId },
     });
 };
@@ -108,7 +108,7 @@ exports.getSensorByCve = async (cve) => {
  * @returns {Promise<Object|null>} Una promesa que se resuelve en el primer sensor encontrado con ese nombre o null.
  */
 exports.getSensorByName = async (name) => {
-    return prisma.ma_equipo.findFirst({
+    return await prisma.ma_equipo.findFirst({
         where: { nombre: name },
     });
 };

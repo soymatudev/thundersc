@@ -87,6 +87,6 @@ const callBacksetsensor = async (bot, data, msg) => {
         Logger.info(`Usuario ${msg.chat.id} suscrito al sensor ${sensor.alias}`);
     } catch (error) {
         bot.sendMessage(msg.chat.id, `❌ Ocurrió un error al suscribirte al sensor. Por favor, intenta de nuevo más tarde.`);
-        Logger.error(`Error al procesar callback de setsensor: ${error.message}`);
+        Logger.error(`Error al procesar callback de setsensor: ${error.message} - Data: ${sensor}`);
     }
 }
