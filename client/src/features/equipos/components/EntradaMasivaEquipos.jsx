@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { MarcasService } from '../../marcas/services/marcasService';
 import { ClasificacionesService } from '../../clasificaciones/services/clasificacionesService';
 import { EmpleadosService } from '../../empleados/services/empleadosService';
+import { DepartamentosService } from '../../departamentos/services/departamentosService';
 import { getEquipoBySerie, createMassiveEquipos, getFolio } from '../services/equipos.service';
 import { Save, AlertCircle, CheckCircle2, ListFilter, Hash, UserCheck } from 'lucide-react';
 import Input from '../../../shared/components/Input';
@@ -13,11 +14,13 @@ const EntradaMasivaEquipos = () => {
         cve_marca: '',
         cve_clasif: '',
         modelo: '',
-        cve_recep: ''
+        cve_recep: '',
+        cve_depar: '8' // Sistemas por defecto
     });
     const [entries, setEntries] = useState([{ serie: '', cantidad: 1, status: 'new' }]);
     const [marcas, setMarcas] = useState([]);
     const [clasificaciones, setClasificaciones] = useState([]);
+    const [departamentos, setDepartamentos] = useState([]);
     const [empleados, setEmpleados] = useState([]);
     const [baseFolio, setBaseFolio] = useState(0);
     const [error, setError] = useState(null);
@@ -52,9 +55,19 @@ const EntradaMasivaEquipos = () => {
             }
         };
 
+        const fetchDepartamentos = async () => {
+            try {
+                const response = await DepartamentosService.getAll();
+                setDepartamentos(response);
+            } catch (error) {
+                setError('Error al cargar los departamentos');
+            }
+        };
+
         fetchMarcas();
         fetchClasificaciones();
         fetchEmpleadosSistemas();
+        fetchDepartamentos();
     }, []);
 
     // Efecto para obtener el folio base actual al cambiar la clasificación
@@ -145,7 +158,8 @@ const EntradaMasivaEquipos = () => {
             ...header,
             entries: validEntries.map(s => ({ serie: s.serie, cantidad: parseInt(s.cantidad) })),
             cve_usu: user?.clave,
-            cve_recep: header.cve_recep
+            cve_recep: header.cve_recep,
+            cve_depar: header.cve_depar
         };
 
         try {
@@ -153,7 +167,7 @@ const EntradaMasivaEquipos = () => {
             setSuccess('Equipos guardados exitosamente. Los folios han sido reservados.');
 
             // Limpieza Total
-            setHeader({ cve_marca: '', cve_clasif: '', modelo: '' });
+            setHeader({ cve_marca: '', cve_clasif: '', modelo: '', cve_recep: '', cve_depar: '8' });
             setEntries([{ serie: '', cantidad: 1, status: 'new' }]);
             setBaseFolio(0); // El efecto de cve_clasif se encargará de refrescar si el usuario vuelve a elegir
 
@@ -170,8 +184,8 @@ const EntradaMasivaEquipos = () => {
                 <div className="flex items-center justify-between mb-6">
                     <h1 className="text-2xl font-bold text-gray-100">Gestión de Entrada Masiva de Equipos</h1>
                     <div className="bg-gray-800 px-4 py-2 rounded-lg border border-gray-700 flex items-center gap-2">
-                        <span className="text-xs text-gray-400 font-medium">Recibe:</span>
-                        <span className="text-sm text-indigo-400 font-bold">{user?.descri || 'SISTEMAS'}</span>
+                        <span className="text-xs text-gray-400 font-medium">Operador:</span>
+                        <span className="text-sm text-indigo-400 font-bold">{user?.descri || 'SESIÓN ACTIVA'}</span>
                     </div>
                 </div>
 
@@ -194,7 +208,7 @@ const EntradaMasivaEquipos = () => {
                     <div className="lg:col-span-2 space-y-6">
                         <form onSubmit={handleSubmit} className="space-y-6">
                             {/* Header Row */}
-                            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700/50">
+                            <div className="grid grid-cols-1 md:grid-cols-5 gap-6 bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700/50">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-300 mb-1">Marca</label>
                                     <select
@@ -240,6 +254,21 @@ const EntradaMasivaEquipos = () => {
                                         <option value="">¿Quién recibe?</option>
                                         {empleados.map(emp => (
                                             <option key={emp.id} value={emp.id}>{emp.descri}</option>
+                                        ))}
+                                    </select>
+                                </div>
+                                <div>
+                                    <label className="block text-sm font-medium text-gray-300 mb-1">Área/Departamento</label>
+                                    <select
+                                        name="cve_depar"
+                                        value={header.cve_depar}
+                                        onChange={handleHeaderChange}
+                                        className={inputStyles}
+                                        required
+                                    >
+                                        <option value="">Seleccione área</option>
+                                        {departamentos.map(dep => (
+                                            <option key={dep.clave} value={dep.clave}>{dep.descri}</option>
                                         ))}
                                     </select>
                                 </div>

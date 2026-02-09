@@ -66,7 +66,7 @@ exports.setEquipo = async (equipoData) => {
 };
 
 exports.createMassiveEquipos = async (equiposData) => {
-    const { cve_marca, cve_clasif, modelo, entries, cve_recep } = equiposData;
+    const { cve_marca, cve_clasif, modelo, entries, cve_recep, cve_depar: target_depar } = equiposData;
 
     const clasifId = parseInt(cve_clasif);
     const recepId = parseInt(cve_recep);
@@ -87,7 +87,7 @@ exports.createMassiveEquipos = async (equiposData) => {
     }
 
     const prefix = clasif.descri?.trim().substring(0, 3).toUpperCase() || 'EQU';
-    const cve_depar = empleado.cve_depar;
+    const cve_depar = target_depar ? parseInt(target_depar) : empleado.cve_depar;
 
     const today = new Date();
     const todayStr = today.toISOString().slice(0, 10).replace(/-/g, ''); // YYYYMMDD
