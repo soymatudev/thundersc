@@ -32,7 +32,7 @@ exports.getTelegramUsuarioByCve = async (cve) => {
 exports.setTelegramUsuarioxSensor = async (usuarioSensorData) => {
     const existingSubscription = await prisma.ma_sesus.findFirst({
         where: {
-            cve_usu: `"${usuarioSensorData.cve_usu}"`,
+            cve_usu: usuarioSensorData.cve_usu.toString(),
             cve_ses: parseInt(usuarioSensorData.cve_ses),
         },
     });
@@ -49,8 +49,8 @@ exports.setTelegramUsuarioxSensor = async (usuarioSensorData) => {
 exports.getTelegramUsuariosxSensor = async (usuarioData) => {
     return prisma.ma_sesus.findMany({
         where: {
-            cve_usu: usuarioData.cve_usu,
-            cve_ses: usuarioData.cve_ses,
+            cve_usu: usuarioData.cve_usu.toString(),
+            cve_ses: parseInt(usuarioData.cve_ses),
         },
     });
 };
