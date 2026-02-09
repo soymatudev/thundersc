@@ -13,3 +13,7 @@ export const createMassiveEquipos = async (data) => {
 export const getFolio = async (cve_clasif) => {
     return api.get(`${EQUIPOS_ENDPOINT}/folios/${cve_clasif}`);
 }
+
+export const getReporteEquipos = async (filters) => {
+    return api.post(`${EQUIPOS_ENDPOINT}/reporte`, filters);
+}

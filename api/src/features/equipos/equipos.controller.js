@@ -49,3 +49,9 @@ exports.getFolioByClasif = asyncHandler(async (req, res) => {
     const folio = await equiposService.getFolioByClasif(cve_clasif);
     res.status(200).json(folio);
 });
+
+exports.getReporte = asyncHandler(async (req, res) => {
+    const filters = req.body;
+    const report = await equiposService.getReporte(filters);
+    res.status(200).json(report);
+});

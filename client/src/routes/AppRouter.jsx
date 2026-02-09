@@ -18,6 +18,7 @@ import SensoresDashboard from '../features/sensores/SensoresDashboard';
 import MovimientosInventarioPage from '../features/movimientos/MovimientosInventarioPage';
 import ViajesPage from '../features/viajes/pages/ViajesPage';
 import ViajeDetailPage from '../features/viajes/pages/ViajeDetailPage';
+import ReporteGeneralEquipos from '../features/equipos/components/ReporteGeneralEquipos';
 
 
 // Componentes de ruta
@@ -148,6 +149,14 @@ const AppRouter = () => {
           element={
             <ProtectedRoute>
               <ViajeDetailPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/reporte_equipos"
+          element={
+            <ProtectedRoute>
+              <ReporteGeneralEquipos />
             </ProtectedRoute>
           }
         />

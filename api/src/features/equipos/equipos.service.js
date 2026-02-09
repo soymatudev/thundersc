@@ -144,3 +144,83 @@ exports.createMassiveEquipos = async (equiposData) => {
         return createdEquipos;
     });
 };
+
+exports.getReporte = async (filters) => {
+    const where = {
+        status: 'A' // Default to Active, can be overridden if filter allows status selection
+    };
+
+    if (filters.search) {
+        where.OR = [
+            { serie: { contains: filters.search, mode: 'insensitive' } },
+            { cod_inv: { contains: filters.search, mode: 'insensitive' } },
+            { modelo: { contains: filters.search, mode: 'insensitive' } }
+        ];
+    }
+
+    if (filters.cve_marca) {
+        where.cve_marca = parseInt(filters.cve_marca);
+    }
+    
+    if (filters.modelo) {
+        where.modelo = { contains: filters.modelo, mode: 'insensitive' };
+    }
+
+    if (filters.fecha_inicio && filters.fecha_fin) {
+        where.f_regis = {
+            gte: new Date(filters.fecha_inicio),
+            lte: new Date(filters.fecha_fin)
+        };
+    }
+
+    // Filter by Department implies joining with ma_eqasis (assignments)
+    // Since prisma where clause on relations can be tricky for "current assignment", 
+    // we might filter by existence of an assignment record if needed, 
+    // OR if the requirement allows showing all matching equipments and their departments.
+    // However, ma_eqsis doesn't directly have cve_depar. ma_eqasis does.
+    // Let's first fetch equipments and include relations.
+
+    let deparFilter = {};
+    if (filters.cve_depar) {
+        deparFilter = {
+            ma_eqasis: {
+                some: {
+                    cve_depar: parseInt(filters.cve_depar)
+                }
+            }
+        };
+    }
+
+    const equipos = await prisma.ma_eqsis.findMany({
+        where: { ...where, ...deparFilter },
+        include: {
+            ma_marca: true,
+            ma_clasif: true,
+            ma_eqasis: {
+                orderBy: { f_movto: 'desc' },
+                take: 1,
+                include: {
+                    ma_depar: true
+                }
+            }
+        },
+        orderBy: { f_regis: 'desc' }
+    });
+
+    // Transform data for the report
+    return equipos.map(e => {
+        const currentAssignment = e.ma_eqasis[0];
+        return {
+            clave: e.clave,
+            serie: e.serie,
+            cod_inv: e.cod_inv,
+            marca: e.ma_marca?.descri || 'N/A',
+            marca_descri: e.ma_marca?.descri,
+            modelo: e.modelo,
+            f_regis: e.f_regis,
+            status: e.status,
+            departamento: currentAssignment?.ma_depar?.descri || 'Sin Asignar',
+            depar_descri: currentAssignment?.ma_depar?.descri
+        };
+    });
+};
