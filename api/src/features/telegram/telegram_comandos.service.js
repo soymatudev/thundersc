@@ -83,8 +83,8 @@ const callBacksetsensor = async (bot, data, msg) => {
             return;
         }
         const newUsuario = await setTelegramUsuarioxSensor(parsedDataUsuarioxSensor(msg.chat.id, sensorCve));
-        bot.sendMessage(msg.chat.id, `✅ Te has suscrito correctamente a las alertas del sensor: ${sensor[0].alias}.`);
-        Logger.info(`Usuario ${msg.chat.id} suscrito al sensor ${sensor[0].alias}`);
+        bot.sendMessage(msg.chat.id, `✅ Te has suscrito correctamente a las alertas del sensor: ${sensor.alias}.`);
+        Logger.info(`Usuario ${msg.chat.id} suscrito al sensor ${sensor.alias}`);
     } catch (error) {
         bot.sendMessage(msg.chat.id, `❌ Ocurrió un error al suscribirte al sensor. Por favor, intenta de nuevo más tarde.`);
         Logger.error(`Error al procesar callback de setsensor: ${error.message}`);
