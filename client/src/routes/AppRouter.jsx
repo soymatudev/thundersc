@@ -19,6 +19,7 @@ import MovimientosInventarioPage from '../features/movimientos/MovimientosInvent
 import ViajesPage from '../features/viajes/pages/ViajesPage';
 import ViajeDetailPage from '../features/viajes/pages/ViajeDetailPage';
 import ReporteGeneralEquipos from '../features/equipos/components/ReporteGeneralEquipos';
+import BackupsMonitor from '../features/backups/components/BackupsMonitor';
 
 
 // Componentes de ruta
@@ -157,6 +158,14 @@ const AppRouter = () => {
           element={
             <ProtectedRoute>
               <ReporteGeneralEquipos />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/backups"
+          element={
+            <ProtectedRoute>
+              <BackupsMonitor />
             </ProtectedRoute>
           }
         />

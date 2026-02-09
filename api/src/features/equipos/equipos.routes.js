@@ -1,13 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
-const { getAllEquipos, getEquipoByCve, updateEquipo, setEquipo, getEquipoBySerie, createMassiveEquipos, getFolioByClasif, getReporte } = require('./equipos.controller');
+const { getAllEquipos, getEquipoByCve, updateEquipo, setEquipo, getEquipoBySerie, createMassiveEquipos, getFolioByClasif, getReporte, deleteEquipo } = require('./equipos.controller');
 
 router.get('/', getAllEquipos);
 
 router.get('/serie/:serie', getEquipoBySerie);
 
 router.get('/:cve', getEquipoByCve);
+
+router.delete('/:cve', deleteEquipo);
 
 router.put('/:cve', updateEquipo);
 

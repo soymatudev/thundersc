@@ -17,3 +17,7 @@ export const getFolio = async (cve_clasif) => {
 export const getReporteEquipos = async (filters) => {
     return api.post(`${EQUIPOS_ENDPOINT}/reporte`, filters);
 }
+
+export const deleteEquipo = async (cve) => {
+    return api.delete(`${EQUIPOS_ENDPOINT}/${cve}`);
+}

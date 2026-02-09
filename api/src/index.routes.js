@@ -16,6 +16,7 @@ const modulosRouter = require('./features/modulos/modulos.routes');
 const empresasRouter = require('./features/empresas/empresas.routes');
 const sensoresRouter = require('./features/sensores/sensores.routes');
 const viajesRouter = require('./features/viajes/viajes.routes');
+const backupsRouter = require('./features/backups/backups.routes');
 
 // Use feature routes
 router.use('/modulos', modulosRouter);
@@ -32,5 +33,6 @@ router.use('/sensores', sensoresRouter);
 router.use('/auth', authRouter);
 router.use('/health', healthRouter);
 router.use('/viajes', viajesRouter);
+router.use('/backups', backupsRouter);
 
 module.exports = router;

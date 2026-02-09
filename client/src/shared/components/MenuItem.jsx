@@ -16,6 +16,7 @@ import SensoresDashboard from '../../features/sensores/SensoresDashboard';
 import MovimientosInventarioPage from '../../features/movimientos/MovimientosInventarioPage';
 import ViajesModule from '../../features/viajes/ViajesModule';
 import ReporteGeneralEquipos from '../../features/equipos/components/ReporteGeneralEquipos';
+import BackupsMonitor from '../../features/backups/components/BackupsMonitor';
 
 // 1. Mapa de componentes
 // Asocia el 'id' del item del menú con el componente de la página que debe renderizar.
@@ -33,6 +34,7 @@ const componentMap = {
   movimientos: <MovimientosInventarioPage />,
   viajes: <ViajesModule />,
   reporte_equipos: <ReporteGeneralEquipos />,
+  backups: <BackupsMonitor />,
   // Agrega aquí otras páginas a medida que las vayas creando
   // marcas: <MarcasPage />,
   // equipos: <EquiposPage />,

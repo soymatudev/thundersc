@@ -8,9 +8,11 @@ import {
     CheckCircle2,
     AlertCircle,
     Loader2,
-    Info
+    Info,
+    Trash2
 } from 'lucide-react';
 import { MovimientosService } from './services/movimientosService';
+import { deleteEquipo } from '../equipos/services/equipos.service';
 import { EmpleadosService } from '../empleados/services/empleadosService';
 import { AlmacenesService } from '../almacenes/services/almacenesService';
 import Swal from 'sweetalert2';
@@ -85,6 +87,55 @@ const MovimientosInventarioPage = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (tipoMovimiento === 'eliminacion') {
+            const result = await Swal.fire({
+                title: '¿Estás seguro?',
+                text: "Esta acción eliminará el equipo permanentemente. No se puede deshacer.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Sí, eliminar',
+                cancelButtonText: 'Cancelar',
+                background: '#1f2937',
+                color: '#f3f4f6'
+            });
+
+            if (result.isConfirmed) {
+                setSaving(true);
+                try {
+                    await deleteEquipo(equipo.clave);
+                    Swal.fire({
+                        title: '¡Eliminado!',
+                        text: 'El equipo ha sido eliminado correctamente.',
+                        icon: 'success',
+                        timer: 2000,
+                        showConfirmButton: false,
+                        background: '#1f2937',
+                        color: '#f3f4f6'
+                    });
+                    // Resetear
+                    setEquipo(null);
+                    setSearchTerm('');
+                    setSelectedDestino('');
+                    setTipoMovimiento('asignacion'); // Reset to default safer option
+                    searchInputRef.current.focus();
+                } catch (error) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Hubo un problema al eliminar el equipo.',
+                        background: '#1f2937',
+                        color: '#f3f4f6'
+                    });
+                } finally {
+                    setSaving(false);
+                }
+            }
+            return;
+        }
+
         if (!equipo || (!selectedDestino && tipoMovimiento !== 'reparacion')) return;
 
         setSaving(true);
@@ -193,8 +244,8 @@ const MovimientosInventarioPage = () => {
                                         <div className="text-center">
                                             <span className="block text-xs uppercase tracking-widest text-gray-500 font-bold mb-1">Estatus Actual</span>
                                             <span className={`px-3 py-1 rounded-full text-xs font-bold border ${equipo.status === 'A' ? 'bg-green-500/10 text-green-400 border-green-500/20' :
-                                                    equipo.status === 'U' ? 'bg-blue-500/10 text-blue-400 border-blue-500/20' :
-                                                        'bg-red-500/10 text-red-400 border-red-500/20'
+                                                equipo.status === 'U' ? 'bg-blue-500/10 text-blue-400 border-blue-500/20' :
+                                                    'bg-red-500/10 text-red-400 border-red-500/20'
                                                 }`}>
                                                 {equipo.status === 'A' ? 'DISPONIBLE' : equipo.status === 'U' ? 'EN USO' : 'REPARACIÓN'}
                                             </span>
@@ -254,11 +305,12 @@ const MovimientosInventarioPage = () => {
                                     {[
                                         { id: 'asignacion', label: 'Asignar a Empleado', icon: User, color: 'text-blue-400' },
                                         { id: 'almacen', label: 'Mover a Almacén', icon: Package, color: 'text-green-400' },
-                                        { id: 'reparacion', label: 'Enviar a Reparación', icon: Wrench, color: 'text-red-400' }
+                                        { id: 'reparacion', label: 'Enviar a Reparación', icon: Wrench, color: 'text-red-400' },
+                                        { id: 'eliminacion', label: 'Eliminar Equipo (Error de Entrada)', icon: Trash2, color: 'text-red-500', isDanger: true }
                                     ].map(type => (
                                         <label key={type.id} className={`flex items-center gap-4 p-4 rounded-2xl border-2 cursor-pointer transition-all ${tipoMovimiento === type.id
-                                                ? 'border-purple-500 bg-purple-500/10'
-                                                : 'border-gray-700 hover:border-gray-600 hover:bg-gray-700/30'
+                                            ? (type.isDanger ? 'border-red-900/50 bg-red-500/10' : 'border-purple-500 bg-purple-500/10')
+                                            : 'border-gray-700 hover:border-gray-600 hover:bg-gray-700/30'
                                             }`}>
                                             <input
                                                 type="radio"
@@ -269,14 +321,14 @@ const MovimientosInventarioPage = () => {
                                                 className="hidden"
                                             />
                                             <type.icon className={type.color} size={24} />
-                                            <span className="font-semibold text-gray-200">{type.label}</span>
-                                            {tipoMovimiento === type.id && <CheckCircle2 className="ml-auto text-purple-500" size={20} />}
+                                            <span className={`font-semibold ${type.isDanger ? 'text-red-400' : 'text-gray-200'}`}>{type.label}</span>
+                                            {tipoMovimiento === type.id && <CheckCircle2 className={type.isDanger ? "ml-auto text-red-500" : "ml-auto text-purple-500"} size={20} />}
                                         </label>
                                     ))}
                                 </div>
                             </div>
 
-                            {tipoMovimiento !== 'reparacion' && (
+                            {tipoMovimiento !== 'reparacion' && tipoMovimiento !== 'eliminacion' && (
                                 <div className="space-y-4 animate-in fade-in slide-in-from-top-2 duration-300">
                                     <label className="block text-xs uppercase tracking-widest font-bold text-gray-500">
                                         {tipoMovimiento === 'asignacion' ? 'Seleccionar Empleado' : 'Seleccionar Almacén'}
@@ -304,12 +356,19 @@ const MovimientosInventarioPage = () => {
                                 </div>
                             )}
 
+                            {tipoMovimiento === 'eliminacion' && (
+                                <div className="p-4 bg-red-900/20 border border-red-500/30 rounded-2xl flex gap-3 text-red-200 text-sm animate-in fade-in duration-300">
+                                    <AlertCircle size={20} className="shrink-0 text-red-400" />
+                                    <p>El equipo se eliminará permanentemente de la base de datos. Use esta opción solo para corregir errores de captura inicial.</p>
+                                </div>
+                            )}
+
                             <button
                                 type="submit"
-                                disabled={saving || !equipo || (!selectedDestino && tipoMovimiento !== 'reparacion')}
-                                className={`w-full py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 shadow-2xl transition-all active:scale-95 ${saving || !equipo || (!selectedDestino && tipoMovimiento !== 'reparacion')
-                                        ? 'bg-gray-700 text-gray-500 cursor-not-allowed border border-gray-600'
-                                        : 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:from-purple-700 hover:to-indigo-700 shadow-purple-500/20'
+                                disabled={saving || !equipo || (!selectedDestino && tipoMovimiento !== 'reparacion' && tipoMovimiento !== 'eliminacion')}
+                                className={`w-full py-4 rounded-2xl font-bold text-lg flex items-center justify-center gap-3 shadow-2xl transition-all active:scale-95 ${saving || !equipo || (!selectedDestino && tipoMovimiento !== 'reparacion' && tipoMovimiento !== 'eliminacion')
+                                    ? 'bg-gray-700 text-gray-500 cursor-not-allowed border border-gray-600'
+                                    : tipoMovimiento === 'eliminacion' ? 'bg-red-600 text-white hover:bg-red-700 shadow-red-500/20' : 'bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:from-purple-700 hover:to-indigo-700 shadow-purple-500/20'
                                     }`}
                             >
                                 {saving ? (
@@ -319,8 +378,17 @@ const MovimientosInventarioPage = () => {
                                     </>
                                 ) : (
                                     <>
-                                        <ArrowRightLeft size={22} />
-                                        Confirmar Traslado
+                                        {tipoMovimiento === 'eliminacion' ? (
+                                            <>
+                                                <Trash2 size={22} />
+                                                Confirmar Eliminación
+                                            </>
+                                        ) : (
+                                            <>
+                                                <ArrowRightLeft size={22} />
+                                                Confirmar Traslado
+                                            </>
+                                        )}
                                     </>
                                 )}
                             </button>

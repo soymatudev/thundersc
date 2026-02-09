@@ -10,6 +10,33 @@ exports.getAllEquipos = async () => {
     });
 };
 
+exports.deleteEquipo = async (cve) => {
+    const equipoId = parseInt(cve, 10);
+    if (isNaN(equipoId)) {
+        throw new BadRequestError('El ID del equipo debe ser un número.');
+    }
+    
+    // Check if equipment exists
+    const equipo = await prisma.ma_eqsis.findUnique({ where: { clave: equipoId } });
+    if (!equipo) {
+        throw new NotFoundError(`No se encontró equipo con la clave ${equipoId}`);
+    }
+
+    // Use transaction to delete related records first if necessary, or just delete the equipment
+    // Assuming cascade delete is not set up or safer manual deletion is preferred
+    return prisma.$transaction(async (tx) => {
+        // Delete assignments (ma_eqasis) first
+        await tx.ma_eqasis.deleteMany({
+            where: { cve_eqsis: equipoId }
+        });
+
+        // Delete the equipment
+        return tx.ma_eqsis.delete({
+            where: { clave: equipoId }
+        });
+    });
+};
+
 exports.getEquipoByCve = async (cve) => {
     const equipoId = parseInt(cve, 10);
     if (isNaN(equipoId)) {

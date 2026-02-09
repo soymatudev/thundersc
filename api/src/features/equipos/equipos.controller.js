@@ -55,3 +55,9 @@ exports.getReporte = asyncHandler(async (req, res) => {
     const report = await equiposService.getReporte(filters);
     res.status(200).json(report);
 });
+
+exports.deleteEquipo = asyncHandler(async (req, res) => {
+    const { cve } = req.params;
+    await equiposService.deleteEquipo(cve);
+    res.status(200).json({ message: 'Equipo eliminado correctamente' });
+});
