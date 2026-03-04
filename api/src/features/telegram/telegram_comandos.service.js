@@ -6,6 +6,8 @@ exports.routerTelegramComandos = (bot) => {
     this.comandoCallback(bot);
     this.comandoStart(bot);
     this.comandoSetSensor(bot);
+    this.comandoRemoveSensor(bot);
+    this.comandoGetUltimoValor(bot);
 }
 
 const parsedDataUsuario = (data) => {
