@@ -365,4 +365,53 @@ exports.getReportData = async (filters, pagination = {}) => {
     return { data: mappedData, total };
 };
 
+exports.getUltimoValorById = async (cve_equipo) => {
+    const ultimaLectura = await prisma.ma_regzoro.findFirst({
+        where: { cve_equipo: BigInt(cve_equipo) },
+        orderBy: { fecha_hora: 'desc' }
+    });
 
+    if (!ultimaLectura) {
+        return null;
+    }
+
+    // Corrección de zona horaria solicitada por el usuario
+    const fecha = ultimaLectura.fecha_hora;
+    ultimaLectura.fecha_hora = new Date(fecha.getTime() + fecha.getTimezoneOffset() * 60000);
+
+    return {
+        cve_equipo: Number(ultimaLectura.cve_equipo),
+        fecha_hora: dayjs(ultimaLectura.fecha_hora).format('YYYY-MM-DD HH:mm:ss'),
+        dato_1: parseFloat(ultimaLectura.dato_1) || 0,
+        dato_2: parseFloat(ultimaLectura.dato_2) || 0,
+        dato_3: ultimaLectura.dato_3 || '0'
+    };
+}
+
+exports.getUltimoValorByName = async (nombre) => {
+    const sensor = await prisma.ma_equipo.findFirst({
+        where: { nombre },
+        select: { clave: true }
+    });
+
+    if (!sensor) {
+        return null;
+    }
+
+    return await exports.getUltimoValorById(sensor.clave);
+}
+
+exports.removeSubSensor = async (cve_equipo, cve_usu) => {
+    return prisma.ma_sesus.updateMany({
+        where: {
+            cve_ses: parseInt(cve_equipo),
+            cns_sn: {
+                contains: 'S'
+            },
+            cve_usu: cve_usu.toString().padEnd(11, ' ')
+        },
+        data: {
+            cns_sn: 'N' // Cambiamos a 'N' para indicar que ya no es un sensor activo
+        }
+    });
+}
