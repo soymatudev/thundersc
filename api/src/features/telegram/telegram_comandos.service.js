@@ -159,7 +159,7 @@ const callBackGetUltimoValor = async (bot, data, msg) => {
             return;
         }
         const ultimoValor = await getUltimoValorById(sensorCve); 
-        bot.sendMessage(msg.chat.id, `📊 El último valor registrado para el sensor ${sensor.alias} es: ${ultimoValor.dato_1} ${sensor.unidad_desc}.`);
+        bot.sendMessage(msg.chat.id, `📊 Último valor registrado de ${sensor.alias} es: ${ultimoValor.dato_1} para el dia ${ultimoValor.fecha_hora}.`);
         Logger.info(`Usuario ${msg.chat.id} solicitó el último valor del sensor ${sensor.alias}`);
     } catch (error) {
         bot.sendMessage(msg.chat.id, `❌ Ocurrió un error al obtener el último valor del sensor. Por favor, intenta de nuevo más tarde.`);
