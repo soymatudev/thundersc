@@ -80,14 +80,14 @@ exports.comandoGetUltimoValor = (bot) => {
         let sensores = await getAllSensores();
         const inline_keyboard = sensores.map(sensor => ([{
             text: `${sensor.alias} (${sensor.unidad_desc})`,
-            callback_data: `removesensor_${sensor.clave}`
+            callback_data: `getultimovalor_${sensor.clave}`
         }]))
         const options = {
             reply_markup: {
                 inline_keyboard: inline_keyboard
             }
         }
-        bot.sendMessage(msg.chat.id, "Seleccione el sensor del que desea darse de baja:", options);
+        bot.sendMessage(msg.chat.id, "Seleccione el sensor del que desea la ultima Informacion ", options);
     });
 }
 
