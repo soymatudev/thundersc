@@ -274,13 +274,14 @@ exports.getHistory = async (fechaInicioParam, fechaFinParam, cveEquipo) => {
             a.fecha_hora,
             AVG(CAST(NULLIF(a.dato_1, '') AS FLOAT)) as avg_val1,
             AVG(CAST(NULLIF(a.dato_2, '') AS FLOAT)) as avg_val2,
-            b.cve_unidad as cve_unidad
+            b.cve_unidad as cve_unidad,
+            b.alto as alto
         FROM "ma_regzoro" a, "ma_equipo" b
         ${whereClause}
         AND a.cve_equipo = b.clave
         AND a.dato_1 ~ '^[0-9.]+$' 
 	    AND a.dato_2 ~ '^[0-9.]+$'
-        GROUP BY a.cve_equipo, a.fecha_hora, b.cve_unidad
+        GROUP BY a.cve_equipo, a.fecha_hora, b.cve_unidad, b.alto
         ORDER BY a.fecha_hora ASC
     `);
 //row.cve_unidad == "SIL" ? 100 - (row.avg_val1 / 100) :
@@ -288,7 +289,7 @@ exports.getHistory = async (fechaInicioParam, fechaFinParam, cveEquipo) => {
     historyData = historyData.map(row => ({
         cve_equipo: Number(row.cve_equipo),
         fecha_hora: dayjs(dayjs(row.fecha_hora).toString().split(' GMT')[0]).format('YYYY-MM-DD HH:mm:ss') , // Ajuste de zona horaria
-        dato_1: row.avg_val1 ,
+        dato_1: row.cve_unidad == "SIL" ? ((row.alto - (row.avg_val1 / 100)) * 100) / row.alto : row.avg_val1 ,
         dato_2: row.avg_val2
     }));
 
@@ -326,57 +327,66 @@ exports.getReportData = async (filters, pagination = {}) => {
     const { fecha_inicio, fecha_fin, cve_equipos } = filters;
     const { skip = 0, take = 100 } = pagination;
 
-    let where = {
-        fecha_hora: {
-            gte: dayjs(fecha_inicio).toDate(),
-            lte: dayjs(fecha_fin).toDate()
-        }
-    };
+    // 1. Manejo de parámetros para evitar SQL Injection
+    const params = [
+        dayjs(fecha_inicio).toISOString(),
+        dayjs(fecha_fin).toISOString()
+    ];
 
+    // 2. Construcción dinámica del filtro IN para equipos
+    let equipoFilter = '';
     if (cve_equipos && cve_equipos.length > 0) {
-        where.cve_equipo = { in: cve_equipos.map(id => BigInt(id)) };
+        const placeholders = cve_equipos.map((_, i) => `$${i + 3}`).join(', ');
+        equipoFilter = `AND r.cve_equipo IN (${placeholders})`;
+        params.push(...cve_equipos.map(id => BigInt(id)));
     }
 
-    const [data, total] = await Promise.all([
-        prisma.ma_regzoro.findMany({
-            where,
-            orderBy: { fecha_hora: 'desc' },
-            skip: parseInt(skip),
-            take: parseInt(take),
-            include: {
-                // join con ma_equipo para cve_unidad
-            }
-        }),
-        prisma.ma_regzoro.count({ where })
+    // 3. Query Principal (Data + Join)
+    // Usamos LEFT JOIN para traer los nombres/alias del sensor de una vez
+    const dataQuery = `
+        SELECT 
+            r.clave AS id,
+            r.cve_equipo,
+            COALESCE(e.alias, e.nombre, 'Desconocido') AS sensor_nombre,
+            r.fecha_hora,
+            TRIM(COALESCE(e.cve_unidad, 'DES')) AS cve_unidad,
+            r.dato_1,
+            r.dato_2,
+            r.dato_3,
+            e.cve_unidad as cve_unidad
+        FROM ma_regzoro r
+        LEFT JOIN ma_equipo e ON r.cve_equipo = e.clave
+        WHERE r.fecha_hora BETWEEN $1 AND $2
+        ${equipoFilter}
+        and r.cve_equipo = e.clave
+        ORDER BY r.fecha_hora DESC
+        LIMIT ${parseInt(take)} OFFSET ${parseInt(skip)}
+    `;
+
+    // 4. Query de Conteo (Total)
+    const countQuery = `
+        SELECT COUNT(*) as total 
+        FROM ma_regzoro r
+        WHERE r.fecha_hora BETWEEN $1 AND $2
+        ${equipoFilter}
+    `;
+
+    const [data, countResult] = await Promise.all([
+        prisma.$queryRawUnsafe(dataQuery, ...params),
+        prisma.$queryRawUnsafe(countQuery, ...params)
     ]);
 
-    // Get sensor names for manual mapping
-    const sensorIds = [...new Set(data.map(d => Number(d.cve_equipo)))];
-    const sensores = await prisma.ma_equipo.findMany({
-        where: { clave: { in: sensorIds } },
-        select: { clave: true, alias: true, nombre: true }
-    });
-
-    const sensorMap = sensores.reduce((acc, s) => {
-        acc[s.clave] = s.alias || s.nombre;
-        return acc;
-    }, {});
-
-    const mappedData = data.map(d => {
-        // Timezone correction requested by user: align with local DB time
-        const formattedDate = dayjs(dayjs(d.fecha_hora).toString().split(' GMT')[0]).format('YYYY-MM-DD HH:mm:ss');
-        
-        return {
-            id: d.clave,
-            cve_equipo: Number(d.cve_equipo),
-            sensor_nombre: sensorMap[Number(d.cve_equipo)] || 'Desconocido',
-            fecha_hora: formattedDate,
-            cve_unidad: d.ma_equipo?.cve_unidad?.trim() || 'DES',
-            dato_1: parseFloat(d.dato_1) || 0,
-            dato_2: parseFloat(d.dato_2) || 0,
-            dato_3: d.dato_3 || '0'
-        };
-    });
+    // 5. Mapeo final (Limpieza de tipos y fechas)
+    const total = Number(countResult[0].total);
+    const mappedData = data.map(d => ({
+        ...d,
+        cve_equipo: Number(d.cve_equipo),
+        dato_1: parseFloat(d.dato_1) || 0,
+        dato_2: parseFloat(d.dato_2) || 0,
+        cve_unidad: d.cve_unidad.trim(),
+        // Aplicamos el formato de fecha solicitado,
+        fecha_hora: dayjs(d.fecha_hora).format('YYYY-MM-DD HH:mm:ss')
+    }));
 
     return { data: mappedData, total };
 };

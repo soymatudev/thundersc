@@ -18,13 +18,25 @@ const SensorDataGrid = ({ sensorsList }) => {
     const [endDate, setEndDate] = useState(new Date().toISOString().split('T')[0]);
     const [selectedSensors, setSelectedSensors] = useState([1]);
 
-    const HeadersTemp = [
+    const columnDefs = [
+        { headerName: 'Fecha/Hora', field: 'fecha_hora', sortable: true, filter: true, flex: 1.5 },
+        { headerName: 'Sensor', field: 'sensor_nombre', sortable: true, filter: true, flex: 1.5 },
         {
-            headerName: 'Temp (°C)',
+            headerName: 'Dato Principal',
             field: 'dato_1',
             sortable: true,
             filter: 'agNumberColumnFilter',
-            valueFormatter: (params) => params.value ? `${parseFloat(params.value).toFixed(1)}°C` : '0.0°C',
+            valueFormatter: (params) => {
+                // Validamos que existan los datos de la fila
+                if (!params.data) return '';
+        
+                const valor = parseFloat(params.value) || 0;
+                const unidad = params.data.cve_unidad; // <--- Cambiado de params.cve_unidad a params.data.cve_unidad
+        
+                return unidad === 'SIL' 
+                    ? `${(valor / 100).toFixed(1)} m` 
+                    : `${valor.toFixed(1)} °C`;
+            },
             flex: 1
         },
         {
@@ -34,15 +46,7 @@ const SensorDataGrid = ({ sensorsList }) => {
             filter: 'agNumberColumnFilter',
             valueFormatter: (params) => params.value ? `${parseFloat(params.value).toFixed(1)}%` : '0.0%',
             flex: 1
-        }
-    ];
-
-
-    const columnDefs = [
-        { headerName: 'Fecha/Hora', field: 'fecha_hora', sortable: true, filter: true, flex: 1.5 },
-        { headerName: 'Sensor', field: 'sensor_nombre', sortable: true, filter: true, flex: 1.5 },
-        HeadersTemp[0],
-        HeadersTemp[1],
+        },
         {
             headerName: 'Estatus',
             field: 'fecha_hora',
@@ -96,7 +100,7 @@ const SensorDataGrid = ({ sensorsList }) => {
         const worksheet = XLSX.utils.json_to_sheet(rowData.map(row => ({
             'Fecha/Hora': row.fecha_hora,
             'Sensor': row.sensor_nombre,
-            'Temperatura (°C)': row.dato_1,
+            'Dato Principal': row.dato_1,
             'Humedad (%)': row.dato_2,
             'Dato 3': row.dato_3
         })));
