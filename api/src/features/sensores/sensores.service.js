@@ -188,6 +188,7 @@ exports.getDashboardStatus = async (userId) => {
             adc_3: parseFloat(sensor.adc_3) || 0, // Límite Inferior (usualmente Temp)
             ancho: parseFloat(sensor.ancho) || 0,
             largo: parseFloat(sensor.largo) || 0,
+            alto: parseFloat(sensor.alto) || 0,
             densidad: parseFloat(sensor.densidad) || 0,
             last_check: absoluteLast ? absoluteLast.fecha_hora : null,
             is_online: ultimaLectura ? (dayjs(ultimaLectura.fecha_hora).format('YYYY-MM-DD HH:mm:ss') > MinutesAgo) : false,
@@ -205,9 +206,13 @@ exports.getDashboardStatus = async (userId) => {
                     humedad: val2
                 };
             } else if (data.cve_unidad === 'SIL') { // SILO
-                const volumen = data.ancho * data.largo * val1; 
-                const toneladas = (volumen * (data.densidad || 0) * 1000) / 1000;
-                const nivel_porcentual = data.alto > 0 ? (val1 / data.alto) * 100 : 0;
+                // Maximo son 219 Toneladas
+                // Si es 0 val1 entonces esta llevo por lo que son 219 toneladas
+                const volumenTotal = data.ancho * data.largo * data.alto;
+                const toneladasTotales = (volumenTotal * data.densidad) / 1000; // Convertir kg a toneladas
+                const volumen = val1 == 0 ? volumenTotal : (val1 / 100) * volumenTotal; // Si val1 es 0, asumimos lleno, sino calculamos el volumen actual
+                const toneladas = (volumen * data.densidad * 1000) / 1000; // Convertir kg a toneladas
+                const nivel_porcentual = val1 == 0 ? 100 : (val1 / 100) * 100; // Si val1 es 0, asumimos lleno, sino usamos el porcentaje directamente
                 data.lectura = {
                     nivel_porcentual: nivel_porcentual,
                     nivel_toneles: toneladas
@@ -224,7 +229,7 @@ exports.getDashboardStatus = async (userId) => {
             if (data.cve_unidad === 'TEM') {
                 data.lectura = { temperatura: 0, humedad: 0 };
             } else if (data.cve_unidad === 'SIL') {
-                data.lectura = { nivel_porcentual: 0 };
+                data.lectura = { nivel_porcentual: 0, nivel_toneles: 0 };
             } else {
                 data.lectura = { dato_1: 0, dato_2: 0, dato_3: '0' };
             }
@@ -258,31 +263,33 @@ exports.getHistory = async (fechaInicioParam, fechaFinParam, cveEquipo) => {
     // DATE_TRUNC('hour', fecha_hora) agrupa por hora
     
     // Usamos .toISOString() para asegurar formato compatible
-    let whereClause = `WHERE fecha_hora >= '${fechaInicio}' AND fecha_hora <= '${fechaFin}'`;
+    let whereClause = `WHERE a.fecha_hora >= '${fechaInicio}' AND a.fecha_hora <= '${fechaFin}'`;
 
     if (cveEquipo) {
-        whereClause += ` AND cve_equipo = ${cveEquipo}`;
+        whereClause += ` AND a.cve_equipo = ${cveEquipo}`;
     }
 
     historyData = await prisma.$queryRawUnsafe(`
         SELECT 
-            cve_equipo,
-            fecha_hora,
-            AVG(CAST(NULLIF(dato_1, '') AS FLOAT)) as avg_val1,
-            AVG(CAST(NULLIF(dato_2, '') AS FLOAT)) as avg_val2
-        FROM "ma_regzoro"
+            a.cve_equipo,
+            a.fecha_hora,
+            AVG(CAST(NULLIF(a.dato_1, '') AS FLOAT)) as avg_val1,
+            AVG(CAST(NULLIF(a.dato_2, '') AS FLOAT)) as avg_val2,
+            b.cve_unidad as cve_unidad
+        FROM "ma_regzoro" a, "ma_equipo" b
         ${whereClause}
-        AND dato_1 ~ '^[0-9.]+$' 
-	    AND dato_2 ~ '^[0-9.]+$'
-        GROUP BY cve_equipo, fecha_hora
-        ORDER BY fecha_hora ASC
+        AND a.cve_equipo = b.clave
+        AND a.dato_1 ~ '^[0-9.]+$' 
+	    AND a.dato_2 ~ '^[0-9.]+$'
+        GROUP BY a.cve_equipo, a.fecha_hora, b.cve_unidad
+        ORDER BY a.fecha_hora ASC
     `);
-
+//row.cve_unidad == "SIL" ? 100 - (row.avg_val1 / 100) :
     // Mapear resultado raw a formato estándar
     historyData = historyData.map(row => ({
         cve_equipo: Number(row.cve_equipo),
         fecha_hora: dayjs(dayjs(row.fecha_hora).toString().split(' GMT')[0]).format('YYYY-MM-DD HH:mm:ss') , // Ajuste de zona horaria
-        dato_1: row.avg_val1,
+        dato_1: row.avg_val1 ,
         dato_2: row.avg_val2
     }));
 
