@@ -434,7 +434,7 @@ exports.removeSubSensor = async (cve_equipo, cve_usu) => {
             cns_sn: {
                 contains: 'S'
             },
-            cve_usu: cve_usu.toString().padEnd(11, ' ')
+            cve_usu: cve_usu.toString()
         },
         data: {
             cns_sn: 'N' // Cambiamos a 'N' para indicar que ya no es un sensor activo
