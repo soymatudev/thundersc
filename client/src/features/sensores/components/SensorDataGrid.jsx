@@ -18,9 +18,7 @@ const SensorDataGrid = ({ sensorsList }) => {
     const [endDate, setEndDate] = useState(new Date().toISOString().split('T')[0]);
     const [selectedSensors, setSelectedSensors] = useState([1]);
 
-    const columnDefs = [
-        { headerName: 'Fecha/Hora', field: 'fecha_hora', sortable: true, filter: true, flex: 1.5 },
-        { headerName: 'Sensor', field: 'sensor_nombre', sortable: true, filter: true, flex: 1.5 },
+    const HeadersTemp = [
         {
             headerName: 'Temp (°C)',
             field: 'dato_1',
@@ -36,7 +34,15 @@ const SensorDataGrid = ({ sensorsList }) => {
             filter: 'agNumberColumnFilter',
             valueFormatter: (params) => params.value ? `${parseFloat(params.value).toFixed(1)}%` : '0.0%',
             flex: 1
-        },
+        }
+    ];
+
+
+    const columnDefs = [
+        { headerName: 'Fecha/Hora', field: 'fecha_hora', sortable: true, filter: true, flex: 1.5 },
+        { headerName: 'Sensor', field: 'sensor_nombre', sortable: true, filter: true, flex: 1.5 },
+        HeadersTemp[0],
+        HeadersTemp[1],
         {
             headerName: 'Estatus',
             field: 'fecha_hora',

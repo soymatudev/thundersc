@@ -209,10 +209,9 @@ exports.getDashboardStatus = async (userId) => {
                 // Maximo son 219 Toneladas
                 // Si es 0 val1 entonces esta llevo por lo que son 219 toneladas
                 const volumenTotal = data.ancho * data.largo * data.alto;
-                const toneladasTotales = (volumenTotal * data.densidad) / 1000; // Convertir kg a toneladas
-                const volumen = val1 == 0 ? volumenTotal : (val1 / 100) * volumenTotal; // Si val1 es 0, asumimos lleno, sino calculamos el volumen actual
-                const toneladas = (volumen * data.densidad * 1000) / 1000; // Convertir kg a toneladas
-                const nivel_porcentual = val1 == 0 ? 100 : (val1 / 100) * 100; // Si val1 es 0, asumimos lleno, sino usamos el porcentaje directamente
+                const toneladasTotales = (volumenTotal * data.densidad) / 1000; 
+                const nivel_porcentual =  ((data.alto - (val1 / 100)) * 100) / data.alto;
+                const toneladas = (toneladasTotales / 100) * nivel_porcentual * 1000;
                 data.lectura = {
                     nivel_porcentual: nivel_porcentual,
                     nivel_toneles: toneladas
@@ -345,7 +344,7 @@ exports.getReportData = async (filters, pagination = {}) => {
             skip: parseInt(skip),
             take: parseInt(take),
             include: {
-                // ma_regzoro doesn't have a direct relation in schema, we'll map sensor names manually
+                // join con ma_equipo para cve_unidad
             }
         }),
         prisma.ma_regzoro.count({ where })
@@ -372,6 +371,7 @@ exports.getReportData = async (filters, pagination = {}) => {
             cve_equipo: Number(d.cve_equipo),
             sensor_nombre: sensorMap[Number(d.cve_equipo)] || 'Desconocido',
             fecha_hora: formattedDate,
+            cve_unidad: d.ma_equipo?.cve_unidad?.trim() || 'DES',
             dato_1: parseFloat(d.dato_1) || 0,
             dato_2: parseFloat(d.dato_2) || 0,
             dato_3: d.dato_3 || '0'
