@@ -186,6 +186,9 @@ exports.getDashboardStatus = async (userId) => {
             unidad_desc: sensor.ma_unidad?.descri?.trim(),
             adc_1: parseFloat(sensor.adc_1) || 0, // Límite Superior (usualmente Temp)
             adc_3: parseFloat(sensor.adc_3) || 0, // Límite Inferior (usualmente Temp)
+            ancho: parseFloat(sensor.ancho) || 0,
+            largo: parseFloat(sensor.largo) || 0,
+            densidad: parseFloat(sensor.densidad) || 0,
             last_check: absoluteLast ? absoluteLast.fecha_hora : null,
             is_online: ultimaLectura ? (dayjs(ultimaLectura.fecha_hora).format('YYYY-MM-DD HH:mm:ss') > MinutesAgo) : false,
             lectura: {}
@@ -202,8 +205,12 @@ exports.getDashboardStatus = async (userId) => {
                     humedad: val2
                 };
             } else if (data.cve_unidad === 'SIL') { // SILO
+                const volumen = data.ancho * data.largo * val1; 
+                const toneladas = (volumen * (data.densidad || 0) * 1000) / 1000;
+                const nivel_porcentual = data.alto > 0 ? (val1 / data.alto) * 100 : 0;
                 data.lectura = {
-                    nivel_porcentual: (val1 / 100)
+                    nivel_porcentual: nivel_porcentual,
+                    nivel_toneles: toneladas
                 };
             } else {
                 data.lectura = {
@@ -265,6 +272,8 @@ exports.getHistory = async (fechaInicioParam, fechaFinParam, cveEquipo) => {
             AVG(CAST(NULLIF(dato_2, '') AS FLOAT)) as avg_val2
         FROM "ma_regzoro"
         ${whereClause}
+        AND dato_1 ~ '^[0-9.]+$' 
+	    AND dato_2 ~ '^[0-9.]+$'
         GROUP BY cve_equipo, fecha_hora
         ORDER BY fecha_hora ASC
     `);
