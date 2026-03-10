@@ -21,8 +21,8 @@ const parsedDataUsuario = (data) => {
 
 const parsedDataUsuarioxSensor = (char_id, sensorCve) => {
     return {
-        cve_usu: char_id,
-        cve_ses: sensorCve,
+        cve_usu: char_id.toString(),
+        cve_ses: parseInt(sensorCve),
         cns_sn: 'S',
         alt_sn: 'N',
         baj_sn: 'N',
