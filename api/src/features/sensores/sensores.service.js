@@ -428,13 +428,19 @@ exports.getUltimoValorByName = async (nombre) => {
 }
 
 exports.removeSubSensor = async (cve_equipo, cve_usu) => {
-    return prisma.ma_sesus.updateMany({
+    const row = await prisma.ma_sesus.findFirst({
         where: {
             cve_ses: parseInt(cve_equipo),
             cns_sn: {
                 contains: 'S'
             },
             cve_usu: cve_usu.toString()
+        }
+    });
+
+    return prisma.ma_sesus.updateMany({
+        where: {
+            id: row.id
         },
         data: {
             cns_sn: 'N' // Cambiamos a 'N' para indicar que ya no es un sensor activo
