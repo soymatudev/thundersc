@@ -1,4 +1,5 @@
 const { prisma } = require('../../shared/config/prismaClient');
+const Logger = require('../../shared/utils/Logger');
 
 exports.setTelegramUsuario = async (usuarioData) => {
     const { clave } = usuarioData;
@@ -30,20 +31,25 @@ exports.getTelegramUsuarioByCve = async (cve) => {
 };
 
 exports.setTelegramUsuarioxSensor = async (usuarioSensorData) => {
-    const existingSubscription = await prisma.ma_sesus.findFirst({
-        where: {
-            cve_usu: usuarioSensorData.cve_usu.toString(),
-            cve_ses: parseInt(usuarioSensorData.cve_ses),
-        },
-    });
-
-    if (existingSubscription) {
-        return existingSubscription;
+    try {
+        const existingSubscription = await prisma.ma_sesus.findFirst({
+            where: {
+                cve_usu: usuarioSensorData.cve_usu.toString(),
+                cve_ses: parseInt(usuarioSensorData.cve_ses),
+            },
+        });
+    
+        if (existingSubscription) {
+            return existingSubscription;
+        }
+    
+        return prisma.ma_sesus.create({
+            data: usuarioSensorData,
+        });
+    } catch (error) {
+        Logger.error(`Error al registrar suscripción de usuario a sensor: ${error.message}`);
+        throw error;
     }
-
-    return prisma.ma_sesus.create({
-        data: usuarioSensorData,
-    });
 };
 
 exports.getTelegramUsuariosxSensor = async (usuarioData) => {
