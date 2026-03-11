@@ -428,7 +428,7 @@ exports.getUltimoValorByName = async (nombre) => {
 }
 
 exports.removeSubSensor = async (cve_equipo, cve_usu) => {
-    const row = await prisma.ma_sesus.findFirst({
+    const row = await prisma.ma_sesus.findMany({
         where: {
             cve_ses: parseInt(cve_equipo),
             cns_sn: {
