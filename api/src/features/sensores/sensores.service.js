@@ -49,7 +49,9 @@ exports.createSensor = async (data) => {
  * Actualiza un sensor existente.
  */
 exports.updateSensor = async (clave, data) => {
+    const cve_unidad = data.cve_unidad;
     delete data.clave; // Aseguramos que no se intente actualizar la clave
+    delete data.cve_unidad; // Lo manejamos aparte para evitar problemas de formato
     return prisma.ma_equipo.update({
         where: { clave: parseInt(clave) },
         data: {
@@ -60,6 +62,9 @@ exports.updateSensor = async (clave, data) => {
             densidad: data.densidad ? parseFloat(data.densidad) : null,
             adc_1: data.adc_1 ? parseFloat(data.adc_1) : null,
             adc_3: data.adc_3 ? parseFloat(data.adc_3) : null,
+            ma_unidad: {
+                connect: { cve_unidad: cve_unidad.trim() }
+            }
         }
     });
 };
@@ -429,16 +434,22 @@ exports.getUltimoValorByName = async (nombre) => {
 }
 
 exports.removeSubSensor = async (cve_equipo, cve_usu) => {
-    return prisma.ma_sesus.updateMany({
+    const rows = await prisma.ma_sesus.findMany({
         where: {
             cve_ses: parseInt(cve_equipo),
             cns_sn: {
                 contains: 'S'
             },
             cve_usu: cve_usu.toString()
-        },
-        data: {
-            cns_sn: 'N' 
         }
+    });
+
+    const ids = rows.map(r => parseInt(r.id));
+
+    return prisma.ma_sesus.updateMany({
+        where: {
+            id: { in: ids } // Actualiza todos los que coincidan con esos IDs
+        },
+        data: { cns_sn: 'N' }
     });
 }
