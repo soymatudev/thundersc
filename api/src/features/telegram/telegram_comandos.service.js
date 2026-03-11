@@ -144,8 +144,8 @@ const callBackremovesensor = async (bot, data, msg) => {
         bot.sendMessage(msg.chat.id, `✅ Te has dado de baja correctamente de las alertas del sensor: ${sensor.alias}.`);
         Logger.info(`Usuario ${msg.chat.id} dado de baja del sensor ${sensor.alias}`);
     } catch (error) {
-        bot.sendMessage(msg.chat.id, `❌ Ocurrió un error al darte de baja del sensor. Por favor, intenta de nuevo más tarde.`);
         Logger.error(`Error al procesar callback de removesensor: ${error.message} - Data: ${sensor}`);
+        bot.sendMessage(msg.chat.id, `❌ Ocurrió un error al darte de baja del sensor. Por favor, intenta de nuevo más tarde.`);
     }
 }
 

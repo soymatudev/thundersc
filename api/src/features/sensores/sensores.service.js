@@ -49,6 +49,7 @@ exports.createSensor = async (data) => {
  * Actualiza un sensor existente.
  */
 exports.updateSensor = async (clave, data) => {
+    delete data.clave; // Aseguramos que no se intente actualizar la clave
     return prisma.ma_equipo.update({
         where: { clave: parseInt(clave) },
         data: {
@@ -428,22 +429,16 @@ exports.getUltimoValorByName = async (nombre) => {
 }
 
 exports.removeSubSensor = async (cve_equipo, cve_usu) => {
-    const row = await prisma.ma_sesus.findMany({
+    return prisma.ma_sesus.updateMany({
         where: {
             cve_ses: parseInt(cve_equipo),
             cns_sn: {
                 contains: 'S'
             },
             cve_usu: cve_usu.toString()
-        }
-    });
-
-    return prisma.ma_sesus.updateMany({
-        where: {
-            id: row.id
         },
         data: {
-            cns_sn: 'N' // Cambiamos a 'N' para indicar que ya no es un sensor activo
+            cns_sn: 'N' 
         }
     });
 }
