@@ -64,7 +64,7 @@ exports.updateSensor = async (clave, data) => {
             adc_1: data.adc_1 ? parseFloat(data.adc_1) : null,
             adc_3: data.adc_3 ? parseFloat(data.adc_3) : null,
             ma_unidad: {
-                connect: { cve_unidad: cve_unidad.trim() }
+                connect: { clave: cve_unidad.trim() }
             }
         }
     });
