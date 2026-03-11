@@ -52,6 +52,7 @@ exports.updateSensor = async (clave, data) => {
     const cve_unidad = data.cve_unidad;
     delete data.clave; // Aseguramos que no se intente actualizar la clave
     delete data.cve_unidad; // Lo manejamos aparte para evitar problemas de formato
+    delete data.unidad_desc; // No es un campo de ma_equipo, lo ignoramos
     return prisma.ma_equipo.update({
         where: { clave: parseInt(clave) },
         data: {
