@@ -435,13 +435,13 @@ exports.getUltimoValorByName = async (nombre) => {
 }
 
 exports.removeSubSensor = async (cve_equipo, cve_usu) => {
-    return prisma.ma_sesus.$queryRawUnsafe({
-        query: `
-            DELETE FROM ma_sesus 
-            WHERE cve_ses = $1 
-            AND cve_usu = $2
-            AND cns_sn = 'S'
-        `,
-        values: [parseInt(cve_equipo), cve_usu.toString()]
-    });
+    const query = `DELETE FROM ma_sesus 
+        WHERE cve_ses = $1 
+        AND cve_usu = $2
+        AND cns_sn = 'S'`;
+    return await prisma.$queryRawUnsafe(
+        query,
+        parseInt(cve_equipo),
+        cve_usu.toString()
+    );
 }
