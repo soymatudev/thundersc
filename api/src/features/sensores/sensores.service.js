@@ -435,22 +435,13 @@ exports.getUltimoValorByName = async (nombre) => {
 }
 
 exports.removeSubSensor = async (cve_equipo, cve_usu) => {
-    const rows = await prisma.ma_sesus.findMany({
-        where: {
-            cve_ses: parseInt(cve_equipo),
-            cns_sn: {
-                contains: 'S'
-            },
-            cve_usu: cve_usu.toString()
-        }
-    });
-
-    const ids = rows.map(r => parseInt(r.id));
-
-    return prisma.ma_sesus.updateMany({
-        where: {
-            id: { in: ids } // Actualiza todos los que coincidan con esos IDs
-        },
-        data: { cns_sn: 'N' }
+    return prisma.ma_sesus.$queryRawUnsafe({
+        query: `
+            DELETE FROM ma_sesus 
+            WHERE cve_ses = $1 
+            AND cve_usu = $2
+            AND cns_sn = 'S'
+        `,
+        values: [parseInt(cve_equipo), cve_usu.toString()]
     });
 }
