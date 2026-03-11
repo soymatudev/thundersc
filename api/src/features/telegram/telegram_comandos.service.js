@@ -140,6 +140,7 @@ const callBackremovesensor = async (bot, data, msg) => {
             bot.sendMessage(msg.chat.id, `❌ Sensor no encontrado.`);
             return;
         }
+        Logger.info(`Intentando dar de baja al usuario ${msg.chat.id} del sensor ${sensor.alias} y clave ${sensorCve}`);
         await removeSubSensor(msg.chat.id, sensorCve);
         bot.sendMessage(msg.chat.id, `✅ Te has dado de baja correctamente de las alertas del sensor: ${sensor.alias}.`);
         Logger.info(`Usuario ${msg.chat.id} dado de baja del sensor ${sensor.alias}`);
