@@ -434,7 +434,7 @@ exports.getUltimoValorByName = async (nombre) => {
     return await exports.getUltimoValorById(sensor.clave);
 }
 
-exports.removeSubSensor = async (cve_equipo, cve_usu) => {
+exports.removeSubSensor = async (cve_usu, cve_equipo) => {
     const query = `DELETE FROM ma_sesus 
         WHERE cve_ses = $1 
         AND cve_usu = $2
