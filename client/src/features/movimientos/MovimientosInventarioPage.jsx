@@ -55,13 +55,25 @@ const MovimientosInventarioPage = () => {
         }
     };
 
+    const formatCode = (code) => {
+        // ACC260313032 -> ACC-20260313-032
+        const firstPart = code.slice(0, 3);
+        const secondPart = `20${code.slice(3, 9)}`;
+        const tirdPart = code.slice(9);
+        return `${firstPart}-${secondPart}-${tirdPart}`;
+    }
+
     const handleSearch = async (e) => {
+        let code = searchTerm.trim();
         if (e) e.preventDefault();
         if (!searchTerm.trim()) return;
+        if(!code.includes('-')) {
+            code = formatCode(searchTerm.trim());
+        }
 
         setLoading(true);
         try {
-            const data = await MovimientosService.buscarEquipo(searchTerm);
+            const data = await MovimientosService.buscarEquipo(code);
             setEquipo(data);
         } catch (error) {
             setEquipo(null);

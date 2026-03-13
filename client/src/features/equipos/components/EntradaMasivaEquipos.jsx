@@ -4,7 +4,9 @@ import { ClasificacionesService } from '../../clasificaciones/services/clasifica
 import { EmpleadosService } from '../../empleados/services/empleadosService';
 import { DepartamentosService } from '../../departamentos/services/departamentosService';
 import { getEquipoBySerie, createMassiveEquipos, getFolio } from '../services/equipos.service';
-import { Save, AlertCircle, CheckCircle2, ListFilter, Hash, UserCheck } from 'lucide-react';
+import { Save, AlertCircle, CheckCircle2, ListFilter, Hash, UserCheck, Printer } from 'lucide-react';
+import { formatZPL, sendToZebra, shortenCode } from '../../../shared/utils/zebraPrint';
+
 import Input from '../../../shared/components/Input';
 import { useAuth } from '../../../shared/hooks/useAuth';
 
@@ -174,6 +176,23 @@ const EntradaMasivaEquipos = () => {
         } catch (error) {
             setError('Error al guardar los equipos. Verifica la conexión con el servidor.');
         }
+    };
+
+    const setPrint = async () => {
+        setError(null);
+        if (loadSummary.length === 0) return;
+
+        // Imprimir cada código secuencialmente
+        for (const fullCode of loadSummary) {
+            try {
+                const labelCode = shortenCode(fullCode);
+                await sendToZebra(formatZPL(labelCode), (msg) => setError(msg));
+            } catch (err) {
+                console.error("Print error stopped batch:", err);
+                break;
+            }
+        }
+
     };
 
     const inputStyles = "appearance-none block w-full px-3 py-2 bg-gray-700 border border-gray-600 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition duration-150 ease-in-out text-white";
@@ -357,7 +376,7 @@ const EntradaMasivaEquipos = () => {
                                 </div>
                             </div>
 
-                            <div className="flex justify-end">
+                            <div className="flex justify-end gap-2">
                                 <button
                                     type="submit"
                                     disabled={loadSummary.length === 0 || !header.cve_recep}
@@ -368,6 +387,19 @@ const EntradaMasivaEquipos = () => {
                                 >
                                     <Save size={20} />
                                     <span className="font-semibold text-lg">Guardar Recepción</span>
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => setPrint()}
+
+                                    disabled={loadSummary.length === 0 || !header.cve_recep}
+                                    className={`flex items-center gap-2 py-2.5 px-8 rounded-lg transition-all shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 active:transform active:scale-95 ${loadSummary.length === 0 || !header.cve_recep
+                                        ? 'bg-gray-700 text-gray-400 cursor-not-allowed border border-gray-600'
+                                        : 'bg-emerald-600 text-white hover:bg-emerald-700 hover:shadow-emerald-500/20'
+                                        }`}
+                                >
+                                    <Printer size={20} />
+                                    <span className="font-semibold text-lg">Imprimir</span>
                                 </button>
                             </div>
                         </form>

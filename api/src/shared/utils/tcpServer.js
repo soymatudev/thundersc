@@ -3,7 +3,7 @@ const Logger = require('./Logger');
 const { parseSensorData } = require('./parser');
 const sensoresLecturasService = require('../../features/sensores/sensores_lecturas.service');
 const { initializeTelegramBot } = require('../../features/telegram/telegram.service');
-
+require('dotenv').config();
 // Mapa para rastrear sockets activos por nombre de sensor
 const allConnections = new Set();
 const activeSockets = new Map();
@@ -36,7 +36,7 @@ const socketsReport = (socket)  => {
 }
 
 exports.startTcpServer = () => {
-    initializeTelegramBot();
+    if(!process.env.NODE_ENV == 'development') initializeTelegramBot();
     // Usar una variable de entorno para el puerto, con un valor por defecto.
     const TCP_PORT = process.env.SOCKET_PORT || 1085;
     const TCP_IP = process.env.SOCKET_IP || "0.0.0.0";

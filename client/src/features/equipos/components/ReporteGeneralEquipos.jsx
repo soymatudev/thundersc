@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import { AllCommunityModule, ModuleRegistry, themeQuartz } from 'ag-grid-community';
-import { Loader2, Search, FilterX, Download, Calendar, Monitor, Layers, Hash } from 'lucide-react';
+import { Loader2, Search, FilterX, Download, Calendar, Monitor, Layers, Hash, Printer, AlertCircle } from 'lucide-react';
+import { formatZPL, sendToZebra, shortenCode } from '../../../shared/utils/zebraPrint';
+
+
 import * as XLSX from 'xlsx';
 import dayjs from 'dayjs';
 import { MarcasService } from '../../marcas/services/marcasService';
@@ -15,6 +18,8 @@ const ReporteGeneralEquipos = () => {
     const gridRef = useRef();
     const [rowData, setRowData] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
+    const [isPrinting, setIsPrinting] = useState(false);
 
     // Catalog States
     const [marcas, setMarcas] = useState([]);
@@ -101,6 +106,28 @@ const ReporteGeneralEquipos = () => {
         XLSX.writeFile(workbook, `Reporte_Equipos_${dayjs().format('YYYYMMDD_HHmm')}.xlsx`);
     }, [rowData]);
 
+    const onPrintAll = async () => {
+        if (rowData.length === 0) return;
+        setError(null);
+        setIsPrinting(true);
+
+        try {
+            for (const row of rowData) {
+                const fullCode = row.cod_inv || row.serie;
+                if (fullCode) {
+                    const labelCode = shortenCode(fullCode);
+                    await sendToZebra(formatZPL(labelCode), (msg) => setError(msg));
+                }
+            }
+
+        } catch (err) {
+            console.error("Batch print stopped", err);
+        } finally {
+            setIsPrinting(false);
+        }
+    };
+
+
     // AG Grid Column Definitions
     const columnDefs = [
         { headerName: 'ID', field: 'clave', width: 80, sortable: true, filter: true }, // Or field: 'id' depending on backend
@@ -153,7 +180,16 @@ const ReporteGeneralEquipos = () => {
                 </div>
             </div>
 
+            {/* Error Notifications */}
+            {error && (
+                <div className="bg-red-500/10 border border-red-500/50 text-red-500 px-4 py-3 rounded-xl flex items-center gap-3 animate-in slide-in-from-top duration-300">
+                    <AlertCircle size={20} />
+                    <span className="text-sm font-medium">{error}</span>
+                </div>
+            )}
+
             {/* Filters Dashboard */}
+
             <div className="bg-gray-800/50 p-6 rounded-2xl border border-gray-700/50 shadow-lg backdrop-blur-sm">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {/* Search Input */}
@@ -247,6 +283,14 @@ const ReporteGeneralEquipos = () => {
                         Generar Reporte
                     </button>
                     <button
+                        onClick={onPrintAll}
+                        disabled={rowData.length === 0 || isPrinting}
+                        className="bg-indigo-600 hover:bg-indigo-500 text-white px-6 py-2.5 rounded-xl font-bold flex items-center gap-2 transition-all shadow-lg hover:shadow-indigo-500/20 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                        {isPrinting ? <Loader2 size={18} className="animate-spin" /> : <Printer size={18} />}
+                        Imprimir Etiquetas
+                    </button>
+                    <button
                         onClick={onExportExcel}
                         disabled={rowData.length === 0}
                         className="bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-2.5 rounded-xl font-bold flex items-center gap-2 transition-all shadow-lg hover:shadow-emerald-500/20 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
@@ -255,6 +299,7 @@ const ReporteGeneralEquipos = () => {
                         Exportar Excel
                     </button>
                 </div>
+
             </div>
 
             {/* Grid Section */}
