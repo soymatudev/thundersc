@@ -6,7 +6,11 @@ const { NotFoundError, BadRequestError } = require('../../shared/utils/CustomErr
  * @returns {Promise<Array>} Una promesa que se resuelve en un array de clasificaciones.
  */
 exports.getAllClasificaciones = async () => {
-    return prisma.ma_clasif.findMany();
+    return prisma.ma_clasif.findMany(
+        {
+            orderBy: { descri: 'desc' },
+        }
+    );
 };
 
 /**
