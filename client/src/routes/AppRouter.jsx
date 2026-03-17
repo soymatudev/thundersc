@@ -12,6 +12,7 @@ import EmpresasPage from '../features/empresas/pages/EmpresasPage';
 import MarcasPage from '../features/marcas/pages/MarcasPage';
 import ModulosPage from '../features/modulos/pages/ModulosPage';
 import UsuariosPage from '../features/usuarios/pages/UsuariosPage';
+import ClasificacionesPage from '../features/clasificaciones/pages/ClasificacionesPage';
 import EntradaMasivaEquiposPage from '../features/equipos/pages/EntradaMasivaEquiposPage';
 import EquiposPage from '../features/equipos/pages/EquiposPage';
 import SensoresDashboard from '../features/sensores/SensoresDashboard';
@@ -102,6 +103,14 @@ const AppRouter = () => {
           element={
             <ProtectedRoute>
               <UsuariosPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/clasificaciones"
+          element={
+            <ProtectedRoute>
+              <ClasificacionesPage />
             </ProtectedRoute>
           }
         />

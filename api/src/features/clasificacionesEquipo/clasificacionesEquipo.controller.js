@@ -1,50 +1,53 @@
-const Logger = require('../../shared/utils/Logger');
 const clasificacionsService = require('./clasificacionesEquipo.service');
-const { json } = require('express');
+const asyncHandler = require('../../shared/utils/asyncHandler');
+const { NotFoundError } = require('../../shared/utils/CustomError');
 
-exports.getAllClasificaciones = async (req, res) => {
-    try {
+exports.getAllClasificaciones = asyncHandler(async (req, res) => {
+    const clasificacions = await clasificacionsService.getAllClasificaciones();
+    if (!clasificacions || clasificacions.length === 0) throw new NotFoundError('No se encontraron clasificaciones');
+    res.status(200).json(clasificacions);
+});
+
+exports.getClasificacionesPaginadas = asyncHandler(async (req, res) => {
+    const { page, pageSize, descri } = req.query;
+
+    if (!page && !pageSize && !descri) {
         const clasificacions = await clasificacionsService.getAllClasificaciones();
-        if (clasificacions.length === 0) return res.status(404).json({ message: 'No clasificacions found' });
-        res.status(200).json(clasificacions);
-    } catch (error) {
-        Logger.error(`Error fetching clasificacions: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
+        if (!clasificacions || clasificacions.length === 0) throw new NotFoundError('No se encontraron clasificaciones');
+        return res.status(200).json(clasificacions);
     }
-}
 
-exports.getClasificacionByCve = async (req, res) => {
+    const pageNum = parseInt(page, 10) || 1;
+    const pageSizeNum = parseInt(pageSize, 10) || 10;
+    const result = await clasificacionsService.getClasificacionesPaginadas(pageNum, pageSizeNum, descri);
+
+    if (!result || result.clasificaciones.length === 0) {
+        throw new NotFoundError('No se encontraron clasificaciones para los criterios dados');
+    }
+    res.status(200).json(result);
+});
+
+exports.getClasificacionByCve = asyncHandler(async (req, res) => {
     const { cve } = req.params;
-    try {
-        const clasificacions = await clasificacionsService.getClasificacionByCve(cve);
-        if (clasificacions.length === 0) return res.status(404).json({ message: 'No clasificacions found for the given cve' });
-        res.status(200).json(clasificacions);
-    } catch (error) {
-        Logger.error(`Error fetching clasificacions by cve: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-}
+    const clasificacion = await clasificacionsService.getClasificacionByCve(cve);
+    res.status(200).json(clasificacion);
+});
 
-exports.updateClasificacion = async (req, res) => {
+exports.updateClasificacion = asyncHandler(async (req, res) => {
     const { cve } = req.params;
     const updateData = req.body;
-    try {
-        const updatedClasificacion = await clasificacionsService.updateClasificacion(cve, updateData);
-        if (!updatedClasificacion) return res.status(404).json({ message: 'Clasificacion not found' });
-        res.status(200).json(updatedClasificacion);
-    } catch (error) {
-        Logger.error(`Error updating clasificacion: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-}
+    const updatedClasificacion = await clasificacionsService.updateClasificacion(cve, updateData);
+    res.status(200).json(updatedClasificacion);
+});
 
-exports.setClasificacion = async (req, res) => {
+exports.setClasificacion = asyncHandler(async (req, res) => {
     const clasificacionData = req.body;
-    try {
-        const newClasificacion = await clasificacionsService.setClasificacion(clasificacionData);
-        res.status(201).json(newClasificacion);
-    } catch (error) {
-        Logger.error(`Error creating clasificacion: ${error.message}`);
-        res.status(500).json({ message: 'Internal server error' });
-    }
-}
+    const newClasificacion = await clasificacionsService.setClasificacion(clasificacionData);
+    res.status(201).json(newClasificacion);
+});
+
+exports.deleteClasificacion = asyncHandler(async (req, res) => {
+    const { cve } = req.params;
+    await clasificacionsService.deleteClasificacion(cve);
+    res.status(200).json({ message: 'Clasificación eliminada correctamente' });
+});

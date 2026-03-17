@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { AgGridReact } from 'ag-grid-react';
 import { AllCommunityModule, ModuleRegistry, themeQuartz } from 'ag-grid-community';
-import { Loader2, Search, FilterX, Download, Calendar, Monitor, Layers, Hash, Printer, AlertCircle } from 'lucide-react';
+import { Loader2, Search, FilterX, Download, Calendar, Monitor, Layers, Hash, Printer, AlertCircle, ListFilter } from 'lucide-react';
 import { formatZPL, sendToZebra, shortenCode } from '../../../shared/utils/zebraPrint';
 
 
@@ -24,12 +24,14 @@ const ReporteGeneralEquipos = () => {
     // Catalog States
     const [marcas, setMarcas] = useState([]);
     const [departamentos, setDepartamentos] = useState([]);
-    const [modelos, setModelos] = useState([]); // Assuming models might come from a service or be distinct values later
+    const [clasificaciones, setClasificaciones] = useState([]);
+    const [modelos, setModelos] = useState([]);
 
     // Filter State
     const [filters, setFilters] = useState({
         search: '',
         cve_marca: '',
+        cve_clasif: '',
         modelo: '',
         cve_depar: '',
         fecha_inicio: '',
@@ -40,12 +42,14 @@ const ReporteGeneralEquipos = () => {
     useEffect(() => {
         const loadCatalogs = async () => {
             try {
-                const [marcasData, deptData] = await Promise.all([
+                const [marcasData, deptData, clasifData] = await Promise.all([
                     MarcasService.getAll(),
-                    DepartamentosService.getAll()
+                    DepartamentosService.getAll(),
+                    ClasificacionesService.getAll()
                 ]);
                 setMarcas(marcasData);
                 setDepartamentos(deptData);
+                setClasificaciones(clasifData);
             } catch (error) {
                 console.error("Error loading catalogs", error);
             }
@@ -62,6 +66,7 @@ const ReporteGeneralEquipos = () => {
         setFilters({
             search: '',
             cve_marca: '',
+            cve_clasif: '',
             modelo: '',
             cve_depar: '',
             fecha_inicio: '',
@@ -191,7 +196,7 @@ const ReporteGeneralEquipos = () => {
             {/* Filters Dashboard */}
 
             <div className="bg-gray-800/50 p-6 rounded-2xl border border-gray-700/50 shadow-lg backdrop-blur-sm">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
                     {/* Search Input */}
                     <div className="lg:col-span-1">
                         <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 flex items-center gap-2">
@@ -221,6 +226,23 @@ const ReporteGeneralEquipos = () => {
                             <option value="">Todas las Marcas</option>
                             {marcas.map(m => (
                                 <option key={m.clave} value={m.clave}>{m.descri}</option>
+                            ))}
+                        </select>
+                    </div>
+
+                    <div>
+                        <label className="block text-xs font-bold text-gray-400 uppercase tracking-widest mb-2 flex items-center gap-2">
+                            <ListFilter size={14} className="text-indigo-400" /> Clasificación
+                        </label>
+                        <select
+                            name="cve_clasif"
+                            value={filters.cve_clasif}
+                            onChange={handleFilterChange}
+                            className="w-full bg-gray-700/50 border border-gray-600 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all appearance-none"
+                        >
+                            <option value="">Todas las Clasif.</option>
+                            {clasificaciones.map(c => (
+                                <option key={c.clave} value={c.clave}>{c.descri}</option>
                             ))}
                         </select>
                     </div>
