@@ -36,7 +36,7 @@ const socketsReport = (socket)  => {
 }
 
 exports.startTcpServer = () => {
-    if(!process.env.NODE_ENV == 'development') initializeTelegramBot();
+    initializeTelegramBot();
     // Usar una variable de entorno para el puerto, con un valor por defecto.
     const TCP_PORT = process.env.SOCKET_PORT || 1085;
     const TCP_IP = process.env.SOCKET_IP || "0.0.0.0";
