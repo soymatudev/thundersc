@@ -8,7 +8,7 @@ const { NotFoundError, BadRequestError } = require('../../shared/utils/CustomErr
 exports.getAllClasificaciones = async () => {
     return prisma.ma_clasif.findMany(
         {
-            orderBy: { descri: 'desc' },
+            orderBy: { descri: 'asc' },
         }
     );
 };
