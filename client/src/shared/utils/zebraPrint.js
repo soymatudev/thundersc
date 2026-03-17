@@ -49,7 +49,9 @@ export const sendToZebra = async (zpl, onError) => {
         const isHttps = window.location.protocol === 'https:';
         const protocol = isHttps ? 'https:' : 'http:';
         const port = isHttps ? '9100' : '9101';
-        const baseUrl = `https://localhost:${port}/`;
+        // Usamos 127.0.0.1 en lugar de localhost para ser más explícitos con PNA
+        const baseUrl = `${protocol}//127.0.0.1:${port}/`;
+
 
         console.log(`Conectando a Zebra en: ${baseUrl}`);
 
