@@ -391,8 +391,7 @@ exports.getReportData = async (filters, pagination = {}) => {
         dato_1: parseFloat(d.dato_1) || 0,
         dato_2: parseFloat(d.dato_2) || 0,
         cve_unidad: d.cve_unidad.trim(),
-        // Aplicamos el formato de fecha solicitado,
-        fecha_hora: dayjs(d.fecha_hora).format('YYYY-MM-DD HH:mm:ss')
+        fecha_hora: dayjs(dayjs(d.fecha_hora).toString().split(' GMT')[0]).format('YYYY-MM-DD HH:mm:ss')
     }));
 
     return { data: mappedData, total };
