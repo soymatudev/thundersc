@@ -1,9 +1,23 @@
-version: "3.8"
+version: '3.8'
 services:
-  thundersc:
-    build: .
-    ports: 
-      - "80:80"
-    volumes:
-      - ./:/var/www/html/thundersc/
-    container_name: thundersc
+  api-sensores:
+    build: ./api
+    container_name: api-thunder
+    restart: always
+    env_file:
+      - ./api/.env
+    environment:
+      - PORT=4000
+      - SOCKET_PORT=1085
+      - TZ=America/Mexico_City
+    ports:
+      - "1085:1085"
+
+  client-sensores:
+    build: ./client 
+    container_name: client-thunder
+    restart: always
+    environment:
+      - API_URL=http://api-thunder:4000
+    ports:
+      - "9000:80"
