@@ -1,23 +1,36 @@
 version: '3.8'
 services:
-  api-sensores:
+  api-thunder:
     build: ./api
     container_name: api-thunder
     restart: always
+    command: npm run start
     env_file:
       - ./api/.env
     environment:
       - PORT=4000
+      - TZ=America/Mexico_City
+    ports:
+      - "4000:4000"
+
+  api-sensores:
+    build: ./api
+    container_name: api-sensores
+    restart: always
+    command: npm run start:sensors
+    env_file:
+      - ./api/.env
+    environment:
       - SOCKET_PORT=1085
       - TZ=America/Mexico_City
     ports:
       - "1085:1085"
 
-  client-sensores:
+  client-thunder:
     build: ./client 
     container_name: client-thunder
     restart: always
     environment:
       - API_URL=http://api-thunder:4000
     ports:
-      - "9000:80"
+      - "3000:80"
