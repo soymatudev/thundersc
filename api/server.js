@@ -36,19 +36,9 @@ app.use((err, req, res, next) => {
   });
 });
 
-// ##### SOCKET.IO INTEGRATION #####
-
 const API_PORT = process.env.PORT || 4000;
 const http = require('http');
-const { startTcpServer } = require('./src/shared/utils/tcpServer');
-const inactividadService = require('./src/features/sensores/inactividad.service');
 const httpServer = http.createServer(app);
-startTcpServer();
-
-// Iniciar monitoreo de inactividad cada 10 minutos
-setInterval(() => {
-    inactividadService.checkSensorsInactivity();
-}, 600000);
 
 httpServer.listen(API_PORT, () => {
   console.log(`API server with Sockets listening on port ${API_PORT}`);
