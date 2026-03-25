@@ -32,9 +32,11 @@ exports.getAllSensores = async () => {
  * Crea un nuevo sensor.
  */
 exports.createSensor = async (data) => {
+    const { cve_zona, ...rest } = data;
     return prisma.ma_equipo.create({
         data: {
-            ...data,
+            cve_zona: cve_zona ? parseInt(cve_zona) : null,
+            ...rest,
             ancho: data.ancho ? parseFloat(data.ancho) : null,
             largo: data.largo ? parseFloat(data.largo) : null,
             alto: data.alto ? parseFloat(data.alto) : null,
