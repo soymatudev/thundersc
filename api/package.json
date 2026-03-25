@@ -6,7 +6,8 @@
     "start": "node server.js",
     "start:sensors": "node sensor-server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "dev:sensors": "nodemon sensor-server.js"
   },
   "keywords": [],
   "author": "",

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const Logger = require('./src/shared/utils/Logger');
 
