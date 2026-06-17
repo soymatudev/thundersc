@@ -125,7 +125,20 @@ const EntradaMasivaEquipos = () => {
 
     const loadSummary = useMemo(() => {
         const clasifObj = clasificaciones.find(c => c.clave.toString() === header.cve_clasif);
-        const prefix = clasifObj?.descri?.trim().substring(0, 3).toUpperCase() || 'EQU';
+        let prefix = 'EQU';
+        
+        if (clasifObj?.descri) {
+            const palabras = clasifObj.descri.trim().split(/\s+/);
+            if (palabras.length > 0) {
+                const base = palabras[0].substring(0, 3).toUpperCase();
+                const extras = palabras.slice(1)
+                    .map(p => p.charAt(0).toUpperCase())
+                    .join('');
+                    
+                prefix = base + extras;
+            }
+        }
+
         const todayStr = new Date().toISOString().slice(0, 10).replace(/-/g, '');
 
         const previewList = [];
