@@ -48,19 +48,20 @@ export const sendToZebra = async (zpl, onError) => {
     try {
         const isHttps = window.location.protocol === 'https:';
         const protocol = isHttps ? 'https:' : 'http:';
-        const port = isHttps ? '9100' : '9101';
+        const port = isHttps ? '9101' : '9100';
         // Usamos 127.0.0.1 en lugar de localhost para ser más explícitos con PNA
-        const baseUrl = `${protocol}//127.0.0.1:${port}/`;
+       // const baseUrl = `${protocol}//127.0.0.1:${port}/`;
+	const baseUrl = `${protocol}//127.0.0.1:${port}/`;
 
 
-        console.log(`Conectando a Zebra en: ${baseUrl}`);
+        console.log(`Conectando a Zebra en: ${baseUrl}default`);
 
         // 1. Obtener impresora por defecto
         const defaultPrinterResponse = await fetch(`${baseUrl}default`, { 
             method: 'GET',
             mode: 'cors' 
         }).catch(err => {
-            throw new Error(`Conexión fallida. Si usas HTTPS, entra primero a https://localhost:${port} y acepta el certificado.`);
+            throw new Error(`Conexión fallida. Si usas HTTPS, entra primero a ${baseUrl} y acepta el certificado.: ${err}`);
         });
 
         if (!defaultPrinterResponse.ok) throw new Error('Error al obtener impresora por defecto');
